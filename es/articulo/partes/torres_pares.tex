@@ -1,0 +1,98 @@
+\subsection{De la marginal doble al cuadrado}
+\label{app:pair}
+Para reintroducir una restricción diagonal necesitamos la probabilidad de que las dos torres
+ocupen sus extremos. La estimamos primero con el cociente de predictores $\pi^T$ y luego con
+la expresión local $\pi_1$ en el tablero de partida. Sea $\Pi$ el proyector ortogonal sobre el
+modo fila menos columna. Para el punto de torres ponga
+$G^0=(S_T+\Pi)^{-1}$, $\mathsf G(i,j)=a_i^\top G^0a_j$. La clase estacionaria requiere
+$\max p_e\le C/k$ y $\lambda_{\min}(S_T+\Pi)\ge\gamma_A>0$. La clase de escalado anterior
+implica estos márgenes para $k$ grande. Para un par $E=\{e,f\}$ en filas y columnas distintas
+defina
+\[
+ \pi^T=w_ew_f e^{L_T(M_{ef})-L_T(M)},\quad
+ \pi_1=p_ep_f\{1-\mathsf G(e,f)+\hat c_e+\hat c_f\},\quad
+ X=p_ep_f(p_e+p_f)\mathsf G(e,f).
+\]
+En la máscara binaria el cociente $\pi^{\rm ex}/\pi^T$ es exactamente
+$\exp\{g_T(M_{ef})-g_T(M)\}$. Retirar dos fibras de cada familia altera sus sumas en
+$O(k^{-1})$. El sistema dual en el calibre fijo recupera las masas con potenciales $O(k^{-1})$.
+La brecha se reduce a lo sumo en $O(k^{-1})$. Por Schur e identidad de resolvente las entradas
+retenidas de las matrices de Green cambian en $O(k^{-2})$. Suprimir los índices en las
+contracciones normalizadas da $|\mathfrak F(M_{ef})-\mathfrak F(M)|=O(k^{-1})$, evaluando
+$\mathfrak F$ en el perfil de cada máscara. En consecuencia
+$\Delta_E g_T=g_T(M_{ef})-g_T(M)=O(k^{-2})$ por (T). Aplicando dos veces la inserción de
+torres y la estabilidad de $p,\hat c$ resulta $\pi^T=\pi_1+O(k^{-4})$ (Corolario C de torres).
+Esto da $\pi^{\rm ex}-\pi_1=O(k^{-4})$, la afirmación (R0).
+
+\paragraph{La tercera casilla [D].}
+Al ocupar una tercera casilla $c$ en otra fila y otra columna, el par sigue disponible en el
+menor binario $M_c$. Aplicar (R0) a ambas máscaras sólo daría $O(k^{-4})$ para la diferencia.
+Compare $M,M_{ef},M_c,(M_c)_{ef}$ en $\Delta_c\Delta_E(\Phi/k)$ mediante dos parámetros
+de masa. La eliminación de $E$ tiene parámetro
+$s$, la de $c$ tiene parámetro $t$ y el tamaño inverso es $k^{-1}/(1-2s-t)$.
+Los núcleos e inversas que definen $\Phi$ están acotados en discos complejos fijos. El cociente
+de la expresión por $1/k$ tiene derivada mixta acotada allí. Integrar en $[0,1/k]^2$
+da $|\Delta_c\Delta_E(\Phi/k)|=O(k^{-3})$. La misma cota para el resto sigue de dos
+aplicaciones de $(T^+)$. Entonces, en
+\[
+ \pi^{\rm ex}-\pi_1=(\pi^T-\pi_1)+\pi^T(\exp(\Delta_E g_T)-1)
+\]
+el segundo sumando cambia en $O(p_ep_f/k^3)$ por la regla del producto y
+$\Delta_c\pi^T=O(p_ep_f/k)$. Para el primero se conserva $p_ep_f$ en el producto de las
+inserciones. Las segundas diferencias de $\mathsf G,\hat c$ y el cambio $O(k^{-3})$ de $r_e$
+en un menor lejano dan $|\Delta_c(\pi^T-\pi_1)|\le Cp_ep_f/k^3$. Esto prueba (R1) con el peso
+$\varpi(E)=k^2p_ep_f$. Ahora promediamos sobre la casilla que se ocupa en una fila $r$ ajena a
+las del par. La conmutación de tres menores y $\sum_{c\in r}\pi^{\rm der}_c=1$ dan el defecto
+de consistencia de $\pi_1$ bajo este promedio,
+\[
+  D_r=\sum_{\substack{c\in r\\ M_c\supset E}}\pi^{\rm der}_c(M)\pi_1(M_c)-\pi_1(M),
+       \qquad |D_r|\le C\varpi(E)/k^5.
+\]
+Para probarlo, pongamos $R_\pi=\pi^T-\pi_1$. La conmutación da tres sumandos de $D_r$.
+El primero es $\pi^T(M)\sum_c\pi_c^{\rm der}(M_{ef})(e^{\Delta_E r_c}-1)$.
+La estabilidad (S) del error de inserción da $\Delta_E r_c=O(k^{-3})$.
+El segundo es $-\sum_c\pi_c^{\rm der}(M)\Delta_cR_\pi$ sobre las casillas que conservan el par.
+Aquí se aplica la cota de incremento anterior. En el tercero,
+$R_\pi(M)\sum_{c\text{ perdido}}\pi_c^{\rm der}(M)$, hay a lo sumo dos casillas,
+de masa $O(1/k)$ cada uno. Al reunir las tres cotas se obtiene (R2).
+
+En máscaras binarias la
+brecha y la factorización del punto estacionario dan un suelo de clase a $kp_e$ en el soporte
+para convertir las cotas absolutas de un número fijo de pares en cotas ponderadas. Transportar
+esa conversión a vetos arbitrarios o repetirla en grupos crecientes requeriría otra estimación.
+Dos bancos de bloques con un tercer vértice tienen $\hat c_e=\hat c_f=\mathsf G(e,f)=0$ y
+$\pi^{\rm ex}=\pi_1$ exactamente [O]. En esas familias el error se anula para cualquier
+constante positiva de la cota.
+
+\paragraph{Un par y un cuadrado [D].}
+En el tablero $B$ que recupera la restricción diagonal de una sola línea $E$, el logaritmo
+del conteo cambia en $\log(1-\pi^{\rm ex})$. Para restarle el cambio del predictor, sea
+$\lambda=L(B)-L_T(M)$. Con $p=p_e,q=p_f$, la primera expansión da
+$\lambda=-\pi_1+O(k^{-4})$ (Teorema 1). La segunda (Teorema 2) da
+\[
+       \lambda=\log(1-\pi_1)+X+O(k^{-5}).
+\]
+En el punto de prueba, una actualización de rango dos del operador axial incorpora las dos
+casillas y un complemento de Schur incorpora la línea. El desplazamiento de Newton tiene
+componente $pq+O(k^{-3})$ en las cuatro fibras y $2pq+O(k^{-3})$ en la línea añadida.
+La primera variación y la mitad de la segunda de la acción, el factor local y la traza del
+logaritmo dejan una función analítica en siete variables de orden $O(k^{-1})$.
+El polinomio de grado cuatro de $\lambda+\pi_1$ es
+$-p^2q^2/2+pq(p+q)\mathsf G(e,f)$ [O, coeficientes racionales].
+Los denominadores en el origen son uno y la cota de Taylor es uniforme. Así, en el error
+$g^\sharp=\log(1-\pi^{\rm ex})-\lambda$ permanecen la diferencia entre los dos logaritmos
+y $-X$ (Corolario 5).
+
+El promedio sobre pares ya incluye el efecto de cada diagonal por separado. Si están disponibles
+las cuatro casillas, queda por medir cuánto añade imponer ambas restricciones a la vez. Sean
+$E'$ el otro par y $F_\square=E\cup E'$. La actualización sobre cuatro casillas y el complemento de
+Schur de dimensión dos~\cite{hj} dan una función de dieciocho argumentos pequeños.
+Al restar las dos expresiones de una sola línea, tomadas en la misma máscara, su polinomio de
+grado cuatro es $2\prod_{i\in F_\square}p_i$ [O]. Éste es el exceso del predictor
+(Teorema 3), con resto $O(k^{-5})$. Los dos pares son incompatibles y dejan el mismo menor.
+Si las completaciones son positivas, el exceso exacto de evitación es
+$\log[(1-2\pi^{\rm ex})/(1-\pi^{\rm ex})^2]$.
+Su primer término es $-(\pi^{\rm ex})^2=-\prod_{i\in F_\square}p_i+O(k^{-5})$ por (R0)
+y por la factorización de $p_i(1-p_i)$. La contribución conjunta al error es, por tanto,
+$-3\prod_{i\in F_\square}p_i+O(k^{-5})$ (Corolario 6). Al tomar la media de frontera se cuenta
+esta diferencia una vez por cuadrado completo y se obtiene $-S$ en~\eqref{eq:main}.

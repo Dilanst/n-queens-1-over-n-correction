@@ -1,0 +1,45 @@
+\section{Conteos finitos y cotas de cuadratura}\label{app:numquad}
+\subsection{La comparación con tableros finitos}
+Los conteos exactos, recogidos en~\cite{oeis} hasta $n=27$~\cite{q27}, permiten observar la
+cantidad cuyo límite da el teorema. Para
+$10\le n\le27$, la tabla presenta el entero $Q(n)$ y el residuo escalado que resulta al usar el
+predictor canónico. Esta última columna depende de un cálculo numérico y se redondea a seis
+decimales. El suplemento conserva $\log Q_{\rm pred}(n)$ y el residuo de cada tamaño en el
+archivo de datos. La Figura~\ref{fig:counts} muestra los doce últimos valores.
+
+\begin{center}\small
+\begin{tabular}{rrr}
+$n$ & $Q(n)$ exacto & $n(\log Q(n)-\log Q_{\rm pred}(n))$ [N]\\ \hline
+10 & 724 & $0{,}131887$ \\
+11 & 2680 & $-1{,}359492$ \\
+12 & 14200 & $-0{,}022508$ \\
+13 & 73712 & $0{,}356813$ \\
+14 & 365596 & $-0{,}988922$ \\
+15 & 2279184 & $-0{,}045399$ \\
+16 & 14772512 & $0{,}538500$ \\
+17 & 95815104 & $0{,}252984$ \\
+18 & 666090624 & $0{,}080786$ \\
+19 & 4968057848 & $0{,}261961$ \\
+20 & 39029188884 & $0{,}415814$ \\
+21 & 314666222712 & $0{,}161054$ \\
+22 & 2691008701644 & $0{,}101756$ \\
+23 & 24233937684440 & $0{,}253993$ \\
+24 & 227514171973736 & $0{,}350734$ \\
+25 & 2207893435808352 & $0{,}308156$ \\
+26 & 22317699616364044 & $0{,}259576$ \\
+27 & 234907967154122528 & $0{,}322261$ \\
+\end{tabular}
+\end{center}
+Para ver cuánto de la variación a tamaño finito explica una oscilación de periodo cuatro, el
+ajuste archivado usó los tamaños $16\le n\le27$. Fijó $\cerr=0{,}4055004460$, estimado entonces
+desde el continuo, y ajustó los otros tres parámetros del modelo
+\[
+ nR_Q(n)=\cerr+\frac{a}{n}+A e^{-\kappa(n-16)}\cos(\pi n/2)+\text{residuo}.
+\]
+Dio $a=-2{,}956$, $\kappa=0{,}166$ y $A=0{,}297$ [N]. Al introducir la oscilación, la raíz del
+error cuadrático medio bajó de $0{,}128$ a $0{,}041$. La corrección $a/n$ con $a$ cercano a
+$-2{,}9$ y la oscilación son apreciables para estos tamaños. Los conteos son compatibles con
+el valor calculado para $\cerr$, pero la tabla por sí sola no permite determinarlo. El argumento
+de dos cortes establece el límite independientemente de este ajuste.
+
+\input{partes/cuadratura_ap}

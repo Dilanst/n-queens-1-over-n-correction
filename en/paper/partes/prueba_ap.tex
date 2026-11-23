@@ -1,0 +1,59 @@
+\section{Signed identity and arrival estimate}\label{app:signed}
+When a queen is exposed, the uniform law weights each child by its number of completions, and the
+adaptive law weights it by the predictor. To compare the two laws along a history, we must retain the
+normalization of each row and the value of the predictor at the stopping time. Let \(\mu\) be the law
+of the uniform solution with the independent row order, and let \(\nu\) and \(\nu^\sharp\) be the
+adaptive laws for \(L\) and \(L^\sharp\). Given row \(i\), set
+\[
+ \rho^\sharp(B,i)=\sum_{e\in i}\exp(L^\sharp(B+e)-L^\sharp(B)),\qquad
+ A^\sharp=\sum_{t<\tau}\log\rho^\sharp(B_t,i_t).
+\]
+Here \(t\) counts the steps of the exposure process in the sum, and all available children, including
+those at exit, enter the normalization. Let \(g^\sharp=\log Q-L^\sharp\). At arrival, retain only the
+pair constraints of a physical square \(C\) on the same rook mask. Let \(\gamma_C\) denote the
+logarithm of the avoidance probability under the rook law minus the corresponding change in the
+predictor. Let \(\Gamma=\sum_C\gamma_C\) and \(g^\flat=g^\sharp-\Gamma\). The row-order factors are
+the same for both histories. The other probabilities telescope, since the uniform law assigns each
+prefix a mass proportional to its number of completions. Inverting on \(F_b\), where this number is
+positive and the history has positive mass under both laws, gives the exact identity
+\begin{equation}\label{eq:signed-history}
+ e^{-g^\sharp(B_n)}\nu^\sharp(F_b)
+ =\mathbb E_\mu[\exp\{-A^\sharp-\Gamma-g^\flat\};F_b].
+\end{equation}
+Henceforth \(\mathbb E[X;H]=\mathbb E[X\mathbf1_H]\). To retain the sign of the boundary contribution,
+we keep \(\Gamma\) in the identity. The remainder appears inside an expectation, so we can use the
+integrated estimate from Appendix~\ref{app:arrival} given below.
+\begin{equation}\label{eq:arrival-estimate}
+ \limsup_n n\,\mathbb E_\mu[|g^\flat|+|e^{-g^\flat}-1|;F_b]\le C_\delta b.
+\end{equation}
+For fixed \(b\) the diffusion bound gives \(|\Gamma|\le C/j\). Row consistency and the uniform
+\(O(m^{-2})\) change in \(g_T\) per move give \(|A^\sharp|\le C_b/n\) up to the common stopping time.
+Replacing \(e^{-g^\flat}\) by one incurs the cost bounded in \eqref{eq:arrival-estimate}. The Taylor
+remainder of the other factor is \(O_b(n^{-2})\). The known rate on the initial board and the rook
+estimate give \(g^\sharp(B_n)=O(n^{-1})\), with the same remainder in its exponential. The exit term,
+on the scale \(n\), is \(n\{\mu(F_b^c)-\nu^\sharp(F_b^c)\}\). For this difference to vanish, it
+suffices to show that exit has probability \(o_b(1/n)\) under each of the two laws. The available exit
+estimates use the law \(\nu\).
+
+Given the row, the ratio of the child probabilities under \(\nu^\sharp\) and \(\nu\) is
+\(e^{g_T(M_e)}/\mathbb E_{\nu,i}e^{g_T(M_{e'})}\). Every child of a regular parent satisfies
+\(|g_T|\le C/(m-1)\), including a first-exit child. The stopped product is at most
+\(\exp(O_{b,\delta}(1))\). With \(X=Qe^{-L}\), the density of \(\mu\) with respect to \(\nu\) is
+\(Xe^{A-R_Q(n)}\), where \(A\) sums the logarithms of the ordinary row normalizations. Macroscopic
+exit has weighted cost \(C\exp(-c_\delta n+C_\delta n^{2/3}+O_\delta(n^{-1}))\). For a band of size
+\(m\ge j/2\) the cost with weight \(1+X\) is \(C e^{-(c_*-2\beta)m}\), with \(c_*>2\beta\). The
+exceptional long arrival costs \(O(e^{-2j})\). On surviving the macroscopic range, we have \(|A|\le
+C_\delta/\lceil\delta n\rceil+C/j\). On the short historical arrival event the mask admits a
+completion. Summing over bands gives an exponentially small exceptional probability under both laws.
+Removing the arrival indicator from the mean of \(A^\sharp\) then costs \(o_b(1)\) after
+multiplication by \(n\). It follows that
+\begin{equation}\label{eq:signed-mean}
+ \limsup_n\left|n g^\sharp(B_n)-n\mathbb E_\mu A^\sharp
+                 -n\mathbb E_\mu[\Gamma;F_b]\right|\le C_\delta b .
+\end{equation}
+\input{partes/prueba_llegada}
+\input{partes/prueba_interior}
+\input{partes/prueba_frontera}
+\input{partes/prueba_pesos}
+\input{partes/prueba_traslado}
+\input{partes/prueba_cierre}

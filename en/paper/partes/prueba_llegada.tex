@@ -1,0 +1,55 @@
+\section{Summing the remainder at arrival}\label{app:arrival}
+A single geometric square can contribute on the scale \(1/n\) relevant to \eqref{eq:signed-mean}. After we
+subtract \(\Gamma\), each surviving support must satisfy the geometric constraints of two geometric squares.
+This additional cost lets us sum the errors with a bound that decreases with \(b\). Consider first the
+short historical arrival event \(H_j\) under \(\nu\). For a set of board squares \(Y\), we activate only the
+diagonal constraints supported on \(Y\), keeping the entire rook mask. Let \(e(Y)\) be the logarithm
+of the avoidance probability minus the change in the predictor, and let \(e_C(Y)\) be the same
+expression using only the pairs of \(C\). The coefficient of a support \(U\) is \(\sum_{Y\subseteq
+U}(-1)^{|U|-|Y|}e(Y)\). An isolated board square cancels when we pair subsets that differ only in that
+square. If all pairs belong to one geometric square, the coefficient cancels against that of \(e_C\). If two
+distinct geometric squares are involved, no \(e_C\) contributes, since the board squares would have to lie
+at the four vertices of \(C\), whose only diagonal pairs are the two of \(C\). The remainder therefore
+sums the original coefficients of supports that have no isolated board squares and contain at least two
+distinct geometric squares. The subtracted part has degree at most four.
+
+Let \(v\) be the number of board squares, \(h\) the total number of distinct row and column labels, \(D\)
+the number of free coordinates, and \(p\) the support exponent. Prescribing the \(h\) lines gives the
+factor \((j/n)^h\), together with \(\delta^{-2v}\exp(C_Lv^2/j)\) in the prescription bound. For each
+type, the number of positions is of order \(n^D\). Write \(d_*=h-D\), \(q=p-D-1\). Two distinct
+geometric squares impose two nonproportional linear equations on the row and column coordinates. Hence
+\(d_*\ge2\), and the support bound gives \(q\ge0\). The scaled factor is
+\[
+ n\,n^D j^{-p}(j/n)^h=(j/n)^{d_*-1}j^{-q}
+ \le (b/\delta_*)\delta_*^{d_*-1}j^{-q}
+ \qquad(0<b\le\delta_*).
+\]
+We factor out \(b/\delta_*\) before summing. For \(v\le4\) there is an absolute bound on the number of
+types. For noncollinear types the weighted count uses \(d_*-1+q\ge(v-4)/3\). Thus for \(5\le v\le
+N=\lceil4\log n/\log\rho\rceil\), with \(\rho\ge2\) fixed, the bound after summing over types of that
+size is
+\[
+ (b/\delta_*) C_L(C_1\delta^{-2})^v v^{d_{\rm pol}}\delta_*^{(v-4)/3}.
+\]
+Choose \(\delta_*\) so that \(C_1\delta^{-2}\delta_*^{1/3}<1\). For a collinear type with \(v\ge3\) we
+have \(p=v+2,h=2v\), with at most \(4n\,n^v/v!\) supports. This gives \(C(C_2\delta^{-2})^v
+v^2(j/n)^{v-2}\), and we decrease \(\delta_*\) once to sum this bound as well. Substituting atoms up
+to degree \(N\) incurs an error of \(O(j^{-8})\) in value, and the global norm bounds the tail by
+\(O_\rho(n^{-2})\). Both errors vanish after scaling for each fixed \(b\). Thus \(\limsup_n n\mathbb
+E_\nu[|g^\flat|;H_j]\le C_\delta b\), with \(C_\delta\) independent of \(b\).
+
+This bound controls a mean of \(|g^\flat|\) under \(\nu\). Equation \eqref{eq:signed-history} also
+involves the exponential under \(\mu\). The density factor \(X\) allows us to use the same bound for
+both, since at arrival
+\[
+ X\,|e^{-g^\flat}-1|=e^{g_T+\Gamma}|1-e^{g^\flat}|.
+\]
+On \(H_j\) the positive part of the diagonal error has a class bound, \(|g_T|+|\Gamma|\le C/j\) and
+\(|A-R_Q(n)|=O_{b,\delta}(1/n)\). We apply \(|e^y-1|\le e^{y^+}|y|\) to the density \(Xe^{A-R_Q(n)}\).
+On \(F_b\setminus H_j\) the weighted probability is \(O(e^{-2j})\). For \(0<X\le1\) we have \(X|\log
+X|\le1/e\), and above one we use \(X|\log X|\le X(C_0+\beta j)\) in the outer class. The contribution
+of this event to the left-hand side of \eqref{eq:arrival-estimate} before scaling is
+\(O((1+j)e^{-2j})\). To obtain \eqref{eq:arrival-estimate} we first fix \(\delta\), the margins,
+\(\rho\) and the class constants, then \(\delta_*\) and finally the cut-off. The threshold for \(n\)
+may depend on \(b\). The constant \(C_\delta\) works for all these cut-offs, as required by the final
+comparison of two cut-offs in Appendix~\ref{app:closing}.

@@ -1,0 +1,50 @@
+\section{Comparing two cut-offs and identifying the limit}\label{app:closing}
+The preceding estimates hold for each fixed admissible cut-off. Their thresholds for \(n\) may depend
+on the cut-off, so passage to the endpoint still requires justification. The quantity they approximate
+on the initial board is the same for all cut-offs. Let \(a_n=nR_Q(n)\), \(a_*=F(1)-1/12\),
+\(H=P_T+J-S\), and let \(b>0\) be an admissible cut-off. There are admissible cut-offs arbitrarily
+close to zero. At a positive cut-off define \(I(b)=\int_b^1 k(x)x^{-2}\,dx\) and
+\(\Phi(b)=a_*+I(b)+H\). The three boundary identifications give \(\eta(b)=\limsup_n|B_n(b)-H|\to0\).
+The interior identity holds on \([b,1]\). Combining it with \eqref{eq:signed-mean}, the boundary
+expansion with error \(O(n/j^2)\) and the limit \(n g_T(M_n)\to a_*\), we obtain
+\[
+ \limsup_n|a_n-\Phi(b)|\le C_\delta b+\eta(b)=:\varepsilon(b).
+\]
+\begin{lema}[Comparison of two cut-offs]\label{lem:dos-cortes}
+Let \((a_n)\) be a real sequence and, for each admissible cut-off \(b\), let \(\Phi(b)\in\mathbb R\)
+satisfy \(\limsup_n|a_n-\Phi(b)|\le\varepsilon(b)\), where \(\varepsilon(b)\to0\) as the cut-off
+decreases to zero. Then \(\Phi(b)\) has a finite limit \(\Phi_0\) along the admissible cut-offs and
+\(a_n\to\Phi_0\).
+\end{lema}
+\begin{proof}
+For two fixed admissible cut-offs we compare \(\Phi(b),\Phi(b')\) with the same \(a_n\), taking \(n\)
+sufficiently large for both estimates. The triangle inequality and the limit superior give
+\(|\Phi(b)-\Phi(b')|\le\varepsilon(b)+\varepsilon(b')\). The Cauchy criterion holds along the
+admissible cut-offs and \(\Phi(b)\to\Phi_0\in\mathbb R\). For each cut-off,
+\(\limsup_n|a_n-\Phi_0|\le\varepsilon(b)+|\Phi(b)-\Phi_0|\). Since the left-hand side is independent
+of \(b\), letting the cut-off decrease to zero gives \(a_n\to\Phi_0\).
+\end{proof}
+In particular, \(I(b)\) has a finite limit along these cut-offs. Throughout this argument we have used
+the physical profile, the stopped laws and their estimates at a fixed positive cut-off.
+
+\begin{proof}[Conclusion of the proof of Theorem~\ref{teo:principal} and Corollary~\ref{cor:derivada}]
+To identify the limit with the ordinary improper integral, it remains to decide whether \(k(x)/x^2\)
+can have a term proportional to \(1/x\). The zeroth-order profile identity gives \(k(0)=0\). The
+projected line resolvent is analytic near zero because the diagonal Schur block has the form
+\(\Lambda_u+x\mathcal N\), the vacancy has a positive minimum and the axial block has a spectral gap.
+The inverse and its kernel sections remain bounded on interior complex disks. Dominated integration in
+the finite contractions of the densities thus gives analyticity of \(k,G\). This regularity holds for
+any value of \(k'(0)\). On a sufficiently small interval \([0,x_0]\), write \(k(x)=k'(0)x+x^2 h(x)\),
+with \(h\) analytic and bounded. For \(0<b<x_0\),
+\[
+ I(b)=I(x_0)+k'(0)\log(x_0/b)+\int_b^{x_0}h(x)\,dx .
+\]
+The last integral remains bounded. Convergence of \(I(b)\) along the admissible cut-offs forces
+\(k'(0)=0\). From \(k'=d'-xG''\) we deduce \(d'(0)=0\) for the physical profile. The singularity of
+the integrand is then removable and the improper integral converges absolutely. Consequently, the
+value of \(\Phi_0\) is
+\[
+ \lim_{n\to\infty}n\{\log Q(n)-\log Q_{\rm pred}(n)\}
+   =F(1)-\tfrac1{12}+\int_0^1\frac{k(x)}{x^2}\,dx+P_T+J-S .
+\]
+\end{proof}

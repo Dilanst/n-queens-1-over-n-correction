@@ -1,0 +1,75 @@
+\section{Qué se acumula antes del corte y qué queda en la frontera}\label{sec:signedmap}
+Elijamos una solución uniforme y revelemos sus reinas en un orden uniforme de las filas,
+independiente de la solución. Cuando quedan \(m\) filas, el tablero residual \(B_m\) registra las
+casillas disponibles. En su máscara binaria \(M_m\) cabe un problema más sencillo: colocar una
+torre por fila y columna. Su conteo, \(\operatorname{per}M_m\), ya incorpora las restricciones
+que imponen las piezas reveladas. Para obtener \(Q(B_m)\) falta exigir que las nuevas piezas
+tampoco se ataquen entre sí por las diagonales.
+
+Esto sugiere una primera decisión. Sean \(L\) y \(L_T\) los logaritmos de los predictores de reinas
+y de torres en el tablero residual. En la parte de torres podemos usar el conteo exacto:
+\[
+ g_T(M)=\log\operatorname{per}M-L_T(M),\qquad L^\sharp(B)=L(B)+g_T(M).
+\]
+El ajuste se hace sobre la misma máscara en cada paso. Así una diferencia entre dos tableros hijos
+no mezcla el error de contar torres con el coste de prohibir un ataque diagonal. En el tablero
+inicial \(n g_T(M_n)\) tiende a \(F(1)-1/12\). La máscara llena es separable y \(F(1)=0\); de
+aquí procede el primer sumando de~\eqref{eq:main}.
+
+\paragraph{La suma hasta la parada.}
+Fijamos los márgenes de regularidad y el parámetro macroscópico \(\delta\), y después un
+\(b>0\) suficientemente pequeño. Paramos en la primera salida de la clase regular o al alcanzar
+\(j=\lfloor bn\rfloor\), como en la comparación sobre historias detenidas de~\cite{tc}. Sea \(F_b\)
+la llegada regular y completable a ese nivel.
+En cada fila, la ley adaptativa elige una casilla con probabilidad proporcional al peso de su
+tablero hijo. Si la suma de esos pesos coincidiera con el peso del padre, la recursión se
+cumpliría exactamente en esa fila. El logaritmo de su cociente mide el defecto de ese paso.
+Llamamos \(A^\sharp\) a la suma de estos logaritmos hasta la parada.
+
+La solución uniforme y la ley adaptativa utilizan la misma regla de parada. Esto permite comparar
+las probabilidades de una misma historia y conservar el signo de la diferencia de las salidas.
+El Apéndice~\ref{app:signed} da la identidad exacta y el Apéndice~\ref{app:arrival} controla
+el resto en media. A \(b\) fijo, el defecto acumulado en el interior aporta
+\(\int_b^1 k(x)x^{-2}\,dx\). El Apéndice~\ref{app:interior} identifica sus dieciséis términos.
+
+\paragraph{Lo que sobrevive en el tablero de llegada.}
+Consideremos dos casillas disponibles \(e,f\) en una misma diagonal. Están en filas y columnas
+distintas, de modo que dos torres podrían ocuparlas a la vez. Las otras dos posiciones del
+cuadrado determinan cuatro estados. Para \(e=(r,q)\) y \(f=(r+h,q+h)\), con \(h>0\),
+sean \(X\) e \(Y\) los indicadores de disponibilidad de \((r,q+h)\) y \((r+h,q)\),
+respectivamente. La Figura~\ref{fig:frontera} muestra los cuatro casos.
+\input{figuras/frontera}
+
+Los cuatro casos se realizan en la solución \((1,3,5,7,2,4,6)\) del tablero de orden siete.
+Antes de revelar una reina, \(X=Y=1\). Revelar \((7,6)\) veta sólo \(Y\) entre los cuatro
+vértices y revelar \((4,7)\) veta sólo \(X\). Si se revelan ambas, siguen disponibles \(e,f\).
+
+La respuesta del par marcado se evalúa con \(X,Y\) fijados. En el estado \(11\) se puede
+marcar cualquiera de los dos pares diagonales, y cada uno aporta su propia respuesta. Ambos
+pertenecen al mismo cuadrado, por lo que su interacción entra una sola vez en la suma sobre
+cuadrados completos. Denotamos por \(B_n(b)\) la suma de las tres medias de frontera.
+Al tomar \(n\to\infty\) y después \(b\downarrow0\), las dos medias sobre pares dan \(P_T\)
+y \(J\), y la media de interacción da \(-S\). Los Apéndices~\ref{app:boundary}
+y~\ref{app:weights} separan las contribuciones. El Apéndice~\ref{app:transfer}
+efectúa el promedio de la respuesta del par bajo la ley de llegada.
+
+\paragraph{Por qué se comparan dos cortes.}
+Para \(H=P_T+J-S\), escribamos
+\[
+ \Phi(b)=F(1)-\tfrac1{12}+\int_b^1 k(x)x^{-2}\,dx+H.
+\]
+El error cumple \(\limsup_n |nR_Q(n)-\Phi(b)|\le C_\delta b+\eta(b)\), donde
+\(\eta(b)=\limsup_n|B_n(b)-H|\to0\) al bajar \(b\). La constante \(C_\delta\) sirve para
+todos los cortes admisibles suficientemente pequeños. Cada elección de \(b\) aproxima, por tanto,
+la misma sucesión \(nR_Q(n)\). Al comparar \(b\) y \(b'\), la diferencia entre las aproximaciones
+tiende a cero con los dos cortes. Así se obtiene un límite común antes de integrar hasta el
+extremo. Por analiticidad y \(k(0)=0\), un término lineal de \(k\) produciría allí la divergencia
+\(k'(0)\log(1/b)\). La convergencia obliga a que desaparezca. El Apéndice~\ref{app:closing}
+detalla la comparación y deduce el corolario para \(d'(0)\).
+
+La Figura~\ref{fig:cortes} ilustra los dos niveles en una historia concreta. En la prueba,
+cada corte admisible da una aproximación mediante promedios sobre historias. Como ambas
+aproximaciones se refieren al mismo \(nR_Q(n)\), la desigualdad triangular da
+\(\lvert\Phi(b)-\Phi(b')\rvert\le C_\delta(b+b')+\eta(b)+\eta(b')\).
+
+\input{figuras/cortes}

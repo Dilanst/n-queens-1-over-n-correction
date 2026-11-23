@@ -1,0 +1,61 @@
+\subsection{El coeficiente del perfil y su estabilidad}
+Para sumar las dos correcciones de G1 conviene expresarlas en el mismo perfil $\nu=kP$.
+Al componer núcleos usamos las medidas uniformes de filas y columnas, de modo que cada suma
+sobre una fibra queda dividida por el tamaño del tablero. Escriba $B=\nu-1$, $A_R=BB^\top$, $A_C=B^\top B$,
+$T_X=A_X(I-A_X)^{-1}$, $U=T_RB=BT_C$ y $V=B+U$. Para $X=R,C$ sea
+$j_X(t)=(T_X-A_X)(t,t)$, $t_X(t)=T_X(t,t)$ y $j_0=\int j_R=\int j_C$.
+Los cubos en integrales dobles son potencias de los valores de los núcleos. En esta notación,
+el funcional que entra en (T) es
+\begin{align*}
+ \mathfrak F={}&\tfrac12j_0^2+\operatorname{tr}(T_R^2)-\tfrac32 j_0
+    -\tfrac34\sum_X\int j_X^2+\langle j_R,V j_C\rangle\\
+ &-\tfrac12\sum_X\langle j_X,T_Xj_X\rangle-\tfrac13\sum_X\iint T_X^3
+    +2\iint BU^2+\tfrac23\iint U^3,\qquad
+ \Phi=\mathfrak F-\tfrac1{12}.
+\end{align*}
+Sea $\bar e$ la proyección de $\nu$ en $L^2(\nu)$ sobre el ortogonal de las funciones
+aditivas de fila y columna. Ponga $m_R=\int\nu^2\,dy$, $m_C=\int\nu^2\,dx$. La parte
+determinista del coeficiente es
+\begin{align*}
+ \delta_1={}&\tfrac1{12}+\tfrac56\iint\nu^3+\tfrac12\iint\nu\bar e^2
+ -\iint V\nu\bar e-\tfrac12\iint\nu^2\\
+ &+\tfrac12\iint\nu^2(t_R+t_C)-\iint\nu^2V-\tfrac14\sum_X\int m_X^2 .
+\end{align*}
+Para obtener $\delta_1$ de la normalización, relacionamos el punto estacionario $p$ con el
+escalado $P$. Existen potenciales $\alpha,\beta$ con
+$P_{ij}=\exp(\alpha_i+\beta_j)p_{ij}(1-p_{ij})$. Multiplicar el logaritmo por $P_{ij}$
+y sumar elimina el calibre. Sustituyendo en la expresión exacta de $\Delta$ y expandiendo
+la entropía y el pseudodeterminante se obtiene $\Delta=\delta_1/k+O(k^{-2})$.
+La expansión emplea la difusión para acotar las sumas de potencias y la brecha para
+acotar las inversas. Para verificar el coeficiente, úsense $V B^\top=T_R$, $B^\top V=T_C$,
+$T_X A_X=T_X-A_X$ y que $B$ tiene marginales cero. Si $g=\iint B^2$ y
+$\gamma_X(t)=A_X(t,t)$, la proyección anterior se escribe
+\[
+ \bar e=B+g-\rho_R-\rho_C,\quad
+ \rho_R=(I+T_R)\gamma_R-V\gamma_C,\quad
+ \rho_C=(I+T_C)\gamma_C-V^\top\gamma_R .
+\]
+Sustituir esta expresión y $t_X=\gamma_X+j_X$ en $\delta_1$ y en la fórmula estática da
+$\mathfrak f_{\rm e}+\delta_1=\Phi$ en cada malla. Por tanto
+$R=R_{\rm est}+R_{\rm det}$, con $R_{\rm est}=\mathcal E(P)-\mathfrak f_{\rm e}/k$ y
+$R_{\rm det}=\Delta-\delta_1/k$. Ambos son $O(k^{-2})$, lo que prueba (T). En el cociente de
+dos permanentes aparece la diferencia de sus errores. La descomposición permite estimar esa
+diferencia por separado para $R_{\rm est}$ y $R_{\rm det}$.
+
+\paragraph{La estabilidad estática $(L^{*+})$ [D].}
+En $(L^*)$ bastaba acotar todos los diagramas de exceso al menos dos. Una vez cambiado el
+tablero, hay que reconocer cuáles de sus contribuciones sobreviven en el menor. Consérvense
+los diagramas de excesos dos y tres, con la corrección de índices coincidentes
+$-\frac56\sum C_{aa}^3$. Los mismos mayorantes dejan una cola $O(k^{-4})$.
+El promedio gamma y el logaritmo dan $R_{\rm est}=f_2/k^2+f_3/k^3+O(k^{-4})$, con
+$f_2,f_3$ uniformemente acotados. Para pasar a un menor, el defecto de masa por fibra es
+$O(k^{-1})$. Los potenciales que lo corrigen tienen norma supremo $O(k^{-1})$.
+Al quitar una sola casilla el defecto se concentra en dos fibras. La inversa en el calibre tiene
+norma supremo acotada y entradas fuera de la diagonal $O(k^{-1})$. Los potenciales son
+$O(k^{-1})$ en las dos fibras y $O(k^{-2})$ en el resto. El argumento de perturbación conserva
+la clase con cotas $2M_0,\gamma/2$. Al expandir la diferencia de un producto de propagadores
+se marca la arista cambiada. Las sumas restantes se acotan sobre un árbol generador, usando
+la norma absoluta de fila y la cota de entrada. La restricción del índice a la fibra afectada
+ahorra un factor $k^{-1}$ en el borrado localizado. Los coeficientes $f_2,f_3$ cambian en
+$O(k^{-1})$ bajo el menor y en $O(k^{-2})$ bajo el borrado. Al variar también los denominadores,
+esto da los órdenes $k^{-3}$ y $k^{-4}$ de los respectivos incrementos de $R_{\rm est}$.

@@ -1,0 +1,45 @@
+# Datos y reproducción / Data and reproduction
+
+## Réplica portátil de la estimación / English quick start
+
+Desde `suplemento/`, con Python 3 y NumPy, ejecutar en un directorio de salida que todavía no exista. Los datos de las tres tandas y los programas de análisis están incluidos. El programa recompone las extrapolaciones espaciales, la serie de radio 0,03, GL6, GL20 y los errores por partida. Verifica el valor y las dos nuevas cotas de muestreo frente al análisis archivado. La ejecución de preparación de esta entrega reprodujo **0,4055003786 [N]** al redondear a diez decimales, a partir de los agregados originales. No requiere acceso a otras carpetas.
+
+From `suplemento/`, run the following with Python 3 and NumPy. Supply a new, empty output path that does not yet exist. The three grid datasets and the original analysis modules are included. This replays the paper’s numerical recipe from finite grid data. It fits the spatial sequences, integrates the panels and the circle, recomputes the error budget and compares with the archived analysis. The expected output is **0.4055003786 [N]** to ten decimal places. The Richardson errors remain empirical.
+
+~~~sh
+python -B replica/reproducir_valor.py resultados_reproducidos
+~~~
+
+El archivo `analisis_v3_replica.json` contiene el campo `nuevo.c` y sus integrales parciales. Los directorios de réplicas sucesivas deben tener nombres diferentes. El resumen muestra las comprobaciones y las sensibilidades. La ejecución original de las mallas usó Windows, Python 3.14, NumPy y SciPy. El análisis pequeño necesita NumPy. La última combinación se contrastó contra `datos/analisis_v3b.json`. El análisis no vuelve a enumerar soluciones.
+
+## Certificados continuos ejecutables / Standalone interval calculations
+
+La carpeta [certificados](certificados/README.md) incluye los generadores del perfil, S, P_T y Q₂ en GL20 n.º 10, sus insumos, el modelo entero de 256 paneles y el código que lo construye. From `certificados/`, run `python -B verificar_insumos.py` as a quick check. Its README gives complete commands for the longer procedures. The distributed inputs suffice; the original research directories are unnecessary for these four runs.
+
+## Datos compactos que acompañan al artículo
+
+| Ficheros relativos | Contenido | Interpretación |
+|---|---|---|
+| `datos/c_n.json`, `datos/ajuste_finito.json` | Q exacto en n=10…27, logaritmo del predictor, nR, ajuste con n=16…27 | El ajuste mantiene c fijo. Sólo Q es la columna entera exacta. |
+| `replica/datos_malla/`, `replica/pc_resultados/` | Valores por malla de las tres tandas y configuración de la tanda adicional | Entradas de la réplica portable [N]. |
+| `datos/analisis_v3b.json`, `datos/balance_GL20.json` | Analizador final y cota del panel largo | El total 8,7·10⁻¹⁰ está redondeado al más próximo y depende de los δ de las muestras. |
+| `datos/muestras*.jsonl` | Muestras auxiliares de la elipse del panel largo, de la elipse corta y del círculo de radio 0,055 | Fourier y condiciones explícitas de muestreo. |
+| `datos/candidato_perfil.json`, `datos/residuo_perfil.json`, `datos/perfil_M16d14.json` | Candidato racional, verificación del residuo y cierre autónomo por coercividad | Radios [O] del perfil físico. |
+| `datos/nodos_reales.json`, `datos/circulo/`, `datos/cuadrados43.json`, `datos/coincidencias43.json` | 26 reales y 17 complejos, C3 y las cotas de las coincidencias | Distinguir cajas de integración de cotas de módulo. El alcance por fila se detalla en el preprint. |
+| `datos/intervalo_global.json`, `datos/pt_n2048.json` | Extremos exactos o exteriores de S y del ensamblaje grueso, más el refinamiento de P_T | El ensamblaje histórico contiene su propio P_T a 1024 celdas. El valor vigente usa el fichero 2048 separado. |
+| `datos/q2_completo.json`, `datos/anchura_rc.json` | Evaluación intervalar de las 17 partidas y suelo de precisión de S13 | Los tiempos y el tamaño de panel están registrados junto a los extremos. |
+
+`ORIGEN_NUMERICO.tsv` registra nombre local, nombre original y SHA256 de las 50 copias. Los datos se copiaron byte a byte y se contrastaron ambas huellas. El SHA256SUMS de la entrega incluye además el nuevo programa portátil. Los objetos [O] conservan las condiciones de aritmética exacta o exterior del certificado. No son intervalos estadísticos.
+
+## Cómo repetir las etapas anteriores desde el archivo de investigación
+
+Para regenerar los datos primarios se necesitan los programas y los insumos de las carpetas originales indicadas abajo. Estos paquetes grandes no se redistribuyen íntegros en el preprint. Cada orden se ejecuta en una **copia nueva** de su carpeta de cálculo, pues algunos programas antiguos crean los JSON directamente en el directorio de trabajo. No ejecutar esos programas en los originales. En los ejemplos, `$BASE` designa `perfil_certificado_20261121T112347Z` del archivo, y todos los archivos de salida deben ser nuevos.
+
+1. **Q y diagnóstico de tamaño finito.** Los enteros de `datos/c_n.json` son datos de entrada. La columna nR se reconstruye como `n*(log(Q)-logQpred)`. Para el ajuste de periodo cuatro usar `ens_final/r7_cn.py` en una copia de `resultados_c_final_20261122T0701Z`, con Python, NumPy y SciPy. `python -B r7_cn.py` usa el valor de la receta anterior en r6_presupuesto.json; el JSON archivado de ese ajuste se incluye. No se atribuye aquí una nueva enumeración de Q al proyecto de este artículo.
+2. **Generación de mallas.** En las copias de `malla_local_v3_20261122T0915Z` y `malla_local_v3b_muestrasV_20261122T1247Z`, `PRUEBA_RAPIDA.bat` verifica la instalación local y `EJECUTAR.bat` inicia los casos pendientes de cada configuración. La malla de cada caso está definida en config.json; el lanzador reanuda por archivo de tarea. v3 registró 955 tareas, 16 procesos y 168,3 minutos de pared. La tanda adicional registró 132 tareas y 30,1 minutos con el mismo paralelismo. El agregado precedente está en `resultados_c_final_20261122T0701Z/pc_resultados/`; los scripts de su reproducción y el ajuste de J se describen en su LEEME §Cómo reproducir. El programa portátil de arriba sustituye las rutas de la sesión histórica para la etapa de análisis v3+v3b.
+3. **Cuadratura condicional.** En una copia de `p5_cuadratura_rigurosa_20261122T0836Z`, `python -B balance.py` utiliza el muestreo GL20 archivado. Para las muestras nuevas y la serie de 32 puntos, el comando portátil reproduce los apartados `certificacion.panel` y `certificacion.serie`. El error por integración es condicional a los radios δ. La suma completa de incertidumbres depende además de los valores nodales y de J.
+4. **Perfil.** En `p6_certificacion_20261123T124757Z/perfil/`, ejecutar por orden `python -B paneles.py generar $BASE 16 14 nuevo_candidato.json`, `python -B paneles.py verificar $BASE 16 14 nuevo_certificado.json --candidato nuevo_candidato.json` y `python -B coercividad.py nuevo_certificado.json nuevo_candidato.json nuevo_log.json`. PERFIL.md explica la validación racional y el traslado del candidato anterior.
+5. **Frontera y filas explícitas.** En la subcarpeta `frontera/` de esa copia, `python -B certifica_S_perfil.py 64 1048576 $BASE nuevo_S.json` rehace la cubatura del cuadrado. El extremo autónomo final incorpora el ensanchamiento descrito en `ensamblar.py`. En `reales/`, `python -B estrechar.py replica26.json` produce las partes reales. En `circulo/`, `python -B refinar.py replica48 --orden 48` escribe un JSON por punto. En `cubos/`, `cuadrados.py`, `ajustar.py` y `deltas.py` producen las 43 cajas de cuadrados y mayorantes de las dos coincidencias. En la raíz, `python -B ensamblar.py replica_global.json` usa los certificados archivados. En `global_jet/`, `python -B directo.py replica_J.json` reconstruye el mayorante por estados de J. El ajuste numérico por clases de la etapa 2 conserva su propia incertidumbre [N].
+6. **P_T y Q₂.** En `p6_viabilidad_Q2_20261123T132743Z/pt/`, `python -B pt2048.py replica_pt.json` reproduce P_T a 2048 celdas con un hilo y los insumos de la carpeta del punto 6. La ejecución archivada consumió 111,75 s de CPU. En la raíz de la misma entrega, `python -B medir.py completo 16 replica_q2.json` y `python -B leer_anchura_rc.py replica_rc.json` reproducen el único nodo GL20 n.º 10 y el mínimo del bloque RC. Requieren el NPZ de 256 paneles de la carpeta original del punto 6. El nodo completo consumió 51,27 s de CPU y la cubatura final de S, 25,13 s de CPU. La referencia de B16 en ese nodo se reconstruye con el analizador de mallas y conserva su estado [N].
+
+**For readers using only the supplement.** The portable replay covers the fitted value, the two-panel decomposition, the short-panel and circle bounds, and the error budget. The interval package regenerates the refined profile, S, P_T and the full single-node Q₂ using its included inputs. Regeneration of the original large B16 grids, the global coarse box for J and every certified explicit row still requires the historical packages identified above. The guide distinguishes archived bounds taken as inputs from the quantities recomputed by each script.

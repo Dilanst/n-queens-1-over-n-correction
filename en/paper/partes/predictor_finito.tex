@@ -1,0 +1,33 @@
+\section{The finite predictor and the profile functionals}\label{app:predictor}
+The formula for \(\cerr\) uses the same predictor at two scales. At finite size we evaluate it
+on a specific board. Along the filling process, the rook profile and the operator relating the
+four families of lines enter the calculation. Here we fix the normalizations that connect the two
+descriptions.
+
+\subsection{The predictor on the full board}
+Let $\mathcal D$ be the set of lines in the two diagonal families. For square weights $p_z$,
+let $m_\ell=\sum_{z\in\ell}p_z$ and $h_\ell=1-m_\ell$. On the polytope with row and column sums
+equal to one, $0\le p_z\le1/4$ and $m_\ell\le1$, we maximize
+\[
+ H_n(p)=\sum_z[-p_z\log p_z+3(1-p_z)\log(1-p_z)]
+            -\sum_{\ell\in\mathcal D} h_\ell\log h_\ell .
+\]
+We use $0\log0=0$. The canonical maximizer $\pi$ is unique and lies in the interior for all
+sufficiently large $n$~\cite[\S3 and (P2.7)]{pc}. In the following expressions we evaluate all
+weights and vacancies at $\pi$. Let $A$ be the incidence matrix of squares and lines, let
+$g_z=\pi_z(1-\pi_z)/(1-4\pi_z)$, and write
+\[
+ S_n=\operatorname{diag}(0_R,0_C,h_D,h_A)+A^{\mathsf T}\operatorname{diag}(g)A,\qquad
+ L_n=-\tfrac12\sum_z[\log(1-4\pi_z)-4\log(1-\pi_z)].
+\]
+The pseudodeterminant is the product of the nonzero eigenvalues. The null direction gives the last
+normalization in the expression
+\[
+ \log Q_{\rm pred}(n)=H_n(\pi)+L_n-\tfrac12\log\operatorname{pdet} S_n
+                      +\tfrac12\log(4\pi n).
+\]
+In $4\pi n$, the symbol $\pi$ denotes the circle constant. All logarithms are natural.
+This definition fixes the finite predictor whose signed error we study. Its own finite-size
+correction relative to $\log(n!)+n\Phi+C_{\rm pred}$ is a different quantity.
+
+\input{partes/perfil}

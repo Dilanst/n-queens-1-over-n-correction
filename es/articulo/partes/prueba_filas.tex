@@ -1,0 +1,46 @@
+\subsection{Cómo se lee la expansión por filas}
+El peso de una casilla depende de cómo entra en la media de la tabla anterior. Para los términos
+que promedian un centro \(c\) usamos la medida \(\nu(c)\,dc\) y escribimos
+\(\langle\cdot\rangle_c\). Una segunda casilla independiente \(i\) lleva esa misma medida.
+Si \(i\) está en una línea \(l\) del centro, sólo queda una coordenada libre, de fila o de
+columna, y la medida en esa fibra es \(d\omega_l(i)=\eta_l\nu(i)\,dy\).
+En este párrafo \(C\) designa un núcleo distinto de la familia de columnas. Definimos
+\begin{align*}
+ A_{lh}&=(L_0-K)_{lh},\qquad B_{lh}=K_{lh}(W_{lh}-K_{lh}),\\
+ C_{lh}&=-B_{lh}(W_{lh}-2K_{lh}),\qquad
+ w(i)=\sum_{\{l,h\}\subset J(i),\,l\ne h}(L_0)_{lh}.
+\end{align*}
+Aquí \(W_{lh}\) es \(W\) en el cruce, o cero cuando no hay cruce.
+Escribimos \(A(i,c)=\sum_{l\in J(i),\,h\in J(c)}A_{lh}\) y lo mismo para \(B,C\).
+Si el primer argumento es una sola línea sólo se suma sobre \(h\).
+Tras las sumas ponemos \(M_2=A^2+B,\ M_3=A^3+3AB+C\). El término cúbico distingue tres
+promedios según se elija una casilla independiente, una línea diagonal o una casilla en una
+fibra del centro. Con sus signos respectivos se obtiene
+\begin{align*}
+ f2E&=\left\langle -M_3(i,c)/6+\tfrac32 W(i)M_2(i,c)\right\rangle_{i,c},\\
+ f2z&=-\tfrac16\left\langle
+ \int_{l\in D\cup A}\frac{u_l}{U_l}M_3(l,c)\,d\rho_l\right\rangle_c ,\\
+ f2F&=\left\langle\sum_{l\in J(c)}\int_{i\in l}W(i)^2\,d\omega_l(i)\right\rangle_c .
+\end{align*}
+La medida \(d\rho\) es la del continuo representada por los pesos de línea de la
+Sección~\ref{sec:profile-data}. Otros cuatro términos usan esos mismos promedios:
+\begin{align*}
+ G_{\rm cof}&=-\tfrac12-3\langle W^2\rangle_c,\qquad
+ f4_{\rm expl}=-9\langle W^2\rangle_c,\\
+ f4_{L0}&=\langle Ww\rangle_c,\qquad f5c=-3\langle Ww\rangle_c .
+\end{align*}
+Para \(C3_{\rm cuad}\) se consideran un centro y tres casillas trasladadas que completan el cuadrado.
+Se toman las dos bases orientadas (fila--columna y diagonal--antidiagonal) y ambos signos
+en cada dirección. El peso es el producto de los cuatro \(W\), de \(x^{n_{RC}-3}\) y de los
+\(U_l\) de las líneas diagonales distintas. Aquí \(n_{RC}\) cuenta las filas y columnas distintas.
+Se integra con medida de Lebesgue \(dr\,dc\,dh\), con \(h>0\) y el cuadrado dentro del tablero.
+Los cuatro factores \(W\) ya aportan el peso físico, sin una densidad adicional en el centro.
+En la implementación por malla el lado cero lleva peso mitad.
+En \(f3F\) el término cuadrático de fibra incluye la varianza y la covarianza por líneas compartidas;
+\(f3c\) recoge las dos contracciones del centro. En \(f5F\) se integra sobre la fibra el
+producto de \(-w(i)\) por la suma de sus respuestas de línea. En \(f7\) se eleva al cuadrado
+\emph{después} de sumar las respuestas en la fibra y el exterior del centro. Por último,
+\(Q1,Q2\) toman los términos de traza lineal y cuadrático respecto de ese mismo centro, con las
+correcciones \(\Delta_1,\Delta_2\) del producto sobre líneas distintas ya indicadas.
+Estas medidas y multiplicidades fijan el integrando interior \(d(x)\). En la llegada hay
+que promediar los pares diagonales que quedan disponibles en la máscara de torres.

@@ -1,0 +1,114 @@
+\section{Calculation of the coefficient}\label{sec:numeval}
+Formula~\eqref{eq:main} allows us to calculate $\cerr$ from the physical profile. For each value of
+$x$ the sixteen contributions to $d(x)$ must be summed over the positions on the board. The first
+evaluations, which averaged a few central squares, gave spatial errors of $10^{-5}$ to $10^{-3}$.
+In particular, the line resolvent had to be evaluated again for configurations that shared a square.
+The rectangle method sums all the centers of an incidence pattern on the same grid. Once the values
+at $x$ have been obtained, one integrates in that variable and adds the boundary terms.
+
+\subsection{The rectangle method}\label{sec:rectangulos}
+The idea comes from the rectangle technique for the constant term~\cite[\S4]{tc}. There the norm
+of an error matrix $E$ is controlled by
+\[
+ \operatorname{tr}\bigl((EE^{\mathsf T})^2\bigr)=\sum_{i,i',j,j'}E_{ij}E_{i'j}E_{i'j'}E_{ij'},
+\]
+a sum over rectangles with two rows and two columns. Each summand is expanded into sixteen
+patterns $T\subseteq\{1,2,3,4\}$, according to which vertices carry their diagonal lines, with sign
+$(-1)^{4-|T|}$. Since $1-4+6-4+1=0$, the leading order cancels exactly. The method carries that
+bookkeeping over to the sixteen contributions to $d(x)$. Each is a sum over short closed walks of
+squares joined by lines, triangles, and walks of up to four vertices with the four families, and
+the patterns are grouped before integration. Thus each group is the trace of a product of small
+matrices on the same grid.
+
+The accuracy needed is dictated by the endpoint $x=0$, where $k/x^2$ amplifies the errors. With a
+sixteen-point Gauss--Legendre rule on $[0,1]$, the error in one row at the first node enters the
+integral multiplied by $w_1/x_1^2\approx483$. For this reason a series is used near the origin.
+The numerical calculation aims for an accuracy of order $10^{-10}$ at the nodes, and the derivatives
+at the origin are also evaluated. The rearrangement of the sums is exact on each grid. Separately,
+with a grid profile with exact marginals, the residuals of the two cancellations were measured in
+floating point. For $5\le m\le48$, in both parities, the observed values satisfied
+$|k_m(0)|\le7.5\cdot10^{-13}$ and $|d_m'(0)|\le1.3\cdot10^{-11}$ \status{N}.
+
+\subsection{A grid closed under line intersections}
+We number the rows and columns starting at zero and place the square $(i,j)$ at
+$((i+1/2)/m,(j+1/2)/m)$. There are $6m-2$ lines. The diagonals with integer indices $i-j$ and $i+j$
+that pass through the square have the same parity. Conversely, two diagonal indices of the same
+parity give a square if their intersection falls inside the board. In the continuum the two parities
+give four oblique sheets, in addition to the axial sheets $R,C$. Let $\nu_1$ be the profile density
+of a complete solution, denoted by $\nu$ in Appendix~\ref{app:predictor}.
+For $x>0$ we take $U_f=u_f+x(1-u_f)$ on an oblique line and
+$W=\nu_1/(U_DU_A)$. When lines $a,b$ intersect, $K_{ab}$ is the value of $\nu_1$ at the intersection
+multiplied by $x/U_f$ for each oblique line $f$ of the pair. The other entries vanish. The diagonal
+matrix $\rho$ has value $1/m$ on the axial lines and $U_f/(xm)$ on the oblique lines. Let $v$ be
+the vector with values $1,-1,0$ on rows, columns, and oblique lines, respectively. The kernel of the
+contractions is
+\[
+ \Pi=vv^{\mathsf T}/2,\qquad
+ L_0=K(I+\rho K+\rho\Pi)^{-1}\rho K-\tfrac32vv^{\mathsf T}.
+\]
+The integrand at $x=0$ is defined by continuation. Both sheets are retained on the grid when an
+observable takes values on a single parity.
+
+For a square weight $h$, let $N_h(a,b)=h(a\cap b)$ if the distinct lines $a,b$ intersect in a grid
+square. The other entries are zero. A product of these matrices sums walks along line incidences.
+The trace identifies the last index with the first, and the diagonal matrices insert the line
+measures. For example, $\operatorname{tr}(N_1D_1N_2D_2N_3D_3)$ sums the product of the three
+weights over the triangles. Figure~\ref{fig:rectangulos} shows two rectangles in the part of
+$\operatorname{tr}(N_{h_1}N_{h_2}N_{h_3}N_{h_4})$ that alternates rows and columns. The sixteen
+contributions to $d$ are evaluated by matrix products, bilinear forms, and local sums. Walks with
+up to four vertices appear in row $f_6$. The trace rearranges a finite sum exactly. Comparing it
+with a direct count on the same grid checks the implementation. To estimate the continuum integral
+one must vary $m$.
+\input{figuras/rectangulos}
+
+\subsection{From the grid sum to the value at each node}
+At accidental coincidences the limiting value of the continuum is retained. In the sum over squares
+a half weight is assigned to the side of length zero. Changing $m$ also changes the position of the
+folds relative to the nodes. Thus grids of the same congruence class are taken for each fit in even
+powers of $1/m$, as in Richardson extrapolation~\cite{richardson}. If there are enough new grids for
+$Q_2$, the classes $0$ and $12$ modulo $24$ are fitted separately, with powers $2,4,6$. The mean of
+the two intercepts is taken. Their difference, a change in the minimum grid, and the largest fit
+residual measure the sensitivity. The resulting bars have status [N]. Certifying this extrapolation
+would require bounding the spatial remainder in each class.
+
+For the boundary sum the numerical analysis gives
+\[
+ J=-8.2386091222\ \pm5.0\,10^{-9},\qquad
+ P_0=-7.7933777386\ \pm5.0\,10^{-9}\qquad\text{[N]}.
+\]
+For $J$ one orientation of the pair is summed and the other is included by symmetry. Adding
+$P_T=0.4452313836$ gives $P_0$. The square interaction enters separately with a negative sign,
+with $S=15.6334582804$. Section~\ref{sec:numcert} gives the rigorous enclosures of $P_T$ and $S$.
+
+\subsection{The singular endpoint and the error budget}
+To integrate with the weight $x^{-2}$ it is convenient first to extract the part with an explicit
+antiderivative. We separate the rook functional by setting
+\[
+ k_F=F-F(0)-xF',\qquad
+ k_6=k-k_F=d+\mathcal V-x\mathcal V'+F(0)-1/12.
+\]
+Differentiating $(F(x)-F(0))/x$ shows that the integral of $k_F/x^2$ equals $F(0)+F'(0)-F(1)$.
+In $k_6$ the cancellations of the constant and linear terms leave a series that can be integrated
+down to zero. It is reconstructed from 32 equally spaced points on $|x|=0.03$ (17 independent by
+conjugation). Six Gauss--Legendre nodes on $[0.03;0.06]$ and twenty on $[0.06;1]$ are then used.
+In the budget below, the errors in the nodal data are estimated by varying the spatial grid. The
+series and quadrature bound follows from the assumed tolerances for the contour samples in
+Appendix~\ref{app:numquad}.
+
+\begin{center}\small
+\begin{tabular}{lr}
+Source & Contribution to the numerical error budget\\ \hline
+Nodal data from the twenty-point panel & $2.8\,10^{-8}$\\
+Data from the circle of radius $0.03$ & $1.4\,10^{-8}$\\
+Boundary value $P_0$ & $5.0\,10^{-9}$\\
+Nodal data from the six-point panel & $2.3\,10^{-9}$\\
+Series and quadrature, conditional upper bound & $8.74\,10^{-10}$\\
+Value of $S$ in the numerical calculation & $2.0\,10^{-12}$
+\end{tabular}
+\end{center}
+The calculation gives $0.4055003786$. The largest contributions to the error come from the values
+on the twenty-point panel and on the circle. The quadratic combination of the indicators is
+$3.2\,10^{-8}$ and the linear one is $5.0\,10^{-8}$. When the fit for $Q_2$ was changed, the result
+varied between $-3.7\,10^{-9}$ and $+7.6\,10^{-9}$ relative to the reference. On the basis of these
+empirical checks we report $0.40550038\pm3\,10^{-8}$ [N], with the conservative estimate
+$0.4055004\pm2\,10^{-7}$ [N].

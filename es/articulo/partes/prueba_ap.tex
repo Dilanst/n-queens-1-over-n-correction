@@ -1,0 +1,62 @@
+\section{Identidad con signo y estimación de llegada}\label{app:signed}
+Al revelar una reina, la ley uniforme pondera cada hijo por sus completaciones y la ley
+adaptativa lo pondera por el predictor. Al comparar ambas a lo largo de una historia hay que
+conservar la normalización de cada fila y el valor del predictor al detenerse.
+Sea \(\mu\) la ley de la solución uniforme con el orden independiente de filas, y sean \(\nu\)
+y \(\nu^\sharp\) las leyes adaptativas de \(L\) y \(L^\sharp\). Dada la fila \(i\), pongamos
+\[
+ \rho^\sharp(B,i)=\sum_{e\in i}\exp(L^\sharp(B+e)-L^\sharp(B)),\qquad
+ A^\sharp=\sum_{t<\tau}\log\rho^\sharp(B_t,i_t).
+\]
+Aquí \(t\) cuenta los pasos de revelado en la suma y todos los hijos disponibles, incluidos los de salida,
+intervienen en la normalización. Sea \(g^\sharp=\log Q-L^\sharp\). En la llegada conservemos
+sólo las restricciones de pares de un cuadrado físico \(C\) sobre la misma máscara de torres.
+Denotemos por \(\gamma_C\) el logaritmo de la probabilidad de evitación bajo torres menos el
+cambio correspondiente en el predictor. Sean \(\Gamma=\sum_C\gamma_C\) y
+\(g^\flat=g^\sharp-\Gamma\). Los factores del orden de filas son iguales en las dos historias.
+Las demás probabilidades se telescopan, pues la ley uniforme asigna a cada prefijo una masa
+proporcional a su número de completaciones. Al invertir en \(F_b\), donde dicho número es
+positivo y la historia tiene masa positiva bajo ambas leyes, se obtiene la identidad exacta
+\begin{equation}\label{eq:signed-history}
+ e^{-g^\sharp(B_n)}\nu^\sharp(F_b)
+ =\mathbb E_\mu[\exp\{-A^\sharp-\Gamma-g^\flat\};F_b].
+\end{equation}
+En adelante \(\mathbb E[X;H]=\mathbb E[X\mathbf1_H]\). Para conservar el signo de la frontera
+dejamos \(\Gamma\) en la identidad. El resto aparece dentro de una esperanza, lo que permite
+usar la siguiente estimación integrada del apéndice~\ref{app:arrival}
+\begin{equation}\label{eq:arrival-estimate}
+ \limsup_n n\,\mathbb E_\mu[|g^\flat|+|e^{-g^\flat}-1|;F_b]\le C_\delta b.
+\end{equation}
+A \(b\) fijo la difusión da \(|\Gamma|\le C/j\). La consistencia por fila y el cambio
+uniforme \(O(m^{-2})\) de \(g_T\) por jugada dan \(|A^\sharp|\le C_b/n\) hasta la parada
+común. Sustituir \(e^{-g^\flat}\) por uno cuesta lo que acota \eqref{eq:arrival-estimate}.
+El resto de Taylor del otro factor es \(O_b(n^{-2})\). La velocidad conocida del tablero inicial
+y la estimación de torres dan \(g^\sharp(B_n)=O(n^{-1})\), con el mismo resto en su exponencial.
+El término de salida, a escala \(n\), es \(n\{\mu(F_b^c)-\nu^\sharp(F_b^c)\}\).
+Para que esta diferencia desaparezca basta probar que la salida bajo cada una de las dos leyes
+tiene probabilidad \(o_b(1/n)\). Las estimaciones de salida disponibles usan la ley \(\nu\).
+
+El cociente de probabilidades de hijo bajo \(\nu^\sharp\) y \(\nu\), dada la fila, es
+\(e^{g_T(M_e)}/\mathbb E_{\nu,i}e^{g_T(M_{e'})}\).
+Todos los hijos del padre regular cumplen \(|g_T|\le C/(m-1)\), incluido el de primera
+salida. El producto detenido es a lo sumo \(\exp(O_{b,\delta}(1))\). Con \(X=Qe^{-L}\),
+la densidad de \(\mu\) respecto de \(\nu\) es \(Xe^{A-R_Q(n)}\), donde \(A\) suma los
+logaritmos de las normalizaciones de fila ordinarias. La salida macroscópica tiene coste ponderado
+\(C\exp(-c_\delta n+C_\delta n^{2/3}+O_\delta(n^{-1}))\).
+Para una banda de tamaño \(m\ge j/2\) el coste con peso \(1+X\) es
+\(C e^{-(c_*-2\beta)m}\), con \(c_*>2\beta\).
+La llegada larga excepcional cuesta \(O(e^{-2j})\).
+Al sobrevivir el tramo macroscópico se cumple \(|A|\le C_\delta/\lceil\delta n\rceil+C/j\).
+En la llegada histórica corta la máscara es completable. La suma por bandas da una
+excepción exponencialmente pequeña bajo ambas leyes. Retirar el indicador de llegada en la media
+de \(A^\sharp\) cuesta entonces \(o_b(1)\) tras multiplicar por \(n\). Se sigue que
+\begin{equation}\label{eq:signed-mean}
+ \limsup_n\left|n g^\sharp(B_n)-n\mathbb E_\mu A^\sharp
+                 -n\mathbb E_\mu[\Gamma;F_b]\right|\le C_\delta b .
+\end{equation}
+\input{partes/prueba_llegada}
+\input{partes/prueba_interior}
+\input{partes/prueba_frontera}
+\input{partes/prueba_pesos}
+\input{partes/prueba_traslado}
+\input{partes/prueba_cierre}

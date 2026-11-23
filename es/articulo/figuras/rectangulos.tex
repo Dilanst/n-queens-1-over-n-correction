@@ -1,0 +1,28 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.56cm,y=.56cm,
+  vertice/.style={circle,draw=btinta,fill=white,text=btinta,font=\scriptsize\bfseries,
+    inner sep=0pt,minimum size=3.5mm},
+  paso/.style={->,>=stealth,draw=btinta,line width=.85pt}]
+  \foreach \dx/\izq/\der in {0/1/3,9.7/2/4}{
+    \begin{scope}[shift={(\dx,0)}]
+      \bcuadriculacero{6}
+      \node[vertice] (v1) at ({\izq+.5},4.5) {1};
+      \node[vertice] (v2) at ({\izq+.5},1.5) {2};
+      \node[vertice] (v3) at ({\der+.5},1.5) {3};
+      \node[vertice] (v4) at ({\der+.5},4.5) {4};
+      \draw[paso] (v1)--(v2);
+      \draw[paso] (v2)--(v3);
+      \draw[paso] (v3)--(v4);
+      \draw[paso] (v4)--(v1);
+      \node[font=\small] at (3,-.73)
+        {$R_1\to C_{\izq}\to R_4\to C_{\der}\to R_1$};
+    \end{scope}
+  }
+\end{tikzpicture}
+\caption{Dos sumandos de una traza de cuatro incidencias en la malla $6\times6$.
+El vértice $k$ marca la intersección donde $N_{h_k}$ evalúa $h_k$. A la izquierda, el producto es
+$h_1(1,1)h_2(4,1)h_3(4,3)h_4(1,3)$. A la derecha, cada columna aumenta en uno.
+El cuarto factor vuelve a la fila inicial $R_1$. La suma recorre índices de línea ordenados.
+Cada fórmula fija las medidas y las multiplicidades.}\label{fig:rectangulos}
+\end{figure}

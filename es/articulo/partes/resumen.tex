@@ -1,0 +1,26 @@
+\begin{abstract}
+\noindent Sea \(Q(n)\) el número de formas de colocar \(n\) reinas sin ataques mutuos en un tablero
+de \(n\times n\). Al tomar logaritmos, el conteo y su predictor canónico \(Q_{\rm pred}(n)\) tienen
+el mismo término principal y la misma constante \(C_{\rm pred}\). Demostramos que el error con signo
+\(R_Q(n)=\log\bigl(Q(n)/Q_{\rm pred}(n)\bigr)\) cumple \(nR_Q(n)\to\cerr\) y damos una fórmula
+explícita para \(\cerr\). En particular, \(Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(1/n)\), la tasa que se
+había conjeturado para el predictor.
+
+\smallskip\noindent
+Para obtener la fórmula elegimos una solución uniformemente al azar y revelamos sus filas en orden
+aleatorio. El límite reúne una corrección inicial, la integral del defecto medio que deja cada
+inserción y tres contribuciones del tablero que queda al detener el proceso: la de las torres, la de
+un par de casillas en una misma diagonal y la de la interacción de las dos diagonales de un
+cuadrado. Comparar dos niveles de parada da el límite y prueba que la integral converge
+absolutamente.
+
+\smallskip\noindent
+La evaluación numérica da \(\cerr\approx0{,}40550038\), con una incertidumbre empírica de
+\(3\cdot10^{-8}\). La cuadratura y la serie de ese cálculo tienen una cota demostrada de
+\(8{,}74\cdot10^{-10}\) si los valores en los puntos de muestreo cumplen las tolerancias declaradas.
+Certificar rigurosamente el signo y las cifras decimales de \(\cerr\) sigue siendo un problema
+abierto.
+\end{abstract}
+
+\noindent\textbf{Palabras clave:} problema de las $n$ reinas; enumeración asintótica; permanentes;
+problema de torres; aritmética de intervalos.\quad \textbf{MSC 2020:} 05A16, 60C05, 15A15.

@@ -1,0 +1,84 @@
+\section{El permanente y el predictor de torres}\label{app:torres}
+\label{app:rook}
+\paragraph{La reducción G1 [D].}
+En la comparación de $\operatorname{per}M$ con $\operatorname{per}M_e$ cambian tanto el tamaño
+como el escalado bistocástico. Separamos el error $g_T$ en dos cantidades que podemos calcular
+en un mismo escalado. El vector de incidencia $a_e$ tiene un uno en la fila y otro en la columna
+de $e$.
+Sean $\tau_e=p_e(1-p_e)/(1-2p_e)$ y $S_T=\sum_e\tau_e a_ea_e^\top$.
+El producto de sus autovalores positivos es $\operatorname{pdet}S_T$.
+Con sumas sobre las casillas permitidas, la normalización en ambos extremos de un incremento es
+\[
+\begin{aligned}
+ H_T(p)&=\sum_e[-p_e\log(p_e/w_e)+(1-p_e)\log(1-p_e)],\\
+ L_T(M)&=H_T(p)-\tfrac12\sum_e\log\frac{1-2p_e}{(1-p_e)^2}
+         -\tfrac12\log\operatorname{pdet} S_T+\tfrac12\log(4\pi k).
+\end{aligned}
+\]
+Escalar las filas por $u_i$ y las columnas por $v_j$ incrementa $H_T$ y el logaritmo del
+permanente en las mismas sumas de logaritmos. Los demás términos dependen de $p$, invariante
+bajo este escalado. Así $g_T(M)=g_T(P)$. Para una matriz bistocástica $D$ de tamaño $K$, defina
+\[
+ b_D=D-J_K,\qquad
+ \mathcal E(D)=\log\frac{K^K\operatorname{per}D}{K!}
+             +\tfrac12\log\det(I-b_D^\top b_D).
+\]
+El logaritmo del permanente se cancela exactamente en $\Delta=g_T(M)-\mathcal E(P)$. Quedan dos
+cálculos. Para $\mathcal E(P)$ hay que hallar la primera corrección al determinante principal
+del permanente. Para $\Delta$ basta desarrollar los términos explícitos de la normalización.
+
+\paragraph{La estimación estática $(L^*)$ [D].}
+El determinante principal en la clase difusa con brecha se obtiene en~\cite{dw}. El desarrollo
+de McCullagh~\cite{mcc} identifica correcciones formales y la estimación de Li~\cite{li} trata
+perturbaciones de norma de línea sublineal. Aquí necesitamos que, al extraer el coeficiente de
+$1/K$, el error sea $O(K^{-2})$ con una misma constante para toda la clase. Para probarlo,
+reunimos los menores del núcleo centrado en el polinomio
+\[
+ \mathcal R_b(s)=\sum_{\ell=0}^K s^\ell
+         \sum_{|I|=|J|=\ell}\operatorname{per} b[I,J],\qquad b=b_D .
+\]
+Expandir $\operatorname{per}(J_K+b)$ y usar
+$\mathbb E T^{-\ell}=(K-\ell)!/K!$ para $T\sim\Gamma(K+1,1)$ da
+$K^K\operatorname{per}D/K!=\mathbb E\,\mathcal R_b(K/T)$.
+Para $b=U\Sigma V^\top$ y $Z$ gaussiano complejo estándar, la regla de Wick identifica
+$\mathcal R_b(s)$ con $\mathbb E\prod_a(1+w_a)$, donde
+$w=\sqrt{s}(U\Sigma^{1/2}Z,V\Sigma^{1/2}\overline Z)$.
+Los términos lineales suman cero. Absorber $\exp(-\sum_a w_a^2/2)$ en la densidad da
+\[
+ \mathcal R_b(s)=h(s)\widetilde{\mathbb E}\prod_a (1+w_a)e^{-w_a+w_a^2/2},\qquad
+ h(s)=\det(I-s^2b^\top b)^{-1/2}.
+\]
+Para $s$ real cerca de uno, $C=\widetilde{\mathbb E}ww^\top=sB_0(I+sB_0)^{-1}$,
+donde $B_0$ tiene bloques diagonales nulos y bloques cruzados $b,b^\top$.
+El factor de cada casilla empieza en $1+w^3/3-w^4/4$. En el primer orden hay un vértice de
+grado cuatro o dos de grado tres. Hay tres emparejamientos en el vértice cuártico.
+En el caso cúbico, seis dan tres aristas entre vértices y nueve dan un lazo en cada uno.
+La expresión con sumas sobre todos los índices es
+\[
+ \frac{\mathfrak f(s)}K=-\frac34\sum_a C_{aa}^2+
+ \sum_{a,a'}\left(\tfrac12 C_{aa}C_{aa'}C_{a'a'}+\tfrac13 C_{aa'}^3\right).
+\]
+La restricción a índices distintos del producto añade $-\frac56\sum_a C_{aa}^3=O(K^{-2})$.
+Esta corrección se conserva al pasar al orden siguiente. Tómese $\delta=\gamma/4$.
+La brecha da entradas $O(1/K)$ y sumas absolutas de fila acotadas para el propagador.
+El desarrollo se trunca en el orden $N=\lceil\kappa\sqrt K\rceil$ en un parámetro de interpolación.
+Para diagramas de exceso $j$ (aristas menos vértices), su cota absoluta hasta ese corte es
+$2j(j\Lambda/K)^j$, con $\Lambda$ de clase. Sumar desde $j=2$ cuesta $O(K^{-2})$,
+pues el cociente entre mayorantes es menor que $1/2$ para $j\le N$ y $K$ grande.
+La cola admite un mayorante $C\exp(C_1\sqrt K)r^{-N}$ con $r>1$ de clase. La elección de
+$\kappa$ da decaimiento exponencial en $\sqrt K$.
+En el exterior de $|K/T-1|\le\delta$ se usa
+$|\mathcal R_b(s)|\le\mathbb E(1+s\sum_l\sigma_l|Z_l|^2/K)^K$.
+La densidad gamma absorbe la potencia por traslación. Sus colas y
+$\sum_l\sigma_l\le\sqrt{K(M_0-1)}$ dan $O(\exp(-cK+C\sqrt K))$.
+Como $\mathbb E(K/T)=1$ y $\mathbb E(K/T-1)^2=1/(K-1)$, la expansión con
+momentos tercero y cuarto de orden $O(K^{-2})$ da
+\[
+ \mathcal E(D)=\mathfrak f_{\rm e}(KD)/K+O(K^{-2}),\qquad
+ \mathfrak f_{\rm e}=\mathfrak f(1)+h''(1)/(2h(1)).
+\]
+El término con $h''(1)$ recoge la variación del determinante al promediar en $K/T$. Para obtener
+el coeficiente del error $g_T$ falta sumar a esta expresión la contribución de $\Delta$.
+\input{partes/torres_estabilidad}
+\input{partes/torres_incrementos}
+\input{partes/torres_pares}

@@ -1,0 +1,74 @@
+\section{What accumulates before the cut-off and what remains at the boundary}\label{sec:signedmap}
+Choose a solution uniformly and expose its queens in a uniform row order independent of the solution.
+When \(m\) rows remain, the residual board \(B_m\) records the available squares. Its binary mask
+\(M_m\) admits a simpler problem, that of placing one rook in each row and each column. The resulting
+count, \(\operatorname{per}M_m\), already incorporates the constraints imposed by the exposed pieces.
+To obtain \(Q(B_m)\), we must also require that the new pieces do not attack one another along the
+diagonals.
+
+This suggests a first choice. Let \(L\) and \(L_T\) be the logarithms of the queen and rook predictors
+on the residual board. For the rook part we can use the exact count by setting
+\[
+ g_T(M)=\log\operatorname{per}M-L_T(M),\qquad L^\sharp(B)=L(B)+g_T(M).
+\]
+We make the adjustment on the same mask at each step. Thus the difference between two child boards
+separates the rook counting error from the cost of forbidding a diagonal attack. On the initial board
+\(n g_T(M_n)\) tends to \(F(1)-1/12\). The full mask is separable and \(F(1)=0\), which gives the
+first term in~\eqref{eq:main}.
+
+\paragraph{The sum up to the stopping time.}
+We fix the regularity margins and the macroscopic parameter \(\delta\), then choose \(b>0\)
+sufficiently small. We stop at the first exit from the regular class or upon reaching \(j=\lfloor
+bn\rfloor\), as in the comparison of stopped histories in~\cite{tc}. Let \(F_b\) be the event of
+regular arrival at that level with a board that admits a completion. In each row, the adaptive law
+chooses a square with probability proportional to the weight of its child board. If the sum of these
+weights equaled the weight of the parent, the recursion would hold exactly in that row. The logarithm
+of their ratio measures the defect at that step. We denote the sum of these logarithms up to the
+stopping time by \(A^\sharp\).
+
+The uniform solution and the adaptive law use the same stopping rule. We can therefore compare the
+probabilities of the same history and retain the sign of the difference in exit probabilities.
+Appendix~\ref{app:signed} gives the exact identity, and Appendix~\ref{app:arrival} bounds the remainder
+in mean. For fixed \(b\), the defect accumulated in the interior contributes \(\int_b^1
+k(x)x^{-2}\,dx\). Appendix~\ref{app:interior} identifies its sixteen terms.
+
+\paragraph{What survives on the arrival board.}
+Consider two available squares \(e,f\) on the same diagonal. They lie in different rows and columns,
+so two rooks could occupy them simultaneously. The other two positions of the square determine four
+states. For \(e=(r,q)\) and \(f=(r+h,q+h)\), with \(h>0\), let \(X\) and \(Y\) be the availability
+indicators of \((r,q+h)\) and \((r+h,q)\), respectively. Figure~\ref{fig:frontera} shows the four
+cases.
+\input{figuras/frontera}
+
+All four cases occur in the solution \((1,3,5,7,2,4,6)\) on the board of order seven. Before any queen
+is exposed, \(X=Y=1\). Exposing \((7,6)\) rules out only \(Y\) among the four vertices, and exposing
+\((4,7)\) rules out only \(X\). If both queens are exposed, \(e,f\) remain available.
+
+We evaluate the response of the marked pair with \(X,Y\) fixed. In state \(11\) either diagonal pair
+can be marked, and each contributes its own response. Both belong to the same square, so their
+interaction enters the sum over complete squares only once. We denote the sum of the three boundary
+means by \(B_n(b)\). Taking \(n\to\infty\) and then \(b\downarrow0\), the two means over pairs give
+\(P_T\) and \(J\), and the interaction mean gives \(-S\). Appendices~\ref{app:boundary}
+and~\ref{app:weights} separate the contributions. Appendix~\ref{app:transfer} averages the pair
+response under the arrival law.
+
+\paragraph{Why compare two cut-offs?}
+For \(H=P_T+J-S\), write
+\[
+ \Phi(b)=F(1)-\tfrac1{12}+\int_b^1 k(x)x^{-2}\,dx+H.
+\]
+The error satisfies \(\limsup_n |nR_Q(n)-\Phi(b)|\le C_\delta b+\eta(b)\), where
+\(\eta(b)=\limsup_n|B_n(b)-H|\to0\) as \(b\) decreases. The constant \(C_\delta\) applies to all
+sufficiently small admissible cut-offs. Thus each choice of \(b\) gives an approximation to the same
+sequence \(nR_Q(n)\). Comparing \(b\) and \(b'\), we see that the difference between the
+approximations tends to zero as both cut-offs go to zero. This gives a common limit before we
+integrate all the way to the endpoint. By analyticity and \(k(0)=0\), a linear term in \(k\) would
+produce the divergence \(k'(0)\log(1/b)\) there. Convergence forces this term to vanish.
+Appendix~\ref{app:closing} gives the comparison in detail and derives the corollary for \(d'(0)\).
+
+Figure~\ref{fig:cortes} illustrates the two levels in a particular history. In the proof, each
+admissible cut-off gives an approximation by averaging over histories. Since both approximations
+concern the same \(nR_Q(n)\), the triangle inequality gives \(\lvert\Phi(b)-\Phi(b')\rvert\le
+C_\delta(b+b')+\eta(b)+\eta(b')\).
+
+\input{figuras/cortes}

@@ -1,0 +1,78 @@
+\section{La media interior a corte positivo}\label{app:interior}
+A corte fijo, \eqref{eq:signed-mean} requiere sumar los logaritmos de las normalizaciones
+de fila hasta la parada y tomar su media. En un hijo la primera corrección es de tamaño \(1/m\). Antes de
+sumar en \(m\) hay que aprovechar su cancelación entre los hijos de una misma fila.
+Para el predictor de cuatro familias, la fórmula de inserción da en cada padre regular de
+tamaño \(m\) del suceso macroscópico auxiliar hasta \(b\),
+\[
+ L(B+e)-L(B)=\log[p_e(1+\delta_e)]+r_e^{\rm PC},\qquad
+ \sum_{e\in i}p_e\delta_e=0,\quad
+ |\delta_e|\le C_b/m,\quad |r_e^{\rm PC}|\le C_b/m^2 .
+\]
+Aquí los \(p_e\) pertenecen al punto estacionario de cuatro familias. Al sumar en la fila sale
+\(\log\rho(B,i)=\sum_{e\in i}p_e r_e^{\rm PC}+O_b(m^{-3})\). Reemplazar
+\(p_e(1+\delta_e)\) por \(p_e\) cuesta \(O_b(m^{-3})\).
+Escribamos \(V=\ell+\tfrac12\log\det S_{0,\rm gf}+3\sum p_e^2\) para el potencial local
+de la expansión estacionaria (\(\ell\) es el término local y el cofactor usa el calibre fijo).
+Sea \(\delta_e^0\) su corrección lineal centrada y \(P_e\) el resto de segundo orden tras
+extraer \(\Delta_e V=V(B+e)-V(B)\) y \(\delta_e^0\) de \(L(B+e)-L(B)-\log p_e\).
+Taylor da
+\[
+ r_e^{\rm PC}=\Delta_e V+P_e+\tfrac12(\delta_e^0)^2
+                   +(\delta_e^0-\delta_e)+O_b(m^{-3}).
+\]
+Aunque \(\delta_e-\delta_e^0=O_b(m^{-2})\) tiene el orden que buscamos, ambas correcciones
+tienen media de fila cero y su diferencia desaparece exactamente. El error cúbico tras sumar
+es \(O_b(n\sum_{m>j}m^{-3})=O_b(n^{-1})\). El potencial aporta sus valores en los extremos.
+La parte que hay que promediar en todo el intervalo es \(m^2[P_e+(\delta_e^0)^2/2]\).
+La tabla empareja cada término de inserción con sus contribuciones a las dieciséis entradas
+de esa media física en el continuo.
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+\(-m^2 E_g/2\)& \(G_{\rm cof}\)\\
+\(m^2 A_3\)&\(f2E+f2z+f2F\)\\
+\(m^2 C^{(3)}\)&\(f2F+C3_{\rm cuad}\)\\
+\(-m^2(E_Q+E_R)/2\)&\(f3F+f3c\)\\
+\(m^2(-3p_e^2+p_e f_e)\)&\(f4=f4_{\rm expl}+f4_{L0}\)\\
+\(m^2\sum_F p_i(1-t_{ie})w_i\)&\(f5c+f5F\)\\
+\(-m^2\sum_{E'}p_iq_iw_i\)&\(f6\)\\
+\(m^2(\delta_e^0)^2/2\)&\(f7\)\\
+primera parte de \(Q_e\)&\(Q1+\Delta_1\)\\
+segunda parte de \(Q_e\), con \(-3m^2\sum_{E'}y_i^2\)&\(Q2+\Delta_2\)\\
+\hline
+\end{tabular}
+\end{center}
+\(f2F\) aparece dos veces porque el término cúbico en la fibra y la parte de par de
+\(C^{(3)}\) tienen el mismo peso. Las dos partes de \(Q_e\) llevan los factores \(-1/2\) y \(1/4\).
+Una línea disponible que se repite en dos factores cuenta una sola vez: la corrección del producto
+es \(\psi\psi'(U_\ell^{-1}-1)\). Así se obtienen \(\Delta_1,\Delta_2\).
+Los doce pares ordenados de familias distintas en el bloque cuadrático aportan \(12/4=3\)
+veces \(m^2\sum_{E'}y_i^2\), lo que cancela la resta indicada en cada padre.
+Estas identidades fijan las multiplicidades con independencia de la evaluación numérica.
+
+El error uniforme del perfil en esas medias escaladas sobre \([b,1]\) es \(\epsilon_n(b)\to0\).
+Su coste total es a lo sumo \(\epsilon_n(b)n\sum_{m>j}m^{-2}=o_b(1)\).
+El indicador previsible de un padre regular se toma antes de elegir la fila. Retirar las
+salidas auxiliares exponencialmente raras cuesta \(o_b(1)\), pues \(n|A|\le C_b\).
+En \(H_j\), sea \(s=A-R_Q(n)+g_T+\Gamma\). Allí \(|s|=O_b(1/n)\) y
+\(\int_{H_j}|d\mu-d\nu|=\mathbb E_\mu[|1-e^{-s-g^\flat}|;H_j]=O_b(1/n)\)
+por \eqref{eq:arrival-estimate}. Así la suma de Riemann puede usar la ley adaptativa.
+El potencial local se telescopa con extremos escalados \(\mathcal V(b)/b-\mathcal V(1)\)
+y error \(O_b(n^{-1/2})+o_b(1)\).
+
+Para la corrección de torres exactas sea \(u_e=g_T(M_e)-g_T(M)\), donde \(M_e\) designa
+aquí la máscara del hijo físico. Así \(\log\rho^\sharp-\log\rho=\log\mathbb E_{\nu,i}e^{u_e}\).
+Como \(|u_e|=O(m^{-2})\), reemplazar el logaritmo por la media cuesta \(O(m^{-4})\).
+La entropía relativa detenida es \(O_b(1)\) por los costes ponderados de salida y la densidad
+detenida. Pinsker condicional y Cauchy--Schwarz acotan el cambio escalado de las medias a \(\mu\)
+por \(O_b(n(\sum_{m>j}m^{-4})^{1/2})=O_b(n^{-1/2})\). Los incrementos se telescopan.
+Los extremos de torres añaden \((F(b)-1/12)/b-(F(1)-1/12)\) a los del potencial local.
+Juntos dan el valor de \(G/x\) en \(b\) menos su valor en \(1\). Escribiendo esa diferencia
+como la integral de la derivada de \(-G/x\), obtenemos la media interior que usará el cierre,
+\[
+ \lim_n n\mathbb E_\mu A^\sharp=\int_b^1 d(x)x^{-2}\,dx+\frac{G(b)}b-G(1)
+       =\int_b^1 k(x)x^{-2}\,dx .
+\]
+
+\input{partes/prueba_filas}

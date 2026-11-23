@@ -1,0 +1,49 @@
+\section{Introduction}
+The $n$-queens problem asks how many ways there are to place $n$ queens on an $n\times n$ board so
+that no two attack each other. We denote this number by $Q(n)$ and count solutions related by a
+symmetry separately. We number rows and columns starting at one, with rows running from top to
+bottom and columns from left to right, and $(i,j)$ is the square in row $i$ and column $j$. Reading
+the columns of the queens in row order identifies each solution with a permutation $\sigma$, whose
+queens occupy the squares $(i,\sigma(i))$. The diagonal constraints require the differences
+$i-\sigma(i)$ to be distinct, and likewise the sums $i+\sigma(i)$; they thus determine which of the
+$n!$ permutations qualify. For example, $(2,4,1,3)$ and $(3,1,4,2)$ are the two solutions on the
+$4\times4$ board.
+
+To study how $Q(n)$ grows, it is convenient to take logarithms. Earlier combinatorial results
+include the upper bound of Luria~\cite{luria}, the lower bound of Luria and Simkin~\cite{ls}, and
+the work of Bowtell and Keevash~\cite{bk}. Bell and Stevens~\cite{bs} give an overview.
+Simkin's variational formula~\cite{simkin} determines $\log Q(n)$ up to an $o(n)$ error.
+In the normalization of the variational profile~\cite{pv}, the leading term is $\log(n!)+n\Phi$.
+Nobel, Agrawal, and Boyd~\cite{nab} obtained numerical bounds for the first-order constant.
+The profile describes the distribution of mass on the board and along each diagonal. These data
+enter the canonical predictor $Q_{\rm pred}(n)$ of~\cite{pc}. An entropy is calculated from the
+square weights and a correction is added for the dependence between the lines.
+Appendix~\ref{app:predictor} gives the finite formula that we use throughout the paper.
+
+The next advance was to identify the constant term. After subtracting $\log(n!)+n\Phi$, the
+logarithm of the predictor tends to $C_{\rm pred}$~\cite{pc}. The exact count has that same
+constant~\cite{tc}. Thus, on forming the signed difference
+\[
+ R_Q(n)=\log Q(n)-\log Q_{\rm pred}(n),
+\]
+both the leading term and the constant cancel. A preliminary step in the present work, using
+magnitude estimates, gives $|R_Q(n)|\le C/n$ for sufficiently large $n$. The proof traceability
+table in the supplement identifies the source of this bound. Appendix~\ref{app:signed} uses it in
+developing the stopped-history identity. Thus $nR_Q(n)$ is bounded, although it could still
+oscillate with the size of the board. Does it converge? Theorem~\ref{teo:principal} identifies
+this limit, which we denote by \(\cerr\). While \(C_{\rm pred}\) is the constant term shared by the
+two logarithms, \(\cerr/n\) is the first relative correction in passing from the finite predictor
+to the exact count.
+
+The difficulty can be seen by revealing a solution row by row. While many rows remain, each
+insertion introduces a small defect, and it is their signed sum that matters. When few rows remain,
+two squares that are still available may share a diagonal. The completability results of~\cite{ef}
+describe the role of the final rows; Glock, Munhá Correia, and Sudakov~\cite{gms} studied when a
+partial placement can be completed. To calculate the coefficient we also need the weight of these
+conflicts in the error. Following the early cut-off of~\cite{ef}, we stop the process when a fixed
+fraction of rows remains empty. This allows us to study the defect accumulated before the cut-off
+and to measure the error on the residual board. Comparing two cut-offs will bring the two
+contributions together. Figure~\ref{fig:mascara-ilustrada} follows the first four-queens solution:
+revealing a single queen already shows the difference between a rook completion and a queen
+completion.
+\input{figuras/mascara}

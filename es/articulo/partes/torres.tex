@@ -1,0 +1,54 @@
+\section{Torres en la máscara residual}\label{sec:torres}
+\label{sec:rook}
+La reducción a un permanente auxiliar, usada para el término constante~\cite{tc}, permite comparar
+dos tableros de llegada. En el primero se conservan las casillas disponibles y se levantan las
+restricciones diagonales entre las piezas que faltan. Sus completaciones son los emparejamientos
+perfectos de la máscara $M$, y su suma ponderada es $\operatorname{per}M$. En el segundo fijamos
+dos torres en casillas $e,f$ de una diagonal. Las piezas restantes ocupan la máscara $M_{ef}$,
+que pierde dos filas y dos columnas. El cociente $w_ew_f\operatorname{per}M_{ef}/\operatorname{per}M$
+da la probabilidad de ocupar el par. Al aproximar ambos permanentes, ¿cuánto del error del primer
+tablero se cancela en el segundo? En la Figura~\ref{fig:mascara-ilustrada} se puede leer el
+numerador a mano para $e=(2,4)$ y $f=(3,3)$: sólo queda la asignación $(4,1)$. Así, uno de los
+dos emparejamientos de la máscara contiene ese par.
+
+\paragraph{Clase y dos operaciones.}
+\[
+  w_e\in\{0\}\cup[w_0,w_1],\quad P=\operatorname{diag}(u)M\operatorname{diag}(v),
+  \quad P_e\le M_0/k,\quad \|P-J_k\|_{\rm op}\le1-\gamma .
+\]
+Aquí $0<w_0\le w_1$, $M_0\ge1$, $0<\gamma\le1$, $M$ tiene soporte total, $P$ es su escalado
+bistocástico y $J_k$ tiene entradas $1/k$. Ésta es la clase $\mathcal K$. En esta sección $k$ es
+el tamaño entero de la máscara, distinto de la función $k(x)$ de la integral. Ocupar $e$ retira
+su fila y su columna y deja el menor $M_e$. Prohibir $e$ deja las dos fibras y pone $w_e=0$ en
+$M\setminus e$. Las dos operaciones perturban de manera distinta las sumas que se han de reescalar.
+El punto estacionario $p$ de torres satisface $p_e(1-p_e)=w_e\exp(z_i+y_j)$
+en la rama pequeña y tiene sumas de línea uno. Con $p$ se calcula el predictor logarítmico $L_T$
+y con $P$, la corrección a $L_T$ dada por la fórmula siguiente.
+Las cotas siguientes valen para $k$ mayor que un umbral de clase, también en los menores utilizados.
+El corte físico se fija antes de enviar $n$ a infinito.
+
+\paragraph{La aproximación que se transporta [D].}
+\[
+   g_T(M)=\log\operatorname{per}M-L_T(M)
+       =\frac{\Phi(kP)}k+R(M),\qquad |R(M)|\le Ck^{-2}.
+\]
+Esta estimación de valor es (T). Al escribir $\Phi=\mathfrak F-1/12$ y evaluar $\mathfrak F$ en
+el perfil de torres de la trayectoria, se obtiene el $F(x)$ de~\eqref{eq:main}. Aplicar la cota
+para $R$ por separado en los dos tableros sólo daría $O(k^{-2})$ para su diferencia. La estimación
+$(T^+)$ gana un orden bajo $M\mapsto M_e$, con incremento $O(k^{-3})$, y dos bajo
+$M\mapsto M\setminus e$, con incremento $O(k^{-4})$. Las constantes y el umbral de estas tres
+cotas dependen sólo de $M_0,\gamma$. El apéndice~\ref{app:rook} obtiene las ganancias siguiendo
+por separado el resto del permanente escalado y el de la normalización del predictor.
+
+\paragraph{De dos torres a un par de reinas.}
+En una máscara binaria, la probabilidad exacta de ocupar $E=\{e,f\}$, con filas y columnas
+distintas, es $\pi^{\rm ex}=\operatorname{per}M_{ef}/\operatorname{per}M$.
+Para una única línea de dos casillas, el término correspondiente en el logaritmo del conteo es
+$\log(1-\pi^{\rm ex})$. La aproximación local $\pi_1$ se define en el
+apéndice~\ref{app:pair}. Si se revela una tercera casilla $c$ en otras filas y columnas,
+la variación del error $\pi^{\rm ex}-\pi_1$ cuesta a lo sumo
+$C\varpi(E)/k^5$, donde $\varpi(E)=k^2p_ep_f$. Este enunciado (R1) se aplica al menor de
+torres que conserva el par. En la geometría física una jugada también puede vedar casillas
+adicionales. Al tomar la media de llegada, el cambio del error de torres aporta $P_T$. El efecto
+de una sola línea contribuye a $J$, y las dos diagonales de un cuadrado completo producen, además,
+el término $-S$ del apéndice~\ref{app:boundary}.

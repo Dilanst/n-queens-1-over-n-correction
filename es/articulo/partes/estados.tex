@@ -1,0 +1,56 @@
+\subsection{Estado de cada afirmación}\label{sec:claim-ledger}
+La etiqueta \status{D} identifica los resultados demostrados.
+Usamos \status{O} para una comprobación exacta por ordenador o un intervalo riguroso,
+\status{N} para una estimación numérica y \status{D si C} para una cota demostrada bajo la
+condición indicada. Las claves de «Origen» remiten a las tablas del suplemento sobre la prueba,
+las torres y el cálculo numérico.
+
+La demostración del límite usa las identidades racionales del par y del cuadrado. La
+extrapolación de Richardson interviene al evaluar la fórmula para $\cerr$. El cotejo simbólico de
+42 piezas constituye una comprobación independiente de la cancelación en el extremo.
+{\small
+\begin{longtable}{@{}L{.12\linewidth}L{.30\linewidth}L{.40\linewidth}L{.10\linewidth}@{}}
+\toprule
+Estado & Afirmación & Comprobación & Origen\\ \midrule
+\endhead
+\status{D} & Existencia del límite y fórmula exacta para $\cerr$~\eqref{eq:main}
+ & Comparación de dos cortes del mismo tablero inicial & A B \\
+\status{D} & Derivadas nulas en el extremo físico
+ & Convergencia, orden cero y analiticidad & A H \\
+\status{D} & Identidad con signo y salidas a corte fijo
+ & Historias detenidas, diferencia firmada y momentos & C D W \\
+\status{D} & Resto de llegada en media, uniforme en el corte
+ & Ley física, suma por tamaño y error de orden $b$ & D \\
+\status{D} & Densidad interior
+ & Dieciséis términos y límite de Riemann a corte fijo & E Z \\
+\status{D} & Torres en la frontera y cuadrado
+ & Condicionamiento a cuatro filas y multiplicidad & D G \\
+\status{D} & Respuesta del par $J=-B_2+L_2$
+ & Ocho submedidas y reinserción de rango dos & F X \\
+\status{D} & Desarrollo de torres y estabilidad
+ & Resto uniforme, menores y borrado con pesos & I K Y \\
+\status{D} & Incremento restringido de la marginal
+ & Punto estacionario, determinante y pesos físicos & B C L \\
+\status{O} & Controles algebraicos
+ & 27 coeficientes de marginal y control del extremo transcrito & M H \\
+\status{N} & Estimación decimal y banda conservadora
+ & Extrapolación de mallas y presupuesto empírico & P \\
+\status{D si C} & Cota de cuadratura y serie, $8{,}74\cdot10^{-10}$
+ & Cotas analíticas bajo las tolerancias nodales & P Q \\
+\status{O} & Perfil físico y términos nodales explícitos
+ & Intervalos exteriores y cobertura por fila & R \\
+\status{O} & Integrales de frontera $S$ y $P_T$
+ & Cubatura certificada y recurrencia intervalar & R T \\
+\status{O} & $Q_2$ completo en un nodo real
+ & Encierros del núcleo y trazas con signo & T \\
+\status{O} & Encierro grueso de $\cerr$
+ & Los mayorantes globales incluyen cero & R \\
+\status{O/N} & $Q(n)$ exacto, $nR_Q(n)$ numérico
+ & Conteos hasta 27, oscilación y deriva ajustadas & N \\
+Abierto & Encierro fino de $\cerr$
+ & Errores nodales, integración del par y resto de malla & P R T \\
+Alcance & Llegada puntual y vetos arbitrarios
+ & Bastan las versiones restringidas & A B \\
+\bottomrule
+\end{longtable}
+}

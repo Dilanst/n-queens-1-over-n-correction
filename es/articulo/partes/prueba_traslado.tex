@@ -1,0 +1,82 @@
+\section{De las máscaras marcadas al perfil}\label{app:transfer}
+Dos casillas pueden depender de la supervivencia de una misma línea. Tratar sus indicadores
+como independientes cambiaría la media del par, incluso si el perfil de cada casilla fuese
+exacto. Por ello transferimos la contribución ponderada de cada estado con su propia masa.
+Para un patrón fijo identificamos las etiquetas afines iguales y tomamos cada indicador
+distinto una sola vez. Con \(d_*\) índices libres,
+una coincidencia accidental satisface una ecuación afín no constante adicional y cuesta
+\(O(n^{-1})\) al dividir por \(n^{d_*}\). En la trayectoria regular auxiliar, a \(x\ge b\), los
+riesgos de las líneas axiales y diagonales vivas son \(1/m\) y \(\ell_f/m\), respectivamente.
+Los segundos distan de sus valores deterministas a lo sumo \(\eta/n\) a precisión fija.
+Dos líneas distintas se ocupan simultáneamente con probabilidad \(O_b(n^{-2})\). Bonferroni da
+el producto de sus supervivencias de un paso con error \(O_{b,v}(\eta/n+n^{-2})\).
+Multiplicamos cada indicador actual por su supervivencia determinista futura hasta el corte.
+Una pieza altera \(O_v(n^{d_*-1})\) sumandos. Azuma para la media centrada, con saltos
+\(O_{b,v}(1/n)\), y el control de regularidad dan una cola exponencial a precisión fija.
+La unión sobre líneas marcadas es polinómica. Los cocientes de densidades hasta la parada
+preservan la cola, incluida la cota \(\exp(O_b(n^{2/3}))\) para \(X\) al cambiar a \(\mu\).
+Así, en la media normalizada cada etiqueta axial viva aporta \(b\) y cada etiqueta diagonal
+distinta aporta \(U_f(b)\).
+
+En particular, las sumas por línea viva de \(YW_b^0/j\) tienen márgenes \(1+o_{\Pr}(1)\)
+uniformemente y dos columnas vivas tienen \(\ge c_bj\) vecinos comunes. En potenciales
+logarítmicos de columna, el mapa que normaliza primero filas y después columnas tiene
+derivada estocástica de entradas \(\ge c'_b/j\) en la bola de oscilación unidad. Su
+contracción en oscilación da \(jD_{il}=Y_{il}W_b^0(i,l)(1+o_{\Pr}(1))\) para el escalado
+de Sinkhorn, uniformemente en el soporte. Al retirar las dos casillas distinguidas, cada
+margen pierde \(O_b(1/j)\) y dos columnas pierden a lo sumo dos vecinos comunes. La misma
+prueba sigue aplicándose. La ocupación estacionaria de torres cumple
+\(p_{il}/D_{il}=1+O_b(1/j)\) en el soporte. En los patrones integrados, las incidencias desde una
+fila adicional \(y\) hacia las columnas marcadas tienen ley producto con parámetros
+\(v_b(y,c_0),v_b(y,c_1)\). Las distintas columnas dan etiquetas diagonales distintas en cada
+familia, salvo los \(O(1)\) valores de \(y\) que coinciden con una etiqueta distinguida.
+Se puede multiplicar la media por cualquiera de los cuatro indicadores acotados de estado.
+Para el término cuadrático de \(\eta\), sean \(B=p_b-1\),
+\(G_R=BB^*, T_R=G_R(I-G_R)^{-1}, U=T_RB\), con los operadores transpuestos en columnas.
+Sean \(d_R=\operatorname{diag}(T_R-G_R)\) y su análogo \(d_C\), con
+\(\bar d=\int d_R=\int d_C\). Definimos
+\(\psi_R=2[(B+U)d_C-T_Rd_R]-d_R\) y su versión de columnas. En los cuatro extremos
+marcados (dos filas \(r_0,r_1\) y dos columnas \(c_0,c_1\)), las identidades de derivadas dan
+\begin{align*}
+ R''_1(0)/2={}&XW^0_{01}+YW^0_{10}+\sum_{\square} U-T_R(r_0,r_1)-T_C(c_0,c_1)
+              -\tfrac12\sum_* d,\\
+ A'_1(0)={}&-1+2\bar d+\tfrac12\sum_* \psi .
+\end{align*}
+El asterisco recorre los cuatro extremos y el cuadrado sus cuatro casillas; se ordenan las columnas
+para que los casillas distinguidas sean \(00,11\). Para la primera identidad se derivan los
+márgenes en el parámetro de ocupación. En los tipos ordinarios la respuesta media resuelve
+\((I+N)y=N\alpha\), donde \(N\) tiene bloques cruzados \(p_b,p_b^*\) y \(\alpha\) inserta
+los dos extremos de cada lado. Los bloques centrados de \(N(I+N)^{-1}N\) son \(T_R,-U,-U^*,T_C\).
+En cada vértice marcado una incidencia repetida da su varianza de Bernoulli. Para el prefactor
+se derivan el factor local, las diagonales de márgenes, la masa total y el determinante centrado.
+Su suma es \(1+\langle d-1,y\rangle-\sum_*d/2\); sustituir la solución centrada y su modo
+constante da la segunda identidad. La parte lineal límite \(jD\) es la suma \(L_s\)
+en cada submedida. Al elevar al cuadrado resulta \(L_s^2/2\).
+
+El argumento de patrones sirve a cualquier longitud fija, pero el segundo coeficiente contiene
+la inversa de márgenes y, por tanto, recorridos de longitud arbitraria. Truncamos su expansión
+en recorridos alternantes centrados. Cada recorrido de longitud \(q\ge2\) entre extremos fijos
+está acotado por
+\(C_b^2r_b^{q-2}\), por las dos normas de sección y la brecha \(r_b<1\). A orden dos en el
+logaritmo del determinante hay a lo sumo dos inserciones en cada traza; su cola está acotada
+por \(C_b\sum_{q>N}(1+q)^2r_b^{\max(2q-C,0)}\). A truncación fija, las recurrencias de márgenes
+adjuntan árboles enraizados a una casilla o a una traza alternante. Las coincidencias de
+etiquetas libres distintas cuestan \(O_{b,N}(1/n)\). Se conserva cada indicador repetido antes de
+tomar la media. Una traza de longitud dos en una arista libre de media condicional \(V\) usa
+\(Y^2=Y\) a la ida y vuelta. El exceso respecto al producto de medias aporta
+\(V(1-V)\ell^2/(2d_i d_l)\), con \(\ell\) el peso normalizado de la arista en la Hessiana y
+\(d_i,d_l\) sus grados de fila y columna. Las aristas raíz ya tienen fijados sus indicadores.
+Así la varianza ordinaria se cuenta una vez. Primero \(n\to\infty\) a truncaciones fijas;
+después se retiran las truncaciones. Sólo entonces \(b\downarrow0\): la positividad de \(v_b\)
+da una minoración uniforme de \(p_b^*p_b\) cerca de cero y convergencia dominada en cada integral.
+Con \(\mathcal I_0(C)=\sum_o\int_\Omega w_{o,0}\sum_s q_{o,s,0}C_{o,s}\), se obtiene
+\[
+ \lim_{b\downarrow0}\limsup_n\left|
+ n\mathbb E_\mu[\textstyle\sum_{\{e,f\}}p_ep_f B_{\rm phys}(e,f);F_b]
+ -\mathcal I_0(B_{2,s})\right|=0. \tag{F2}
+\]
+Así la frontera firmada por pares es \(J=-B_2+L_2\), con \(B_2=\mathcal I_0(B_{2,s})\)
+y \(L_2=-\mathcal I_0(L_s^2/2)\). En el estado \(11\) cada orientación aporta su coeficiente
+de una línea y la interacción de las dos orientaciones aparece una sola vez en \(-S\).
+Sumar \(J\) a las otras dos medias da la constante \(P_T+J-S\) que entra en la comparación
+de cortes, una vez tomado el límite en \(n\) para cada corte fijo.

@@ -1,0 +1,18 @@
+{
+ "candidato_sha256": "25d0bae0401917dc8c165890557ac9c05fd13754e89b2df720b54f06ceb36816",
+ "residuo_certificado_sha256": "30e693b5a24d4bb7cb03811cf5d05c9f064bcbc4c6792eb61189884e4e8ff20f",
+ "guion_sha256": "df93a91dd7be80adecdb172b709617ce512bf3aed74de2aedbcd2d3e07d32fc8",
+ "auxiliar_sha256": "5c48a9b37439060eefee730dce5927a71d269464a8a3c5eeffbc076275287f39",
+ "max_R1": "8.48608019854037771E-20",
+ "max_R2": "4.28966730137668452E-21",
+ "beta_log": 5000,
+ "L_log": 40,
+ "radio_log": "4.24728313936945905E-16",
+ "epsilon_S": "2.08527381447794591E-15",
+ "epsilon_u": "4.24728313936946085E-16",
+ "cpu_s": 0.0,
+ "pared_s": 0.001442899985704571,
+ "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+ "sistema": "Windows-11-10.0.26300-SP0",
+ "hilos": 1
+}

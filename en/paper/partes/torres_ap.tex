@@ -1,0 +1,84 @@
+\section{The permanent and the rook predictor}\label{app:torres}
+\label{app:rook}
+\paragraph{The G1 reduction [D].}
+When we compare $\operatorname{per}M$ with $\operatorname{per}M_e$, both the size and the doubly
+stochastic scaling change. We split the error $g_T$ into two quantities that we can compute
+at the same scaling. The incidence vector $a_e$ has a one in the row and another in the column
+of $e$.
+Let $\tau_e=p_e(1-p_e)/(1-2p_e)$ and $S_T=\sum_e\tau_e a_ea_e^\top$.
+The product of its positive eigenvalues is $\operatorname{pdet}S_T$.
+With sums over the allowed squares, the normalization at both ends of an increment is
+\[
+\begin{aligned}
+ H_T(p)&=\sum_e[-p_e\log(p_e/w_e)+(1-p_e)\log(1-p_e)],\\
+ L_T(M)&=H_T(p)-\tfrac12\sum_e\log\frac{1-2p_e}{(1-p_e)^2}
+         -\tfrac12\log\operatorname{pdet} S_T+\tfrac12\log(4\pi k).
+\end{aligned}
+\]
+Scaling the rows by $u_i$ and the columns by $v_j$ increases $H_T$ and the logarithm of the
+permanent by the same sums of logarithms. The other terms depend on $p$, which is invariant
+under this scaling. Thus $g_T(M)=g_T(P)$. For a doubly stochastic matrix $D$ of size $K$, define
+\[
+ b_D=D-J_K,\qquad
+ \mathcal E(D)=\log\frac{K^K\operatorname{per}D}{K!}
+             +\tfrac12\log\det(I-b_D^\top b_D).
+\]
+The logarithm of the permanent cancels exactly in $\Delta=g_T(M)-\mathcal E(P)$. Two calculations
+remain. For $\mathcal E(P)$ we must find the first correction to the leading determinant term
+of the permanent. For $\Delta$ it suffices to expand the explicit terms of the normalization.
+
+\paragraph{The static estimate $(L^*)$ [D].}
+The leading determinant term for the diffuse class with a gap is obtained in~\cite{dw}.
+McCullagh's expansion~\cite{mcc} identifies formal corrections, and Li's estimate~\cite{li}
+treats perturbations with sublinear line norm. Here we need the error after extracting the
+coefficient of $1/K$ to be $O(K^{-2})$ with the same constant for the entire class. To prove
+this, we collect the minors of the centered kernel in the polynomial
+\[
+ \mathcal R_b(s)=\sum_{\ell=0}^K s^\ell
+         \sum_{|I|=|J|=\ell}\operatorname{per} b[I,J],\qquad b=b_D .
+\]
+Expanding $\operatorname{per}(J_K+b)$ and using $\mathbb E T^{-\ell}=(K-\ell)!/K!$ for
+$T\sim\Gamma(K+1,1)$ gives $K^K\operatorname{per}D/K!=\mathbb E\,\mathcal R_b(K/T)$.
+For $b=U\Sigma V^\top$ and a standard complex Gaussian $Z$, Wick's rule identifies
+$\mathcal R_b(s)$ with $\mathbb E\prod_a(1+w_a)$, where
+$w=\sqrt{s}(U\Sigma^{1/2}Z,V\Sigma^{1/2}\overline Z)$.
+The linear terms sum to zero. Absorbing $\exp(-\sum_a w_a^2/2)$ into the density gives
+\[
+ \mathcal R_b(s)=h(s)\widetilde{\mathbb E}\prod_a (1+w_a)e^{-w_a+w_a^2/2},\qquad
+ h(s)=\det(I-s^2b^\top b)^{-1/2}.
+\]
+For real $s$ near one, $C=\widetilde{\mathbb E}ww^\top=sB_0(I+sB_0)^{-1}$,
+where $B_0$ has zero diagonal blocks and off-diagonal blocks $b,b^\top$.
+The factor for each square starts with $1+w^3/3-w^4/4$. At first order there is one vertex of
+degree four or two of degree three. There are three pairings at the quartic vertex.
+In the cubic case, six give three edges between vertices and nine give a loop at each vertex.
+The expression with sums over all indices is
+\[
+ \frac{\mathfrak f(s)}K=-\frac34\sum_a C_{aa}^2+
+ \sum_{a,a'}\left(\tfrac12 C_{aa}C_{aa'}C_{a'a'}+\tfrac13 C_{aa'}^3\right).
+\]
+Restricting the product to distinct indices adds $-\frac56\sum_a C_{aa}^3=O(K^{-2})$.
+We retain this correction when passing to the next order. Take $\delta=\gamma/4$.
+The gap gives $O(1/K)$ entries and bounded absolute row sums for the propagator.
+We truncate the expansion in an interpolation parameter at order $N=\lceil\kappa\sqrt K\rceil$.
+For diagrams of excess $j$ (edges minus vertices), the absolute bound up to this cut-off is
+$2j(j\Lambda/K)^j$, where $\Lambda$ depends only on the class. Summing from $j=2$ costs
+$O(K^{-2})$, since the ratio of successive bounds is less than $1/2$ for $j\le N$ and large $K$.
+The tail is bounded by $C\exp(C_1\sqrt K)r^{-N}$ with $r>1$ depending only on the class. The
+choice of $\kappa$ gives exponential decay in $\sqrt K$.
+Outside $|K/T-1|\le\delta$ we use
+$|\mathcal R_b(s)|\le\mathbb E(1+s\sum_l\sigma_l|Z_l|^2/K)^K$.
+A translation lets the gamma density absorb the power. Its tails and
+$\sum_l\sigma_l\le\sqrt{K(M_0-1)}$ give $O(\exp(-cK+C\sqrt K))$.
+Since $\mathbb E(K/T)=1$ and $\mathbb E(K/T-1)^2=1/(K-1)$, the expansion with third and
+fourth moments of order $O(K^{-2})$ gives
+\[
+ \mathcal E(D)=\mathfrak f_{\rm e}(KD)/K+O(K^{-2}),\qquad
+ \mathfrak f_{\rm e}=\mathfrak f(1)+h''(1)/(2h(1)).
+\]
+The term with $h''(1)$ accounts for the variation of the determinant when averaging over $K/T$.
+To obtain the coefficient of the error $g_T$, it remains to add the contribution of $\Delta$
+to this expression.
+\input{partes/torres_estabilidad}
+\input{partes/torres_incrementos}
+\input{partes/torres_pares}

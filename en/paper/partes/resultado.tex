@@ -1,0 +1,43 @@
+\section{The coefficient of the signed error}\label{sec:principal}
+In the formula for the limit, $\mathcal C_0$ accounts for the adjustment on the initial board and
+the sum of the insertion defects up to the stopping time. The term $P_0-S$ measures the error that
+still remains in the squares available at that instant.
+
+Let $x$ be the fraction of rows still empty. At $x=1$ the initial board is empty, and as $x$
+approaches zero the final rows remain. The function $d(x)$ sums sixteen contributions to the mean
+second-order defect of an insertion of the predictor~\cite{pc}. Appendix~\ref{app:interior}
+identifies these contributions. The line prefactor $\mathcal V(x)$ and the rook correction $F(x)$
+are defined in Appendix~\ref{app:predictor}. The following two statements are proved \status{D};
+the labels are explained in Section~\ref{sec:claim-ledger}.
+
+\begin{teorema}[Main theorem]\label{teo:principal}
+For the ordinary board the following limit exists
+\begin{align}
+ \cerr&=\lim_{n\to\infty}nR_Q(n)=\mathcal C_0+P_0-S,\label{eq:main}\\
+ \mathcal C_0&=F(1)-\tfrac1{12}+\int_0^1 \frac{k(x)}{x^2}\,dx,\qquad F(1)=0,\notag\\
+ k(x)&=d(x)+G(x)-xG'(x),\qquad G(x)=\mathcal V(x)+F(x)-\tfrac1{12},\notag\\
+ P_0&=P_T+J,\qquad J=-B_2+L_2,\notag
+\end{align}
+and the integral in~\eqref{eq:main} converges absolutely.
+\end{teorema}
+Here $P_T$ is the rook contribution at arrival. To obtain $B_2$ and $L_2$ from the weight path of
+a collinear pair, the two orientations are summed. In each orientation the four availability states
+of the other two vertices are weighted.
+$S$ accounts for the interaction of the two pairs of a complete square.
+
+\begin{corolario}\label{cor:derivada}
+For the physical profile, $k'(0)=d'(0)=0$. Moreover,
+\[
+ \log Q(n)=\log Q_{\rm pred}(n)+\cerr/n+o(n^{-1}),\qquad
+ Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(n^{-1}).
+\]
+\end{corolario}
+The vanishing of the derivative is not used as a hypothesis: the proof takes the truncated integral
+at a fixed cut-off $b>0$, the comparison of two cut-offs gives its limit, and from this convergence
+one deduces $k'(0)=0$ (Appendix~\ref{app:closing}). The corollary gives the rate in Conjecture~10.1
+of~\cite{pc}. The proof provides an expression for the coefficient; certifying the sign suggested by
+its evaluation still requires a sufficiently narrow interval.
+
+Section~\ref{sec:signedmap} explains where the signs in the formula come from. The table in
+Section~\ref{sec:claim-ledger} identifies the sources for each step and the scope of the checks
+on them.

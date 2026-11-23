@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Please use the following information to cite this supplement."
+type: software
+title: "The Order-1/n Term of the n-Queens Problem: Data and Calculations Supplement"
+authors:
+  - family-names: "Mejia"
+    given-names: "Dilan Steven"
+version: "1.0.0"
+license: MIT
+references:
+  - type: article
+    title: "The Order-1/n Term of the n-Queens Problem"
+    authors:
+      - family-names: "Mejia"
+        given-names: "Dilan Steven"
+    year: 2026
+    doi: "10.5281/zenodo.24476033"
+    url: "https://github.com/Dilanst/n-queens-order-1-n-term"
+  - type: article
+    title: "The Constant Term of the n-Queens Problem"
+    authors:
+      - family-names: "Mejia"
+        given-names: "Dilan Steven"
+    year: 2026
+    doi: "10.5281/zenodo.24248206"
+    url: "https://github.com/Dilanst/n-queens-constant-term"
+  - type: article
+    title: "The Canonical Predictor for the n-Queens Problem: Constant Term and Consistency"
+    authors:
+      - family-names: "Mejia"
+        given-names: "Dilan Steven"
+    year: 2026
+    doi: "10.5281/zenodo.24241043"
+    url: "https://github.com/Dilanst/n-queens-canonical-predictor"

@@ -1,0 +1,35 @@
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.58cm,y=.58cm]
+ \foreach \etapa/\dx in {2/0,4/10.4}{
+  \begin{scope}[shift={(\dx,0)}]
+   \bcuadricula{6}
+   \breina{6}{1}{2}
+   \breina{6}{2}{4}
+   \ifnum\etapa=2\relax
+    \def\casillas{3/1,3/6,4/1,4/3,5/3,5/5,6/1,6/3,6/5,6/6}
+    \def\corte{b=2/3}
+   \else
+    \breina{6}{3}{6}
+    \breina{6}{4}{1}
+    \def\casillas{5/3,5/5,6/5}
+    \def\corte{b'=1/3}
+   \fi
+   \foreach \fila/\col in \casillas{
+    \draw[btinta,line width=.55pt] (\col-.5,6.5-\fila) circle[radius=.16];
+    \bmarca{6}{\fila}{\col}
+   }
+   \draw[btinta,line width=.95pt] (0,6-\etapa)--(6,6-\etapa);
+   \node[font=\small,anchor=north] at (3,-.18) {$\corte,\quad m=\the\numexpr6-\etapa\relax$};
+  \end{scope}
+ }
+ \draw[->,>=stealth,btinta,line width=.8pt] (6.55,3)--(9.45,3)
+   node[midway,above,font=\scriptsize] {rows 3 and 4};
+\end{tikzpicture}
+\caption{Two cut-offs of the solution \((2,4,6,1,3,5)\). Entry \(r\) gives the column of the queen
+in row \(r\). In this example, the rows are exposed from top to bottom and the horizontal line
+marks how far the exposure has proceeded. The crowns indicate the exposed queens, and the circles
+with a dot indicate the squares these queens leave available. After rows \(3\) and \(4\) are exposed,
+three of the ten remain.}
+\label{fig:cortes}
+\end{figure}

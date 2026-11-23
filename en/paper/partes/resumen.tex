@@ -1,0 +1,25 @@
+\begin{abstract}
+\noindent Let \(Q(n)\) be the number of ways to place \(n\) nonattacking queens on an \(n\times n\)
+board. On taking logarithms, the count and its canonical predictor \(Q_{\rm pred}(n)\) have the same
+leading term and the same constant \(C_{\rm pred}\). We prove that the signed error
+\(R_Q(n)=\log\bigl(Q(n)/Q_{\rm pred}(n)\bigr)\) satisfies \(nR_Q(n)\to\cerr\) and give an explicit
+formula for \(\cerr\). In particular, \(Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(1/n)\), the rate that had
+been conjectured for the predictor.
+
+\smallskip\noindent
+To obtain the formula we choose a solution uniformly at random and reveal its rows in random order.
+The limit combines an initial correction, the integral of the mean defect left by each insertion,
+and three contributions from the board that remains when the process stops: the rook contribution,
+that of a pair of squares on the same diagonal, and that of the interaction of the two diagonals of
+a square. Comparing two stopping levels gives the limit and proves that the integral converges
+absolutely.
+
+\smallskip\noindent
+The numerical evaluation gives \(\cerr\approx0.40550038\), with an empirical uncertainty of
+\(3\cdot10^{-8}\). The quadrature and the series in this calculation have a proven bound of
+\(8.74\cdot10^{-10}\) if the values at the sample points satisfy the stated tolerances. Rigorously
+certifying the sign and the decimal digits of \(\cerr\) remains an open problem.
+\end{abstract}
+
+\noindent\textbf{Keywords:} $n$-queens problem; asymptotic enumeration; permanents;
+rook problem; interval arithmetic.\quad \textbf{MSC 2020:} 05A16, 60C05, 15A15.

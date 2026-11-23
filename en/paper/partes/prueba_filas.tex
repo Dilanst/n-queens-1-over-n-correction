@@ -1,0 +1,44 @@
+\subsection{How to read the row expansion}
+The weight of a square depends on how it enters the mean in the preceding table. For terms that
+average over a center \(c\), we use the measure \(\nu(c)\,dc\) and write \(\langle\cdot\rangle_c\). A
+second independent square \(i\) carries the same measure. If \(i\) lies on a line \(l\) through the
+center, only one coordinate is free, either row or column, and the measure on that fiber is
+\(d\omega_l(i)=\eta_l\nu(i)\,dy\). In this paragraph \(C\) denotes a kernel distinct from the column
+family. Define
+\begin{align*}
+ A_{lh}&=(L_0-K)_{lh},\qquad B_{lh}=K_{lh}(W_{lh}-K_{lh}),\\
+ C_{lh}&=-B_{lh}(W_{lh}-2K_{lh}),\qquad
+ w(i)=\sum_{\{l,h\}\subset J(i),\,l\ne h}(L_0)_{lh}.
+\end{align*}
+Here \(W_{lh}\) equals \(W\) at the crossing, or zero if there is no crossing. We write
+\(A(i,c)=\sum_{l\in J(i),\,h\in J(c)}A_{lh}\) and similarly for \(B,C\). If the first argument is a
+single line, we sum only over \(h\). After summing, we set \(M_2=A^2+B,\ M_3=A^3+3AB+C\). The cubic
+term distinguishes three averages according to whether we choose an independent square, a diagonal
+line or a square on a fiber through the center. With their respective signs we obtain
+\begin{align*}
+ f2E&=\left\langle -M_3(i,c)/6+\tfrac32 W(i)M_2(i,c)\right\rangle_{i,c},\\
+ f2z&=-\tfrac16\left\langle
+ \int_{l\in D\cup A}\frac{u_l}{U_l}M_3(l,c)\,d\rho_l\right\rangle_c ,\\
+ f2F&=\left\langle\sum_{l\in J(c)}\int_{i\in l}W(i)^2\,d\omega_l(i)\right\rangle_c .
+\end{align*}
+The measure \(d\rho\) is the continuum measure represented by the line weights in
+Section~\ref{sec:profile-data}. Four other terms use the same averages.
+\begin{align*}
+ G_{\rm cof}&=-\tfrac12-3\langle W^2\rangle_c,\qquad
+ f4_{\rm expl}=-9\langle W^2\rangle_c,\\
+ f4_{L0}&=\langle Ww\rangle_c,\qquad f5c=-3\langle Ww\rangle_c .
+\end{align*}
+For \(C3_{\rm cuad}\) we consider a center and three translated squares that complete the geometric
+square. We take both oriented bases (row--column and diagonal--antidiagonal) and both signs in each
+direction. The weight is the product of the four \(W\) factors, \(x^{n_{RC}-3}\) and the \(U_l\)
+factors of the distinct diagonal lines. Here \(n_{RC}\) counts the distinct rows and columns. We
+integrate with respect to Lebesgue measure \(dr\,dc\,dh\), with \(h>0\) and the square inside the
+board. The four \(W\) factors already supply the physical weight, with no additional density at the
+center. In the grid implementation a side of length zero carries half weight. In \(f3F\) the quadratic
+fiber term includes the variance and the covariance due to shared lines, and \(f3c\) collects the two
+center contractions. In \(f5F\) we integrate over the fiber the product of \(-w(i)\) and the sum of
+its line responses. In \(f7\) we square \emph{after} summing the responses on the fiber and outside
+the center. Finally, \(Q1,Q2\) take the linear and quadratic trace terms with respect to the same
+center, with the corrections \(\Delta_1,\Delta_2\) to the product over distinct lines given above.
+These measures and multiplicities determine the interior integrand \(d(x)\). At arrival we must
+average over the diagonal pairs that remain available in the rook mask.

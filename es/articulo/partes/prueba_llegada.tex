@@ -1,0 +1,61 @@
+\section{Suma del resto en la llegada}\label{app:arrival}
+Un solo cuadrado puede contribuir a la escala \(1/n\) que interesa en \eqref{eq:signed-mean}.
+Al sustraer \(\Gamma\), cada soporte que sobrevive debe satisfacer las restricciones geométricas
+de dos cuadrados. Ese coste adicional permite sumar los errores con una cota que decrece con \(b\).
+Veámoslo primero en la llegada histórica corta \(H_j\), bajo \(\nu\). Para un conjunto
+de casillas \(Y\), activamos sólo las restricciones diagonales soportadas en \(Y\), manteniendo
+la máscara de torres completa. Llamemos \(e(Y)\) al logaritmo de la probabilidad de evitación
+menos el cambio de predictor, y \(e_C(Y)\) a la misma expresión usando sólo los pares de \(C\).
+El coeficiente de un soporte \(U\) es \(\sum_{Y\subseteq U}(-1)^{|U|-|Y|}e(Y)\).
+Una casilla aislada se cancela al emparejar subconjuntos que difieren sólo en él. Si todos los
+pares pertenecen a un cuadrado, el coeficiente se cancela con el de \(e_C\).
+Si intervienen dos cuadrados distintos, ningún \(e_C\) contribuye: las casillas tendrían que
+estar en los cuatro vértices de \(C\), cuyas únicas parejas diagonales son las dos de \(C\).
+El resto suma por tanto los coeficientes originales que carecen de casillas aisladas y contienen
+al menos dos cuadrados distintos. Lo sustraído tiene grado a lo sumo cuatro.
+
+Sean \(v\) el número de casillas, \(h\) el total de etiquetas distintas de filas y columnas,
+\(D\) el número de coordenadas libres y \(p\) el exponente del soporte. Prescribir las
+\(h\) líneas da el factor \((j/n)^h\), junto con \(\delta^{-2v}\exp(C_Lv^2/j)\) en la
+cota de prescripción. Para cada tipo, el número de posiciones es de orden \(n^D\).
+Escribamos \(d_*=h-D\), \(q=p-D-1\). Dos cuadrados distintos imponen dos ecuaciones
+lineales no proporcionales sobre las coordenadas de fila y columna. Así \(d_*\ge2\);
+la cota del soporte da \(q\ge0\). El factor escalado es
+\[
+ n\,n^D j^{-p}(j/n)^h=(j/n)^{d_*-1}j^{-q}
+ \le (b/\delta_*)\delta_*^{d_*-1}j^{-q}
+ \qquad(0<b\le\delta_*).
+\]
+Extraemos \(b/\delta_*\) antes de sumar. Para \(v\le4\) el número de tipos tiene una cota
+absoluta. Para los tipos no colineales el recuento ponderado usa \(d_*-1+q\ge(v-4)/3\).
+De ahí que para \(5\le v\le N=\lceil4\log n/\log\rho\rceil\), fijado \(\rho\ge2\), la cota
+tras sumar los tipos de ese tamaño sea
+\[
+ (b/\delta_*) C_L(C_1\delta^{-2})^v v^{d_{\rm pol}}\delta_*^{(v-4)/3}.
+\]
+Se elige \(\delta_*\) de manera que \(C_1\delta^{-2}\delta_*^{1/3}<1\).
+En un tipo colineal \(v\ge3\) se tiene \(p=v+2,h=2v\), con a lo sumo \(4n\,n^v/v!\)
+soportes. Resulta \(C(C_2\delta^{-2})^v v^2(j/n)^{v-2}\); se reduce \(\delta_*\)
+una vez para sumar también esta cota. La sustitución de átomos hasta grado \(N\) cuesta
+\(O(j^{-8})\) en valor, y la norma global acota la cola por \(O_\rho(n^{-2})\).
+Ambos errores desaparecen tras escalar para cada \(b\) fijo. Así
+\(\limsup_n n\mathbb E_\nu[|g^\flat|;H_j]\le C_\delta b\), con \(C_\delta\)
+independiente de \(b\).
+
+La cota obtenida controla una media de \(|g^\flat|\) bajo \(\nu\). En \eqref{eq:signed-history}
+interviene además la exponencial bajo \(\mu\). El factor \(X\) de la densidad permite estimar
+ambas con la misma cota, pues en la llegada se tiene
+\[
+ X\,|e^{-g^\flat}-1|=e^{g_T+\Gamma}|1-e^{g^\flat}|.
+\]
+En \(H_j\) la parte positiva del error diagonal tiene una cota de clase,
+\(|g_T|+|\Gamma|\le C/j\) y \(|A-R_Q(n)|=O_{b,\delta}(1/n)\).
+Se aplica \(|e^y-1|\le e^{y^+}|y|\) a la densidad \(Xe^{A-R_Q(n)}\).
+En \(F_b\setminus H_j\) la probabilidad ponderada es \(O(e^{-2j})\).
+Para \(0<X\le1\) vale \(X|\log X|\le1/e\); por encima de uno se usa
+\(X|\log X|\le X(C_0+\beta j)\) en la clase exterior. El aporte de este suceso al lado
+izquierdo de \eqref{eq:arrival-estimate} antes de escalar es \(O((1+j)e^{-2j})\).
+Para obtener \eqref{eq:arrival-estimate} fijamos primero \(\delta\), los márgenes, \(\rho\) y
+las constantes de clase, después \(\delta_*\) y por último el corte. El umbral de \(n\) puede
+depender de \(b\). La constante \(C_\delta\) sirve para todos esos cortes, como exige la
+comparación final de dos cortes en el apéndice~\ref{app:closing}.

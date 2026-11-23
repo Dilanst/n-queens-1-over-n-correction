@@ -1,0 +1,71 @@
+\section{The single-line functional on the marked square}\label{app:weights}
+The second boundary mean compares joint insertion with its first-order approximation. Inserting \(e\)
+changes the weight of \(f\) because the insertion deletes the row and column of the inserted square.
+We order \(e,f\) by increasing row and retain the two crossing indicators \(X,Y\). Here \(M_e\) is the
+single rook minor obtained by deleting the row and column of \(e\). Primes denote evaluation on that
+minor. Let \(t=p'_f/p_f-1\), \(G_{ef}=\mathsf G(e,f)\) and \(D=\chi_e+\chi_f-G_{ef}\). The exact
+product of the insertion ratios gives
+\[
+ e^{u}=\frac{\pi^T_{ef}}{p_ep_f}
+      =(1+\chi_e)(1+\chi'_f)(1+t)\exp(r_e+r'_f).
+\]
+The rook increment estimate is \(r_i=-\mathsf E_i+O(j^{-3})\), also on the single minor. With
+\(t=-G_{ef}+O(j^{-2})\) and \(\chi'_f-\chi_f=O(j^{-2})\), the physical remainder divided by \(p_ep_f\)
+is \(\eta+O(j^{-3})\), where
+\begin{align*}
+ \eta={}&(t+G_{ef})+(\chi'_f-\chi_f)+\chi_e\chi_f+t(\chi_e+\chi_f)\\
+        &-\mathsf E_e-\mathsf E'_f+(p_e+p_f)G_{ef}\\
+     ={}&B_{\rm phys}+D^2/2+O(j^{-3}),\\
+ B_{\rm phys}={}&u-D+(p_e+p_f)G_{ef}.
+\end{align*}
+These seven terms apply in every state and orientation. The square term \(D^2/2\) requires only the
+linear term of the insertion. To identify the remainder \(B_{\rm phys}\), we must compare the action
+and prefactor on the mask and its double minor. To do this within one family we remove only \(e,f\)
+and retain their four lines. Both margins of square \(i\) become \(1-x_i\), and all other margins
+equal one. Let \(F_-(x),\ell_-(x)\) be the stationary action and the rook correction of this punctured
+mask. Set \(R(x)=F_-(x)+2\sum_i(1-x_i)\log(1-x_i)\) and \(A(x)=\ell_-(x)+\sum_i\log(1-x_i)\). Both
+regularized expressions extend to \(x=(1,1)\), where the visible system is the double minor and the
+total mass of its Hessian preserves the correct size constant. Let \(p=(p_e,p_f)^\top\),
+\(\mathbf1=(1,1)^\top\) and \(D_p=\operatorname{diag}(p_i(1-p_i))\). For the punctured margin Hessian
+\(T_-\) and the incidence \(a_i\), we have \(R''_{il}=2\delta_{il}/(1-x_i)-a_i^\top T_-^+a_l\).
+Reinserting the squares adds \(\sum_i[p_i(1-p_i)/(1-2p_i)]a_i a_i^\top\). The determinant lemma on the
+complement of the gauge and stationarity give
+\begin{align*}
+ u={}&R(\mathbf1)-R(p)-(\mathbf1-p)^\top\nabla R(p)\\
+     &+A(\mathbf1)-A(p)+\tfrac12\log\det(I-R''(p)D_p).
+\end{align*}
+Let \(\partial=\partial_e+\partial_f\), \(H=R''(0)\) and \(\Delta C=C(\mathbf1)-C(0)\).
+Differentiating the stationary equation with respect to the two weights gives the response
+\((D_p^{-1}-R''(p))^{-1}\). We expand the determinant and the responses of \(\chi_e,\chi_f,G_{ef}\).
+The terms linear in \(p_i H_{il}\) cancel by \(\mathbf1^\top Hp=\sum_i p_iH_{ii}+(p_e+p_f)H_{ef}\).
+This leaves
+\[
+ B_{\rm phys}=\Delta R-\partial R(0)-\partial^2 R(0)/2+\Delta A-\partial A(0)+O_b(j^{-3}).
+\]
+To obtain the coefficients, we add two copies of opposite signs to each marked line. On the positive
+copy \(\lambda_i=1-x_i\), and on the ordinary part and the negative copies \(\lambda_i=1\). With
+auxiliary mass \(s\), the counting measure is \(M=a+s\rho\) and the margin measure is \(N=\lambda M\),
+with \(\rho=0,-1,+1\) on the ordinary part, the negative copies and the positive copies, respectively.
+At \(s=1/j\) the negative copies cancel the originals exactly. For the binary incidence \(Y_{il}\) and
+its Sinkhorn factors~\cite{sk} \(W_{il}\), the normalized equations are
+\[
+ w_{il}(1-s\lambda_i\lambda_l w_{il})=W_{il}\exp(z_i+y_l),\qquad
+ \int Y_{il}w_{il}\,dN_C(l)=\int Y_{il}w_{il}\,dN_R(i)=1 .
+\]
+Let \(R_q,A_q\) denote the coefficients of \(s^q\) in the regularized action and prefactor along
+\(x_e=x_f=t\). In the action, the coefficient of \(s^0\) is affine and \(R_1\) has degree at most two
+in \(t\). In the prefactor \(A_0\) is constant and \(A_1\) is affine, since at each marked endpoint
+the two quadratic terms from the local factor and the margin diagonal have opposite signs and equal
+magnitude. The rook gap and the kernel section bounds control the inverse of the margin Jacobian in
+the gauge. The implicit equation on a fixed complex disk in \(s\), for \(|x_i|\le2\), and the Cauchy
+estimates give uniform \(O_b(j^{-3})\) remainders for the regularized values and derivatives used
+above. With primes denoting derivatives in \(t\), we obtain
+\begin{align*}
+ L_s&=A'_1(0)+\tfrac12R''_1(0),\\
+ B_{2,s}&=\tfrac12\int_0^1(1-t)^2R'''_2(t)\,dt+\int_0^1(1-t)A''_2(t)\,dt .
+\end{align*}
+In \(L_s,B_{2,s}\) the subscript denotes the state of the crossings. The polynomials
+\(R_1,R_2,A_1,A_2\) have degrees at most \(4,6,6,8\), so nine distinct nodes determine their
+derivatives algebraically. Floating-point evaluation requires its own error control. To complete the
+proof we must transfer \(L_s\) and \(B_{2,s}\) to the profile in each state, the first squared and the
+second linearly.

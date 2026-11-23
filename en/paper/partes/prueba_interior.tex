@@ -1,0 +1,75 @@
+\section{The interior mean at a positive cut-off}\label{app:interior}
+At a fixed cut-off, \eqref{eq:signed-mean} requires us to sum the logarithms of the row normalizations
+up to the stopping time and take the mean of the sum. For each child the first correction has size
+\(1/m\). Before summing over \(m\), we must use its cancellation among the children in the same row.
+For the four-family predictor, at every regular parent of size \(m\) on the auxiliary macroscopic
+event down to \(b\), the insertion formula gives
+\[
+ L(B+e)-L(B)=\log[p_e(1+\delta_e)]+r_e^{\rm PC},\qquad
+ \sum_{e\in i}p_e\delta_e=0,\quad
+ |\delta_e|\le C_b/m,\quad |r_e^{\rm PC}|\le C_b/m^2 .
+\]
+Here the \(p_e\) are the coordinates of the four-family stationary point. Summing over the row gives
+\(\log\rho(B,i)=\sum_{e\in i}p_e r_e^{\rm PC}+O_b(m^{-3})\). Replacing \(p_e(1+\delta_e)\) by \(p_e\)
+costs \(O_b(m^{-3})\). Write \(V=\ell+\tfrac12\log\det S_{0,\rm gf}+3\sum p_e^2\) for the local
+potential of the stationary expansion (\(\ell\) is the local term and the cofactor uses the fixed
+gauge). Let \(\delta_e^0\) be its centered linear correction and \(P_e\) the second-order remainder
+after extracting \(\Delta_e V=V(B+e)-V(B)\) and \(\delta_e^0\) from \(L(B+e)-L(B)-\log p_e\). Taylor
+expansion gives
+\[
+ r_e^{\rm PC}=\Delta_e V+P_e+\tfrac12(\delta_e^0)^2
+                   +(\delta_e^0-\delta_e)+O_b(m^{-3}).
+\]
+Although \(\delta_e-\delta_e^0=O_b(m^{-2})\) has the order we seek, both corrections have row mean
+zero, so their difference vanishes exactly in that mean. The cubic error after summation is
+\(O_b(n\sum_{m>j}m^{-3})=O_b(n^{-1})\). The potential contributes its endpoint values. The part we
+must average over the whole interval is \(m^2[P_e+(\delta_e^0)^2/2]\). The table pairs each insertion
+term with its contributions to the sixteen entries of this physical mean in the continuum.
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+\(-m^2 E_g/2\)& \(G_{\rm cof}\)\\
+\(m^2 A_3\)&\(f2E+f2z+f2F\)\\
+\(m^2 C^{(3)}\)&\(f2F+C3_{\rm cuad}\)\\
+\(-m^2(E_Q+E_R)/2\)&\(f3F+f3c\)\\
+\(m^2(-3p_e^2+p_e f_e)\)&\(f4=f4_{\rm expl}+f4_{L0}\)\\
+\(m^2\sum_F p_i(1-t_{ie})w_i\)&\(f5c+f5F\)\\
+\(-m^2\sum_{E'}p_iq_iw_i\)&\(f6\)\\
+\(m^2(\delta_e^0)^2/2\)&\(f7\)\\
+first part of \(Q_e\)&\(Q1+\Delta_1\)\\
+second part of \(Q_e\), with \(-3m^2\sum_{E'}y_i^2\)&\(Q2+\Delta_2\)\\
+\hline
+\end{tabular}
+\end{center}
+\(f2F\) appears twice because the cubic term on the fiber and the pair part of \(C^{(3)}\) have the
+same weight. The two parts of \(Q_e\) carry the factors \(-1/2\) and \(1/4\). An available line that
+occurs in two factors counts only once, so the correction to the product is
+\(\psi\psi'(U_\ell^{-1}-1)\). This gives \(\Delta_1,\Delta_2\). The twelve ordered pairs of distinct
+families in the quadratic block contribute \(12/4=3\) times \(m^2\sum_{E'}y_i^2\), canceling the
+indicated subtraction at each parent. These identities determine the multiplicities independently of
+the numerical evaluation.
+
+The uniform profile error in these scaled means on \([b,1]\) is \(\epsilon_n(b)\to0\). Its total cost
+is at most \(\epsilon_n(b)n\sum_{m>j}m^{-2}=o_b(1)\). The predictable indicator of a regular parent is
+taken before the row is chosen. Removing the exponentially rare auxiliary exits costs \(o_b(1)\),
+since \(n|A|\le C_b\). On \(H_j\), let \(s=A-R_Q(n)+g_T+\Gamma\). There \(|s|=O_b(1/n)\) and
+\(\int_{H_j}|d\mu-d\nu|=\mathbb E_\mu[|1-e^{-s-g^\flat}|;H_j]=O_b(1/n)\) by
+\eqref{eq:arrival-estimate}. Thus we may use the adaptive law in the Riemann sum. The local potential
+telescopes, with scaled endpoint contribution \(\mathcal V(b)/b-\mathcal V(1)\) and error
+\(O_b(n^{-1/2})+o_b(1)\).
+
+For the exact rook correction let \(u_e=g_T(M_e)-g_T(M)\), where \(M_e\) here denotes the mask of the
+physical child. Thus \(\log\rho^\sharp-\log\rho=\log\mathbb E_{\nu,i}e^{u_e}\). Since
+\(|u_e|=O(m^{-2})\), replacing the logarithm by the mean costs \(O(m^{-4})\). The weighted exit costs
+and the stopped density give a stopped relative entropy of \(O_b(1)\). The conditional Pinsker
+inequality and Cauchy--Schwarz bound the scaled change in the means on passing to \(\mu\) by
+\(O_b(n(\sum_{m>j}m^{-4})^{1/2})=O_b(n^{-1/2})\). The increments telescope. The rook endpoints add
+\((F(b)-1/12)/b-(F(1)-1/12)\) to the endpoint contribution of the local potential. Together they give
+the value of \(G/x\) at \(b\) minus its value at \(1\). Writing this difference as the integral of the
+derivative of \(-G/x\) gives the interior mean needed in the final comparison,
+\[
+ \lim_n n\mathbb E_\mu A^\sharp=\int_b^1 d(x)x^{-2}\,dx+\frac{G(b)}b-G(1)
+       =\int_b^1 k(x)x^{-2}\,dx .
+\]
+
+\input{partes/prueba_filas}

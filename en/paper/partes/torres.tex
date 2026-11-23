@@ -1,0 +1,54 @@
+\section{Rooks on the residual mask}\label{sec:torres}
+\label{sec:rook}
+The reduction to an auxiliary permanent, used for the constant term~\cite{tc}, lets us compare
+two arrival boards. On the first, we keep the available squares and lift the diagonal restrictions
+between the pieces still to be placed. Its completions are the perfect matchings of the mask $M$,
+and their weighted sum is $\operatorname{per}M$. On the second, we fix two rooks on squares $e,f$
+of a diagonal. The remaining pieces occupy the mask $M_{ef}$, which loses two rows and two columns.
+The ratio $w_ew_f\operatorname{per}M_{ef}/\operatorname{per}M$ gives the probability of occupying the pair.
+When we approximate both permanents, how much of the error on the first board cancels on the second?
+In Figure~\ref{fig:mascara-ilustrada} one can read off the numerator by hand for $e=(2,4)$ and
+$f=(3,3)$, since only the assignment $(4,1)$ remains. Thus one of the two matchings of the mask
+contains this pair.
+
+\paragraph{The class and two operations.}
+\[
+  w_e\in\{0\}\cup[w_0,w_1],\quad P=\operatorname{diag}(u)M\operatorname{diag}(v),
+  \quad P_e\le M_0/k,\quad \|P-J_k\|_{\rm op}\le1-\gamma .
+\]
+Here $0<w_0\le w_1$, $M_0\ge1$, $0<\gamma\le1$, $M$ has total support, $P$ is its doubly
+stochastic scaling, and $J_k$ has entries $1/k$. This is the class $\mathcal K$. In this section
+$k$ is the integer size of the mask, distinct from the function $k(x)$ in the integral. Occupying
+$e$ removes its row and column and leaves the minor $M_e$. Forbidding $e$ keeps both fibers and
+sets $w_e=0$ in $M\setminus e$. The two operations perturb the sums to be rescaled in different
+ways. The rook stationary point $p$ satisfies $p_e(1-p_e)=w_e\exp(z_i+y_j)$ on the small branch
+and has line sums equal to one. We use $p$ to compute the logarithmic predictor $L_T$ and $P$ to
+compute the correction to $L_T$ given by the next formula.
+The following bounds hold for $k$ above a threshold depending only on the class, including for the
+minors used here. We fix the physical cut-off before letting $n$ tend to infinity.
+
+\paragraph{The approximation carried over [D].}
+\[
+   g_T(M)=\log\operatorname{per}M-L_T(M)
+       =\frac{\Phi(kP)}k+R(M),\qquad |R(M)|\le Ck^{-2}.
+\]
+This estimate for the value is (T). Writing $\Phi=\mathfrak F-1/12$ and evaluating $\mathfrak F$
+at the rook profile along the trajectory gives the function $F(x)$ in~\eqref{eq:main}. Applying
+the bound for $R$ separately on the two boards would give only $O(k^{-2})$ for their difference.
+The estimate $(T^+)$ gains one order under $M\mapsto M_e$, with an increment of $O(k^{-3})$, and
+two under $M\mapsto M\setminus e$, with an increment of $O(k^{-4})$. The constants and threshold
+in these three bounds depend only on $M_0,\gamma$. Appendix~\ref{app:rook} obtains these gains by
+tracking separately the remainder in the scaled permanent and the remainder in the normalization
+of the predictor.
+
+\paragraph{From two rooks to a pair of queens.}
+On a binary mask, the exact probability of occupying $E=\{e,f\}$, in distinct rows and columns,
+is $\pi^{\rm ex}=\operatorname{per}M_{ef}/\operatorname{per}M$.
+For a single line of two squares, the corresponding term in the logarithm of the count is
+$\log(1-\pi^{\rm ex})$. The local approximation $\pi_1$ is defined in Appendix~\ref{app:pair}.
+If a third square $c$ in another row and column is exposed, the error $\pi^{\rm ex}-\pi_1$
+changes by at most $C\varpi(E)/k^5$, where $\varpi(E)=k^2p_ep_f$. This statement (R1) applies
+to the rook minor that retains the pair. In the physical geometry, a move may also forbid
+additional squares. When we take the arrival mean, the change in the rook error contributes $P_T$.
+The effect of a single line contributes to $J$, and the two diagonals of a complete square also
+produce the term $-S$ of Appendix~\ref{app:boundary}.

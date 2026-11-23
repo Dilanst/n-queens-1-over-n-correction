@@ -1,0 +1,61 @@
+\subsection{Por qué la cota de integración es condicional}
+En la Sección~\ref{sec:numeval} se usaron una serie cerca de cero y dos reglas de Gauss en el
+resto del intervalo. En los tres tramos hay que distinguir el error del método de integración
+del error con que se calculó la función en las muestras. Las cotas de Cauchy controlan los
+coeficientes que el muestreo finito mezcla u omite.
+
+En el primer intervalo $[0,r]$, con $r=0{,}03$, escribimos $k_6(x)=\sum k_jx^j$ y $\mathcal V(x)=\sum
+v_jx^j$. Los dos coeficientes nulos de $k_6$ dan la integral exacta $\sum_{j\ge2}k_jr^{j-1}/(j-1)$. El
+cálculo extrae por separado los coeficientes de Fourier de $d$ y de $\mathcal V$. Si la tilde indica
+coeficientes reconstruidos con $N=32$ valores en $|x|=r$, para $2\le j<N$ se tiene
+\[
+ \widetilde d_j+(1-j)\widetilde v_j-k_j
+   =\sum_{\ell\ge1}\bigl(k_{j+\ell N}+\ell N v_{j+\ell N}\bigr)r^{\ell N}
+\]
+para muestras exactas. En efecto, el muestreo de una función analítica agrega los índices congruentes
+con $j$ módulo $N$, y $k_m=d_m+(1-m)v_m$ para $m\ge1$. Cada diferencia se integra con peso
+$r^{j-1}/(j-1)$ y la cola de la integral exacta comienza en $j=N$. La fórmula de Cauchy en el círculo
+exterior acota los dos tipos de coeficientes. El círculo intermedio de radio $0{,}055$ usa 33 muestras
+independientes (64 con las conjugadas) para mejorar las cotas. El radio mayor usado en esta estimación
+es $0{,}095$.
+
+En los otros dos intervalos interesa saber qué coeficientes pueden contribuir al error de Gauss.
+En un panel real $[a,b]$ sean $h=(b-a)/2$, $y=(a+b)/2$ y $f=k_6/x^2$. Escribimos
+\[
+ g(w)=f\!\left(y+\tfrac h2(w+w^{-1})\right)
+      =\sum_{j\in\mathbb Z}\beta_jw^j .
+\]
+El cambio $w\mapsto w^{-1}$ deja fijo el argumento de $f$, de modo que $\beta_{-j}=\beta_j$.
+Por analiticidad en la elipse de Bernstein de parámetro $\rho_2$ (véase~\cite{trefethen}), la
+fórmula de Cauchy da
+$|\beta_j|\le\overline M\rho_2^{-j}$ para $j\ge0$, donde $\overline M$ acota la media del
+módulo en el contorno. Sea $E_s$ la integral menos la regla gaussiana de $s$ puntos sobre $[-1,1]$.
+Para el polinomio de Chebyshev $T_j$ de grado $j$, la simetría y la exactitud de la regla dan
+$E_s[T_j]=0$ si $j$ es impar o $j<2s$. Para $j\ge2s$ par, la positividad da
+$|E_s[T_j]|\le2+2/(j^2-1)$. El error del panel es, por tanto,
+\[
+ h\sum_{\substack{j\ge2s\\j\ {\rm par}}}2\beta_j E_s[T_j].
+\]
+Para estimar estos coeficientes de orden alto se muestrea un contorno interior de parámetro
+$1<\rho<\rho_2$ en $N$ raíces de la unidad multiplicadas por $\rho$. La diferencia entre el
+coeficiente de Fourier reescalado de las muestras y $\beta_j$ es
+\[
+ \sum_{\ell\ne0}\beta_{j+\ell N}\rho^{\ell N}+\rho^{-j}\widehat e_j ,
+\]
+donde $e$ es el vector de errores y la transformada de Fourier se normaliza por $1/N$. El primer
+término y la cola omitida se acotan con sumas geométricas en la elipse exterior. Por Parseval,
+$\sum_{j=0}^{N-1}|\widehat e_j|^2\le N^{-1}\sum_i\delta_i^2$ si $|e_i|\le\delta_i$.
+Para el ruido se retienen los modos $j\le N/2-1$ y el resto de la cola se acota analíticamente. Al
+multiplicar por los pesos gaussianos de la expresión anterior, Cauchy--Schwarz acota el ruido. Para el
+panel de 20 nodos se emplean 232 muestras en la elipse con $\rho=1{,}64$. Para el de seis nodos, 24
+muestras independientes representan una transformada de longitud 46.
+
+Con las tolerancias declaradas de las muestras, las cotas del círculo y de los paneles de seis y veinte
+puntos son aproximadamente $7{,}7\,10^{-10}$, $8{,}8\,10^{-11}$ y $1{,}7\,10^{-11}$, respectivamente.
+El círculo y el panel corto dan juntos $8{,}56111216\,10^{-10}$. Al sumar el valor archivado del
+panel largo, $1{,}69294096\,10^{-11}$, se obtienen unos $8{,}73040626\,10^{-10}$. La cifra comunicada
+de $8{,}7\,10^{-10}$ se redondeó al más próximo. Hacia arriba vale $8{,}74\,10^{-10}$ [D si C].
+Esta cota sólo cubre la serie y las reglas de integración bajo las tolerancias declaradas.
+Para encerrar $\cerr$ hay que propagar además los errores en los 43 nodos del cálculo y en los términos
+de frontera. Cuando una tolerancia $\delta_i$ procede de un refinamiento de malla, su valor es una
+estimación numérica [N].

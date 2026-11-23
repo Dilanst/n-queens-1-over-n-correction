@@ -1,0 +1,32 @@
+\section{El predictor finito y los funcionales del perfil}\label{app:predictor}
+La fórmula de \(\cerr\) usa el mismo predictor en dos escalas. En tamaño finito se evalúa en un tablero
+concreto. A lo largo del llenado intervienen el perfil de torres y el operador que relaciona las
+cuatro familias de líneas. Fijamos aquí las normalizaciones que conectan ambas descripciones.
+
+\subsection{El predictor en el tablero completo}
+Sea $\mathcal D$ el conjunto de líneas de las dos familias diagonales. Para pesos de casilla
+$p_z$, sean $m_\ell=\sum_{z\in\ell}p_z$ y $h_\ell=1-m_\ell$. En el politopo de sumas de fila y de
+columna iguales a uno, $0\le p_z\le1/4$ y $m_\ell\le1$, se maximiza
+\[
+ H_n(p)=\sum_z[-p_z\log p_z+3(1-p_z)\log(1-p_z)]
+            -\sum_{\ell\in\mathcal D} h_\ell\log h_\ell .
+\]
+Usamos $0\log0=0$. El maximizador canónico $\pi$ es único y es interior para todo $n$
+suficientemente grande~\cite[\S3 y (P2.7)]{pc}. En las expresiones siguientes evaluamos todos los
+pesos y holguras en $\pi$. Sea $A$ la matriz de incidencia de casillas y líneas, sea
+$g_z=\pi_z(1-\pi_z)/(1-4\pi_z)$ y escribamos
+\[
+ S_n=\operatorname{diag}(0_R,0_C,h_D,h_A)+A^{\mathsf T}\operatorname{diag}(g)A,\qquad
+ L_n=-\tfrac12\sum_z[\log(1-4\pi_z)-4\log(1-\pi_z)].
+\]
+El pseudodeterminante es el producto de los autovalores no nulos. La dirección nula da la última
+normalización en la expresión
+\[
+ \log Q_{\rm pred}(n)=H_n(\pi)+L_n-\tfrac12\log\operatorname{pdet} S_n
+                      +\tfrac12\log(4\pi n).
+\]
+En $4\pi n$, el símbolo $\pi$ designa la constante del círculo. Los logaritmos son naturales.
+Esta definición fija el predictor finito cuyo error con signo estudiamos. Su propia corrección
+de tamaño finito respecto de $\log(n!)+n\Phi+C_{\rm pred}$ es una cantidad distinta.
+
+\input{partes/perfil}
