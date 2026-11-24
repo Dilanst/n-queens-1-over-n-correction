@@ -1,0 +1,60 @@
+\section{Dos umbrales de longitud y una sola ley de historias}
+Sea $M=\lceil\delta n\rceil$. La ley es $\nu$ con orden de filas uniforme revelado
+progresivamente. Una salida se cuenta en el hijo, incluso si coincide con el suelo.
+Tomamos una vez la clase de C, \S5.4. Sus constantes incluyen $C,\gamma>0$
+para el punto de reinas $p$, con $\max p_e\le C/j$ y brecha de filas y columnas
+$\ge\gamma$ en el interior. Su umbral geométrico se denota $\alpha_{\rm hist}$.
+No se cambia el suceso histórico de C al introducir otra longitud $\alpha j$ en el extremo.
+El Teorema 8.1 de B da predictor finito para todos los hijos legales del padre regular.
+En su prueba, $e_c=L(B+c)-L(B)-\log p_c$, $\delta_c=O(1/j)$ y
+$e_c-\log(1+\delta_c)=O(j^{-2})$. Al dividir por $\rho=1+O(j^{-2})$ resulta
+$\nu(c\mid B,\text{fila})=p_c(1+O(1/j))$ sobre todo el soporte de esa fila.
+
+\paragraph{Lema de márgenes en el extremo (implicación revisada).}
+Usamos la comparación de la ronda 10, parte 04, en el mismo soporte. Para constantes
+$C,\gamma$ fijas, sean $\epsilon_T>0$ y $K_T$ su umbral y su constante relativa:
+\[
+ \left|P_e/p_e-1\right|\le K_T(\epsilon+1/j),\qquad
+ \epsilon=\max_f\sum_{e\in f}p_e\le\epsilon_T .
+\]
+Aquí $P$ es el punto estacionario de torres; fuera del soporte ambas tablas valen cero.
+Se pueden reservar de antemano $M_0=2C$ y $\gamma_T=\min(1,\gamma)/2$.
+Si $L_{\max}<\lceil\alpha j\rceil$, por integralidad $L_{\max}<\alpha j$.
+Así $\epsilon\le C\alpha$. Tomamos $C\alpha<\epsilon_T$, $K_TC\alpha\le1/4$
+y después $K_T/j\le1/4$. Sobre el soporte $p_e/2\le P_e\le3p_e/2$. En consecuencia,
+\[
+ j\max P_e\le M_0,\qquad
+ D\operatorname{diag}(P)D^t\succeq\tfrac12D\operatorname{diag}(p)D^t ,
+ \qquad \max_f\sum_{e\in f}P_e\le M_0\alpha .
+\]
+$D$ es la incidencia de filas y columnas. Como $P$ es bistocástico, la matriz de
+la izquierda tiene bloques diagonales identidad y cruzados $P,P^t$. Su espectro es
+$1\pm\sigma_i(P)$; en el complemento del modo $(\mathbf1,-\mathbf1)$ se obtiene
+$\|P-\mathbf1\mathbf1^t/j\|_{\rm op}\le1-\gamma_T$.
+
+Para los menores hace falta el escalado bistocástico exacto de la máscara binaria $A$.
+En el soporte, la estacionariedad de torres dice $P_{rc}(1-P_{rc})=a_r b_c$ con
+factores positivos. Aplicando el lema de escalado de C, \S7, a $P$, su matriz
+$P\circ(1-P)$ se escala por potenciales $O(1/j)$ en supremo. El resultado $D_A$
+es un escalado de $A$. En el soporte $D_{A,e}/P_e=1+O(1/j)$ y fuera coinciden sus ceros.
+La cota en Hilbert--Schmidt del mismo lema da $\|D_A-P\|_{\rm op}=O(1/j)$.
+Se pueden reservar también $j\max D_{A,e}\le4C$ y
+$\|D_A-\mathbf1\mathbf1^t/j\|_{\rm op}\le1-\gamma_T/2$ para $j$ grande.
+En la llegada larga el uso de ese lema en el coste exterior emplea $p$, no $P$.
+
+\paragraph{Uso del coste sobre una llegada regular larga.}
+El enunciado de C, Corolario 6.8, dice primera salida. Para otro tablero fijo que cumple
+las mismas cotas exteriores se usa su prueba. Escribimos $\ell_f=\sum_{e\in f}p_e$,
+$h_f=1-\ell_f$, $X=Qe^{-L}$ y $\ell_f\le\varepsilon_{\rm out}$. La parte común en
+el logaritmo del factor $F$ de C cumple, usando $\sum_f\ell_f=2j$,
+\[
+ \sum_f\log h_f-2\sum_e\log(1-p_e)
+ \le 2\sum_e[-\log(1-p_e)-p_e]=O(1).
+\]
+En una permutación legal los $2j$ factores individuales cuestan a lo sumo
+$\beta j$ con $\beta=2\varepsilon_{\rm out}/(1-\varepsilon_{\rm out})$.
+El punto de reinas cumple difusión y brecha; es la tabla que usa C para los pesos
+$W=p(1-p)$ de su permanente auxiliar. La estimación uniforme de ese permanente y
+el cociente de normalizadores de C dan $X\le\exp(C_0+\beta j)$ si $Q>0$.
+Para $Q=0$ se tiene $X=0$ directamente. La prueba no requiere el punto de torres
+no ponderado de la máscara larga. Tampoco cambia $c>2\beta$ para las salidas históricas.

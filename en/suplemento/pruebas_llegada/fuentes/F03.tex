@@ -1,0 +1,32 @@
+\section{Supresiones reales y campo complejo de supresiones}
+Póngase $v_e=(1,\delta_{r_e},\delta_{c_e})$, $T_U=\sum_{e\in U}v_e$.
+Usamos norma suma con variación total y el subespacio donde las tres masas coinciden.
+Así $\|v_e\|\le3$. Denotamos por $d(\theta)$ el núcleo reequilibrado y por $A_0(\theta)$
+su acción por unidad de tamaño, en las medidas restantes tras la supresión $\theta=T/j$.
+Es la rama de R9 y de la parte 03 de la entrega precedente. Sea
+$b_e=D_e\exp(A_0'(0)v_e)$, comparable a $D_e$ por ambos lados. En $h=T_1$ ponemos
+\begin{align*}
+ L(T)={}&\log\Gamma(j+1-h)-\log\Gamma(j+1)+h\log j\\
+ &+j\{A_0(T/j)-A_0'(0)(T/j)\}\\
+ &+\mathcal L_Q(1/(j-h),d(T/j))-\mathcal L_Q(1/j,d(0)).
+\end{align*}
+El corte $Q$ es el mismo para padre e hijos. En una bola $\|T\|\le a_0 j$ se cumple
+$L(0)=0$, $\sup|L|\le Cj$. En una bola menor, $\sup\|D^2L\|\le C/j$ por Cauchy.
+Además $\|DL(0)\|\le C/j$: en el factorial la derivada es $\log j-\psi(j+1)=O(1/j)$;
+la acción centrada tiene derivada cero; las dos derivadas del último renglón cuestan,
+respectivamente, $C Q/j^2$ en $1/(j-h)$ y $C/j$ en los datos. Se toma
+$\epsilon$ pequeño para que $1/(j-h)$ quede dentro de medio disco en $u$.
+Para todo conjunto $U$ compatible en filas y columnas, de cardinal $h\le aj$ con $3a<a_0$,
+la identidad de menores exacta y las dos aproximaciones de logaritmos dan
+\[
+ p_U=\Prb_{\rm torres}(U\subset\sigma)
+     =\Big(\prod_{e\in U}b_e\Big)e^{L(T_U)}(1+O(e^{-cj})).
+\]
+El error es relativo, uniformemente incluso cuando $L(T_U)$ crece.
+Para todos los tamaños hay una constante fija $C_0$ tal que
+$p_U\le C_0^{|U|}\prod_{e\in U}b_e$.
+En tamaños pequeños se usa $|L(T_U)|\le C(h+h^2)/j$. Basta un umbral $a_*j$
+con $a_*>0$ fijo dentro de la bola original. Por encima, la razón exacta restante
+$\per D_{-U}/\per D$ es a lo sumo $e^j$, pues cada suma de fila del menor es $\le1$
+y $\per D\ge j!/j^j\ge e^{-j}$ por la desigualdad de van der Waerden. Entonces
+$e^j\le \exp(h/a_*)$. Así $C_0$ es independiente del corte posterior $a$ de Taylor.

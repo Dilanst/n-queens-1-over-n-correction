@@ -1,0 +1,63 @@
+\section{La parte local de una configuración con un ciclo}
+El grafo bipartito tiene sitios binarios $i$ y factores $f$ de capacidad uno.
+Las fibras RC también se incluyen. Se trabaja en una cara de activaciones y en la
+silla de Bethe con campos locales fijos, en el orden basal del exterior común.
+Sean $d_i$ el número de factores incidentes, $x_i$ sus creencias de ocupación,
+$v_i=x_i(1-x_i)$ y $q_f=1-\sum_{i\in f}x_i$. Primero se toman campos positivos
+interiores. Los campos complejos pequeños se alcanzan por continuación desde el origen.
+
+\paragraph{El factor exacto.}
+La creencia categórica $b_f$ asigna $q_f$ al estado vacío y $x_i$ al estado
+con sólo $i$ ocupado; $b_i$ es Bernoulli de media $x_i$. A reacción exterior cero
+la ecuación de silla es
+\[
+ \lambda_i=x_i(1-x_i)^{d_i-1}/\prod_{f\ni i}q_f .
+\]
+Sobre cada configuración legal, $\prod_f b_f\prod_i b_i^{1-d_i}$ es un mismo
+factor por $\prod_{i\,\text{ocupado}}\lambda_i$. El factor vale
+$\prod_f q_f\prod_i(1-x_i)^{1-d_i}=1/Z_{\rm B}$, por el valor
+estacionario de Bethe (sustituir la ecuación de silla en la entropía).
+Al sumar una rama del grafo se marginalizan creencias consistentes; queda uno
+para la transición condicionada en el sitio de enlace. Si hay un ciclo simple
+$\mathcal C$ de $b$ sitios, quedan transiciones de dos estados. Para $i,h$
+sucesivos en el ciclo son
+\[
+ T_{ih}=\begin{pmatrix}
+  1-x_h/(1-x_i)&x_h/(1-x_i)\\1&0
+ \end{pmatrix}.
+\]
+En el estado conjunto $(0,0)$ del par se incluyen las ocupaciones de ramas del factor.
+La traza del producto alrededor del ciclo es $Z/Z_{\rm B}$.
+El producto preserva el vector de unos y su segundo autovalor es su determinante,
+\[
+ \theta=(-1)^b\prod_{i\in\mathcal C}\frac{x_i}{1-x_i},\qquad Z/Z_{\rm B}=1+\theta .
+\]
+
+\paragraph{El factor del predictor con su normalización.}
+Escribimos $V_0=\operatorname{diag}(v_i)$, $V_f$ para su restricción y
+$C_f=V_f^{-1}(\operatorname{diag}(x_f)-x_fx_f^t)$,
+con $x_f=(x_i:i\in f)$. La diagonal es uno y para $i\ne h$ la entrada
+es $-x_h/(1-x_i)$. El lema del determinante da
+$\det C_f=q_f/\prod_{i\in f}(1-x_i)$. Sea $E$ el operador que copia en las
+incidencias el valor de cada sitio, $E_f$ su bloque en $f$ y $C=\bigoplus_f C_f$.
+Con el cofactor de \emph{Menores uniformes}, parte 07, en reacción exterior cero,
+\[
+ D_{\rm loc}
+ = \left(\prod_f\det C_f\right)
+ \det\!\left[I-E^tE+\sum_f E_f^t C_f^{-1}E_f\right].
+\]
+Esto usa la Hessiana local negativa por $V_0$ a derecha y los factores escalares.
+Para $A=C-I$ y $B=EE^t-I$, se tiene $I-AB=C-(C-I)EE^t$. Por Sylvester,
+$\det(I-AB)=D_{\rm loc}$. Cada paso de $AB$ cambia de sitio en su fibra
+y cambia de fibra en el sitio siguiente. Una caminata cerrada de este tipo
+permanece en el ciclo. Sus dos orientaciones usan estados de incidencia distintos
+y tienen producto $\theta$ cada una. Ordenando por componentes fuertemente conexas,
+el resto es triangular sin ciclos, y $D_{\rm loc}=(1-\theta)^2$.
+En un bosque $D_{\rm loc}=1$. En el ciclo, $x_i+x_h<1$ para cada par vecino
+implica $|\theta|<1$ en los datos reales interiores. En la rama del origen,
+\[
+ \log Z-\log(Z_{\rm B}/\sqrt{D_{\rm loc}})=\log(1-\theta^2).
+\]
+Los cocientes de las entradas y las identidades se prolongan a $x_i=0$
+por sus expresiones holomorfas. El cofactor del tablero con reacción exterior
+positiva en orden de tamaño se trata en la parte siguiente.

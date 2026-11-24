@@ -1,0 +1,35 @@
+\paragraph{Second-order response in the exterior.} The \(f6\) row requires \(m^2q_i\), since the
+first-order response in \(y_i/p_i\) cancels with \(t_{ic}\). To verify the second-order source, set
+\(X=(a_{i,I}^{\mathsf T})_{i\in E'}\), \(D_p=\operatorname{diag}(p_i)_{i\in E'}\). Subtracting the
+stationarity equations gives \(y_i/p_i=(X\eta)_i+(B_1)_i\), where \(\eta_f=\gamma_f/h_f\) on the
+diagonals and the other components are row and column multipliers. With \(\theta_i=y_i/p_i\), subtracting
+the logarithms of the stationarity equations gives the exact identity \[
+ (B_1)_i=\theta_i-\log(1+\theta_i)-3\log(1-y_i/(1-p_i))
+ +\sum_{f\in \familias(i)\cap(D\cup A)}[\log(1+\eta_f)-\eta_f].
+\] The mass equations give \(\mathcal M\eta=d_0-X^{\mathsf T}D_pB_1\). Hence \[
+ q=B_1+X\mathcal M^+(r-X^{\mathsf T}D_p B_1).
+\] Taylor expansion in the squares and vacancies gives \(m^2B_1=L+O_b(m^{-1})\), with \[
+ L_i=\tfrac12(mt_{ic})^2-\frac{3mp_i(mt_{ic})}{1-p_i}
+       -\tfrac12\sum_{f\in \familias(i)\cap(D\cup A)}(mz_f^{\rm fis})^2,\qquad
+ z^{\rm fis}=(Ra_c)_I .
+\] Here we used \(y_i/p_i=-t_{ic}+O_b(m^{-2})\) and \(\gamma_f/h_f=-z_f^{\rm fis}+O_b(m^{-2})\). On the
+complement of the null mode, the block form of \(S_0R=I-\Pi_m\) gives \(\|\mathcal
+M^+-R_{II}\|_\infty=O_b(m^{-1})\) in the maximum absolute row-sum norm, since the retained lines lose
+mass \(O_b(m^{-1})\) and the inverse is bounded. Thus \(m^2q=L+XR_{II}(m^2r-X^{\mathsf
+T}D_pL)+O_b(m^{-1})\).
+
+We express the contraction using the same profile kernels. Fix the center \(c\) and put
+\(\Lambda(i)=T_i^2/2-3W(i)T_i-\tfrac12\sum_{f\in \familias(i)\cap(D\cup A)}z_f^2\). For a retained line
+\(u\), write \begin{align*}
+ \omega(u)={}&-\sum_{j\in \familias(c)} \pesodirecto(u\cap j)
+     \left[t_j+\sum_{a\in \familias(u\cap j)\setminus\{j\}}z_a\right]
+      -\int_{i'\in u}\mathbb E\Lambda(i')\,d\omega_u(i'),\\
+ q(i)={}&\Lambda(i)+\sum_{u\in \familias(i)}
+ \left[\omega(u)+\int E(u,u')\omega(u')\,d\rho(u')\right],\\
+ f6={}&-\left\langle w(i)\mathbb E q(i)\right\rangle_{i,c}.
+\end{align*} The first sum omits missing intersections. The integrated fiber term in \(\omega\) is the
+mean with \(i'\) marked and \(c\) fixed. In the products in the sum over intersections, \(\psi\) applies
+to the whole monomial. The two parts of \(\omega\) come from \(m^2r=-m^2(C_0t+U_0z)\) and \(-X^{\mathsf
+T}D_pL\). The identity and integral parts of \(R_{II}\) give the two terms in brackets in \(q(i)\). The
+area mean carries the sign of \(-m^2\sum_{E'}p_iq_iw_i\). Lemma~\ref{lem:f6} proves the trace
+rearrangement, including the walk in Figure~\ref{fig:rectangulos}.

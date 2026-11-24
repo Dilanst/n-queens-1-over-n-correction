@@ -1,0 +1,108 @@
+\begin{lema}[Punto de prueba y desplazamiento]\label{lem:linea-desplazamiento}
+Sea $F=\nabla\Psi$ el residuo de márgenes, $s=-\hessloc_0^{-1}F(y^0)$ y $\eta=y^*-y^0$. En el
+calibre fijo existe un punto estacionario $y^*$ con $\|\eta\|_1=O_2$ y $\|\eta-s\|_1=O_4$.
+Para $c\notin E$, $\iota_c^\top\eta=n_cpq+O_3$, donde $n_c$ cuenta las fibras axiales
+de $E$ que pasan por $c$. La acción cambia en $H_0-\delta^\top K\delta/2+O_6$,
+con $H_0$ dado en la demostración.
+\end{lema}
+\begin{proof}
+El gradiente $F$ de la acción dual $\Psi$ contiene los márgenes menos uno y, en la línea,
+la suma de las dos masas y la vacancia menos uno. En el punto de prueba
+$F(y^0)=-\sum_{i\in E}\delta_i\iota_i$, con $\delta_i=pq+O_3$ por la ecuación cúbica.
+En el calibre ortogonal al modo fila menos columna, $DF=\hessloc$ y la aplicación de Newton
+con inversa fija $v\mapsto v-\hessloc_0^{-1}F(y^0+v)$ es contractiva en la bola
+$\|v\|_1\le 2\|s\|_1=O_2$. En efecto, allí las masas son $\le 2p_c$ para $k$ grande,
+por $du/d\theta=\tau_d(u)$ y $|\iota_c^\top v|\le\|v\|_1$. Las sumas de masa por
+fibra están acotadas y $|d\tau_d/d\theta|\le C u$, de modo que
+$\|\hessloc(y^0+v)-\hessloc_0\|_1\le C\|v\|_\infty$. Por simetría $\|\hessloc_0^{-1}\|_1=O(1)$.
+La derivada de la aplicación tiene norma a lo sumo $C\|v\|_1\le1/2$ para $k$ grande,
+y la imagen del centro es $s$. La contracción conserva la bola. Su punto fijo satisface
+$\|\eta\|_1=O_2$ y, al integrar la derivada sobre $[0,\eta]$, $\|\eta-s\|_1=O_4$.
+La fórmula de bloques de $\hessloc_0^{-1}$ y las entradas de $G^0$ dan
+$s_\alpha=pq\,\symbf{1}_{\{\alpha\text{ toca }E\}}+O_3$ en cada fibra axial
+y $s_E=2pq+O_3$ en la línea. Las mismas estimaciones valen para $\eta$.
+Con $d\theta_c=\iota_c^\top\eta$ y $n_c$ el número de las cuatro fibras incidentes en $c$,
+$d\theta_c=n_cpq+O_3$ fuera de $E$. Por los márgenes,
+$\sum_c p_c|d\theta_c|=O_2$ y $\sum_c p_c|d\theta_c|^2=O_4$.
+
+Una primitiva de la masa en $\theta$ es $d\,u+(d-1)\log(1-u)$, con $d$ la multiplicidad.
+La acción dual suma esas primitivas, la vacancia $e^{w}$ y los potenciales con signo menos.
+En el punto estacionario se resta $2k$ más el número de líneas diagonales para obtener
+la entropía. Por tanto la acción aporta $H_0-\tfrac12\delta^\top K\delta+O_6$, donde
+\[
+ H_0=\sum_{i\in E}\{3u_i+2\log(1-u_i)-2p_i-\log(1-p_i)\}-(p+q)-\log h .
+\]
+La parte cuadrática resulta al completar el cuadrado
+$F(y^0)^\top\eta+\eta^\top \hessloc_0\eta/2$. El error cúbico está acotado por
+$C(\sum_c p_c|d\theta_c|^3+|\eta_E|^3)=O_6$ y el cuadrado de $\eta-s$ cuesta $O_8$.
+\end{proof}
+En el punto de prueba el prefactor cambia exactamente en
+\[
+ B_0=\sum_{i\in E}\{\ell_3(u_i)-\ell_2(p_i)\}
+       -\tfrac12\log\det(I+DG)-\tfrac12\log \schurloc .
+\]
+
+Para trasladar el prefactor definimos
+$\widehat G_{cd}=\iota_c^\top \hessloc_0^{-1}\iota_d$,
+$\Gamma=\nabla\Lambda(y^0)$, $\widehat C_c=\iota_c^\top \hessloc_0^{-1}\Gamma$ y
+$\sigma_\Gamma=(\hessloc_0^{-1}\Gamma)_E$. Para todo sitio escribimos
+$u_c=p_c$ si $c\notin E$, $\tau_c=\tau_{d_c}(u_c)$, $\kappa_c=\kappa_{d_c}(u_c)$.
+La derivada del prefactor es $\Gamma=\sum_c b_c^*\iota_c+b_w\symbf{e}_E$ con
+\[
+ b_c^*=\tau_c\{\ell'_{d_c}(u_c)-\kappa_c\widehat G_{cc}/2\},\qquad b_w=-h/(2\schurloc),
+\]
+donde $\symbf{e}_E$ es el vector unitario de la línea.
+
+\begin{lema}[Desplazamiento del prefactor]\label{lem:linea-traza}
+Bajo (H), $\Lambda(y^*)-\Lambda(y^0)=
+\delta_e\widehat C_e+\delta_f\widehat C_f+2p^2q^2+O_5$.
+\end{lema}
+\begin{proof}
+Escribamos $V_*=\hessloc(y^*)-\hessloc_0=\sum_c v_c\iota_c\iota_c^\top
++v_w\symbf{e}_E\symbf{e}_E^\top$, con $v_c=\tau_{d_c}(p_c^*)-\tau_c$
+y $v_w=h(e^{\eta_E}-1)$. Sean $\tau''_c$ las derivadas segundas en $\theta$.
+Al segundo orden el residuo de $F$ por sitio es
+$\tau_c\kappa_c(d\theta_c)^2/2+O(p_c|d\theta_c|^3)$, y el de la vacancia
+es $h\eta_E^2/2+O_6$. En $v_c$ el término lineal es $\tau_c\kappa_c d\theta_c$
+y el cuadrático $\tau''_c(d\theta_c)^2/2$ con el mismo resto. La segunda derivada de
+$\ell_{d_c}$ en $\theta$ es $O(p_c^2)$, cuya contribución total es $O_5$.
+Estas cotas se siguen de las fórmulas racionales en el segmento $d_cu<1/2$.
+Como $|v_c|\le C p_c|d\theta_c|$, Cauchy--Schwarz por fibra da
+$\|V_*\|_F^2\le C(\sum_c p_c|d\theta_c|^2+v_w^2)=O_4$.
+Los autovalores de $Z=\hessloc_0^{-1/2}V_*\hessloc_0^{-1/2}$ satisfacen
+$\sum_j|\lambda_j(Z)|^3\le\|Z\|_2\|Z\|_F^2=O_6$. El resto de $\log\det(I+Z)$
+después de la traza cuadrática es por tanto uniforme en la dimensión.
+
+En $\Gamma^\top\eta$ sustituimos $\eta-s$ por $-\hessloc_0^{-1}$ aplicado al residuo de $F$.
+Al incluir el término lineal del logaritmo del determinante, la variación de $\Lambda$
+es $\Gamma^\top s+\tfrac14\operatorname{tr}(Z^2)+O_5$ menos la expresión
+\[
+ \sum_c\tau_c\left(\tfrac12\kappa_c\widehat C_c+
+ \tfrac14(\tau''_c/\tau_c)\widehat G_{cc}\right)(d\theta_c)^2
+ +h\left(\tfrac12\sigma_\Gamma+\tfrac1{4\schurloc}\right)\eta_E^2 .
+\]
+Fuera de $E$, $\widehat G_{cc}=2+O_1$, $\widehat C_c=-1+O_1$ y
+$\kappa_c,\tau''_c/\tau_c=1+O_1$. En efecto, la inversa de bloques cambia la
+diagonal axial en $O_2$, y $\Gamma_H-\Gamma^0=O_1$ componente a componente
+al sumar los $b_c^*-b_c^0$ por fibra. Como $b_w=-1/2+(p+q)/2+O_2$, la componente
+$\Gamma_E=b_e^*+b_f^*+b_w$ vale $-1/2-(p+q)+O_2$ porque $b_i^*=-3p_i/2+O_2$ en $E$.
+Para $\widetilde G=(A^0+UDU^\top)^{-1}$, la componente de la inversa es
+$\sigma_\Gamma=(\Gamma_E-t^\top U^\top\widetilde G\Gamma_H)/\schurloc$.
+Como $U^\top\widetilde G\Gamma_H=(-1,-1)^\top+O_1$ y $\schurloc=1+O_2$,
+los dos términos de orden uno se cancelan y $\sigma_\Gamma=-1/2+O_2$.
+Los dos paréntesis cuestan $O_1$ fuera de $E$ y en la vacancia,
+y dentro de $E$ cada peso es $O_1$. Toda la expresión es $O_5$.
+
+Para evaluar la traza, $\sum_c|v_c|=O_2$, $\sum_c v_c^2=O_5$, $v_e,v_f=O_3$.
+En cada una de las cuatro fibras $\alpha$ incidentes en $E$,
+$\sum_{c\in\alpha\setminus E}v_c=pq+O_3$, pues $d\theta_c=n_cpq+O_3$ y hay a lo sumo un cruce adicional
+con $n_c=2$. En cada otra fibra $\sum|v_c|=O_3$ por los a lo sumo dos cruces incidentes.
+En $\sum_{c,d}v_cv_d\widehat G_{cd}^2$ sólo contribuyen a orden cuatro los sitios distintos
+fuera de $E$ con una fibra común, donde $\widehat G_{cd}^2=1+O_1$. Reunirlos por fibra
+da $4p^2q^2+O_5$ (las otras $2k-4$ fibras suman $O(k\,k^{-6})$).
+Los productos cruzados con la vacancia son $O_5$, pues $(\hessloc_0^{-1}\iota_c)_E=O_1$ fuera de $E$.
+La vacancia sola aporta $(v_w/\schurloc)^2=4p^2q^2+O_5$. Quedan, pues,
+\[
+ \Lambda(y^*)-\Lambda(y^0)=\sum_{i\in E}\delta_i\widehat C_i+2p^2q^2+O_5 .
+\]
+\end{proof}

@@ -1,41 +1,17 @@
-\section{How the cancellations were identified}
-Division by $x^2$ near $x=0$ revealed a difficulty that remained hidden in the interior. Two
-independent evaluations of a formula could agree if both omitted the same incidence. The discrepancy
-with the expected slope led us to vary the square weights and count the physical lines one by one.
-When two squares share another line, its vacancy enters only once. Applying this rule in both
-orders of the product gave the corrections $\Delta_1,\Delta_2$. The catalog in the supplement
-documents the blind comparison of implementations, the line-by-line evaluator, and the use of
-profile deformations to locate the two omissions.
+\section{How the cancellations were identified}\label{sec:cancelaciones}
+When the weights of two crossings of a rectangle are added, the same line may appear in both. Its vacancy
+is counted once. Applying this rule to the two orders of the product gives \(\Delta_1,\Delta_2\)
+(Section~\ref{sec:contracciones}). The rectangle method, adapted from~\cite[\S4]{tc}, sums all centers of
+each pattern on the grid. Spatial extrapolation is studied in Section~\ref{sec:rectangulos}.
 
-\paragraph{How to retain the sign when summing the errors.}
-A bound on $|R_Q(n)|$ allows $nR_Q(n)$ to oscillate. To retain the sign we compare, as in
-Section~\ref{sec:signedmap}, the probabilities of the same stopped history under the two laws.
-At arrival there are groups whose size grows with $n$. Conditioning on the rows involved allows
-us to bound the sum of these groups in mean, with a common constant for all small cut-offs. This
-is the estimate the proof needs. Pointwise control on each board is a stronger requirement.
+For the permanent, Divoux and Wang give the leading determinant, McCullagh develops formal
+corrections~\cite{dw,mcc}, and Li treats perturbations with sublinear line norm~\cite{li}. Here we
+control the change in the remainder upon removing the two rows and two columns of a pair. When its two
+squares are reinserted, the state of the other two vertices is retained. Thus the mean over pairs
+contributes \(J\) and the interaction between the two diagonals enters \(-S\) once
+(Appendices~\ref{app:boundary} and~\ref{app:weights}).
 
-\paragraph{From the permanent of the mask to the error of a pair.}
-Occupying the pair removes two rows and two columns. Thus it matters how much the error of the
-permanent changes on passing to the minor. Divoux and Wang give the leading determinant in the
-diffuse class, McCullagh develops formal corrections~\cite{dw,mcc}, and Li treats perturbations
-of sublinear line norm~\cite{li}. Estimate $(L^*)$ selects the first excess class of the Gaussian
-expansion and controls the remainder uniformly. To obtain $J$ the availability of the other two
-vertices is held fixed while the weights of the pair are varied. Rank-two reinsertion identifies
-the response of a single line even when both diagonals are available. Thus the square interaction
-contributes only once to $-S$.
-
-\paragraph{From an algebraic check to a consequence of the theorem.}
-The cancellation of the linear term at the endpoint was checked by computer in a system of 42
-transcribed pieces \status{O}. The proof for the physical profile follows a different argument:
-two cut-offs approximate the same initial quantity and give the Cauchy criterion. A nonzero slope
-$k'(0)$ would produce a logarithmic divergence. Convergence of the truncated integral forces
-$k'(0)=0$ (Appendix~\ref{app:closing}).
-
-\paragraph{From the formula to a number.}
-The first quadratures, based on a few central squares, gave errors of $10^{-5}$ to $10^{-3}$ in
-individual contributions. The rectangle method, adapted from~\cite[\S4]{tc}, sums all the centers
-of each pattern on the same grid. This rearrangement is exact. The passage from the grid to the
-continuum is estimated by extrapolation \status{N}. Refining the profile made it possible to enclose
-it with radii below $2.1\cdot10^{-15}$ and obtain an interval for $Q_2$ at one real node. The trace
-$S_{13}$ explains why the interval is still wide: bounding the entries of the row and column block
-separately loses their dependence. Section~\ref{sec:numcert} quantifies this limitation.
+The last cancellation requires retaining the sign. Comparing two cut-offs of the same board gives
+convergence of the truncated integral. A linear term in its numerator would produce a logarithmic
+divergence; the proof in Appendix~\ref{app:closing} rules it out. The catalog in the supplement preserves
+the trials that led to these three identifications.

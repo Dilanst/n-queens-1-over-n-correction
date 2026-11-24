@@ -1,0 +1,36 @@
+\section{Centrado en el campo determinado por la propia media}
+Los Taylor holomorfos de $L$ y de $DL$ actúan en vectores con valores en $\mathcal A_\rho$:
+se multiplican los coeficientes de esa álgebra y se evalúan las formas multilineales.
+La polarización cuesta a lo sumo $l^l/l!\le e^l$ en orden $l$. Se reduce por un factor
+fijo la bola de radio $a_0j$. Por la cota $Cj$ de Cauchy, el Taylor de $D^2L$ en cero
+se suma con norma $\le C/j$ en la bola reducida. No aparece un factor de dimensión.
+Se elige $h=DL(m)$, $m=\mathfrak m(h)$.
+La aplicación $h\mapsto DL(\mathfrak m(h))$ deja estable una bola de radio
+$C'(1+S)/j<h_0/2$, por las cotas de $DL(0)$, $D^2L$ y $\mathfrak m$.
+Su constante de Lipschitz es $CS/j<1/2$ al elegir $\eta$ pequeña y $j$ grande.
+Así existe el campo en la misma álgebra. El punto es real en las evaluaciones booleanas,
+por iteración desde cero. Es un campo auxiliar en la máscara fija; $\bar\nu$ se conserva.
+\paragraph{Momentos tensoriales.}
+Para $M_l=E_h[(T-m)^{\otimes l}]$ se tiene $M_0=1$, $M_1=0$ y
+\[
+ \|M_l\|\le [C(\sqrt{lS}+l)]^l .
+\]
+En efecto se marca el gas con $\exp(wT)$ en el álgebra tensorial simétrica.
+En el logaritmo de $e^{-wm}E_h\exp(wT)$ desaparece el término lineal. A radio
+$0<w\le w_0$ la suma de normas restantes es $\le CS w^2$ por el peso $e^{Bv}$,
+ya que en cada clúster $\sum_{l\ge2}(3wv)^l/l!\le Cw^2 v^2 e^{3w_0v}$.
+Se exponencia y se aplica Cauchy: $\|M_l\|\le l!w^{-l}e^{CSw^2}$.
+Se toma $w=\min(w_0,\sqrt{l/(1+S)})$. Las marcas se derivan manteniendo fijo $h$.
+\paragraph{Taylor del peso de supresión.}
+Póngase $B(Y)=\exp\{L(m+Y)-L(m)-h[Y]\}$ y $b_l=D^lB(0)/l!$ (el subíndice entero
+distingue estos coeficientes del peso de sitio $b_e$). Se tiene $b_0=1$, $b_1=0$.
+La integral de la Hessiana en la bola compleja da $\|B(Y)\|_\rho\le\exp(C\|Y\|^2/j)$.
+Cauchy a radio $c\sqrt{jl}$ y polarización implican, para $2\le l\le H=\lfloor\kappa j\rfloor$,
+\[
+ \|b_l\|\le(C/\sqrt{jl})^l,\qquad
+ \|b_l:M_l\|_\rho\le [C(\sqrt{S/j}+\sqrt{l/j})]^l .
+\]
+Elegir $\kappa$ y $\eta$ pequeñas hace que la base sea $\le r_2<1$. Al separar los dos
+primeros factores y sumar $(S+l)r_2^{l-2}/j$ se obtiene
+$\sum_{l=2}^H\|b_l:M_l\|_\rho\le C(1+S)/j$. Este argumento usa momentos firmados
+centrados, incluso cuando el valor absoluto de la suma de pesos inicial es exponencial.

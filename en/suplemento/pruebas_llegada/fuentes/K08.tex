@@ -1,0 +1,62 @@
+\section{Replicación, estabilidad de $F_2$ y defecto de la fila}
+Al replicar cada fila y columna $b$ veces, con máscara binaria constante sobre los
+bloques de copias, el escalado bistocástico exacto se divide por $b$. El núcleo $z$
+con sus medidas es el mismo para todas las integrales anteriores. Ello incluye
+$\phi$ y las contracciones con vértices identificados. La unicidad de las ecuaciones
+en el disco implica que $\Gamma_z$ es la misma función. Al evaluar en $s_b=1/(bk)$,
+la máscara replicada es difusa y sigue en una banda con brecha por el apartado 6.
+Ronda 8 da $R=O(s_b^2)$. El apartado 7 implica entonces
+$\Gamma_z(0)=\Gamma_z'(0)=0$ haciendo $b\to\infty$ para cada máscara fija.
+La acotación holomorfa uniforme da, por Cauchy, $R=k^{-2}F_2(z)+O(k^{-3})$.
+\paragraph{Continuidad al quitar una fila y una columna.}
+Ahora se quita un cofactor puro sin vetos. Para $D$, el argumento de márgenes del
+apartado 2 es el mismo con $p'=q e^{a+b}$ y jacobiano de pesos $q$.
+Por tanto $z'$ y $z$ difieren en $O(k^{-1})$ uniformemente en las entradas supervivientes,
+incluida la renormalización de $k$. Cada medida por lado varía en distancia de
+variación total a lo sumo $1/k$. Denotemos la suma de estas dos discrepancias y
+el supremo en el soporte superviviente (incluyendo los ceros comunes) por $\eta_k=O(1/k)$.
+Para un núcleo uniformemente acotado, toda integración sobre el índice suprimido
+cuesta $O(\eta_k)$. Las siguientes estimaciones son uniformes en discos complejos fijos
+$|s|\le s_1$, $|y-1|\le y_1$, elegidos dentro de los discos de los dos apartados anteriores.
+\begin{enumerate}
+\item Los potenciales antiguos restringidos, ajustados en la gauge por una constante,
+satisfacen las ecuaciones nuevas con error $O(\eta_k)$. Por el inverso de márgenes
+en supremo y la misma contracción uniforme, los potenciales y $v$ cambian en
+$O(\eta_k)$ en supervivientes. Los valores retirados siguen acotados. Esto controla
+$a,b,\bar\ell,W$.
+\item Los núcleos suavizados de resolventes son acotados punto a punto en el disco.
+En efecto, en $I-T$ invertible con inverso acotado en $L^2$, si $T$ tiene núcleo
+acotado, usar $(I-T)^{-1}=I+T+T(I-T)^{-1}T$ para la parte sin identidad.
+Esto vale para los operadores con brecha aquí usados y sus pequeñas prolongaciones.
+Para el cambio, restringir la ecuación integral de una columna del núcleo suavizado
+al conjunto superviviente. El error es $O(\eta_k)$ en supremo por el cambio
+de núcleo y medida; la fórmula anterior da inverso acotado también en supremo.
+Conservar el término inhomogéneo del núcleo suavizado controla la diagonal puntual,
+necesaria para $\phi$. Así productos, trazas de núcleos continuados desde matrices finitas,
+y todas las integrales de cada contracción cambian en $O(\eta_k)$.
+\item Para los determinantes aplicamos directamente la serie de Fredholm al núcleo
+acotado de $Z^\top Z$ o de $W^\top W$. El término de grado $j$ queda dominado por
+$j^{j/2}C^j/j!$ por Hadamard. La diferencia se obtiene telescopando las $j$ medidas
+y las $j$ filas del determinante superviviente: el mismo mayorante multiplicado
+por $Cj^2\eta_k$ es sumable. El determinante en $s=0,y=1$ tiene cota inferior
+uniforme por la brecha y la traza acotada; la serie y Cauchy lo mantienen separado
+de cero en discos menores, con el mismo control para el logaritmo. También $H_*$
+está separado de cero allí. Las derivadas en $y$ se controlan en un disco menor.
+\end{enumerate}
+En un círculo fijo $|s|=s_1>0$ los denominadores $s,s^2$ son inocuos.
+Así $|\Gamma_z-\Gamma_{z'}|\le C\eta_k$ en él, y Cauchy da
+$|F_2(z)-F_2(z')|\le C/k$. Combinado con $|F_2|\le C$ y los restos
+uniformes $O(k^{-3})$ en padre e hijo, da
+\[
+ |R(A)-R(A^-_c)|\le C/k^3 .
+\]
+Con $p_c^{\rm per}=\per A^-_c/\per A$, el defecto corregido es el logaritmo
+de la esperanza de $\exp\{R(A)-R(A^-_c)\}$. Su módulo es a lo sumo $C/k^3$.
+Para el corrector escalar se añade $\Xi(P)-\Xi(P_c)$ al exponente. Su oscilación
+es $O(k^{-2})$ por el apartado 3. El error al pasar del logaritmo de la esperanza
+de la exponencial a la esperanza es $O(k^{-4})$ por Taylor. Por tanto
+\[
+ \log\rho^{\rm esc}_i=\E_{\rm per}[\Xi(P)-\Xi(P_c)]+O(k^{-3}).
+\]
+El cofactor empleado en esta conclusión es el de torres. El cociente de vetos
+del apartado 3 sigue presente en el problema con reinas.

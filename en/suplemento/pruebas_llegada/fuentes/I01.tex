@@ -1,0 +1,38 @@
+\section{Qué parte del resto se estima}
+Ponemos $K=\lceil\sqrt n\rceil$, $j=\lceil tK\rceil\le M=\lceil\delta n\rceil$,
+$s=1/j$ y $\E_* Z=\E_{\bar\nu}[Z;G_j,S_M]$. Suponemos las entradas uniformes
+de difusión, brecha, estabilidad de menores y desarrollo de torres de R8--R9
+usadas en la entrega de las cuatro marcas, y la prescripción conjunta de llegada
+$\Pr_*(h\text{ coordenadas retenidas})\le C_h(j/n)^h$ para $h$ fijo.
+Los resultados siguientes son deducciones bajo estas hipótesis.
+
+En una misma máscara $A$ de torres, para $Y$ subconjunto de las casillas se activa
+la capacidad uno en cada diagonal y antidiagonal sólo sobre sus sitios de $Y$.
+Las casillas de $A\setminus Y$ siguen disponibles para las torres. Sea
+$e(Y)=\log(Q_Y/\per A)-(L_Y-L_T)$. Para un conjunto de $v$ sitios $S$ escribimos
+\[
+ [S]e=\sum_{Y\subseteq S}(-1)^{v-|Y|} e(Y).
+\]
+En cada comparación se conserva la máscara y se reoptimiza el predictor.
+Para cada $v$ fijo y $j$ grande existen todas las evaluaciones de tamaño $\le v$:
+la probabilidad de un conflicto entre $v$ marcas es $O_v(j^{-2})$ por R2;
+el punto pequeño es la continuación que se construye en el apartado 3.
+No se presupone la existencia de predictores para toda subfamilia de tamaño creciente.
+
+A cada sitio corresponde una arista entre su diagonal $D$ y su antidiagonal $A'$.
+Dos sitios quedan conectados si se puede ir de uno al otro pasando por líneas
+con una casilla marcada en común. Esta conectividad es geométrica. Los sitios de
+dos componentes distintas pueden interactuar por la medida de torres.
+\paragraph{Resultado.}
+Para $v$ fijo, la suma absoluta en media de $[S]e$ sobre soportes diagonalmente
+conexos de $v\ge2$ sitios es $O_v(1/n)$, uniformemente en los suelos de la banda.
+La misma cota se aplica al resto de la entrega anterior después de descontar los
+pesos de líneas individuales y de dos conflictos. Al restringir a soportes que usan
+al menos dos líneas no unitarias, una línea individual tiene proyección cero.
+Un peso de dos conflictos tiene proyección sobre $S$ sólo si su unión es exactamente
+$S$: sobre $Y$ pesa su valor físico multiplicado por el indicador de esa unión en $Y$.
+Por tanto, para $v\ge5$ desaparece y para $v\le4$ basta su cota absoluta anterior.
+En el soporte enteramente colineal el resto es cero. Un sitio aislado anula la
+proyección. Con cuatro sitios desconectados sin aislados sólo pueden quedar dos pares
+y su resto es cero por definición, aunque sus coordenadas RC se solapen.
+Así se cubre toda la parte de cuatro sitios del resto.

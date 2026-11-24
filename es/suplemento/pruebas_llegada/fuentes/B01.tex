@@ -1,0 +1,59 @@
+\section{El exterior que ven todas las caras}
+Fijamos $b>0$, $j=\lfloor bn\rfloor$, $5\le v=|U|\le L\log n$, con $L$ fijo.
+Se quita $U$ entero de la máscara binaria de torres, incluso al evaluar una cara $Y\subset U$.
+$z=jD_0$ es el núcleo de ese exterior después del escalado exacto. Sus ceros son fijos.
+Usamos los márgenes de clase $\sup z\le M_0'$ y $\|D_0-J_j\|_2\le r'<1$.
+La familia de caras conserva las dos restricciones RC y activa las diagonales de los sitios en $Y$.
+Las componentes $g$ son las de la incidencia completa de $U$, antes de desactivar nada.
+Una fibra marcada $b'$ pertenece a un solo grupo. Ponemos $y_{b'}=\sum_{i\in b'}x_i$ y
+$t_{b'}=1-y_{b'}$; en los índices originales $t=1$.
+En el argumento de grados, un soporte cuenta grupos; en la diferencia final $\Delta_U$ cuenta sitios.
+
+\paragraph{Medidas en el espacio con copias.}
+Creamos una copia por fibra RC distinguida; $z$ se levanta repitiendo la fila o columna original.
+En cada lado, para un parámetro independiente $h_g$ por grupo, se usa
+\[
+ \widetilde\mu=\mu^0+\sum_{b'}h_{g(b')}
+       (\delta_{b',{\rm copia}}-\delta_{b',{\rm original}}),\qquad
+ d\widetilde M_a=t^a d\widetilde\mu .
+\]
+Ambas masas de $\widetilde M_1$ son iguales: cada $i$ resta $h_{g(i)}x_i$ una vez por lado.
+Para integrandos constantes sobre las copias, su imagen es
+$M_a=\mu^0+\sum_{b'}h_{g(b')} f_a(y_{b'})\delta_{b'}$, $f_a(u)=(1-u)^a-1$.
+Para $\sigma\ne0$ la silla se resuelve \emph{antes} de identificar las copias:
+\[
+ w(1-\sigma t_r t_c w)=z e^{\alpha_r+\beta_c},\qquad
+ \int w\,d\widetilde M_1^R=\int w\,d\widetilde M_1^C=1 .
+\]
+Las dos integrales se entienden con el índice opuesto fijo. Para $\sigma=0$, las ecuaciones
+de una copia y de su original son las mismas; la solución fijada en calibre tiene los mismos
+multiplicadores allí. Su núcleo $Z(\theta)$ depende sólo del par de perturbaciones
+$\theta=M_1-\mu^0$. Ponemos $E_{ab}=\int Z(\theta)^2\,dM_a^R dM_b^C$.
+Se usa $s=\sigma=h_g$ sólo después de formar los coeficientes; el valor físico es $s=1/j$.
+
+\paragraph{Acción y cofactor.}
+Tras retirar la parte afín de la entropía de torres, la acción es el valor estacionario, dividido
+por $s$, de la integral en medidas $\widetilde M_1$ del integrando
+\[
+ -w\log(w/z)-w+
+ \sum_{d\ge2}\frac{\sigma^{d-1}(t_rt_c)^{d-1}w^d}{d(d-1)} .
+\]
+El integrando se prolonga por cero en los ceros estructurales. Al derivar en $\sigma$,
+el término implícito en $w$ es la integral de una suma de potenciales contra una variación
+de márgenes cero. El término explícito en el origen es $E_{22}/2$.
+En el cofactor escribimos $\ell=w(1-\sigma t_rt_c w)/(1-2\sigma t_rt_c w)$ y
+$d_r=\int\ell\,d\widetilde M_1^C$, con la definición simétrica para $d_c$.
+La parte global es $\tfrac12\log(\bar d/2)-\tfrac12\log\det(I-W^tW)$ con
+$W_{rc}=\ell_{rc}/\sqrt{d_rd_c}-\sqrt{d_rd_c}/\bar d$ y
+$\bar d=\int\ell\,d\widetilde M_1^Rd\widetilde M_1^C$.
+Se usa transposición bilineal en la continuación. La parte local de casilla da $E_{22}/2$ por
+$\log b_2(p)=-p^2+O(p^3)$. En los grados, $\ell-w=\sigma t_rt_c w^2/(1-2\sigma t_rt_c w)$.
+Al sumar $-\tfrac12\log d_r$ y la expresión en columnas se obtienen $-(E_{12}+E_{21})/2$.
+Así, con el mismo núcleo en las dos fórmulas,
+\begin{align*}
+ R&=\text{afín}+s^{-1}R_0(\theta)+E_{22}/2+s\Psi_R,\\
+ A_*&=A_0(\theta)+(E_{22}-E_{12}-E_{21})/2+s\Psi_A .
+\end{align*}
+Aquí $A_*$ incluye $+\tfrac12\sum_{b'}\log t_{b'}$, que cancela los márgenes desnudos del
+cofactor. El modo RC aporta $\tfrac12\log(4\pi j)$ al valor total. La identidad física de
+Menores uniformes 07 conserva este modo también al cambiar de cara.

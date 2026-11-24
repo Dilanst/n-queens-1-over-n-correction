@@ -1,0 +1,44 @@
+\section{Cancelación de las dos respuestas direccionales}
+En el espacio de cuatro marcas ponemos $x=Xu+Yv_*$, con
+$u=(1,1,0,0)$ y $v_*=(0,0,1,1)$. Sea $\mathcal D_d F$ la diferencia
+$F(1,1)-F(1,0)-F(0,1)+F(0,0)$ menos esa misma diferencia del Taylor de $F$ en cero
+hasta grado total $d$. Sólo sobreviven monomios que ven ambos grupos y tienen grado $>d$.
+Este operador se acota por la norma holomorfa en un polidisco fijo de radio mayor que uno.
+En $s^{-1}\mathcal R_0(sx)$ los grados superiores a tres cuestan $O(s^3)$.
+En $A_0(sx)$ los superiores a dos cuestan $O(s^3)$.
+Para $s\Psi_R,s\Psi_A$, la parte dependiente de ambos grupos cuesta
+$O(s h_1h_2)=O(s^3)$, tanto en los valores como en sus Taylor de orden fijo.
+
+Quedan los términos $E_{ab}$. En los tipos proyectados ordinarios se tiene
+$M_a=\mu^0+s\sum_i f_a(x_i)\delta_i$, con $f_a(X)=(1-X)^a-1$.
+Se expande el producto de medidas de los dos lados.
+\begin{itemize}
+\item Con dos medidas basales, el desarrollo de $z_x^2$ hasta grado dos
+en $sx$ cuesta $O(s^3)$ de resto.
+\item Con una sola masa distinguida, en $E_{22}$ aparece $s f_2$ y el
+coeficiente integral de $z_x^2$ tiene término constante y parte lineal en $sx$,
+más $O(s^2)$. El grado total retenido no pasa de tres. En $E_{22}-E_{12}-E_{21}$
+el factor es $s(f_2-f_2-f_1)=-sf_1$ para cualquiera de los dos lados;
+el grado total no pasa de dos. Esto incluye la respuesta del equilibrio.
+\item Con dos masas distinguidas, el factor es $s^2$: se puede fijar $z_x=z$
+a coste $O(s^3)$. Dos extremos del mismo grupo desaparecen en la diferencia.
+Para una fila del primer grupo y una columna del segundo (o viceversa) los operadores dan
+\[
+ \mathcal D_3(f_2(X)f_2(Y))=1,\qquad
+ \mathcal D_2(f_2(X)f_2(Y)-f_1(X)f_2(Y)-f_2(X)f_1(Y))=-1.
+\]
+El primer número es el coeficiente de $X^2Y^2$. En la segunda expresión el coeficiente
+de $XY$ es cero y la diferencia de valores es $-1$. El multiplicador común para
+ese cruce es $s^2 z_{rc}^2/2$ y vale cero si la casilla no está en el soporte.
+\end{itemize}
+Así, sin imponer uniformidad espacial al perfil,
+\[
+ \mathcal D_3 R+\mathcal D_2 A=O(s^3).
+\]
+También, en un polidisco fijo, $R$ es afín más cuadrática con Hessiana $O(s)$
+más un resto $O(s^2)$, y $A$ es constante más lineal con gradiente $O(s)$
+más un resto $O(s^2)$. Aquí se permite sustraer los verdaderos Taylor en cero:
+los términos con una sola marca de $E_{22}$ tienen grado $\le2$ al orden $s$;
+los de la combinación de $A$ son lineales. $s\Psi$ varía en $O(s^2)$ respecto de
+su constante porque toda dependencia en $x$ requiere al menos un $h_g$.
+Cauchy en un disco menor da las correspondientes cotas de derivadas.

@@ -1,0 +1,71 @@
+\section{Escalado y expansión de los dos determinantes}
+Escribimos $p$ como vector sobre el soporte y $C$ para la incidencia fila--columna sin signos.
+Sean $S_0=C\diag(p)C^\top$, $\Gamma=S_0^+$ y
+$S=C\diag\{p(1-p)/(1-2p)\}C^\top$. El modo nulo de ambos es $(\mathbf1,-\mathbf1)$.
+Si $\Pi_\pm$ proyecta sobre $(\mathbf1,\pm\mathbf1)$, se verifica por bloques que
+$\Gamma=I-H-\Pi_+/2-\Pi_-$. En particular, $\Gamma-I$ tiene entradas $O(k^{-1})$.
+En efecto, las filas y columnas de $B$ tienen norma euclídea $O(k^{-1/2})$,
+y la brecha acota las resolventes de $G_s$.
+Usaremos
+\[
+ s=\sum p^2,\quad l=\sum p^3,\quad z=Cp^{\circ2},\quad Z=z^\top z,\quad
+ t=z-\mathbf1/k,\quad \lambda=C^\top\Gamma z,\quad M_z=z^\top\Gamma z .
+\]
+El escalado exacto $D_{ij}=p_{ij}(1-p_{ij})e^{v_i+v_{k+j}}$ es bistocástico.
+Sea $b=\sum_i v_i$, sumando las $2k$ coordenadas. Para $X$ bistocástica sea
+$d_X(y)=\det[I-y^2(X-J)^\top(X-J)]^{-1/2}$.
+Las secciones \texttt{mascara.tex}, \texttt{permanente.tex} y \texttt{traza.tex} de la ronda 1 dan,
+con $d$ y sus derivadas evaluados en $y=1$,
+\begin{align*}
+ g_T={}&\log(k!/k^k)-\tfrac12\log(4\pi k)+\log d_D-b\\
+ &+\sum_{ij}\{\tfrac12\log(1-2p_{ij})-2\log(1-p_{ij})\}
+ +\tfrac12\log\pdet S+V(D)+\frac{d_D''}{2(k-1)d_D}+O(k^{-2}).
+\end{align*}
+Aquí $H_X=O_X(I+O_X)^{-1}$, con $O_X$ de bloques diagonales nulos y
+bloque superior derecho $X-J$. Para $H'=H_X$,
+\[
+ V(X)=-\tfrac34\sum_i(H'_{ii})^2+
+ \sum_{i<j}\{H'_{ii}H'_{jj}H'_{ij}+\tfrac23(H'_{ij})^3\}.
+\]
+\paragraph{Pesos del escalado.}
+Escribamos $\xi=C^\top v$. La cota inicial $D=p(1+O(k^{-1}))$ en el soporte da
+$\xi=O(k^{-1})$. Al imponer las masas por coordenada resulta
+$S_0v=z+O_\infty(k^{-2})$.
+Aplicando $\Gamma$, de norma de sumas absolutas por fila acotada, obtenemos
+$\xi=\lambda+O_\infty(k^{-2})$; la elección del representante de $v$ no afecta $C^\top v$.
+Al sumar la expansión de $D=p(1-p)e^\xi$, usamos
+$\sum p\xi=b$ y $\sum p^2\lambda=\sum p\lambda^2=M_z$. De ahí,
+\[
+ D=p+p\circ(\lambda-p)+O(p/k^2),\qquad b=s+M_z/2+O(k^{-2}).
+\]
+La diferencial de $\log d_P$ en el espacio bistocástico es $B+U$ en el producto de Frobenius.
+Su resto cuadrático cuesta $O(\|D-P\|_{\HS}^2)$ por la brecha.
+Para justificar el reemplazo de la perturbación por $p\circ(\lambda-p)$ en el término con $B$,
+se puede usar $B=p-J$ y $\sum p(\lambda-p)=0$.
+Resulta
+\[
+ \log d_D-\log d_P=M_z-l+\langle U,p\circ\lambda-p^{\circ2}\rangle+O(k^{-2}).
+\]
+\paragraph{Operador de líneas.}
+Sea $\Delta=S-S_0=C\diag\{p^2/(1-2p)\}C^\top$.
+En el complemento del modo cero la expansión del logaritmo del determinante tiene términos
+$\tr(\Gamma\Delta)/2-\tr(\Gamma\Delta\Gamma\Delta)/4$ para la mitad del logaritmo.
+El resto es $O(k^{-2})$ porque $\|\Delta\|_{\rm op}=O(1/k)$ y $\tr\Delta^2=O(1/k)$.
+Las identidades que se necesitan son
+\begin{align*}
+ \tr(\Gamma\Delta)&=2s+2l+Z-s/k-2\langle U,p^{\circ2}\rangle+z^\top j+O(k^{-2}),\\
+ \tr(\Gamma\Delta\Gamma\Delta)&=Z+O(k^{-2}).
+\end{align*}
+Para la primera, evaluar $\Gamma-I$ en las dos coordenadas de la columna de incidencia de $ij$
+da $t_i+t_{k+j}+j_i+j_{k+j}-2B_{ij}-2U_{ij}-1/k$. Se multiplica por $p^2$ y se suma.
+El factor $1/(1-2p)$ en esta corrección cuesta $O(k^{-2})$.
+Para la segunda, la parte diagonal de $\Delta$ es $z+O_\infty(k^{-2})$ y los bloques
+cruzados tienen norma $\HS$ de orden $k^{-1}$. La corrección lineal en $\Gamma-I$ se acota
+por $C/k$ veces la suma de entradas de $\Delta^2$, de orden $1/k$.
+La corrección cuadrática cuesta $O(\|\Gamma-I\|_{\HS}^2\|\Delta\|_{\rm op}^2)$.
+Por la descomposición singular de $B$, $\log\pdet S_0/2=\log(2)/2-\log d_P$.
+Stirling y la suma local $k-2l/3+O(k^{-2})$ dejan, antes de $V$ y de $d_D''$,
+\[
+ \frac1{12k}+\frac{M_z}2+\frac Z4-\frac{s}{2k}-\frac{2l}3+
+ \langle U,p\circ\lambda-2p^{\circ2}\rangle+\frac{z^\top j}2+O(k^{-2}).
+\]

@@ -1,0 +1,68 @@
+\section{La misma máscara exterior para todas las activaciones}
+Quitamos del soporte de torres las $v$ marcas, incluidas las inactivas, y llamamos
+$D_0$ a ese exterior. Se usa el mismo $D_0$ en todas las submáscaras.
+Se pierden a lo sumo $v$ entradas de tamaño $O(s)$ por margen. La estabilidad de
+R7 da difusión y brecha para $D_0$ y sus menores de orden fijo.
+Sea $x_i$ la masa de la marca $i$ y $t_b=1-y_b$, con
+$y_b=\sum_{i\ni b}x_i$ para cada fila o columna distinguida. Sean
+\[
+ R=H_{\rm ext}+\sum_b t_b\log t_b,\qquad
+ A_*=\tfrac12\sum_b\log t_b+F_{\rm ext}.
+\]
+$H_{\rm ext}$ es la acción de torres optimizada con esos márgenes. $F_{\rm ext}$
+incluye los factores locales y el pseudodeterminante exterior. Sustraemos la
+constante común y el campo $r=\nabla R(0)$ y escribimos $R_c,A_c$ para
+$R-R(0)-r\cdot x$, $A_*-A_*(0)$, respectivamente. Se tiene, con $H=R''(0)$,
+$a=A_*'(0)$, en un polidisco fijo respecto de $j$,
+\[
+ R_c(x)=H[x,x]/2+O_v(s^2),\qquad A_c(x)=a[x]+O_v(s^2),\qquad H,a=O_v(s).
+\]
+En un vértice binario $X$ compatible en RC, la log-masa exterior normalizada es
+\[
+ g(X)=\log\per (D_0)_{-X}-\log\per D_0-r\cdot X
+     =R_c(X)+A_c(X)+d_T(X),\qquad d_T(X)=O_v(s^2).
+\]
+La supresión en $-X$ quita las filas y columnas elegidas y conserva todos los
+agujeros restantes de $D_0$. En los vértices los desarrollos de $R_c,A_c$ valen
+también con el mismo error. No se evalúa una probabilidad en un vértice RC imposible.
+
+\paragraph{Justificación del paso de cuatro a $v$ fijo.}
+Damos los detalles de uniformidad que se necesitan de la prueba del exterior
+de la entrega anterior sobre las cuatro marcas (apartados 3--7). Se desdobla
+una vez cada tipo RC distinguido en el escalado de Sinkhorn de $D_0$. La copia
+tiene margen $1-y_b$, donde se usa el mismo $y_b$ en todas las submáscaras.
+Con masa común $h$ para las copias, se conservan los márgenes totales de ambos lados,
+pues sus sumas de $y_b$ coinciden. La perturbación en variación total es
+$O_v(|h|)$ en $|x_i|\le2$. El jacobiano basal de márgenes de las copias de masa
+cero tiene diagonal identidad; el de los tipos originales se invierte en el gauge
+por difusión y brecha. La contracción local en supremo de aquella prueba continúa
+en discos de radio $c_v>0$ en $h$ y en el parámetro de tamaño $\sigma$.
+La prolongación se expresa con $z=j\,\mathrm{Sinkhorn}(D_0)$, acotado y factorizado
+en su soporte, resolviendo $w(1-\sigma t_rt_c w)=z\exp(\alpha_r+\beta_c)$ y
+$\int w\,dM_1=1$ sobre cada eje. El cociente $w/z$ se define por la raíz pequeña,
+incluso en los ceros. $M_d$ es la medida basal multiplicada por $t^d$ sobre las copias.
+Con $z_x=w|_{\sigma=0}$, al proyectar a los tipos originales resulta
+\[
+ M_d=\mu^0+h\sum_b f_d(y_b)\delta_b,\quad f_d(y)=(1-y)^d-1,\qquad
+ E_{ab}=\int z_x^2\,dM_a^R\,dM_b^C .
+\]
+$z_x$ depende sólo de las perturbaciones $hy_b$ en $M_1$.
+Las fórmulas de acción y cofactor de los apartados 4--5 de esa entrega dan en $h=\sigma=s$
+\[
+ R={\rm af\acute in}+s^{-1}R_0(sy)+E_{22}/2+s\Psi_R,\qquad
+ A_*=A_0(sy)+(E_{22}-E_{12}-E_{21})/2+s\Psi_A .
+\]
+Los núcleos y los restos son holomorfos y acotados con constantes dependientes de $v$.
+En $R$ el término de $E_{22}$ con una masa distinguida es $s$ por un polinomio
+de grado dos, a error $O_v(s^2)$. En $A_*$ la combinación de una sola masa tiene
+factor $f_2-f_2-f_1=-f_1$, lineal. El cambio con $x$ de cada $s\Psi$ es $O_v(s^2)$:
+si la masa de las copias se anula, su margen deja de influir en todas las integrales.
+Esto prueba los desarrollos con sus derivadas en un disco menor y en vértices
+compatibles por prolongación en $h,\sigma$. En un vértice con $m=j-|X|$,
+el cofactor aporta el cambio $\frac12\log(m/j)$ a $F_{\rm ext}$, conservando
+el modo nulo. Así $d_T$ es la variación de $u_T+R_T$ entre los dos menores.
+$R_T$ varía $O_v(s^3)$ por estabilidad de cofactores de R9. $u_T$ es $s_m$
+por la función acotada holomorfa del escalado y las medidas de esos menores
+(apartado 7 de las cuatro marcas); cambiar una masa $O_v(s)$ cuesta $O_v(s^2)$.
+Se usa también para un cruce ausente, tal como en esa prueba. Esto justifica la
+expansión en los átomos manteniendo siempre fijo el conjunto de agujeros.

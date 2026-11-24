@@ -1,0 +1,84 @@
+\begin{lema}[Regularity of the profile at the endpoint]\label{lem:regularidad-extremo}
+For some \(x_0>0\), \(G\) is analytic in a neighborhood of \([0,x_0]\). In this neighborhood, \(\numerr\)
+is meromorphic with its only possible pole at zero, of order at most four.
+\end{lema}
+\begin{proof}
+The continuous unit-mass profile satisfies \(\nu_1\ge c>0\), has unit axial marginals, and satisfies
+\(u_f\ge c>0\) in both oblique families~\cite{pv}. Reduce \(c\) so that \(c<1\). On a complex disk
+\(|x|<r\) we have \(|U_f|\ge c/2\), so \(W\) and \(1/U_f\) vary holomorphically on this disk as bounded
+functions of position. All the domains of crossings, fibers, parities, and incidences in
+Section~\ref{sec:contracciones} are independent of \(x\).
+
+\paragraph{The inverse and its entries.}
+Use a fixed measure \(d\sigma=dy\) on each axis and \(dy/2\) on each oblique sheet. Set \(D_x(a)=1\) on
+the axes and \(D_x(a)=x\) on the obliques, and let \(u_x(a)=1\) or \(U_a(x)\), respectively. Thus
+\(d\rho=(u_x/D_x)d\sigma\). For two distinct intersecting lines, \(K(a,b)=\nu_1(a\cap b)\eta_a\eta_b\),
+with \(\eta_a=D_x(a)/u_x(a)\). Hence \(K=D_x K_0 D_x\), where the kernel \(K_0\) is holomorphic and
+uniformly bounded, including at the edges under the fixed crossing convention. The remaining entries are
+zero. In \(L^2(d\sigma)\), kernel products use \(d\sigma\), and the factors \(D_x,u_x\) act by
+multiplication. The operator to be inverted is
+\[
+ \mathcal T_x=I+u_x K_0D_x+\Pi .
+\]
+At \(x=0\) it is block triangular (axes first), with the identity on the oblique block. The axial block
+is the identity plus the operator with cross blocks \(\nu_1,\nu_1^{\mathsf T}\) plus \(\Pi\). On the
+common and alternating axial constants its eigenvalues are \(2,1\). On functions with mean zero on each
+axis the norm of the cross-block operator is \(\le1-c\). The kernel \((\nu_1-c)/(1-c)\) is doubly
+stochastic, hence a contraction on \(L^2\) by Jensen's inequality and integration. A geometric series
+then gives the bounded inverse of the axial block. The other off-diagonal block is bounded because it has
+bounded kernel and finite measure. The triangular inverse exists. Reduce \(r\) so that \(\|\mathcal
+T_0^{-1}(\mathcal T_x-\mathcal T_0)\|<1/2\). The Neumann series gives a uniformly bounded holomorphic
+inverse on that disk.
+
+The part of \(L_0+3\Pi\) with endpoints \(a,b\) equals
+\[
+ D_x(a)D_x(b)\int K_0(a,t)D_x(t)
+     [\mathcal T_x^{-1}(u_x K_0(\cdot,b))](t)\,d\sigma(t).
+\]
+The two exterior sections have uniform \(L^2\) norms for \emph{each} endpoint by the crossing formula.
+The bilinear integral is holomorphic and bounded also when \(a=b\). This gives the version of the kernel
+that can be evaluated at a marked cell or on the diagonal. In \(\theta_a\) the factor \(K(a,t)^2\) leaves
+\(D_x(t)^2\), which absorbs the single \(1/D_x(t)\) in the measure. In \(s_a\) and in the last sum of
+\(\mathcal V\), the fibers and the normalized counting measure on the lines are fixed. The integral
+formulas in Appendix~\ref{app:predictor} therefore show that \(\mathcal V\) is holomorphic.
+
+\paragraph{The rook functional.}
+At \(x=0\), the scaling of \(v_0=u_Du_A\) is \(\nu_1\) by its factorization. In \(C[0,1]\) the equation
+for the logarithm \(z\) of the symmetric factor is \(e^{z(r)}\int v_x(r,q)e^{z(q)}\,dq=1\). Its
+derivative at the initial solution is \(I+\mathcal P\), where \(\mathcal P\) has kernel \(\nu_1\). It
+acts as multiplication by two on the constants. On the mean-zero subspace, \(\|\mathcal
+P\|_\infty\le1-c\) by the same doubly stochastic decomposition. The implicit function theorem in this
+complex space gives a holomorphic scaling on a smaller disk. By uniqueness its real branch agrees with
+the positive scaling. For the centered kernel \(\centrado=p_x-1\) of Appendix~\ref{app:predictor},
+\(\|\centrado(0)\|_{2\to2}\le1-c\). On reducing the disk, \((I-\centrado^2)^{-1}\) is bounded and
+holomorphic. The kernel of \(T=\centrado(I-\centrado^2)^{-1}\centrado\) is evaluated between two bounded
+sections of \(\centrado\), including on the diagonal, as in the preceding paragraph. Kernel products and
+\(\operatorname{tr}(T^2)=\iint T(r,q)T(q,r)\,dr\,dq\) preserve holomorphy. Thus \(F\), and hence \(G\),
+are holomorphic near zero.
+
+\paragraph{Maximum order in the contractions.}
+In a direct product, the expectation of the indicators is the product of the \(U_\ell\) for the distinct
+unmarked lines. It is holomorphic even for two crossings sharing a transversal. This product is used
+before any division by the shared availability. Area means use \(\nu_1\,di\), and the fiber of a marked
+cell uses \(\eta_\lambda\nu_1\,dy\), both bounded. Each free integral \(d\rho\) costs at most one factor
+\(x^{-1}\). The table counts those factors in the physical expressions in Appendix~\ref{app:interior},
+including the squares and their two corrections where applicable.
+\begin{center}\small
+\begin{tabular}{@{}lp{.54\linewidth}@{}}\toprule
+Contraction & Possible sources of poles\\ \midrule
+\(G_{\rm cof}, f2E, f2F,f3F,f3c,f4,f5c,f5F,f7\) & Only areas, centers, and marked fibers.\\
+\(f2z\) & One free line and the bounded multiplier \(u_f/U_f\).\\
+\(f6\) & \(\Lambda,\omega\) use crossings and fibers. The response \(q\) integrates over one free line.\\
+\(C_{3,\rm cuad}\) & The explicit power \(x^{n_{RC}-3}\) costs at most three factors.\\
+\(Q_1+\Delta_1\) & One copy of \(\mathcal E_2\) integrates over at most one free line.\\
+\(Q_2+\Delta_2\) & Two exterior lines and at most one interior line in each copy of \(\mathcal E_2\).\\
+\bottomrule
+\end{tabular}
+\end{center}
+The last two rows use \(L_1,L_2^{\rm int}\) before the products are decomposed into covariances. The
+discrete sum with \(\mathcal S(w,u)\) runs over the transversals of the crossings \(u\cap j\), whose
+number is bounded. Thus each product in the table, multiplied by \(x^4\), is holomorphic under fixed
+measures and has an integrable constant majorant on a smaller disk. Integrating the series by Cauchy's
+formula on an interior circle gives the holomorphy of \(x^4d(x)\). Since \(\numerr=d+G-xG'\), the claim
+follows.
+\end{proof}

@@ -1,0 +1,81 @@
+\begin{lema}[Reducción a siete variables]\label{lem:linea-reduccion}
+Se pueden sustituir los dos $\widehat C_i$ del Lema~\ref{lem:linea-traza} por funciones
+$C_i^*$ de $(p,q,a,b,g,x,y)$ con error $O_5$ en $\sum_{i\in E}\delta_i\widehat C_i$.
+\end{lema}
+\begin{proof}
+Sean $\epsilon_i$ los vectores de la base de $\mathbb R^2$,
+$z_c=(\mathsf G(c,e),\mathsf G(c,f))^\top$, $n=Wt$ y
+\[
+ Q=-WD+nn^\top/\schurloc,\qquad m_i=W(\epsilon_i-\sigma_i t),\qquad C=(x-1,y-1)^\top .
+\]
+La inversión de bloques da, fuera de $E$,
+$\widehat G_{cc}-\mathsf G(c,c)=z_c^\top Qz_c$ y $\widehat G_{ic}=m_i^\top z_c$.
+Dentro de $E$ la última expresión lleva además $+\sigma_i$.
+Así, con $b^*=(b_e^*,b_f^*)^\top$, $b^0=(b_e^0,b_f^0)^\top$, obtenemos
+\begin{align*}
+ \widehat C_i&=m_i^\top\{C+G(b^*-b^0)-T/2\}+\sigma_i(b_e^*+b_f^*+b_w),\\
+ T&=\sum_{c\notin E}\tau_2(p_c)\kappa_2(p_c)(z_c^\top Qz_c)z_c .
+\end{align*}
+En efecto, $\sum_cb_c^0 z_c=C$ y los $b_c^*-b_c^0$ de fuera de $E$ dan $-T/2$.
+Las entradas de $Q$ son $O_2$. Para cada extremo, la suma ponderada del cubo de su
+componente de $z_c$ fuera de $E$ vale $2+O_1$, pues sus dos fibras tienen masa $2+O_1$ y la
+componente vale $1+O_1$ allí. Los momentos cúbicos mixtos son $O_1$, pues a lo sumo dos
+cruces tocan ambos extremos y tienen peso $O_1$. Fuera de las cuatro fibras, ambas
+componentes son $O_1$ sobre una masa total $O(k)$. Luego
+$T=2(Q_{ee},Q_{ff})^\top+O_3$. Sea $C_i^*$ el resultado de hacer esta sustitución
+en $\widehat C_i$. Al multiplicar por $\delta_i=O_2$ el coste es $O_5$.
+\end{proof}
+
+\begin{proof}[Demostración de la Proposición~\ref{prop:una-linea}]
+Juntando los tres cambios del predictor se obtiene $\lambda=\polylinea+O_5$, donde
+\[
+ \polylinea=\underbrace{H_0-\tfrac12\delta^\top K\delta}_{A}
+      +B_0+\underbrace{\delta_e C_e^*+\delta_f C_f^*+2p^2q^2}_{N}.
+\]
+Cada sumando queda expresado en $(p,q,a,b,g,x,y)$. En el cálculo racional [O],
+escribamos $V=p^2+q^2$, $Z_p=pa+qb$, $Y=px+qy$ y
+$L=p+q+(a+b)/2+g+x+y$. Hasta grado tres, tanto $\polylinea$ como $-\pi_1$
+dan $-pq+pqL$. Los términos homogéneos de grado cuatro son
+\begin{align*}
+ [A]_4&=-p^2q^2/2,\\
+ [B_0]_4&=pq\{39V/2-4pq+5Z_p/2+(p+q)g\},\\
+ [N]_4&=pq\{-31V/2+4pq-Z_p+Y\},\qquad [-\pi_1]_4=pq\{4V+3Z_p/2+Y\}.
+\end{align*}
+Para obtenerlos se opera en los polinomios de grado total a lo sumo cuatro, descartando
+los grados superiores en cada producto. Por ejemplo, con $r=p(1-p)h$ la iteración
+$u\leftarrow r/(1-u)^2$, iniciada en $r$, fija un grado más en cada paso.
+Da $\delta_e=pq+3p^2q+9p^3q-2p^2q^2$ hasta grado cuatro. Para los logaritmos se usa
+$[\log(1+v)]_{\le4}=[v-v^2/2+v^3/3-v^4/4]_{\le4}$. La función
+\texttt{simbolico(4)} de \path{suplemento/cuadrado/orden4.py} efectúa estas operaciones.
+La suma para $\polylinea+\pi_1$ anula todos los términos de grados cero a tres y deja
+$-p^2q^2/2+pq(p+q)g$ en grado cuatro. Desde \path{suplemento/cuadrado},
+\texttt{python -B comprobar\_una\_linea.py} llama a \texttt{simbolico(4)} y compara
+todos los coeficientes de la diferencia con estos tres monomios. El cálculo usa
+\texttt{fractions.Fraction} de Python en $\mathbb Q[p,q,a,b,g,x,y]/(p,q,a,b,g,x,y)^5$.
+
+Para pasar del polinomio al resto, la ecuación cúbica tiene derivada uno en $u=0$
+en el origen. La función implícita da allí una rama holomorfa. Los determinantes,
+los denominadores variables y los argumentos de los logaritmos valen uno en el origen.
+Así se puede elegir un polidisco cerrado de radio $r_0>0$ contenido en un abierto
+de holomorfía de $\polylinea+\pi_1$, con las ramas de logaritmo que valen cero en $1$.
+Su radio y la cota $M_0'$ del módulo en él son independientes de la máscara y de $k$.
+Si $v=(p,q,a,b,g,x,y)$ y $t=\|v\|_\infty>0$, se aplica Cauchy a la función de una variable
+$z\mapsto(\polylinea+\pi_1)(zv/t)$ en $|z|=r_0$. Para $t\le C_*/k\le r_0/2$
+la cola de grado cinco en adelante es a lo sumo $2M_0'(C_*/r_0)^5k^{-5}$.
+En $t=0$ se anula. Al añadir el $O_5$ uniforme de la reducción y usar
+$\pi_1=pq+O_3$, $\log(1-\pi_1)=-\pi_1-p^2q^2/2+O_5$, resulta~\eqref{eq:una-linea}.
+La cota es absoluta, con constantes de clase.
+\end{proof}
+
+\begin{corolario}[Evitación de una línea]\label{cor:linea-evitacion}
+Si $B$ tiene completaciones, su error corregido es
+$g^\sharp=\log(1-\pi^{\rm ex})-\log(1-\pi_1)-X+O(k^{-5})$.
+\end{corolario}
+\begin{proof}
+Hay $\operatorname{per}M$ configuraciones de torres, de las cuales
+$\operatorname{per}M_{ef}$ ocupan ambos extremos. Así
+$Q(B)=(1-\pi^{\rm ex})\operatorname{per}M$. Como
+$L^\sharp(B)=L(B)+\log\operatorname{per}M-L_T(M)$,
+se obtiene $g^\sharp=\log(1-\pi^{\rm ex})-\lambda$. Se aplica la
+Proposición~\ref{prop:una-linea}.
+\end{proof}

@@ -1,0 +1,51 @@
+\section{Variación de los términos del permanente}
+Para cualquier matriz cuadrada $B_0$ de la dimensión pertinente
+sea $\Phi(B_0)=-\tfrac12\log\det(I-B_0^TB_0)$. El primer corrector de la ronda 1 da
+\[
+ \log\per D=\log(k!/k^k)+\Phi(D-J_k)+V_1+\frac{d_0''(1)}{2(k-1)d_0(1)}+O(k^{-2}),
+ \quad d_0(s)=\det(I+sU)^{-1/2}.
+\]
+Se aplica por separado a $D$ y $D'$ con los parámetros uniformes ya verificados.
+Primero pasamos a $G$. Por Jacobi en las cuatro coordenadas borradas,
+$\Phi(G)-\Phi(D-J_k)=-d^T\ell/2+O(k^{-2})$:
+la submatriz inversa en $S$ es $(I+R)_{SS}$, de dimensión fija.
+
+Luego $\delta B=D'-J_m-G=\diag(u)F+F\diag(v)-(1/m-1/k)\mathbf1\mathbf1^T
++O_{\rm HS}(k^{-2})$. Su norma de Hilbert--Schmidt es $O(k^{-1})$.
+La derivada de $\Phi$ es el producto de Frobenius con $Y=G(I-G^TG)^{-1}$;
+su segunda derivada está acotada en esa norma por la brecha. Sea
+$R_G=(I+U_G)^{-1}-I$ para $U_G$ con bloques cruzados $G,G^T$.
+Las contribuciones de $\diag(u)G+G\diag(v)$ son $z^T\diag R_G$ por producto
+matricial. Las partes constantes cuestan $O(k^{-2})$:
+$\|Y\mathbf1\|_2+\|Y^T\mathbf1\|_2=O(k^{-1/2})$, usando
+$G\mathbf1,G^T\mathbf1=O_\infty(1/k)$ y la identidad de resolvente.
+Además $(R_G)_{ij}-R_{ij}=O(k^{-2})$ en retenidos por Schur en el inverso:
+los dos bloques cruzados con $S$ tienen entradas $O(1/k)$. Al reescalar,
+$D'-J_m-G=O_{\max}(k^{-2})$ y el cambio del inverso tiene igual orden por entrada
+por la identidad de resolventes y las normas de sumas absolutas acotadas.
+Resulta
+\[
+ \Phi(D'-J_m)-\Phi(D-J_k)
+ =-\tfrac12d^T\ell+\tr(R)/k-\ell^TRd+O(k^{-2}).
+\]
+Para $V_1$, con $H'=-R$ en la fórmula de la ronda 1, los sumandos de un índice son
+cuadráticos y los de dos índices cúbicos. Se pierden $O(1)$ de los primeros y $O(k)$ de
+los segundos. Reemplazar $R$ en los retenidos cuesta por término $O(k^{-3})$ y $O(k^{-4})$
+respectivamente. De aquí $\Delta V_1=O(k^{-2})$. Finalmente
+$d_0''/d_0=(\tr R)^2/4+\tr(R^2)/2$ en uno. Ambas trazas son $O(1)$ y cambian en
+$O(1/k)$ por las mismas cotas sobre entradas. El término gamma normalizado cambia en $O(k^{-2})$.
+
+Tomamos $\log\per F=\log\per D'-\sum z$; Stirling da
+$\log(m!/m^m)-\log(k!/k^k)=2-1/k+O(k^{-2})$. Sumando los cambios:
+\[
+ \log\frac{p_b}{D_aD_b}
+ =1/k-\tfrac12d^TRd-\tfrac12d^T\ell+\tr(R)/k-\ell^TRd+O(k^{-2}).
+\]
+En lo sucesivo $R,\ell,W$ se forman con $P$. Por $D-P=O_{\max}(k^{-2})$
+y el resolvente, el cambio de $R$ cuesta $O_{\max}(k^{-2})$.
+En los productos $\ell^TRd$ se usa además $d$ de soporte fijo y $\ell=O_\infty(1/k)$.
+Al pasar de $D_aD_b$ a $xy$ se añade $d^TWc-x-y+O(k^{-2})$ al logaritmo.
+Usamos $W\ell=(I+R)\ell-\tr(R)\mathbf1/(4k)$ y
+$u_e^TRu_e=u_e^T\ell+2R_{i,k+j}$ para $e=(i,j)$.
+Reagrupando se obtiene $\log(p_b/(xy))=s_a+s_b+1/k-u_a^TRu_b+O(k^{-2})$.
+El término explícito es $O(1/k)$; exponenciar da el desarrollo relativo de la primera sección.

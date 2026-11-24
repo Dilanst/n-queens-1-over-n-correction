@@ -1,0 +1,49 @@
+\section{Dimensión de los patrones y estimación de su suma}
+Sobre los sitios de cada línea de las cuatro familias dibujamos un árbol de igualdades,
+una arista por igualdad de su coordenada transversal. Una línea con $d$ sitios pierde
+su nodo de línea y sus $d$ incidencias, y se reemplaza por $d-1$ aristas. Se conservan
+las componentes y los números ciclomáticos del grafo de incidencia. Las restricciones
+lineales son las mismas. Trabajamos sólo con patrones realizables con sitios distintos.
+En la componente $i$, de $v_i$ sitios y $b_i$ ciclos independientes, escribamos su
+rango como $v_i-1+L_i$. Un árbol generador tiene rango $v_i-1$ por eliminación de hojas.
+
+\paragraph{Dos ciclos aún dan dos restricciones independientes.}
+Cualquier dependencia entre las ecuaciones asigna coeficientes a sus aristas de modo
+que, en cada sitio, la suma con signo de las normales ponderadas es cero.
+En el soporte de coeficientes no nulos no hay hojas. En un vértice de grado dos las
+normales han de ser paralelas; sus dos aristas están en una misma recta del tablero.
+Suprimimos los caminos formados por dichos vértices. Una componente completa de grado
+dos sería un ciclo dentro de la misma recta, imposible por el árbol elegido en ella.
+Tampoco queda un lazo: el camino recto antes de suprimirlo cerraría el mismo ciclo.
+Dos aristas paralelas del grafo reducido darían dos caminos rectos entre los mismos
+sitios distintos; éstos determinan una única recta y su unión cerraría un ciclo en ella.
+El grafo restante es simple, de grado mínimo tres y tiene al menos cuatro vértices.
+Una componente así tiene al menos tres ciclos independientes, pues $2E\ge3V$ da
+$E-V+1\ge V/2+1\ge3$. La supresión no altera el número ciclomático.
+Un árbol generador con hasta dos cuerdas no puede contener ese soporte. Por tanto
+$L_i\ge\min(b_i,2)$, con igualdad si $b_i\le2$. Se permiten dependencias cuando
+hay tres ciclos o más; no se añade una dimensión de rango por cada uno de ellos.
+
+\paragraph{Paso a la ley de llegada.}
+La dimensión de las colocaciones en las $2v$ coordenadas originales es
+\[
+ D=2v-\sum_i(v_i-1+L_i)=v+c-\sum_iL_i .
+\]
+Elegir $D$ coordenadas libres da $O_v(n^D)$ colocaciones. Denotemos por $h$ el número
+de índices de fila y columna distintos en el patrón. La prescripción conjunta de llegada
+implica una masa retenida $\le C_h(j/n)^h$, sin necesidad de independencia entre ellos.
+Con el exponente $p$ de la parte anterior la cota es $C_v n^{D-h}j^{h-p}$.
+En los tres casos se tiene $D\le p-1$: la suma de los $L_i$ es cero para bosques,
+uno si hay un ciclo, y al menos dos si hay al menos dos ciclos independientes en total.
+Si $h\ge p$, usar $j\le n$ concluye. Si $h<p$, una igualdad diagonal entre sitios
+distintos es una ecuación no idéntica en las $h$ variables RC: dichos sitios difieren
+tanto en fila como en columna. Luego $D\le h-1$ y $j^{h-p}\le1$ da la misma cota.
+Así cada patrón aporta en valor absoluto $O_v(1/n)$, y hay sólo un número finito
+de patrones (incluidas pendientes y tipos de igualdad) para cada $v$ fijo.
+
+Para $[S]V$ la sustracción de una sola línea se anula salvo si todo el soporte está
+en esa línea. En este último caso las demás líneas diagonales son unitarias y el resto
+es cero. Los términos de dos conflictos desaparecen para $v\ge5$. Para $v\le4$ se
+usan los pesos de dos conflictos y su estimación de media ya revisados en el estudio
+interlíneas, parte 1. En particular, dos pares que constituyen todo un soporte
+desconectado de cuatro sitios ya fueron sustraídos. Esto da la cota anunciada para $V$.

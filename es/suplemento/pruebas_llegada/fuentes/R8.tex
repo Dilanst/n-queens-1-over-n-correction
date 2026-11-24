@@ -1,0 +1,18 @@
+\section{La precisión de torres que exige el corte}
+Fijemos los márgenes de difusión y brecha y una máscara de tamaño $j$ en esa clase.
+Sean $z=jD$ el núcleo del escalado exacto y $g_T=\log\operatorname{per}A-L_T(A)$.
+G03, líneas 25--43, define $G_q$ conservando los términos de Stirling de grado
+menor que $q$, retirando el término de corrector y conservando el cofactor de K06.
+Por U04--05, con $q=2$ y $j$ suficientemente grande, existen constantes de clase
+$c,c_0,C,C'$ tales que
+\[
+ |g_T-G_2(1/j,z)|\le (2C/j)^2+Ce^{-cj},\qquad
+ \sup_{0<|u|\le c_0/2}|G_2(u,z)/u|\le C'.
+\]
+El numerador se anula en cero por las dos cancelaciones explícitas de U05, líneas 17--26.
+En $j\ge2/c_0$ se obtiene
+\[
+ |g_T|\le C'/j+4C^2/j^2+Ce^{-cj}.
+\]
+Esta implicación es suficiente para sustituir la entrada puntual del error puro en H03.
+Para la diferencia entre cuatro menores que usa M07 se conserva el argumento separado de K08.

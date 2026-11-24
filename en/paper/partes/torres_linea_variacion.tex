@@ -1,0 +1,100 @@
+\begin{lema}[Trial point and displacement]\label{lem:linea-desplazamiento}
+Let $F=\nabla\Psi$ be the margin residual, let $s=-\hessloc_0^{-1}F(y^0)$, and let $\eta=y^*-y^0$.
+In the fixed gauge there is a stationary point $y^*$ with $\|\eta\|_1=O_2$ and $\|\eta-s\|_1=O_4$.
+For $c\notin E$, we have $\iota_c^\top\eta=n_cpq+O_3$, where $n_c$ counts the axial fibers of $E$
+passing through $c$. The action changes by $H_0-\delta^\top K\delta/2+O_6$, with $H_0$ given in
+the proof.
+\end{lema}
+\begin{proof}
+The gradient $F$ of the dual action $\Psi$ contains the margins minus one and, on the line, the
+sum of the two masses and the vacancy minus one. At the trial point $F(y^0)=-\sum_{i\in
+E}\delta_i\iota_i$, with $\delta_i=pq+O_3$ by the cubic equation. In the gauge orthogonal to the
+row-minus-column mode, $DF=\hessloc$ and the Newton map with fixed inverse $v\mapsto
+v-\hessloc_0^{-1}F(y^0+v)$ is a contraction on the ball $\|v\|_1\le 2\|s\|_1=O_2$. Indeed, the
+masses there are $\le 2p_c$ for large $k$, by $du/d\theta=\tau_d(u)$ and $|\iota_c^\top
+v|\le\|v\|_1$. The mass sums per fiber are bounded, and $|d\tau_d/d\theta|\le C u$, so
+$\|\hessloc(y^0+v)-\hessloc_0\|_1\le C\|v\|_\infty$. By symmetry $\|\hessloc_0^{-1}\|_1=O(1)$. The
+derivative of the map has norm at most $C\|v\|_1\le1/2$ for large $k$, and the image of the center
+is $s$. The contraction maps the ball into itself. Its fixed point satisfies $\|\eta\|_1=O_2$ and,
+by integrating the derivative over $[0,\eta]$, also $\|\eta-s\|_1=O_4$. The block formula for
+$\hessloc_0^{-1}$ and the entries of $G^0$ give $s_\alpha=pq\,\symbf{1}_{\{\alpha\text{ meets
+}E\}}+O_3$ on each axial fiber and $s_E=2pq+O_3$ on the line. The same estimates hold for $\eta$.
+With $d\theta_c=\iota_c^\top\eta$ and $n_c$ the number of the four fibers incident to $c$, we have
+$d\theta_c=n_cpq+O_3$ outside $E$. By the margins, $\sum_c p_c|d\theta_c|=O_2$ and $\sum_c
+p_c|d\theta_c|^2=O_4$.
+
+An antiderivative of the mass with respect to $\theta$ is $d\,u+(d-1)\log(1-u)$, where $d$ is the
+multiplicity. The dual action sums these antiderivatives, the vacancy $e^{w}$ and the potentials
+with a minus sign. At the stationary point, subtracting $2k$ plus the number of diagonal lines
+gives the entropy. Thus the action contributes $H_0-\tfrac12\delta^\top K\delta+O_6$, where
+\[
+ H_0=\sum_{i\in E}\{3u_i+2\log(1-u_i)-2p_i-\log(1-p_i)\}-(p+q)-\log h .
+\]
+The quadratic part follows by completing the square in $F(y^0)^\top\eta+\eta^\top
+\hessloc_0\eta/2$. The cubic error is bounded by $C(\sum_c p_c|d\theta_c|^3+|\eta_E|^3)=O_6$, and
+the square of $\eta-s$ costs $O_8$.
+\end{proof}
+At the trial point the prefactor changes by exactly
+\[
+ B_0=\sum_{i\in E}\{\ell_3(u_i)-\ell_2(p_i)\}
+       -\tfrac12\log\det(I+DG)-\tfrac12\log \schurloc .
+\]
+
+To transport the prefactor, define $\widehat G_{cd}=\iota_c^\top \hessloc_0^{-1}\iota_d$,
+$\Gamma=\nabla\Lambda(y^0)$, $\widehat C_c=\iota_c^\top \hessloc_0^{-1}\Gamma$ and
+$\sigma_\Gamma=(\hessloc_0^{-1}\Gamma)_E$. For each site write $u_c=p_c$ if $c\notin E$,
+$\tau_c=\tau_{d_c}(u_c)$ and $\kappa_c=\kappa_{d_c}(u_c)$. The derivative of the prefactor is
+$\Gamma=\sum_c b_c^*\iota_c+b_w\symbf{e}_E$ with
+\[
+ b_c^*=\tau_c\{\ell'_{d_c}(u_c)-\kappa_c\widehat G_{cc}/2\},\qquad b_w=-h/(2\schurloc),
+\]
+where $\symbf{e}_E$ is the unit vector of the line.
+
+\begin{lema}[Displacement of the prefactor]\label{lem:linea-traza}
+Under (H), $\Lambda(y^*)-\Lambda(y^0)= \delta_e\widehat C_e+\delta_f\widehat C_f+2p^2q^2+O_5$.
+\end{lema}
+\begin{proof}
+Write $V_*=\hessloc(y^*)-\hessloc_0=\sum_c v_c\iota_c\iota_c^\top
++v_w\symbf{e}_E\symbf{e}_E^\top$, with $v_c=\tau_{d_c}(p_c^*)-\tau_c$ and $v_w=h(e^{\eta_E}-1)$.
+Let $\tau''_c$ denote the second derivatives with respect to $\theta$. To second order the
+per-site residual of $F$ is $\tau_c\kappa_c(d\theta_c)^2/2+O(p_c|d\theta_c|^3)$, and the vacancy
+residual is $h\eta_E^2/2+O_6$. In $v_c$ the linear term is $\tau_c\kappa_c d\theta_c$ and the
+quadratic term is $\tau''_c(d\theta_c)^2/2$, with the same remainder. The second derivative of
+$\ell_{d_c}$ with respect to $\theta$ is $O(p_c^2)$, giving a total contribution of $O_5$. These
+bounds follow from the rational formulas on the segment $d_cu<1/2$. Since $|v_c|\le C
+p_c|d\theta_c|$, Cauchy--Schwarz on each fiber gives $\|V_*\|_F^2\le C(\sum_c
+p_c|d\theta_c|^2+v_w^2)=O_4$. The eigenvalues of $Z=\hessloc_0^{-1/2}V_*\hessloc_0^{-1/2}$ satisfy
+$\sum_j|\lambda_j(Z)|^3\le\|Z\|_2\|Z\|_F^2=O_6$. The remainder in $\log\det(I+Z)$ after the
+quadratic trace is therefore uniform in the dimension.
+
+In $\Gamma^\top\eta$ we replace $\eta-s$ by $-\hessloc_0^{-1}$ applied to the residual of $F$.
+Including the linear term of the logarithm of the determinant, the change in $\Lambda$ is
+$\Gamma^\top s+\tfrac14\operatorname{tr}(Z^2)+O_5$ minus the expression
+\[
+ \sum_c\tau_c\left(\tfrac12\kappa_c\widehat C_c+
+ \tfrac14(\tau''_c/\tau_c)\widehat G_{cc}\right)(d\theta_c)^2
+ +h\left(\tfrac12\sigma_\Gamma+\tfrac1{4\schurloc}\right)\eta_E^2 .
+\]
+Outside $E$, we have $\widehat G_{cc}=2+O_1$, $\widehat C_c=-1+O_1$ and
+$\kappa_c,\tau''_c/\tau_c=1+O_1$. Indeed, the block inverse changes the axial diagonal by $O_2$,
+and $\Gamma_H-\Gamma^0=O_1$ componentwise upon summing the $b_c^*-b_c^0$ over each fiber. Since
+$b_w=-1/2+(p+q)/2+O_2$, the component $\Gamma_E=b_e^*+b_f^*+b_w$ equals $-1/2-(p+q)+O_2$ because
+$b_i^*=-3p_i/2+O_2$ on $E$. For $\widetilde G=(A^0+UDU^\top)^{-1}$, the inverse component is
+$\sigma_\Gamma=(\Gamma_E-t^\top U^\top\widetilde G\Gamma_H)/\schurloc$. Since $U^\top\widetilde
+G\Gamma_H=(-1,-1)^\top+O_1$ and $\schurloc=1+O_2$, the two first-order terms cancel and
+$\sigma_\Gamma=-1/2+O_2$. Both parenthetical factors are $O_1$ outside $E$ and at the vacancy, and
+inside $E$ each weight is $O_1$. The entire expression is $O_5$.
+
+To evaluate the trace, observe that $\sum_c|v_c|=O_2$, $\sum_c v_c^2=O_5$ and $v_e,v_f=O_3$. On
+each of the four fibers $\alpha$ incident to $E$, we have $\sum_{c\in\alpha\setminus
+E}v_c=pq+O_3$, since $d\theta_c=n_cpq+O_3$ and there is at most one additional intersection with
+$n_c=2$. On every other fiber $\sum|v_c|=O_3$ because there are at most two incident
+intersections. In $\sum_{c,d}v_cv_d\widehat G_{cd}^2$, only distinct sites outside $E$ that share
+a fiber contribute at order four, and there $\widehat G_{cd}^2=1+O_1$. Grouping them by fiber
+gives $4p^2q^2+O_5$ (the other $2k-4$ fibers sum to $O(k\,k^{-6})$). The cross products with the
+vacancy are $O_5$, since $(\hessloc_0^{-1}\iota_c)_E=O_1$ outside $E$. The vacancy alone
+contributes $(v_w/\schurloc)^2=4p^2q^2+O_5$. Thus we obtain
+\[
+ \Lambda(y^*)-\Lambda(y^0)=\sum_{i\in E}\delta_i\widehat C_i+2p^2q^2+O_5 .
+\]
+\end{proof}

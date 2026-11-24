@@ -1,0 +1,66 @@
+\begin{proposicion}[Orden de los parámetros y de los errores]\label{prop:cortes-uniformes}
+Con la banda histórica y los parámetros que siguen existe una constante \(C_\delta\)
+común a todos los cortes admisibles. A escala \(n\), los errores de los apéndices
+\ref{app:signed}, \ref{app:arrival}, \ref{app:interior} y \ref{app:weights} tienen
+la siguiente descomposición. Escribimos \(o_b(1)\) para una cantidad que tiende a cero
+cuando \(n\to\infty\) para cada \(b\) fijo.
+\begin{enumerate}
+\item En la identidad con signo y en el resto de llegada, el reemplazo de \(g^\flat\)
+y de su exponencial cuesta a lo sumo \(C_\delta b+o_b(1)\).
+Las salidas, la sustitución por menores aproximados, la cola de activaciones y los
+restos de Taylor de la identidad detenida son \(o_b(1)\).
+\item En la media interior son \(o_b(1)\) el error de inserción sumado, el cambio
+de ley de los incrementos, la sustitución de los promedios uniformes de recorridos
+y su suma de Riemann en los niveles.
+\item En la inserción de un par, los restos de Taylor de la acción y del prefactor
+contribuyen \(o_b(1)\) después de sumar en los pares. La sustitución de sus coeficientes
+por las ocho integrales de estado a ese mismo corte también cuesta \(o_b(1)\).
+\end{enumerate}
+\end{proposicion}
+\begin{proof}
+Se fija la banda de~\cite[§5.4]{tc}, su \(\delta\), y se reservan los márgenes comunes
+de difusión, vacancia, brecha, carga y salida \(c_*>2\beta\). La transición de clase
+fija \(C_{\rm pres}\) antes del corte. Con esos márgenes se fijan los radios de los
+menores y de sus campos, el umbral \(\eta\) y la base \(C_1\) del recuento tanto
+determinista como integrado hasta \(8\log n\). La reserva exponencial para prescripciones
+largas precede a la fracción de truncación del Taylor y al umbral \(\eta\).
+Elíjase \(0<a<1\) con \(a\log(\max(2,C_1))<1/4\); después \(\rho\ge2\) con
+\(a\log\rho>3\); por último \(\alpha<\alpha_{\rm hist}\) con \(2C\alpha<\eta/(2\rho^2)\)
+y con la holgura de la clase exterior y del balanceo de torres.
+Elijamos \(\delta_*<1\) con \(C_1\delta^{-2}\delta_*^{1/3}<1\) y
+\(C_2\delta^{-2}\delta_*<1\) para las dos series de~\eqref{eq:llegada-nu}.
+Ahora puede elegirse cualquier \(0<b<\min(\delta/2,\delta_*)\) suficientemente pequeño
+para que \(x_0<1\) y se cumpla la desigualdad exponencial del
+Lema~\ref{lem:llegada-integrada}. La prueba del Lema~\ref{lem:prescripcion-larga}
+muestra dónde se paga con ella la parte positiva \(\beta j\) del peso de una línea larga.
+Finalmente \(n_0(b)\) asegura \(j\ge\sqrt n,\ v^2/j\le\delta_*\),
+\(C(4v+12)\le j^{1/3}\) hasta \(v=8\log n\), y todas las cotas de clase en el hijo.
+Los radios globales no aumentan tras fijar la carga.
+
+Para el primer punto, las dos series de tipos son geométricas una vez extraído
+\(b/\delta_*\). Sus bases y el multiplicador acotado de la transferencia a \(\mu\)
+dependen sólo de las elecciones anteriores a \(b\), aumentando \(n_0(b)\) para que
+\(e^{|A-R_Q(n)|}\le2\). El coste restante es
+\[
+ O_b\!\left(nj^{-8}+n^{-1}+n(1+j)e^{-2j}+ne^{-c_b n}
+           +n e^{-c_\delta n+D_\delta n^{2/3}}\right)=o_b(1).
+\]
+Los restos cuadráticos en la identidad con signo son \(O_b(n^{-1})\) a escala \(n\).
+En el segundo punto, los residuos cúbicos cuestan \(O_b(n\sum_{m>j}m^{-3})\);
+los incrementos centrados y el cambio de ley cuestan
+\(O_b(n(\sum_{m>j}m^{-4})^{1/2})\). Ambos tienden a cero. Si la aproximación
+uniforme de la media tiene error \(\epsilon_n(b)\to0\), su suma cuesta
+\(n\epsilon_n(b)\sum_{m>j}m^{-2}=o_b(1)\). Para obtener esa aproximación se fija
+primero la longitud de los recorridos, se toma \(n\to\infty\) y después se usa la
+cola geométrica de la resolvente en \([b,1]\). La continuidad sobre ese intervalo
+hace tender a cero la diferencia de Riemann. En el tercer punto el error puntual en
+el cociente de inserción es \(O_b(j^{-3})\); cada par lleva masa \(O_b(j^{-2})\)
+y hay \(O(j^3)\) pares. El coste total es \(O_b(n/j^2)=o_b(1)\).
+Las coincidencias accidentales de los recorridos truncados cuestan \(O_{b,N}(1/n)\)
+y los términos más largos están dominados por \(C_b\sum_{q>N}(1+q)^2r_b^{2q-O(1)}\),
+\(r_b<1\). Estos límites justifican las sustituciones a corte fijo.
+\end{proof}
+Al comparar después la frontera a corte \(b\) con su valor final aparece
+\(\eta(b)=\limsup_n|\mathcal M_n(b)-(P_T+J-S)|\to0\) al bajar \(b\),
+como se usa en el apéndice~\ref{app:closing}. Este último error pertenece al límite
+del perfil de frontera en \(b\); la proposición sólo emplea \(o_b(1)\) para el límite en \(n\).

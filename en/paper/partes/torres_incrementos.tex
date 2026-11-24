@@ -1,12 +1,12 @@
-\subsection{A marked square and the determinant increment [D]}
-It remains to estimate the increment of $R_{\rm det}$. We can measure the effect of $e=(r,c)$
-on $L_T$ by varying its weight or by comparing the board with the minor left after occupying it.
-For an allowed $e$, let $\pi^{\rm der}_e=\partial_{\log w_e}L_T=p_e(1+\hat c_e)$,
-$\varepsilon_e=p_e/P_e-1$, and $r_e=L_T(M_e)-L_T(M)-\log(\pi^{\rm der}_e/w_e)$.
-Theorem A for rooks gives $|\hat c_e|\le C/k$ and $|r_e|\le C/k^2$. Thus $r_e$ measures the
-discrepancy between the two operations through second order. Using the scaling of the minor
-$P'=\operatorname{diag}(x')P^{(e)}\operatorname{diag}(y')$, where $P^{(e)}$ is the submatrix
-of $P$, gives the exact identity
+\subsection{A marked cell and the determinant increment [D]}
+The increment of $R_{\rm det}$ remains. We can measure the effect of $e=(r,c)$ on $L_T$ by varying
+its weight or by comparing the board with the minor obtained after occupying the cell. For an
+allowed cell $e$, let $\pi^{\rm der}_e=\partial_{\log w_e}L_T=p_e(1+\hat c_e)$,
+$\varepsilon_e=p_e/P_e-1$ and $r_e=L_T(M_e)-L_T(M)-\log(\pi^{\rm der}_e/w_e)$. Theorem A for rooks
+gives $|\hat c_e|\le C/k$ and $|r_e|\le C/k^2$. Thus $r_e$ measures the discrepancy between the
+two operations through second order. Using the scaling of the minor
+$P'=\operatorname{diag}(x')P^{(e)}\operatorname{diag}(y')$, where $P^{(e)}$ is the submatrix of
+$P$, gives the exact identity
 \begin{align*}
  R_{\rm det}(M_e)-R_{\rm det}(M)&=-r_e-\mathsf E_e,\\
  \mathsf E_e={}&\log(1+\varepsilon_e)+\log(1+\hat c_e)
@@ -15,53 +15,57 @@ of $P$, gives the exact identity
   +\tfrac12\log\frac{\det(I-b_{P'}^\top b_{P'})}{\det(I-b_P^\top b_P)}\\
  &+\frac{\delta_1((k-1)P')}{k-1}-\frac{\delta_1(kP)}k .
 \end{align*}
-Indeed, $\Delta=-L_T(P)+\log(k!/k^k)-\frac12\log\det(I-b_P^\top b_P)$.
-The covariance of $L_T$ under scaling gives the two sums of potentials. The sign of the size term
-comes from the ratio of the two factorials. To prove $(A^+)$ we still need to gain one power of
-$k$ in the signed sum $r_e+\mathsf E_e$. The exact expression for $L_T$ retains the quadratic
-displacement of the stationary point, usually denoted by $\zeta$. Bounding the eleven second-order
-remainders in absolute value would lose their cancellation.
+Indeed, $\Delta=-L_T(P)+\log(k!/k^k)-\frac12\log\det(I-b_P^\top b_P)$. The covariance of $L_T$
+under scaling gives the two sums of potentials. The sign of the size term comes from the ratio of
+the two factorials. To prove $(A^+)$ we must gain a power of $k$ in the signed sum $r_e+\mathsf
+E_e$. The exact expression for $L_T$ retains the quadratic displacement of the stationary point,
+usually denoted by $\zeta$. Bounding the eleven second-order remainders in absolute value would
+lose their cancellation.
 
 \paragraph{Independent parameters.}
-To retain the signed sum, we place both boards in the same family. We vary separately the mass of
-row $r$, the mass of column $c$, the inverse size, and the weight of square $e$. Fix $W=kP$ and
-take each row and column as a type. With $u=1/k$, let $A_-,B_-$ be the uniform probability
-measures that omit the distinguished row and column, respectively. Set
+To preserve the signed sum, we place both boards in the same family. We vary independently the
+mass of row $r$, the mass of column $c$, the inverse size and the weight of cell $e$. Fix $W=kP$
+and take each row and column as a type. With $u=1/k$, let $A_-,B_-$ be the uniform probability
+measures omitting the distinguished row and column, respectively. Set
 \[
-  A_s=(1-s)A_-+s\delta_r,\qquad B_t=(1-t)B_-+t\delta_c,\qquad h=1/J .
+  A_s=(1-s)A_-+s\delta_r,\qquad B_t=(1-t)B_-+t\delta_c,\qquad h=1/N .
 \]
-Multiply only $W_{rc}$ by $v$. With respect to these measures, the scaled and stationary kernels
-satisfy $N=W^v\exp(a_i+b_l)$ and $q(1-hq)=W^v\exp(z_i+y_l)$ with unit marginals.
-With the gauge fixed, the inverse of the derivative is uniformly bounded in supremum norm.
-The gap controls the quadratic norm, and the integral part maps the quadratic norm to the
-supremum norm because $W\le M_0$. Perturbing the measures costs $O(|s-u|+|t-u|)$, and the
-marked weight costs $O(\max(|s|,|t|))$ for $|v|<2$. Iteration with the inverse at the center
-converges on fixed disks for $h,s,t$ depending only on the class and gives the holomorphic branch.
-The determinants of the centered kernels $V$ that occur take the form
+Multiply only $W_{rc}$ by $v$. With respect to these measures the scaled and stationary kernels
+solve $N=W^v\exp(a_i+b_l)$ and $q(1-hq)=W^v\exp(z_i+y_l)$ with unit marginals. With the gauge
+fixed, the inverse of the derivative is uniformly bounded in supremum norm. The gap controls the
+quadratic norm, and the integral part maps the quadratic norm to the supremum norm by $W\le M_0$.
+Perturbing the measures costs $O(|s-u|+|t-u|)$, and the marked weight costs $O(\max(|s|,|t|))$ for
+$|v|<2$. Iteration with the inverse at the center converges on disks in $h,s,t$ fixed for the
+class and gives the holomorphic branch. The determinants of the centered kernels $V$ that occur
+have the form
 \[
  D(V)=\sum_{\ell\ge0}\frac{(-1)^\ell}{(\ell!)^2}
   \int\det[V(i_a,l_b)]_{a,b\le\ell}^{\,2}\,
                dA_s^{\otimes\ell}dB_t^{\otimes\ell}.
 \]
-Cauchy--Binet and Hadamard give the bound $\ell^\ell C^\ell/(\ell!)^2$. The gap and the
-Hilbert--Schmidt norm at the center give a positive lower bound for the determinant there.
-The series and Cauchy's estimates let us take its logarithm on uniformly smaller disks. In the
-expression for $\Delta$ we replace $\log(J!/J^J)-\frac12\log(4\pi J)$ with
-$-1/h-\frac12\log2+h/12$ and keep the Stirling remainder $\eta_J=O(J^{-3})$ separate.
-For the resulting expression $D_*$, the product $h^2D_*$ is bounded and holomorphic on these disks.
-For positive rational masses, replicating each type $J A_s(i)$ or $J B_t(l)$ times preserves
-the operator on types and adds only zero singular values. Applying the deterministic part of G1
-to these replicas gives $D_*=\delta_1/J+O(J^{-2})$. Thus the first three coefficients of $h^2D_*$
-vanish and the coefficient of degree three is $\delta_1$. By continuity and the holomorphic
-identity theorem, Cauchy's estimates give $R_{\rm det}=\eta_J+h^2D_2(h,s,t,v)$, with $D_2$ and
-its first derivatives bounded on smaller disks. On a face of zero mass, only the visible part is
-replicated. Its gauge drops out of the sums of potentials, and its own $\delta_1$ is identified.
+Cauchy--Binet and Hadamard give the bound $\ell^\ell C^\ell/(\ell!)^2$. At the center, the gap and
+the Hilbert--Schmidt norm give a positive lower bound for the determinant. The series and Cauchy's
+formula allow us to take its logarithm on uniformly smaller disks. In the expression for $\Delta$,
+replace $\log(N!/N^N)-\frac12\log(4\pi N)$ by $-1/h-\frac12\log2+h/12$ and set aside the Stirling
+remainder $\eta_N=O(N^{-3})$. For the resulting expression $D_*$, the function $h^2D_*$ is bounded
+and holomorphic on these disks. For positive rational masses, replicating each type $N A_s(i)$ or
+$N B_t(l)$ times preserves the type operator and adds only zero singular values. Applying the
+deterministic part of G1 to these replicas gives $D_*=\delta_1/N+O(N^{-2})$. Thus the first three
+coefficients of $h^2D_*$ vanish, and the coefficient of degree three is $\delta_1$. By continuity
+and the identity theorem for holomorphic functions, these coefficients agree for all masses. If
+$|h|\le r/2$ on a disk of fixed radius $r$ where $|h^2D_*|\le M$, the remainder after degree
+three, divided by $h^4$, is bounded by $\sum_{j\ge4}Mr^{-j}(r/2)^{j-4}=2M/r^4$. We obtain $R_{\rm
+det}=\eta_N+h^2D_2(h,s,t,v)$, with the first derivatives of $D_2$ bounded by the same integral
+formula on inner disks. On a face of zero mass only the visible part is replicated. Its gauge
+drops out of the sums of potentials, and its own $\delta_1$ is identified.
 
-Passing to the minor replaces $(h,s,t)=(u,u,u)$ by $(u/(1-u),0,0)$. The change in $h$ is
-$O(u^2)$ and the change in each mass is $O(u)$, giving $\Delta_e R_{\rm det}=O(u^3)$.
-The identity above proves $(A^+)$ with the stated sign. On the face $s=0$ or $t=0$, the
-integrated expressions are independent of $v$. Thus $\partial_vD_2=stH$ with $H$ bounded by
-Cauchy's estimates. At $s=t=u$ the derivative of $R_{\rm det}$ with respect to $v$ is $O(u^4)$
-all the way to $v=0$. Integration over $[0,1]$ gives the deletion estimate in $(D^+)$. Adding
-the increments from $(L^{*+})$ gives $(T^+)$ for the total remainder $R$. Thus we can compare
-the approximation for the same pair before and after passing to a further minor that retains it.
+Passing to the minor replaces $(h,s,t)=(u,u,u)$ by $(u/(1-u),0,0)$. The change in $h$ is $O(u^2)$
+and that in each mass is $O(u)$, giving $\Delta_e R_{\rm det}=O(u^3)$. The identity above proves
+$(A^+)$ with the indicated sign. On the face $s=0$ or $t=0$, the integrated expressions are
+independent of $v$. Hence the expansion of $\partial_vD_2$ contains no terms with zero power of
+$s$ or $t$. Dividing its series by $st$ gives a function $H$ bounded on inner disks by the
+geometric series of Cauchy bounds. At $s=t=u$ the derivative of $R_{\rm det}$ with respect to $v$
+is $O(u^4)$ all the way to $v=0$. Integrating over $[0,1]$ gives the deletion estimate in $(D^+)$.
+Adding the increments from $(L^{*+})$ gives $(T^+)$ for the total remainder $R$. This lets us
+compare the approximation for the same pair before and after passing to a further minor that
+retains it.

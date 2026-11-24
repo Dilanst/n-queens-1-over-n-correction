@@ -1,0 +1,83 @@
+\paragraph{The density of the removed lines.} The first mean in \(\mathcal M_n(b)\) sums over the states
+of both crossings and \(\sum_s q_{o,s}=1\). The motif law and the scaling at regular arrival, developed
+in Appendix~\ref{app:transfer}, give the pair measure \(w_{o,b}\,dr\,dc\,dh\) for each orientation.
+Indeed, the four axial labels contribute \(b^4\), each distinct diagonal contributes a vacancy, and the
+two factors \(jD_z\) converge to \(W_b^0(z)\) on the support. The outer factor \(n/j^4\) and the \(n^3\)
+from the Riemann sum leave \(n^4 b^4/j^4\to1\). By symmetry between the endpoints of the pair, on each
+line with coordinate \(t\) its mass integrates to \(\frac12\iint p_b(z)p_b(z')\,dr\,dr'/U_o(t)\). Summing
+over lines gives \(W_b\).
+
+If each pair contributes a test function \(a\) at each of its two rows, the symmetry of \(a(r)+a(r')\)
+cancels this factor \(1/2\) when one integrates a single endpoint. In the family \(o\), integrating the
+other endpoint gives \(m_{o,b}(t)/U_o(t)\). Thus,
+\[
+ \sum_o\int_\Omega w_{o,b}\{a(r_e)+a(r_f)\}\,dr\,dc\,dh
+ =\iint a(r)p_b(r,c)\gamma_b(r,c)\,dr\,dc
+ =\int a(r)\theta_b(r)\,dr .
+\]
+Transposition gives the same density for columns. In particular, \(\int\theta_b=2W_b\). The row measure
+lost to the pairs has density \(\theta_b\), and renormalizing the surviving rows restores the mass
+\(2W_b\) at constant density. Together the two operations give the direction \(\eta_b=2W_b-\theta_b\).
+
+The centering can be verified exactly on a deterministic grid with \(m\) points per side. Let \(p_m\) be
+the kernel of \(v_b\) scaled with the uniform measure \(A_m\) of mass \(1/m\) per point, and let
+\(W_m,\theta_m\) be the grid sums corresponding to \(W_b,\theta_b\). On a line \(\ell\) of family \(o\)
+we give each ordered pair the weight \(\omega=p_m(e)p_m(f)/(2m^3 U_o(\ell))\), including the pairs
+\(e=f\) in each family. Summing over both endpoints gives \(\sum\omega=W_m\). Fixing the row \(i\) of the
+first endpoint and multiplying by two gives \(\theta_m(i)/m\). With \(h_R^m,h_C^m\) denoting the centered
+influences on this grid and \(H_m(\parmar)\) their sum over the four endpoints, linearity gives
+\[
+ \sum\omega H_m(\parmar)
+ =\frac1m\sum_i\theta_m(i)(h_R^m(i)+h_C^m(i))
+ =-D\mathfrak F_m[\eta_m A_m,\eta_m A_m],\qquad \eta_m=2W_m-\theta_m .
+\]
+The equality holds for the first variations. The pairs \(e=f\) in this quadrature have total mass
+\(O_b(m^{-1})\). The physical minors always use two distinct squares.
+
+\begin{proposicion}[First mean at fixed cut-off]\label{prop:pt-corte}
+Keep \(v_b\) fixed and evaluate \(\mathfrak F\) with the two measures \((1+\varepsilon\eta_b)\,dr\),
+\((1+\varepsilon\eta_b)\,dc\), rescaling \(v_b\) at each \(\varepsilon\). Denote the derivative at zero
+by \(dF_2(b)\). Then
+\begin{align}
+ \lim_{n\to\infty}\frac n{j^4}\mathbb E_\mu
+ \Big[\sum_{\parmar} w_{\parmar}\,j\Delta_{\parmar}\mathfrak F\,;F_b\Big]&=dF_2(b),
+ \label{eq:pt-menores-limite}\\
+ P_T(b):=\lim_{n\to\infty}-n\mathbb E_\mu
+ \Big[\sum_{\parmar}(\pi_{\parmar}^{\rm ex}-\pi_{\parmar}^T)\,;F_b\Big]&=(1/6-2F(b))W_b-dF_2(b).
+ \label{eq:pt-frontera-fija}
+\end{align}
+\end{proposicion}
+\begin{proof}
+To replace \(H_M(\parmar)\) by the profile influences we must also transport the derivative of the
+scaling. In the series for the functional the centered kernel \(\centrado=jD-1\) has gap
+\(\|\centrado\|_{2\to2}\le r_b<1\) and sections of norm at most \(C_b\). A walk of length \(k\ge2\)
+between fixed endpoints is bounded by \(C_b^2r_b^{k-2}\). With \(T_R=(I-\centrado\centrado^*)^{-1}-I\),
+the diagonal of \(T_R-\centrado\centrado^*\) already excludes the unique return of length two.
+For columns the roles of \(\centrado\) and \(\centrado^*\) are interchanged. The truncated terms of the
+functional are therefore sums over simple graphs. Differentiating a measure fixes a vertex and subtracts
+its mean. Differentiating the scaling in a row \(i\) adds a path to that root, since the column response
+in the centered gauge is \(-(I-\centrado^*\centrado)^{-1}\centrado_{i,\cdot}\). The choices of
+differentiated vertex or edge multiply the geometric tail by a polynomial in the length, so it remains
+summable.
+
+At fixed truncation, accidental coincidences of labels cost \(O_{b,k}(1/n)\). The motif law on live
+lines, uniform in the root, takes each sum to the same graph with kernel \(p_b\). At fixed precision the
+exceptional event on \(F_b\) has exponentially small mass, and the scaled weights are bounded. We take
+\(n\to\infty\) and then remove the truncation. Thus in the weighted mean \(\mathfrak F(M),h_R^M,h_C^M\)
+are replaced by \(F(b),h_R,h_C\), with error \(o_b(1)\). Here \(h_R,h_C\) are the continuous influences,
+with mean zero. Integrating over the four endpoints gives their contribution
+\[
+ \int h_R\theta_b\,dr+\int h_C\theta_b\,dc
+ =-D\mathfrak F[\eta_b\,dr,\eta_b\,dc]=-dF_2(b).
+\]
+This proves~\eqref{eq:pt-menores-limite} by \(j\Delta_{\parmar}\mathfrak F=-H_M(\parmar)+O(j^{-1})\).
+Substitution into~\eqref{eq:pt-par-fisico} and use of the mass \(W_b\)
+prove~\eqref{eq:pt-frontera-fija}.
+\end{proof}
+Identity~\eqref{eq:pt-frontera-fija} holds for the limit of physical arrival on the event \(F_b\).
+If the four
+axial labels are fixed and the three diagonals are required to be empty in the complete solution, the
+difference between the two means is \(O(b)+o_b(1)\). Uniform positivity of \(v_b\) and continuity of the
+scaling and of its first variation give \(P_T=\lim_{b\downarrow0}P_T(b)\). In this term the line measures
+are varied. In \(F'(0)\), which enters the interior defect, the kernel \(v_b\) is differentiated along
+the profile with both measures fixed.

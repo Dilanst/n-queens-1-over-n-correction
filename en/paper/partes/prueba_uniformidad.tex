@@ -1,0 +1,100 @@
+\subsection{Uniform limit of the means and summation over levels} Regularity before stopping gives
+\(p_i\le C_b/m\), a positive lower bound on diagonal vacancy, and a row--column gap~\cite[\S7]{pc}.
+Consequently \(c_b I\le S_0+\Pi_m\le 4I\) for some \(c_b>0\). For the lower bound, the quadratic form is
+the sum of \(\sum_i p_i(a_i^{\mathsf T}y)^2\) and \(\sum_f h_f y_f^2\), together with the gauge
+projection term. The second term controls the diagonal components and the gap controls the axial
+components orthogonal to the gauge. The upper bound follows because \(S_0\) has unit diagonal, its
+off-diagonal mass per row is at most three, and the projection acts on its kernel.
+
+Set \(A_m=S_0+\Pi_m-I\), \(M=(I+A_m)^{-1}=R+\Pi_m\), and \(r_b=1-c_b/4<1\). The polynomial
+\(P_N=\tfrac14\sum_{h=0}^N[I-(I+A_m)/4]^h\) satisfies \(\|M-P_N\|_{\rm op}\le r_b^{N+1}/c_b\). To bound
+an entry multiplied by \(m\), we use \(M=I-A_m+A_mMA_m\). Each row of \(A_m\) has absolute row sum at
+most four and largest absolute entry \(O_b(m^{-1})\), so \(\|A_me_u\|_2=O_b(m^{-1/2})\) for every \(u\).
+Hence \[
+ \sup_{u,v}m\,|[A_m(M-P_N)A_m]_{uv}|\le C_b r_b^{N+1}.
+\] This bounds the error in each entry of \(m(R-I)\) when \(M\) is replaced by \(P_N\) in the preceding
+identity. Both the original and the truncated entries are bounded.
+
+For fixed \(N\), powers of \(S_0-I\) are sums over sequences of adjacent lines. Insertions of \(\Pi_m\)
+simplify by \((S_0-I)\Pi_m=-\Pi_m\). A product of walks is a finite sum over incidence types. If two
+affine labels are identical in a type, the line is counted once. An additional coincidence imposes a
+nonconstant equation and leaves \(O_{b,N}(n^{d-1})\) positions among the \(O(n^d)\) positions of a type
+with \(d\) parameters. On the diagonal, a length-two return walk uses the same square in both steps. Its
+contribution is \(3m\sum_{i\in u}p_i^2\), since there are three choices for the other line. Its excess
+over the product of the means is precisely \(\theta_u=3\eta_u s_u-\int K_{uv}^2\,d\rho(v)\).
+Intersections between diagonals are counted in the parity classes of Section~\ref{sec:contracciones}.
+
+For each fixed type, we track the lines down to the auxiliary cut-off \(b/4\) as in~\cite[\S4]{tc}. At
+fixed tolerance \(\eta>0\), outside an event of exponentially small probability,
+\(mp_i=W(i)(1+O_b(\eta+m^{-1}))\) at live sites and \(h_f=u_f/U_f+O_b(\eta+m^{-1})\). For a fixed number
+of marks, the one-step hazard is the sum of their individual hazards up to an error of
+\(O_{b,N}(n^{-2})\) from double occupancies. Multiplying the survival factors down to level \(m\), an
+axial mark contributes \(x\) and a diagonal mark contributes \(U_f(x)\), since \(\partial_x\log
+U_f=(1-u_f)/U_f\). The approximation is uniform over the marks and over \(j\le m\le n\). Take
+\(n\to\infty\) first and then \(\eta\downarrow0\). The normalized sums for each class are Riemann sums
+over fixed polytopes. On each piece, the profile factors are continuous in \(x\) with a common modulus on
+\([b,1]\). The truncated sums therefore converge uniformly over the levels to continuous walk integrals.
+
+To apply the same argument to \(mV\), let \(\kappa_i=a_i^{\mathsf T}Ra_i-4\). The prefactor
+expansion~\cite[\S7]{pc} gives the following formula, whose last sum runs over all lines. \[
+ V=-14\sum_i p_i^3-\tfrac32\sum_i p_i^2\kappa_i
+       +\tfrac94\sum_u\left(\sum_{i\in u}p_i^2\right)^2+O_b(m^{-2}).
+\] The twelve off-diagonal entries in \(m\kappa_i\) contribute \(-12W(i)\) at the marked square. Together
+with \(-14\) they give \(4\langle W^2\rangle_i\). The long walks and the corrected diagonal yield the
+terms involving \(L_0,\theta\) in Section~\ref{sec:profile-data}. The square of the fiber sum gives the
+last term there.
+
+In the contractions the center has mass one, the exterior has mass at most one, and the four fibers
+together have mass at most four. The free-line measure has mass \(\le6/b\). The square steps have total
+mass \(\le8/b\). Expanding the difference of products multiplies each entry bound only by masses and
+factors bounded at fixed \(b\). Thus the tail beyond degree \(N\) is \(\le C_b r_b^{N+1}\), uniformly in
+the level for both the physical mean and its limiting integral. The insertion remainder at scale \(m^2\)
+is \(O_b(m^{-1})\). Taking \(n\to\infty\) and then \(N\to\infty\) gives \begin{align*}
+ \sup_{j<m\le n}\Big|
+ \mathbb E_\nu\!\left[m^2\sum_{c\in i_m}p_c
+       \big(P_c+(\delta_c^0)^2/2\big);H_j\right]-d(m/n)\Big|&\longrightarrow0,\\
+ \sup_{j\le m\le n}\left|\mathbb E_\nu[mV(B_m);H_j]-\mathcal V(m/n)\right|
+  &\longrightarrow0 .
+\end{align*} Here \(i_m\) is the revealed row and \(H_j\) is the short regular arrival event. To average
+over the row, first use the survival indicator before the row is chosen. Given the parent, the row is
+uniform and the mean becomes \(m^{-1}\sum_c p_c(\cdot)\). Replacing that indicator by \(\mathbf1_{H_j}\)
+for bounded observables costs \(O_b(\nu(H_j^c))\). The second formula uses all families in the potential.
+This argument identifies a mean over parents and gives continuity of the limit on \([b,1]\). Numerical
+evaluation of these integrals on grids also requires a bound on the spatial discretization error.
+
+\paragraph{Endpoints and change of measure.} The uniform error \(\epsilon_n(b)\) in the first mean
+contributes at most \(\epsilon_n(b)n\sum_{m>j}m^{-2}=o_b(1)\). Hence the \(P_c+(\delta_c^0)^2/2\) term
+gives \(\int_b^1d(x)x^{-2}\,dx\). For \(\Delta_cV\), the conditional probability of a child given the row
+under \(\nu\) is \(p_c(1+O_b(m^{-1}))\), and \(|\Delta_cV|\le C_bm^{-2}\). The substitution in the mean
+costs \(O_b(m^{-3})\). The increments centered up to the stopping time form a martingale with second
+moment \(O_b(\sum_{m>j}m^{-4})\). If \(M_\tau\) is their stopped sum, the differences are orthogonal in
+\(L^2(\nu)\). Thus \(n|\mathbb E_\nu[M_\tau;H_j]|\le n(\mathbb E_\nu M_\tau^2)^{1/2}\nu(H_j)^{1/2}\).
+Since \(\sum_{m>j}m^{-4}=O(j^{-3})\), the cost at scale \(n\) is \(O_b(n^{-1/2})\). On each history in
+\(H_j\), the realized increments sum to \(V(B_j)-V(B_n)\). The second uniform mean gives \(\mathcal
+V(b)/b-\mathcal V(1)\).
+
+Up to the stopping time, \(n|A|\le C_b\) for the ordinary predictor. Lemma~\ref{lem:previa} shows that
+\(n|R_Q(n)|\) is also bounded. On \(H_j\), set \(s=A-R_Q(n)+g_T+\Gamma\). There \(|s|=O_b(n^{-1})\), and
+the inverse density on histories is \(e^{-s-g^\flat}\). By \eqref{eq:arrival-estimate}, \[
+ \int_{H_j}|d\mu-d\nu|
+ \le\mathbb E_\mu[|1-e^{-s}|+e^{-s}|1-e^{-g^\flat}|;H_j]=O_b(n^{-1}) .
+\] The exit estimates in Appendix~\ref{app:signed} then give \(n\mathbb E_\mu A=n\mathbb
+E_\nu[A;H_j]+o_b(1)\). For rooks, set \(u_e=g_T(M_e^{\rm fis})-g_T(M)\). The mask \(M_e^{\rm fis}\) is
+obtained from the single minor \(M_e\) by applying the two diagonal exclusions of the child. The change
+is \(O_b(m^{-2})\), including the step that causes exit. Thus \(\log\rho^\sharp-\log\rho=\log\mathbb
+E_{\nu,i}e^{u_e}
+ =\mathbb E_{\nu,i}u_e+O_b(m^{-4})\). The stopped density and the weighted exit bounds give
+\(D(\mu^\tau\Vert\nu^\tau)=\mathbb E_\mu[A+\log X]-R_Q(n)=O_b(1)\). Let \(d_m\) be the conditional
+relative entropies of the two child laws given the row, set to zero after stopping. The rows have the
+same uniform law. The decomposition of relative entropy into its conditional increments gives
+\(\sum_m\mathbb E_\mu
+d_m=D(\mu^\tau\Vert\nu^\tau)\). Pinsker's inequality bounds the difference between the two means of
+\(u_e\) by \(2C_bm^{-2}\sqrt{d_m/2}\). By Jensen's inequality and Cauchy--Schwarz, the sum of these
+differences at scale \(n\) costs
+\(O_b(n(\sum_{m>j}m^{-4})^{1/2}D(\mu^\tau\Vert\nu^\tau)^{1/2})=O_b(n^{-1/2})\). The realized rook
+increments telescope, adding \((F(b)-1/12)/b-(F(1)-1/12)\) to the preceding endpoint terms. Thus at each
+fixed cut-off, \[
+ \lim_{n\to\infty} n\mathbb E_\mu A^\sharp
+ =\int_b^1\frac{d(x)}{x^2}\,dx+\frac{G(b)}b-G(1)
+ =\int_b^1\frac{\numerr(x)}{x^2}\,dx .
+\]

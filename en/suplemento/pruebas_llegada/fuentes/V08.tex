@@ -1,0 +1,147 @@
+\section{El primer corrector del permanente sin Divoux--Wang}
+Esta parte, su prueba (parte 8b) y la parte~9 son las partes 01--03 de \path{W4_d1/latex/},
+certificadas por \path{W4_rev/ACTA.md} (D1 descargado), con sus precisiones 2a, 2b, 7a y 7b aplicadas.
+\paragraph{Citas.} \texttt{archivo:n} es la línea $n$ de \texttt{rev\_exp/archivo}. En las
+transcripciones \path{r19/expediente/originales/X/*.md} se cita la línea del \texttt{.md}; la
+«orig.» de las actas es esa línea menos~7. U01--U04 y Wp son
+\path{r19/expediente/originales/U/01_enunciado.md}, \dots, \path{U/04_mezcla.md} y
+\path{r19/expediente/originales/W/permanente.md}; 01m es \path{r21/consolidado/latex/01_menores.tex}.
+E1, W2c, W2t y WG son los \texttt{ACTA.md} de \path{E1}, \path{W2_cofactor}, \path{W2_torres} y
+\path{W_global}. c1--c4 son los cálculos de \path{W4_d1/codigo} (evidencia, no prueba).
+
+\paragraph{Clase y objetos.} Para $A>0$ y $0\le r<1$, $\mathcal D_K(A,r)$ es el conjunto de las
+matrices $D\in\mathbb R^{K\times K}$ no negativas y bistocásticas con $B=D-J_K$,
+$J_K=\mathbf1\mathbf1^t/K$, $\max|B_{ij}|\le A/K$ y $\|B\|_{\rm op}\le r$; se admiten ceros
+(Wp:9--11). Como en Wp:15--24, con $H=H(s)$ indexada por $\mathcal I=\mathcal R\sqcup\mathcal C$
+(las $K$ filas y las $K$ columnas) y $d$ la rama con $d(0)=1$,
+\[
+ d(s)=\det(I-s^2B^tB)^{-1/2},\quad O(s)=\begin{pmatrix}0&sB\\ sB^t&0\end{pmatrix},\quad
+ H(s)=O(s)(I+O(s))^{-1},
+\]
+\[
+ V(s)=-\tfrac34\sum_{i\in\mathcal I}H_{ii}^2+\sum_{i<j}\bigl(H_{ii}H_{jj}H_{ij}+\tfrac23H_{ij}^3\bigr).
+\]
+\begin{teorema}[W/permanente, Wp:25--29]\label{teo}
+Para cada $A>0$ y $r\in[0,1)$ existe $C_*=C_*(A,r)$ tal que, para todo $K\ge2$ y toda
+$D\in\mathcal D_K(A,r)$,
+\[
+ \Bigl|\log\frac{K^K\per D}{K!}-\log d(1)-V(1)-\frac{d''(1)}{2(K-1)d(1)}\Bigr|\le\frac{C_*}{K^2}.
+\]
+\end{teorema}
+La prueba sólo usa U01 con $q=2$ y $h=v=0$, las definiciones de U03--U04 y herramientas
+estándar. No usa ningún resultado de Divoux--Wang: los cuatro elementos suyos que cita U01
+(U01:37--39) los rehízo E1 (E1:73--77, 86--97, 232; WG:142), y la extracción de Wp:32--66
+no interviene.
+
+\paragraph{Lo que se importa.} (I) \emph{U01 con $q=2$.} Sea $M_0=1+A$, de modo que $KD_{ij}\le M_0$.
+U01:18--28, con $j=m=K$, $h=0$, $v=0$ y $D'=D$, da $K_U,C_U,c_U>0$, que sólo dependen de $(M_0,r)$
+(U01:19--20, 43), tales que, para $K\ge K_U$,
+\begin{equation}\label{eq:u01}
+ \Bigl|\log\frac{K^K\per D}{K!}-\log H_2(1/K)\Bigr|\le\Bigl(\frac{2C_U}K\Bigr)^2+C_Ue^{-c_UK},
+\end{equation}
+donde (U04:24--28, U03:61, U04:41--46), con $\mu_0=1$, $\mu_1=0$ y $V_l$ definido en U03:30--40,
+\[
+ H_2(u)=\sum_{i=0}^5\mu_i(u)\frac{\partial_y^iS_2(1,u)}{i!},\qquad
+ S_2(y,u)=d(y)\bigl(1+V_1(y,u)+V_2(y,u)\bigr),
+\]
+\[
+ (1-iu)\mu_{i+1}=iu(2\mu_i+\mu_{i-1}).
+\]
+$K_U$ incluye la condición $2\le\lfloor\varepsilon K\rfloor$ de U01:25.
+\emph{Alcance.} 01m:4 pone la hipótesis para $D$ bistocástica con $jD\le M_0$ y
+$\|D-J\|_{\rm op}\le r$, sin pedir que sea el escalado de una máscara (U01:9 lo pide; véase la
+sección~\ref{sec:usos}, uso por uso); 01m:6 y 01m:10 admiten $v=0$ y $h=0$. Con $h=v=0$ no hay
+reescalado ($D'=D$), y de $D$ la prueba sólo usa: $B\mathbf1=B^t\mathbf1=0$ (01m:20); la difusión
+y la brecha, para la cota en módulo con Cauchy (01m:23--32, 51--53) y para la cola (01m:59--66);
+la identidad de mezcla, algebraica y válida para toda $D=J+B$ (01m:56--58); y $D\ge0$, para van
+der Waerden (U04:55). La cota del núcleo de 01m:48 se necesita en $|yw|\le r_1(1+d_0)$, no en
+$\Omega$: el argumento del Lema~\ref{lem:cotas}(a) la da con $1-r_1(1+d_0)r>0$ en lugar de $\rho$
+(\path{W4_rev/ACTA.md}:110, precisión 2b). Los momentos (01m:68--70) no dependen de $D$, y el
+Taylor (01m:71--80) sólo usa las cotas de clase de $S_{Q_*}$.
+\emph{Declaración de alcance} (\path{W4_rev/ACTA.md}, punto~2, :89--122). Con $h=v=0$, U01 vale para
+toda $D\in\mathcal D_K(A,r)$, es decir, para toda $D$ bistocástica de la clase, y no sólo para el
+escalado exacto de una máscara: la prueba certificada de U01 (01m:12--83) no usa esa propiedad,
+que sólo interviene en el balanceo de menores (U02:13--33), vacío con $h=v=0$. Es una extensión
+del texto literal de U01:9 y del alcance que formula E1, comprobada en W4\_rev. Además, todos los
+usos aplican el Teorema a escalados exactos de máscaras (sección~\ref{sec:usos}).
+\emph{Certificación:} E1 certificó el orden $Q_*$ (E1:19--21, 31--101) y
+W2c:219--227 el descenso a $q$ (U04:44--46); con $q=2$ el descenso da incluso $(3C/K)^3$ (W2t:106).
+(II) \emph{Estándar:} $K!/K^K\le\per D\le1$ en $\mathcal D_K$ (van der Waerden; desarrollar
+$\prod_i\sum_jD_{ij}=1$) y las desigualdades de Cauchy.
+
+\begin{lema}\label{lem:cotas}
+Sean $\rho=(1-r)/2$, $\Omega=\{y\in\mathbb C:|y-1|\le\rho\}$ y $\theta=(1+\rho)r$; entonces
+$1-\theta=(1-r)(1-r/2)\ge\rho$. Sean $c_H=2A+3A^2/\rho$ y $L=2A^2/\rho$. Para $y\in\Omega$:
+(a) $\|(I+O(y))^{-1}\|\le\rho^{-1}$, $H(y)$ es simétrica, holomorfa cerca de $\Omega$, y
+$|H_{ij}(y)|\le c_H/K$ para todo $i,j\in\mathcal I$;
+(b) $d$ es holomorfa cerca de $\Omega$, $e^{-L}\le|d(y)|\le e^L$, $d(1)\ge1$ y
+$|d^{(i)}(1)|\le i!\,e^L\rho^{-i}$.
+\end{lema}
+\begin{proof}
+(a) $O(y)=yO(1)$ y $O(1)$ es real simétrica con autovalores en $[-r,r]$. Los autovalores de la
+matriz normal $I+O(y)$ tienen módulo $\ge1-|y|r\ge1-\theta\ge\rho$. Como $O^t=O$ y $(I+O)^{-1}$
+conmuta con $O$, $H^t=H$. De $H=O-O(I+O)^{-1}O$ sale $H_{ij}=O_{ij}-(Oe_i)^t(I+O)^{-1}(Oe_j)$.
+Además $|O_{ij}|\le\frac32A/K$, y $Oe_i$ es $y$ por una fila o columna de $B$, de norma
+$\le\frac32A/\sqrt K$ ($K$ entradas $\le A/K$). Así $|H_{ij}|\le(\frac32A+\frac94A^2/\rho)/K\le c_H/K$.
+Las entradas de $H$ son racionales en $y$ sin polos en $|y|<1/r$, disco que contiene $\Omega$.
+(b) Sean $\sigma_1,\dots,\sigma_K$ los valores singulares de $B$: $\sigma_i\le r$ y
+$\sum\sigma_i^2=\|B\|_{\rm HS}^2\le A^2$. La función $\exp(-\frac12\sum_i\Log(1-y^2\sigma_i^2))$ es
+holomorfa en $|y|<1/r$, vale $1$ en $0$ y su cuadrado es $\det(I-y^2B^tB)^{-1}$: es $d$ (01m:28).
+Con $|\Log(1-x)|\le|x|/(1-|x|)$ y $|y\sigma_i|\le\theta$ resulta
+$|\log d(y)|\le\frac98A^2/(1-\theta^2)\le L$. En $y=1$, $d(1)=\prod_i(1-\sigma_i^2)^{-1/2}\ge1$.
+Cauchy en la circunferencia $|y-1|=\rho$ da la última cota.
+\end{proof}
+
+\begin{lema}\label{lem:mom}
+La recurrencia da $\mu_2=\frac u{1-u}$, $\mu_3=\frac{4u^2}{(1-u)(1-2u)}$,
+$\mu_4=\frac{3u^2(1+6u)}{(1-u)(1-2u)(1-3u)}$ y $\mu_5=\frac{40u^3+96u^4}{\prod_{a=1}^4(1-au)}$.
+Para $0<u\le1/8$ se tiene $0\le\mu_i(u)\le32u^2$ si $i=3,4,5$. En $u=1/K$, $\mu_2=1/(K-1)$.
+\end{lema}
+\begin{proof}
+Inducción directa en la recurrencia. Divididos por $u^2$, los numeradores son polinomios de
+coeficientes $\ge0$, y los denominadores son positivos y decrecientes en $[0,1/8]$; así
+$\mu_i/u^2$ crece y en $u=1/8$ vale $128/21$, $64/5$ y $3328/105<32$. En $u=1/K$ son los
+momentos de Wp:73--75 (U04:29--30; E1:93). Comprobado en exacto en c1.
+\end{proof}
+
+\begin{lema}\label{lem:id}
+Sean $D\in\mathcal D_K(A,r)$, $y\in\Omega$ y $u=1/K$, con los datos físicos: medidas uniformes de
+masa $1/K$ en cada lado y núcleo $K_y=K\,H(y)$ (U02:48--55, U03:37--40). Sea
+\[
+ W_l(y)=\sum_{S,\mathbf d}\ \prod_{i\in S}a_{d_i}\sum_{\mathfrak m}\ \prod_{\{\alpha,\beta\}\in\mathfrak m}
+ H_{\iota(\alpha)\iota(\beta)}(y),
+\]
+donde $S\subset\mathcal I$, los grados cumplen $d_i\ge3$ y $\sum_{i\in S}(d_i-2)=2l$, $a_d$ es el
+coeficiente de grado $d$ de $r_0(z)=(1+z)e^{-z+z^2/2}$ y $\mathfrak m$ recorre los emparejamientos
+perfectos de las patas etiquetadas ($d_i$ patas de índice $\iota=i$). Entonces:
+(a) $V_l(y,1/K)=W_l(y)$; (b) $W_1=V$; en particular $V_1(1,1/K)=V(1)$ exactamente;
+(c) $|W_l(y)|\le C_lK^{-l}$ para $l=1,2$, con $C_l$ que sólo depende de $l$ y de $c_H$.
+\end{lema}
+\begin{proof}
+(a) En U03:30--40 cada término lleva $s$ vértices etiquetados con lados $\sigma$, grados, un
+emparejamiento $\mathfrak m$ de las patas y una partición $\pi$ de $[s]$ en bloques de un mismo
+lado, con peso $\frac{\prod a_{d_v}}{s!}u^{E-|\pi|}c_\pi\int\prod_{\mathfrak m}
+K_y(\xi_{[\alpha]},\xi_{[\beta]})\prod_{D\in\pi}d\mu_{\sigma(D)}(\xi_D)$ y
+$c_\pi=\prod_{D}(-1)^{|D|-1}(|D|-1)!$. En los datos físicos la integral vale
+$K^{-|\pi|}\sum_f\prod_{\mathfrak m}KH_{f[\alpha]f[\beta]}
+=K^{E-|\pi|}\sum_f\prod_{\mathfrak m}H_{f[\alpha]f[\beta]}$,
+con $f$ que lleva cada bloque a un punto de su lado; con $u=1/K$ las potencias de $K$ se cancelan.
+Con $g=f\circ(\text{bloque})$ se suma sobre las $g:[s]\to\mathcal I$ compatibles con los lados y
+constantes en los bloques, es decir, con $\pi\le\ker g$ (partición en fibras, de un mismo lado).
+Las particiones de un mismo lado forman el producto de los retículos de particiones de
+$\sigma^{-1}(\mathcal R)$ y $\sigma^{-1}(\mathcal C)$; $c_\pi$ es su función de Möbius $\mu_\Pi(\hat0,\pi)$
+y $\sum_{\pi\le\tau}\mu_\Pi(\hat0,\pi)=[\tau=\hat0]$. Sólo quedan las $g$ inyectivas (U03:26--27;
+E1:76). Al sumar en $\sigma$, el par $(\sigma,g)$ es una $g:[s]\to\mathcal I$ inyectiva cualquiera, y
+cada $(S,\mathbf d)$ con $S=g([s])$ procede de exactamente $s!$ pares $(g,\text{grados})$: queda $W_l$.
+(b) $E-s=1$ y $2E=\sum d_v\ge3s$ dan $s\le2$: $(s,E,\mathbf d)=(1,2,(4))$ o $(2,3,(3,3))$. Para
+$S=\{i\}$, $d_i=4$, hay 3 emparejamientos, cada uno $H_{ii}^2$; con $a_4=-\frac14$ queda
+$-\frac34H_{ii}^2$. Para $S=\{i,j\}$, $\mathbf d=(3,3)$, de los 15 emparejamientos 9 tienen un lazo
+en cada vértice y una arista cruzada, y 6 tienen tres aristas cruzadas; con $a_3=\frac13$ y
+$H_{ij}=H_{ji}$ queda $\frac19(9H_{ii}H_{jj}H_{ij}+6H_{ij}^3)$. Sumando en $i$ y en $i<j$ sale
+Wp:21--23. Los valores $a_3,\dots,a_6=\frac13,-\frac14,\frac15,-\frac19$ salen del desarrollo de
+$r_0$ (Wp:39--40; c1). La igualdad se comprobó en exacto con la fórmula literal de U03 (c2).
+(c) Para cada $(s,E,\mathbf d)$ hay a lo sumo $(2K)^s/s!$ conjuntos $S$ y $(2E-1)!!$ emparejamientos;
+$|a_d|\le1$ si $d\le6$, y cada producto está acotado por $(c_H/K)^E$ (Lema~\ref{lem:cotas}(a)).
+Como $s\le2l$ y $E=s+l\le3l$, $|W_l|\le\sum(2^s/s!)(2E-1)!!\,n_{s,l}\,c_H^E\,K^{s-E}=C_lK^{-l}$,
+con $n_{s,l}$ el número de vectores de grados. Concuerda con U03:47 (01m:49) en $u=1/K$.
+\end{proof}

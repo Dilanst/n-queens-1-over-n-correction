@@ -1,0 +1,44 @@
+\begin{lema}[Preliminary error bound on the initial board]\label{lem:previa}
+There exist \(C<\infty\) and \(n_0\) such that, for \(n\ge n_0\),
+\[
+ |R_Q(n)|=\big|\log Q(n)-\log Q_{\rm pred}(n)\big|\le C/n .
+\]
+\end{lema}
+\begin{proof}
+Fix \emph{a single} admissible cut-off \(b>0\). Write \(L_n=L(B_n)\). For a stopped history \(h\) and a
+fixed row order, let \(A(h)=\sum_{t<\tau}\log\rho(B_t,i_t)\) and \(X(h)=Q(B_\tau)e^{-L(B_\tau)}\). The
+probability of that prefix under \(\nu\) is \(\exp(L(B_\tau)-L_n-A(h))\). Multiplying by \(e^{A(h)}X(h)\)
+gives \(Q(B_\tau)e^{-L_n}\), including when the prefix admits no completion. For a given row order, the
+stopped prefixes partition the solutions. Summing and averaging over the order, we obtain
+\begin{equation}\label{eq:masa-previa}
+ e^{R_Q(n)}=\mathbb E_\nu[e^A X].
+\end{equation}
+
+On \(H_j\) we have \(\log X=g_T+\Gamma+g^\flat\) by Lemma~\ref{lem:positividad-llegada}. The bounds for
+rooks and the sums over squares give \(|g_T|+|\Gamma|\le C/j\), and~\eqref{eq:llegada-puntual-acotada}
+bounds the positive part of \(\log X\) by a class constant. With \(|e^z-1|\le e^{\max(z,0)}|z|\)
+and~\eqref{eq:llegada-nu} we conclude that \(\mathbb E_\nu[|X-1|;H_j]=O_{b,\delta}(1/n)\).
+
+We make the exceptions explicit under this same law. On \(S_M\) row consistency up to first exit gives
+\(|A|\le C_\delta/M+C/j\) by summing the defects \(O(k^{-2})\) of the regular parents, including the last
+step~\cite[Thms.~7.1 and 8.1]{pc}. A dyadic band of scale \(k\ge j/2\) has exit probability \(\le
+Ce^{-c_*k}\) and weight \(1+X\le C e^{2\beta k}\) upon exit from the band \cite[§§5--6]{tc}. The sum of
+\(Ce^{-(c_*-2\beta)k}\) over the bands costs \(O_b(e^{-c_b n})\) for \(c_*>2\beta\). On regular arrival
+with a long line, Lemma~\ref{lem:prescripcion-larga} applies. This leaves \(\mathbb
+E_\nu[1+X;S_M\setminus H_j]=O_b(e^{-c_b n})\) upon reducing \(c_b>0\). Up to the macroscopic stopping
+time, the path comparison and the first-order outer bound of~\cite[Cor.~4.12 and §6]{tc} give
+\[
+ \nu(S_M^c)\le C e^{-c_\delta n},\qquad
+ \mathbb E_\nu[e^A X;S_M^c]\le
+ C\exp(-c_\delta n+D_\delta n^{2/3}+O_\delta(1/n)).
+\]
+Here the exponent \(D_\delta n^{2/3}\) bounds the positive part of the logarithm of the weight at
+macroscopic exit. The normalizers contribute \(O_\delta(1/n)\).
+
+In particular, \(\nu(H_j)=1+O_b(e^{-c_bn})\), so \(\mathbb E_\nu[X;S_M]=1+O_{b,\delta}(1/n)\). This mean
+is positive. Multiplying it by \(e^{\pm(C_\delta/M+C/j)}\) brackets \(\mathbb E_\nu[e^AX;S_M]\). Adding
+the cost of \(S_M^c\) in~\eqref{eq:masa-previa} gives \(e^{R_Q(n)}=1+O_{b,\delta}(1/n)\). For
+\(|u|\le1/2\) we have \(|\log(1+u)|\le2|u|\). With the cut-off already fixed, the claim follows. It gives
+the rate \(O(1/n)\) of Conjecture~10.1 of~\cite{pc}. The argument so far has integrated only with respect
+to \(\nu\).
+\end{proof}

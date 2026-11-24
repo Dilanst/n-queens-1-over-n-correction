@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[spanish,es-noshorthands,es-nodecimaldot,es-nosectiondot,es-noindentfirst]{babel}
+\usepackage{fontspec,amsmath,amssymb,mathtools,amsthm,mathrsfs}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{xcolor,microtype,booktabs}
+\usepackage[unicode,colorlinks=true,linkcolor={blue!45!black},urlcolor={blue!55!black}]{hyperref}
+\hypersetup{pdftitle={Las tres estimaciones de llegada del lema B.1},
+  pdfauthor={Dilan Steven Mejia},pdflang={es}}
+\IfFontExistsTF{texgyrepagella-regular.otf}
+ {\setmainfont{texgyrepagella}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,
+  ItalicFont=*-italic,BoldItalicFont=*-bolditalic]}{\setmainfont{Latin Modern Roman}}
+\setlength{\emergencystretch}{3em}
+\setcounter{tocdepth}{1}
+\allowdisplaybreaks[2]
+\newcommand{\E}{\mathbb E}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\per}{\operatorname{per}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\pdet}{\operatorname{pdet}}
+\newcommand{\Log}{\operatorname{Log}}
+\newtheorem{proposicion}{Proposición}
+\newtheorem{teorema}{Teorema}
+\newtheorem{lema}{Lema}
+\newcommand{\pruebaen}[1]{\hyperref[pieza:#1]{\textsf{#1}}}
+\newcommand{\pieza}[1]{\begingroup
+  \renewcommand{\section}[1]{\subsection{##1}\label{pieza:#1}%
+    \noindent{\small\textsf{Fuente #1}}\par\nobreak\smallskip}
+  \input{fuentes/#1}\endgroup}
+\title{Las tres estimaciones de llegada\\del lema B.1}
+\author{Dilan Steven Mejia}
+\date{}
+\begin{document}
+\maketitle
+\noindent Suplemento a \emph{La corrección de orden \(1/n\) al predictor canónico de las \(n\) reinas}.
+Fijado un tablero de llegada, hay dos logaritmos que comparar. El primero mide
+la probabilidad de evitar los ataques diagonales al colocar torres. El segundo es el cambio
+del predictor al activar esos ataques. Las tres proposiciones de este cuaderno permiten
+compararlos después de sustraer el aporte de cada cuadrado.
+\tableofcontents
+\smallskip
+\noindent Las secciones 1--4 fijan las hipótesis y enuncian las estimaciones con su prueba.
+Las secciones 5--7 desarrollan los cálculos empleados. Las claves enlazan con esos
+desarrollos. El archivo \texttt{LEEME.md} identifica los antecedentes adicionales y
+\texttt{ORIGEN.tsv} da la procedencia de cada pieza. En los originales, B y C designan
+los artículos españoles [12] y [13] de la bibliografía del preprint, respectivamente.
+\input{clase}
+\input{menores}
+\input{soportes}
+\input{norma}
+\clearpage
+\section{Demostraciones de balanceo, mezcla y átomos}
+\pieza{D04}
+\pieza{U02}
+\pieza{V01}
+\pieza{U03}
+\pieza{U04}
+\pieza{U07}
+\pieza{A03}
+\clearpage
+\section{Demostraciones de las cancelaciones y de sus cotas uniformes}
+\pieza{B01}
+\pieza{B02}
+\pieza{G02}
+\pieza{G03}
+\pieza{G04}
+\pieza{P03}
+\pieza{P04}
+\pieza{X02}
+\pieza{Z01}
+\pieza{Z02}
+\pieza{P05}
+\pieza{X03}
+\pieza{V07}
+\clearpage
+\section{Demostraciones de las dos normas de activaciones}
+\pieza{V02}
+\pieza{F04}
+\pieza{V03}
+\begingroup
+\subsection{Convergencia de la expansión en polímeros}\label{pieza:V03b}
+\noindent{\small\textsf{Fuente V03b}}\par\nobreak\smallskip
+\input{fuentes/V03b}
+\endgroup
+\pieza{N02}
+\pieza{N03}
+\pieza{Z04}
+\end{document}

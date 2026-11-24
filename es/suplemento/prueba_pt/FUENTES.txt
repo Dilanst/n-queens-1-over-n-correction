@@ -1,0 +1,382 @@
+pt_integrado_punto9_20261122T0920Z/parte_01.tex
+ 35 | 
+ 36 | \paragraph{La cantidad integrada.} $P_T$ es la parte de torres del coeficiente de $1/n$ de la suma de pares
+ 37 | de la etapa final, referida a la misma máscara (B, rect/controles §3):
+ 38 | \begin{equation}\label{eq:defPT}
+ 39 |  \mathcal P_T(b,n):=-n\,\mathbb E\sum_{\rm pares}(\pi_{ee'}-\pi^T_{ee'})
+ 40 |  =\frac n{K^4}\,\mathbb E\sum_{\rm pares}P_T^{\rm ex}(e,e'),\qquad
+ 41 |  P_T(b):=\lim_{n\to\infty}\mathcal P_T(b,n),\quad P_T:=\lim_{b\downarrow0}P_T(b).
+ 42 | \end{equation}
+ 43 | 
+ 44 | \paragraph{Objetos del continuo.} $v_b=U_DU_A$; $p_b$ su escalado bistocástico con medidas uniformes;
+ 45 | $W_0=p_b/v_b$ (el «ss» de par\_n); masas de línea $m_D(d)=\int p_b(x,x-d)\,dx$ y $m_A(a)=\int
+ 46 | p_b(x,a-x)\,dx$;
+ 47 | \begin{equation}\label{eq:objetos}
+ 48 |  W_b=\int\frac{m_D^2}{2U_D}\,dd+\int\frac{m_A^2}{2U_A}\,da,\qquad
+ 49 |  \gamma_b=\frac{m_D}{U_D}+\frac{m_A}{U_A},\qquad
+ 50 |  \theta_b(x)=\int p_b(x,y)\,\gamma_b(x,y)\,dy,\qquad \eta_b=2W_b-\theta_b,
+ 51 | \end{equation}
+ 52 | $F(b)=\mathfrak F(v_b)$ y $dF_2(b)=\frac{d}{d\varepsilon}\big|_0\mathfrak F\bigl[(1+\varepsilon\eta_b)\,dx,
+ 53 | (1+\varepsilon\eta_b)\,dy\bigr]$, la derivada de $\mathfrak F$ cuando las medidas de fila y de columna se
+ 54 | inclinan por $\eta_b$. En la malla de B/g9/PT.py son exactamente $W$, $\gamma$, $\theta$, $\eta$ y dF2 de
+ 55 | \texttt{evaluate()} (par\_n.cjs). En $b=0$ escribimos $W$, $F(0)$, $dF_2$.
+ 56 | 
+ 57 | \begin{teorema}[del par a la integral; {[D]} dados (L), (H1) y (H2) de la sección~\ref{sec:paso}]
+ 58 | \label{teo:PT}
+ 59 | $P_T(b)=\frac{W_b}6-2F(b)\,W_b-dF_2(b)$ y, en $b\downarrow0$, $P_T=\frac W6-2F(0)\,W-dF_2$. Los tres
+ 60 | sumandos son los promedios de los tres términos de~\eqref{eq:par}:
+ 61 | \begin{enumerate}
+ 62 | \item $\frac W6$, de $\frac16w_{ee'}$: la constante $-\frac1{12}$ de $\Phi$, dos veces porque el tamaño
+ 63 |  baja de $K$ a $K-2$ ($\Phi/(K-2)-\Phi/K\simeq2\Phi/K^2$);
+ 64 | \item $-2F(0)W$, de $-2\mathfrak F(M)\,w_{ee'}$: la parte en $\mathfrak F$ de ese mismo $2\Phi$;
+ 65 | \item $-dF_2$, de $w_{ee'}(h_R(r)+h_C(q)+h_R(r')+h_C(q'))=-w_{ee'}K(\mathfrak F(M_{ee'})-\mathfrak F(M))
+ 66 |  +O(1/K)$: la variación de las medidas de línea al quitar las dos filas y las dos columnas del par. Cada
+ 67 |  fila en $x$ recibe la densidad de pares $\theta(x)$, cada columna en $y$ la $\theta(y)$, y
+ 68 |  $\int h_R\theta+\int h_C\theta=-dF_2$.
+
+pt_integrado_punto9_20261122T0920Z/parte_02.tex
+  7 | \begin{lema}[peso medio de los pares; {[D]} dados (L) y (H2c)]\label{lem:W}
+  8 | $\frac n{K^4}\,\mathbb E\sum_{\rm pares}w_{ee'}\to W_b$. En las coordenadas $(r,c,h)$ de
+  9 | $\Omega=\{0<h<1,\ 0<r,c<1-h\}$ (pares $e=(r,c)$, $e'=(r+h,c+h)$ en diagonal; $e=(r,c+h)$, $e'=(r+h,c)$ en
+ 10 | antidiagonal),
+ 11 | \begin{equation}\label{eq:Womega}
+ 12 |  W_b=\int_\Omega\Bigl[\frac{p_b(r,c)\,p_b(r+h,c+h)}{U_D(r-c)}+\frac{p_b(r,c+h)\,p_b(r+h,c)}{U_A(r+c+h)}
+ 13 |  \Bigr]\,dr\,dc\,dh ,
+ 14 | \end{equation}
+ 15 | que es la densidad $2\nu(r,c)\nu(r+h,c+h)/u_D(r-c)$ de CJ §6.4 (dos familias, iguales por simetría).
+ 16 | \end{lema}
+ 17 | \begin{proof}
+ 18 | Dos posiciones distintas $e,e'$ de la diagonal $d$ son casillas del tablero con probabilidad $b^4$ (cuatro
+ 19 | líneas distintas) y están disponibles a la vez con probabilidad $U_D(d)U_A(e)U_A(e')=v_ev_{e'}/U_D(d)$: la
+ 20 | diagonal es común y las antidiagonales son distintas. Por (H2c), dado eso, $\nu_e\nu_{e'}=W_0(e)W_0(e')
+ 21 | (1+o(1))$, luego $\mathbb E\,w_{ee'}=b^4p_b(e)p_b(e')/U_D(d)\,(1+o(1))$. Las sumas sobre las posiciones de
+ 22 | una línea son $n\int dx$ y sobre las líneas $n\int dd$; los pares no ordenados llevan $\frac12$:
+ 23 | $\mathbb E\sum_{\rm pares\ en\ D}w=b^4n^3\cdot\frac12\int dd\iint_D\frac{p_bp_b'}{U_D}\,dx\,dx'(1+o(1))
+ 24 | =b^4n^3\int\frac{m_D^2}{2U_D}\,dd\,(1+o(1))$, y lo mismo en antidiagonal. Como $n/K^4=1/(b^4n^3)$, queda
+ 25 | $W_b$. La versión~\eqref{eq:Womega} es el cambio $x'=x+h$ a lo largo de la línea.
+ 26 | \end{proof}
+ 27 | 
+ 28 | \begin{lema}[densidad de pares en las líneas; {[D]} dados (L) y (H2c)]\label{lem:theta}
+ 29 | Sea $\Theta_R(r)=\sum w_{ee'}$ sobre los pares con una casilla en la fila $r$ (exactamente una: $e,e'$ están
+ 30 | en filas distintas) y $\Theta_C$ lo análogo en columnas. Si la fila $r$ está en $x$,
+ 31 | $\mathbb E\Theta_R(r)=b^3n^2\,\theta_b(x)\,(1+o(1))$, igual para columnas, y $\int\theta_b=2W_b$. Por tanto,
+ 32 | para funciones acotadas $f_R,f_C$,
+ 33 | \[
+ 34 |  \frac n{K^4}\,\mathbb E\sum_{\rm pares}w_{ee'}\bigl(f_R(x_r)+f_C(y_q)+f_R(x_{r'})+f_C(y_{q'})\bigr)
+ 35 |  \to\int f_R\,\theta_b\,dx+\int f_C\,\theta_b\,dy .
+ 36 | \]
+ 37 | \end{lema}
+ 38 | \begin{proof}
+ 39 | Para la posición $e=(x,y)$ de la fila y $e'$ en su diagonal, $\sum_{e'}\mathbb E[w_{ee'}]=b^3\,p_b(e)\,n\,
+ 40 | m_D/U_D\,(1+o(1))$ por el cálculo del Lema~\ref{lem:W}: $b^3$ es la probabilidad de que estén libres la
+ 41 | columna de $e$ y la fila y la columna de $e'$, y
+ 42 | $W_0(e)U_A(e)\sum_{e'}W_0(e')U_A(e')U_D=p_b(e)\,n\,m_D/U_D$; igual en antidiagonal con $m_A/U_A$. Sumando
+ 43 | sobre las $n$ posiciones de la fila ($n\int dy$) sale $b^3n^2\int p_b\gamma_b\,dy$. Cada par tiene sus dos
+ 44 | casillas en dos filas distintas, luego $\sum_r\Theta_R(r)=2\sum_{\rm pares}w$ y $\int\theta_b=2W_b$ (también
+ 45 | directamente: $\iint p_b\,m_D/U_D=\int m_D^2/U_D$). La última fórmula es $\sum_r f_R(x_r)\Theta_R(r)$ más
+ 46 | columnas, con $\sum_r\to bn\int dx$ y el factor $n/K^4$.
+ 60 | \paragraph{Versión de malla [D].} Con el peso medio del par ordenado $\omega(e,e')=p_ep_{e'}/(2n^3u_\ell)$,
+ 61 | incluido $e=e'$, se tiene exactamente $\sum\omega=\sum_t(\mathrm{md}_t^2+\mathrm{ma}_t^2)/(2nu_t)=W$ (el de
+ 62 | PT.py) y $2\sum_{e\in{\rm fila}\,i}\sum_{e'}\omega(e,e')=\theta_i/n$; de ahí $\frac1n\sum_i\theta_i=2W$ y la
+ 63 | media de $\eta$ es cero, que par\_n comprueba ($|\bar\eta|<5\cdot10^{-11}$). Los autopares $e=e'$ son una
+ 64 | parte $O(1/n)$ de la regla de puntos medios para $\int m^2/(2u)$; sin ellos la suma converge al mismo límite
+ 65 | con un término en $1/n$.
+
+pt_integrado_punto9_20261122T0920Z/parte_03.tex
+  3 | \begin{lema}[primera variación de las medidas; {[D]}]\label{lem:var}
+  4 | (i) En la malla (dimensión finita), sea $g^R_i=\partial\mathfrak F/\partial w_{R,i}$ con el escalado de
+  5 | Sinkhorn dentro (derivada de la composición). La definición de T da $h_R(i)=g^R_i-\sum_kw_{R,k}g^R_k$, y
+  6 | para todo vector $\theta$ con $\sum_iw_{R,i}\theta_i=2W$,
+  7 | \[
+  8 |  \sum_iw_{R,i}\,\theta_i\,h_R(i)=\sum_iw_{R,i}(\theta_i-2W)\,g^R_i=-D_R\mathfrak F[w_R\eta],
+  9 |  \qquad\eta=2W-\theta ;
+ 10 | \]
+ 11 | igual en columnas. Con el Lema~\ref{lem:theta} en su versión de malla,
+ 12 | \[
+ 13 |  \sum_{\rm pares}\omega(e,e')\bigl(h_R(r)+h_C(q)+h_R(r')+h_C(q')\bigr)=\frac1n\sum_i\theta_i\bigl(h_R(i)
+ 14 |  +h_C(i)\bigr)=-D\mathfrak F[w\eta,w\eta]=-\mathrm{dF2},
+ 15 | \]
+ 16 | exactamente, con el dF2 de \texttt{evaluate()} ($\bar\eta=0$ y $\theta_R=\theta_C$ porque
+ 17 | $v=v^{\mathsf T}$).
+ 18 | 
+ 19 | (ii) En el continuo vale lo mismo si $\mathfrak F$ es derivable en las medidas a lo largo de densidades
+ 20 | acotadas, con derivada representada por $h_R,h_C$: $D\mathfrak F[f\,dx,g\,dy]=\int h_Rf+\int h_Cg$ para
+ 21 | $\int f=\int g=0$ (es lo que hace de $h_R(x)$ la derivada en la dirección $\delta_x-\mu_R$). Entonces
+ 22 | $\int h_R\theta_b+\int h_C\theta_b=D\mathfrak F[(\theta_b-2W_b)dx,(\theta_b-2W_b)dy]=-dF_2(b)$.
+ 23 | \end{lema}
+ 24 | \begin{proof}
+ 25 | (i) es linealidad: $\sum_iw_i\theta_i\sum_kw_kg_k=2W\sum_kw_kg_k$. (ii) es la misma cuenta con
+ 26 | $\int\theta_b=2W_b$ (Lema~\ref{lem:theta}).
+ 27 | \end{proof}
+ 28 | 
+ 29 | \paragraph{Identificación.} $dF_2$ es la derivada de $\mathfrak F$ cuando las medidas de fila y de columna
+ 30 | se inclinan por $\eta=2W-\theta$: las líneas con más densidad de pares que la media ($\theta>2W$) pierden
+ 31 | peso. Es el promedio de «quitar las dos filas y las dos columnas de cada par»: quitar la fila en $x$ cambia
+ 32 | $\mu_R$ en $-\frac1K(\delta_x-\mu_R)$ al primer orden (T, parte\_01), y el conjunto de los pares quita, con
+ 33 | peso $w$, la medida $\sum_{\rm pares}w(\delta_{x_r}+\delta_{x_{r'}})\propto\theta\,dx$; la masa total
+ 34 | $2W$ se reparte de nuevo uniformemente al normalizar, y de ahí el $2W$ de $\eta$. En la fórmula por
+ 35 | par~\eqref{eq:par} esto es $-K(\mathfrak F(M_{ee'})-\mathfrak F(M))=h_R(r)+h_C(q)+h_R(r')+h_C(q')+O(1/K)$,
+
+pt_integrado_punto9_20261122T0920Z/parte_04.tex
+  8 | \begin{itemize}
+  9 | \item[(H1)] \emph{$(\mathrm T^+)$ uniforme en la etapa final.} Hay $C$ tal que, salvo en un suceso de
+ 10 |  probabilidad $o(1)$ cuya contribución a~\eqref{eq:defPT} es $o(1)$, para todo par
+ 11 |  \[
+ 12 |  \bigl|P_T^{\rm ex}(e,e')-w_{ee'}[(\tfrac16-2\mathfrak F(M))-K(\mathfrak F(M_{ee'})-\mathfrak F(M))]\bigr|
+ 13 |  \le\frac CK,\qquad
+ 14 |  \bigl|K(\mathfrak F(M_{ee'})-\mathfrak F(M))+h^M(e)+h^M(e')\bigr|\le\frac CK .
+ 15 |  \]
+ 16 |  La primera es $(\mathrm T^+)$ a través del Lema de identidades de T (Prop.~de reducción (2) y Prop.~P\_T);
+ 17 |  la segunda, que $\mathfrak F$ es dos veces derivable en las medidas, uniformemente en $\mathcal K$.
+ 18 | \item[(H2)] \emph{Autopromedio de la máscara aleatoria}, uniformemente en los pares:
+ 19 |  \begin{itemize}
+ 20 |  \item[(a)] $\mathbb E[\,|\mathfrak F(M)-F(b)|\;|\;e,e'\text{ disponibles}]\to0$;
+ 21 |  \item[(b)] $\mathbb E[\,|h^M_R(r)-h_R(x_r)|\;|\;e,e'\text{ disponibles}]\to0$, y lo mismo en columnas;
+ 22 |  \item[(c)] $\max_e|\nu_e/W_0(e)-1|\to0$ en probabilidad sobre las casillas disponibles.
+ 23 |  \end{itemize}
+ 24 | \end{itemize}
+ 25 | 
+ 26 | \begin{proof}[Prueba del Teorema~\ref{teo:PT}]
+ 27 | Por (H1), $w\le M_0^2$ y el Lema~\ref{lem:W} (que acota
+ 28 | $\frac n{K^4}\mathbb E\sum_{\rm pares}1_{\rm disp}$),
+ 29 | \[
+ 30 |  \mathcal P_T(b,n)=\frac n{K^4}\,\mathbb E\sum_{\rm pares}w_{ee'}\bigl[(\tfrac16-2\mathfrak F(M))+h^M(e)
+ 31 |  +h^M(e')\bigr]+O(1/K).
+ 32 | \]
+ 33 | Por (H2a,b), $|\mathbb E[w(\mathfrak F(M)-F(b))]|\le M_0^2\,\mathbb P(e,e'\text{ disp.})\,o(1)$ y lo mismo
+ 34 | con $h^M-h$; sumando sobre los pares con el mismo Lema, $\mathfrak F(M)$ y $h^M$ pasan a $F(b)$ y $h$ con
+ 35 | error $o(1)$. Los Lemas~\ref{lem:W} y~\ref{lem:theta} dan entonces
+ 36 | $\mathcal P_T(b,n)=(\frac16-2F(b))W_b+\int h_R\theta_b+\int h_C\theta_b+o(1)$, y el
+ 37 | Lema~\ref{lem:var}(ii) convierte los dos últimos en $-dF_2(b)$. Para $b\downarrow0$: $v_b=U_DU_A$ es afín en
+ 38 | $b$ en cada factor y queda acotado inferiormente por $u_{\min}^2>0$, y el escalado y $\mathfrak F$ son
+ 39 | funciones lisas del núcleo en la clase; así $W_b$, $F(b)$, $dF_2(b)$ son continuas en $b=0$.
+
+p10_limite_firmado_20261123T100111Z/tex/10_termino_por_par.tex
+  2 | Con \(j\) filas, sean \(\mathfrak F=\Phi+1/12\),
+  3 | \(w=(jP_e)(jP_f)\) y \(M'=M_{ef}\). En este apartado una prima indica
+  4 | el valor en \(M'\), con su propio tamaño. Por (T\(^+\)), aplicado dos
+  5 | veces en la clase, el incremento de torres cumple
+  6 | \[
+  7 |  j^2\{g_T(M')-g_T(M)\}
+  8 |  =j(\mathfrak F'-\mathfrak F)+2\mathfrak F-1/6+O(1/j).
+  9 | \]
+ 10 | En efecto, se restan \(\Phi'/(j-2)\) y \(\Phi/j\), el incremento de \(R\)
+ 11 | es \(O(j^{-3})\), y \(\Phi'-\Phi=O(1/j)\).
+ 12 | Para una fila \(i\) sea \(h_R(i)\) la derivada de \(\mathfrak F\) en la
+ 13 | dirección \(\delta_i-A\), incluyendo el nuevo escalado; igual \(h_C\).
+ 14 | Son las funciones de influencia del punto 9, parte 01:16--22.
+ 15 | La diferencia entre las medidas del menor y del padre es
+ 16 | \(-[(\delta_{r_e}-A)+(\delta_{r_f}-A)]/(j-2)\) en filas, y análoga
+ 17 | en columnas. La holomorfía uniforme de la parte 07 da cota uniforme de
+ 18 | la segunda derivada en estas direcciones por Cauchy. Así
+ 19 | \[
+ 20 |  j(\mathfrak F'-\mathfrak F)=-h_R(r_e)-h_R(r_f)-h_C(l_e)-h_C(l_f)+O(1/j).
+ 21 | \]
+ 22 | Por la expansión de la marginal de dos sitios y \(p_i/P_i=1+O(1/j)\)
+ 23 | se tiene \(\pi^T=w j^{-2}(1+O(1/j))\). Usando
+ 24 | \(\pi^{\rm ex}/\pi^T=\exp(g_T(M')-g_T(M))\) se concluye
+ 25 | \[
+ 26 |  -j^4(\pi^{\rm ex}-\pi^T)
+ 27 |  =w\{1/6-2\mathfrak F+h_R(r_e)+h_R(r_f)+h_C(l_e)+h_C(l_f)\}+O(1/j).
+ 28 | \]
+ 29 | Esto proporciona las dos desigualdades de (H1) del punto 9, parte 04:8--17,
+ 30 | en una máscara binaria de la clase fija; los restos son uniformes en el par.
+ 31 | La excepción ponderada al aplicar (H1) a máscaras aleatorias requiere su
+ 32 | propia estimación. La ecuación no sustituye el promedio dado el par de (H2).
+ 33 | En particular el control de las derivadas en una máscara no identifica su
+ 34 | esperanza bajo la ley de llegada con la derivada en el perfil continuo.
+
+p10_limite_firmado_20261123T100111Z/tex/03_pares.tex
+  8 | Para un solo par, la parte 16 da
+  9 | \(\gamma=\log(1-\pi^{\rm ex})-\log(1-\pi_1)-X+O(j^{-5})\).
+ 10 | Por (R0), las dos marginales difieren en \(O(j^{-4})\) y ambas son \(O(j^{-2})\).
+ 11 | La diferencia entre los logaritmos y \(-(\pi^{\rm ex}-\pi_1)\) es \(O(j^{-6})\):
+ 12 | se integra la derivada del logaritmo y se usa que \((1-z)^{-1}-1=O(j^{-2})\).
+ 13 | Para un cuadrado la parte 18:72--78 da las dos contribuciones de par y
+ 14 | \(-3\prod_{s\in \square}p_s+O(j^{-5})\).
+ 15 | Hay a lo sumo \(j^2(j-1)\) pares, porque por cada sitio hay dos líneas con
+ 16 | a lo sumo \(j-1\) vecinos y se divide por dos. Cada cuadrado que contribuye
+ 17 | tiene sus dos pares. Por tanto, a \(b\) fijo,
+ 18 | \begin{align*}
+ 19 |  n\mathbb E_\mu[\Gamma;F_b]
+ 20 |  ={}&-n\mathbb E_\mu[\textstyle\sum_P(\pi_P^{\rm ex}-\pi^T_P);F_b]\\
+ 21 |  &-n\mathbb E_\mu[\textstyle\sum_P(\pi^T_P-\pi_{1,P}+X_P);F_b]\\
+ 22 |  &-3n\mathbb E_\mu[\textstyle\sum_\square\prod_{s\in\square}p_s;F_b]
+ 23 |  +O(n/j^2).
+ 24 | \end{align*}
+ 25 | El error tiende a cero con \(n\) para cada \(b>0\).
+ 26 | La primera fila es exactamente la expresión discreta del punto 9, con
+ 27 | el signo de ese punto y con la ley de llegada aquí indicada. Bajo sus
+ 28 | hipótesis (L), (H1) y (H2) para esa media, su límite a \(b\) fijo es
+ 29 | \[
+ 30 |  P_T(b)=(1/6-2F(b))W_b-dF_2(b).
+ 31 | \]
+
+p10_llegada_fisica_20261123T104835Z/tex/07_motivos.tex
+  2 | Fijemos \(0<b<1\). El motivo tiene un número fijo de índices libres
+  3 | y una lista fija de etiquetas de fila, columna, diagonal o antidiagonal.
+  4 | Se permiten anclajes en un número fijo de filas o columnas. Las etiquetas
+  5 | constantes después de anclar se extraen del producto. Dos etiquetas
+  6 | idénticas de la misma familia se cuentan una vez. Cada etiqueta restante
+  7 | es una forma afín no constante de los índices, con coeficientes enteros fijos.
+  8 | Se suman \(d\) índices con normalización \(n^{-d}\), y pesos deterministas
+  9 | acotados. Se permiten restricciones a cajas o a un politopo físico. Para dos
+ 10 | formas distintas que pueden coincidir, la coincidencia cuesta \(O(1/n)\),
+ 11 | uniformemente en los anclajes en los que no se identifican estructuralmente.
+ 12 | Cuando una identificación es estructural se conserva una sola etiqueta.
+ 13 | Se pide un error uniforme de Riemann para los pesos usados; lo cumplen los
+ 14 | pesos Lipschitz sobre cajas con las caras planas que siguen.
+ 28 | Para cada índice multiplíquese su indicador en el instante \(s\) por el
+ 29 | producto de supervivencias deterministas futuras hasta el corte. En la
+ 30 | media de índices así ponderada, la deriva vale \(O_{b,m}(\eta/n+n^{-2})\).
+ 31 | Una pieza cambia \(O_m(n^{d-1})\) sumandos: cada línea impone una ecuación
+ 32 | afín no idéntica. El cambio de los pesos futuros es \(O_{b,m}(1/n)\).
+ 33 | La martingala centrada detenida tiene saltos \(O_{b,m}(1/n)\).
+ 34 | Azuma hasta \(n-\lfloor bn\rfloor\) y la Proposición 4.11 dan, para cada
+ 35 | precisión fija, una cola exponencial en \(n\) al elegir primero \(\eta\).
+ 36 | Una unión polinómica extiende la estimación a todos los anclajes del tipo indicado.
+ 37 | Al inicio no hay restricciones y el producto de las supervivencias discretas
+ 38 | converge al producto de \(b\) por cada RC y de \(U_f(b)\) por cada diagonal
+ 39 | distinta, por la Proposición 4.2, con error \(O_b(1/n)\).
+ 40 | Se permiten pesos de signo variable por la misma prueba.
+ 41 | 
+ 42 | El cambio a \(\nu\) tiene razón acotada hasta la parada (Corolario 4.12).
+ 43 | Para pasar a \(\mu\) se usa la identidad detenida inicial de la parte 03;
+ 44 | en llegada regular macro a \(b\), el mayorante de primer orden del artículo
+ 45 | de la etapa final, Proposición 6.4, da \(X\le\exp(O_b(n^{2/3}))\).
+ 46 | En salida se usa el coste macro con el paso de salida incluido.
+ 47 | Ambos factores preservan una cola exponencial para discrepancia fija.
+ 48 | Se puede elegir el corte macroscópico auxiliar igual a \(b\); la definición
+ 49 | de \(F_b\) conserva su corte original. Por la parte 05 su complemento cuesta
+ 50 | una exponencial bajo \(\mu\).
+ 51 | 
+ 52 | Para una solución completa \(\pi\), la disponibilidad de un par \(P\) equivale
+ 53 | a \(L_P\subset J\), \(|L_P|\le7\), según la parte 11 anterior. En particular
+ 54 | \(\Pr_\mu(P\text{ disponible})\ge(j)_7/(n)_7\) a \(b>0\) fijo.
+ 55 | Una concentración simultánea en raíces se puede por ello condicionar en
+ 56 | cada par disponible a ese corte. Para imponer en cambio las tres diagonales
+ 57 | vacías en la solución final, se usa después la igualdad exacta de esa parte
+ 58 | 11: la diferencia en la magnitud integrada es \(O(b)+o_b(1)\) cuando
+ 59 | los pesos escalados están acotados. El condicionamiento en cuatro filas de
+ 60 | dicha igualdad se aplica dentro de la suma en \(\pi,P\).
+ 61 | No se afirma independencia literal de todas las líneas del tablero.
+
+p10_llegada_fisica_20261123T104835Z/tex/08_punto_torres.tex
+ 13 | Para dos columnas vivas distintas, en la cuenta de vecinos comunes se
+ 14 | extraen sus dos indicadores. Cada fila \(r\) aporta las etiquetas de una
+ 15 | fila y las cuatro diagonales de sus dos cruces. En cada familia son
+ 16 | distintas por la distinción de columnas. Su densidad integrada es al menos
+ 17 | \(b\inf_f U_f(b)^4>0\). La parte 07 vale uniformemente sobre los pares:
+ 18 | quedan \(\ge c_bj\) vecinos comunes, también para columnas consecutivas.
+ 19 | En el soporte \(c_b/j\le V_{ic}\le C_b/j\).
+ 20 | 
+ 21 | Para detallar el escalado, en coordenadas de columna defina
+ 22 | \[
+ 23 |  S_l(y)=-\log\sum_i V_{il}/\bigl(\sum_t V_{it}e^{y_t}\bigr).
+ 24 | \]
+ 25 | Este mapa conmuta con la adición de constantes. Su jacobiano es estocástico
+ 26 | por filas: la entrada \(l,t\) es la media de
+ 27 | \(V_{it}e^{y_t}/\sum_s V_{is}e^{y_s}\) con pesos proporcionales a
+ 28 | \(V_{il}/\sum_s V_{is}e^{y_s}\). En \({\rm osc}\,y\le1\) los vecinos comunes
+ 29 | dan una cota \(c'_b/j\) para cada entrada, incluido \(l=t\).
+ 30 | Luego la oscilación se contrae por \(1-c'_b\). El defecto de márgenes da
+ 31 | \({\rm osc}\, S(0)=o_{\Pr}(1)\). El mapa preserva una bola de ese radio
+ 32 | multiplicado por \(1/c'_b\) y la iteración converge módulo constantes.
+ 33 | En el punto fijo módulo constantes, las filas reescaladas dan unos y
+ 34 | las columnas tienen una suma común que, por masa total, es uno. Sale
+ 35 | \[
+ 36 |  \max_{Y_{ic}=1}\left|\frac{jD_{ic}}{W_b^0(i,c)}-1\right|
+ 37 |  \ \longrightarrow 0
+ 38 | \]
+ 39 | en probabilidad, con cola exponencial a precisión fija y corte fijo.
+ 40 | Para el punto estacionario \(p\) de torres se usa \(p_e/D_e=1+O_b(1/j)\)
+ 41 | en su clase. Esto identifica el peso por sitio en las llegadas físicas.
+ 43 | \paragraph{Funcional e influencias de una sola línea.}
+ 44 | En la fórmula de \(\mathfrak F=j\Xi\) (ronda 8, parte 01), las matrices se
+ 45 | leen como núcleos con medida \(1/j\). Sea \(B=jD-1\). Un camino alternante
+ 46 | de longitud \(l\ge2\) con extremos fijos tiene núcleo de módulo a lo sumo
+ 47 | \(C_b^2 r_b^{l-2}\) por Cauchy--Schwarz en las dos secciones extremas,
+ 48 | pues \(\|B\|_{\rm op}\le r_b<1\). En longitud uno basta la difusión.
+ 49 | Se truncan las series de \(T\) y \(U\) en recorrido de longitud acotada.
+ 50 | En \({\rm diag}(T-G)\) los caminos cerrados tienen longitud al menos cuatro.
+ 51 | En \({\rm tr}\,T^2\) el ciclo mínimo tiene también longitud cuatro.
+ 52 | En \(T_X^3\) hay tres caminos con vértices internos distintos de longitud
+ 53 | al menos dos. En \(BU^2\) y en \(U^3\), cada \(U\) tiene longitud al menos
+ 54 | tres. Los términos cuadráticos en \({\rm diag}(T-G)\) unen esos ciclos
+ 55 | por un extremo o por el núcleo de \(H\) de la fórmula citada.
+ 56 | Cada sumando truncado es así la densidad de un grafo bipartito simple,
+ 57 | con posibles factores constantes. En una suma fija las identificaciones
+ 58 | accidentales de vértices cuestan \(O_b(1/j)\), aun con una raíz fija.
+ 59 | Se sustituye cada \(jD\) por \(YW_b^0\) en el soporte y se expande
+ 60 | \(B=YW_b^0-1\). Los vértices se integran sobre líneas vivas, por lo que
+ 61 | se incluyen sus indicadores RC una sola vez por vértice libre y se pasa
+ 62 | de \(j^{-1}\) a \(n^{-1}\) con un factor \(n/j\) por índice.
+ 63 | Dos aristas distintas del grafo simple tienen, genéricamente, etiquetas
+ 64 | diagonales distintas. Las excepciones por igualdades de formas cuestan
+ 65 | \(O_b(1/n)\); con una sola raíz fijada tampoco hay una coincidencia estructural.
+ 66 | La parte 07 da entonces la densidad continua del mismo grafo con \(jD\)
+ 67 | reemplazado por \(p_b\). La cola geométrica es uniforme en las máscaras.
+ 68 | 
+ 69 | Al diferenciar en la dirección \(\delta_r-\mu_R\) las medidas explícitas,
+ 70 | se fija un vértice de fila y se resta su promedio. Al diferenciar una
+ 71 | arista, \(\dot B_{ic}=(jD_{ic})(\dot\alpha_i+\dot\beta_c)\) en notación
+ 72 | de densidades, con los márgenes normalizados respecto de las medidas.
+ 73 | La fuente de la ecuación de columnas para la raíz \(r\) es \(-B_{r,c}\).
+ 74 | En calibre centrado, \(\dot\alpha=-D\dot\beta\) y
+ 75 | \(\dot\beta=-(I-B^* B)^{-1}B_{r,\cdot}\), donde \(D\) actúa por su núcleo
+ 76 | de densidad. En cada término truncado se adjunta un camino a un solo extremo
+ 77 | de la arista derivada, cuyo otro extremo es la nueva raíz \(r\).
+ 78 | Todos los vértices originales siguen siendo variables libres. La parte
+ 79 | de promedio de la fuente ya está incorporada en \(B_{r,\cdot}\).
+ 80 | La prueba anterior vale simultáneamente para las \(j\) elecciones de raíz.
+ 81 | Al derivar una serie de caminos aparece a lo sumo un factor polinómico en
+ 82 | la longitud por elegir arista o vértice. Al partir un camino en la raíz
+ 83 | se aplican las dos cotas de secciones, o la cota puntual para longitud uno.
+ 84 | La serie geométrica con ese factor sigue siendo sumable; la nueva serie
+ 85 | de la respuesta del escalado tiene la misma brecha. Las líneas columna
+ 86 | se tratan con los papeles invertidos.
+ 87 | 
+ 88 | Se obtiene H2(a,b,c) del punto 9 en la forma integrada con \(\mathbf1_{F_b}\);
+ 89 | las estimaciones simultáneas implican convergencia absoluta condicional por
+ 90 | la última desigualdad de la parte 07 y la acotación uniforme en \(F_b\).
+ 91 | El orden es corte fijo, precisión fija, límite en \(n\), eliminación de
+ 92 | las truncaciones y al final \(b\downarrow0\).
+
+p10_llegada_fisica_20261123T104835Z/tex/09_medias.tex
+  2 | Sea \(\Omega=\{(r,c,t):0<t<1,\ 0<r,c<1-t\}\). En este dominio un cuadrado
+  3 | se cuenta una vez por sus coordenadas mínimas y su lado positivo.
+  4 | Para el par ordinario hay cuatro etiquetas RC y tres diagonales distintas.
+  5 | Se conservan ambas orientaciones y se cuenta una sola vez la línea común.
+  6 | En el corte \(b\), la parte 07 da la densidad de líneas disponibles \(b^4\)
+  7 | por el producto de los tres \(U_f(b)\). En la parte 08 se integran
+  8 | simultáneamente el peso \(w\) y las influencias del punto 9. El término
+  9 | \(O(1/j)\) de la parte 10 anterior cuesta \(o_b(1)\) en la suma escalada:
+ 10 | hay \(O(n^3)\) pares geométricos y \(n^4/j^4=O_b(1)\).
+ 11 | Así, para la primera media física de la parte 03 anterior,
+ 12 | \[
+ 13 |  \lim_{n\to\infty}-n\,\mathbb E_\mu
+ 14 |  \left[\sum_P(\pi^{\rm ex}_P-\pi^T_P);F_b\right]
+ 15 |    =(1/6-2F(b))W_b-dF_2(b).
+ 16 | \]
+ 17 | Se ha usado el álgebra del punto 9, partes 02--04, una vez identificado el
+ 18 | producto de las vacancias del par. Para la versión con las cuatro etiquetas
+ 19 | condicionadas y tres diagonales vacías en la solución completa se aplica
+ 20 | la parte 11 anterior. Al bajar \(b\) las dos versiones tienen la misma media
+ 21 | límite. Su diferencia a corte fijo está acotada por \(O(b)+o_b(1)\).
+
+p10_llegada_fisica_20261123T104835Z/tex/14_precisiones.tex
+ 10 | En la parte 08 la minoración del número de vecinos comunes y la minoración
+ 11 | de \(jD\) en su soporte implican \((D^\top D)_{ct}\ge c_b/j\).
+ 12 | La matriz estocástica simétrica \(D^\top D\) se descompone en una parte de
+ 13 | masa \(c_b\) uniforme y una parte estocástica de masa \(1-c_b\).
+ 14 | Esto da directamente la brecha usada en las series de caminos.
+ 15 | Para la media condicionada a cuatro filas se usa acotación previa en \(F_b\)
+ 16 | con los márgenes independientes de \(b\). Si se trabaja primero sólo en
+ 17 | la buena aproximación al perfil, las excepciones a corte fijo tienen masa
+ 18 | exponencial y los pesos truncados conservan el mismo límite.
+ 19 | La afirmación sobre las influencias usa la fórmula simplificada de la ronda 8.
+ 20 | En particular se resta \(G\) antes de tomar la diagonal de \(T\).
+ 21 | Una fórmula en la que quedara el camino de longitud dos con ambos extremos
+ 22 | fijados en el mismo índice conservaría la repetición de una arista y pediría
+ 23 | un análisis distinto.
+

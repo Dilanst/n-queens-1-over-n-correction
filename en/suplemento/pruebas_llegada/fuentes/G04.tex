@@ -1,0 +1,44 @@
+\section{Logaritmo del conteo en los campos complejos}
+Para pines independientes $Y$ y vértices restantes $V_0$ compatibles con ellos sea
+\[
+ Z_Y(V_0)=\sum_{X\subseteq V_0\ {\rm independiente}}\zeta^X
+                  \exp\{G_s(Y\cup X)-G_s(Y)\}.
+\]
+La vecindad de $i$ tiene carga $\sum_{l\in N(i)}|\zeta_l|\le4\kappa'$:
+cada sitio tiene a lo sumo cuatro fibras, cada una de carga a lo sumo $\kappa'$.
+Fijemos $K_1=e^{B_0+B_1+1}$ y después $\kappa'$ tal que
+$K_1\kappa'<1/2$ y $8K_1\kappa'\le1$.
+Por inducción en $|V_0|$ se tiene $Z_Y(V_0)\ne0$ y razón ocupado/vacío
+$|R_i(Y,V_0)|\le K_1|\zeta_i|$. El caso vacío da uno.
+Para el paso, sea $W=V_0\setminus(\{i\}\cup N(i))$. El cociente es
+\[
+ R_i=\zeta_i e^{\Delta_iG_s(Y)}
+        \frac{Z_Y(W)}{Z_Y(V_0\setminus\{i\})}
+        \frac{Z_{Y+i}(W)}{Z_Y(W)} .
+\]
+La eliminación de vecinos en el primer factor cuesta a lo sumo
+$\exp(2K_1\sum_{l\in N(i)}|\zeta_l|)$. El último factor es la esperanza compleja
+en $Z_Y(W)$ de
+\[
+ \prod_{\varnothing\ne D\subseteq W}
+       \bigl(1+(e^{a_D}-1)\mathbf1_{\{D\subseteq X\}}\bigr),\qquad
+ a_D=\Delta_D\Delta_iG_s(Y).
+\]
+Esto se deduce invirtiendo las diferencias en el conjunto $X$. Cada monomio de
+indicadores tiene esperanza de módulo a lo sumo uno: vale cero si es incompatible,
+y en otro caso se factoriza en marginales sucesivas de módulos
+$|R_l/(1+R_l)|\le1$ en volúmenes menores y con pines admisibles. En actividades
+cero se usa continuidad de esta identidad de cocientes. De aquí el coste
+$\prod_D(1+|e^{a_D}-1|)\le e^{B_1}$. Las tres estimaciones cierran la inducción;
+$Z_Y(V_0)=Z_Y(V_0\setminus\{i\})(1+R_i)$.
+El logaritmo normalizado en $\zeta=0$ es una suma de $v$ logaritmos de $1+R_i$
+y vale $O(v)$. Esto da simultáneamente $|Z|,|1/Z|\le e^{Cv}$.
+\paragraph{Error físico.}
+En $s=1/j$, cada átomo real exacto tiene error $O(\Delta_q)$ en logaritmo.
+Las primeras diferencias acotadas dan $|G_s(X)-G_s(\varnothing)|\le Cv$.
+Al sumar en módulo sobre $X$, también para campos complejos en el polidisco,
+el error en $Z$ es $\le e^{Cv}\Delta_q$. La cota inferior del aproximante
+da el mismo orden relativo con una constante $C$ mayor. Para $v\le L\log n$
+es menor que $1/2$ uniformemente desde cierto $n$. El error en los logaritmos
+normalizados tiene pues esa misma cota en los campos, en el tamaño físico.
+No se necesita continuación en $s$ de los permanentes exactos.

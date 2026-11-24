@@ -1,0 +1,119 @@
+\subsection{Simultaneous activation and completability}
+\begin{proposicion}[Norm of the error on the activation cube]\label{prop:norma-llegada}
+Let \(Z(Y)\) be the probability of avoiding the active pairs of \(Y\) under a uniform rook placement on
+\(A\).
+Let \(\epsilon_A\) be the maximum diagonal load of \(p^{\rm T}\). There is a class threshold \(\eta>0\)
+such that if \(\rho\ge2\) and \(\rho^2(\epsilon_A+1/j)\le\eta\), then, for large \(j\), \(Z(Y)>0\) on
+every face and \(e=\log Z-\Lambda\) satisfies
+\[
+ \sum_{U\subseteq A}\rho^{|U|}|\Delta_Ue|\le C_\rho j^2.
+\]
+\end{proposicion}
+\begin{proof}
+We use the finite algebra of functions on the cube with \(z^Uz^V=z^{U\cup V}\), where
+\(z^U(Y)=\mathbf1_{\{U\subseteq Y\}}\). The norm \(\|\sum a_Uz^U\|_\rho
+=\sum|a_U|\rho^{|U|}\) is submultiplicative and dominates the absolute value of every evaluation. Let
+\(a_U=\Delta_U\mathbf1_{\{\text{no diagonal pairs}\}}\). If \(p_U\) is the probability that the rooks
+occupy \(U\), inversion on their intersection with \(Y\) gives \(Z=\sum_Ua_Up_U z^U\). Axial
+incompatibilities have \(p_U=0\).
+
+For a compatible prescription of \(h\) sites let \(T_U=\sum_{(i,l)\in U}(1,\delta_i,\delta_l)\), of total
+variation norm \(3h\). The balancing and gamma truncation of Proposition~\ref{prop:menores-llegada} allow
+\(h\le a_*j\) with a small class constant \(a_*\), keeping the same \(Q_*\) for parent and minor. On the
+ball \(\|T\|\le c j\) we balance \(jD\) in the surviving measures normalized by \(1-h/j\). The baseline
+Jacobian remains invertible by perturbation. If \(u_i,v_l\) are the potentials of this balancing, the
+change of scale of the permanent adds to \(\log(m!/j!)+h\log j\), with \(m=j-h\), the negative sum of the
+potentials on the surviving margins. Its linear term defines weights \(b_i\asymp D_i\). The remaining
+term, together with the difference between \(\log H_{Q_*}\) for the two scalings, defines a field
+\(L_*(T)\) that vanishes at the origin. We extend the factorial term via \(\log\Gamma\). On the ball, the
+sum of potentials and the factorial cost \(O(j)\), and the logarithm of the truncation costs \(O(1)\). By
+Cauchy's estimate in two directions, \(\|D^2L_*\|\le C/j\) on the ball of half the radius. Its derivative
+at zero is \(O(1/j)\) by centering and \(\log j-(\log\Gamma)'(j+1)=O(1/j)\). Thus
+\[
+ p_U=\Big(\prod_{i\in U}b_i\Big)e^{L_*(T_U)}(1+O(e^{-cj})).
+\]
+For \(h>a_*j\), \(\operatorname{per}D_{-U}\le1\) by the row masses, and \(\operatorname{per}D\ge
+j!/j^j\ge e^{-j}\) by the van der Waerden inequality. On both intervals we have \(p_U\le C_0^h\prod
+b_i\).
+
+The weight \(w_U=a_Uz^U\prod b_i\) factorizes over the components of the diagonal graph induced on \(U\),
+since the avoidance indicator factorizes before differences are taken. An isolated site makes the weight
+vanish. Two components of an admissible configuration share neither a site nor an axial fiber and have no
+diagonal attack between them. The difference formula gives \(|a_U|\le2^{|U|}\). Every connected component
+can be traversed along a spanning tree. For a tree of size \(v\) rooted at \(i\), summing from the leaves
+costs \(C\epsilon_A\) per neighbor. Including the norm, the \(v^{v-2}\) choices of labeled tree, and a
+fixed reserve \(e^{Bv}\), the mass is at most
+\[
+ b_i(C_B\rho)^v\,v^{v-2}(C\epsilon_A)^{v-1}/(v-1)! .
+\]
+Since \(\sum b_i=O(j)\), the total mass is \(O(S_*)\), \(S_*=j\rho^2(\epsilon_A+1/j)\). Objects
+incompatible with a component of \(v\) sites have weight \(O(vS_*/j)\), by summing over its rows,
+columns, and diagonal neighbors.
+
+For a small linear functional \(\xi\) we tilt by \(e^{\xi[T_U]}\). By the exponential formula, the
+logarithm of the gas of compatible components is the sum over families whose incompatibility graph is
+connected. For a fixed edge order, the connected subgraphs with the same minimum spanning tree form a
+Boolean interval. We may add any edge that comes after every edge on the tree path between its endpoints.
+Their alternating sum has absolute value zero or one, so the trees bound the coefficient. Summing the
+children of a root of size \(v\) recursively gives an exponential factor at most
+\(\exp(\sum_{\gamma'\not\sim\gamma}|w_{\gamma'}|e^{|\gamma'|})\le e^v\). The criterion holds for small
+\(S_*/j\) with the reserve above. This gives \(\|\log Z_\xi\|=O(S_*)\). One and two marks cost the size
+factors \(3v,(3v)^2\), absorbed by the reserve. The tilted mean \(m_\xi\) of \(T_U\) and its derivative
+have norm \(O(S_*)\). By the Hessian estimate above, the equation \(\xi=DL_*(m_\xi)\) is contractive with
+constant \(CS_*/j<1/2\). Iteration can start from zero, so the solution is real at every Boolean
+evaluation.
+
+In \(D_\xi=Z_\xi\exp(L_*(m_\xi)-\xi[m_\xi])\) both exponentials are real and positive on each face.
+Centering \(T_U\) at \(m_\xi\) cancels the linear part. The logarithm of the centered moment series has
+norm \(\le CS_* t^2\) when marking with a small radius \(t\), since two or more marks cost \(C t^2v^2
+e^{3tv}\) per connected family. By Cauchy's estimate its \(\ell\)-th moment has projective norm
+\(\le\ell!t^{-\ell}\exp(CS_*t^2)\le[C(\sqrt{\ell S_*}+\ell)]^\ell\), taking
+\(t=\min(t_0,\sqrt{\ell/(1+S_*)})\). For \(\exp(L_*(m_\xi+y)-L_*(m_\xi)-\xi[y])\) the bound is
+\(\exp(C\|y\|^2/j)\). Choosing a radius proportional to \(\sqrt{j\ell}\) bounds its coefficients by
+\((C/\sqrt{j\ell})^\ell\) up to \(\ell\le\kappa j\). From degree two onward, separating the first two
+factors and summing with ratio \(C(\sqrt{\eta}+\sqrt\kappa)<1\) gives cost \(C(1+S_*)/j\). The projective
+norm allows the contraction without a dimension factor.
+
+For \(|U|\le a'j\) we truncate this Taylor expansion at \(\lfloor\kappa j\rfloor\) within the radius
+\(c\sqrt\kappa\,j\), with \(\|T_U-m_\xi\|\le3a'j+CS_*\). Choosing \(a'\ll\sqrt\kappa\) and then \(\eta\)
+leaves remainder \(O(e^{-c'\kappa j})\). For \(|U|>a'j\), the exponential reserve and the bound
+\(C_0^{|U|}\) give \(e^{-a'j+CS_*}\), also for the truncated polynomial since
+\(\ell!\|[y^\ell]\|\le(C\sqrt\kappa)^\ell\). The normalization factor \(e^{CS_*}\) is absorbed by
+choosing \(\eta\) after the three positive rates. For large \(j\) this gives
+\begin{equation}\label{eq:positividad-cubo}
+ \|D_\xi^{-1}Z-1\|_\rho\le C(1+S_*)/j+Ce^{-c'j}<1/2 .
+\end{equation}
+The series for \(\log(1+w)\) converges in norm. Thus \(Z(Y)>0\) and \(\|\log Z\|_\rho\le C(1+S_*)\).
+
+For the predictor, we balance \(p^{\rm T}_e e^{v_e}\) simultaneously in the same algebra. The baseline
+margin inverse has bounded absolute row sums. By the gap, its solution for bounded data has Euclidean
+norm \(O(\sqrt j)\), and the equation in each coordinate uses a section of norm \(O(j^{-1/2})\). For
+\(h_f=1-\sum_{e\in f}z_ep^{\rm T}_e e^{v_e}\), the norm of \(1-h_f\) is \(\le \rho e^{\|v\|}\epsilon_A\).
+The local odds terms contain \(\log(1-p^{\rm T}_e e^{v_e})\). The resulting field and its Lipschitz
+constant are \(O(\rho^2\epsilon_A+\rho/j)\). The balanced iteration gives \(\|e^{v_e}-1\|_\rho=O(\eta)\).
+The resulting real saddle is the maximum. For \(d=2,4\) the tangent to \(-t\log t+(d-1)(1-t)\log(1-t)\)
+at \(q<e^{-4}\) dominates the function on \([0,1/d]\) by concavity and on \([1/d,1]\) by the two
+endpoints. At one its excess is \(-\log q-d(1-q)>0\).
+
+The axial Hessian block in the gauge is perturbed by \(O(\eta)\) in the row-sum norm. In the diagonal
+Schur complement, \(I+E_d\), the same norm of \(E_d\) is \(O(\rho^2\epsilon_A+\rho/j)<1/2\) upon reducing
+\(\eta\). Each diagonal incidence row contributes mass \(\le\epsilon_A\). The sum over the board
+contributes \(2j\), so the absolute sum of the entries costs \(O(\rho^2j)\). Thus the norm of
+\(|\operatorname{tr}E_d^k|\) is bounded by that sum times \(\|E_d\|_\infty^{k-1}\). There are only \(2j\)
+axial indices. The action uses \(\sum p^{\rm T}_i|\log p^{\rm T}_i|\le j\log j\) by row entropy, and for
+the slacks and local factors it suffices to sum the loads. This gives \(\|\Lambda\|_\rho\le
+C(j\log(ej)+\rho^2j)\), proving the stated bound.
+\end{proof}
+
+\begin{lema}[Completability on short arrival]\label{lem:positividad-llegada}
+For every admissible cut-off and \(n\ge n_0(b)\) we have \(Q(B_j)>0\) on \(H_j\). In particular,
+\(H_j\subseteq F_b\).
+\end{lema}
+\begin{proof}
+The scaling \(D\) of the mask has unit margins. For any set of rows its mass must fit in the neighboring
+columns. Hall's theorem gives \(\operatorname{per}A>0\). On \(H_j\), \(\rho^2(\epsilon_A+1/j)\le\eta\) by
+the choice of \(\alpha\) and \(n_0(b)\). The evaluation at \(Y=A\) of~\eqref{eq:positividad-cubo} gives
+\(Z(A)>D_\xi(A)/2>0\). Each rook placement on \(A\) that avoids all diagonal attacks is a completion, and
+conversely. Hence \(Q(B_j)=\operatorname{per}A\,Z(A)>0\). The history remained regular up to and
+including \(j\), which is the other condition of \(F_b\).
+\end{proof}

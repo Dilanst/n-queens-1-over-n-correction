@@ -27,12 +27,12 @@ Esto da $\pi^{\rm ex}-\pi_1=O(k^{-4})$, la afirmación (R0).
 \paragraph{La tercera casilla [D].}
 Al ocupar una tercera casilla $c$ en otra fila y otra columna, el par sigue disponible en el
 menor binario $M_c$. Aplicar (R0) a ambas máscaras sólo daría $O(k^{-4})$ para la diferencia.
-Compare $M,M_{ef},M_c,(M_c)_{ef}$ en $\Delta_c\Delta_E(\Phi/k)$ mediante dos parámetros
+Compare $M,M_{ef},M_c,(M_c)_{ef}$ en $\Delta_c\Delta_E(\coefT/k)$ mediante dos parámetros
 de masa. La eliminación de $E$ tiene parámetro
 $s$, la de $c$ tiene parámetro $t$ y el tamaño inverso es $k^{-1}/(1-2s-t)$.
-Los núcleos e inversas que definen $\Phi$ están acotados en discos complejos fijos. El cociente
+Los núcleos e inversas que definen $\coefT$ están acotados en discos complejos fijos. El cociente
 de la expresión por $1/k$ tiene derivada mixta acotada allí. Integrar en $[0,1/k]^2$
-da $|\Delta_c\Delta_E(\Phi/k)|=O(k^{-3})$. La misma cota para el resto sigue de dos
+da $|\Delta_c\Delta_E(\coefT/k)|=O(k^{-3})$. La misma cota para el resto sigue de dos
 aplicaciones de $(T^+)$. Entonces, en
 \[
  \pi^{\rm ex}-\pi_1=(\pi^T-\pi_1)+\pi^T(\exp(\Delta_E g_T)-1)
@@ -64,35 +64,51 @@ Dos bancos de bloques con un tercer vértice tienen $\hat c_e=\hat c_f=\mathsf G
 $\pi^{\rm ex}=\pi_1$ exactamente [O]. En esas familias el error se anula para cualquier
 constante positiva de la cota.
 
-\paragraph{Un par y un cuadrado [D].}
-En el tablero $B$ que recupera la restricción diagonal de una sola línea $E$, el logaritmo
-del conteo cambia en $\log(1-\pi^{\rm ex})$. Para restarle el cambio del predictor, sea
-$\lambda=L(B)-L_T(M)$. Con $p=p_e,q=p_f$, la primera expansión da
-$\lambda=-\pi_1+O(k^{-4})$ (Teorema 1). La segunda (Teorema 2) da
-\[
-       \lambda=\log(1-\pi_1)+X+O(k^{-5}).
-\]
-En el punto de prueba, una actualización de rango dos del operador axial incorpora las dos
-casillas y un complemento de Schur incorpora la línea. El desplazamiento de Newton tiene
-componente $pq+O(k^{-3})$ en las cuatro fibras y $2pq+O(k^{-3})$ en la línea añadida.
-La primera variación y la mitad de la segunda de la acción, el factor local y la traza del
-logaritmo dejan una función analítica en siete variables de orden $O(k^{-1})$.
-El polinomio de grado cuatro de $\lambda+\pi_1$ es
-$-p^2q^2/2+pq(p+q)\mathsf G(e,f)$ [O, coeficientes racionales].
-Los denominadores en el origen son uno y la cota de Taylor es uniforme. Así, en el error
-$g^\sharp=\log(1-\pi^{\rm ex})-\lambda$ permanecen la diferencia entre los dos logaritmos
-y $-X$ (Corolario 5).
+\input{partes/torres_linea}
+\input{partes/torres_linea_variacion}
+\input{partes/torres_linea_taylor}
 
+\paragraph{Dos líneas en un cuadrado [D], con cálculo racional [O].}\label{par:cuadrado-racional}
 El promedio sobre pares ya incluye el efecto de cada diagonal por separado. Si están disponibles
 las cuatro casillas, queda por medir cuánto añade imponer ambas restricciones a la vez. Sean
 $E'$ el otro par y $F_\square=E\cup E'$. La actualización sobre cuatro casillas y el complemento de
-Schur de dimensión dos~\cite{hj} dan una función de dieciocho argumentos pequeños.
-Al restar las dos expresiones de una sola línea, tomadas en la misma máscara, su polinomio de
-grado cuatro es $2\prod_{i\in F_\square}p_i$ [O]. Éste es el exceso del predictor
-(Teorema 3), con resto $O(k^{-5})$. Los dos pares son incompatibles y dejan el mismo menor.
+Schur de dimensión dos~\cite{hj} dan una función de dieciocho argumentos. Numeramos
+las casillas $0,1,2,3$ de modo que los pares sean $01,23$ y escribimos
+$A=p_0p_1$, $A'=p_2p_3$. Los argumentos independientes son los cuatro pesos $p_i$,
+las cuatro diferencias $\mathsf G(i,i)-2$, las cuatro $\mathsf G(i,j)-1$ en los cruces
+que comparten fibra, las dos entradas $\mathsf G(0,1),\mathsf G(2,3)$ y los cuatro $C_i+1$.
+El Lema~\ref{lem:linea-inversa} los acota por $O_1$.
+
+En el modelo conjunto la columna de cada línea lleva los dos $\tau_3(u_i)$ de su par,
+y su vacancia es $1-p_i-p_j$. Se invierte primero $I+DG$ de orden cuatro y después
+el complemento de Schur sobre las dos líneas. Las estimaciones de desplazamiento y traza
+de los Lemas~\ref{lem:linea-desplazamiento} y~\ref{lem:linea-traza} se aplican con cuatro
+sitios marcados. En particular, cada fibra axial recibe $A+A'+O_3$ y las dos vacancias
+reciben $2A+O_3,2A'+O_3$. La cuarta parte de la traza cuadrática aporta
+$(4(A+A')^2+4A^2+4(A')^2)/4=2A^2+2(A')^2+2AA'$ a orden cuatro. En la reducción local
+del Lema~\ref{lem:linea-reduccion} cada una de las cuatro fibras aporta su vector de incidencia
+$\chi$. El momento cúbico que entra en $T$ se reemplaza por
+$\sum_\chi(\chi^\top Q\chi)\chi$, con error $O_3$, pues cada fibra tiene masa $1+O_1$,
+los cruces aislados pesan $O_1$ y las entradas de $Q$ son $O_2$.
+
+El cálculo asistido se reproduce desde \path{suplemento/cuadrado} con
+\texttt{python -B cuadrado.py}. El programa usa fracciones racionales y descarta en cada
+producto los monomios de grado total mayor que cuatro. Resuelve las raíces por la iteración
+de la Proposición~\ref{prop:una-linea} e invierte las matrices por Gauss--Jordan con pivotes
+de término constante uno. A \texttt{modelo\_cuadrado} se le restan dos evaluaciones de
+\texttt{modelo}, una para $01$ y otra para $23$, con los datos de la misma máscara.
+La salida por grados $0,1,2,3,4$ es $0,0,0,0,2p_0p_1p_2p_3$ [O].
+Los denominadores y argumentos de los logaritmos de las tres expresiones valen uno
+en el origen. En dimensión fija, la cota de Cauchy sobre un polidisco, aplicada como en la
+Proposición~\ref{prop:una-linea}, da un resto uniforme $O(k^{-5})$.
+Los dos pares son incompatibles y dejan el mismo menor. Para cada línea se aplica
+el recuento del Corolario~\ref{cor:linea-evitacion}.
 Si las completaciones son positivas, el exceso exacto de evitación es
 $\log[(1-2\pi^{\rm ex})/(1-\pi^{\rm ex})^2]$.
 Su primer término es $-(\pi^{\rm ex})^2=-\prod_{i\in F_\square}p_i+O(k^{-5})$ por (R0)
-y por la factorización de $p_i(1-p_i)$. La contribución conjunta al error es, por tanto,
-$-3\prod_{i\in F_\square}p_i+O(k^{-5})$ (Corolario 6). Al tomar la media de frontera se cuenta
+y por la factorización de $p_i(1-p_i)$. Restar el exceso del predictor al exceso exacto da
+\begin{equation}\label{eq:exceso-cuadrado}
+ (-1-(+2))\prod_{i\in F_\square}p_i+O(k^{-5})=-3\prod_{i\in F_\square}p_i+O(k^{-5}).
+\end{equation}
+Al tomar la media de frontera se cuenta
 esta diferencia una vez por cuadrado completo y se obtiene $-S$ en~\eqref{eq:main}.

@@ -1,0 +1,87 @@
+\paragraph{The two traces of the mixed term.} Put \(D=H_*D_*-S_*\). Cyclicity of the trace gives the
+following identity at the parent. \[
+ Q_c=\tfrac12\sum_{u,v}(S_*)_{uv}(m^2D)_{vu}
+       +\tfrac1{4m^2}\sum_{u,v}(m^2D)_{uv}(m^2D)_{vu}.
+\] Each square in \(F\setminus\{c\}\) has three retained lines, giving six ordered pairs in the first
+sum. The second sum integrates over two free lines. To express \(m^2D\) in terms of the profile, write
+\(\mathcal K(v,w)=E(v,w)+\Pi_{vw}\), \(\mathcal V(v,j)=\pesodirecto(v\cap j)+\Pi_{vj}\), \(j\in
+\familias(c)\). For retained lines \(v,u\), set \(\mathcal Y(v,u)=-\pesodirecto(z)T_z\) if they intersect
+at \(z\in E'\), and set it to zero otherwise. Here \(T_z\) uses the same indicators as
+\(\pesodirecto(z)\). Finally, for retained \(w\ne u\), set \(\mathcal S(w,u)=-\pesodirecto(i')\) when
+\(w\cap u=i'\in F\setminus\{c\}\) and zero on all other pairs. Define \begin{align*}
+ \mathcal B(v,u)&=\mathcal Y(v,u)+\Pi_{vu}
+                    +\sum_{j\in \familias(c)}\mathcal V(v,j)\mathcal V(u,j),\\
+ \mathcal E_2(v,u)&=\mathcal B(v,u)+\sum_w\mathcal K(v,w)\mathcal S(w,u)
+                     +\int\mathcal K(v,w)\mathcal B(w,u)\,d\rho(w).
+\end{align*} With \(B_*=D_*-S_*\) and \(K_*=H_*-I\), these three terms come from
+\(m^2D=m^2B_*+(mK_*)(mS_*)+m^{-1}(mK_*)(m^2B_*)\). The discrete sum runs over each \(i'=u\cap j\), \(j\in
+\familias(c)\), and each of its two transverse lines \(w\). Its availability is included in
+\(\pesodirecto(i')\). In the integral we mark \(w\), since its availability is already included in
+\(d\rho(w)\).
+
+Write \(R(i)=\{(u,v):u,v\in \familias(i)\setminus\{\lambda\},\ u\ne v\}\) for a square on fiber
+\(\lambda\). Applying \(\psi\) to the monomials gives \begin{align*}
+ L_1&=-\tfrac12\left\langle\int_F
+          \sum_{(u,v)\in R(i)}\mathbb E\mathcal E_2(v,u)\right\rangle_c,\\
+ L_2^{\rm int}&=\tfrac14\left\langle\iint
+ \mathbb E\big[\mathcal E_2(u,v)\mathcal E_2(v,u)-\mathcal Y(u,v)\mathcal Y(v,u)\big]
+                 \,d\rho(u)\,d\rho(v)\right\rangle_c .
+\end{align*} The two copies of an internally integrated line have independent free variables. We subtract
+the \(\mathcal Y\mathcal Y\) block before integrating. On the board, each \(i\in E'\) contributes twelve
+ordered pairs to the \(YY\) block, giving \(+3m^2\sum_{E'}y_i^2\), which cancels the corresponding term
+in \(P_c\) exactly. The same cancellation can be checked in the continuum. For each pair of families,
+weighting the measure of valid intersections by their availability gives \(U_DU_A\,di\), including the
+sheets and the Jacobian of the intersection. Multiplying by \(W(i)^2\) gives \(\nu_1(i)W(i)\).
+
+\paragraph{Extracting \(\Delta_1\) and \(\Delta_2\).} The tabulated rows are \(Q_1=L_1-\Delta_1\) and
+\(Q_2=L_2^{\rm int}-\Delta_2\). We give the corrections separately so that each entry can be
+reconstructed. In the sums below, an intersection must lie in the square and belong to the indicated
+parity class. Two lines must agree identically in the free parameters of that class to count as equal.
+Accidental coincidences form sets of measure zero.
+
+For \(\Delta_1\), fix \(c,i,\lambda,(u,v)\in R(i)\) as in \(L_1\) and integrate a free line \(w\) against
+\(d\rho(w)\). Set \(z=v\cap w,\ p=w\cap u\). For each \(a\in \familias(p)\setminus\{w,u\}\) and \(j\in
+\familias(c)\), set \(t=a\cap j\). Mark \(\familias(c)\cup \familias(i)\cup\{w\}\). The direct monomial
+in \(\mathcal K(v,w)\mathcal Y(w,u)\) contributes the difference \[
+ \Delta_1=\tfrac12\left\langle\int_F\sum_{(u,v)\in R(i)}
+ \int\sum_{a,j} W(z)W(p)W(t)
+ \big[\psi(\{z,p,t\})-\psi(\{z\})\psi(\{p,t\})\big]\,d\rho(w)\right\rangle_c .
+\] The three intersections are distinct, with \(p\in E'\). The difference counts the common transverse
+line of \(z,t\) only once. If this line is \(\ell\), the bracket equals
+\(\psi(\{z\})\psi(\{p,t\})(U_\ell^{-1}-1)\). The three direct parts give a negative sign in the product
+in the first trace before multiplication by its prefactor \(-1/2\). For example, in relative coordinates,
+taking \(c=(0,0)\), \(i=(0,s)\), \(u=C_s\), \(v=D_{-s}\), \(w=R_h\), \(a=A_{h+s}\), \(j=R_0\) gives
+\(z=(h,h+s)\), \(p=(h,s)\), \(t=(0,h+s)\). Column \(h+s\) occurs in both \(z\) and \(t\).
+
+For \(\Delta_2\), mark \(\familias(c)\cup\{u,v\}\), with \(u,v\) free. When the intersection exists, the
+weight of its transverse lines is \[
+ K_{ab}=W(a\cap b)\prod_{\ell\in \familias(a\cap b)\setminus\{a,b\}}U_\ell .
+\] For each \(j\in \familias(c)\), take \(p_2=v\cap j\), \(w_2\in \familias(p_2)\setminus\{v,j\}\),
+\(t_2=u\cap w_2\), \(k_2=K_{vj}K_{uw_2}\). The two possible patterns for the other two vertices give \[
+\begin{array}{c|c|c|c}
+ &p_1,\ t_1 &k_1&\text{multiplicity }s\\ \hline
+ \mathcal K\mathcal S\ \text{times}\ \mathcal K\mathcal S&
+ u\cap j,\ v\cap w_1 & K_{uj}K_{vw_1}&1\\
+ \mathcal Y\ \text{times}\ \mathcal K\mathcal S&
+ v\cap u,\ a\cap j & K_{vu}K_{aj}&2
+\end{array}
+\] In the first row, \(w_1\) ranges over \(\familias(p_1)\setminus\{u,j\}\). In the second, \(a\) ranges
+over \(\familias(p_1)\setminus\{v,u\}\). Each pattern retains four distinct vertices. For each pair of
+intersections defining \(k_d\), \(d=1,2\), collect the transverse lines of its two intersections, namely
+the lines whose factors \(U\) occur in \(k_d\). If the two sets share an unmarked line \(\ell\), include
+the following summand. The four intersections then form a square and the transverse line is unique. \[
+ \Delta_2=\tfrac14\left\langle\iint\sum_{\text{admissible patterns}}
+          s\,k_1k_2(U_\ell^{-1}-1)\,d\rho(u)\,d\rho(v)\right\rangle_c .
+\] The list follows by expanding the products in \(\mathcal E_2\). A weight \(\pesodirecto\) contributes
+the four coordinates of its square after the marked lines are excluded. To compare two labels of the same
+family, subtract their affine expressions in the free coordinates. Only an identically zero difference
+contributes the factor \(U_\ell^{-1}-1\). It suffices to compare the constant term and the coefficients
+of each parameter in the four labels \(r,q,r-q,r+q\). For \(\Delta_1\) there are 24 choices of families,
+or 80 choices when the admissible classes are distinguished. For \(\Delta_2\) there are 24 choices in
+each row of the table. For example, in the first row, with \(j=R_0,u=A_s,v=D_t,w_1=C_s,w_2=C_{-t}\), the
+two outer vertices \((s+t,s),(s+t,-t)\) share row \(s+t\). In the mixed part, interchanging the copies
+gives the same integrand with \(u,v\) exchanged, accounting for the factor \(2\) in the table. Finally,
+\begin{align*}
+ d(x)={}&G_{\rm cof}+f2E+f2z+2f2F+f3F+f3c+f4+f5c+f5F\\
+        &+f6+f7+C_{3,\rm cuad}+Q_1+\Delta_1+Q_2+\Delta_2 .
+\end{align*}

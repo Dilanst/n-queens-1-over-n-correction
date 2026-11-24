@@ -19,7 +19,7 @@ Escalar las filas por $u_i$ y las columnas por $v_j$ incrementa $H_T$ y el logar
 permanente en las mismas sumas de logaritmos. Los demás términos dependen de $p$, invariante
 bajo este escalado. Así $g_T(M)=g_T(P)$. Para una matriz bistocástica $D$ de tamaño $K$, defina
 \[
- b_D=D-J_K,\qquad
+ b_D=D-\mathbb U_K,\qquad
  \mathcal E(D)=\log\frac{K^K\operatorname{per}D}{K!}
              +\tfrac12\log\det(I-b_D^\top b_D).
 \]
@@ -35,9 +35,9 @@ $1/K$, el error sea $O(K^{-2})$ con una misma constante para toda la clase. Para
 reunimos los menores del núcleo centrado en el polinomio
 \[
  \mathcal R_b(s)=\sum_{\ell=0}^K s^\ell
-         \sum_{|I|=|J|=\ell}\operatorname{per} b[I,J],\qquad b=b_D .
+         \sum_{|I|=|V|=\ell}\operatorname{per} b[I,V],\qquad b=b_D .
 \]
-Expandir $\operatorname{per}(J_K+b)$ y usar
+Expandir $\operatorname{per}(\mathbb U_K+b)$ y usar
 $\mathbb E T^{-\ell}=(K-\ell)!/K!$ para $T\sim\Gamma(K+1,1)$ da
 $K^K\operatorname{per}D/K!=\mathbb E\,\mathcal R_b(K/T)$.
 Para $b=U\Sigma V^\top$ y $Z$ gaussiano complejo estándar, la regla de Wick identifica
@@ -50,23 +50,35 @@ Los términos lineales suman cero. Absorber $\exp(-\sum_a w_a^2/2)$ en la densid
 \]
 Para $s$ real cerca de uno, $C=\widetilde{\mathbb E}ww^\top=sB_0(I+sB_0)^{-1}$,
 donde $B_0$ tiene bloques diagonales nulos y bloques cruzados $b,b^\top$.
-El factor de cada casilla empieza en $1+w^3/3-w^4/4$. En el primer orden hay un vértice de
-grado cuatro o dos de grado tres. Hay tres emparejamientos en el vértice cuártico.
+Cada fila o columna aporta un factor que empieza en $1+w^3/3-w^4/4$. En el primer orden hay un
+vértice de grado cuatro o dos de grado tres. Hay tres emparejamientos en el vértice cuártico.
 En el caso cúbico, seis dan tres aristas entre vértices y nueve dan un lazo en cada uno.
 La expresión con sumas sobre todos los índices es
 \[
  \frac{\mathfrak f(s)}K=-\frac34\sum_a C_{aa}^2+
  \sum_{a,a'}\left(\tfrac12 C_{aa}C_{aa'}C_{a'a'}+\tfrac13 C_{aa'}^3\right).
 \]
-La restricción a índices distintos del producto añade $-\frac56\sum_a C_{aa}^3=O(K^{-2})$.
-Esta corrección se conserva al pasar al orden siguiente. Tómese $\delta=\gamma/4$.
-La brecha da entradas $O(1/K)$ y sumas absolutas de fila acotadas para el propagador.
-El desarrollo se trunca en el orden $N=\lceil\kappa\sqrt K\rceil$ en un parámetro de interpolación.
-Para diagramas de exceso $j$ (aristas menos vértices), su cota absoluta hasta ese corte es
-$2j(j\Lambda/K)^j$, con $\Lambda$ de clase. Sumar desde $j=2$ cuesta $O(K^{-2})$,
-pues el cociente entre mayorantes es menor que $1/2$ para $j\le N$ y $K$ grande.
-La cola admite un mayorante $C\exp(C_1\sqrt K)r^{-N}$ con $r>1$ de clase. La elección de
-$\kappa$ da decaimiento exponencial en $\sqrt K$.
+Tómese $\delta=\gamma/4$. Para $|s-1|\le\delta$ la brecha da entradas $O(K^{-1})$
+y sumas absolutas de fila acotadas para el propagador. El producto exige índices distintos.
+La corrección a la suma sobre todos los pares es $-\frac56\sum_a C_{aa}^3=O(K^{-2})$,
+pues $a$ recorre las $2K$ filas y columnas. Esta corrección se conserva al orden siguiente.
+
+Sea $\mathcal W_b(s)=\mathcal R_b(s)/h(s)$ y sea $f_m(s)$ el coeficiente de $t^m$ en $\mathcal W_b(st)$.
+Denótese por $f_m^{(j)}$ su parte de exceso $j$ (aristas menos vértices). Para
+$N=\lceil\kappa\sqrt K\rceil$, al restar la clase de exceso uno sumada en todos los órdenes queda
+\[
+ \mathcal W_b(s)-1-\frac{\mathfrak f(s)}K
+ =-\frac56\sum_a C_{aa}^3+\sum_{j=2}^{N-1}\sum_{m\le N}f_m^{(j)}
+   +\sum_{m>N}f_m-\sum_{m>N}f_m^{(1)} .
+\]
+Para $2\le j<N$ el mayorante de cada clase truncada es $2j(j\Lambda/K)^j$, con $\Lambda$
+uniforme. Su suma es $O(K^{-2})$, pues el cociente entre mayorantes es menor que $1/2$
+hasta ese corte para $K$ grande. La cola del interpolante se acota por $C e^{C_1\sqrt K}r^{-N}$
+con $r>1$. Para la de exceso uno, los diagramas tienen dos o tres aristas. Distribuir el orden $m$
+entre $d$ aristas da $\binom{m-1}{d-1}$ términos con decaimiento $\theta^{m-d}$, donde
+$\theta=(1+\delta)\max(1-\gamma,1/2)<1$. Así la cola está acotada por
+$C K^{-1}(N+1)^2\theta^{N-2}$. Con $\kappa\log r>C_1$, ambas colas decrecen exponencialmente
+en $\sqrt K$, uniformemente para $s\in[1-\delta,1+\delta]$ y para toda la clase.
 En el exterior de $|K/T-1|\le\delta$ se usa
 $|\mathcal R_b(s)|\le\mathbb E(1+s\sum_l\sigma_l|Z_l|^2/K)^K$.
 La densidad gamma absorbe la potencia por traslación. Sus colas y

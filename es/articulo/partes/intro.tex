@@ -28,12 +28,14 @@ constante~\cite{tc}. Por tanto, al formar la diferencia con signo
 \]
 se cancelan tanto el término principal como la constante. Un paso previo del presente trabajo,
 mediante estimaciones de magnitud, da $|R_Q(n)|\le C/n$ para $n$ suficientemente grande.
-La tabla de trazabilidad de la prueba en el suplemento identifica la fuente de esta cota.
+El Lema~\ref{lem:previa} prueba esa cota a un solo corte fijo, bajo la ley adaptativa.
 El Apéndice~\ref{app:signed} la usa al desarrollar la identidad de historias detenidas.
 Así, $nR_Q(n)$ está acotado, aunque todavía podría oscilar con el tamaño del tablero. ¿Converge?
 El Teorema~\ref{teo:principal} identifica ese límite, que denotamos por \(\cerr\). Mientras que
 \(C_{\rm pred}\) es el término constante que comparten los dos logaritmos, \(\cerr/n\) es la primera
-corrección relativa al pasar del predictor finito al conteo exacto.
+corrección relativa al pasar del predictor finito al conteo exacto. Si se quisiera desarrollar
+directamente \(\log Q(n)\) respecto de \(\log(n!)+n\Phi+C_{\rm pred}\), habría que sumar a
+\(\cerr\) el coeficiente de \(1/n\) del propio \(\log Q_{\rm pred}(n)\), si ese coeficiente existe.
 
 La dificultad se ve al revelar una solución fila por fila. Mientras quedan muchas filas, cada
 inserción introduce un defecto pequeño y es su suma con signo la que importa. Al quedar pocas

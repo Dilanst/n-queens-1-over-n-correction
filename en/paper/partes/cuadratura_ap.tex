@@ -1,61 +1,93 @@
 \subsection{Why the integration bound is conditional}
-In Section~\ref{sec:numeval} we used a series near zero and two Gauss rules on the rest of
-the interval. On all three subintervals we must distinguish the error of the integration
-method from the error in the sampled function values. Cauchy bounds control the coefficients
-that finite sampling combines or omits.
+Here we bound the integration error for $\numerr_6/x^2$ under the decomposition
+$\numerr=\numerr_6+\numerr_F$ of Section~\ref{sec:numeval}. On each of the three intervals we
+distinguish the error of the integration method from the error in the sampled function values.
+Cauchy bounds control the coefficients that finite sampling aliases or omits.
 
-On the first interval $[0,r]$, with $r=0.03$, we write $k_6(x)=\sum k_jx^j$ and
-$\mathcal V(x)=\sum v_jx^j$. The two vanishing coefficients of $k_6$ give the exact integral
-$\sum_{j\ge2}k_jr^{j-1}/(j-1)$. The calculation extracts the Fourier coefficients of $d$ and
-$\mathcal V$ separately. If a tilde denotes coefficients reconstructed from $N=32$ values on
-$|x|=r$, then for $2\le j<N$ we have
+On the first interval $[0,r]$, with $r=0.03$, write $\numerr_6(x)=\sum \numerr_jx^j$ and $\mathcal
+V(x)=\sum v_jx^j$. The two vanishing coefficients of $\numerr_6$ give the exact integral
+$\sum_{j\ge2}\numerr_jr^{j-1}/(j-1)$. The calculation on this interval uses the Fourier
+coefficients of $d$ and $\mathcal V$. If tildes denote coefficients reconstructed from $N=32$
+values on $|x|=r$, then for $2\le j<N$ we have
 \[
- \widetilde d_j+(1-j)\widetilde v_j-k_j
-   =\sum_{\ell\ge1}\bigl(k_{j+\ell N}+\ell N v_{j+\ell N}\bigr)r^{\ell N}
+ \widetilde d_j+(1-j)\widetilde v_j-\numerr_j
+   =\sum_{\ell\ge1}\bigl(\numerr_{j+\ell N}+\ell N v_{j+\ell N}\bigr)r^{\ell N}
 \]
-for exact samples. Indeed, sampling an analytic function combines the indices congruent to $j$
-modulo $N$, and $k_m=d_m+(1-m)v_m$ for $m\ge1$. Each difference is integrated with weight
-$r^{j-1}/(j-1)$, and the tail of the exact integral begins at $j=N$. Cauchy's formula on the
-outer circle bounds both types of coefficients. The intermediate circle of radius $0.055$
-uses 33 independent samples (64 including their conjugates) to improve the bounds. The largest
-radius used in this estimate is $0.095$.
+for exact samples. Indeed, sampling an analytic function combines indices congruent to $j$ modulo
+$N$, and $\numerr_m=d_m+(1-m)v_m$ for $m\ge1$. Each difference is integrated with weight
+$r^{j-1}/(j-1)$, and the tail of the exact integral starts at $j=N$. Cauchy's formula on the outer
+circle bounds both types of coefficients. The intermediate circle of radius $0.055$ uses 33
+independent samples (64 including conjugates) to improve the bounds. The largest radius used in
+this estimate is $0.095$.
 
-On the other two intervals we want to know which coefficients can contribute to the Gauss
-quadrature error. On a real panel $[a,b]$, let $h=(b-a)/2$, $y=(a+b)/2$, and $f=k_6/x^2$. Write
+On the other two intervals, we ask which coefficients can contribute to the Gaussian quadrature
+error. On a real panel $[a,b]$, let $h=(b-a)/2$, $y=(a+b)/2$ and $f=\numerr_6/x^2$. Write
 \[
  g(w)=f\!\left(y+\tfrac h2(w+w^{-1})\right)
       =\sum_{j\in\mathbb Z}\beta_jw^j .
 \]
-The substitution $w\mapsto w^{-1}$ leaves the argument of $f$ unchanged, so $\beta_{-j}=\beta_j$.
-By analyticity in the Bernstein ellipse of parameter $\rho_2$ (see~\cite{trefethen}), Cauchy's
+The change $w\mapsto w^{-1}$ leaves the argument of $f$ fixed, so $\beta_{-j}=\beta_j$. By
+analyticity in the Bernstein ellipse with parameter $\rho_2$ (see~\cite{trefethen}), Cauchy's
 formula gives $|\beta_j|\le\overline M\rho_2^{-j}$ for $j\ge0$, where $\overline M$ bounds the
-mean modulus on the contour. Let $E_s$ be the integral minus the $s$-point Gauss rule on $[-1,1]$.
-For the Chebyshev polynomial $T_j$ of degree $j$, the symmetry and exactness of the rule give
-$E_s[T_j]=0$ if $j$ is odd or $j<2s$. For even $j\ge2s$, positivity gives
+mean modulus on the contour. Let $E_s$ be the integral minus the $s$-point Gaussian rule on
+$[-1,1]$. For the Chebyshev polynomial $T_j$ of degree $j$, symmetry and exactness of the rule
+give $E_s[T_j]=0$ if $j$ is odd or $j<2s$. For even $j\ge2s$, positivity gives
 $|E_s[T_j]|\le2+2/(j^2-1)$. The panel error is therefore
 \[
  h\sum_{\substack{j\ge2s\\j\ {\rm even}}}2\beta_j E_s[T_j].
 \]
-To estimate these higher-order coefficients, we sample an inner contour of parameter $1<\rho<\rho_2$
-at $N$ roots of unity multiplied by $\rho$. The difference between the rescaled Fourier coefficient
-of the samples and $\beta_j$ is
+To estimate these high-order coefficients, we sample an inner contour with parameter
+$1<\rho<\rho_2$ at $N$ roots of unity multiplied by $\rho$. The difference between the rescaled
+Fourier coefficient of the samples and $\beta_j$ is
 \[
  \sum_{\ell\ne0}\beta_{j+\ell N}\rho^{\ell N}+\rho^{-j}\widehat e_j ,
 \]
-where $e$ is the vector of errors and the Fourier transform is normalized by $1/N$. Geometric sums
-on the outer ellipse bound the first term and the omitted tail. By Parseval's identity,
-$\sum_{j=0}^{N-1}|\widehat e_j|^2\le N^{-1}\sum_i\delta_i^2$ if $|e_i|\le\delta_i$.
-For the noise we retain the modes $j\le N/2-1$ and bound the rest of the tail analytically.
-After multiplication by the Gaussian weights in the preceding expression, Cauchy--Schwarz bounds the
+where $e$ is the error vector and the Fourier transform is normalized by $1/N$. Geometric sums on
+the outer ellipse bound the first term and the omitted tail. By Parseval's identity,
+$\sum_{j=0}^{N-1}|\widehat e_j|^2\le N^{-1}\sum_i\delta_i^2$ if $|e_i|\le\delta_i$. To handle the
+noise, we retain the modes $j\le N/2-1$ and bound the remaining tail analytically. After
+multiplication by the Gaussian weights in the preceding expression, Cauchy--Schwarz bounds the
 noise. For the 20-node panel we use 232 samples on the ellipse with $\rho=1.64$. For the six-node
 panel, 24 independent samples represent a transform of length 46.
 
-Under the stated sample tolerances, the bounds for the circle and the six- and twenty-point panels
-are approximately $7.7\,10^{-10}$, $8.8\,10^{-11}$, and $1.7\,10^{-11}$, respectively.
-The circle and short panel together give $8.56111216\,10^{-10}$. Adding the archived value for
-the long panel, $1.69294096\,10^{-11}$, gives about $8.73040626\,10^{-10}$. The reported figure
-of $8.7\,10^{-10}$ was rounded to the nearest value. Rounding upward gives $8.74\,10^{-10}$ [D if C].
-This bound covers only the series and the integration rules under the stated tolerances.
-To enclose $\cerr$, we must also propagate the errors at the 43 nodes of the calculation and in
-the boundary terms. When a tolerance $\delta_i$ comes from grid refinement, its value is a
-numerical estimate [N].
+Table~\ref{tab:contornos} gives the data used in the bound. For the circle,
+\(\delta_{\numerr},\delta_V\) are the largest tolerances for \(\numerr_6,\mathcal V\) among the
+samples. For the ellipses, we give the square root of the mean of the \(\delta_i^2\) for
+\(h_6=\numerr_6/x^2\) in the full transform, including the conjugate samples. The circle bounds
+control the supremum at the outer radius. The ellipse bounds control the mean of \(|h_6|\) on the
+outer contour. The supplement gives the individual tolerances.
+\begin{table}[htbp]
+\centering\small
+\caption{Sampling of the auxiliary contours and bounds used for \(h_6\).
+Tolerances and upper bounds are rounded up here. The error budget uses the values
+in the data file.}\label{tab:contornos}
+\begin{tabular}{@{}L{.20\linewidth}L{.23\linewidth}L{.24\linewidth}L{.25\linewidth}@{}}
+\toprule
+Integration interval & Inner and outer contours & Inner tolerance & Outer bound\\
+\midrule
+Series, \(0\) to \(0.03\) &
+\(R_s=0.055\), \(R=0.095\); 64 points &
+\(\delta_{\numerr}\le1.485\cdot10^{-6}\), \(\delta_V\le4.262\cdot10^{-4}\) &
+\(M_{\numerr}\le8.002\cdot10^{19}\), \(M_V\le2.684\cdot10^{6}\)\\
+GL6, \(0.03\) to \(0.06\) &
+\(\rho\simeq4.414\), \(\rho_2\simeq16.2354\); 46 points &
+\(\delta_{\rm rms}\le6.279\cdot10^{-3}\) &
+\(\overline M\le1.517\cdot10^{20}\)\\
+GL20, \(0.06\) to \(1\) &
+\(\rho=1.64\), \(\rho_2=2.2\); 232 points &
+\(\delta_{\rm rms}\le3.274\cdot10^{-3}\) &
+\(\overline M\le1.063\cdot10^{20}\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+With the stated sample tolerances, the bounds for the circle and the six- and twenty-point panels
+are approximately $7.7\cdot10^{-10}$, $8.8\cdot10^{-11}$ and $1.7\cdot10^{-11}$, respectively. The
+circle and the short panel together give $8.56111216\cdot10^{-10}$. Adding the archived value for
+the long panel, $1.69294096\cdot10^{-11}$, gives approximately $8.73040626\cdot10^{-10}$. The
+reported value $8.7\cdot10^{-10}$ was rounded to nearest. Rounding upward gives
+$8.74\cdot10^{-10}$ [D if C]. Applying this bound to a calculation of $\cerr$ by separation would
+require using the exact integral of $\numerr_F/x^2$ and propagating the errors in
+$F(0),F'(0),F(1)$ along with those at the 43 nodes and in the boundary terms. The replication
+integrates the full $\numerr/x^2$, and its check of $\numerr_F/x^2$ is numerical [N]. When a
+tolerance $\delta_i$ comes from grid refinement, its value is also an estimate [N].

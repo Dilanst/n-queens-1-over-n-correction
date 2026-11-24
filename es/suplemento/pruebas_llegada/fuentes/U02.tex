@@ -1,0 +1,55 @@
+\section{Márgenes, soporte y radio complejo}
+Identificamos $z=jD$ con un núcleo entre dos espacios de $j$ puntos de masa $1/j$.
+Al anular los $v$ sitios del exterior se pierde $O(M_0v/j)$ como máximo en un margen.
+Al suprimir $h$ índices por lado, la medida uniforme en los supervivientes, extendida
+por cero al conjunto original, cambia en norma de variación total a lo sumo $2h/j$.
+\paragraph{Balanceo.}
+Sean $\mu,\nu$ medidas complejas de masa uno cercanas a las originales, y $z'$ el
+núcleo con los ceros adicionales. Buscamos $z'e^{s_r+t_c}$ con márgenes uno.
+Fijemos la media original de $t$ en cero. Imponemos todas las ecuaciones de fila y
+proyectamos las de columna sobre el complemento de las constantes por la media original.
+Si los residuos de columna son constantes y todos los de fila se anulan, la constante
+vale cero integrando los dos sistemas con $\nu,\mu$, respectivamente.
+En los datos iniciales el jacobiano aplicado a $(s,t)$ es $(s+Dt,(I-\Pi)(t+D^ts))$,
+con los productos escritos en notación matricial ordinaria y $\Pi=J_j$.
+El complemento de Schur en columnas centradas es $I-D^tD$. Su inverso es uniforme en
+norma dos normalizada, por $r<1$. Las ecuaciones de cada coordenada dan a continuación
+una cota en supremo por el segundo miembro en supremo, por Cauchy--Schwarz y $|z|\le M_0$.
+El residuo y la variación del jacobiano al origen cuestan
+$O(v/j+\|\mu-\mu_0\|_{\rm TV}+\|\nu-\nu_0\|_{\rm TV})$ en supremo.
+En efecto, el núcleo quitado tiene masa pequeña en cada fila y cada columna originales;
+contra el cambio de medida se usa su supremo acotado. Las segundas derivadas están
+uniformemente acotadas en una bola de potenciales de radio fijo. Aplicar el inverso
+inicial al residuo define una iteración contractiva en una bola de radio proporcional
+a la perturbación, para ésta pequeña. La solución es holomorfa por convergencia
+localmente uniforme. Conservamos las ecuaciones auxiliares de los índices de masa cero.
+El procedimiento mantiene los ceros estructurales; no divide por ninguna entrada positiva.
+\paragraph{Difusión y brecha físicas de los menores.}
+Normalizando con las nuevas medidas obtenemos $mD'\le C$. Para la brecha, en la
+representación euclídea incrustamos el núcleo como
+$\operatorname{diag}(\sqrt\mu)\,z'e^{s+t}\operatorname{diag}(\sqrt\nu)$,
+con producto por entradas dentro del núcleo. El cambio por pesos de medida es
+$O(\sqrt{h/j})$ en Hilbert--Schmidt, pues
+$\|\sqrt\mu-\sqrt{\mu_0}\|_2^2\le\|\mu-\mu_0\|_1$ y el núcleo es acotado.
+Los nuevos ceros, evaluados primero en las medidas iniciales, cuestan
+$\le M_0\sqrt v/j$, y el reequilibrado cuesta $O((v+h)/j)$.
+La parte constante $\sqrt\mu\,\sqrt\nu^t$ cambia también $O(\sqrt{h/j})$.
+Tomando primero $a$ pequeño respecto a la brecha y luego $v/j$ pequeño se obtiene
+un $r'<1$ común. Esto cubre cada menor y, en particular, todos los subcasos de una cara.
+\paragraph{Núcleos complejos.}
+Recentrar alrededor del exterior real ya balanceado permite dejar fijo su soporte.
+Sea $O$ el operador entre ambos lados con los dos bloques cruzados $z-1,(z-1)^t$.
+En una región $|y w|\le r_1(1+d_0)$ con $r_1>1$ y $r_1(1+d_0)r'<1$,
+$(I+yw O)^{-1}$ es acotado también en supremo: en el centro real se usa
+$I-ywO+(yw)^2O(I+ywO)^{-1}O$, que regulariza a ambos lados del inverso en norma dos.
+Una perturbación pequeña en TV y supremo del núcleo da una perturbación pequeña en
+norma de operador sobre el supremo, en la misma representación por funciones.
+La serie de Neumann conserva el inverso. El propagador $ywO(I+ywO)^{-1}$
+tiene núcleo puntualmente acotado, aplicando la inversa a cada columna acotada.
+En complejo las transpuestas se interpretan bilinealmente. Para el determinante de
+Fredholm, el término de grado $l$ está mayorado por $C^l l^{l/2}/l!$ por Hadamard.
+Telescopar factores de medida y filas del determinante da continuidad uniforme
+al variar la medida en TV y el núcleo en supremo. En el centro real se tiene separación
+de cero uniforme por la brecha y la suma de cuadrados de los valores singulares.
+Con radio de datos menor se mantienen esa separación y una rama acotada del logaritmo
+por continuación desde el centro. Esta extensión sólo se usa en los aproximantes.

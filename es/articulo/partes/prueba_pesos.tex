@@ -37,11 +37,12 @@ El lema del determinante en el complemento del calibre y la estacionariedad dan
  u={}&R(\mathbf1)-R(p)-(\mathbf1-p)^\top\nabla R(p)\\
      &+A(\mathbf1)-A(p)+\tfrac12\log\det(I-R''(p)D_p).
 \end{align*}
-Sean \(\partial=\partial_e+\partial_f\), \(H=R''(0)\) y \(\Delta C=C(\mathbf1)-C(0)\).
+Sean \(\partial=\partial_e+\partial_f\), \(\mathcal H_{\rm par}=R''(0)\) y \(\Delta C=C(\mathbf1)-C(0)\).
 La derivada de la ecuación estacionaria en los dos pesos da la respuesta
 \((D_p^{-1}-R''(p))^{-1}\). Se desarrollan el determinante y las respuestas de
-\(\chi_e,\chi_f,G_{ef}\). Los términos lineales en \(p_i H_{il}\) se cancelan por
-\(\mathbf1^\top Hp=\sum_i p_iH_{ii}+(p_e+p_f)H_{ef}\). Queda
+\(\chi_e,\chi_f,G_{ef}\). Los términos lineales en \(p_i (\mathcal H_{\rm par})_{il}\) se cancelan por
+\(\mathbf1^\top \mathcal H_{\rm par}p=\sum_i p_i(\mathcal H_{\rm par})_{ii}+(p_e+p_f)(\mathcal H_{\rm
+ par})_{ef}\). Queda
 \[
  B_{\rm phys}=\Delta R-\partial R(0)-\partial^2 R(0)/2+\Delta A-\partial A(0)+O_b(j^{-3}).
 \]
@@ -59,12 +60,29 @@ Sinkhorn~\cite{sk}
 \]
 Denotemos por \(R_q,A_q\) los coeficientes de \(s^q\) de la acción y del prefactor regularizados
 sobre \(x_e=x_f=t\). En la acción, el coeficiente de \(s^0\) es afín y \(R_1\) tiene grado
-a lo sumo dos en \(t\). En el prefactor \(A_0\) es constante y \(A_1\) afín: en cada extremo
-marcado los dos términos cuadráticos del factor local y de la diagonal de márgenes son opuestos.
-La brecha de torres y las cotas de las secciones del núcleo acotan la inversa del jacobiano
-de márgenes en el calibre. La ecuación implícita en un disco complejo fijo en \(s\), para
-\(|x_i|\le2\), y las estimaciones de Cauchy dan restos uniformes \(O_b(j^{-3})\) en los valores
-y derivadas regularizados que se usan arriba. Con primas para las derivadas en \(t\), se obtiene
+a lo sumo dos en \(t\). En el prefactor \(A_0\) es constante. Los dos términos cuadráticos
+del factor local y de la diagonal de márgenes se cancelan en cada extremo marcado, y \(A_1\)
+es afín. Para controlar el resto a corte fijo, sea \(\centrado=YW-1\) el núcleo basal centrado de
+la máscara perforada en la buena aproximación. La brecha \(\|\centrado\|_{2\to2}\le r_b<1\)
+acota \((I-\centrado^*\centrado)^{-1}\). Las cotas cuadráticas de las secciones de \(\centrado\) acotan
+ también
+en norma de supremo la inversa del jacobiano de márgenes en el calibre. En las copias bastan sus
+ecuaciones con diagonal uno. Para \(|x_i|\le2\), tanto \(\lambda\) como la variación total
+de \(m=\lambda\rho\) están acotadas. La ecuación implícita da por ello una rama holomorfa
+en un disco \(|s|<\varepsilon_b\) uniforme en los pares. En el mismo disco reducido, los
+grados de la Hessiana y su masa siguen cerca de uno. La serie de Fredholm del determinante
+centrado admite el mayorante de Hadamard. En el origen la brecha separa su determinante de
+cero, pues la suma de cuadrados singulares es acotada. Si \(M_b\) domina el determinante
+en el disco inicial y \(m_b>0\) minora su módulo en cero, Cauchy acota su derivada
+en el disco mitad por \(2M_b/\varepsilon_b\). En el radio reducido
+\(r_b'=\min(\varepsilon_b/2,m_b\varepsilon_b/(4M_b))\) se mantiene el módulo
+\(\ge m_b/2\), lo que fija la rama basal del logaritmo. Los factores \(s^{-1},s^{-2}\)
+requieren uno y dos coeficientes adicionales en sus numeradores. Para una función regularizada
+acotada por \(K_b\) en \(|s|\le r<r_b'\), la cola desde grado tres, evaluada en \(1/j\),
+es a lo sumo \(K_b(rj)^{-3}/(1-(rj)^{-1})\). Cauchy también en el parámetro
+\(t\), en un disco interior a \(|t|<2\) que contenga \([0,1]\), da la misma tasa para
+sus tres primeras derivadas. Todos estos restos son \(O_b(j^{-3})\).
+Con primas para las derivadas en \(t\), se obtiene
 \begin{align*}
  L_s&=A'_1(0)+\tfrac12R''_1(0),\\
  B_{2,s}&=\tfrac12\int_0^1(1-t)^2R'''_2(t)\,dt+\int_0^1(1-t)A''_2(t)\,dt .
@@ -72,5 +90,8 @@ y derivadas regularizados que se usan arriba. Con primas para las derivadas en \
 En \(L_s,B_{2,s}\) el subíndice designa el estado de los cruces. Los polinomios
 \(R_1,R_2,A_1,A_2\) tienen grados a lo sumo \(4,6,6,8\), de modo que nueve nodos distintos
 determinan sus derivadas algebraicamente. La evaluación en punto flotante requiere su propio
-control de error. Para la prueba queda pasar \(L_s\) y \(B_{2,s}\) al perfil en cada estado,
-el primero al cuadrado y el segundo linealmente.
+control de error. Damos las recurrencias en el perfil para cada orientación y estado.
+El apéndice~\ref{app:transfer} justifica su uso al promediar la máscara física.
+
+\input{partes/par_accion}
+\input{partes/par_prefactor}

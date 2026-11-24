@@ -1,0 +1,73 @@
+\begin{proposicion}[Una línea con dos casillas, prueba asistida por ordenador]\label{prop:una-linea}
+Sea $B$ el tablero que se obtiene al imponer sólo la línea $E=\{e,f\}$ en una máscara
+binaria $M$ de la clase estacionaria (H). Sus extremos ocupan filas y columnas distintas.
+Con $p=p_e$, $q=p_f$ y $\lambda=L(B)-L_T(M)$ se tiene
+\begin{equation}\label{eq:una-linea}
+ \lambda=\log(1-\pi_1)+pq(p+q)\mathsf G(e,f)+O(k^{-5}).
+\end{equation}
+Las constantes y el umbral dependen sólo de $C_p,\gamma_A$ de (H).
+\end{proposicion}
+Escribimos $O_j=O(k^{-j})$ con esa uniformidad. La línea cambia la acción,
+el prefactor en un punto de prueba y el valor de éste al desplazarse desde allí
+al nuevo punto estacionario.
+
+Para una casilla de multiplicidad $d$ (dos fibras axiales y las diagonales que la contienen),
+sea $u$ la rama pequeña de $u(1-u)^{d-1}=e^\theta$. Ponemos
+\[
+ \tau_d(u)=\frac{u(1-u)}{1-du},\quad
+ \ell_d(u)=\tfrac12[d\log(1-u)-\log(1-du)],\quad \kappa_d(u)=\tau_d'(u).
+\]
+Así $du/d\theta=\tau_d(u)$, y el prefactor logarítmico es
+$\Lambda=\sum_c\ell_{d_c}(u_c)-\tfrac12\log\det \hessloc$, con $\hessloc$ la Hessiana en el calibre
+(el mismo término de normalización se cancela en $\lambda$).
+En torres, $A^0=S_T+\Pi$, $G^0=(A^0)^{-1}$, $d=2$ y $u_c=p_c$. Para todo sitio $c$ sean
+\[
+ b_c^0=\tau_2(p_c)\{\ell'_2(p_c)-\tfrac12\kappa_2(p_c)\mathsf G(c,c)\},\quad
+ \Gamma^0=\sum_c b_c^0a_c,\qquad C_c=a_c^\top G^0\Gamma^0 .
+\]
+La derivación del prefactor en el punto de torres da
+$\hat c_c=(\tau_2(p_c)/p_c)
+[\ell'_2(p_c)-\kappa_2(p_c)\mathsf G(c,c)/2-C_c]$.
+En efecto, al variar $\log w_c$ las ecuaciones de margen dan
+$dz=-\tau_2(p_c)G^0a_c\,d\log w_c$ en el calibre.
+Las siete variables de la expansión, en este orden, son
+\[
+ p,\quad q,\quad a=\mathsf G(e,e)-2,\quad b=\mathsf G(f,f)-2,\quad
+ g=\mathsf G(e,f),\quad x=C_e+1,\quad y=C_f+1 .
+\]
+\begin{lema}[Inversa y datos locales de torres]\label{lem:linea-inversa}
+Bajo (H), $\|G^0\|_\infty$ está acotada independientemente de la máscara y las siete
+variables anteriores son $O_1$.
+\end{lema}
+\begin{proof}
+La masa de cada fibra es $m_\alpha=\sum_{c\in\alpha}\tau_2(p_c)=1+O_1$ por los márgenes.
+Al escribir $A^0=\operatorname{diag}(m)+V$, cada entrada de $V$ es $O_1$ y cada fila
+tiene norma euclídea $O(k^{-1/2})$. De $A^0z=v$ y (H) se sigue
+$\|z\|_2\le\sqrt{2k}\|v\|_\infty/\gamma_A$. Cada componente de $Vz$ es a lo sumo
+$\|V_{\alpha,*}\|_2\|z\|_2=O(\|v\|_\infty)$. Dividiendo $v_\alpha-(Vz)_\alpha$ por $m_\alpha$
+resulta $\|G^0\|_\infty=O(1)$. Por simetría, cada columna de $G^0$ tiene suma absoluta
+acotada. Así $(VG^0)_{\alpha\beta}=O_1$, y la identidad $G^0=\operatorname{diag}(m)^{-1}(I-VG^0)$ da
+$G^0_{\alpha\beta}=\delta_{\alpha\beta}/m_\alpha+O_1$. En particular,
+$\mathsf G(c,c')$ cuenta las fibras comunes con error $O_1$. Así
+$b_c^0=-\tau_2(p_c)(1+O_1)$, $\Gamma^0=-m+O_1$ componente a componente, y
+$G^0m=\symbf{1}/2$ porque $A^0\symbf{1}=2m$. De aquí $C_c=-1+O_1$.
+\end{proof}
+
+\paragraph{Actualización de rango dos.}
+En $y^0=(z^0,\log h)$, con $z^0$ el potencial de torres y $h=1-p-q$, sólo cambian
+las masas en $E$. Para $i=e,f$, la nueva masa $u_i$ es la raíz próxima a cero de
+$u_i(1-u_i)^2=p_i(1-p_i)h$. Sean $\delta_i=p_i-u_i$, $t_i=\tau_3(u_i)$,
+$t=(t_e,t_f)^\top$, $U=[a_e\ a_f]$, $D=\operatorname{diag}(t_i-\tau_2(p_i))$,
+$G=U^\top G^0U$ y $W=(I+DG)^{-1}$. Al añadir la coordenada de la línea, la Hessiana
+en el calibre toma la forma
+\[
+ \hessloc_0=\begin{pmatrix} A^0+UDU^\top & Ut\\ t^\top U^\top & h+t_e+t_f\end{pmatrix}.
+\]
+De $(A^0+UDU^\top)G^0UW=U$ y del complemento de Schur se obtienen
+\begin{align*}
+ \resloc&=GW,\qquad \schurloc=h+t_e+t_f-t^\top \resloc{}t,\qquad \sigma=(\symbf{1}-\resloc{}t)/\schurloc,\\
+ K&=\resloc+\schurloc\sigma\sigma^\top,\qquad \det \hessloc_0=\det A^0\,\det(I+DG)\,\schurloc .
+\end{align*}
+Aquí $K_{ij}=\iota_i^\top \hessloc_0^{-1}\iota_j$ para $i,j\in E$, donde
+$\iota_c=(a_c,\symbf{1}_{\{c\in E\}})$. En particular $D=O_2$, $t=O_1$,
+$\schurloc=1+O_2$, y $\|\hessloc_0^{-1}\|_\infty,\|\hessloc_0^{-1}\|_2=O(1)$ por inversión de bloques.

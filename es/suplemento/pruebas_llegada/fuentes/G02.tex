@@ -1,0 +1,66 @@
+\section{Campos con radios dados por las fibras}
+Fijemos $v=|U|\le L\log n$ y el exterior común sin esas $v$ marcas. Su núcleo balanceado
+$z$ y sus márgenes tienen cotas uniformes por \emph{Grados intermedios}, parte 04:
+quitar las marcas cuesta $O(v/j)$ por margen. Para $i\in U$ escribimos
+\[
+ d_i=\max_{f\ni i}|f\cap U|,\qquad
+ \|x\|_*=\max_i d_i |x_i|,\qquad \sum_{i\in f\cap U}1/d_i\le1 .
+\]
+Aquí $f$ recorre las cuatro familias, contando también las fibras unitarias.
+Se desdoblan a lo sumo $2v$ índices RC, con masa $s$ para cada copia y masa basal
+menos $s$ en el original. El parámetro $s$ vale $1/j$ en el tablero. En cada copia
+sea $t_b=1-\sum_{i\in b}x_i$, y en índices ordinarios $t_b=1$. Si $\|x\|_*\le a$,
+$|t_b-1|\le a$. La masa $M_1=t\mu$ difiere en TV del sistema basal, identificando
+copias, en $O(v|s|)$. Ambas masas totales son iguales. El equilibrio exterior es
+\[
+ w(1-st_rt_c w)=z e^{\alpha_r+\beta_c},\qquad
+ \int w\,dM_1^C=\int w\,dM_1^R=1 .
+\]
+En calibre fijo el inverso del jacobiano es acotado en supremo por brecha y núcleo
+acotado: la ecuación coordenada a coordenada convierte el control en norma dos en
+control en supremo. Las copias de masa cero tienen bloque diagonal identidad.
+El argumento de función implícita de la parte 04 citada vale para $v|s|\le\kappa$,
+con $a,\kappa$ fijos pequeños, pues sólo intervienen TV, $\sup|t|$ y el radio de
+la raíz en cero. Las ecuaciones son holomorfas también en ceros estructurales por $w/z$.
+\paragraph{Derivada de la acción estacionaria.}
+Escribamos $u=t_rt_cw$ y
+\[
+ E_s(u;z)=-u\log(u/z)-u+\sum_{\ell\ge2}\frac{s^{\ell-1}u^\ell}{\ell(\ell-1)}.
+\]
+La acción exterior sin su campo basal es $\mathcal R/s$, donde
+\[
+ \mathcal R=\int E_s(u;z)\,d\mu_R d\mu_C+
+        \int t\log t\,d\mu_R+\int t\log t\,d\mu_C .
+\]
+Esto se obtiene sustituyendo $u$ y aplicando ambos márgenes. En la silla,
+$E_s'=-\log t_r-\log t_c-\alpha_r-\beta_c-2$. Además $\int u\,d\mu_C=t_r$
+y simétricamente. Al variar $x_i$, dos márgenes varían en $-1$ cada uno con masa $s$.
+Al integrar $E'_s\,du$, los dos términos $\log t$ y las dos unidades se cancelan
+con la variación de $t\log t$. Resulta, por continuidad también en $s=0$,
+\[
+ \partial_i(\mathcal R/s)=\alpha_{r_i}+\beta_{c_i}.
+\]
+Sea $R_c$ esta acción tras sustraer su valor y campo afín en $x=0$ para cada $s$.
+Su gradiente es acotado en la caja, y en media caja
+$\sum_l|\partial_l\partial_i R_c|/d_l\le C$. En efecto, derívese en una dirección
+$h_l=e^{\mathrm i\theta_l}/d_l$ alineando las fases en la fila $i$ y aplíquese
+Cauchy en el parámetro escalar. Esto evita una pérdida del número de vecinos.
+\paragraph{Silla y determinante locales.}
+Con $d_i^{\rm inc}\le4$ factores duros activos por sitio y $q_f=1-\sum_{i\in f}x_i$,
+la ecuación local es
+\[
+ x_i=\zeta_i e^{\partial_i R_c(x)}
+         \prod_{f\ni i} q_f/(1-x_i)^{d_i^{\rm inc}-1}.
+\]
+Para $|\zeta_i|\le\kappa'/d_i$, la derecha y su derivada en norma ponderada
+cuestan $C\kappa'$. Se obtiene la rama estacionaria en la caja por contracción.
+La Hessiana local negativa se multiplica a derecha por
+$\operatorname{diag}(x_i(1-x_i))$. En la matriz resultante $I+\Delta$,
+las incidencias de cada fibra cuestan $C\sum_{i\in f}|x_i|\le C\|x\|_*$
+y la parte exterior cuesta $C\|x\|_*$ por la cota del gradiente diferenciado.
+Así $|\log\det(I+\Delta)|\le Cv\|\Delta\|_\infty$ en una caja reducida.
+Los demás logaritmos son los de $q_f$, $1-x_i$ y $x_i/\zeta_i$, este último
+prolongado por la ecuación de silla. La acción centrada se integra a partir de su
+gradiente. El prefactor exterior es acotado como en la parte siguiente, también aquí
+con $|t_b|\le2$. El valor canónico sin constantes comunes es $O(v)$ en el polidisco.
+En los campos físicos $\zeta_i=O(1/j)$ aplicando la ecuación con sólo RC y $x_i=P_i$.

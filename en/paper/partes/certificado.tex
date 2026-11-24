@@ -1,60 +1,63 @@
 \section{Scope of interval arithmetic}\label{sec:numcert}
-What width can be guaranteed for $\cerr$ when grid estimates are replaced by rigorous bounds? The
-first error that propagates to all the rows is the profile error. Solving its equations in floating
-point gives a candidate, and the error of the first candidate dominated the test of the explicit
-rows. For the new candidate a piecewise polynomial with rational coefficients, of degree 14 and
-with 16 panels per unit, was used. Its residual in the equations was enclosed over the entire
-domain. Coercivity in logarithmic variables and identification with the physical solution convert
-this residual into uniform radii of $2.086\,10^{-15}$ for the axial factor and $4.248\,10^{-16}$
-for the vacancy [O]. Each row must use the radii of the candidate it evaluates.
+What width can we guarantee for $\cerr$ when we replace the grid estimates with rigorous bounds?
+The first error that propagates to all rows is the profile error. Solving the profile equations in
+floating-point arithmetic gives a candidate, and the error in the first candidate dominated the
+trial for the explicit rows. For the new candidate we used a piecewise polynomial of degree 14
+with rational coefficients and 16 panels per unit. We enclosed its residual in the equations over
+the entire domain. Coercivity in logarithmic variables and identification with the physical
+solution turn this residual into uniform radii of $2.086\cdot10^{-15}$ for the axial factor and
+$4.248\cdot10^{-16}$ for the vacancy [O]. Each row must use the radii of the candidate it
+evaluates.
 
-\paragraph{From the profile to the nodal values [O].}
-The 43 distinct nodes in the calculation comprise 26 real Gauss nodes and 17 representatives of the
-32-point circle. Enclosures were obtained for $G_{\rm cof}, f_{4,\rm expl}, f_{2F}$ and the
-moment $T_1$ at all 43. The square contribution $C_{3,\rm sq}$ also has enclosures at these points.
-On the real axis, nested moments and the explicit part of $\mathcal V$ were also enclosed. Norm
-bounds were obtained for the two coincidences $\Delta_1,\Delta_2$. Reaching the tolerances used by
-the quadrature also requires controlling these two contributions and the rows containing the
-resolvent with sufficient accuracy.
+\paragraph{From the profile to nodal values [O].}
+The 43 distinct nodes in the calculation comprise 26 real Gauss nodes and 17 representatives of
+the 32-point circle. We enclosed $G_{\rm cof}, f_{4,\rm expl}, f_{2F}$ and the moment $T_1$ at all
+43 nodes. The square contribution $C_{3,\rm cuad}$ also has enclosures at these points. On the
+real axis we also enclosed nested moments and the explicit part of $\mathcal V$. For the two
+coincidences $\Delta_1,\Delta_2$ we obtained norm bounds. Meeting the tolerances used by the
+quadrature also requires controlling these two contributions and the rows containing the resolvent
+with sufficient precision.
 
-\paragraph{Boundary values [O].}
-For $S$, symmetry and subdivision at the folds of the profile reduce the integral to 27 tetrahedra.
-Polynomial envelopes, verified Gauss nodes, an analytic remainder, and outward rounding~\cite{mkc}
-give
+\paragraph{Boundary values [O].}\label{par:intervalos-frontera}
+For $S$, symmetry and subdivision along the folds of the profile reduce the integral to 27
+tetrahedra. Polynomial envelopes, verified Gauss nodes, an analytic remainder and outward
+rounding~\cite{mkc} give
 \[
  15.6334582797746\le S\le 15.6334582811044 .
 \]
-For $P_T$, interval products enclose the powers of the centered rook kernel and its measure
-variation. Folding by reflection, with 2048 cells per half-axis and powers up to order 14, gives
+For $P_T$, interval products enclose the powers of the centered rook kernel and their variation
+with respect to the measure. Folding by reflection, with 2048 cells per half-axis and powers up to
+order 14, gives
 \[
  0.444317034618897\le P_T\le 0.446141238271620 .
 \]
-The final cubature for $S$ took 25.13 CPU seconds. The 2048-cell calculation of $P_T$ took 111.75
+The final cubature for $S$ used 25.13 CPU seconds. The 2048-cell calculation of $P_T$ used 111.75
 CPU seconds on one thread. Its half-width is $0.0009121018263615$. For the boundary term $J$, the
-signed coefficients remain to be integrated jointly over the position and the availability state of
-the pair.
+signed coefficients still have to be integrated jointly over the position and availability state
+of the pair.
 
-\paragraph{What limits the enclosure of $Q_2$.}
-To study one of the rows containing the resolvent, node 10 of the 20-point panel was chosen. Its
-quadrature weight divided by $x^2$ is approximately $0.294$. Even allocating the entire target of
-$10^{-4}$ to this node, the half-width of $Q_2$ would have to be about $3.4\,10^{-4}$.
-The integration retained both diagonal parities and the sign of the 17 trace contributions after
-cancellation. The starting point was a certified model of $L_0$ with 256 panels per unit. For
-integration they were grouped into 16 panels per unit and 512 centers were used. The full continuum
-integral lay in $[-49913.764054;50371.535812]$ [O], with a half-width of about $5.0\,10^4$.
-The calculation took 51.27 CPU seconds.
+\paragraph{What limits the enclosure for $Q_2$.}
+To study one of the rows containing the resolvent, we selected node 10 of the 20-point panel. Its
+quadrature weight divided by $x^2$ is approximately $0.294$. Even if the entire target of
+$10^{-4}$ were allocated to that node, the half-width for $Q_2$ would have to be about
+$3.4\cdot10^{-4}$. The integration retained both diagonal parities and the signs of the 17 trace
+contributions after cancellation. We started from a certified model of $L_0$ with 256 panels per
+unit. For integration we grouped them into 16 panels per unit and used 512 centers. The full
+continuum integral was enclosed in $[-49913.764054;50371.535812]$ [O], with a half-width of about
+$5.0\cdot10^4$. The calculation used 51.27 CPU seconds.
 
-Would it suffice to ungroup the panels? In the trace $S_{13}$, the two axial orientations enter
-with the same sign. Each contains two terms from the row--column block of $L_0$, with coefficient
-one. The smallest width among the $65536$ entries of that block was $w=108349/131072$. Both axial
-densities have mass one. After multiplication by the prefactor $1/4$, separate interval evaluation
-of this trace leaves a half-width of at least $w/2>0.41$, even after ungrouping all the original
-panels. The minimum in the table is certified [O]. The lower bound [D] holds for that table when
-$S_{13}$ is evaluated separately. The identities of the physical kernel may link its entries more
-tightly.
+Would ungrouping the panels suffice? In the trace $S_{13}$, the two axial orientations enter with
+the same sign. Each contains two terms from the row--column block of $L_0$, with coefficient one.
+The smallest width among the $65536$ entries in this block was $w=108349/131072$. Both axial
+densities have mass one. After multiplication by the prefactor $1/4$, a separate interval
+evaluation of this trace leaves a half-width of at least $w/2>0.41$, even if all the original
+panels are ungrouped. The minimum in the table is certified [O]. The lower bound [D] applies to
+that table when $S_{13}$ is evaluated separately. The identities for the physical kernel may
+constrain its entries more tightly.
 
-Combining the global bounds gives $[-4.28\,10^{19};4.28\,10^{19}]$ [O]. The interval includes
-zero and leaves both the sign and the decimal digits of $\cerr$ open. Obtaining a tight enclosure
-by the rectangle method would require a proven and sufficiently small bound on the spatial remainder
-in the physical grid classes. This would justify the spatial tolerances at the nodes on which the
-bound for integration in $x$ remains conditional.
+\paragraph{Overall error budget.}\label{par:balance-global}
+We did not obtain a useful enclosure for $\cerr$. The absolute bounds for the integral of
+$\numerr_6/x^2$ dominate, with additional bounds for the pair coefficients and the other boundary
+terms. Certifying the sign and decimal digits by the rectangle method requires a proven,
+sufficiently small bound on the spatial remainder for the physical grid classes. Such a bound
+could justify the sample tolerances required by the integration bound for $\numerr_6/x^2$.

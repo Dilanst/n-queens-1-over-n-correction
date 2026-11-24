@@ -1,0 +1,46 @@
+\section{Media con signo y alcance}
+Sean $K=\lceil\sqrt n\rceil$, $j=\lceil tK\rceil\le M=\lceil\delta n\rceil$ y
+$\EE_*X=\EE_{\bar\nu}[X;G_j,S_M]$, con llegada, supervivencia y completabilidad como en R12.
+Esta medida tiene masa a lo sumo uno. En la máscara binaria basal $A$ de $j$ filas,
+$F(Y)=\log(Q_Y/\per A)$ activa sólo los conflictos entre los sitios del conjunto $Y$.
+$\Lambda$ es la corrección diagonal del predictor con las mismas activaciones.
+$V$ es el resto entre líneas tras las sustracciones de líneas solas y de dos conflictos.
+$[U]f$ es el coeficiente de Möbius de $f$ en $U$. Sea
+$P_N=\sum_{|U|\le N}[U]V$, evaluado con todos los sitios activos.
+En $G_j$ todas las activaciones parciales son completables.
+La clase $\mathcal D$ usa el punto estacionario de torres $P$ de la entrega de activaciones.
+En particular $P$ es bistocástico, positivo en el soporte y, con constantes fijas,
+\[
+ P_e\le M_0/j,\quad \|P-\mathbf1\mathbf1^T/j\|_{\rm op}\le r<1,\qquad
+ \epsilon_A=\max_f\sum_{e\in f}P_e .
+\]
+El máximo recorre las dos familias diagonales ordinarias. Distinguimos $P$ del escalado
+bistocástico exacto $D$ de la matriz binaria $A$. En el soporte $P_e(1-P_e)$ es un
+producto de factores de fila y columna por la estacionariedad. Balancear esa matriz da
+$D$. En el mapa de balanceo de la parte 02 de activaciones se toma el campo
+$\log(1-P_e)=O(1/j)$. Su jacobiano de márgenes, con bloques $I,P,P^T,I$, tiene inversa
+uniforme en el gauge, por la brecha y la difusión de $P$. La estabilidad Lipschitz
+de ese mapa da $D_e/P_e=1+O(1/j)$ en el soporte. Por las sumas de fila y columna,
+$\|D-P\|_{\rm op}=O(1/j)$; así se conservan brecha, difusión y carga hasta factores uniformes.
+\paragraph{Resultado condicionado a las entradas uniformes de la serie.}
+Para cada $\beta$ fijo entre cero y $1/2$ existe $C_\beta$ tal que
+\[
+ \sup_{K\le j\le \min(M,n^{1-\beta})}|\EE_*[V;\mathcal D]|\le C_\beta/n .
+\]
+En esta franja la media indicada es $o((\log t)/n)$ uniformemente cuando $t\to\infty$.
+En una máscara difusa existe $\eta>0$ uniforme tal que para $\rho\ge1$,
+\[
+ \rho^2(\epsilon_A+1/j)\le\eta\quad\Longrightarrow\quad
+ \sum_U\rho^{|U|}|[U]F|\le C\{1+j\rho^2(\epsilon_A+1/j)\}.
+\]
+Estos enunciados son asintóticos para $j$ suficientemente grande.
+\paragraph{Entradas que se mantienen.}
+De R1, sección del permanente, usamos la identidad formal de Wick, la cota de coeficientes
+en un disco mayor que uno y la cola \emph{ponderada} de la mezcla gamma.
+De R9, parte 07, y de la entrega a dos tercios, partes 02--03, usamos las contracciones
+por exceso y la prolongación uniforme del balanceo, acción y núcleos a una bola compleja
+en variación total. Los menores reales en esa bola tienen difusión y brecha uniformes.
+De la entrega sobre activaciones, partes 03 y 05, usamos la norma ponderada canónica,
+el control en media absoluta del corte fijo y la cota de prescripción de llegada de C.
+Cada una conserva su ley e hipótesis originales. El resultado se refiere a un sector de
+$R_Q=\log Q-\log Q_{\rm pred}$; los demás sectores conservan sus propias obligaciones.

@@ -1,0 +1,56 @@
+\section{Difusión y brecha del punto de torres}
+Trabajamos sobre un soporte regular con punto $p$ de reinas positivo, filas y columnas
+de masa uno, $p_e\le C/k$, brecha RC al menos $\gamma>0$ y masas diagonales
+$\ell_D,\ell_A\le\epsilon$. Son las condiciones deterministas de C, secciones 2 y 5,
+y de B, sección 8; se admite reducir el umbral de $\epsilon$ según $C,\gamma$.
+La afirmación se aplica a padres y a hijos que estén en la correspondiente clase exterior.
+No afirma que una historia sea regular con una probabilidad dada.
+
+Sea $D$ la incidencia RC con dos entradas positivas por casilla,
+$S=D\diag(p)D^t$ y $v=(\mathbf1,-\mathbf1)$. La hipótesis de brecha es sobre $v^\perp$
+(o la equivalente para los pesos de B, comparables a $p$ por $1+O(1/k)$).
+El proyector sobre las perturbaciones relativas tangentes es
+\[
+ \Pi=I-D^tS^+D\diag(p).
+\]
+Es uniformemente acotado en norma del supremo. En efecto, para $\|z\|_\infty\le1$,
+$b=D\diag(p)z$ tiene coordenadas acotadas por uno y norma euclídea $O(\sqrt k)$.
+La brecha da $\|S^+b\|_2=O(\sqrt k)$. La ecuación por vértice y
+$\sum_jp_{ij}^2\le C/k$ dan $\|S^+b\|_\infty=O(1)$, también para columnas.
+
+Módulo sumas de potenciales de fila y columna y constantes, la derivada de la acción
+negativa de torres es $\log p+\log(1-p)$; la de reinas es
+$\log p+3\log(1-p)-\log h_D-\log h_A$, $h_f=1-\ell_f$.
+Al proyectar, su diferencia es $O(\epsilon+1/k)$. Para $P=p(1+z)$, $D\diag(p)z=0$,
+la derivada en $z$ de la primera gradiente proyectada es $I+O(\|z\|_\infty+1/k)$
+en el espacio tangente. Esto sigue al derivar los dos logaritmos y usar la cota de $\Pi$.
+El mapa $z\mapsto z-\Pi\nabla(-H_T)(p(1+z))$ preserva una bola de radio
+$C'(\epsilon+1/k)$ y tiene constante de Lipschitz menor que $1/2$ si $\epsilon$ es
+suficientemente pequeño y $k$ grande. Su punto fijo da
+\[
+ P_T/p=1+O(\epsilon+1/k).
+\]
+La construcción asegura positividad en todo el soporte. Para identificar el maximizador
+global basta la concavidad por fila. El coeficiente diagonal de la hessiana negativa
+es $(1-2t)/(t(1-t))$. Si una entrada $t_1>1/2$, las demás suman $1-t_1$.
+La función $\eta(t)=t(1-t)/(1-2t)$, para $t<1/2$, satisface
+$\sum_{j>1}\eta(t_j)\le\eta(1-t_1)=-\eta(t_1)$, ya que $\eta(t)/t$ crece.
+Cauchy--Schwarz con la restricción $\sum z_j=0$ prueba la semidefinición positiva
+de la hessiana en la fila. Los demás casos se obtienen directamente o por continuidad.
+La estricta definitud local en la rama pequeña y la concavidad dan unicidad global.
+Por comparación de formas cuadráticas $D\diag(P_T)D^t$ hereda la brecha.
+Sus autovalores son $1\pm\sigma_j(P_T)$, de modo que
+$\|P_T-\mathbf1\mathbf1^t/k\|_{\rm op}\le 1-\gamma'$ y $P_{T,e}\le C'/k$.
+
+\paragraph{Menores y prefijos de veto.}
+Suprimir un número fijo de filas y columnas emparejadas y a lo sumo dos sitios por
+cada fila o columna deja en el punto restringido $q_0$ déficits RC $O(1/k)$ y una
+brecha positiva. Para verlo, extender por cero un vector de $v^\perp$ y restar la
+energía de las aristas perdidas; el coste es $O(\|v'\|_2^2/k)$ para un vector $v'$.
+Resolver $D\diag(q_0)D^t y=\mathbf1-Dq_0$ cuesta $O(1/k)$ en supremo por la misma
+ecuación por vértice, pues las masas siguen siendo $1+O(1/k)$. El punto
+$q_0(1+D^ty)$ es factible y su defecto de gradiente es $O(1/k)$.
+La inversión precedente da un cambio relativo $1+O(1/k)$ en cualquier sitio superviviente.
+La estimación vale tomando las supresiones directamente desde el padre, sin iterar
+un error por cada sitio. Para las marginales verdaderas se usan además las entradas
+uniformes de prescripción de las rondas 1, 2 y 9 en esta clase.

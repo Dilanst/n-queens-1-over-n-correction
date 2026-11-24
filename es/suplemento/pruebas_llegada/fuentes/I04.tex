@@ -1,0 +1,42 @@
+\section{Qué queda de un ciclo con sus ramas}
+Consideremos un grafo de factores con un único ciclo simple. Primero no hay
+reacción exterior. En las creencias de Bethe de los campos dados, la identidad
+de reparametrización expresa el cociente $Z/Z_B$ como la suma de las tablas
+de factores multiplicadas y divididas por las marginales repetidas. Para verificarla,
+en cada factor $f$, el cociente de la configuración con $i$ respecto de la vacía
+es $x_i/q_f$. En el producto de creencias, la ocupación de $i$ aporta así
+$x_i^{d_i}/\prod_{f\ni i}q_f$, dividido por $(x_i/(1-x_i))^{d_i-1}$
+por los singletons repetidos. El cociente resulta $\zeta_i$ por estación.
+En una configuración admitida estos cocientes se multiplican. El peso de la
+configuración vacía es $\prod_f q_f/\prod_i(1-x_i)^{d_i-1}=Z_B^{-1}$, por la
+misma ecuación de campo y la expresión de $H_B$.
+
+Se suman las hojas hacia el ciclo. En un factor de aridad mayor, desaparecen
+las ramas por marginalización y queda su tabla de dos sitios del ciclo. El producto
+cíclico de transiciones estocásticas binarias tiene un autovalor uno; el otro es
+el producto de los determinantes. Para el arco de $i$ a $k$, el sitio $k$ es cero
+si $i$ está ocupado y su probabilidad de ocupación dado $i=0$ es $x_k/(1-x_i)$.
+La traza da
+\[
+ Z/Z_B=1+\theta,\qquad
+ \theta=(-1)^d\prod_{i\in C}x_i/(1-x_i),\qquad d=|C|.
+\]
+Aquí $x_i$ son las creencias de la silla con todas sus ramas. Análogamente la
+integral de densidades gaussianas de factores divididas por las repetidas es
+$D_{\rm loc}^{-1/2}$. Su precisión es $-H_B''$ pues $C_f^{-1}=-H_{\rm cat}''$.
+Se integran primero las ramas. En coordenadas de varianza uno, la regresión
+de $k$ sobre $i$ es $\rho_{ik}=-\sqrt{x_ix_k/((1-x_i)(1-x_k))}$.
+Cambiar variables a las innovaciones $y_k-\rho_{ik}y_i$ sobre el ciclo introduce
+el jacobiano $1-\prod\rho_{ik}=1-\theta$. La integral vale $1/(1-\theta)$.
+Se deduce en el origen real y se prolonga por la fórmula holomorfa del apartado 3.
+Por consiguiente el error local completo vale $\log(1-\theta^2)$.
+
+La geometría ordinaria impide que dos casillas distintas compartan dos líneas.
+El ciclo tiene al menos tres sitios. Al desactivar incidencias sólo puede romperse
+o conservar las mismas aristas del ciclo. En cada subcaso su error local es cero
+o divisible por $\prod_{i\in C}\zeta_i^2$. Lo mismo vale para la proyección,
+que además se anula en cada eje. El puro error local es así
+$O_v(j^{-v-d})$ tras proyectar. El cambio por reacción exterior tiene norma
+$O_v(s)$ y las mismas compatibilidades de cara. El coste del ciclo con exterior
+queda acotado por $O_v(j^{-v-1})$. Cuando hay varios ciclos usaremos únicamente
+la holomorfía acotada del apartado 3 y el peso proyectado $O_v(j^{-v})$.

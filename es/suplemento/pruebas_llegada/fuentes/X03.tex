@@ -1,0 +1,34 @@
+\section{Qué coeficientes conserva la truncación}
+Se comparan dos aproximantes con los mismos datos balanceados y la misma rama.
+Sea $u$ el parámetro inverso del tamaño del menor, $d(1)\ne0$ y
+$S_q(y,u)=d(y)(1+\sum_{l=1}^q V_l(y,u))$. En \emph{Menores uniformes}, parte 03,
+cada término de exceso $l=E-s_0$ tiene el factor $u^{E-|\pi|}$, donde $\pi$
+es una partición de los $s_0$ vértices. En particular $V_l$ es divisible por $u^l$.
+Los coeficientes son holomorfos alrededor de $(y,u)=(1,0)$ en el dominio común.
+
+Con $\mu_0=1$, $\mu_1=0$ y la recurrencia
+\[
+ (1-iu)\mu_{i+1}=iu(2\mu_i+\mu_{i-1})\quad(i\ge1)
+\]
+se tiene $\operatorname{ord}_u\mu_i\ge\lceil i/2\rceil$, por inducción,
+pues $1-iu$ es invertible en el origen. Aquí $i$ es un entero. Definamos
+\[
+ H_q(u)=\sum_{i=0}^{2q+1}\mu_i(u)\,\partial_y^i S_q(1,u)/i!.
+\]
+Para $Q\ge q$ las derivadas en $y$ de $S_Q-S_q$ conservan el factor $u^{q+1}$.
+Los índices adicionales $i\ge2q+2$ ya llevan ese factor en $\mu_i$.
+Por tanto $H_Q-H_q$ y $\log H_Q-\log H_q$ son divisibles por $u^{q+1}$,
+usando $H_Q(0)=H_q(0)=d(1)$ y el mismo logaritmo basal.
+Si se integra el término de exceso $l<p$ mediante el Taylor hasta grado
+$2(p-l)-1$ en $y-1$, el primer término omitido tiene grado en $u$ al menos
+$l+\lceil 2(p-l)/2\rceil=p$. Esto incluye $l=0$ para $d(y)$.
+
+El cambio $u=s/(1-\theta_0)$ conserva los órdenes si el denominador es una unidad.
+La sustitución de datos comunes y holomorfos y la suma finita sobre átomos también
+los conservan; para el logaritmo de la suma se requiere un valor basal invertible.
+Incluso truncando Stirling antes del grado $q$ y dividiendo una vez por $s$,
+el orden de la diferencia es al menos $q-1$. Con $q=4v+12$ los coeficientes
+de grados $w\le v$ quedan por debajo de ese límite.
+Es una comparación algebraica de ramas y aproximantes a soporte fijado.
+Los mayorantes uniformes en $v$ y el error en el valor físico requieren
+las estimaciones analíticas separadas de \emph{Menores uniformes}, partes 04, 05 y 08.

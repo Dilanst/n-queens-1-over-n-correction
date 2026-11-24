@@ -21,34 +21,46 @@ positivo y la historia tiene masa positiva bajo ambas leyes, se obtiene la ident
  e^{-g^\sharp(B_n)}\nu^\sharp(F_b)
  =\mathbb E_\mu[\exp\{-A^\sharp-\Gamma-g^\flat\};F_b].
 \end{equation}
-En adelante \(\mathbb E[X;H]=\mathbb E[X\mathbf1_H]\). Para conservar el signo de la frontera
-dejamos \(\Gamma\) en la identidad. El resto aparece dentro de una esperanza, lo que permite
-usar la siguiente estimación integrada del apéndice~\ref{app:arrival}
-\begin{equation}\label{eq:arrival-estimate}
- \limsup_n n\,\mathbb E_\mu[|g^\flat|+|e^{-g^\flat}-1|;F_b]\le C_\delta b.
-\end{equation}
-A \(b\) fijo la difusión da \(|\Gamma|\le C/j\). La consistencia por fila y el cambio
-uniforme \(O(m^{-2})\) de \(g_T\) por jugada dan \(|A^\sharp|\le C_b/n\) hasta la parada
-común. Sustituir \(e^{-g^\flat}\) por uno cuesta lo que acota \eqref{eq:arrival-estimate}.
-El resto de Taylor del otro factor es \(O_b(n^{-2})\). La velocidad conocida del tablero inicial
-y la estimación de torres dan \(g^\sharp(B_n)=O(n^{-1})\), con el mismo resto en su exponencial.
-El término de salida, a escala \(n\), es \(n\{\mu(F_b^c)-\nu^\sharp(F_b^c)\}\).
-Para que esta diferencia desaparezca basta probar que la salida bajo cada una de las dos leyes
-tiene probabilidad \(o_b(1/n)\). Las estimaciones de salida disponibles usan la ley \(\nu\).
+En adelante \(\mathbb E[X;E]=\mathbb E[X\mathbf1_E]\). Para estimar la identidad necesitamos
+la consistencia por fila y la difusión en los tableros que entran en la normalización.
+Precisamos esta última propiedad para el hijo físico, también cuando es el primero que sale.
+\input{partes/prueba_hijo_fisico}
+
+\paragraph{El signo de la salida.}
+La cota \eqref{eq:incremento-hijo-fisico} y la consistencia del predictor ordinario dan
+\(\lvert A^\sharp\rvert\le C_b/n\) hasta la parada, al sumar \(O(m^{-2})\) en \(m>j\).
+En \(F_b\) la difusión da \(|\Gamma|\le C/j\). Pongamos \(U_0=A^\sharp+\Gamma\).
+El Lema~\ref{lem:llegada-integrada} acota el coste de reemplazar \(e^{-g^\flat}\) por uno en
+\eqref{eq:signed-history}, pues \(e^{-U_0}\le e^{C_b/n}\).
+El resto de Taylor de \(e^{-U_0}\) es \(O_b(n^{-2})\).
+La cota previa \(R_Q(n)=O(n^{-1})\) del Lema~\ref{lem:previa}
+y (T) dan \(g^\sharp(B_n)=O(n^{-1})\), con el mismo orden de resto para su exponencial.
+Por tanto, con \(\limsup_n|\epsilon_n(b)|\le C_\delta b\),
+\[
+ n g^\sharp(B_n)\nu^\sharp(F_b)
+ =n\mathbb E_\mu[U_0;F_b]+n\{\mu(F_b^c)-\nu^\sharp(F_b^c)\}+\epsilon_n(b).
+\]
+El signo se obtiene de \(\nu^\sharp(F_b)-\mu(F_b)=\mu(F_b^c)-\nu^\sharp(F_b^c)\).
 
 El cociente de probabilidades de hijo bajo \(\nu^\sharp\) y \(\nu\), dada la fila, es
-\(e^{g_T(M_e)}/\mathbb E_{\nu,i}e^{g_T(M_{e'})}\).
+\(e^{g_T(M_e^{\rm fis})}/\mathbb E_{\nu,i}e^{g_T(M_{e'}^{\rm fis})}\).
 Todos los hijos del padre regular cumplen \(|g_T|\le C/(m-1)\), incluido el de primera
-salida. El producto detenido es a lo sumo \(\exp(O_{b,\delta}(1))\). Con \(X=Qe^{-L}\),
+salida. El logaritmo del cociente está entre \(-2C/(m-1)\) y \(2C/(m-1)\), pues el
+denominador promedia sobre todos los hijos. El producto detenido queda acotado por
+\(\exp(2C\sum_{m=j+1}^n(m-1)^{-1})=\exp(O_{b,\delta}(1))\). Con \(X=Qe^{-L}\),
 la densidad de \(\mu\) respecto de \(\nu\) es \(Xe^{A-R_Q(n)}\), donde \(A\) suma los
-logaritmos de las normalizaciones de fila ordinarias. La salida macroscópica tiene coste ponderado
+logaritmos de las normalizaciones de fila ordinarias. En el tramo macroscópico la probabilidad
+de salida bajo \(\nu\) es exponencialmente pequeña por~\cite[cor.~4.12]{tc}, y el coste
+ponderado por \(e^AX\) se acota por
 \(C\exp(-c_\delta n+C_\delta n^{2/3}+O_\delta(n^{-1}))\).
-Para una banda de tamaño \(m\ge j/2\) el coste con peso \(1+X\) es
+Para cada banda diádica de la parada con suelo \(j\), de escala \(m\ge j/2\), el coste con
+peso \(1+X\) es
 \(C e^{-(c_*-2\beta)m}\), con \(c_*>2\beta\).
-La llegada larga excepcional cuesta \(O(e^{-2j})\).
+El Lema~\ref{lem:prescripcion-larga} acota la llegada larga en \(O(e^{-2j})\) con ese peso.
 Al sobrevivir el tramo macroscópico se cumple \(|A|\le C_\delta/\lceil\delta n\rceil+C/j\).
-En la llegada histórica corta la máscara es completable. La suma por bandas da una
-excepción exponencialmente pequeña bajo ambas leyes. Retirar el indicador de llegada en la media
+El Lema~\ref{lem:positividad-llegada} da \(F_b^c\subset H_j^c\). La suma por bandas y la
+cota macroscópica controlan \(\nu(H_j^c)\) y \(\mu(F_b^c)\) a orden exponencial.
+El producto detenido da ese orden para \(\nu^\sharp(F_b^c)\). Retirar el indicador en la media
 de \(A^\sharp\) cuesta entonces \(o_b(1)\) tras multiplicar por \(n\). Se sigue que
 \begin{equation}\label{eq:signed-mean}
  \limsup_n\left|n g^\sharp(B_n)-n\mathbb E_\mu A^\sharp

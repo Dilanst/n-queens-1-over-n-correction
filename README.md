@@ -1,4 +1,4 @@
-# El término de orden 1/n del problema de las n reinas
+# La corrección de orden 1/n al predictor canónico de las n reinas
 
 Dilan Steven Mejia
 

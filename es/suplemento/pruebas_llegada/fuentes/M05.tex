@@ -1,0 +1,57 @@
+\section{Expansión del normalizador exterior}
+Escribimos
+\[
+ l_{rc}=v_{rc}(1-\sigma t_rt_c v_{rc})/(1-2\sigma t_rt_c v_{rc}),\quad
+ d_r=\int l_{rc}dM_1^C,\quad d_c=\int l_{rc}dM_1^R,\quad \bar d=\int l\,dM_1^R dM_1^C .
+\]
+Los grados físicos de $S_{\rm ext}$ son $t_v d_v$. En lo físico el núcleo cruzado
+normalizado, retirado el modo singular constante, es el núcleo en medidas $M_1$
+\[
+ W_{rc}=l_{rc}/\sqrt{d_rd_c}-\sqrt{d_rd_c}/\bar d .
+\]
+Las bases ortonormales físicas introducen los factores $\sqrt{t_r/j}\sqrt{t_c/j}$.
+La fórmula de cofactor de R9, apartado 6 (o cofactor bipartito con grados $t_vd_v$),
+da, a márgenes positivos,
+\[
+ \pdet S_{\rm ext}=(2/\bar d)\prod_v(t_vd_v)\det(I-W^tW).
+\]
+Aquí la suma de las conductancias es $j\bar d$. La identidad utiliza las dos direcciones
+constantes en la normalización y el modo nulo RC en las coordenadas físicas.
+Por tanto el sumando global de $A$ es
+$\tfrac12\log(\bar d/2)-\tfrac12\log\det(I-W^t W)$; el resto consiste en
+$-\tfrac12\sum_v\log d_v-\tfrac12\sum_e\log b_2(p_e)$.
+Para las medidas deformadas, los productos de operadores son integrales con $M_1$.
+Las transpuestas son bilineales; no se usa conjugación.
+
+La suma global es una función holomorfa y acotada uniformemente en los discos anteriores.
+En el origen, los cuadrados de valores singulares no triviales tienen suma $O(1)$ por
+la cota de $z$; su máximo es $\le r^2<1$. El determinante real allí es al menos
+$\exp(-C/(1-r^2))$. Para la prolongación, la serie de Fredholm del núcleo acotado
+$W^tW$ converge uniformemente: el término de orden $a$ se domina por
+$C^a a^{a/2}/a!$, usando Hadamard y la variación total de las medidas.
+La prolongación es uniforme aun con medidas de masa cero en algunos índices.
+Por Cauchy y reducción de discos sigue separada de cero, y también $\bar d$.
+A $\sigma=0$, $d_v=1$ por el balance y el sumando global depende sólo de $M_1$.
+Lo llamamos $A_0(sx)$. El resto tiene factor $\sigma$, y su dependencia mixta
+en los dos grupos cuesta además $h_1h_2$ tras centrar, como en el apartado 4.
+
+Para los factores locales, $\log b_2(y)=-y^2+O(y^3)$ y se reemplaza la suma ordinaria
+por $s^{-2}\int d\mu_R d\mu_C$. En la prolongación se emplea
+$y=\sigma t_rt_c v$ y se divide el logaritmo por $\sigma^2$ antes de integrarlo.
+Sale $E_{22}/2+O(\sigma)$ analítico. Para los grados, la identidad de margen da
+\[
+ d_r=1+\sigma t_r\int t_c^2 z_x^2\,d\mu_C+O(\sigma^2),
+\]
+pues $l-v=\sigma t_rt_c v^2/(1-2\sigma t_rt_c v)$ y $\int v\,dM_1^C=1$.
+La suma en filas se prolonga como $-\int(\log d_r)/(2\sigma)\,d\mu_R$,
+y análogamente en columnas. Al poner $\sigma=s$ se obtiene
+\[
+ A(x)=A_0(sx)+\tfrac12(E_{22}-E_{12}-E_{21})+s\,\Psi_A(s,h,x).
+\]
+$\Psi_A$ tiene las mismas propiedades de holomorfía, acotación y desaparición de la
+dependencia de un grupo al anular su masa que $\Psi_R$.
+En un vértice con $m$ filas retenidas, los grados $d_v$ de un índice apagado tienden a uno
+por la identidad exacta de $l-v$. Los núcleos sólo integran índices supervivientes.
+Como el factor físico del cofactor reducido usa $m$ en lugar de $j$, la prolongación de
+$A$ toma el valor $F_T({\rm menor})+\tfrac12\log(m/j)$, donde $F_T$ es el prefactor
+de torres sin la constante $\tfrac12\log(4\pi m)$. Así se conserva esa constante exacta.

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please use the following information to cite this supplement."
 type: software
-title: "The Order-1/n Term of the n-Queens Problem: Data and Calculations Supplement"
+title: "The Order-1/n Correction to the Canonical n-Queens Predictor: Data and Calculations Supplement"
 authors:
   - family-names: "Mejia"
     given-names: "Dilan Steven"
@@ -9,7 +9,7 @@ version: "1.0.0"
 license: MIT
 references:
   - type: article
-    title: "The Order-1/n Term of the n-Queens Problem"
+    title: "The Order-1/n Correction to the Canonical n-Queens Predictor"
     authors:
       - family-names: "Mejia"
         given-names: "Dilan Steven"

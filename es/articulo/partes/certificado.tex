@@ -5,19 +5,19 @@ ecuaciones en punto flotante proporciona un candidato, y el error del primero do
 de las filas explícitas. Para el nuevo candidato se usó un polinomio por tramos con coeficientes
 racionales, de grado 14 y con 16 paneles por unidad. Se encerró su residuo en las ecuaciones en
 todo el dominio. La coercividad en variables logarítmicas y la identificación con la solución
-física convierten ese residuo en radios uniformes de $2{,}086\,10^{-15}$ para el factor axial y
-$4{,}248\,10^{-16}$ para la vacancia [O]. Cada fila debe usar los radios del candidato que evalúa.
+física convierten ese residuo en radios uniformes de $2{,}086\cdot10^{-15}$ para el factor axial y
+$4{,}248\cdot10^{-16}$ para la vacancia [O]. Cada fila debe usar los radios del candidato que evalúa.
 
 \paragraph{Del perfil a los valores nodales [O].}
 Los 43 nodos distintos del cálculo comprenden 26 nodos reales de Gauss y 17 representantes del
 círculo de 32 puntos. Se encerraron $G_{\rm cof}, f_{4,\rm expl}, f_{2F}$ y el momento $T_1$ en los 43.
-La contribución de cuadrados $C_{3,\rm sq}$ también tiene encierros en estos puntos. En el eje real se
+La contribución de cuadrados $C_{3,\rm cuad}$ también tiene encierros en estos puntos. En el eje real se
 encerraron además momentos anidados y la parte explícita de $\mathcal V$. Para las dos coincidencias
 $\Delta_1,\Delta_2$ se obtuvieron cotas de norma. Alcanzar las
 tolerancias que usa la cuadratura requiere también controlar esas dos contribuciones y las filas
 que contienen la resolvente con suficiente precisión.
 
-\paragraph{Valores de frontera [O].}
+\paragraph{Valores de frontera [O].}\label{par:intervalos-frontera}
 Para $S$, la simetría y la división en los pliegues del perfil reducen la integral a 27 tetraedros. Las
 envolventes polinómicas, los nodos de Gauss verificados, un resto analítico y el redondeo
 exterior~\cite{mkc} dan
@@ -38,11 +38,11 @@ disponibilidad del par.
 \paragraph{Qué limita el encierro de $Q_2$.}
 Para estudiar una de las filas con resolvente se eligió el nodo 10 del panel de 20 puntos. Su
 peso de cuadratura dividido por $x^2$ vale aproximadamente $0{,}294$. Aun dedicando toda la meta
-de $10^{-4}$ a ese nodo, el semiancho de $Q_2$ tendría que ser de unos $3{,}4\,10^{-4}$.
+de $10^{-4}$ a ese nodo, el semiancho de $Q_2$ tendría que ser de unos $3{,}4\cdot10^{-4}$.
 La integración conservó las dos paridades diagonales y el signo de los 17 aportes de traza tras
 la cancelación. Se partió de un modelo certificado de $L_0$ con 256 paneles por unidad. Para
 integrar se agruparon en 16 paneles por unidad y se usaron 512 centros. La integral completa del
-continuo quedó en $[-49913{,}764054;50371{,}535812]$ [O], con un semiancho de unos $5{,}0\,10^4$.
+continuo quedó en $[-49913{,}764054;50371{,}535812]$ [O], con un semiancho de unos $5{,}0\cdot10^4$.
 El cálculo consumió 51,27 segundos de CPU.
 
 ¿Bastaría con desagrupar los paneles? En la traza $S_{13}$, las dos orientaciones
@@ -55,9 +55,10 @@ tabla cuando se
 evalúa $S_{13}$ por separado. Las identidades del núcleo físico pueden ligar más estrechamente
 sus entradas.
 
-Al reunir las cotas globales se obtiene $[-4{,}28\,10^{19};4{,}28\,10^{19}]$ [O]. El intervalo
-incluye cero y deja abiertos tanto el signo como los decimales de $\cerr$. Para obtener un encierro
-fino por la vía del método de rectángulos haría falta una cota demostrada y suficientemente pequeña
-del resto espacial
-en las clases de malla físicas. Así se podrían justificar las tolerancias espaciales de los nodos
-a las que sigue condicionada la cota de integración en $x$.
+\paragraph{Balance global.}\label{par:balance-global}
+No se obtuvo un encierro útil para $\cerr$. Dominan los mayorantes en valor absoluto de
+la integral de $\numerr_6/x^2$, a los que se añaden las cotas de los coeficientes del par
+y los demás términos de frontera. Certificar el signo y los decimales por el método de
+rectángulos requiere una cota demostrada y suficientemente pequeña
+del resto espacial en las clases de malla físicas. Así se podrían justificar las tolerancias de
+muestreo que requiere la cota de integración de $\numerr_6/x^2$.

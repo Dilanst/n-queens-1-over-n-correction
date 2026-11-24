@@ -1,0 +1,73 @@
+\section{Reoptimización y proyección por sitios}
+En la parte local se incluyen un factor de capacidad uno por fibra RC marcada y
+los factores diagonales activados en $Y$. Los unitarios se pueden mantener; su
+corrección de entropía y su determinante normalizado son triviales.
+Con $d_i$ incidencias locales por sitio, $q_f=1-\sum_{i\in f}x_i$,
+$v_i=x_i(1-x_i)$ y $V_0=\diag(v_i)$, la entropía local de Bethe es
+\[
+ H_B(x)=\sum_f H_{\rm cat}(x_f)-\sum_i(d_i-1)H_{\rm Ber}(x_i).
+\]
+Los dos factores RC de cada sitio se incluyen aun si unitarios.
+A las actividades $\zeta_i=\exp r_i$ se les da primero libertad en un polidisco
+pequeño de radio $\rho_v>0$. En el modelo físico $\zeta_i=O_v(s)$: en el caso
+sin diagonales la silla es $x_i=p_{T,i}\le C/j$. La ecuación de estación es
+\[
+ x_i=\zeta_i \exp(\partial_i R_c(x))
+             \frac{\prod_{f\ni i}q_f}{(1-x_i)^{d_i-1}} .
+\]
+En el punto de torres todas las vacancias marcadas de esta ecuación son $1+O_v(s)$.
+La misma ecuación da en el polidisco la silla holomorfa, divisible en cada coordenada
+por $\zeta_i$. El jacobiano de la ecuación implícita es identidad en el origen.
+En la rama pequeña los términos físicos son cóncavos en la caja de masas pequeñas
+(Hessiana diagonal de sitio más los términos positivos de línea para $-H$).
+La continuación exterior y esta silla identifican el predictor reoptimizado de R3.
+No se ha tomado un máximo con actividades complejas.
+
+\paragraph{Normalización exacta.}
+Para una fibra $f$, sea $C_f=\diag(x_f)-x_fx_f^t$ su covarianza categórica.
+Se tiene $\det C_f=q_f\prod_{i\in f}x_i$. Al separar las masas marcadas, la acción
+local es $H_B+R$ y Schur da, además de $A_*$ y la constante de componente,
+el menos medio logaritmo de
+\[
+ D_{\rm loc}=\det\big[(-H_B''-R_c'') V_0\big]\prod_f
+                     \frac{\det C_f}{\prod_{i\in f}v_i}.
+\]
+En efecto el producto escalar junto a $\det(-H_B''-R_c'')$ se reduce a
+$\prod_i x_i(1-x_i)^{1-d_i}\prod_f q_f$. Los factores $q_f=t_b$ de RC
+se compensan con $+\frac12\sum_b\log t_b$ en $A_*$; quedan los escalares
+físicos del Schur de R3, 08b. La identidad es algebraica también para un ciclo.
+La columna $i$ de $(-H_B''-R_c'')V_0$ se vuelve el vector unitario $e_i$ en $x_i=0$.
+Se ve usando $-H_{\rm cat}''=\diag(1/x_f)+{\bf1}{\bf1}^t/q_f$ y la fórmula
+de $H_B$. El bloque restante es el de la cara. Los cocientes escalares reducen
+a $q_f/\prod_{i\in f}(1-x_i)$. El valor estacionario se escribe sin $\log x_i$
+por la ecuación de campo. Por tanto el valor y el determinante son holomorfos en
+los ejes y coinciden al desactivar las incidencias de una marca de actividad cero.
+
+El exacto es el logaritmo de $\sum_X \chi_Y(X)\zeta^X e^{g(X)}$, sobre los átomos
+compatibles en RC, con $\chi_Y$ las capacidades diagonales. En un radio fijo pequeño
+la suma está cerca de uno. Los términos comunes a todos los $Y$ se quitan.
+En el producto local sin reacción exterior se pone $R_c=A_c=g=0$.
+Por lo anterior, el cambio del error desde este modelo local al físico es $O_v(s)$
+en el polidisco: las sillas varían $O_v(s)$ y todos los determinantes regularizados
+están cerca de uno. El prefactor exterior varía $O_v(s)$ por el apartado 2.
+En la acción se puede sustituir $\log(\zeta_i/x_i)$ por su expresión holomorfa.
+Cada diferencia proyectada se anula en $\zeta_i=0$ para todo $i\in S$. Si su
+norma es $O_v(s^a)$ en el polidisco, dividir por $\prod_i\zeta_i$ y aplicar Cauchy
+en un radio menor da $O_v(s^{a+v})$ en los campos físicos.
+
+\paragraph{Bosques.}
+Para un bosque de factores, las creencias categóricas se ensamblan exactamente
+multiplicando por condicionadas desde las hojas. La misma construcción con
+gaussianas de covarianzas $C_f$ muestra que el determinante local sin reacción
+es uno. Con el campo desplazado por $\nabla R_c$, $V=(-H_B'')^{-1}$ es la
+covarianza exacta del bosque. El término adicional de Schur es
+$-\frac12\log\det(I-VR_c'')$. Con $m,V$ las medias y la covarianza a campo sin
+desplazar, el cambio del predictor hasta primer orden en $s$ es
+\[
+ a[m]+\tfrac12 H[m,m]+\tfrac12\tr(VH).
+\]
+Por estación, el movimiento del optimizador de la parte independiente tiene
+coste de segundo orden. El exacto da el mismo polinomio, por el apartado 2 y
+$\E[XX^t]=V+mm^t$ en el bosque. Estos desarrollos son uniformes para las
+actividades del polidisco. Por ello el error proyectado de un bosque cuyos
+subcasos siguen siendo bosques es $O_v(j^{-v-2})$.

@@ -1,0 +1,28 @@
+\subsection{Dependencies in the proof}\label{sec:dependencias}
+Table~\ref{tab:dependencias} gives an order in which the estimates can be verified. In particular, the
+change of law that transfers the arrival bound uses an estimate already obtained under the adaptive law.
+\begin{center}
+\small
+\begin{tabular}{@{}L{.30\linewidth}L{.63\linewidth}@{}}
+\toprule Result & Inputs and subsequent use\\ \midrule
+Consistency and persistence & The results from~\cite{pc,tc} in Section~\ref{sec:importados} fix the
+classes, the exit rates, and the size of the row defects.\\
+Arrival under \(\nu\) & Positivity (Lemma~\ref{lem:positividad-llegada}) allows us to take logarithms.
+Minors, coefficients by support, and the tail (Propositions~\ref{prop:menores-llegada},
+\ref{prop:soportes-llegada}, and~\ref{prop:norma-llegada}) combine with the geometry of the types to
+estimate the mean under \(\nu\).\\
+Rate and transfer & Lemma~\ref{lem:previa} applies the stopped identity to that mean at a single cut-off.
+With the rate in hand, the stopped density transfers the bound to \(\mu\)
+(Lemma~\ref{lem:llegada-integrada}).\\
+Interior and boundary & In the interior we integrate the sum of the sixteen contractions
+(Appendix~\ref{app:interior}). At the boundary we separate the double minors, the variation of a pair,
+and the interaction of the square (Appendices~\ref{app:boundary}, \ref{app:weights},
+and~\ref{app:transfer}).\\
+Limit and coefficient & Identity~\eqref{eq:signed-mean} combines the two means.
+Proposition~\ref{prop:cortes-uniformes} controls their errors; Lemma~\ref{lem:dos-cortes} gives the
+limit. The endpoint analysis identifies the integral in Theorem~\ref{teo:principal}.\\
+\bottomrule
+\end{tabular}
+\refstepcounter{table}\label{tab:dependencias}\par\smallskip
+\textbf{Table \thetable.} Order of the results and changes of law.
+\end{center}

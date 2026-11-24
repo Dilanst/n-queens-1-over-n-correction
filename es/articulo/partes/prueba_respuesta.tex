@@ -1,0 +1,48 @@
+\paragraph{Respuesta de segundo orden en el exterior.}
+La fila \(f6\) requiere \(m^2q_i\), pues la respuesta de primer orden en \(y_i/p_i\)
+se cancela con \(t_{ic}\). Para verificar la fuente de segundo orden, pongamos
+\(X=(a_{i,I}^{\mathsf T})_{i\in E'}\), \(D_p=\operatorname{diag}(p_i)_{i\in E'}\).
+Las ecuaciones estacionarias restadas dan \(y_i/p_i=(X\eta)_i+(B_1)_i\), donde
+\(\eta_f=\gamma_f/h_f\) en las diagonales y las otras componentes son multiplicadores
+de fila y columna. Con \(\theta_i=y_i/p_i\), la diferencia exacta de los logaritmos
+de las ecuaciones de estacionariedad da
+\[
+ (B_1)_i=\theta_i-\log(1+\theta_i)-3\log(1-y_i/(1-p_i))
+ +\sum_{f\in \familias(i)\cap(D\cup A)}[\log(1+\eta_f)-\eta_f].
+\]
+Las ecuaciones de masa dan
+\(\mathcal M\eta=d_0-X^{\mathsf T}D_pB_1\). Por tanto
+\[
+ q=B_1+X\mathcal M^+(r-X^{\mathsf T}D_p B_1).
+\]
+Taylor en las casillas y las vacancias da \(m^2B_1=L+O_b(m^{-1})\), con
+\[
+ L_i=\tfrac12(mt_{ic})^2-\frac{3mp_i(mt_{ic})}{1-p_i}
+       -\tfrac12\sum_{f\in \familias(i)\cap(D\cup A)}(mz_f^{\rm fis})^2,\qquad
+ z^{\rm fis}=(Ra_c)_I .
+\]
+Aquí se han usado \(y_i/p_i=-t_{ic}+O_b(m^{-2})\) y
+\(\gamma_f/h_f=-z_f^{\rm fis}+O_b(m^{-2})\).
+En el complemento del modo nulo, la identidad \(S_0R=I-\Pi_m\) por bloques da
+\(\|\mathcal M^+-R_{II}\|_\infty=O_b(m^{-1})\) en norma de suma por fila,
+pues las líneas retenidas pierden masa \(O_b(m^{-1})\) y la inversa está acotada.
+Así \(m^2q=L+XR_{II}(m^2r-X^{\mathsf T}D_pL)+O_b(m^{-1})\).
+
+Expresamos la contracción en los mismos núcleos del perfil. Fijemos el centro \(c\) y sea
+\(\Lambda(i)=T_i^2/2-3W(i)T_i-\tfrac12\sum_{f\in \familias(i)\cap(D\cup A)}z_f^2\).
+Para una línea retenida \(u\), escribamos
+\begin{align*}
+ \omega(u)={}&-\sum_{j\in \familias(c)} \pesodirecto(u\cap j)
+     \left[t_j+\sum_{a\in \familias(u\cap j)\setminus\{j\}}z_a\right]
+      -\int_{i'\in u}\mathbb E\Lambda(i')\,d\omega_u(i'),\\
+ q(i)={}&\Lambda(i)+\sum_{u\in \familias(i)}
+ \left[\omega(u)+\int E(u,u')\omega(u')\,d\rho(u')\right],\\
+ f6={}&-\left\langle w(i)\mathbb E q(i)\right\rangle_{i,c}.
+\end{align*}
+Se omiten los cruces inexistentes en la primera suma. El término de fibra integrado en
+\(\omega\) es la media con \(i'\) marcada y \(c\) fijo. En los productos de la suma sobre
+cruces se usa \(\psi\) para todo el monomio. Las dos partes de \(\omega\) provienen de
+\(m^2r=-m^2(C_0t+U_0z)\) y de \(-X^{\mathsf T}D_pL\). La identidad y la parte integral
+de \(R_{II}\) producen los dos términos entre corchetes de \(q(i)\). La media de área
+lleva el signo de \(-m^2\sum_{E'}p_iq_iw_i\). El Lema~\ref{lem:f6} demuestra su
+reordenación por trazas, incluido el recorrido de la figura~\ref{fig:rectangulos}.

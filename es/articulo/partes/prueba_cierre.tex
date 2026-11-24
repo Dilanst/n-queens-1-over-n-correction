@@ -2,52 +2,56 @@
 Las estimaciones anteriores valen para cada corte admisible fijo. Sus umbrales de \(n\)
 pueden depender del corte, por lo que aún hay que justificar el paso al extremo.
 La cantidad que aproximan en el tablero inicial es la misma para todos los cortes.
-Sean \(a_n=nR_Q(n)\), \(a_*=F(1)-1/12\), \(H=P_T+J-S\), y \(b>0\) un corte
+Sean \(a_n=nR_Q(n)\), \(a_*=F(1)-1/12\), \(\sumafrontera=P_T+J-S\), y \(b>0\) un corte
 admisible. Existen cortes admisibles arbitrariamente próximos a cero. Definimos a corte positivo
-\(I(b)=\int_b^1 k(x)x^{-2}\,dx\) y \(\Phi(b)=a_*+I(b)+H\).
-Las tres identificaciones de frontera dan \(\eta(b)=\limsup_n|B_n(b)-H|\to0\).
+\(I(b)=\int_b^1 \numerr(x)x^{-2}\,dx\) y \(\valorcorte(b)=a_*+I(b)+\sumafrontera\).
+Las tres identificaciones de frontera dan \(\eta(b)=\limsup_n|\mathcal M_n(b)-\sumafrontera|\to0\).
 La identidad interior vale en \([b,1]\). Al combinarla con \eqref{eq:signed-mean},
 la expansión de frontera con error \(O(n/j^2)\) y \(n g_T(M_n)\to a_*\), queda
 \[
- \limsup_n|a_n-\Phi(b)|\le C_\delta b+\eta(b)=:\varepsilon(b).
+ \limsup_n|a_n-\valorcorte(b)|\le C_\delta b+\eta(b)=:\varepsilon(b).
 \]
 \begin{lema}[Comparación de dos cortes]\label{lem:dos-cortes}
-Sea \((a_n)\) una sucesión real y, para cada corte admisible \(b\), sea \(\Phi(b)\in\mathbb R\) con
-\(\limsup_n|a_n-\Phi(b)|\le\varepsilon(b)\), donde \(\varepsilon(b)\to0\) al bajar el corte. Entonces
-\(\Phi(b)\) tiene límite finito \(\Phi_0\) a lo largo de los cortes admisibles y \(a_n\to\Phi_0\).
+Sea \((a_n)\) una sucesión real y, para cada corte admisible \(b\), sea \(\valorcorte(b)\in\mathbb R\) con
+\(\limsup_n|a_n-\valorcorte(b)|\le\varepsilon(b)\), donde \(\varepsilon(b)\to0\) al bajar el corte. Entonces
+\(\valorcorte(b)\) tiene límite finito \(\valorcorte_0\) a lo largo de los cortes admisibles y
+ \(a_n\to\valorcorte_0\).
 \end{lema}
 \begin{proof}
-Para dos cortes admisibles fijos comparamos \(\Phi(b),\Phi(b')\) con el mismo \(a_n\), tomando \(n\)
+Para dos cortes admisibles fijos comparamos \(\valorcorte(b),\valorcorte(b')\) con el mismo \(a_n\),
+ tomando \(n\)
 suficientemente grande para ambas estimaciones. La desigualdad triangular y el límite superior
-dan \(|\Phi(b)-\Phi(b')|\le\varepsilon(b)+\varepsilon(b')\). Se cumple el criterio de Cauchy a lo
-largo de los cortes admisibles y \(\Phi(b)\to\Phi_0\in\mathbb R\). Para cada corte,
-\(\limsup_n|a_n-\Phi_0|\le\varepsilon(b)+|\Phi(b)-\Phi_0|\). Como el lado izquierdo es independiente
-de \(b\), al bajar el corte resulta \(a_n\to\Phi_0\).
+dan \(|\valorcorte(b)-\valorcorte(b')|\le\varepsilon(b)+\varepsilon(b')\). Se cumple el criterio de Cauchy
+ a lo
+largo de los cortes admisibles y \(\valorcorte(b)\to\valorcorte_0\in\mathbb R\). Para cada corte,
+\(\limsup_n|a_n-\valorcorte_0|\le\varepsilon(b)+|\valorcorte(b)-\valorcorte_0|\). Como el lado izquierdo
+ es independiente
+de \(b\), al bajar el corte resulta \(a_n\to\valorcorte_0\).
 \end{proof}
 En particular \(I(b)\) tiene límite finito a lo largo de dichos cortes. En todo este argumento
 el perfil físico, las leyes detenidas y sus estimaciones se han usado a corte positivo fijo.
 
+\input{partes/regularidad_extremo}
+
 \begin{proof}[Final de la demostración del Teorema~\ref{teo:principal} y del
- Corolario~\ref{cor:derivada}]
-Para identificar el límite con la integral impropia ordinaria queda decidir si \(k(x)/x^2\)
-puede tener un término proporcional a \(1/x\). La identidad de orden cero del perfil da
-\(k(0)=0\). La resolvente proyectada de líneas es analítica
-cerca de cero: el bloque de Schur diagonal tiene la forma \(\Lambda_u+x\mathcal N\), la vacancia
-tiene mínimo positivo y el bloque axial tiene brecha espectral. La inversa y las secciones de su
-núcleo permanecen acotadas en discos complejos interiores. La integración dominada en las
-contracciones finitas de las densidades da así la analiticidad de \(k,G\). Esta regularidad se
-obtiene para cualquier valor que pueda tener \(k'(0)\). En un intervalo suficientemente
-pequeño \([0,x_0]\), escribimos
-\(k(x)=k'(0)x+x^2 h(x)\), con \(h\) analítica y acotada. Para \(0<b<x_0\),
-\[
- I(b)=I(x_0)+k'(0)\log(x_0/b)+\int_b^{x_0}h(x)\,dx .
-\]
-La última integral permanece acotada. La convergencia de \(I(b)\) por los cortes admisibles
-fuerza \(k'(0)=0\). De \(k'=d'-xG''\) se deduce \(d'(0)=0\) para el perfil físico.
-La singularidad del integrando es entonces evitable y la integral impropia converge
-absolutamente. Por consiguiente, el valor de \(\Phi_0\) es
+Corolario~\ref{cor:derivada}]
+Por el Lema~\ref{lem:regularidad-extremo}, \(\numerr\) tiene en cero un desarrollo de Laurent
+con parte principal finita. Si el primer coeficiente no nulo fuera \(a_q\), con \(q\le0\),
+entonces \(\numerr(x)=a_qx^q+O(x^{q+1})\). Integrando desde \(b\) hasta un punto fijo del disco
+se obtendría \(b^{1-q}I(b)\to a_q/(1-q)\). En efecto, tras multiplicar por \(b^{1-q}\),
+el resto integral cuesta \(O(b)\) si \(q<0\) y \(O(b|\log b|)\) si \(q=0\).
+Pero \(I(b)\) permanece acotada en los cortes admisibles, lo que fuerza \(a_q=0\).
+Quedan eliminados todos los polos y el término constante. Ahora
+\(I(b)=a_1\log(x_0/b)+O(1)\), pues el resto de \(\numerr(x)\) es \(O(x^2)\).
+La misma acotación da \(a_1=0\). Así \(\numerr\) se extiende analíticamente al intervalo
+\([0,x_0]\), tomando \(x_0\) interior al disco, con \(\numerr(0)=\numerr'(0)=0\).
+De \(\numerr'=d'-xG''\) se deduce \(d'(0)=0\) para el perfil físico.
+La función \(\numerr(x)/x^2\) tiene límite finito en cero y es continua a corte positivo.
+Su integral impropia converge absolutamente. Por el Lema~\ref{lem:dos-cortes},
 \[
  \lim_{n\to\infty}n\{\log Q(n)-\log Q_{\rm pred}(n)\}
-   =F(1)-\tfrac1{12}+\int_0^1\frac{k(x)}{x^2}\,dx+P_T+J-S .
+   =F(1)-\tfrac1{12}+\int_0^1\frac{\numerr(x)}{x^2}\,dx+P_T+J-S .
 \]
+La primera expansión del corolario se obtiene dividiendo por \(n\), y la segunda,
+aplicando \(e^y=1+y+O(y^2)\) cuando \(y=O(n^{-1})\).
 \end{proof}

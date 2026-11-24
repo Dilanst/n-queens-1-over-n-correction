@@ -1,75 +1,46 @@
-\section{The interior mean at a positive cut-off}\label{app:interior}
-At a fixed cut-off, \eqref{eq:signed-mean} requires us to sum the logarithms of the row normalizations
-up to the stopping time and take the mean of the sum. For each child the first correction has size
-\(1/m\). Before summing over \(m\), we must use its cancellation among the children in the same row.
-For the four-family predictor, at every regular parent of size \(m\) on the auxiliary macroscopic
-event down to \(b\), the insertion formula gives
-\[
- L(B+e)-L(B)=\log[p_e(1+\delta_e)]+r_e^{\rm PC},\qquad
- \sum_{e\in i}p_e\delta_e=0,\quad
- |\delta_e|\le C_b/m,\quad |r_e^{\rm PC}|\le C_b/m^2 .
-\]
-Here the \(p_e\) are the coordinates of the four-family stationary point. Summing over the row gives
-\(\log\rho(B,i)=\sum_{e\in i}p_e r_e^{\rm PC}+O_b(m^{-3})\). Replacing \(p_e(1+\delta_e)\) by \(p_e\)
-costs \(O_b(m^{-3})\). Write \(V=\ell+\tfrac12\log\det S_{0,\rm gf}+3\sum p_e^2\) for the local
-potential of the stationary expansion (\(\ell\) is the local term and the cofactor uses the fixed
-gauge). Let \(\delta_e^0\) be its centered linear correction and \(P_e\) the second-order remainder
-after extracting \(\Delta_e V=V(B+e)-V(B)\) and \(\delta_e^0\) from \(L(B+e)-L(B)-\log p_e\). Taylor
-expansion gives
-\[
- r_e^{\rm PC}=\Delta_e V+P_e+\tfrac12(\delta_e^0)^2
-                   +(\delta_e^0-\delta_e)+O_b(m^{-3}).
-\]
-Although \(\delta_e-\delta_e^0=O_b(m^{-2})\) has the order we seek, both corrections have row mean
-zero, so their difference vanishes exactly in that mean. The cubic error after summation is
-\(O_b(n\sum_{m>j}m^{-3})=O_b(n^{-1})\). The potential contributes its endpoint values. The part we
-must average over the whole interval is \(m^2[P_e+(\delta_e^0)^2/2]\). The table pairs each insertion
-term with its contributions to the sixteen entries of this physical mean in the continuum.
-\begin{center}\small
-\begin{tabular}{ll}
-\hline
-\(-m^2 E_g/2\)& \(G_{\rm cof}\)\\
-\(m^2 A_3\)&\(f2E+f2z+f2F\)\\
-\(m^2 C^{(3)}\)&\(f2F+C3_{\rm cuad}\)\\
-\(-m^2(E_Q+E_R)/2\)&\(f3F+f3c\)\\
-\(m^2(-3p_e^2+p_e f_e)\)&\(f4=f4_{\rm expl}+f4_{L0}\)\\
-\(m^2\sum_F p_i(1-t_{ie})w_i\)&\(f5c+f5F\)\\
-\(-m^2\sum_{E'}p_iq_iw_i\)&\(f6\)\\
-\(m^2(\delta_e^0)^2/2\)&\(f7\)\\
-first part of \(Q_e\)&\(Q1+\Delta_1\)\\
-second part of \(Q_e\), with \(-3m^2\sum_{E'}y_i^2\)&\(Q2+\Delta_2\)\\
-\hline
-\end{tabular}
-\end{center}
-\(f2F\) appears twice because the cubic term on the fiber and the pair part of \(C^{(3)}\) have the
-same weight. The two parts of \(Q_e\) carry the factors \(-1/2\) and \(1/4\). An available line that
-occurs in two factors counts only once, so the correction to the product is
-\(\psi\psi'(U_\ell^{-1}-1)\). This gives \(\Delta_1,\Delta_2\). The twelve ordered pairs of distinct
-families in the quadratic block contribute \(12/4=3\) times \(m^2\sum_{E'}y_i^2\), canceling the
-indicated subtraction at each parent. These identities determine the multiplicities independently of
-the numerical evaluation.
+\section{The interior mean at positive cut-off}\label{app:interior} To find the interior contribution to
+\eqref{eq:signed-mean}, we fix the cut-off \(b>0\). When \(m>\lfloor bn\rfloor=j\) rows remain, we write
+\(x=m/n\). Choosing a square changes the predictor by a term of order \(1/m\) after subtracting
+\(\log p_c\). To identify the term of order \(1/m^2\), we start with a regular parent before averaging over
+histories.
 
-The uniform profile error in these scaled means on \([b,1]\) is \(\epsilon_n(b)\to0\). Its total cost
-is at most \(\epsilon_n(b)n\sum_{m>j}m^{-2}=o_b(1)\). The predictable indicator of a regular parent is
-taken before the row is chosen. Removing the exponentially rare auxiliary exits costs \(o_b(1)\),
-since \(n|A|\le C_b\). On \(H_j\), let \(s=A-R_Q(n)+g_T+\Gamma\). There \(|s|=O_b(1/n)\) and
-\(\int_{H_j}|d\mu-d\nu|=\mathbb E_\mu[|1-e^{-s-g^\flat}|;H_j]=O_b(1/n)\) by
-\eqref{eq:arrival-estimate}. Thus we may use the adaptive law in the Riemann sum. The local potential
-telescopes, with scaled endpoint contribution \(\mathcal V(b)/b-\mathcal V(1)\) and error
-\(O_b(n^{-1/2})+o_b(1)\).
+\subsection{Inserting a square} Let \(c\) be the chosen square, \(\mathcal J=\familias(c)\) its four
+lines, \(I\) the retained lines, \(F\) the available squares meeting \(\mathcal J\), including \(c\), and
+\(E'\) the surviving squares. For each square \(i\), let \(a_i\) be the incidence vector of its four
+lines. With \(h_f=1-\sum_{i\in f}p_i\) on the diagonals, set \begin{align*}
+ S_0&=\sum_i p_i a_i a_i^{\mathsf T}+\operatorname{diag}(0_R,0_C,h_D,h_A),
+ & R&=S_0^+,\\
+ t_{ic}&=a_i^{\mathsf T}Ra_c,
+ & w_i&=6p_i+f_i,\qquad f_i=\sum_{\{u,v\}\subset \familias(i)}R_{uv}.
+\end{align*} The sums over unordered pairs run over distinct lines. On \(E'\), write
+\(y_i=p_i^{(c)}-p_i\), where \(p^{(c)}\) is the stationary point of the child, and set
+\(q_i=y_i/p_i+t_{ic}\). The response of the child gives \(q_i=O_b(m^{-2})\). The full prefactor potential
+is \(V=\ell+\tfrac12\log\det S_{0,\rm gf}+3\sum_i p_i^2\). On the connected supports in the class,
+\(L=H+\ell+\tfrac12\log(2\pi)\) and \(\ell\) includes the predictor cofactor. The determinant \(\det
+S_{0,\rm gf}\) uses the same gauge for parent and child. The linear correction and its centering follow
+from \[
+ \delta_c^0=-w_c+\sum_i p_i t_{ic}w_i,\qquad
+ \sum_{c\in r}p_ca_c=S_0 e_r,\qquad a_i^{\mathsf T}RS_0 e_r=(a_i)_r .
+\] The last equality uses the orthogonality of \(a_i\) to the row--column null mode. Thus \(\sum_{c\in
+r}p_c\delta_c^0=0\) for every row \(r\).
 
-For the exact rook correction let \(u_e=g_T(M_e)-g_T(M)\), where \(M_e\) here denotes the mask of the
-physical child. Thus \(\log\rho^\sharp-\log\rho=\log\mathbb E_{\nu,i}e^{u_e}\). Since
-\(|u_e|=O(m^{-2})\), replacing the logarithm by the mean costs \(O(m^{-4})\). The weighted exit costs
-and the stopped density give a stopped relative entropy of \(O_b(1)\). The conditional Pinsker
-inequality and Cauchy--Schwarz bound the scaled change in the means on passing to \(\mu\) by
-\(O_b(n(\sum_{m>j}m^{-4})^{1/2})=O_b(n^{-1/2})\). The increments telescope. The rook endpoints add
-\((F(b)-1/12)/b-(F(1)-1/12)\) to the endpoint contribution of the local potential. Together they give
-the value of \(G/x\) at \(b\) minus its value at \(1\). Writing this difference as the integral of the
-derivative of \(-G/x\) gives the interior mean needed in the final comparison,
-\[
- \lim_n n\mathbb E_\mu A^\sharp=\int_b^1 d(x)x^{-2}\,dx+\frac{G(b)}b-G(1)
-       =\int_b^1 k(x)x^{-2}\,dx .
-\]
+Insertion consistency~\cite[Theorem 7.1 and Corollary 7.2]{pc} gives
+\(L(B+c)-L(B)=\log[p_c(1+\delta_c)]+r_c^{\rm PC}\), with \(\sum_{c\in r}p_c\delta_c=0\),
+\(\delta_c=O_b(m^{-1})\), and \(r_c^{\rm PC}=O_b(m^{-2})\). Expanding the exponential with these weights
+of total mass one and then expanding the logarithm gives \(\log\rho(B,r)=\sum_{c\in r}p_c r_c^{\rm
+PC}+O_b(m^{-3})\). Changing the weights in the linear term costs \(O_b(m^{-3})\).
 
-\input{partes/prueba_filas}
+\input{partes/prueba_insercion}
+
+Since \(\delta_c-\delta_c^0=O_b(m^{-2})\), expanding \(\log(1+\delta_c)\) gives \[
+ r_c^{\rm PC}=\Delta_c V+P_c+\tfrac12(\delta_c^0)^2
+                   +(\delta_c^0-\delta_c)+O_b(m^{-3}).
+\] The last parenthesis vanishes exactly upon averaging over the row. The cumulative cubic error is
+\(O_b(n\sum_{m>j}m^{-3})=O_b(n^{-1})\). The table identifies the term in \(m^2[P_c+(\delta_c^0)^2/2]\)
+that gives rise to each profile contribution. \begin{center}\small \begin{tabular}{ll} \toprule Insertion
+term at scale \(m^2\) & Profile contribution\\ \midrule \(-m^2 E_g/2\)& \(G_{\rm cof}\)\\ \(m^2
+A_3\)&\(f2E+f2z+f2F\)\\ \(m^2 C^{(3)}\)&\(f2F+C_{3,\rm cuad}\)\\ \(-m^2(E_Q+E_R)/2\)&\(f3F+f3c\)\\
+\(m^2(-3p_c^2+p_c f_c)\)&\(f4=f4_{\rm expl}+f4_{L0}\)\\ \(m^2\sum_F p_i(1-t_{ic})w_i\)&\(f5c+f5F\)\\
+\(-m^2\sum_{E'}p_iq_iw_i\)&\(f6\)\\ \(m^2(\delta_c^0)^2/2\)&\(f7\)\\ first part of
+\(Q_c\)&\(Q_1+\Delta_1\)\\ second part of \(Q_c\), with \(-3m^2\sum_{E'}y_i^2\)&\(Q_2+\Delta_2\)\\
+\bottomrule \end{tabular} \end{center} \input{partes/prueba_filas} \input{partes/prueba_uniformidad}

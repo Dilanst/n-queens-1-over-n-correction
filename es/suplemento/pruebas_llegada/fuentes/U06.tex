@@ -1,0 +1,81 @@
+\section{Cancelaciones locales con un exterior común}
+Especificamos una implicación formal para aplicar la parte 05. El exterior se obtiene
+quitando todos los sitios marcados antes de elegir las restricciones locales activas.
+Sean $\zeta_i$ campos independientes de esa elección. Una cara es una elección de
+restricciones. Los coeficientes exteriores congelados deben ser los mismos en todas las caras.
+El campo afín de orden cero se absorbe en la ley basal de cada componente.
+A costes $l\ge1$ supongamos la descomposición de \emph{Patrones finitos}, parte 03.
+Cada monomio sólo depende de los grupos que se le asignan. La acción ordinaria tiene grado
+$\le l+1$, el prefactor ordinario grado $\le l$. La excepción de dos fibras tiene una
+amplitud común en acción y prefactor como en la parte 05 y soporte $\le l$.
+Las demás excepciones tienen soporte $\le l-1$. En soporte máximo, los multiplicadores
+de la excepción de dos fibras son lineales en grupos privados distintos.
+\paragraph{Bosque, a campo fijo.}
+Cada grupo forestal tiene partición de Bethe exacta y las mismas respuestas de campo.
+En la silla inclinada $m$, $Z=X-m$ tiene covarianza por bloques $V$.
+Tras sacar los términos afines, el logaritmo residual a campo fijo tiene la forma
+\[
+ \log\E\exp\{R(m+Z)-R(m)-R'(m)Z+A(m+Z)-A(m)\}
+   +\tfrac12\log\det(I-VR''(m)).
+\]
+En esta expresión se considera el sector ordinario. Sean $p$ el número de patas centradas,
+$q_0$ el número de factores de media y $b$ el número de bloques de cumulantes locales.
+Sean $N_R,N_A$ los números de vértices de acción y prefactor, y $w$ el coste total.
+En un diagrama conexo, con exceso de ciclos $L=p-(N_R+N_A+b)+1$, el número $d$
+de grupos distintos satisface
+\[
+       p+q_0\le w+N_R,\qquad d\le q_0+b\le w+1-N_A-L .
+\]
+Cada vértice de acción y cada bloque tienen al menos dos patas. Cada vértice de
+prefactor tiene al menos una. Con $N_A=0$ o $1$ no puede haber un árbol, pues
+tendría al menos dos hojas. El diagrama vacío tiene coeficiente cero en el logaritmo.
+Para $N_A=0,L=1$ todos los grados valen dos. Los ciclos con $k$ bloques aportan
+$\operatorname{tr}[(VR''(m))^k]/(2k)$: la división cuenta las rotaciones y la
+reversión, válida también como contracción gaussiana para $k=1,2$.
+El medio logaritmo del determinante cancela la suma. Los términos ordinarios
+que sobreviven tienen soporte $d\le w-1$.
+Al reponer la silla, la derivada por el grupo $g$ de $R_l$ añade a lo sumo $l$
+grupos además de $g$. Las derivadas locales de la media siguen en $g$. Por inducción
+en el coste, la reposición a coste $a$ sólo añade hasta $a$ grupos. Se conserva $d\le w-1$.
+\paragraph{Raíz de dos fibras.}
+Para un coeficiente conexo cuyo grafo de incidencias tiene exceso $L_I$, con $h_b$
+grupos distintos en la interacción $b$, vale $d=1+w-\sum_b(l_b+1-h_b)-L_I$.
+Con una raíz excepcional, el único caso que puede alcanzar $d=w$ es un árbol
+con las otras interacciones multilineales de soporte máximo. Tomemos una interacción hoja
+cuyos grupos, salvo el de enlace, son privados. Al anular sólo su amplitud, dejando
+activas las del resto, los grupos privados y el componente restante se separan.
+En el valor exacto, derivar en esa amplitud inserta la ocupación del enlace por las
+medias privadas. En la silla, la variación en el grupo de enlace es la de su campo por
+el mismo producto. La Hessiana explícita de la hoja sólo cruza bloques distintos
+en ese punto y su traza contra la inversa por bloques es cero. Se deriva también
+el prefactor y el determinante del componente restante al variar el campo.
+Si los factores privados responden, la derivada de su valor estacionario ya está
+incluida por estacionariedad y su prefactor forestal local es exacto.
+Esta identidad con las demás amplitudes libres permite derivarlas y podar por inducción.
+Queda la raíz de la parte 05, cuya diferencia y derivadas de campo se anulan.
+Dos déficits o una interacción de soporte $\le l-1$ ya dan $d\le w-1$.
+\paragraph{Un único ciclo.}
+Con $c$ grupos que deben aparecer, en grado $w=c-1>0$ sólo cabe un árbol
+de interacciones de soporte máximo. El caso $c=1,w=0$ se lee directamente en el grupo.
+En ese árbol la partición en cumulantes conectados no puede separar las incidencias
+de un grupo: hacerlo desconectaría el árbol. Sus ramas son derivadas de campo locales.
+Si el grupo que queda tiene un ciclo binario $C$, la transición de $i$ a $i+1$ tiene
+filas $(1-t_i,t_i),(1,0)$ con $t_i=x_{i+1}/(1-x_i)$. La traza del producto
+vale $1+\theta$ con $\theta=\prod_{i\in C}(-t_i)$. En la corrección gaussiana,
+las regresiones tienen esas mismas pendientes negativas y cerrar el sistema de
+innovaciones da jacobiano $1-\theta$. Los factores de rama se cancelan;
+la diferencia local es $\log(1-\theta^2)$ en la rama del origen.
+Con $x_i=\zeta_i b_i$ holomorfo, conserva $\prod_{i\in C}\zeta_i^2$ incluso tras
+derivar con $\zeta_i\partial_{\zeta_i}$. Si una cara rompe el ciclo, queda un bosque.
+\paragraph{Hipótesis de uso.}
+Al poner $\zeta_i=0$ se exige además que las dos caras de ese sitio coincidan
+en el normalizador completo. La proyección en sitios ausentes da entonces un factor
+$\zeta_i$ por sitio, además de la potencia extra ya identificada en el ciclo presente.
+Localmente, para exclusión de capacidad uno, las matrices de covarianza normalizadas
+tienen diagonal uno y entradas cruzadas $-x_j/(1-x_i)$ en cada factor.
+Para $\max_f\sum_{i\in f}|\zeta_i e^{h_i}|$ pequeño y grado de sitio acotado,
+las ecuaciones de mensajes son contractivas alrededor de uno y estos bloques
+son próximos a la identidad. Esto justifica la rama local cerca de campos cero.
+El uso en el predictor físico exige cotejar el factor exterior y su normalización
+en todas las caras. La parte 07 comprueba esa identidad y la parte 08 explicita
+qué radios se usan para estimar un soporte cuyo número de marcas aumenta.

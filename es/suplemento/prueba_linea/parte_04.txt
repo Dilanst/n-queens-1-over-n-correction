@@ -1,0 +1,107 @@
+  3 | \begin{observacion}[Aplicaci\'on al predictor]\label{o:aplicacion}
+  4 | Sea $B$ un residual con punto de Bethe $p$ y operador de l\'ineas $S_B$ \cita{TC:06a\_estatico:20--31}.
+  5 | La eliminaci\'on exacta de las diagonales con una sola casilla disponible \cita{PC:08a\_meso:28--49} deja
+  6 | las l\'ineas con dos o m\'as casillas, cada casilla con multiplicidad $d_e=2+|\Dg(e)|$, pesos
+  7 | $\tau_e=\tau_{d_e}(p_e)$, $\tau_d(p)=p(1-p)/(1-dp)$, y vacancias $h_f=1-\ell_f$, $\ell_f=\sum_{e\in f}p_e$.
+  8 | Con $b_d(p)=(1-dp)/(1-p)^d$, cada l\'inea eliminada aporta su pivote y
+  9 | \[
+ 10 |  \prod_eb_4(p_e)\cdot\pdet S_B=\prod_eb_{d_e}(p_e)\cdot\pdet S ,
+ 11 | \]
+ 12 | de modo que en $L(B)$ el t\'ermino local pasa de $-\frac12\sum_e\log b_4(p_e)$ a
+ 13 | $-\frac12\sum_e\log b_{d_e}(p_e)$ y $S_B$ a $S$, el operador reducido del Marco; la entropía no cambia
+ 14 | \cita{PC:08a\_meso:39--42}. \textup{(G)} es la conexi\'on de filas y columnas del soporte. En la clase
+ 15 | d\'ebil de \cita{PC:08a\_meso:5--15}, con constantes $(C,\gamma,\eta,\varepsilon)$ y $k\ge8C$ (para que
+ 16 | $p_e\le1/8$): $\gamma_H\ge\gamma$, $h_{\min}\ge\eta$, $\tau_e\le2p_e$ y $\mt_f\le2\varepsilon$. Entonces
+ 17 | \[
+ 18 |  \|A_H^{-1}\|\le\frac1{\min\{1,\gamma\}},\quad \|\cS^{-1}\|\le\frac1\eta,\quad
+ 19 |  \|\V^\T A_H^{-1}\V\|\le4\varepsilon,\quad \vartheta\le\frac{4\varepsilon}\eta,\quad
+ 20 |  \|\Xi\|\le\frac{16\varepsilon^2}{\eta^3}
+ 21 | \]
+ 22 | dependen s\'olo de $(\gamma,\eta,\varepsilon)$. En cambio $\tr(\Lambda_h^{-1}\cN)\le4k/\eta$ y
+ 23 | $\rho_2\le8\varepsilon k/\eta^2$ crecen linealmente con $k$ (no dependen de $n/k$ ni del n\'umero de
+ 24 | diagonales), y $\rho_2$ puede ser de orden $k$ (Observaci\'on~\ref{o:extensivo}). La cota uniforme del
+ 25 | determinante es la del Corolario~\ref{c:Y-debil}.
+ 26 | \end{observacion}
+ 27 | 
+ 28 | \begin{observacion}[Hip\'otesis necesarias y varias componentes]\label{o:componentes}
+ 29 | \textup{(G)}, $h_f>0$ y $\tau_e>0$ no se pueden quitar (ejemplos exactos en la revisi\'on). Si el grafo de
+ 30 | filas y columnas tiene componentes $c=1,\dots,s$ con $|R_c|=|C_c|=k_c$, sean $v_c=(\mathbf 1_{R_c},
+ 31 | -\mathbf 1_{C_c})$ y $\Pi=\sum_cv_cv_c^\T/(2k_c)$. Entonces $a_e^\T v_c=0$ para toda casilla,
+ 32 | $\ker T_H=\operatorname{span}\{v_c\}$, $\V^\T v_c=0$, $\ker S=\operatorname{span}\{v_c\oplus0\}$ y los
+ 33 | Lemas~\ref{l:T-tablero}, \ref{l:T-cotas} y~\ref{l:Y} valen sin cambios, con $\gamma_H$ el menor autovalor de
+ 34 | $T_H$ en $\operatorname{span}\{v_c\}^\perp$ y $\pdet S=\det(S+\widehat\Pi)$: las pruebas s\'olo usan que
+ 35 | $\Pi$ es el proyector ortogonal sobre $\ker T_H$. Es el gauge por componente de
+ 36 | \cita{PC:06a\_insercion:3--7}. Sin $|R_c|=|C_c|$ no hay punto interior con masas de fila y de columna uno.
+ 37 | \end{observacion}
+ 38 | 
+ 39 | \begin{lema}[Norma del supremo]\label{l:sup}
+ 40 | En el marco del Lema~\ref{l:T-tablero} y bajo \textup{(G)}, sea $\|\cdot\|_\infty$ la norma de operador del
+ 41 | supremo (m\'axima suma absoluta por filas), y sean $\mt_{H,\min}=\min_{a\in H}\mt_a$,
+ 42 | $\mt_{H,\max}=\max_{a\in H}\mt_a$ y $\tau^\times_{\max}:=\max_{a\in R,\,b\in C}(T_H)_{ab}$, el peso
+ 43 | m\'aximo de un cruce fila--columna. Si cada cruce tiene a lo sumo una casilla, como en un residual o en
+ 44 | una m\'ascara, $\tau^\times_{\max}=\max_e\tau_e$.
+ 45 | \begin{enumerate}
+ 46 | \item[(f1)] $\displaystyle\|A_H^{-1}\|_\infty\le\cM_H:=\frac1{\mt_{H,\min}}
+ 47 | \Bigl(1+\frac{2k\tau^\times_{\max}+1}{\gamma_A}\Bigr)$.
+ 48 | \item[(f2)] $\|(\Lambda_h+T_\Dg)^{-1}\|_\infty\le1/h_{\min}$.
+ 49 | \item[(f3)] Si $\vartheta_\infty:=4\,\mt_{\Dg,\max}\,\mt_{H,\max}\,\cM_H/h_{\min}<1$, entonces, con
+ 50 | $s_\infty:=1/(h_{\min}(1-\vartheta_\infty))$,
+ 51 | \[
+ 52 |  \|\cS^{-1}\|_\infty\le s_\infty,\qquad \|(S+\widehat\Pi)^{-1}\|_\infty\le\cM_*,
+ 53 | \]
+ 54 | \[
+ 55 |  \cM_*:=\max\bigl\{\cM_H+2\mt_{H,\max}\cM_Hs_\infty\beta_*,\ s_\infty\beta_*\bigr\},\qquad
+ 56 |  \beta_*:=2\mt_{\Dg,\max}\cM_H+1 .
+ 57 | \]
+ 58 | \end{enumerate}
+ 59 | \end{lema}
+ 60 | 
+ 61 | \begin{proof}
+ 62 | (f1) Escribimos $A_H=\Delta+W$, con $\Delta=\operatorname{diag}(\mt_a)_{a\in H}$ y $W=A_H-\Delta$. La
+ 63 | fila $a$ de $W$ tiene las entradas $(T_H)_{ab}$, una por cruce de $a$ con una l\'inea del otro tipo: a lo
+ 64 | sumo $k$ no nulas y cada una $\le\tau^\times_{\max}$; adem\'as, la fila de $\Pi$, con $2k$ entradas
+ 65 | $\pm1/(2k)$. Su norma eucl\'idea es $\le\sqrt k\,\tau^\times_{\max}+1/\sqrt{2k}$. Si
+ 66 | $A_Hx=b$, entonces $\|x\|_2\le\|b\|_2/\gamma_A\le\sqrt{2k}\,\|b\|_\infty/\gamma_A$ y
+ 67 | $x=\Delta^{-1}(b-Wx)$, luego
+ 68 | \[
+ 69 |  \|x\|_\infty\le\frac1{\mt_{H,\min}}\Bigl(\|b\|_\infty+
+ 70 |  \bigl(\sqrt k\,\tau^\times_{\max}+\tfrac1{\sqrt{2k}}\bigr)\|x\|_2\Bigr)
+ 71 |  \le\frac{\|b\|_\infty}{\mt_{H,\min}}
+ 72 |  \Bigl(1+\frac{\sqrt2\,k\tau^\times_{\max}+1}{\gamma_A}\Bigr)\le\cM_H\|b\|_\infty .
+ 73 | \]
+ 74 | (f2) $\Lambda_h+T_\Dg$ tiene diagonal $h_f+\mt_f$ y, fuera de ella,
+ 75 | $(T_\Dg)_{ff'}=\sum_{e\in f\cap f'}\tau_e\ge0$, con
+ 76 | \[
+ 77 |  \sum_{f'\ne f}(T_\Dg)_{ff'}=\sum_{e\in f}\tau_e(|\Dg(e)|-1)\le\mt_f .
+ 78 | \]
+ 79 | Es de diagonal estrictamente dominante por filas, con margen $\ge h_f$. Si $(\Lambda_h+T_\Dg)x=b$ y
+ 80 | $|x_f|=\|x\|_\infty$,
+ 81 | entonces $(h_f+\mt_f)|x_f|\le|b_f|+\mt_f\|x\|_\infty$, es decir, $\|x\|_\infty\le\|b\|_\infty/h_f$.
+ 82 | 
+ 83 | (f3) $\|\V\|_\infty\le2\mt_{H,\max}$ (la fila $a$ suma $\sum_{e\in a}\tau_e|\Dg(e)|$) y
+ 84 | $\|\V^\T\|_\infty\le2\mt_{\Dg,\max}$ (la fila $f$ suma $2\mt_f$). Se tiene
+ 85 | \[
+ 86 |  \cS=(\Lambda_h+T_\Dg)\bigl(I-(\Lambda_h+T_\Dg)^{-1}\V^\T A_H^{-1}\V\bigr),\qquad
+ 87 |  \|(\Lambda_h+T_\Dg)^{-1}\V^\T A_H^{-1}\V\|_\infty\le\vartheta_\infty<1
+ 88 | \]
+ 89 | por (f1) y (f2), y la serie de Neumann da $\|\cS^{-1}\|_\infty\le s_\infty$. Las sumas por filas de la
+ 90 | inversa por bloques del
+ 91 | Lema~\ref{l:T-tablero}(c) est\'an acotadas, en las filas de $H$, por
+ 92 | \[
+ 93 |  \cM_H+\cM_H\cdot2\mt_{H,\max}\cdot s_\infty\cdot2\mt_{\Dg,\max}\cM_H+\cM_H\cdot2\mt_{H,\max}s_\infty
+ 94 | \]
+ 95 | y, en las de $\Dg$, por $s_\infty\cdot2\mt_{\Dg,\max}\cM_H+s_\infty$.
+ 96 | \end{proof}
+ 97 | 
+ 98 | \begin{observacion}[Alcance del Lema~\ref{l:sup}]\label{o:sup}
+ 99 | Es la versi\'on, con constantes expl\'icitas y para pesos cualesquiera, de la inversa uniforme de
+100 | \cita{PC:08b\_meso:8--16, 41--56} ($\|G\|_\infty\le M_*$), que all\'i se enuncia en puntos de Bethe de la
+101 | clase d\'ebil y en entornos relativos peque\~nos con masas de fila y columna uno. Aqu\'i hace falta en un
+102 | punto de prueba que no cumple esas masas (Lema~\ref{l:D}). En la clase d\'ebil con $k\ge8C$:
+103 | $\tau^\times_{\max}=\max_e\tau_e\le2C/k$ (una casilla por cruce) y $1\le\mt_a\le2$, luego
+104 | $\cM_H\le1+(4C+1)/\min\{1,\gamma\}$ y $\vartheta_\infty\le16\,\varepsilon\,\cM_H/\eta$. A diferencia de las
+105 | cotas eucl\'ideas, (f3) s\'i pide masas diagonales peque\~nas, $\varepsilon<\eta/(16\cM_H)$: es el papel de
+106 | $\varepsilon_0$ en PC. Con varias casillas en un cruce, (f1) es falsa si se pone $\max_e\tau_e$ en lugar de
+107 | $\tau^\times_{\max}$ (contraejemplos exactos de la revisi\'on, con $k=1,2,3$); (f3) usa (f1) tal como
+108 | queda enunciada.
+109 | \end{observacion}

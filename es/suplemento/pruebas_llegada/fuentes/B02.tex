@@ -1,0 +1,72 @@
+\section{Coste, grupos y dominio complejo}
+En el Taylor en $s$, llamamos coste al exponente $l$. En $R_0(\theta)/s$ y $A_0(\theta)$
+los grados en $y$ son a lo sumo $l+1$ y $l$ respectivamente, pues $\theta$ es lineal en $s y$.
+En los $E$, sin inserción directa de medida el grado es a lo sumo $l$.
+Con una inserción directa, la acción tiene $s f_2(y)$ y el prefactor $-s f_1(y)$,
+con el mismo factor de núcleo e integración restante. Sus grados cumplen las mismas cotas.
+Con dos inserciones, la fila $r$ y la columna $c$ dan la pareja
+\[
+ s^2\,\frac{Z_{rc}(\theta)^2}{2}(P,B),\quad
+ P=f_2(u)f_2(v'),\quad B=P-f_1(u)f_2(v')-f_2(u)f_1(v'),\quad
+ u=y_r,\ v'=y_c .
+\]
+En particular, a coste $l\ge2$ la amplitud es la misma extracción
+$[s^{l-2}]Z_{rc}(\theta)^2/2$. Vale cero en una casilla exterior prohibida.
+El multiplicador es homogéneo de grado $l-2$ en las sumas lineales de ocupaciones.
+Para alcanzar $l$ componentes tienen que ser distintas las dos distinguidas y los $l-2$
+factores restantes tienen que ser de grupos privados distintos. No se pide homogeneidad espacial.
+En $s\Psi_R,s\Psi_A$, fijar $h_g=0$ elimina de las integrales todas las copias de $g$,
+con los demás $h$ libres. Las ecuaciones de los índices restantes prescinden de esas copias.
+También las series del cofactor se integran con sus masas. Por unicidad de Taylor, un
+término que depende de $d$ grupos lleva sus $d$ marcadores; a coste $l$ alcanza $d\le l-1$.
+La misma propiedad para el error puro de torres en los átomos es la de Menores uniformes 05.
+Para $s$ fijo se sustraen de $R$ su valor y campo lineal en el origen; el gradiente retirado
+se restituye en las actividades físicas. El mismo exterior sirve en todos los sumandos de Möbius.
+Si se deriva un campo se usa $\zeta_i\partial_{\zeta_i}$; conserva $(\zeta_i^2)$.
+La derivada ordinaria de $\zeta_i^2$ es $2\zeta_i$ y pierde una potencia.
+
+\paragraph{Uniformidad para $v$ creciente.}
+Sea $d_i=\max_{f\ni i}|f\cap U|$ y $\|x\|_*=\max_i d_i|x_i|$. Para cada fibra,
+$\sum_{i\in f\cap U}1/d_i\le1$. Si $\|x\|_*\le a$, $|t_r|,|t_c|\le1+a$.
+Trabajamos primero en $|\sigma|\le\kappa_0,\ \sum_{b'}|h_{g(b')}|\le\kappa_0$
+(suma sobre las copias de ambos lados). Los radios individuales de $h_g$ no son fijos
+simultáneamente. En supremo el jacobiano basal, en calibre fijo, tiene inverso uniforme:
+el Schur centrado es $I-D_0^tD_0$, con inverso acotado en norma dos; aplicar el núcleo acotado
+a su solución vuelve a dar el control en supremo. Las ecuaciones auxiliares de las copias
+tienen bloque identidad al tener masa cero. Se proyecta la ecuación de columna por la media
+basal; el residuo constante es nulo integrando por la masa común próxima a uno.
+En una bola de potenciales de radio $r_0$, la raíz regular es
+\[
+ w=\frac{2Z'}{1+\sqrt{1-4\sigma t_rt_c Z'}},\qquad Z'=z e^{\alpha+\beta}.
+\]
+Elegimos $r_0,\kappa_0$ con $4|\sigma|(1+a)^2M_0'e^{2r_0}<1/2$.
+El cambio de jacobiano en supremo cuesta $C(r_0+|\sigma|+\sum|h_{g(b')}|)$:
+se deriva la raíz con el denominador anterior y se integra contra medidas de TV acotada.
+El residuo en el centro cuesta lo mismo sin $r_0$. La iteración con inverso basal queda
+dentro de la bola y es contractiva reduciendo esas constantes. Esto da unicidad y holomorfía
+uniformes. En el cofactor el determinante basal está separado de cero por brecha y suma de
+cuadrados singulares acotada. La serie de Fredholm está dominada por
+$\sum_m C^m m^{m/2}/m!$. Telescopar las filas y las medidas da continuidad uniforme
+(con un factor adicional $m$ sumable). Se conserva la rama del logaritmo en discos menores.
+
+En la diagonal $h_g=\sigma=s$ basta $|s|\le\kappa/v$. Grados ponderados 02 controla la
+silla local en $|\zeta_i|\le\kappa'/d_i$: el gradiente exterior es acotado y Cauchy
+direccional da $\sum_l|\partial_l\partial_iR_c|/d_l\le C$. Los factores locales y la
+Hessiana normalizada están en una bola de radio $O(\kappa')$ de su valor libre.
+El logaritmo canónico, tras quitar la constante común, es $O(v)$. En las caras físicas
+la rama pequeña se identifica por el control canónico $\|q_i/P_i-1\|_\rho\le C\eta$
+sobre el soporte; por difusión $q_i=O(1/j)$ pertenece a la caja de unicidad.
+Para la suma de átomos, Grados ponderados 03--04 da el logaritmo $O(v)$, en esa misma caja.
+El tamaño físico $1/j$ y los campos físicos $O(1/j)$ tienen margen ya que $v/j\to0$.
+
+\paragraph{El umbral de la sexta tanda.}
+En su normalización funcional, la variación relevante es el desplazamiento de ocupación:
+la ramificación de una casilla exterior llega cuando $4s\,t_rt_c Z'=1$.
+Para $Z'$ de orden uno y dos márgenes de tamaño comparable, esa escala es
+$|t|\asymp|s|^{-1/2}=\sqrt j$ en tamaño físico. Aquí $|t|\le1+a$ incluso en el disco
+complejo; la desigualdad estricta anterior controla el argumento de la raíz en todo él.
+El radio de Cauchy de campo es el de $\zeta_i$, no una bola de funcionales arbitrarios
+$\widehat\Phi$. En la carta uniforme $\zeta_i=s\,w_i$ el radio relativo de $w_i$ puede
+exceder $\sqrt j$; ese cociente no mide el desplazamiento del margen ni $\|\widehat\Phi\|$.
+El criterio de ramificación es una comprobación directa en las variables comunes.
+No se invoca una continuación al radio $j$ en la norma funcional de la sexta tanda.

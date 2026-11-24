@@ -1,74 +1,80 @@
 \section{What accumulates before the cut-off and what remains at the boundary}\label{sec:signedmap}
-Choose a solution uniformly and expose its queens in a uniform row order independent of the solution.
-When \(m\) rows remain, the residual board \(B_m\) records the available squares. Its binary mask
-\(M_m\) admits a simpler problem, that of placing one rook in each row and each column. The resulting
-count, \(\operatorname{per}M_m\), already incorporates the constraints imposed by the exposed pieces.
-To obtain \(Q(B_m)\), we must also require that the new pieces do not attack one another along the
-diagonals.
+Choose a solution uniformly and reveal its queens in a uniformly random row order independent of the
+solution. When \(m\) rows remain, the residual board \(B_m\) records the available squares. Its binary
+mask \(M_m\) supports a simpler problem: place one rook in each row and column. Its count,
+\(\operatorname{per}M_m\), already incorporates the restrictions imposed by the revealed pieces. To
+obtain \(Q(B_m)\) we must also require that the new pieces do not attack each other along the diagonals.
 
-This suggests a first choice. Let \(L\) and \(L_T\) be the logarithms of the queen and rook predictors
-on the residual board. For the rook part we can use the exact count by setting
+This suggests a first choice. Let \(L\) and \(L_T\) be the logarithms of the queen and rook predictors on
+the residual board. For the rook part we can use the exact count:
 \[
  g_T(M)=\log\operatorname{per}M-L_T(M),\qquad L^\sharp(B)=L(B)+g_T(M).
 \]
-We make the adjustment on the same mask at each step. Thus the difference between two child boards
-separates the rook counting error from the cost of forbidding a diagonal attack. On the initial board
-\(n g_T(M_n)\) tends to \(F(1)-1/12\). The full mask is separable and \(F(1)=0\), which gives the
-first term in~\eqref{eq:main}.
+The adjustment is made on the same mask at each step. Thus a difference between two child boards does not
+mix the error in counting rooks with the cost of forbidding a diagonal attack. On the initial board \(n
+g_T(M_n)\) tends to \(F(1)-1/12\). The full mask is separable and \(F(1)=0\); this gives the first
+summand in~\eqref{eq:main}.
 
-\paragraph{The sum up to the stopping time.}
-We fix the regularity margins and the macroscopic parameter \(\delta\), then choose \(b>0\)
-sufficiently small. We stop at the first exit from the regular class or upon reaching \(j=\lfloor
-bn\rfloor\), as in the comparison of stopped histories in~\cite{tc}. Let \(F_b\) be the event of
-regular arrival at that level with a board that admits a completion. In each row, the adaptive law
-chooses a square with probability proportional to the weight of its child board. If the sum of these
-weights equaled the weight of the parent, the recursion would hold exactly in that row. The logarithm
-of their ratio measures the defect at that step. We denote the sum of these logarithms up to the
-stopping time by \(A^\sharp\).
+\paragraph{The sum up to the stopping time.} We stop when \(j=\lfloor bn\rfloor\) empty rows remain, or
+earlier at the first exit. The proof distinguishes two levels. The first, \(M=\lceil\delta n\rceil\),
+separates the regularity regimes of~\cite[Definition~2.2 and \S5.4]{tc}. Until \(M\) we require the
+discrepancy of the history from the profile to stay below its radius. At \(M\) we also check the entry
+tolerances and the maximum diagonal length. From \(M\) to \(j\) we require the inner margins for
+diffusion of the weights, vacancy, spectral gap, and diagonal mass. The first board that violates any
+of these conditions counts as an exit, even if it is reached precisely at \(j\).
 
-The uniform solution and the adaptive law use the same stopping rule. We can therefore compare the
+With \(0<\delta<1\) and these margins fixed, we choose a length threshold \(\alpha>0\) and then an
+admissible cut-off \(b>0\). The restrictions on \(b\) are specified in Appendix~\ref{app:arrival}; they
+allow all sufficiently small \(b\) with \(b<\delta/2\). Only then do we take \(n\) large. We write
+\(F_b\) for the event of reaching \(j\) without an exit and with at least one completion. The \emph{short
+historical arrival}, \(H_j\), requires regular entry at \(M\), persistence until \(j\), and fewer than
+\(\lceil\alpha j\rceil\) available squares on each diagonal and antidiagonal at arrival. By
+Lemma~\ref{lem:positividad-llegada}, on \(H_j\) the mask admits a queen completion, so \(H_j\subseteq
+F_b\). In each row the adaptive law chooses a square with probability proportional to the weight of its
+child board. If the sum of these weights equaled the weight of the parent, the recursion would hold
+exactly in that row. The logarithm of their ratio measures the defect of that step. We denote the sum of
+these logarithms up to the stopping time by \(A^\sharp\).
+
+The uniform solution and the adaptive law use the same stopping rule. This lets us compare the
 probabilities of the same history and retain the sign of the difference in exit probabilities.
-Appendix~\ref{app:signed} gives the exact identity, and Appendix~\ref{app:arrival} bounds the remainder
-in mean. For fixed \(b\), the defect accumulated in the interior contributes \(\int_b^1
-k(x)x^{-2}\,dx\). Appendix~\ref{app:interior} identifies its sixteen terms.
+Appendix~\ref{app:signed} gives the exact identity, and Appendix~\ref{app:arrival} controls the remainder
+in the mean. At fixed \(b\) the defect accumulated in the interior contributes \(\int_b^1
+\numerr(x)x^{-2}\,dx\). Appendix~\ref{app:interior} identifies its sixteen terms.
 
-\paragraph{What survives on the arrival board.}
-Consider two available squares \(e,f\) on the same diagonal. They lie in different rows and columns,
-so two rooks could occupy them simultaneously. The other two positions of the square determine four
-states. For \(e=(r,q)\) and \(f=(r+h,q+h)\), with \(h>0\), let \(X\) and \(Y\) be the availability
-indicators of \((r,q+h)\) and \((r+h,q)\), respectively. Figure~\ref{fig:frontera} shows the four
-cases.
+\paragraph{What survives on the arrival board.} Consider two available squares \(e,f\) on the same
+diagonal. They are in distinct rows and columns, so two rooks could occupy them simultaneously. The other
+two positions of the square determine four states. For \(e=(r,q)\) and \(f=(r+h,q+h)\), with \(h>0\), let
+\(X\) and \(Y\) be the availability indicators of \((r,q+h)\) and \((r+h,q)\), respectively.
+Figure~\ref{fig:frontera} shows the four cases.
 \input{figuras/frontera}
 
-All four cases occur in the solution \((1,3,5,7,2,4,6)\) on the board of order seven. Before any queen
-is exposed, \(X=Y=1\). Exposing \((7,6)\) rules out only \(Y\) among the four vertices, and exposing
-\((4,7)\) rules out only \(X\). If both queens are exposed, \(e,f\) remain available.
+All four cases occur in the solution \((1,3,5,7,2,4,6)\) on the board of order seven. Before any queen is
+revealed, \(X=Y=1\). Revealing \((7,6)\) rules out only \(Y\) among the four vertices, and revealing
+\((4,7)\) rules out only \(X\). If both are revealed, \(e,f\) remain available.
 
-We evaluate the response of the marked pair with \(X,Y\) fixed. In state \(11\) either diagonal pair
-can be marked, and each contributes its own response. Both belong to the same square, so their
-interaction enters the sum over complete squares only once. We denote the sum of the three boundary
-means by \(B_n(b)\). Taking \(n\to\infty\) and then \(b\downarrow0\), the two means over pairs give
-\(P_T\) and \(J\), and the interaction mean gives \(-S\). Appendices~\ref{app:boundary}
-and~\ref{app:weights} separate the contributions. Appendix~\ref{app:transfer} averages the pair
-response under the arrival law.
+The response of the marked pair is evaluated with \(X,Y\) fixed. In state \(11\) either diagonal pair may
+be marked, and each contributes its own response. Both belong to the same square, so their interaction
+enters the sum over complete squares once. We denote the sum of the three boundary means by \(\mathcal
+M_n(b)\). Taking \(n\to\infty\) and then \(b\downarrow0\), the two means over pairs give \(P_T\) and
+\(J\), and the mean interaction gives \(-S\). Appendices~\ref{app:boundary} and~\ref{app:weights}
+separate the contributions. Appendix~\ref{app:transfer} averages the pair response under the arrival law.
 
-\paragraph{Why compare two cut-offs?}
-For \(H=P_T+J-S\), write
+\paragraph{Why compare two cut-offs?} For \(\sumafrontera=P_T+J-S\), write
 \[
- \Phi(b)=F(1)-\tfrac1{12}+\int_b^1 k(x)x^{-2}\,dx+H.
+ \valorcorte(b)=F(1)-\tfrac1{12}+\int_b^1 \numerr(x)x^{-2}\,dx+\sumafrontera.
 \]
-The error satisfies \(\limsup_n |nR_Q(n)-\Phi(b)|\le C_\delta b+\eta(b)\), where
-\(\eta(b)=\limsup_n|B_n(b)-H|\to0\) as \(b\) decreases. The constant \(C_\delta\) applies to all
-sufficiently small admissible cut-offs. Thus each choice of \(b\) gives an approximation to the same
-sequence \(nR_Q(n)\). Comparing \(b\) and \(b'\), we see that the difference between the
-approximations tends to zero as both cut-offs go to zero. This gives a common limit before we
-integrate all the way to the endpoint. By analyticity and \(k(0)=0\), a linear term in \(k\) would
-produce the divergence \(k'(0)\log(1/b)\) there. Convergence forces this term to vanish.
-Appendix~\ref{app:closing} gives the comparison in detail and derives the corollary for \(d'(0)\).
+The error satisfies \(\limsup_n |nR_Q(n)-\valorcorte(b)|\le C_\delta b+\eta(b)\), where
+\(\eta(b)=\limsup_n|\mathcal M_n(b)-\sumafrontera|\to0\) as \(b\) decreases. The constant \(C_\delta\)
+works for all sufficiently small admissible cut-offs. Each choice of \(b\) approximates the same sequence
+\(nR_Q(n)\). Comparing \(b\) and \(b'\), the difference between the approximations tends to zero with the
+two cut-offs. This gives a common limit before integration up to the endpoint. Once poles are ruled out as
+in Lemma~\ref{lem:regularidad-extremo}, the constant term of \(\numerr\) would produce a divergence of
+order \(1/b\) in the truncated integral and the linear term one of order \(\log(1/b)\). The existence of
+a finite limit rules out both, in that order (Appendix~\ref{app:closing}).
 
-Figure~\ref{fig:cortes} illustrates the two levels in a particular history. In the proof, each
-admissible cut-off gives an approximation by averaging over histories. Since both approximations
-concern the same \(nR_Q(n)\), the triangle inequality gives \(\lvert\Phi(b)-\Phi(b')\rvert\le
+Figure~\ref{fig:cortes} illustrates the two levels in a particular history. In the proof, each admissible
+cut-off gives an approximation through averages over histories. Since both approximations refer to the
+same \(nR_Q(n)\), the triangle inequality gives \(\lvert\valorcorte(b)-\valorcorte(b')\rvert\le
 C_\delta(b+b')+\eta(b)+\eta(b')\).
 
 \input{figuras/cortes}

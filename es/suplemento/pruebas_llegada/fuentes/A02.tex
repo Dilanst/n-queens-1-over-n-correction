@@ -1,0 +1,42 @@
+\section{Elección de constantes para el corte proporcional}
+Se admiten las estimaciones deterministas citadas en el registro de fuentes, con sus
+hipótesis uniformes. El objetivo aquí es la compatibilidad de los parámetros.
+\begin{enumerate}
+\item Se fijan la banda histórica de C, su $\delta$ y la tasa de salidas con su coste.
+Se reservan $M_0,\gamma_T$ de la parte 01. Para los lemas locales se toma una clase
+de referencia con esos márgenes y una cota superior fija de masa admisible.
+Se usa la envolvente de \emph{Grados ponderados}, parte 05, en el alcance
+$v\le 8\log n$ (logaritmos naturales). Sus constantes son las de la clase de referencia.
+Las caras sólo activan los $v$ sitios en el mismo exterior de torres. Los radios locales
+$\kappa/v,\kappa'/d_i$ dependen de los márgenes del exterior, según sus partes 02--04.
+No se deduce uniformidad sobre máscaras arbitrarias a partir del cálculo uniforme del hipergrafo.
+\item Sea $C_1$ una base común que domine las de la suma puntual y en media, antes
+de introducir el coste $\delta^{-2v}$ de prescripción. Elegimos $0<a<1$ con
+$a\log(\max(2,C_1))<1/4$ y después $\rho\ge2$ con $a\log\rho>3$.
+Los dos cortes $\lfloor a\log j\rfloor$ y $\lceil4\log n/\log\rho\rceil$ caben en
+$8\log n$ para $n$ grande. Así el alcance empleado para obtener $C_1$ no se recalcula.
+\item Con $\eta$ el umbral común de las dos normas de activación para ese radio,
+escogemos $0<\alpha<\alpha_{\rm hist}$ cumpliendo la parte 01 y además
+$M_0\alpha<\min(\epsilon_{\mathcal D},\eta/(2\rho^2))$ para la clase ya fijada.
+En el extremo corto, $\rho^2(\epsilon_A+1/j)\le\eta$ para $j$ grande.
+Si una entrada se expresa en carga de $D_A$, se impone asimismo el umbral
+correspondiente con $4C\alpha$. Son constantes fijadas antes que $\alpha$.
+Escogemos $\delta_*\in(0,1)$ con $C_1\delta^{-2}\delta_*^{1/3}<1$.
+\item Se toma $0<b<\min(\delta/2,\delta_*)$ y se disminuye una sola vez para que
+\[
+ \frac{\alpha}{4}\log\frac{2b}{\alpha\delta}
+        +\frac{C_{\rm pres}\alpha^2}{16}<-(\beta+3),\qquad
+ \frac{2b}{\alpha\delta}<1 .
+\]
+Es posible con $\alpha,\delta,\beta,C_{\rm pres}$ ya fijos. Se usa la estimación de
+longitudes de \emph{Llegada y completabilidad}, parte 02. Para $j=\lfloor bn\rfloor$,
+$\lceil\sqrt n\rceil\le j$ y $v^2/j=o(1)$ hasta $8\log n$. Todas las elecciones
+preceden al límite $n\to\infty$. No se afirma uniformidad de la tasa en $b\downarrow0$.
+\end{enumerate}
+Bajo estas premisas, los dos radios dan los respectivos restos
+$O_\rho(j^2\rho^{-\lfloor a\log j\rfloor})=O_\rho(j^{-1})$ y $O_\rho(n^{-2})$.
+La suma de grados de la parte 07 de \emph{Grados ponderados} sigue siendo geométrica
+con el factor $\delta^{-2v}$ bajo $\nu$. El suceso corto lleva indicador, no se divide
+por su probabilidad. Las estimaciones locales se aplican en ese extremo.
+La acotación previa de cada base en una clase fija es esencial. Si tal base
+se conociese sólo tras elegir $\alpha$, este orden de elección no la suministraría.

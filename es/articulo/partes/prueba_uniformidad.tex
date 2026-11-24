@@ -1,0 +1,123 @@
+\subsection{Límite uniforme de las medias y suma sobre los niveles}
+La regularidad antes de la parada da \(p_i\le C_b/m\), una vacancia diagonal
+minorada y una brecha de filas y columnas~\cite[\S7]{pc}.
+En consecuencia \(c_b I\le S_0+\Pi_m\le 4I\) para algún \(c_b>0\).
+Para ver la cota inferior, la forma cuadrática es la suma de
+\(\sum_i p_i(a_i^{\mathsf T}y)^2\) y \(\sum_f h_f y_f^2\), más la proyección de calibre.
+El segundo término controla las componentes diagonales y la brecha controla las axiales
+ortogonales al calibre. La cota superior sigue de la diagonal unidad de \(S_0\), de que su
+masa fuera de la diagonal por fila es a lo sumo tres y de que la proyección actúa en su núcleo.
+
+Sea \(A_m=S_0+\Pi_m-I\), \(M=(I+A_m)^{-1}=R+\Pi_m\) y \(r_b=1-c_b/4<1\).
+El polinomio \(P_N=\tfrac14\sum_{h=0}^N[I-(I+A_m)/4]^h\) satisface
+\(\|M-P_N\|_{\rm op}\le r_b^{N+1}/c_b\). Para controlar una entrada multiplicada
+por \(m\) usamos \(M=I-A_m+A_mMA_m\). La suma absoluta de una fila de \(A_m\) es
+a lo sumo cuatro y su máximo es \(O_b(m^{-1})\), luego
+\(\|A_me_u\|_2=O_b(m^{-1/2})\) para todo \(u\). Así
+\[
+ \sup_{u,v}m\,|[A_m(M-P_N)A_m]_{uv}|\le C_b r_b^{N+1}.
+\]
+Esto acota el error en cada entrada de \(m(R-I)\) al sustituir \(M\) por \(P_N\)
+en la identidad anterior. Las entradas originales y sus truncaciones están acotadas.
+
+A \(N\) fijo, las potencias de \(S_0-I\) son sumas sobre sucesiones de líneas adyacentes.
+Las inserciones de \(\Pi_m\) se simplifican usando \((S_0-I)\Pi_m=-\Pi_m\).
+Un producto de recorridos es una suma finita de tipos de incidencia. Si dos etiquetas afines
+son idénticas en un tipo, se cuenta la línea una vez. Una coincidencia adicional impone
+una ecuación no constante y deja \(O_{b,N}(n^{d-1})\) posiciones entre las \(O(n^d)\)
+de un tipo con \(d\) parámetros. En la diagonal, la ida y vuelta de longitud dos fuerza
+la misma casilla en ambos pasos. Su contribución es \(3m\sum_{i\in u}p_i^2\), pues hay tres
+elecciones de la otra línea. Su exceso sobre el producto de las medias da precisamente
+\(\theta_u=3\eta_u s_u-\int K_{uv}^2\,d\rho(v)\). Los cruces entre diagonales se
+cuentan en las clases de paridad de la sección~\ref{sec:contracciones}.
+
+A cada tipo fijo se aplica el seguimiento de líneas hasta el corte auxiliar \(b/4\)
+de~\cite[\S4]{tc}. A tolerancia fija \(\eta>0\), fuera de una excepción de probabilidad
+exponencial, \(mp_i=W(i)(1+O_b(\eta+m^{-1}))\) en los sitios vivos y
+\(h_f=u_f/U_f+O_b(\eta+m^{-1})\). Para un número fijo de marcas el riesgo en un paso es
+la suma de sus riesgos individuales salvo \(O_{b,N}(n^{-2})\) por dobles ocupaciones.
+Al multiplicar estas supervivencias hasta el nivel \(m\), una marca axial aporta \(x\)
+y una diagonal aporta \(U_f(x)\), pues \(\partial_x\log U_f=(1-u_f)/U_f\).
+La aproximación es uniforme en las marcas y en \(j\le m\le n\). Se toma primero \(n\to\infty\)
+y luego \(\eta\downarrow0\). Las sumas normalizadas de cada clase son sumas de Riemann
+sobre politopos fijos. Los factores del perfil son continuos en \(x\) con módulo común en
+\([b,1]\) en cada pieza. Por tanto los truncados convergen uniformemente en los niveles
+a integrales continuas de los recorridos.
+
+Para aplicar el mismo argumento a \(mV\), sea \(\kappa_i=a_i^{\mathsf T}Ra_i-4\).
+La expansión del prefactor~\cite[\S7]{pc} da, con la última suma sobre todas las líneas,
+\[
+ V=-14\sum_i p_i^3-\tfrac32\sum_i p_i^2\kappa_i
+       +\tfrac94\sum_u\left(\sum_{i\in u}p_i^2\right)^2+O_b(m^{-2}).
+\]
+Las doce entradas fuera de la diagonal en \(m\kappa_i\) aportan \(-12W(i)\) en la
+casilla marcada. Combinadas con \(-14\) dan \(4\langle W^2\rangle_i\).
+Las partes largas y la diagonal corregida dan los sumandos con \(L_0,\theta\) de
+la sección~\ref{sec:profile-data}. El cuadrado de la suma de fibra da su último término.
+
+En las contracciones, el centro tiene masa uno, el exterior masa a lo sumo uno y las
+cuatro fibras masa a lo sumo cuatro. La medida de las líneas libres tiene masa \(\le6/b\).
+Los pasos de cuadrados tienen masa total \(\le8/b\). Al desarrollar la diferencia de productos,
+la cota de cada entrada se multiplica sólo por masas y factores acotados para \(b\) fijo.
+Así la cola del grado \(N\) es \(\le C_b r_b^{N+1}\), uniforme en el nivel tanto para la media
+física como para su integral límite. El resto de la inserción en la escala \(m^2\) es
+\(O_b(m^{-1})\). Tomar primero \(n\to\infty\) y después \(N\to\infty\) da
+\begin{align*}
+ \sup_{j<m\le n}\Big|
+ \mathbb E_\nu\!\left[m^2\sum_{c\in i_m}p_c
+       \big(P_c+(\delta_c^0)^2/2\big);H_j\right]-d(m/n)\Big|&\longrightarrow0,\\
+ \sup_{j\le m\le n}\left|\mathbb E_\nu[mV(B_m);H_j]-\mathcal V(m/n)\right|
+  &\longrightarrow0 .
+\end{align*}
+Aquí \(i_m\) es la fila revelada y \(H_j\) la llegada regular corta. Para promediar la fila
+se usa primero el indicador de supervivencia anterior a su elección. Dado el padre, la fila
+es uniforme y la media se convierte en \(m^{-1}\sum_c p_c(\cdot)\).
+Cambiar ese indicador por \(\mathbf1_{H_j}\) en los observables acotados cuesta
+\(O_b(\nu(H_j^c))\). La segunda fórmula usa todas las familias en el potencial.
+Este argumento identifica una media sobre padres y da continuidad del límite en \([b,1]\).
+La evaluación decimal de esas integrales por mallas requiere además una cota de su error espacial.
+
+\paragraph{Los extremos y el cambio de ley.}
+El error uniforme \(\epsilon_n(b)\) de la primera media contribuye a lo sumo
+\(\epsilon_n(b)n\sum_{m>j}m^{-2}=o_b(1)\). El término de \(P_c+(\delta_c^0)^2/2\)
+da por tanto \(\int_b^1d(x)x^{-2}\,dx\). Para \(\Delta_cV\), la probabilidad de un hijo
+dada la fila bajo \(\nu\) es \(p_c(1+O_b(m^{-1}))\), y \(|\Delta_cV|\le C_bm^{-2}\).
+La sustitución en la media cuesta \(O_b(m^{-3})\). Los incrementos centrados hasta la parada
+forman una martingala de segundo momento \(O_b(\sum_{m>j}m^{-4})\).
+Si \(M_\tau\) es su suma detenida, las diferencias son ortogonales en \(L^2(\nu)\).
+Así \(n|\mathbb E_\nu[M_\tau;H_j]|\le n(\mathbb E_\nu M_\tau^2)^{1/2}\nu(H_j)^{1/2}\).
+Como \(\sum_{m>j}m^{-4}=O(j^{-3})\), el coste a escala \(n\) es \(O_b(n^{-1/2})\).
+En cada historia de \(H_j\) los incrementos realizados suman \(V(B_j)-V(B_n)\).
+La segunda media uniforme da \(\mathcal V(b)/b-\mathcal V(1)\).
+
+Hasta la parada, \(n|A|\le C_b\) para el predictor ordinario. Por el Lema~\ref{lem:previa},
+\(n|R_Q(n)|\) también está acotado. En \(H_j\) ponemos
+\(s=A-R_Q(n)+g_T+\Gamma\). Allí \(|s|=O_b(n^{-1})\) y la densidad inversa de historias
+es \(e^{-s-g^\flat}\). Por \eqref{eq:arrival-estimate},
+\[
+ \int_{H_j}|d\mu-d\nu|
+ \le\mathbb E_\mu[|1-e^{-s}|+e^{-s}|1-e^{-g^\flat}|;H_j]=O_b(n^{-1}) .
+\]
+Con las estimaciones de salida del apéndice~\ref{app:signed} se sigue que
+\(n\mathbb E_\mu A=n\mathbb E_\nu[A;H_j]+o_b(1)\).
+Para las torres pongamos \(u_e=g_T(M_e^{\rm fis})-g_T(M)\).
+La máscara \(M_e^{\rm fis}\) se obtiene del menor simple \(M_e\) aplicando los dos vetos
+diagonales del hijo. El cambio es \(O_b(m^{-2})\), incluido el paso que entra en la salida.
+Así \(\log\rho^\sharp-\log\rho=\log\mathbb E_{\nu,i}e^{u_e}
+ =\mathbb E_{\nu,i}u_e+O_b(m^{-4})\).
+La densidad detenida y las cotas ponderadas de salida dan
+\(D(\mu^\tau\Vert\nu^\tau)=\mathbb E_\mu[A+\log X]-R_Q(n)=O_b(1)\).
+Sean \(d_m\) las entropías condicionales de las dos leyes de hijo dada la fila,
+iguales a cero después de la parada. Las filas tienen la misma ley uniforme.
+La descomposición de la entropía relativa en sus incrementos condicionales da
+\(\sum_m\mathbb E_\mu d_m=D(\mu^\tau\Vert\nu^\tau)\). Pinsker acota
+la diferencia de las dos medias de \(u_e\) por \(2C_bm^{-2}\sqrt{d_m/2}\).
+Por Jensen y Cauchy--Schwarz, la suma de estas diferencias a escala \(n\) cuesta
+\(O_b(n(\sum_{m>j}m^{-4})^{1/2}D(\mu^\tau\Vert\nu^\tau)^{1/2})=O_b(n^{-1/2})\).
+Los incrementos realizados de torres se telescopan y añaden
+\((F(b)-1/12)/b-(F(1)-1/12)\) a los extremos anteriores. En conclusión, a cada corte fijo,
+\[
+ \lim_{n\to\infty} n\mathbb E_\mu A^\sharp
+ =\int_b^1\frac{d(x)}{x^2}\,dx+\frac{G(b)}b-G(1)
+ =\int_b^1\frac{\numerr(x)}{x^2}\,dx .
+\]

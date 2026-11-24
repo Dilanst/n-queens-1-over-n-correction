@@ -1,38 +1,33 @@
-\section{The three boundary means}\label{app:boundary}
-In \(\Gamma\) each square has been isolated, but both of its diagonal pairs may be available at the
-same time. To retain the sign and count their interaction only once, we start with the correction for
-one pair and then bring the two pairs together in the square. Here \(p_e\) denotes the stationary
-\emph{rook} occupancy on the binary mask. For an available diagonal pair \(P=\{e,f\}\), let \(\pi^{\rm
-ex}_P\) be its joint occupancy probability in a uniform rook placement. Let
-\(\pi^T_P=\exp[L_T(M_P)-L_T(M)]\), where \(M_P\) deletes its four row and column endpoints. With
-\(\mathsf G(e,f)\) denoting the cross-response of the rook stationary point and \(\chi_e\) its
-single-square relative correction, define
-\[
- \pi_{1,P}=p_ep_f(1-\mathsf G(e,f)+\chi_e+\chi_f),\qquad
- X_P=p_ep_f(p_e+p_f)\mathsf G(e,f).
-\]
-For a single pair the square correction is \(\log(1-\pi^{\rm ex}_P)-\log(1-\pi_{1,P})-X_P+O(j^{-5})\).
-The probabilities are \(O(j^{-2})\) and their difference is \(O(j^{-4})\), so integrating the
-logarithmic derivative gives a linearization error of \(O(j^{-6})\). The complete square gives the
-corrections for both pairs and an additional term \(-3\prod_{s\in\square}p_s+O(j^{-5})\). There are at
-most \(j^2(j-1)\) pairs, since each square has at most \(2(j-1)\) neighbors and each pair has two
-endpoints. Thus \(B_n(b)\), given below, differs from \(n\mathbb E_\mu[\Gamma;F_b]\) by
-\(O(n/j^2)=o_b(1)\).
-\begin{align*}
- B_n(b)={}&-n\mathbb E_\mu[\textstyle\sum_P(\pi^{\rm ex}_P-\pi^T_P);F_b]\\
-           &-n\mathbb E_\mu[\textstyle\sum_P(\pi^T_P-\pi_{1,P}+X_P);F_b]
+\section{The three boundary means}\label{app:boundary} In \(\Gamma\) each square has been isolated, but
+its two diagonal pairs can be available simultaneously. To preserve the sign and count their interaction
+once, we start with the correction for one pair and then combine both pairs in the square. Here \(p_e\)
+denotes the stationary \emph{rook} occupancy on the binary mask. For an available diagonal pair
+\(\parmar=\{e,f\}\), let \(\pi^{\rm ex}_{\parmar}\) be its joint probability in a uniform rook placement.
+Set \(\pi^T_{\parmar}=\exp[L_T(M_{\parmar})-L_T(M)]\), where \(M_{\parmar}\) deletes its four row and
+column endpoints. With \(\mathsf G(e,f)\) the cross response of the stationary rook point and \(\chi_e\)
+its single-square relative correction, define \[
+ \pi_{1,\parmar}=p_ep_f(1-\mathsf G(e,f)+\chi_e+\chi_f),\qquad
+ X_{\parmar}=p_ep_f(p_e+p_f)\mathsf G(e,f).
+\] For a single pair the square correction is \(\log(1-\pi^{\rm
+ex}_{\parmar})-\log(1-\pi_{1,\parmar})-X_{\parmar}+O(j^{-5})\). The probabilities are \(O(j^{-2})\) and
+their difference is \(O(j^{-4})\). Integrating the logarithmic derivative gives a linearization error of
+\(O(j^{-6})\). The full square contributes the corrections for its two pairs and an additional term
+\(-3\prod_{s\in\square}p_s+O(j^{-5})\). There are at most \(j^2(j-1)\) pairs, since each square has at
+most \(2(j-1)\) neighbors and each pair has two endpoints. Thus the following quantity \(\mathcal
+M_n(b)\) differs from \(n\mathbb
+ E_\mu[\Gamma;F_b]\) by \(O(n/j^2)=o_b(1)\). \begin{align*}
+ \mathcal M_n(b)={}&-n\mathbb E_\mu[\textstyle\sum_{\parmar}(\pi^{\rm ex}_{\parmar}-\pi^T_{\parmar});F_b]\\
+           &-n\mathbb E_\mu[\textstyle\sum_{\parmar}(\pi^T_{\parmar}-\pi_{1,\parmar}+X_{\parmar});F_b]
             -3n\mathbb E_\mu[\textstyle\sum_\square\prod_{s\in\square}p_s;F_b].
-\end{align*}
-Inserting \(\pi^T_P\) into this decomposition serves two purposes. The first mean measures the error
-of the rook predictor for the pair. The second retains the insertion error for a marked pair. To
-average it, we must know which of the other two vertices remain available. Let \(u_f\) be the final
-vacancies of the two diagonal families and set \(U_f(b)=u_f+b(1-u_f)\). Let \(v_b=U_D(b)U_A(b)\), let
-\(p_b\) be its doubly stochastic scaling~\cite{sk}, and set \(W_b^0=p_b/v_b\). For a square with
-minimum coordinates \((r,c)\) and side length \(h\), we integrate over \(\Omega=\{0<h<1,\
-0<r,c<1-h\}\). With \(d_s=U_D(b,r-c+sh)\), \(a_s=U_A(b,r+c+sh)\), the availability of its oriented
-pair carries the factor \(B_o\). The indicators of the other two vertices are \(I_l I_u,I_l I_v\).
-Their four joint probabilities and the factor for the marked pair are given below.
-\[
+\end{align*} Introducing \(\pi^T_{\parmar}\) in this decomposition serves two purposes. The first mean
+measures the error of the rook predictor on the pair. The second retains the insertion error for a marked
+pair. To average it, we need to know which of the other two vertices remain available. Let \(u_f\) be the
+final vacancies of the two diagonal families, and set \(U_f(b)=u_f+b(1-u_f)\). Let \(v_b=U_D(b)U_A(b)\),
+let \(p_b\) be its doubly stochastic scaling~\cite{sk}, and put \(W_b^0=p_b/v_b\). A square with minimum
+coordinates \((r,c)\) and side length \(h\) is integrated over \(\Omega=\{0<h<1,\ 0<r,c<1-h\}\). With
+\(d_s=U_D(b,r-c+sh)\) and \(a_s=U_A(b,r+c+sh)\), the availability of its oriented pair contributes the
+factor \(B_o\). The other two vertices have indicators \(I_l I_u,I_l I_v\). Their four joint
+probabilities and the factor for the marked pair are \[
 \begin{array}{c|cccc}
 o&B_o&l&u&v\\\hline
  D&d_0a_0a_2&a_1&d_{-1}&d_{+1}\\
@@ -46,33 +41,25 @@ s&q_{o,s}\\\hline
 01&l(1-u)v\\
 11&luv
 \end{array}
-\]
-The submeasure for each state is \(b^4 B_o q_{o,s}\,dr\,dc\,dh\). The four surviving labels are two
-rows and two columns. A repeated diagonal vacancy retains the same indicator. There are
-\(\sum_{h=1}^{n-1}(n-h)^2\) positions for each orientation. The Riemann normalization contributes
-\(n^3\), with four factors of \(j^{-1}\) and an outer factor of \(n\). Therefore \(n^4 b^4/j^4\to1\).
-Inserting the two marked weights gives \(w_{o,b}=B_oW_b^0(e)W_b^0(f)=p_b(e)p_b(f)/U_o(b)\). Even
-states of zero mass are retained, without dividing by \(q_{o,s}\).
+\] Each state has submeasure \(b^4 B_o q_{o,s}\,dr\,dc\,dh\). The four live labels are two rows and two
+columns. A repeated diagonal vacancy retains the same indicator. Each orientation has
+\(\sum_{h=1}^{n-1}(n-h)^2\) positions. The Riemann normalization contributes \(n^3\), with four factors
+of \(j^{-1}\) and an outer factor of \(n\). Hence \(n^4 b^4/j^4\to1\). Inserting the two marked weights
+gives \(w_{o,b}=B_oW_b^0(e)W_b^0(f)=p_b(e)p_b(f)/U_o(b)\). Even states of zero mass are retained, with no
+division by \(q_{o,s}\).
 
-For the first mean, integrating \(p_b\) over each line gives its mass \(m_f\). Let
-\[
- W_b=\sum_{f=D,A}\int\frac{m_f^2}{2U_f},\qquad
- \gamma_b=\frac{m_D}{U_D}+\frac{m_A}{U_A},\qquad
+For the first mean, let \(m_{f,b}\) be the mass of \(p_b\) on each line of family \(f\), with the same
+fiber measure \(dr\) used for the final mass \(m_f\) in Section~\ref{sec:profile-data}. Set \[
+ W_b=\sum_{f=D,A}\int\frac{m_{f,b}^2}{2U_f},\qquad
+ \gamma_b=\frac{m_{D,b}}{U_D}+\frac{m_{A,b}}{U_A},\qquad
  \theta_b(r)=\int p_b(r,c)\gamma_b(r,c)\,dc .
-\]
-Deleting the four endpoints in the rook expansion gives the size term \(W_b/6\), the normalization
-term \(-2F(b)W_b\) and the variation \(-dF_2(b)\) of the row and column measures. Here \(dF_2(b)\) is
-the derivative of the rook functional at fixed kernel when both uniform measures are multiplied by
-\(1+\varepsilon(2W_b-\theta_b)\), using column symmetry. The direction has mass zero because
-\(\int\theta_b=2W_b\). This gives \(P_T=\lim_{b\downarrow0}[(1/6-2F(b))W_b-dF_2(b)]\). For the third
-mean, the square uses six distinct diagonal labels. Two of them occur twice among the eight vacancy
-factors of \(\prod_s W_b^0(s)\). Multiplying by the six distinct vacancies and taking \(p_0=\nu_1\)
-leaves exactly
-\[
+\] \input{partes/frontera_menor_doble} \input{partes/frontera_media_pt} \paragraph{The third mean.} For
+the third mean, the square uses six distinct diagonal labels. Two of them each occur twice among the
+eight vacancy factors in \(\prod_s W_b^0(s)\). Multiplying by the six distinct vacancies and setting
+\(p_0=\nu_1\) leaves exactly \[
  -S=-3\int_\Omega
        \frac{\prod_{s\in\square}\nu_1(s)}
             {u_D(r-c)\,u_A(r+c+h)}\,dr\,dc\,dh .
-\]
-This identifies the first and third means. The second retains two pieces of information about the mask
-on the marked square, namely the crossing indicators. Appendix~\ref{app:weights} computes the pair
-error with these two indicators fixed.
+\] This identifies the first and third means. The second retains two pieces of mask data at the marked
+square, the indicators of its two intersections. Appendix~\ref{app:weights} computes the pair error with
+these two indicators fixed.

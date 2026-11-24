@@ -1,55 +1,125 @@
-\section{Summing the remainder at arrival}\label{app:arrival}
-A single geometric square can contribute on the scale \(1/n\) relevant to \eqref{eq:signed-mean}. After we
-subtract \(\Gamma\), each surviving support must satisfy the geometric constraints of two geometric squares.
-This additional cost lets us sum the errors with a bound that decreases with \(b\). Consider first the
-short historical arrival event \(H_j\) under \(\nu\). For a set of board squares \(Y\), we activate only the
-diagonal constraints supported on \(Y\), keeping the entire rook mask. Let \(e(Y)\) be the logarithm
-of the avoidance probability minus the change in the predictor, and let \(e_C(Y)\) be the same
-expression using only the pairs of \(C\). The coefficient of a support \(U\) is \(\sum_{Y\subseteq
-U}(-1)^{|U|-|Y|}e(Y)\). An isolated board square cancels when we pair subsets that differ only in that
-square. If all pairs belong to one geometric square, the coefficient cancels against that of \(e_C\). If two
-distinct geometric squares are involved, no \(e_C\) contributes, since the board squares would have to lie
-at the four vertices of \(C\), whose only diagonal pairs are the two of \(C\). The remainder therefore
-sums the original coefficients of supports that have no isolated board squares and contain at least two
-distinct geometric squares. The subtracted part has degree at most four.
+\section{Summing the arrival remainder}\label{app:arrival}
+\begin{lema}[Integrated remainder after subtracting the squares]\label{lem:llegada-integrada}
+Fix the macroscopic parameter \(\delta\), the diffusion, gap, and load margins of the historical class,
+and the exit rates \(c_*>2\beta\). Within that class fix the range \(L=8\) and the base \(C_1\) for
+counting types. Choose \(0<a<1\) with \(a\log(\max(2,C_1))<1/4\) and then \(\rho\ge2\) with
+\(a\log\rho>3\) for the global activation norm. Choose \(\alpha\) below the historical threshold and
+small enough to obtain the rook class bounds and the load bounds for this norm on short arrival. Let
+\(C_{\rm pres}\) be the constant for prescribing rows and columns under \(\nu\). It is fixed before the
+cut-off. The probability of each child given the row is \(p_e(1+O(m^{-1}))\) by the proof of Theorem~8.1
+of~\cite{pc}, with class constants independent of \(n/m\). There exist \(\delta_*>0\) and
+\(C_\delta<\infty\) such that for every \(0<b<\min(\delta/2,\delta_*)\) satisfying
+\[
+ x_0=\frac{2b}{\alpha\delta}<1,\qquad
+ \frac{\alpha}{4}\log x_0+\frac{C_{\rm pres}\alpha^2}{16}<-(\beta+3),
+\]
+stopping at first exit or at \(j=\lfloor bn\rfloor\) gives
+\begin{equation}\label{eq:arrival-estimate}
+ \limsup_{n\to\infty} n\,\mathbb E_\mu
+  [|g^\flat(B_j)|+|e^{-g^\flat(B_j)}-1|;F_b]\le C_\delta b .
+\end{equation}
+The event \(H_j\) consists of the histories that entered regularly at \(\lceil\delta n\rceil\), remained
+regular up to and including the child of size \(j\), and have fewer than \(\lceil\alpha j\rceil\)
+available cells on each diagonal there. The same \(C_\delta\) works for all these cut-offs. The threshold
+\(n_0(b)\) may depend on \(b\).
+\end{lema}
+We first prove the arrival estimate under \(\nu\), then the preliminary bound of Lemma~\ref{lem:previa},
+and use both to prove the assertion under \(\mu\).
+\input{partes/llegada_menores}
+\input{partes/llegada_soportes}
+\input{partes/llegada_rango}
+\input{partes/llegada_norma}
+\input{partes/llegada_prescripcion}
+\subsection{Integration under the adaptive law and the initial bound}
+\begin{proof}[First part of the proof of Lemma~\ref{lem:llegada-integrada}]
+We first work on \(H_j\) with its indicator under the law \(\nu\). Fix the baseline mask \(M\) and let
+\(e(Y)\) be the logarithm of the avoidance probability under the rook law minus the change in the
+predictor upon activating the diagonal pairs contained in \(Y\subseteq M\). We keep the rook mask fixed
+on every face. Let \(e_C(Y)\) be the same error for the pairs of square \(C\). Thus \(e(\varnothing)=0\),
+\(e_C(M)=\gamma_C\) and \(g^\flat=e(M)-\sum_C e_C(M)\). By inversion, the coefficient of support \(U\) is
+obtained by applying \(\Delta_U f=\sum_{Y\subseteq U}(-1)^{|U|-|Y|}f(Y)\). A site belonging to none of
+the activatable pairs in \(U\) cancels the faces in pairs. If the pairs of \(U\) belong to the same
+square, \(e=e_C\) on all its faces. If there are two distinct squares, each \(e_C\) omits some site of
+\(U\), because among the four vertices of \(C\) only its two opposite pairs are diagonal. The original
+coefficient \(\Delta_U e\) remains only on supports with at least two distinct squares and no isolated
+sites. The subtracted term has degree at most four. Two pairs determining distinct squares give
+nonproportional equations in coordinate differences, since proportionality would fix the same two rows
+and columns and hence the same square.
 
-Let \(v\) be the number of board squares, \(h\) the total number of distinct row and column labels, \(D\)
-the number of free coordinates, and \(p\) the support exponent. Prescribing the \(h\) lines gives the
-factor \((j/n)^h\), together with \(\delta^{-2v}\exp(C_Lv^2/j)\) in the prescription bound. For each
-type, the number of positions is of order \(n^D\). Write \(d_*=h-D\), \(q=p-D-1\). Two distinct
-geometric squares impose two nonproportional linear equations on the row and column coordinates. Hence
-\(d_*\ge2\), and the support bound gives \(q\ge0\). The scaled factor is
+Let \(v=|U|\), let \(h\) be the number of distinct axial indices, and let \(D\) be the dimension of the
+space of positions. For \(5\le v\le8\log n\) we integrate the approximant bound in
+Proposition~\ref{prop:soportes-llegada}. For \(v\le4\) we use its physical version. The classification
+for two pairs in Lemma~\ref{lem:tipos-llegada} requires them to be the only diagonal conflicts. With
+additional conflicts we use the full graph in Proposition~\ref{prop:soportes-llegada}. In either case
+Lemma~\ref{lem:rango-llegada} gives \(D\le p-1\). In particular, \(p\ge v\) and \(q=p-D-1\ge0\). Let
+\(d_*=h-D\). The two squares give \(d_*\ge2\). All row and column variables occur in the diagonal
+equations because each site has a diagonal neighbor. A basis of these equations covers all \(h\)
+variables, and each equation contains at most four. Hence \(h\le4d_*\), \(D\le3d_*\) and
+\[
+ v-1\le p-1=D+q\le3(d_*+q),\qquad d_*-1+q\ge(v-4)/3 .
+\]
+
+\paragraph{Prescription, substitution, and tail.}
+Choosing independent coordinates gives at most \(n^D\) positions per type. Prescribing the \(h\) labels
+on \(H_j\) costs at most \(\delta^{-2v}(j/n)^h\exp(C_Lv^2/j)\) by Lemma~\ref{lem:prescripcion-larga}. At
+scale \(n\) this gives
 \[
  n\,n^D j^{-p}(j/n)^h=(j/n)^{d_*-1}j^{-q}
- \le (b/\delta_*)\delta_*^{d_*-1}j^{-q}
- \qquad(0<b\le\delta_*).
+ \le (b/\delta_*)\delta_*^{d_*-1}j^{-q}.
 \]
-We factor out \(b/\delta_*\) before summing. For \(v\le4\) there is an absolute bound on the number of
-types. For noncollinear types the weighted count uses \(d_*-1+q\ge(v-4)/3\). Thus for \(5\le v\le
-N=\lceil4\log n/\log\rho\rceil\), with \(\rho\ge2\) fixed, the bound after summing over types of that
-size is
+Extract \(b/\delta_*\) before summing. For \(v\le4\) the number of types is bounded by an absolute
+constant. For the noncollinear types with \(5\le v\le N=\lceil4\log n/\log\rho\rceil\le L\log n\), the
+count of unlabeled types, weighted by \(\prod d_i\), gives \(C^v(4v^2)^{L_s}/c_s!\), with
+\(L_s=v+c_s-D\le q+2\). The factorial absorbs \(v^{c_s}/c_s!\le e^v\), and \(j^{-q}\) contributes
+\((v^2/j)^q\le\delta_*^q\) for \(n\ge n_0(b)\). The two additional powers of \(4v^2\) and the sum over
+parameters leave a fixed polynomial exponent \(d_{\rm pol}\). By the rank bound the total cost at this
+degree is at most
 \[
- (b/\delta_*) C_L(C_1\delta^{-2})^v v^{d_{\rm pol}}\delta_*^{(v-4)/3}.
+ (b/\delta_*) C_L (C_1\delta^{-2})^v v^{d_{\rm pol}}\delta_*^{(v-4)/3}.
 \]
-Choose \(\delta_*\) so that \(C_1\delta^{-2}\delta_*^{1/3}<1\). For a collinear type with \(v\ge3\) we
-have \(p=v+2,h=2v\), with at most \(4n\,n^v/v!\) supports. This gives \(C(C_2\delta^{-2})^v
-v^2(j/n)^{v-2}\), and we decrease \(\delta_*\) once to sum this bound as well. Substituting atoms up
-to degree \(N\) incurs an error of \(O(j^{-8})\) in value, and the global norm bounds the tail by
-\(O_\rho(n^{-2})\). Both errors vanish after scaling for each fixed \(b\). Thus \(\limsup_n n\mathbb
-E_\nu[|g^\flat|;H_j]\le C_\delta b\), with \(C_\delta\) independent of \(b\).
+The base \(C_1\) is set aside along with the margins. Choose \(\delta_*\) so that
+\(C_1\delta^{-2}\delta_*^{1/3}<1\).
 
-This bound controls a mean of \(|g^\flat|\) under \(\nu\). Equation \eqref{eq:signed-history} also
-involves the exponential under \(\mu\). The density factor \(X\) allows us to use the same bound for
-both, since at arrival
-\[
- X\,|e^{-g^\flat}-1|=e^{g_T+\Gamma}|1-e^{g^\flat}|.
-\]
-On \(H_j\) the positive part of the diagonal error has a class bound, \(|g_T|+|\Gamma|\le C/j\) and
-\(|A-R_Q(n)|=O_{b,\delta}(1/n)\). We apply \(|e^y-1|\le e^{y^+}|y|\) to the density \(Xe^{A-R_Q(n)}\).
-On \(F_b\setminus H_j\) the weighted probability is \(O(e^{-2j})\). For \(0<X\le1\) we have \(X|\log
-X|\le1/e\), and above one we use \(X|\log X|\le X(C_0+\beta j)\) in the outer class. The contribution
-of this event to the left-hand side of \eqref{eq:arrival-estimate} before scaling is
-\(O((1+j)e^{-2j})\). To obtain \eqref{eq:arrival-estimate} we first fix \(\delta\), the margins,
-\(\rho\) and the class constants, then \(\delta_*\) and finally the cut-off. The threshold for \(n\)
-may depend on \(b\). The constant \(C_\delta\) works for all these cut-offs, as required by the final
-comparison of two cut-offs in Appendix~\ref{app:closing}.
+We must restore the collinear supports, which were subtracted in full in the proof of the rate. For
+\(v=3,4\) we use the physical case of Proposition~\ref{prop:soportes-llegada} and for \(5\le v\le N\) its
+approximant. The graph is a tree with \(p=v+2\), \(h=2v\) and \(d_i\le v\). There are at most
+\(4n\,n^v/v!\) supports. Since \(v^v/v!\le e^v\), the cost per degree is \(C(C_2\delta^{-2})^v
+v^2(j/n)^{v-2}\). Again extract \(b/\delta_*\) and reduce \(\delta_*\) once to sum the remaining series.
+
+Proposition~\ref{prop:menores-llegada} allows us to replace the approximants by the physical atoms with
+total error \(O(j^{-8})\). By Proposition~\ref{prop:norma-llegada} the tail \(v>N\) costs \(C_\rho
+j^2\rho^{-N}=O_\rho(n^{-2})\). Subtraction of the degree-four term leaves the tail intact. After
+multiplication by \(n\), both remainders tend to zero at fixed cut-off. We conclude that
+\begin{equation}\label{eq:llegada-nu}
+ \limsup_{n\to\infty} n\mathbb E_\nu[|g^\flat|;H_j]\le C_\delta b .
+\end{equation}
+We also need a deterministic bound on \(H_j\). Each free coordinate of the type is a surviving row or
+column and has at most \(j\) choices, even if its physical labels are discontinuous. Thus there are \(\le
+j^D\) placements of each type, including for the collinear supports. Without prescribing survival, the same
+type count and the factor \(j^{D-p}=j^{-1-q}\) give, for \(v\le\lfloor a\log j\rfloor\), the bound
+\(j^{-1}C_1^v v^{d_{\rm pol}}\), since \(v^2/j\le1\). The sum tends to zero by \(a\log C_1<1/4\). The
+substitutions still cost \(O(j^{-8})\), and the norm bounds the remainder by \(C_\rho j^2\rho^{-\lfloor
+a\log j\rfloor}=O_\rho(j^{-1})\). In particular,
+\begin{equation}\label{eq:llegada-puntual-acotada}
+ \sup_{H_j}|g^\flat|\le C
+\end{equation}
+with a class constant from \(n_0(b)\) onward. This pointwise bound controls an exponential. The sharper
+integrated rate was obtained in~\eqref{eq:llegada-nu}.
+\end{proof}
+\input{partes/llegada_previa}
+\begin{proof}[Conclusion of Lemma~\ref{lem:llegada-integrada} under the uniform law]
+On \(H_j\), \(X=Qe^{-L}=e^{g_T+\Gamma+g^\flat}\), \(|g_T|+|\Gamma|\le C/j\),
+and~\eqref{eq:llegada-puntual-acotada} gives \((g^\flat)^+\le C\). Now apply Lemma~\ref{lem:previa}. The
+stopped density is \(Xe^{A-R_Q(n)}\), with \(|A-R_Q(n)|=O_{b,\delta}(1/n)\). The factor \(X\) is bounded
+for the mean of \(|g^\flat|\). For the exponential we use
+\(X|e^{-g^\flat}-1|=e^{g_T+\Gamma}|1-e^{g^\flat}|\) and \(|e^y-1|\le e^{y^+}|y|\). On \(T=F_b\setminus
+H_j\) Lemma~\ref{lem:prescripcion-larga} gives \(\mathbb E_\nu[1+X;T]=O(e^{-2j})\).
+Lemma~\ref{lem:hijo-fisico} gives the class bounds on regular long arrival, with \(|g_T|+|\Gamma|\le
+C/j\) by the rook and pair estimates. The static proof of Corollary~6.8 of~\cite{tc}, together with
+results 6.5 and 6.7 there, gives \((\log X)^+\le C_0+\beta j\) in this outer class. The statement of the
+corollary concerns exits by bands. For \(0<X\le1\), \(X|\log X|\le1/e\). For \(X>1\), \(X|\log X|\le
+X(C_0+\beta j)\), and in all cases \(X|e^{-g^\flat}-1|\le e^{g_T+\Gamma}+X\). Thus the cost under \(\mu\)
+on \(T\) is \(O((1+j)e^{-2j})\) before scaling. This proves \eqref{eq:arrival-estimate} with a single
+constant enlarged by the class factors.
+\end{proof}
+\input{partes/llegada_uniforme}

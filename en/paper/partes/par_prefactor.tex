@@ -1,0 +1,75 @@
+\subsection{The prefactor recurrence and the trace of a single edge}\label{sec:par-prefactor}
+
+With \(w_d\) from Section~\ref{sec:par-accion}, let \(p=sqw\) and \(\ell=w(1-p)/(1-2p)\). The degree of a
+row is \(d_R(i)=\int V_{il}\ell_{il}\,dN_C(l)\). Transposing the formula gives the degree of a column.
+Both equal one at \(s=0\). The total mass \(g=\int d_R\,dN_R=\int d_C\,dN_C\) also starts at one. To
+compute \(d_\sigma=1+\sum_{a\ge1}s^a d_{\sigma,a}\), expand \(\ell-w=sqw^2/(1-2sqw)\). With
+\(\kappa_1=qW\), its first three coefficients are \begin{align*}
+ E_1&=W\kappa_1,\qquad E_2=2\kappa_1 w_1+2W\kappa_1^2,\\
+ E_3&=q(2Ww_2+w_1^2)+6\kappa_1^2w_1+4W\kappa_1^3 .
+\end{align*} Thus \(\ell_0=W,\ \ell_1=w_1+E_1,\ \ell_2=w_2+E_2\). With \(E_0=0\), the margins \(\int
+Vw\,dN_{\rm opuesto}=1\) give, for \(a=1,2,3\), \[
+ d_{R,a}=\int VE_a\,d\alpha_C+\int VE_{a-1}\,dm_C,\qquad
+ d_{C,a}=\int VE_a\,d\alpha_R+\int VE_{a-1}\,dm_R .
+\] Set \(g_a=\int d_{R,a}\,d\alpha_R+\int d_{R,a-1}\,dm_R\) for \(a=1,2\), with \(d_{R,0}=1\). On each
+side the coefficients \(D_{\sigma,a}^{\log}=[s^a]\log d_\sigma\) equal \(d_1,\ d_2-d_1^2/2,\
+d_3-d_1d_2+d_1^3/3\) at orders one, two, and three, respectively, with \(d_a=d_{\sigma,a}\).
+
+\paragraph{Local terms and determinant.} Write \(\mu_a=[s^a](M_R\otimes M_C)\), with \(\mu_a=0\) for
+\(a\notin\{0,1,2\}\). For \(\kappa_1=qW,\ \kappa_2=qw_1,\ \kappa_3=qw_2\), the coefficients of
+\(-\log(1-2p)+2\log(1-p)\) at orders two, three, and four are \[
+ C_2=\kappa_1^2,\qquad C_3=2\kappa_1\kappa_2+2\kappa_1^3,\qquad
+ C_4=\kappa_2^2+2\kappa_1\kappa_3+6\kappa_1^2\kappa_2+\tfrac72\kappa_1^4 .
+\] For \(a=1,2\), the edges, the total mass, and the diagonals of the Hessian contribute \begin{align*}
+ H_a^{\rm loc}={}&\tfrac12\sum_{j=2}^{a+2}\int V C_j\,d\mu_{a+2-j}
+ +\tfrac12[s^a]\log(1+sg_1+s^2g_2)\\
+ &-\tfrac12\sum_{\sigma=R,C}
+ \left(\int D_{\sigma,a+1}^{\log}\,d\alpha_\sigma+
+       \int D_{\sigma,a}^{\log}\,d\rho_\sigma\right).
+\end{align*} The different measures arise because the mass of the Hessian, \(g\), is integrated against
+\(N_R\), whereas the sum of the logarithms of its degrees uses the counting measure \(M_\sigma\).
+
+For the centered blocks, obtain the operators \(K_a,T_a\), \(a=0,1,2\), by extracting the coefficient of
+each kernel together with its integration measure. \begin{align*}
+ K_a(i,dl)&=[s^a]\left\{\left(\frac{V_{il}\ell_{il}}{d_R(i)}-\frac{d_C(l)}g\right)
+                       (d\alpha_C(l)+s\,dm_C(l))\right\},\\
+ T_a(l,di)&=[s^a]\left\{\left(\frac{V_{il}\ell_{il}}{d_C(l)}-\frac{d_R(i)}g\right)
+                       (d\alpha_R(i)+s\,dm_R(i))\right\}.
+\end{align*} To evaluate the scalar inverses, use \((1+sa+s^2b)^{-1}=1-sa+s^2(a^2-b)+O(s^3)\). Set \[
+ I_0=(I-K_0T_0)^{-1},\qquad X_1=K_1T_0+K_0T_1,\qquad
+ X_2=K_2T_0+K_1T_1+K_0T_2 .
+\] Expanding \(-\tfrac12\log\det(I-KT)\) for the two mean blocks gives \[
+ H_1^{\rm tr}=\tfrac12\operatorname{tr}(I_0X_1),\qquad
+ H_2^{\rm tr}=\tfrac12\operatorname{tr}(I_0X_2)+\tfrac14\operatorname{tr}((I_0X_1)^2).
+\]
+
+\paragraph{A return walk through an ordinary square.} A trace of length two uses the same indicator \(I\)
+in both directions. For an edge between ordinary types, \(\mathbb E[I^2]=V\) and \(\mathbb E[I]^2=V^2\)
+conditional on the types. In the product of the two centered kernels, the constant and linear terms have
+the correct means. The missing contribution to the quadratic term is \(V(1-V)\ell^2/(d_Rd_C)\). Let
+\(d\mu_*=\tfrac12
+V(1-V)\,d\alpha_R\,d\alpha_C\), including the trace weight \(1/2\). For \(r=d_{R,1}, c=d_{C,1},
+r_2=d_{R,2}, c_2=d_{C,2}\), the two contributions are \begin{align*}
+ H_1^{\rm rep}&=\int \big[2W\ell_1-(r+c)W^2\big]\,d\mu_*,\\
+ H_2^{\rm rep}&=\int \big[\ell_1^2+2W\ell_2-2(r+c)W\ell_1
+              +(r^2+c^2+rc-r_2-c_2)W^2\big]\,d\mu_* .
+\end{align*} Root types have fixed incidence, and each repetition uses the same bit. Thus for each
+orientation and state the required prefactor is \[
+ A_a(t)=H_a^{\rm loc}+H_a^{\rm tr}+H_a^{\rm rep},\qquad a=1,2 .
+\]
+
+\paragraph{Example of a summand of \(A_2(1)\).} For a test case, take the constant kernel \(v=1/2\),
+whose scaling is \(p_b=1\). Fix the state \(X=Y=0\) and the capacity \(1-t=0\). On each side the ordinary
+patterns \(00,10,01,11\) have mass \(1/4\), and \(W=2\). Consider the return walk between a row of
+pattern \(00\) and a column also of pattern \(00\). To check the recurrence entries, observe that
+symmetry gives \(Z_a=H_a\). Ordering the four patterns first, followed by the two negative and then the
+two positive copies, the systems give \[
+ Z_1=(-2,0,0,2,-3,-3,-1,-1),\qquad
+ Z_2=(2,-6,-6,-10,11/2,11/2,15/2,15/2).
+\] On the selected edge, \(w_1=-4,\ w_2=8,\ \ell_1=0,\ \ell_2=8\). At both endpoints, \(d_1=2,\ d_2=8\).
+Hence \[
+ [s^2]\frac{\ell^2}{d_Rd_C}
+ =[s^2]\frac{(2+8s^2)^2}{(1+2s+8s^2)^2}=16 .
+\] The summand of \(H_2^{\rm rep}\) for these two patterns is therefore
+\(\tfrac12(1/4)^2(1/2)(1-1/2)\,16=1/8\). Integration over the two positions has mass one because the test
+kernel is constant.

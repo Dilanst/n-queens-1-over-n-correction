@@ -1,0 +1,44 @@
+\section{Enunciado y alcance}
+Sea $A$ la máscara basal de torres de un residual de tamaño $j$ en el tablero original
+$n\times n$, $K=\lceil\sqrt n\rceil$, $j=\lceil tK\rceil\le\lceil\delta n\rceil$.
+La prescripción de llegada es la misma de las entregas precedentes:
+$\E_*Z=\E_{\bar\nu}[Z;G_j,S_M]$. En $G_j$ hay al menos una completación ordinaria.
+Para $Y\subseteq A$ se activan las capacidades diagonales sobre los sitios de $Y$;
+se conservan en torres todos los sitios de $A$. Se escriben
+\[
+ F(Y)=\log(Q_Y/\per A),\qquad \Lambda(Y)=L_Y-L_T(A),\qquad e(Y)=F(Y)-\Lambda(Y).
+\]
+Para una función $f$, su coeficiente de soporte $S$ es
+$[S]f=\sum_{Y\subseteq S}(-1)^{|S|-|Y|}f(Y)$.
+Sea $V$ el error después de restar las líneas individuales y los incrementos de dos
+conflictos en líneas distintas, como en la entrega sobre patrones finitos.
+
+\paragraph{Clase real de la estimación.}
+El punto de torres $P$ es positivo en el soporte de $A$, bistocástico, satisface
+$\max_e P_e\le M_0/j$ y $\|P-J_j\|_2\le r<1$, donde $J_j$ tiene entradas $1/j$.
+En coordenadas originales, sea
+\[
+ \epsilon_A=\max_{f\ {\rm diagonal\ de\ cualquiera\ de\ las\ dos\ familias}}
+                  \sum_{e\in A\cap f}P_e .
+\]
+Fijado $\rho>1$, existen $\epsilon_0>0,j_0$ según $\rho,M_0,r$ para los cuales el
+resultado vale en $\mathcal D=\{\epsilon_A\le\epsilon_0,\ j\ge j_0\}$
+con las condiciones de difusión y brecha anteriores. Se puede fijar $\rho=2$.
+La pequeñez es una hipótesis para cada máscara. Una cota en media de las cargas
+no basta para invocar uniformemente el resultado.
+
+\paragraph{Lema condicional.}
+En $\mathcal D$, el predictor está definido para todas las subactivaciones y satisface
+\[
+ \sum_{S\subseteq A}\rho^{|S|}|[S]\Lambda|
+       \le C_{\rho,M_0,r} j\log(ej).
+\]
+Por tanto, con $N_n=\lceil4\log n/\log\rho\rceil$, la contribución absoluta canónica
+no colineal de todos los soportes de tamaño mayor que $N_n$ es a lo sumo
+$Cj\log(ej)n^{-4}$, incluso antes de promediar. Esto estima una parte de la cola física.
+En $G_j$, para toda subactivación, $1\le Q_A\le Q_Y\le\per A$ por inclusión de
+completaciones. La suma de Möbius de $F$ está, por tanto, definida en todo el cubo
+real. En $\mathcal D\cap G_j$ se tiene la identidad finita de Möbius también para $V$.
+En una subbanda $j\le n^{1-\beta}$, $\beta>0$ fijo, se obtendrá además un corte
+fijo para la cola canónica en esperanza con indicador; véase la parte 5.
+No se presupone una continuación compleja en un parámetro de la función de conteo.

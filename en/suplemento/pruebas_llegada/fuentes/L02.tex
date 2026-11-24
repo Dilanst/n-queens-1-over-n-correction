@@ -1,0 +1,55 @@
+\section*{Media absoluta en una llegada corta}
+Escribamos \(H_j\) para la llegada histórica corta de v3/06,
+\(M_0'=\lceil\delta n\rceil\), \(j=\lfloor bn\rfloor\).
+Primero se fijan \(\delta\), los márgenes, el radio global \(\rho\ge2\) y las
+constantes de clase. Sea \(b\le\delta_*\) con \(\delta_*>0\) suficientemente pequeña,
+elegida una sola vez. Los umbrales \(n_0(b)\) sí pueden depender de \(b\).
+
+En un tipo físico, \(h\) es el número de filas y columnas distintas, \(D\) la
+dimensión de sus posiciones y \(p\) el exponente de la cota por soporte.
+Pongamos \(d=h-D\), \(q=p-D-1\). Cada par impone una igualdad entre una
+diferencia de filas y una de columnas con signo. Dos cuadrados distintos dan
+ecuaciones no proporcionales: la proporcionalidad exige las mismas dos filas
+y las mismas dos columnas, que ya fijan el cuadrado. Luego \(d\ge2\) en
+todos los términos de la parte 01 que sobreviven. V3/05--07 da \(q\ge0\).
+Con la prescripción antes de integrar, el factor dimensional a escala \(n\) es
+\[
+ n\, n^D j^{-p}(j/n)^h=(j/n)^{d-1}j^{-q}.
+\]
+Se usa la cota de prescripción de v3 y TIPOS sobre \(H_j\) bajo \(\nu\),
+con los factores adicionales \(\delta^{-2v}\exp(C_Lv^2/j)\).
+La potencia de \(b\) se extrae \emph{antes} de la suma:
+\[
+ (j/n)^{d-1}j^{-q}
+ \le (b/\delta_*)\,\delta_*^{d-1} j^{-q}.
+\]
+Para \(v\le4\) hay un número absoluto de tipos y se usa la estimación cruda de v3/05.
+Para \(5\le v\le N=\lceil4\log n/\log\rho\rceil\), v3/07 trabaja con el
+coeficiente crudo de caras. Para los tipos no colineales, retirar la línea completa
+y las parejas en la suma antigua no alteraba ese coeficiente de grado al menos cinco.
+TIPOS combina \(j^{-q}\) con \((4v^2)^{L_s}/c_s!\), \(L_s\le q+2\), y usa
+\(d-1+q\ge(v-4)/3\). Por tanto se conserva el mayorante previo por grado:
+\[
+ \frac b{\delta_*} C_L(C_1\delta^{-2})^v v^{d_{\rm pol}}\delta_*^{(v-4)/3}.
+\]
+Basta elegir \((C_1\delta^{-2})\delta_*^{1/3}<1\), con margen fijo.
+
+La línea colineal sí se había sustraído entera. Para \(v\ge3\) su grafo crudo
+es un árbol de una componente, \(p=v+2\), \(d_i\le v\).
+Hay a lo sumo \(4n\, n^v/v!\) soportes y \(h=2v\) por prescribir.
+La cota de v3/07 del aproximante, o P05 para \(v=3,4\), da a escala \(n\)
+\[
+ C(C_2\delta^{-2})^v v^2\, (j/n)^{v-2},
+\]
+pues \(v^v/v!\le e^v\). El mismo argumento extrae \(b/\delta_*\) para todo \(v\ge3\).
+Redúzcase \(\delta_*\) una vez si hace falta. El error de sustitución por los
+átomos exactos, sumado hasta \(N\), es \(O(j^{-8})\) en v3/06--07.
+La cola de grados \(>N\) del valor total es \(O_\rho(n^{-2})\) por las normas
+globales. La sustracción exacta tiene grado a lo sumo cuatro y no cambia esa cola.
+Estas dos últimas cotas se multiplican por \(n\) y tienden a cero para cada \(b\).
+En consecuencia
+\[
+ \limsup_{n\to\infty} n\,\mathbb E_\nu[|g^\flat(B_j)|;H_j]\le C_\delta b .
+\]
+La sumabilidad absoluta afirmada por grado se refiere a los tipos hasta \(N\).
+Para la cola se usa la norma del polinomio proyectado de v3.

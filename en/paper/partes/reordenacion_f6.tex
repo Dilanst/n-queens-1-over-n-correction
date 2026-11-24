@@ -1,0 +1,50 @@
+\begin{lema}[Rearrangement of the \(f6\) contribution]\label{lem:f6} On the grid of side \(s\), let
+\(\mathcal I{}\) be the square--line incidence matrix of Section~\ref{sec:rectangulos}, and set
+\(\beta_e=\nu_1(e)/s^2\) and \(N_v=\mathcal I{}^{\mathsf T}\operatorname{diag}(v)\mathcal I{}\). Products
+of vectors indexed by squares are pointwise. With \(K,L_0,\rho,w\) from Section~\ref{sec:profile-data},
+define \begin{align*}
+ D&=L_0-K,& V_{ij}&=K_{ij}(W_{ij}-K_{ij}),&
+ \Psi&=\rho^{-1}\mathcal I{}^{\mathsf T}(\beta w),\\
+ Z&=\Psi+D\rho\Psi,& h&=w-\mathcal I{}Z,& \alpha&=\beta h,\\
+ a&=\mathcal I{}^{\mathsf T}\alpha,& b_\beta&=\mathcal I{}^{\mathsf T}\beta,&
+ M&=\mathcal I{}D\mathcal I{}^{\mathsf T}.
+\end{align*} Here \(W_{ij}\) is the intersection weight, or zero if there is no intersection. Write
+\(U(e,j)=\sum_{u\in \familias(e)} K_{uj}-3W(e)\) and \(t(c,e;j)=M_{ce}+\theta_j+U(c,j)+U(e,j)\).
+Quadrature of the physical profile, using the generic value at accidental coincidences, gives exactly
+\(f6_s=-E_1+E_2\), where \begin{align*}
+ E_1={}&\tfrac12\operatorname{tr}(N_\beta D N_\alpha D)
+       +\tfrac12 b_\beta^{\mathsf T}Va-3b_\beta^{\mathsf T}D\mathcal I{}^{\mathsf T}(\alpha W)\\
+     &-\tfrac12\sum_{f\in D_{\rm obl}}a_f
+         [(D N_\beta D)_{ff}+(Vb_\beta)_f],\\
+ E_2={}&\sum_c\beta_c\sum_{j\in \familias(c)}\sum_{e\in j}
+     \frac{\eta_j\nu_1(e)}s\,t(c,e;j)
+     \sum_{u\in \familias(e)\setminus\{j\}}Z_u .
+\end{align*} Here \(D_{\rm obl}\) comprises both oblique families. \end{lema} \begin{proof} For fixed
+\(c\), the second-order response consists of the local source \(\Lambda\) and the line source \(\omega\).
+When we sum the response against \(\beta_e w(e)\), each \(u\in \familias(e)\) receives \([\mathcal
+I{}^{\mathsf T}(\beta w)]_u=(\rho\Psi)_u\). By symmetry, the integral part of the response adds \(\rho
+D\rho\Psi\). Thus the total mass is \(\rho Z\). The negative source in \(\omega\) integrates \(\Lambda\)
+on the fiber of \(u\). On the grid, \(\rho_u\eta_u=1/s\), so the sum subtracts \(\beta_e(\mathcal
+I{}Z)_e\) from the weight of \(\Lambda(e;c)\). This leaves mass \(\alpha_e\).
+
+For two generic marks \(c,e\), the mean of \(T_e\) is \(M_{ce}\). Each direct intersection has variance
+\(V_{uj}\), since its squared indicator equals the indicator itself. Distinct intersections have distinct
+transverse lines in generic position. Thus \(\mathbb E T_e^2=M_{ce}^2+\sum_{u\in \familias(e),j\in
+\familias(c)}V_{uj}\). For \(f\in \familias(e)\), the same calculation gives \(\mathbb E
+z_f^2=(\sum_{j\in \familias(c)}D_{fj})^2+\sum_{j\in \familias(c)}V_{fj}\). In the sum of
+\(\beta_c\alpha_e\mathbb E\Lambda(e;c)\), contracting the indices in the square \(M_{ce}^2\) gives the
+trace of \(N_\beta D N_\alpha D\). The variance gives \(b_\beta^{\mathsf T}Va\), and the linear moment
+with \(W(e)\) gives \(b_\beta^{\mathsf T}D\mathcal I{}^{\mathsf T}(\alpha W)\). The squares of \(z_f\)
+give \((DN_\beta D)_{ff}+(Vb_\beta)_f\), one for each oblique line of \(e\). The coefficients in
+\(\Lambda\) give \(E_1\). The matrix \(N_v\) includes the diagonal entries \(\sum_{e\in u}v_e\) even when
+the walk returns along the same line.
+
+In the sum over intersections in \(\omega\), fix \(e=u\cap j\), with \(j\in \familias(c)\). The direct
+weight times the measure of \(u\) is \(\rho_uK_{uj}=\eta_j\nu_1(e)/s\). Conditioning on availability of
+the intersection then marks \(c,e\) on fiber \(j\). In the mean response \(M_{ce}\), we restore the
+diagonal term \(\theta_j\). The three intersections with \(j\) at each endpoint now carry the
+deterministic weight \(W\) of the marked square. Replacing each original term \(-K\) by \(-W\) adds
+\(U(c,j)+U(e,j)\). This leaves \(t(c,e;j)\), multiplied by \(Z_u\) for each transverse line \(u\ne j\) of
+\(e\). The intersection source has a negative sign in \(\omega\), and the definition of \(f6\) carries
+another negative sign. This gives \(+E_2\) and \(-E_1\). This finite-sum identity leaves the spatial
+extrapolation error at status \status{N}. \end{proof}

@@ -15,7 +15,7 @@
     \end{scope}
     \foreach \r/\c in {2/4,3/1,3/3,4/1,4/3,4/4}{\bmarca{4}{\r}{\c}}
     \breina{4}{1}{2}
-    \node[font=\small] at (2,-.62) {One queen exposed};
+    \node[font=\small] at (2,-.62) {One queen revealed};
   \end{scope}
   \begin{scope}[shift={(14,.1)}]
     \foreach \r/\cells in {1/{0,0,1},2/{1,1,0},3/{1,1,1}}{
@@ -31,9 +31,9 @@
     \node[font=\small] at (1.5,-.72) {Residual mask};
   \end{scope}
 \end{tikzpicture}
-\caption{From a solution to the rook problem. After $(1,2)$ is exposed, the dots in the middle
-are the ones in the mask on the right, with their original labels. Row 2 requires column 4.
-Rows 3 and 4 can take columns 1 and 3 in two ways: $\operatorname{per}M=2$. Only the one on
-the left completes the queen placement. In the other, $(2,4)$ and $(3,3)$ attack each other.
-Thus, $Q(B)=1$.}\label{fig:mascara-ilustrada}
+\caption{From a solution to the rook problem. After $(1,2)$ is revealed, the dots in the middle are the
+ones in the mask on the right, shown with their original labels. Row 2 requires column 4. Columns 1 and 3
+can be assigned to rows 3 and 4 in two ways: $\operatorname{per}M=2$. Only the assignment on the left
+completes the queen placement. In the other, $(2,4)$ and $(3,3)$ attack each other. Thus $Q(B)=1$.}
+\label{fig:mascara-ilustrada}
 \end{figure}

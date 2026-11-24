@@ -1,0 +1,90 @@
+\paragraph{La densidad de las líneas retiradas.}
+En la primera media de \(\mathcal M_n(b)\) se suma sobre los estados de los dos cruces y
+\(\sum_s q_{o,s}=1\). La ley de motivos y el escalado en la llegada regular, desarrollados
+en el apéndice~\ref{app:transfer}, dan la medida de pares
+\(w_{o,b}\,dr\,dc\,dh\) para cada orientación. En efecto, las cuatro etiquetas axiales
+aportan \(b^4\), cada diagonal distinta aporta una vacancia y los dos factores \(jD_z\)
+convergen a \(W_b^0(z)\) en el soporte. El factor exterior \(n/j^4\) y los \(n^3\) de la
+suma de Riemann dejan \(n^4 b^4/j^4\to1\). Por simetría en los extremos del par, sobre
+cada línea de coordenada \(t\) su masa se integra como
+\(\frac12\iint p_b(z)p_b(z')\,dr\,dr'/U_o(t)\). Al sumar las líneas resulta \(W_b\).
+
+Si cada par contribuye una función de prueba \(a\) en cada una de sus dos filas,
+la simetría de \(a(r)+a(r')\) cancela ese factor \(1/2\) al integrar un solo extremo.
+En la familia \(o\), integrar el otro extremo da \(m_{o,b}(t)/U_o(t)\). Así,
+\[
+ \sum_o\int_\Omega w_{o,b}\{a(r_e)+a(r_f)\}\,dr\,dc\,dh
+ =\iint a(r)p_b(r,c)\gamma_b(r,c)\,dr\,dc
+ =\int a(r)\theta_b(r)\,dr .
+\]
+Por transposición se obtiene la misma densidad para las columnas. En particular,
+\(\int\theta_b=2W_b\). La medida de filas perdida por los pares tiene densidad
+\(\theta_b\), y la renormalización de las filas supervivientes repone la masa \(2W_b\)
+con densidad constante. Ambas operaciones dan la dirección \(\eta_b=2W_b-\theta_b\).
+
+El centrado se puede verificar exactamente en una malla determinista de \(m\) puntos por
+lado. Sean \(p_m\) el núcleo de \(v_b\) escalado con la medida uniforme \(A_m\) de masa
+\(1/m\) por punto y \(W_m,\theta_m\) las sumas de malla que corresponden a \(W_b,\theta_b\).
+En una línea \(\ell\) de la familia \(o\) damos a cada par ordenado el peso
+\(\omega=p_m(e)p_m(f)/(2m^3 U_o(\ell))\), incluidos los pares \(e=f\) en cada familia.
+Sumar sobre ambos extremos da \(\sum\omega=W_m\). Fijar la fila \(i\) del primero y
+multiplicar por dos da \(\theta_m(i)/m\). Con \(h_R^m,h_C^m\) las influencias centradas
+en esta malla y \(H_m(\parmar)\) su suma en los cuatro extremos, se obtiene por linealidad
+\[
+ \sum\omega H_m(\parmar)
+ =\frac1m\sum_i\theta_m(i)(h_R^m(i)+h_C^m(i))
+ =-D\mathfrak F_m[\eta_m A_m,\eta_m A_m],\qquad \eta_m=2W_m-\theta_m .
+\]
+La igualdad vale para las primeras variaciones. Los pares \(e=f\) de esta cuadratura
+tienen masa total \(O_b(m^{-1})\). Los menores físicos siempre usan dos casillas distintas.
+
+\begin{proposicion}[Primera media a corte fijo]\label{prop:pt-corte}
+Manténgase \(v_b\) fijo y evalúese \(\mathfrak F\) con las dos medidas
+\((1+\varepsilon\eta_b)\,dr\), \((1+\varepsilon\eta_b)\,dc\), reescalando \(v_b\) en
+cada \(\varepsilon\). Denótese por \(dF_2(b)\) la derivada en cero. Entonces
+\begin{align}
+ \lim_{n\to\infty}\frac n{j^4}\mathbb E_\mu
+ \Big[\sum_{\parmar} w_{\parmar}\,j\Delta_{\parmar}\mathfrak F\,;F_b\Big]&=dF_2(b),
+ \label{eq:pt-menores-limite}\\
+ P_T(b):=\lim_{n\to\infty}-n\mathbb E_\mu
+ \Big[\sum_{\parmar}(\pi_{\parmar}^{\rm ex}-\pi_{\parmar}^T)\,;F_b\Big]&=(1/6-2F(b))W_b-dF_2(b).
+ \label{eq:pt-frontera-fija}
+\end{align}
+\end{proposicion}
+\begin{proof}
+Para reemplazar \(H_M(\parmar)\) por las influencias del perfil hay que transportar también la
+derivada del escalado. En las series del funcional, el núcleo centrado \(\centrado=jD-1\) tiene
+brecha \(\|\centrado\|_{2\to2}\le r_b<1\) y secciones de norma a lo sumo \(C_b\). Un recorrido
+de longitud \(k\ge2\) entre extremos fijos queda acotado por \(C_b^2r_b^{k-2}\).
+Con \(T_R=(I-\centrado\centrado^*)^{-1}-I\), en la diagonal de \(T_R-\centrado\centrado^*\) se ha
+ sustraído la única
+vuelta de longitud dos. En columnas se intercambian \(\centrado\) y \(\centrado^*\).
+Los términos truncados del funcional son por ello sumas de grafos simples.
+Derivar una medida fija un vértice y resta su media. Derivar el escalado en una fila
+\(i\) añade un camino hacia esa raíz, pues la respuesta de columna en el calibre centrado es
+\(-(I-\centrado^*\centrado)^{-1}\centrado_{i,\cdot}\). Las elecciones de vértice o arista derivada
+ multiplican
+la cola geométrica por un polinomio en la longitud, por lo que sigue siendo sumable.
+
+A truncación fija las coincidencias accidentales de etiquetas cuestan \(O_{b,k}(1/n)\).
+La ley de motivos en las líneas vivas, uniforme en la raíz, lleva cada suma al mismo grafo
+con núcleo \(p_b\). La excepción a precisión fija en \(F_b\) tiene masa exponencial y los
+pesos escalados están acotados. Se toma \(n\to\infty\) y después se retira la truncación.
+Así se reemplazan en la media ponderada \(\mathfrak F(M),h_R^M,h_C^M\) por \(F(b),h_R,h_C\),
+con error \(o_b(1)\). Aquí \(h_R,h_C\) son las influencias continuas, de media cero.
+Al integrar los cuatro extremos, su contribución es
+\[
+ \int h_R\theta_b\,dr+\int h_C\theta_b\,dc
+ =-D\mathfrak F[\eta_b\,dr,\eta_b\,dc]=-dF_2(b).
+\]
+Esto prueba~\eqref{eq:pt-menores-limite} por \(j\Delta_{\parmar}\mathfrak F=-H_M(\parmar)+O(j^{-1})\).
+Sustituirlo en~\eqref{eq:pt-par-fisico} y usar la masa \(W_b\)
+prueba~\eqref{eq:pt-frontera-fija}.
+\end{proof}
+La identidad~\eqref{eq:pt-frontera-fija} vale para el límite de la llegada física en
+\(F_b\). Si se fijan las cuatro etiquetas axiales y se exigen las tres diagonales vacías
+en la solución completa, la comparación de ambas medias cuesta \(O(b)+o_b(1)\).
+La positividad uniforme de \(v_b\) y la continuidad del escalado y de su primera variación
+dan \(P_T=\lim_{b\downarrow0}P_T(b)\). En este término se varían las medidas de línea.
+En \(F'(0)\), que interviene en el defecto interior, se deriva el núcleo \(v_b\) a lo
+largo del perfil con ambas medidas fijas.

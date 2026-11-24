@@ -1,61 +1,140 @@
 \section{Suma del resto en la llegada}\label{app:arrival}
-Un solo cuadrado puede contribuir a la escala \(1/n\) que interesa en \eqref{eq:signed-mean}.
-Al sustraer \(\Gamma\), cada soporte que sobrevive debe satisfacer las restricciones geométricas
-de dos cuadrados. Ese coste adicional permite sumar los errores con una cota que decrece con \(b\).
-Veámoslo primero en la llegada histórica corta \(H_j\), bajo \(\nu\). Para un conjunto
-de casillas \(Y\), activamos sólo las restricciones diagonales soportadas en \(Y\), manteniendo
-la máscara de torres completa. Llamemos \(e(Y)\) al logaritmo de la probabilidad de evitación
-menos el cambio de predictor, y \(e_C(Y)\) a la misma expresión usando sólo los pares de \(C\).
-El coeficiente de un soporte \(U\) es \(\sum_{Y\subseteq U}(-1)^{|U|-|Y|}e(Y)\).
-Una casilla aislada se cancela al emparejar subconjuntos que difieren sólo en él. Si todos los
-pares pertenecen a un cuadrado, el coeficiente se cancela con el de \(e_C\).
-Si intervienen dos cuadrados distintos, ningún \(e_C\) contribuye: las casillas tendrían que
-estar en los cuatro vértices de \(C\), cuyas únicas parejas diagonales son las dos de \(C\).
-El resto suma por tanto los coeficientes originales que carecen de casillas aisladas y contienen
-al menos dos cuadrados distintos. Lo sustraído tiene grado a lo sumo cuatro.
+\begin{lema}[Resto integrado tras sustraer los cuadrados]\label{lem:llegada-integrada}
+Fíjense el parámetro macroscópico \(\delta\), los márgenes de difusión, brecha y carga de la
+clase histórica y las tasas de salida \(c_*>2\beta\). Fíjense en esa clase el alcance \(L=8\)
+y la base \(C_1\) de la cuenta de tipos. Elíjase \(0<a<1\) con
+\(a\log(\max(2,C_1))<1/4\), y después \(\rho\ge2\) con \(a\log\rho>3\)
+para la norma global de activaciones.
+Elíjase \(\alpha\) menor que el umbral histórico y bastante pequeño para tener en la llegada
+corta las cotas de clase de torres y de carga de esa norma. Sea \(C_{\rm pres}\) la constante
+de prescripción de filas y columnas bajo \(\nu\). Se fija antes del corte: la probabilidad de
+cada hijo dada la fila es \(p_e(1+O(m^{-1}))\) por la prueba del Teorema~8.1 de~\cite{pc},
+con constantes de la clase independientes de \(n/m\).
+Existen \(\delta_*>0\) y \(C_\delta<\infty\) tales que para cada \(0<b<\min(\delta/2,\delta_*)\)
+que cumpla
+\[
+ x_0=\frac{2b}{\alpha\delta}<1,\qquad
+ \frac{\alpha}{4}\log x_0+\frac{C_{\rm pres}\alpha^2}{16}<-(\beta+3),
+\]
+al detenerse en la primera salida o en \(j=\lfloor bn\rfloor\) se tiene
+\begin{equation}\label{eq:arrival-estimate}
+ \limsup_{n\to\infty} n\,\mathbb E_\mu
+  [|g^\flat(B_j)|+|e^{-g^\flat(B_j)}-1|;F_b]\le C_\delta b .
+\end{equation}
+El suceso \(H_j\) comprende las historias que entraron regularmente en \(\lceil\delta n\rceil\),
+siguieron regulares hasta el hijo de tamaño \(j\) inclusive y tienen allí menos de
+\(\lceil\alpha j\rceil\) casillas disponibles en cada diagonal. Una misma \(C_\delta\)
+vale para todos esos cortes. El umbral \(n_0(b)\) puede depender de \(b\).
+\end{lema}
+Primero probaremos la estimación de llegada bajo \(\nu\), luego la cota previa
+del Lema~\ref{lem:previa} y, con ambas, la afirmación bajo \(\mu\).
+\input{partes/llegada_menores}
+\input{partes/llegada_soportes}
+\input{partes/llegada_rango}
+\input{partes/llegada_norma}
+\input{partes/llegada_prescripcion}
+\subsection{Integración en la ley adaptativa y cota inicial}
+\begin{proof}[Primera parte de la demostración del Lema~\ref{lem:llegada-integrada}]
+Trabajamos primero en \(H_j\), con su indicador bajo la ley \(\nu\). Fijada la máscara basal
+\(M\), sea \(e(Y)\) el logaritmo de la probabilidad de evitación en la ley de torres menos
+el cambio del predictor al activar los pares diagonales contenidos en \(Y\subseteq M\).
+Mantenemos fija la máscara de torres en todas las caras. Sea \(e_C(Y)\) el mismo error para
+los pares del cuadrado \(C\). Así \(e(\varnothing)=0\), \(e_C(M)=\gamma_C\) y
+\(g^\flat=e(M)-\sum_C e_C(M)\). Por inversión, el coeficiente del soporte \(U\) se obtiene
+aplicando \(\Delta_U f=\sum_{Y\subseteq U}(-1)^{|U|-|Y|}f(Y)\).
+Un sitio ajeno a todos los pares activables en \(U\) cancela las caras de dos en dos.
+Si los pares de \(U\) pertenecen al mismo cuadrado, \(e=e_C\) en todas sus caras. Si hay dos
+cuadrados distintos, cada \(e_C\) omite algún sitio de \(U\), pues entre los cuatro vértices de
+\(C\) sólo son diagonales sus dos pares opuestos. Queda el coeficiente original \(\Delta_U e\)
+sólo en soportes con al menos dos cuadrados distintos y sin sitios aislados. La sustracción tiene
+grado a lo sumo cuatro. Dos pares que determinan cuadrados distintos dan ecuaciones de
+diferencias de coordenadas no proporcionales, pues la proporcionalidad fijaría las mismas dos
+filas y columnas y con ellas el mismo cuadrado.
 
-Sean \(v\) el número de casillas, \(h\) el total de etiquetas distintas de filas y columnas,
-\(D\) el número de coordenadas libres y \(p\) el exponente del soporte. Prescribir las
-\(h\) líneas da el factor \((j/n)^h\), junto con \(\delta^{-2v}\exp(C_Lv^2/j)\) en la
-cota de prescripción. Para cada tipo, el número de posiciones es de orden \(n^D\).
-Escribamos \(d_*=h-D\), \(q=p-D-1\). Dos cuadrados distintos imponen dos ecuaciones
-lineales no proporcionales sobre las coordenadas de fila y columna. Así \(d_*\ge2\);
-la cota del soporte da \(q\ge0\). El factor escalado es
+Sean \(v=|U|\), \(h\) el número de índices axiales distintos y \(D\) la dimensión
+de las posiciones. Para \(5\le v\le8\log n\) integramos la cota del aproximante
+de la Proposición~\ref{prop:soportes-llegada}; para \(v\le4\) usamos su versión física.
+La clasificación del Lema~\ref{lem:tipos-llegada} para dos pares requiere que sean los
+únicos conflictos diagonales. Con conflictos adicionales se usa el grafo completo en la
+Proposición~\ref{prop:soportes-llegada}; en ambos casos el Lema~\ref{lem:rango-llegada}
+da \(D\le p-1\).
+En particular \(p\ge v\) y \(q=p-D-1\ge0\). Sea \(d_*=h-D\). Los dos cuadrados dan
+\(d_*\ge2\). Todas las variables de fila y columna aparecen en las ecuaciones diagonales,
+porque cada sitio tiene un vecino diagonal. Una base de esas ecuaciones cubre las \(h\)
+variables y cada ecuación contiene a lo sumo cuatro. Luego \(h\le4d_*\), \(D\le3d_*\) y
+\[
+ v-1\le p-1=D+q\le3(d_*+q),\qquad d_*-1+q\ge(v-4)/3 .
+\]
+
+\paragraph{Prescripción, sustitución y cola.}
+Hay a lo sumo \(n^D\) posiciones por tipo al elegir coordenadas independientes.
+Prescribir las \(h\) etiquetas en \(H_j\) cuesta a lo sumo
+\(\delta^{-2v}(j/n)^h\exp(C_Lv^2/j)\) por el Lema~\ref{lem:prescripcion-larga}. A escala \(n\) resulta
 \[
  n\,n^D j^{-p}(j/n)^h=(j/n)^{d_*-1}j^{-q}
- \le (b/\delta_*)\delta_*^{d_*-1}j^{-q}
- \qquad(0<b\le\delta_*).
+ \le (b/\delta_*)\delta_*^{d_*-1}j^{-q}.
 \]
-Extraemos \(b/\delta_*\) antes de sumar. Para \(v\le4\) el número de tipos tiene una cota
-absoluta. Para los tipos no colineales el recuento ponderado usa \(d_*-1+q\ge(v-4)/3\).
-De ahí que para \(5\le v\le N=\lceil4\log n/\log\rho\rceil\), fijado \(\rho\ge2\), la cota
-tras sumar los tipos de ese tamaño sea
+Extraemos \(b/\delta_*\) antes de sumar. Para \(v\le4\) hay un número absoluto de tipos.
+Para los no colineales de \(5\le v\le N=\lceil4\log n/\log\rho\rceil\le L\log n\), la
+cuenta de tipos sin etiquetas, ponderada por \(\prod d_i\), da
+\(C^v(4v^2)^{L_s}/c_s!\), con \(L_s=v+c_s-D\le q+2\).
+El factorial absorbe \(v^{c_s}/c_s!\le e^v\) y \(j^{-q}\) aporta
+\((v^2/j)^q\le\delta_*^q\) para \(n\ge n_0(b)\). Las dos potencias adicionales de \(4v^2\)
+y la suma de parámetros dejan un exponente polinómico fijo \(d_{\rm pol}\).
+Por el rango, el coste total de ese grado queda acotado por
 \[
- (b/\delta_*) C_L(C_1\delta^{-2})^v v^{d_{\rm pol}}\delta_*^{(v-4)/3}.
+ (b/\delta_*) C_L (C_1\delta^{-2})^v v^{d_{\rm pol}}\delta_*^{(v-4)/3}.
 \]
-Se elige \(\delta_*\) de manera que \(C_1\delta^{-2}\delta_*^{1/3}<1\).
-En un tipo colineal \(v\ge3\) se tiene \(p=v+2,h=2v\), con a lo sumo \(4n\,n^v/v!\)
-soportes. Resulta \(C(C_2\delta^{-2})^v v^2(j/n)^{v-2}\); se reduce \(\delta_*\)
-una vez para sumar también esta cota. La sustitución de átomos hasta grado \(N\) cuesta
-\(O(j^{-8})\) en valor, y la norma global acota la cola por \(O_\rho(n^{-2})\).
-Ambos errores desaparecen tras escalar para cada \(b\) fijo. Así
-\(\limsup_n n\mathbb E_\nu[|g^\flat|;H_j]\le C_\delta b\), con \(C_\delta\)
-independiente de \(b\).
+La base \(C_1\) se reserva con los márgenes. Elijamos \(\delta_*\) de manera que
+\(C_1\delta^{-2}\delta_*^{1/3}<1\).
 
-La cota obtenida controla una media de \(|g^\flat|\) bajo \(\nu\). En \eqref{eq:signed-history}
-interviene además la exponencial bajo \(\mu\). El factor \(X\) de la densidad permite estimar
-ambas con la misma cota, pues en la llegada se tiene
-\[
- X\,|e^{-g^\flat}-1|=e^{g_T+\Gamma}|1-e^{g^\flat}|.
-\]
-En \(H_j\) la parte positiva del error diagonal tiene una cota de clase,
-\(|g_T|+|\Gamma|\le C/j\) y \(|A-R_Q(n)|=O_{b,\delta}(1/n)\).
-Se aplica \(|e^y-1|\le e^{y^+}|y|\) a la densidad \(Xe^{A-R_Q(n)}\).
-En \(F_b\setminus H_j\) la probabilidad ponderada es \(O(e^{-2j})\).
-Para \(0<X\le1\) vale \(X|\log X|\le1/e\); por encima de uno se usa
-\(X|\log X|\le X(C_0+\beta j)\) en la clase exterior. El aporte de este suceso al lado
-izquierdo de \eqref{eq:arrival-estimate} antes de escalar es \(O((1+j)e^{-2j})\).
-Para obtener \eqref{eq:arrival-estimate} fijamos primero \(\delta\), los márgenes, \(\rho\) y
-las constantes de clase, después \(\delta_*\) y por último el corte. El umbral de \(n\) puede
-depender de \(b\). La constante \(C_\delta\) sirve para todos esos cortes, como exige la
-comparación final de dos cortes en el apéndice~\ref{app:closing}.
+Hay que reponer las líneas colineales, sustraídas enteras en la prueba de velocidad.
+Para \(v=3,4\) usamos el caso físico de la Proposición~\ref{prop:soportes-llegada}
+y para \(5\le v\le N\) su aproximante.
+El grafo es un árbol con \(p=v+2\), \(h=2v\) y \(d_i\le v\).
+Hay a lo sumo \(4n\,n^v/v!\) soportes. Como \(v^v/v!\le e^v\), el coste por grado es
+\(C(C_2\delta^{-2})^v v^2(j/n)^{v-2}\). De nuevo se extrae \(b/\delta_*\) y se reduce
+\(\delta_*\) una vez para sumar la serie restante.
+
+La Proposición~\ref{prop:menores-llegada} permite sustituir los aproximantes por los
+átomos físicos con error total \(O(j^{-8})\). Por la Proposición~\ref{prop:norma-llegada},
+la cola \(v>N\) cuesta \(C_\rho j^2\rho^{-N}=O_\rho(n^{-2})\); la sustracción de
+grado cuatro la deja intacta. Tras multiplicar por \(n\), ambos restos tienden a cero
+a corte fijo. Concluimos
+\begin{equation}\label{eq:llegada-nu}
+ \limsup_{n\to\infty} n\mathbb E_\nu[|g^\flat|;H_j]\le C_\delta b .
+\end{equation}
+También necesitaremos una cota determinista en \(H_j\). Cada coordenada libre del tipo
+es una fila o columna viva y tiene a lo sumo \(j\) opciones, aunque sus etiquetas físicas
+sean discontinuas. Por tanto hay \(\le j^D\) colocaciones de cada tipo incluso para
+las líneas colineales. Sin prescribir supervivencias, el mismo recuento de tipos y el
+factor \(j^{D-p}=j^{-1-q}\) dan para \(v\le\lfloor a\log j\rfloor\)
+\(j^{-1}C_1^v v^{d_{\rm pol}}\), pues \(v^2/j\le1\). La suma tiende a cero por
+\(a\log C_1<1/4\). Las sustituciones cuestan todavía \(O(j^{-8})\) y la norma acota el
+resto por \(C_\rho j^2\rho^{-\lfloor a\log j\rfloor}=O_\rho(j^{-1})\). En particular,
+\begin{equation}\label{eq:llegada-puntual-acotada}
+ \sup_{H_j}|g^\flat|\le C
+\end{equation}
+con una constante de clase desde \(n_0(b)\). Esta cota puntual se usa para acotar una
+exponencial; la tasa integrada más fina se obtuvo en~\eqref{eq:llegada-nu}.
+\end{proof}
+\input{partes/llegada_previa}
+\begin{proof}[Conclusión del Lema~\ref{lem:llegada-integrada} bajo la ley uniforme]
+En \(H_j\), \(X=Qe^{-L}=e^{g_T+\Gamma+g^\flat}\), \(|g_T|+|\Gamma|\le C/j\)
+y~\eqref{eq:llegada-puntual-acotada} da \((g^\flat)^+\le C\). Ahora aplicamos el
+Lema~\ref{lem:previa}. La densidad detenida es \(Xe^{A-R_Q(n)}\), con
+\(|A-R_Q(n)|=O_{b,\delta}(1/n)\). El factor \(X\) queda acotado para la media de
+\(|g^\flat|\). Para la exponencial usamos
+\(X|e^{-g^\flat}-1|=e^{g_T+\Gamma}|1-e^{g^\flat}|\) y \(|e^y-1|\le e^{y^+}|y|\).
+En \(T=F_b\setminus H_j\) el Lema~\ref{lem:prescripcion-larga} da
+\(\mathbb E_\nu[1+X;T]=O(e^{-2j})\). El Lema~\ref{lem:hijo-fisico} da clase en la llegada
+regular larga, con \(|g_T|+|\Gamma|\le C/j\) por las estimaciones de torres y de par.
+La prueba estática del Corolario~6.8 de~\cite{tc}, con sus resultados 6.5 y 6.7, da
+\((\log X)^+\le C_0+\beta j\) en esta clase exterior. El enunciado del corolario se
+refiere a las salidas por bandas.
+Para \(0<X\le1\), \(X|\log X|\le1/e\). Para \(X>1\),
+\(X|\log X|\le X(C_0+\beta j)\), y siempre \(X|e^{-g^\flat}-1|\le e^{g_T+\Gamma}+X\).
+Así el coste bajo \(\mu\) en \(T\) es \(O((1+j)e^{-2j})\) antes de escalar. Esto prueba
+\eqref{eq:arrival-estimate} con una sola constante, aumentada por los factores de clase.
+\end{proof}
+\input{partes/llegada_uniforme}

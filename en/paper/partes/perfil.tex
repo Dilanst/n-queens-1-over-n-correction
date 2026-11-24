@@ -1,56 +1,56 @@
 \subsection{The two profile functionals}\label{sec:profile-data}
-Write \(z=(r,q)\in[0,1]^2\). The limiting density \(\nu(z)\) has uniform row and column marginals.
-The diagonal coordinates are \(d=r-q\) and \(a=r+q\), and we integrate along their fibers with
-respect to \(dr\). If \(m_f(y)\) is the integral of \(\nu\) along the line with coordinate \(y\)
-in the family \(f=D,A\), its final vacancy is \(u_f(y)=1-m_f(y)\). For the residual fraction \(x\)
-we set
+Write \(z=(r,q)\in[0,1]^2\). The limiting density \(\nu_1(z)\) has uniform row and column
+marginals. The diagonal coordinates are \(d=r-q\) and \(a=r+q\), and integration along their
+fibers is with respect to \(dr\). If \(m_f(y)\) is the integral of \(\nu_1\) over the line with
+coordinate \(y\) in family \(f=D,A\), its final vacancy is \(u_f(y)=1-m_f(y)\). For the residual
+fraction \(x\), set
 \[
  U_f(y;x)=u_f(y)+x(1-u_f(y)),\qquad U_R=U_C=x,\qquad
- W(z)=\frac{\nu(z)}{U_D(d;x)U_A(a;x)} .
+ W(z)=\frac{\nu_1(z)}{U_D(d;x)U_A(a;x)} .
 \]
 \paragraph{Rook correction.}
-We scale \(v_x(z)=U_D(d;x)U_A(a;x)\) to give it marginals of mass one, obtaining
-\(p_x(r,q)=s_x(r)v_x(r,q)s_x(q)\). Symmetry gives the same factor on both sides.
-Multiplying \(v_x\) by the separable factor \(\nu/(u_Du_A)\) gives the same scaled kernel.
-At \(x=1\) the scaled kernel equals one. Let \(B(r,q)=p_x(r,q)-1\) be a kernel on \(L^2[0,1]\).
-Operator products are defined by integration. We set
+We scale \(v_x(z)=U_D(d;x)U_A(a;x)\) to give marginals of mass one,
+\(p_x(r,q)=s_x(r)v_x(r,q)s_x(q)\). By symmetry the two scaling factors are the same. Multiplying
+\(v_x\) by the separable factor \(\nu_1/(u_Du_A)\) gives the same scaled kernel. At \(x=1\) the
+scaled kernel is identically one. Let \(\centrado(r,q)=p_x(r,q)-1\) be a kernel on \(L^2[0,1]\).
+Operator products are defined by integration. Set
 \[
- T=(I-B^2)^{-1}-I,\qquad H=TB,\qquad
- j(r)=(T-B^2)(r,r),\qquad j_0=\int_0^1j(r)\,dr .
+ T=(I-\centrado^2)^{-1}-I,\qquad Y_{\rm T}=T\centrado,\qquad
+ j(r)=(T-\centrado^2)(r,r),\qquad j_0=\int_0^1j(r)\,dr .
 \]
-Here \(\langle f\rangle=\int_{[0,1]^2} f(r,q)\,dr\,dq\).
-Powers inside these averages are pointwise powers of kernels.
+Here \(\langle f\rangle=\int_{[0,1]^2} f(r,q)\,dr\,dq\). Powers within these averages are
+pointwise powers of kernels.
 \begin{align*}
  F(x)={}&\tfrac12 j_0^2+\operatorname{tr}(T^2)-\tfrac32j_0-\tfrac32\int_0^1 j(r)^2\,dr\\
- &+\langle j(r)(B+H-T)(r,q)j(q)\rangle\\
- &-\tfrac23\langle T^3\rangle+2\langle B H^2\rangle+\tfrac23\langle H^3\rangle .
+ &+\langle j(r)(\centrado+Y_{\rm T}-T)(r,q)j(q)\rangle\\
+ &-\tfrac23\langle T^3\rangle+2\langle \centrado Y_{\rm T}^2\rangle+\tfrac23\langle Y_{\rm T}^3\rangle .
 \end{align*}
-In particular, \(B=0\) at \(x=1\), giving \(F(1)=0\).
+In particular, \(\centrado=0\) at \(x=1\), giving \(F(1)=0\).
 \paragraph{Line prefactor.}
-For \(x>0\), use a midpoint grid with an even number \(m\) of points per side, and let \(J(z)\)
-denote the four lines through square \(z\). There are \(m,m,2m-1,2m-1\) lines of types
-\(R,C,D,A\). Set \(\rho_l=1/m\) on rows and columns and \(\rho_l=U_l/(xm)\) on diagonals of
-both families. At the intersection \(z\) of two distinct lines, set
+For \(x>0\), take a midpoint grid with an even number \(m\) of cells per side, and let
+\(\familias(z)\) denote the four lines through cell \(z\). There are \(m,m,2m-1,2m-1\) lines of
+types \(R,C,D,A\), respectively. Set \(\rho_l=1/m\) on rows and columns, and \(\rho_l=U_l/(xm)\)
+on diagonals of both families. At the intersection \(z\) of two distinct lines, set
 \[
- K_{lh}=W(z)\prod_{a\in J(z)\setminus\{l,h\}}U_a,\qquad
+ K_{lh}=W(z)\prod_{a\in \familias(z)\setminus\{l,h\}}U_a,\qquad
  v_R=1,\quad v_C=-1,\quad v_D=v_A=0,\qquad \Pi=vv^{\mathsf T}/2.
 \]
-The other entries of \(K\) are zero. A diagonal and an antidiagonal intersect on the grid only
-when their parities agree. This gives rise to the two sheets of each diagonal family in the continuum.
+All other entries of \(K\) are zero. A diagonal and an antidiagonal intersect on the grid only
+when their parities agree. This gives the two sheets of each diagonal family in the continuum.
 Writing \(\rho\) also for the diagonal matrix, we define
 \begin{align*}
  L_0&=K(I+\rho K+\rho\Pi)^{-1}\rho K-3\Pi,\qquad
  \eta_l=\begin{cases}1,&l\in R,C,\\ x/U_l,&l\in D,A,\end{cases}\\
- s_l&=m^{-1}\sum_{z\in l}\nu(z)W(z),\qquad
+ s_l&=m^{-1}\sum_{z\in l}\nu_1(z)W(z),\qquad
  \theta_l=3\eta_l s_l-\sum_h K_{lh}^2\rho_h .
 \end{align*}
-Let \([f]_m=m^{-2}\sum_z\nu(z)f(z)\). The continuum line prefactor is the limit of
+Let \([f]_m=m^{-2}\sum_z\nu_1(z)f(z)\). The continuum line prefactor is the limit of
 \begin{align*}
  \mathcal V_m(x)={}&4[W^2]_m
- -\tfrac32\Big[W\sum_{l,h\in J(z)}(L_0)_{lh}\Big]_m\\
- &-\tfrac32\Big[W\sum_{l\in J(z)}\theta_l\Big]_m
+ -\tfrac32\Big[W\sum_{l,h\in \familias(z)}(L_0)_{lh}\Big]_m\\
+ &-\tfrac32\Big[W\sum_{l\in \familias(z)}\theta_l\Big]_m
  +\frac{9}{4m}\sum_l\eta_l s_l^2 .
 \end{align*}
-The sum over \(l,h\) runs over ordered pairs and includes the diagonal. The value at zero is
-obtained by continuation from \(x>0\). Appendix~\ref{app:interior} identifies the insertion
-terms of \(d(x)\) using this same profile and the same parity convention.
+The sum over \(l,h\) is ordered and includes its diagonal. The value at zero is obtained by
+continuation from \(x>0\). Appendix~\ref{app:interior} identifies the insertion terms of \(d(x)\)
+using this same profile and parity convention.

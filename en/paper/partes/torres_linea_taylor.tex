@@ -1,0 +1,75 @@
+\begin{lema}[Reduction to seven variables]\label{lem:linea-reduccion}
+The two quantities $\widehat C_i$ in Lemma~\ref{lem:linea-traza} can be replaced by functions
+$C_i^*$ of $(p,q,a,b,g,x,y)$ with error $O_5$ in $\sum_{i\in E}\delta_i\widehat C_i$.
+\end{lema}
+\begin{proof}
+Let $\epsilon_i$ be the standard basis vectors of $\mathbb R^2$, let $z_c=(\mathsf G(c,e),\mathsf
+G(c,f))^\top$, $n=Wt$, and set
+\[
+ Q=-WD+nn^\top/\schurloc,\qquad m_i=W(\epsilon_i-\sigma_i t),\qquad C=(x-1,y-1)^\top .
+\]
+Outside $E$, block inversion gives $\widehat G_{cc}-\mathsf G(c,c)=z_c^\top Qz_c$ and $\widehat
+G_{ic}=m_i^\top z_c$. Inside $E$ the latter expression has the additional term $+\sigma_i$. Thus,
+with $b^*=(b_e^*,b_f^*)^\top$, $b^0=(b_e^0,b_f^0)^\top$, we obtain
+\begin{align*}
+ \widehat C_i&=m_i^\top\{C+G(b^*-b^0)-T/2\}+\sigma_i(b_e^*+b_f^*+b_w),\\
+ T&=\sum_{c\notin E}\tau_2(p_c)\kappa_2(p_c)(z_c^\top Qz_c)z_c .
+\end{align*}
+Indeed, $\sum_cb_c^0 z_c=C$, and the terms $b_c^*-b_c^0$ outside $E$ give $-T/2$. The entries of
+$Q$ are $O_2$. For each endpoint, the weighted sum of the cube of its component of $z_c$ outside
+$E$ is $2+O_1$, since its two fibers have mass $2+O_1$ and the component is $1+O_1$ there. The
+mixed cubic moments are $O_1$, since at most two intersections touch both endpoints and have
+weight $O_1$. Outside the four fibers, both components are $O_1$ over a total mass $O(k)$. Hence
+$T=2(Q_{ee},Q_{ff})^\top+O_3$. Let $C_i^*$ be the result of this substitution in $\widehat C_i$.
+After multiplication by $\delta_i=O_2$ the cost is $O_5$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:una-linea}]
+Combining the three changes in the predictor gives $\lambda=\polylinea+O_5$, where
+\[
+ \polylinea=\underbrace{H_0-\tfrac12\delta^\top K\delta}_{A}
+      +B_0+\underbrace{\delta_e C_e^*+\delta_f C_f^*+2p^2q^2}_{N}.
+\]
+Each summand is expressed in terms of $(p,q,a,b,g,x,y)$. In the rational calculation [O], write
+$V=p^2+q^2$, $Z_p=pa+qb$, $Y=px+qy$ and $L=p+q+(a+b)/2+g+x+y$. Through degree three, both
+$\polylinea$ and $-\pi_1$ give $-pq+pqL$. The homogeneous terms of degree four are
+\begin{align*}
+ [A]_4&=-p^2q^2/2,\\
+ [B_0]_4&=pq\{39V/2-4pq+5Z_p/2+(p+q)g\},\\
+ [N]_4&=pq\{-31V/2+4pq-Z_p+Y\},\qquad [-\pi_1]_4=pq\{4V+3Z_p/2+Y\}.
+\end{align*}
+We obtain these terms by working with polynomials of total degree at most four and discarding
+higher degrees in every product. For example, with $r=p(1-p)h$ the iteration $u\leftarrow
+r/(1-u)^2$, starting at $r$, fixes one additional degree at each step. It gives
+$\delta_e=pq+3p^2q+9p^3q-2p^2q^2$ through degree four. For the logarithms we use
+$[\log(1+v)]_{\le4}=[v-v^2/2+v^3/3-v^4/4]_{\le4}$. The function \texttt{simbolico(4)} in
+\path{suplemento/cuadrado/orden4.py} performs these operations. In the sum for $\polylinea+\pi_1$
+all terms of degrees zero through three cancel, leaving $-p^2q^2/2+pq(p+q)g$ in degree four. From
+\path{suplemento/cuadrado}, \texttt{python -B comprobar\_una\_linea.py} calls
+\texttt{simbolico(4)} and compares every coefficient of the difference with these three monomials.
+The calculation uses Python's \texttt{fractions.Fraction} in $\mathbb
+Q[p,q,a,b,g,x,y]/(p,q,a,b,g,x,y)^5$.
+
+To bound the remainder beyond the polynomial, observe that at the origin the cubic equation has
+derivative one at $u=0$. The implicit function theorem gives a holomorphic branch there. The
+determinants, variable denominators and logarithm arguments all equal one at the origin. Thus we
+can choose a closed polydisk of radius $r_0>0$ contained in an open set of holomorphy for
+$\polylinea+\pi_1$, with logarithm branches that vanish at $1$. Its radius and the bound $M_0'$ on
+the modulus there are independent of the mask and of $k$. If $v=(p,q,a,b,g,x,y)$ and
+$t=\|v\|_\infty>0$, apply Cauchy's formula to the one-variable function
+$z\mapsto(\polylinea+\pi_1)(zv/t)$ on $|z|=r_0$. For $t\le C_*/k\le r_0/2$ the tail from degree
+five onward is at most $2M_0'(C_*/r_0)^5k^{-5}$. At $t=0$ it vanishes. Adding the uniform $O_5$
+from the reduction and using $\pi_1=pq+O_3$ and $\log(1-\pi_1)=-\pi_1-p^2q^2/2+O_5$
+gives~\eqref{eq:una-linea}. The bound is absolute, with constants depending only on the class.
+\end{proof}
+
+\begin{corolario}[Avoidance of one line]\label{cor:linea-evitacion}
+If $B$ has completions, its corrected error is $g^\sharp=\log(1-\pi^{\rm
+ex})-\log(1-\pi_1)-X+O(k^{-5})$.
+\end{corolario}
+\begin{proof}
+There are $\operatorname{per}M$ rook configurations, of which $\operatorname{per}M_{ef}$ occupy
+both endpoints. Thus $Q(B)=(1-\pi^{\rm ex})\operatorname{per}M$. Since
+$L^\sharp(B)=L(B)+\log\operatorname{per}M-L_T(M)$, we obtain $g^\sharp=\log(1-\pi^{\rm
+ex})-\lambda$. Proposition~\ref{prop:una-linea} applies.
+\end{proof}

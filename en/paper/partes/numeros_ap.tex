@@ -1,11 +1,10 @@
 \section{Finite counts and quadrature bounds}\label{app:numquad}
-\subsection{Comparison with finite boards}
+\subsection{Comparison with finite boards}\label{sec:ajuste-finito}
 The exact counts, tabulated in~\cite{oeis} up to $n=27$~\cite{q27}, let us observe the quantity
-whose limit the theorem gives. For $10\le n\le27$, the table shows the integer $Q(n)$ and the
-scaled residual obtained with the canonical predictor. This last column depends on a numerical
-calculation and is rounded to six decimal places. The data file in the supplement records
-$\log Q_{\rm pred}(n)$ and the residual for each size. Figure~\ref{fig:counts} shows the last
-twelve values.
+whose limit the theorem gives. For $10\le n\le27$, the table gives the integer $Q(n)$ and the
+scaled residual obtained with the canonical predictor. The last column depends on a numerical
+calculation and is rounded to six decimal places. The supplement's data file records $\log Q_{\rm
+pred}(n)$ and the residual for each size. Figure~\ref{fig:counts} shows the last twelve values.
 
 \begin{center}\small
 \begin{tabular}{rrr}
@@ -30,16 +29,21 @@ $n$ & Exact $Q(n)$ & $n(\log Q(n)-\log Q_{\rm pred}(n))$ [N]\\ \hline
 27 & 234907967154122528 & $0.322261$ \\
 \end{tabular}
 \end{center}
-To see how much of the finite-size variation a period-four oscillation explains, the archived
-fit used the sizes $16\le n\le27$. It fixed $\cerr=0.4055004460$, the estimate then available
-from the continuum, and fitted the other three parameters of the model
+To see how much of the finite-size variation a period-four oscillation explains, the archived fit
+used the sizes $16\le n\le27$. It fixed $\cerr=0.4055004460$, the continuum estimate at the time.
+We retain this value to reproduce the fit and Figure~\ref{fig:counts} using
+\path{suplemento/datos/ajuste_finito.json}. It differs by less than $7\cdot10^{-8}$ from the
+updated center $0.40550038$ and falls within the conservative band. The other three parameters
+were fitted to the model
 \[
  nR_Q(n)=\cerr+\frac{a}{n}+A e^{-\kappa(n-16)}\cos(\pi n/2)+\text{residual}.
 \]
-The fit gave $a=-2.956$, $\kappa=0.166$, and $A=0.297$ [N]. Including the oscillation reduced
-the root mean square error from $0.128$ to $0.041$. The correction $a/n$ with $a$ close to
-$-2.9$ and the oscillation are appreciable at these sizes. The counts are consistent with the
-computed value of $\cerr$, but the table alone cannot determine it. The two-cut-off argument
-establishes the limit independently of this fit.
+The cosine is zero for odd $n$, $+1$ for $n\equiv0\;(\mathrm{mod}\,4)$, and $-1$ for
+$n\equiv2\;(\mathrm{mod}\,4)$. The periodic contrast is between the two even residue classes. The
+fit gave $a=-2.956$, $\kappa=0.166$ and $A=0.297$ [N]. Including the oscillation reduced the root
+mean square error from $0.128$ to $0.041$. Both the correction $a/n$ with $a$ close to $-2.9$ and
+the oscillation are appreciable at these sizes. The counts are consistent with the calculated
+value of $\cerr$, but the table alone does not determine it. The two-cut argument establishes the
+limit independently of this fit.
 
 \input{partes/cuadratura_ap}

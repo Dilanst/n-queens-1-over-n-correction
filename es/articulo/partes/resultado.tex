@@ -15,27 +15,32 @@ Sección~\ref{sec:claim-ledger}.
 Para el tablero ordinario existe el límite
 \begin{align}
  \cerr&=\lim_{n\to\infty}nR_Q(n)=\mathcal C_0+P_0-S,\label{eq:main}\\
- \mathcal C_0&=F(1)-\tfrac1{12}+\int_0^1 \frac{k(x)}{x^2}\,dx,\qquad F(1)=0,\notag\\
- k(x)&=d(x)+G(x)-xG'(x),\qquad G(x)=\mathcal V(x)+F(x)-\tfrac1{12},\notag\\
+ \mathcal C_0&=F(1)-\tfrac1{12}+\int_0^1 \frac{\numerr(x)}{x^2}\,dx,\notag\\
+ \numerr(x)&=d(x)+G(x)-xG'(x),\qquad G(x)=\mathcal V(x)+F(x)-\tfrac1{12},\notag\\
  P_0&=P_T+J,\qquad J=-B_2+L_2,\notag
 \end{align}
 y la integral de~\eqref{eq:main} converge absolutamente.
 \end{teorema}
-Aquí $P_T$ es la contribución de torres en la llegada. Para obtener $B_2$ y $L_2$ a partir del
+En la máscara llena el núcleo de torres escalado es constante, de modo que \(F(1)=0\)
+(sección~\ref{sec:profile-data}). Aquí $P_T$ es la contribución de torres en la llegada. Para obtener
+ $B_2$ y $L_2$ a partir del
 camino de pesos de un par colineal, se suman las dos orientaciones. En cada orientación se
 ponderan los cuatro estados de disponibilidad de los otros dos vértices.
 $S$ recoge la interacción de los dos pares de un cuadrado completo.
 
 \begin{corolario}\label{cor:derivada}
-Para el perfil físico, $k'(0)=d'(0)=0$. Además,
+Para el perfil físico, $\numerr'(0)=d'(0)=0$. Además,
 \[
  \log Q(n)=\log Q_{\rm pred}(n)+\cerr/n+o(n^{-1}),\qquad
  Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(n^{-1}).
 \]
 \end{corolario}
-La anulación de la derivada no se usa como hipótesis: la demostración toma la integral truncada
-en un corte $b>0$ fijo, la comparación de dos cortes da su límite y de esa convergencia se deduce
-$k'(0)=0$ (Apéndice~\ref{app:closing}). El corolario da la tasa de la Conjetura~10.1 de~\cite{pc}.
+Multiplicar el predictor por \(\exp(\cerr/n)\) deja un error relativo \(o(1/n)\).
+El corolario no da un umbral a partir del cual la corrección mejore el resultado en cada tamaño.
+La demostración toma la integral truncada en un corte $b>0$ fijo. La comparación de dos cortes
+da su límite y de esa convergencia se deducen $\numerr(0)=0$ y $\numerr'(0)=0$ (Apéndice~\ref{app:closing}).
+El Lema~\ref{lem:previa} establece la tasa de la Conjetura~10.1 de~\cite{pc}.
+El corolario identifica el coeficiente con signo dentro de esa tasa.
 La demostración proporciona una expresión para el coeficiente; certificar el signo que sugiere su
 evaluación todavía requiere un intervalo suficientemente estrecho.
 

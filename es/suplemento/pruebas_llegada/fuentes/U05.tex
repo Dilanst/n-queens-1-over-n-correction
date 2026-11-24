@@ -1,0 +1,54 @@
+\section{Átomos positivos y proyección}
+Si $U$ prescribe $h$ casillas RC compatibles en la máscara, su probabilidad bajo
+las torres es $(\prod_{e\in U}D_e)\per D_{-U}/\per D$. Al reescalar $D_{-U}$
+se extraen exactamente los factores de filas y columnas. El factorial, las potencias
+de tamaño, las actividades y los factores de escalado se conservan exactamente en
+la identidad. Aplicar la parte 04 dos veces cuesta a lo sumo la suma de los errores
+en los logaritmos. La cota es independiente de lo pequeña que sea una masa positiva.
+Los átomos imposibles quedan fuera de la suma y nunca se logaritman.
+\paragraph{Error puro de torres.}
+Para la función $G_q$ de \emph{Grados intermedios}, parte 03, se usa además la
+identidad de normalización de R9, partes 06--07. Cambiar $\log H_*$ por $\log H_q$ y
+truncar Stirling antes del grado $q$ cuesta $(Cq/m)^q+Ce^{-cj}$ en el tamaño físico.
+El resto real de Stirling se acota por el primer término omitido con sus coeficientes
+de Bernoulli; para $q$ pequeño fijo se cambia $C$. Su polinomio comienza en $u/12$
+cuando se incluye ese grado y permanece $O(|u|)$ para $|u|\le c_0/q$.
+Recordemos por qué el término constante de $G_q$ desaparece. Con el núcleo balanceado $z$
+y $v(1-uv)=z\exp(\alpha+\beta)$, $v$ conserva ambos márgenes uno.
+En el centro $v=z$. Diferenciando e integrando se obtiene
+$\langle\alpha'+\beta'\rangle=-\int z^2$. Los grados formados con
+$\ell=v(1-uv)/(1-2uv)$ tienen derivadas medias que aportan $+\int z^2$
+al medio logaritmo de los grados dividido por $u$. Los dos términos se cancelan.
+El término local usa $c(y)=\frac12\log(1-2y)-2\log(1-y)=y+O(y^3)$; luego
+$(\langle c(uv)\rangle-u)/u^2=O(u)$. En el centro, $W=z-1$ y $\bar\ell=1$,
+por lo que $\log d(1)$ cancela el medio logaritmo del determinante del cofactor.
+Son identidades bilineales que conservan su valor en los datos balanceados complejos.
+Los términos de balanceo, grados y cofactor son holomorfos en un disco fijo por
+la parte 02 y la rama de $v$ (para $u$ pequeño su ecuación es una perturbación
+analítica de la misma ecuación de márgenes). Como $H_q=d(1)+O(|u|)$ con constante
+uniforme, resulta $G_q/u=O(1)$ en un disco $|u|\le c_0/q$, reduciendo $c_0$.
+Conocer únicamente el cero en $u=0$ y la cota $|G_q|\le C$ en ese disco daría
+un coste $O(q)$ al dividir; la suma explícita de la parte 04 evita esa pérdida.
+\paragraph{Qué pasa al activar las marcas.}
+En el tamaño físico, para cada configuración de activaciones se tiene un polinomio
+en campos libres $\zeta$ con los pesos exactos de sus átomos como coeficientes.
+Sustituir cada logaritmo por la aproximación anterior da errores multiplicativos
+$O(\Delta_q)$ por átomo, con $\Delta_q=(Cq/j)^q+Ce^{-cj}$.
+En el polidisco de campos de \emph{Grados ponderados}, parte 04, el mayorante
+absoluto de la suma de pesos aproximados es $e^{Cv}$ y su partición tiene
+inversa de módulo $\le e^{Cv}$. Bajo esa entrada distinta, el error relativo
+de la suma es a lo sumo $e^{C'v}\Delta_q<1/2$. Así el error de los logaritmos
+se prolonga en los campos con la misma cota al tamaño físico.
+La diferencia alternada sobre activaciones cuesta como máximo $2^v$ antes de la
+proyección en los campos. Sus ganancias adicionales requieren que ambas evaluaciones
+coincidan en cada cara de actividad cero. No hemos diferenciado en $u$ el resto físico.
+\paragraph{Una comprobación algebraica en una raíz de dos fibras.}
+Para dos grupos forestales independientes, $y_i$ es la ocupación binaria de la fibra,
+$m_i=\E y_i$, $v_i=m_i(1-m_i)$, $F(y)=y^2-2y$, $L(y)=-y$.
+Con $P=F_1F_2$ y $B=P-L_1F_2-F_1L_2$ se tiene $P(y)+B(y)=0$ en cada átomo.
+En las medias, $F(m_i)-L(m_i)=-v_i$, luego $(P+B)(m)=-v_1F(m_2)-v_2F(m_1)$.
+El término $\frac12\operatorname{tr}(\operatorname{Cov}(y)P''(m))$ aporta el opuesto.
+La igualdad persiste al multiplicar por formas lineales en otros grupos distintos
+independientes, y al derivar en campos locales que preservan esa independencia.
+Esto comprueba una de las raíces excepcionales de \emph{Patrones finitos}, parte 04.
+El uso en un bosque completo requiere también la reducción de sus ramas a esas raíces.

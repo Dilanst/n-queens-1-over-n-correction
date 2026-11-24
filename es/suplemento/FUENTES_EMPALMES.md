@@ -1,5 +1,7 @@
 # Fuentes de tres empalmes de la prueba / Sources for three steps of the proof
 
+Estos extractos documentan una edición anterior. El índice vincula los tres pasos con sus demostraciones en la edición española actual. [Índice de trazabilidad](TRAZABILIDAD.md)
+
 Los bloques conservan el texto TeX español original. Cada ruta identifica el expediente y el archivo dentro del archivo de trabajo. La huella de origen corresponde al archivo íntegro. Cada huella de extracto incluye sus terminadores de línea originales. Los intervalos de líneas son inclusivos. [Índice de trazabilidad](TRAZABILIDAD.md)
 
 Each block preserves the original Spanish TeX source. Paths identify each file within its source package. The source digest covers the full file. Each extract digest includes the original line endings. Line numbers are inclusive. [Traceability index](TRAZABILIDAD.md)

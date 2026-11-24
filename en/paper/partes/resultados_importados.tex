@@ -1,0 +1,83 @@
+\subsection{Results used from earlier papers}\label{sec:importados}
+In this list \(m\) is the residual size and \(n\) the initial board size. On a reachable ordinary
+residual board, \(p\) denotes the interior Bethe stationary point on its support, with mass one in each
+row and column. We write \(\ell_f=\sum_{e\in f}p_e\), \(h_f=1-\ell_f\) for both oblique families. The
+common bounds are
+\begin{equation}\label{eq:clase-importada}
+ \max_e p_e\le C/m,\qquad \min_f h_f\ge\eta>0,\qquad
+ \lambda_2(\mathcal L_p)\ge\gamma>0 .
+\end{equation}
+The bipartite graph on rows and columns is connected. Changing the sign of the column coordinates
+transforms its Laplacian \(\mathcal L_p\) into the axial incidence matrix weighted by \(p\), with kernel
+\((\mathbf1_R,-\mathbf1_C)\). Thus the gaps in~\cite{pc} and~\cite{tc} are the same. In formulas using
+\(\tau_e=p_e(1-p_e)/(1-4p_e)\), we have \(p_e\le\tau_e\le2p_e\) for large \(m\). Comparing the forms
+preserves a uniform gap. The predictor uses the axial cofactor, the local factor, and the normalization
+term \(\tfrac12\log(2\pi)\).
+
+\paragraph{Child insertion and row sum~\cite[Thm.~7.1 and Cor.~7.2]{pc}.} If \(m\ge\delta_0n\)
+and~\eqref{eq:clase-importada} holds, there exist \(C_*,m_0\) depending only on
+\(\delta_0,C,\eta,\gamma\). For \(m\ge m_0\), every legal child has a unique stationary point on the
+branch \(p<1/4\) and
+\[
+ L(B+e)-L(B)=\log[p_e(1+\delta_e)]+r_e,\qquad
+ |\delta_e|\le C_*/m,\quad |r_e|\le C_*/m^2,\quad \sum_{e\in i}p_e\delta_e=0 .
+\]
+The correction \(\delta_e\) is the projected derivative of the logarithm of the prefactor divided by
+\(p_e\). The corollary gives \(|\log\rho(B,i)|\le C_*/m^2\) for every row \(i\), summing over all its
+children. These two estimates enter the history and insertion identities in Appendices~\ref{app:signed}
+and~\ref{app:interior}.
+
+\paragraph{Mesoscopic class~\cite[\S8.1 and Thm.~8.1]{pc}.} In the same geometry, suppose
+that~\eqref{eq:clase-importada} holds and that \(\max_f\ell_f\le\epsilon\le\epsilon_0\). The thresholds
+\(\epsilon_0,m_0\) and the constant \(C_*\) depend on \(C,\eta,\gamma\), independently of \(n/m\) and of
+the number of lines. For \(m\ge m_0\) all legal children have their small stationary point and
+\(|\log\rho(B,i)|\le C_*/m^2\). The proof retains the preceding representation for each child, giving
+\(\nu(e\mid i)=p_e(1+O(m^{-1}))\) even in the transition at the first exit. This is used in
+Appendices~\ref{app:signed}, \ref{app:arrival}, and~\ref{app:interior}.
+
+\paragraph{Prefactor expansion~\cite[\S\S7.5--7.8 and 8.4]{pc}.} On a fixed support in the macroscopic
+class, with the gauge above, \(s_{2,a}=\sum_{i\in a}p_i^2\), and \(\kappa_i=a_i^{\mathsf T}S_0^+a_i-4\),
+we use
+\[
+ \ell+\tfrac12\log\det S_{0,\rm gf}+3\sum_i p_i^2
+   =-14\sum_i p_i^3-\tfrac32\sum_i p_i^2\kappa_i
+       +\tfrac94\sum_a s_{2,a}^2+O(m^{-2}).
+\]
+The constants in the remainder are class constants, depending on \(\delta_0\) in §7. The mass bounds in
+§8.4 make them independent of \(n/m\) in the mesoscopic class. This is used in
+Appendix~\ref{app:interior} to identify \(mV\).
+
+\paragraph{Stopping and macroscopic persistence~\cite[Def.~2.2, \S4 and Cor.~4.12]{tc}.} Fix
+\(M=\lceil\delta n\rceil\) and a floor \(K_0\le K\le M\). Up to \(M\) the discrepancy in intervals,
+fibers, and rectangles must remain below the macroscopic radius. At \(M\) one also imposes the entry
+tolerances of §5.3 and the maximum length \(D_{\max}(M)<\alpha_{\rm hist}M\) for empty crossings. After
+that one requires the inner class of~\eqref{eq:clase-importada} with \(\ell_f\le\epsilon\), up to and
+including \(K\). The first violation stops the history. For a fixed fraction \(\delta>0\), a sufficiently
+small radius, a sufficiently fine partition, and large \(n\), the probability under \(\nu\) of reaching
+the radius by \(M\) is \(\le C_{\delta,r}e^{-c_{\delta,r}n}\). On the complementary event the Bethe
+maximizer is unique and satisfies~\eqref{eq:clase-importada} uniformly over lines. Section~4.3, (4.3),
+gives \(mp_e/W(e)=1+O_\delta(\zeta+1/m)\) at available sites and the same absolute error bound for the
+diagonal masses relative to \(1-u_f/U_f\), where \(\zeta\) sums the interval and fiber discrepancies, the
+partition step, and the discretization error. For a fixed number of lines, Lemma~4.10 gives the one-step
+hazard \(m^{-1}(\#\text{axes}+\sum_f(1-u_f/U_f))+O_\delta((\zeta+1/m)/m)\) under the law that chooses
+within the row according to \(p\). The child ratio above preserves that accuracy under \(\nu\). We use
+the corollary in Appendix~\ref{app:signed} and tracking at a fixed auxiliary cut-off in
+Appendices~\ref{app:interior} and~\ref{app:transfer}.
+
+\paragraph{Entry, prescriptions, and bands~\cite[\S5, Lemmas 5.2, 5.7 and Prop.~5.6, 5.8]{tc}.} Fix the
+inner and outer margins with \(2\epsilon=\epsilon_{\rm out}\le\epsilon_0(C_{\rm out},\eta_{\rm
+out},\gamma_{\rm out})\), and the tolerances as in §5.4. The entry value \(\delta\) must be sufficiently
+small for those tolerances. Lemma~5.7 provides entry of the observables and a geometric exception \(\le
+C_\lambda e^{-\lambda M}\) for \(D_{\max}(M)\). Proposition~5.6 reconstructs the inner class at \(M\) and
+on boards satisfying the tolerances. Every child of a regular parent, including the exit child, inherits
+the outer class. The weaker margins hold there, and the diagonal mass satisfies \(\le2\epsilon\) in the
+mesoscopic regime. Thus the parents belong to the classes of the two insertion theorems, with \(m>M\) and
+\(m\le M\), respectively. Under the law \(\nu\), the probability that \(s\) prescribed rows and \(t\)
+prescribed columns survive until \(m\), with regular parents up to the arrival step, is
+\(\le(m/n)^{s+t}\exp(C(st+s+t)/m)\), uniformly in \(s,t\). For every \(K_0\le K\le M\) and \(u=2^qK\le
+M\), with \(q\ge0\) an integer, regular entry followed by first exit in \([u,2u)\) costs \(\le C
+e^{-c_*u}\), with \(c_*>2\beta\), \(\beta=2\epsilon_{\rm out}/(1-\epsilon_{\rm out})\). The band
+constants are common to all floors. These are the inputs about histories for Appendices~\ref{app:signed}
+and~\ref{app:arrival}.
+
+\input{partes/importados_estaticos}

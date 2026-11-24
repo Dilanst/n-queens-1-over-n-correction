@@ -1,0 +1,136 @@
+\subsection{Activación simultánea y completabilidad}
+\begin{proposicion}[Norma del error en el cubo de activaciones]\label{prop:norma-llegada}
+Sea \(Z(Y)\) la probabilidad de evitar los pares activos de \(Y\) para una colocación
+uniforme de torres en \(A\). Sea \(\epsilon_A\) la carga diagonal máxima de \(p^{\rm T}\).
+Existe un umbral \(\eta>0\) de la clase tal que si \(\rho\ge2\) y
+\(\rho^2(\epsilon_A+1/j)\le\eta\), entonces, para \(j\) grande, \(Z(Y)>0\) en todas
+las caras y \(e=\log Z-\Lambda\) satisface
+\[
+ \sum_{U\subseteq A}\rho^{|U|}|\Delta_Ue|\le C_\rho j^2.
+\]
+\end{proposicion}
+\begin{proof}
+Usamos el álgebra finita de funciones del cubo con \(z^Uz^V=z^{U\cup V}\), donde
+\(z^U(Y)=\mathbf1_{\{U\subseteq Y\}}\). La norma \(\|\sum a_Uz^U\|_\rho
+=\sum|a_U|\rho^{|U|}\) es submultiplicativa y domina el módulo de toda evaluación.
+Sea \(a_U=\Delta_U\mathbf1_{\{\text{sin pares diagonales}\}}\); si \(p_U\) es la
+probabilidad de que las torres ocupen \(U\), la inversión en su intersección con \(Y\)
+da \(Z=\sum_Ua_Up_U z^U\). Las incompatibilidades axiales tienen \(p_U=0\).
+
+Para una prescripción compatible de \(h\) sitios sea
+\(T_U=\sum_{(i,l)\in U}(1,\delta_i,\delta_l)\), de norma de variación total \(3h\).
+El balanceo y el truncado gamma de la Proposición~\ref{prop:menores-llegada} admiten
+\(h\le a_*j\) con \(a_*\) pequeño de clase, al conservar el mismo \(Q_*\) para padre y
+menor. En la bola \(\|T\|\le c j\), se balancea \(jD\) en las medidas supervivientes
+normalizadas por \(1-h/j\); el jacobiano basal sigue invertible por perturbación.
+Si \(u_i,v_l\) son los potenciales de ese balanceo, el cambio de escala del permanente
+añade a \(\log(m!/j!)+h\log j\), con \(m=j-h\), la suma de los potenciales con signo
+menos en los márgenes supervivientes. Su término lineal define pesos \(b_i\asymp D_i\).
+El término restante, más la diferencia de \(\log H_{Q_*}\) de ambos escalados, define
+un campo \(L_*(T)\) con valor cero en el origen. El término factorial se prolonga por
+\(\log\Gamma\). En la bola la suma de potenciales y el factorial cuestan \(O(j)\), el
+logaritmo del truncado \(O(1)\). Por Cauchy en dos direcciones,
+\(\|D^2L_*\|\le C/j\) en la mitad de la bola; su derivada en cero es \(O(1/j)\) por
+el centrado y \(\log j-(\log\Gamma)'(j+1)=O(1/j)\). Así
+\[
+ p_U=\Big(\prod_{i\in U}b_i\Big)e^{L_*(T_U)}(1+O(e^{-cj})).
+\]
+Para \(h>a_*j\), \(\operatorname{per}D_{-U}\le1\) por las masas de fila y
+\(\operatorname{per}D\ge j!/j^j\ge e^{-j}\), por la desigualdad de van der Waerden.
+En ambos intervalos se tiene \(p_U\le C_0^h\prod b_i\).
+
+El peso \(w_U=a_Uz^U\prod b_i\) factoriza en las componentes del grafo diagonal
+inducido en \(U\): el indicador de evitación factoriza antes de tomar las diferencias.
+Un sitio aislado anula el peso. Dos componentes de una configuración admisible no
+comparten sitio ni fibra axial y no están unidas por un ataque diagonal.
+Se tiene \(|a_U|\le2^{|U|}\) por la fórmula de diferencias. Toda componente conexa
+se recorre por un árbol generador. Para un árbol de tamaño \(v\) anclado en \(i\),
+sumar desde las hojas cuesta \(C\epsilon_A\)
+por vecino. Incluyendo la norma, las \(v^{v-2}\) elecciones de árbol etiquetado y
+una reserva fija \(e^{Bv}\), la masa es a lo sumo
+\[
+ b_i(C_B\rho)^v\,v^{v-2}(C\epsilon_A)^{v-1}/(v-1)! .
+\]
+Como \(\sum b_i=O(j)\), la masa total es \(O(S_*)\),
+\(S_*=j\rho^2(\epsilon_A+1/j)\). Los objetos incompatibles con una componente de
+\(v\) sitios pesan \(O(vS_*/j)\), sumando en sus filas, columnas y vecinos diagonales.
+
+Para una forma lineal \(\xi\) pequeña inclinamos por \(e^{\xi[T_U]}\).
+El logaritmo del gas de componentes compatibles es la suma sobre familias conexas
+de su grafo de incompatibilidad, por la fórmula exponencial. Con un orden fijo de
+aristas, los subgrafos conexos que dan un mismo árbol generador mínimo forman un intervalo
+booleano: podemos añadir cualquier arista posterior a todas las del camino entre sus
+extremos en el árbol. Su suma alternada vale cero o uno en módulo, de modo que los
+árboles dominan el coeficiente. Sumando recursivamente los hijos de una raíz de
+tamaño \(v\), su factor exponencial es a lo sumo
+\(\exp(\sum_{\gamma'\not\sim\gamma}|w_{\gamma'}|e^{|\gamma'|})\le e^v\).
+El criterio se cierra para \(S_*/j\) pequeño y con la reserva anterior. Se obtiene
+\(\|\log Z_\xi\|=O(S_*)\). Una y dos marcas cuestan los factores de talla \(3v,(3v)^2\),
+absorbidos en la reserva. La media inclinada \(m_\xi\) de \(T_U\) y su derivada tienen
+norma \(O(S_*)\). La ecuación \(\xi=DL_*(m_\xi)\) es contractiva con constante
+\(CS_*/j<1/2\) por la Hessiana anterior. Puede iterarse desde cero, por lo que su solución
+es real en cada evaluación booleana.
+
+En \(D_\xi=Z_\xi\exp(L_*(m_\xi)-\xi[m_\xi])\) ambas exponenciales son reales positivas
+en cada cara. Al centrar \(T_U\) en \(m_\xi\), la parte lineal se cancela. La serie
+de momentos centrados tiene logaritmo de norma \(\le CS_* t^2\) al marcar con radio \(t\)
+pequeño: las marcas a partir de dos cuestan \(C t^2v^2 e^{3tv}\) por familia conexa.
+Por Cauchy su momento \(\ell\)-ésimo tiene norma proyectiva
+\(\le\ell!t^{-\ell}\exp(CS_*t^2)\le[C(\sqrt{\ell S_*}+\ell)]^\ell\), tomando
+\(t=\min(t_0,\sqrt{\ell/(1+S_*)})\). Para
+\(\exp(L_*(m_\xi+y)-L_*(m_\xi)-\xi[y])\) la cota es \(\exp(C\|y\|^2/j)\);
+eligiendo radio proporcional a \(\sqrt{j\ell}\) sus coeficientes cuestan
+\((C/\sqrt{j\ell})^\ell\) hasta \(\ell\le\kappa j\). Desde grado dos, separar los dos
+primeros factores y sumar la razón \(C(\sqrt{\eta}+\sqrt\kappa)<1\) da coste
+\(C(1+S_*)/j\). La norma proyectiva hace válida la contracción sin un factor de dimensión.
+
+Para \(|U|\le a'j\) se trunca ese Taylor en \(\lfloor\kappa j\rfloor\) dentro del radio
+\(c\sqrt\kappa\,j\), con \(\|T_U-m_\xi\|\le3a'j+CS_*\). Elegir
+\(a'\ll\sqrt\kappa\) y después \(\eta\) deja resto \(O(e^{-c'\kappa j})\).
+Para \(|U|>a'j\), la reserva exponencial y la cota \(C_0^{|U|}\) dan \(e^{-a'j+CS_*}\),
+también para el polinomio truncado, pues \(\ell!\|[y^\ell]\|\le(C\sqrt\kappa)^\ell\).
+El factor \(e^{CS_*}\) de normalización se absorbe escogiendo \(\eta\) después de las tres
+tasas positivas. Resulta, para \(j\) grande,
+\begin{equation}\label{eq:positividad-cubo}
+ \|D_\xi^{-1}Z-1\|_\rho\le C(1+S_*)/j+Ce^{-c'j}<1/2 .
+\end{equation}
+La serie de \(\log(1+w)\) converge en la norma. Así \(Z(Y)>0\) y
+\(\|\log Z\|_\rho\le C(1+S_*)\).
+
+Para el predictor se balancea simultáneamente \(p^{\rm T}_e e^{v_e}\) en la misma álgebra.
+La inversa basal de márgenes tiene suma absoluta por fila acotada: por brecha, para datos
+acotados su solución tiene norma euclídea \(O(\sqrt j)\), y la ecuación en cada coordenada
+usa una sección de norma \(O(j^{-1/2})\). Para \(h_f=1-\sum_{e\in f}z_ep^{\rm T}_e e^{v_e}\),
+la norma de \(1-h_f\) es \(\le \rho e^{\|v\|}\epsilon_A\).
+Los términos locales de las odds contienen \(\log(1-p^{\rm T}_e e^{v_e})\); el campo resultante
+y su constante de Lipschitz son \(O(\rho^2\epsilon_A+\rho/j)\). La iteración balanceada
+da \(\|e^{v_e}-1\|_\rho=O(\eta)\). La silla real así obtenida es el máximo:
+para \(d=2,4\) la tangente de \(-t\log t+(d-1)(1-t)\log(1-t)\) en \(q<e^{-4}\)
+domina en \([0,1/d]\) por concavidad y en \([1/d,1]\) por sus dos extremos.
+En uno su exceso es \(-\log q-d(1-q)>0\).
+
+El bloque axial de la Hessiana en el calibre se perturba en \(O(\eta)\) en norma
+de suma por filas. En el complemento de Schur diagonal, \(I+E_d\), la misma norma
+de \(E_d\) es \(O(\rho^2\epsilon_A+\rho/j)<1/2\) al reducir \(\eta\). Cada fila de
+incidencia diagonal aporta masa \(\le\epsilon_A\); la suma en todo el tablero aporta
+\(2j\), así que la suma absoluta de entradas cuesta \(O(\rho^2j)\).
+Luego \(|\operatorname{tr}E_d^k|\) en la norma está acotada por esa suma por
+\(\|E_d\|_\infty^{k-1}\). Para las axiales hay sólo \(2j\) índices. La acción usa
+\(\sum p^{\rm T}_i|\log p^{\rm T}_i|\le j\log j\) por entropía de filas, y para las holguras y los
+factores locales basta sumar las cargas. Se obtiene
+\(\|\Lambda\|_\rho\le C(j\log(ej)+\rho^2j)\), que prueba la cota anunciada.
+\end{proof}
+
+\begin{lema}[Completabilidad en la llegada corta]\label{lem:positividad-llegada}
+Para todo corte admisible y \(n\ge n_0(b)\) se tiene \(Q(B_j)>0\) en \(H_j\).
+En particular \(H_j\subseteq F_b\).
+\end{lema}
+\begin{proof}
+El escalado \(D\) de la máscara tiene márgenes uno. Para cualquier conjunto de filas,
+su masa debe caber en las columnas vecinas; Hall da \(\operatorname{per}A>0\).
+En \(H_j\), \(\rho^2(\epsilon_A+1/j)\le\eta\) por elección de \(\alpha\) y \(n_0(b)\).
+La evaluación \(Y=A\) de~\eqref{eq:positividad-cubo} da \(Z(A)>D_\xi(A)/2>0\).
+Cada colocación de torres de \(A\) que evita todos los ataques diagonales es una
+completación y recíprocamente. Por ello \(Q(B_j)=\operatorname{per}A\,Z(A)>0\).
+La historia permaneció regular hasta \(j\) inclusive, que es la otra condición de \(F_b\).
+\end{proof}

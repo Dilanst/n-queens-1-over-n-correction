@@ -1,0 +1,54 @@
+\begin{proposicion}[Order of the parameters and errors]\label{prop:cortes-uniformes}
+With the historical band and the parameters below, there is a constant \(C_\delta\) common to all
+admissible cut-offs. At scale \(n\) the errors in Appendices \ref{app:signed}, \ref{app:arrival},
+\ref{app:interior} and \ref{app:weights} decompose as follows. We write \(o_b(1)\) for a quantity tending
+to zero as \(n\to\infty\) for each fixed \(b\).
+\begin{enumerate}
+\item In the signed identity and the arrival remainder, the replacement of \(g^\flat\) and its
+exponential costs at most \(C_\delta b+o_b(1)\). The exits, the substitution of approximate minors, the
+activation tail, and the Taylor remainders in the stopped identity are \(o_b(1)\).
+\item In the interior mean the following terms are \(o_b(1)\): the summed insertion error, the change of
+law for the increments, the substitution of the uniform walk averages, and their Riemann sum over levels.
+\item In the insertion of a pair, the Taylor remainders in the action and the prefactor contribute
+\(o_b(1)\) after summation over pairs. Replacing their coefficients by the eight state integrals at that
+same cut-off also costs \(o_b(1)\).
+\end{enumerate}
+\end{proposicion}
+\begin{proof}
+Fix the band of~\cite[§5.4]{tc} and its \(\delta\), and reserve the common margins of diffusion,
+vacancy, gap, load, and exit \(c_*>2\beta\). The class transition fixes \(C_{\rm pres}\) before the
+cut-off. These margins fix the radii of the minors and their fields, the threshold \(\eta\), and the base
+\(C_1\) of both the deterministic and integrated counts up to \(8\log n\). The exponential reserve for
+long prescriptions is chosen before the Taylor truncation fraction and the threshold \(\eta\). Choose
+\(0<a<1\) with \(a\log(\max(2,C_1))<1/4\), then \(\rho\ge2\) with \(a\log\rho>3\), and finally
+\(\alpha<\alpha_{\rm hist}\) with \(2C\alpha<\eta/(2\rho^2)\) and with the slack of the outer class and
+the rook balancing. Choose \(\delta_*<1\) with \(C_1\delta^{-2}\delta_*^{1/3}<1\) and
+\(C_2\delta^{-2}\delta_*<1\) for the two series in~\eqref{eq:llegada-nu}. We may now choose any
+\(0<b<\min(\delta/2,\delta_*)\) small enough that \(x_0<1\) and the exponential inequality of
+Lemma~\ref{lem:llegada-integrada} holds. The proof of Lemma~\ref{lem:prescripcion-larga} shows where this
+inequality absorbs the positive part \(\beta j\) of the weight of a long line. Finally, \(n_0(b)\)
+ensures \(j\ge\sqrt n,\ v^2/j\le\delta_*\), \(C(4v+12)\le j^{1/3}\) up to \(v=8\log n\), and all class
+bounds for the child. The global radii do not increase after the load has been fixed.
+
+For the first item, both series of types are geometric once \(b/\delta_*\) has been extracted. Their
+bases and the bounded multiplier for transfer to \(\mu\) depend only on the choices made before \(b\),
+increasing \(n_0(b)\) so that \(e^{|A-R_Q(n)|}\le2\). The remaining cost is
+\[
+ O_b\!\left(nj^{-8}+n^{-1}+n(1+j)e^{-2j}+ne^{-c_b n}
+           +n e^{-c_\delta n+D_\delta n^{2/3}}\right)=o_b(1).
+\]
+The quadratic remainders in the signed identity are \(O_b(n^{-1})\) at scale \(n\). In the second item,
+the cubic residuals cost \(O_b(n\sum_{m>j}m^{-3})\). The centered increments and the change of law cost
+\(O_b(n(\sum_{m>j}m^{-4})^{1/2})\). Both tend to zero. If the uniform approximation to the mean has error
+\(\epsilon_n(b)\to0\), its sum costs \(n\epsilon_n(b)\sum_{m>j}m^{-2}=o_b(1)\). To obtain this
+approximation, first fix the walk length, take \(n\to\infty\), and then use the geometric tail of the
+resolvent on \([b,1]\). Continuity on this interval makes the Riemann sum error tend to zero. In the
+third item the pointwise error in the insertion ratio is \(O_b(j^{-3})\). Each pair carries mass
+\(O_b(j^{-2})\), and there are \(O(j^3)\) pairs. The total cost is \(O_b(n/j^2)=o_b(1)\). Accidental
+coincidences in the truncated walks cost \(O_{b,N}(1/n)\), and the longer terms are bounded by
+\(C_b\sum_{q>N}(1+q)^2r_b^{2q-O(1)}\), \(r_b<1\). These limits justify the substitutions at fixed cut-off.
+\end{proof}
+Subsequently, comparing the boundary at cut-off \(b\) with its final value gives
+\(\eta(b)=\limsup_n|\mathcal M_n(b)-(P_T+J-S)|\to0\) as \(b\) decreases, as used in
+Appendix~\ref{app:closing}. This last error belongs to the limit of the boundary profile in \(b\). The
+proposition uses \(o_b(1)\) only for the limit in \(n\).

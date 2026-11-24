@@ -1,0 +1,46 @@
+\section{Completabilidad antes de tomar el logaritmo}
+Sea $A$ la máscara de casillas legales contra las piezas anteriores y $j$ su tamaño.
+Un punto de torres bistocástico soportado en $A$ garantiza $\operatorname{per}A>0$:
+para cualquier conjunto de filas, su masa exige al menos tantas columnas vecinas.
+Hall da el emparejamiento. Denotemos por $\sigma$ un emparejamiento uniforme en $A$.
+Para $U$ un conjunto de sitios se usa $p_U=\Pr_{\rm torres}(U\subseteq\sigma)$,
+incluido el valor cero si es incompatible. Esta ley sólo requiere el permanente positivo.
+
+\paragraph{Entrada exacta y su dominio.}
+En el grafo de ataques diagonales sea $I(T)$ el indicador de que $T$ no contiene ataques
+y $a_U=\sum_{T\subseteq U}(-1)^{|U|-|T|}I(T)$.
+En el álgebra booleana de activaciones, con $\rho\ge2$, pongamos
+\[
+ Z(z)=\sum_U a_U p_U z^U,\qquad
+ \|f\|_\rho=\sum_U\rho^{|U|}|[U]f|.
+\]
+Por inversión de Möbius, para cada activación real $Y$,
+$Z(\mathbf1_Y)=\mathbb E_{\rm torres} I(Y\cap\sigma)$. En particular
+$Z(\mathbf1)=Q(B)/\operatorname{per}A$ incluso si $Q(B)=0$.
+
+Fijemos los parámetros uniformes de difusión, brecha y aproximación de menores
+de \emph{Media franjas}, partes 01--06. Su prueba de la parte 06, antes del logaritmo,
+construye una unidad $D_h$ positiva en toda evaluación real. Para $j$ grande y
+$\rho^2(\epsilon_A+1/j)\le\eta$ se obtiene $\|D_h^{-1}Z-1\|_\rho<1/2$.
+En esta fuente los datos del gas y los pesos de supresión se forman con $p_U$,
+el escalado de torres y sus menores. El logaritmo auxiliar $G(h)$ es del gas basal
+y $D_h= \exp(G(h)+L(m)-h[m])$ se evalúa en campos reales.
+La recuperación se hace para $Z$ definido arriba, antes de introducir $\log Z$.
+El suceso histórico de éxito usado para medias posteriores queda fuera de este paso.
+
+\paragraph{Implicación revisada.}
+Evaluar en $\mathbf1_Y$ es un homomorfismo de norma a lo sumo uno. Luego
+\[
+ \frac{Z(\mathbf1_Y)}{D_h(\mathbf1_Y)}>\frac12,\qquad
+                       Q(B)>0\quad(Y\text{ total}).
+\]
+$D_h$ puede ser pequeño al crecer $j$. Para esta deducción sólo importa su signo.
+Sea $L_{\max}$ la mayor longitud disponible de una diagonal y
+$j\max P_e\le M_0$ para el punto de torres $P$ de la máscara.
+Entonces $\epsilon_A\le M_0L_{\max}/j$. Fijemos $\alpha>0$ con
+$M_0\alpha<\min(\epsilon_{\mathcal D},\eta/(2\rho^2))$.
+Por integralidad,
+$L_{\max}<\lceil\alpha j\rceil$ implica $L_{\max}<\alpha j$.
+En toda llegada histórica regular de estas características se cumple la hipótesis
+de carga para $j$ grande y existe una completación. Es una afirmación determinista
+condicionada a las estimaciones de torres citadas, sobre tableros con esa carga.

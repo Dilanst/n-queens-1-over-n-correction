@@ -1,0 +1,77 @@
+  3 | \section{Potencial dual y desplazamiento del punto de Bethe}\label{s:dual}
+  4 | 
+  5 | \paragraph{Marco.}
+  6 | Estructura $(E,R,C,\Dg)$ como en la Secci\'on~\ref{s:lemaT-tablero}, ahora sin pesos dados, con
+  7 | \textup{(G)}. Sea $d_e:=2+|\Dg(e)|\in\{2,3,4\}$. Para $d\in\{2,3,4\}$ sean
+  8 | \[
+  9 |  g_d(p):=\log p+(d-1)\log(1-p),\qquad \tau_d(p):=\frac{p(1-p)}{1-dp}=\frac1{g_d'(p)}\qquad(0<p<1/d).
+ 10 | \]
+ 11 | $g_d$ es estrictamente creciente en $(0,1/d)$, de $-\infty$ a $\bar\theta_d:=g_d(1/d)$, y $g_d'$ es
+ 12 | decreciente. Sean $p_d:(-\infty,\bar\theta_d)\to(0,1/d)$ su inversa y
+ 13 | $\psi_d(\theta):=d\,p_d(\theta)+(d-1)\log(1-p_d(\theta))$. Entonces
+ 14 | \[
+ 15 |  p_d'=\tau_d\circ p_d,\qquad \psi_d'=p_d,\qquad \psi_d''=\tau_d\circ p_d>0 .
+ 16 | \]
+ 17 | Las variables duales son $y=(z,w)\in\R^H\times\R^\Dg$, una por l\'inea. Ponemos
+ 18 | $\theta_e(y):=a_e^\T z+b_e^\T w$, el dominio abierto y convexo
+ 19 | $\Y:=\{y:\ \theta_e(y)<\bar\theta_{d_e}\ \forall e\}$, $p_e(y):=p_{d_e}(\theta_e(y))$ y
+ 20 | \[
+ 21 |  \Psi(y):=\sum_e\psi_{d_e}(\theta_e(y))+\sum_{f\in\Dg}e^{w_f}-\sum_{a\in H}z_a-\sum_{f\in\Dg}w_f ,
+ 22 | \]
+ 23 | \[
+ 24 |  \F_a(y):=\sum_{e\in a}p_e(y)-1\quad(a\in H),\qquad
+ 25 |  \F_f(y):=e^{w_f}+\sum_{e\in f}p_e(y)-1\quad(f\in\Dg).
+ 26 | \]
+ 27 | $S(y)$ es el operador del Marco de la Secci\'on~\ref{s:lemaT-tablero} con pesos $\tau_e=\tau_{d_e}(p_e(y))$
+ 28 | y vacancias $h_f=e^{w_f}$; $u:=v\oplus0$. La entrop\'ia (reducida) de Bethe es
+ 29 | \[
+ 30 |  \mathcal H(p):=-\sum_ep_e\log p_e+\sum_e(d_e-1)(1-p_e)\log(1-p_e)-\sum_fh_f\log h_f,\qquad
+ 31 |  h_f:=1-\sum_{e\in f}p_e ,
+ 32 | \]
+ 33 | en el dominio $\{0<p_e<1/d_e,\ h_f>0\}$ con masas de fila y de columna uno. Es $H_B$ de
+ 34 | \cita{TC:02\_preliminares:42--51} tras eliminar las diagonales de una sola casilla
+ 35 | \cita{PC:08a\_meso:39--42}: una l\'inea $\{e\}$ tiene $h=1-p_e$ y su t\'ermino cancela una de las copias
+ 36 | de $(1-p_e)\log(1-p_e)$. Con $\Dg=\emptyset$ es el caso de torres ($d_e=2$).
+ 37 | 
+ 38 | \begin{lema}[Potencial dual]\label{l:P}
+ 39 | Bajo \textup{(G)}:
+ 40 | \begin{enumerate}
+ 41 | \item[(P1)] $\Psi$ es $C^\infty$ y convexa en $\Y$, con $\nabla\Psi=\F$ y $\nabla^2\Psi=S(y)\succeq0$,
+ 42 | $\ker S(y)=\operatorname{span}(u)$. Adem\'as $\Psi(y+tu)=\Psi(y)$, $p(y+tu)=p(y)$ y $\F(y)\perp u$.
+ 43 | \item[(P2)] $y\in\Y$ es un cero de $\F$ si y s\'olo si $p=p(y)$ es un punto estacionario de $\mathcal H$ en
+ 44 | su dominio, con $h_f=e^{w_f}$ (un punto de Bethe). Los ceros de $\F$, si existen, forman una recta
+ 45 | $y^*+\R u$: el punto de Bethe es \'unico \textup{(}cf. \cita{TC:02\_preliminares:52--53}\textup{)}.
+ 46 | \item[(P3)] En un cero $y^*=(z^*,w^*)$, con $p^*=p(y^*)$, $\Psi(y^*)=\min_{\Y}\Psi$ y
+ 47 | \[
+ 48 |  \mathcal H(p^*)=\Psi(y^*)-2k-|\Dg|=-\sum_{a\in H}z^*_a-\sum_{f\in\Dg}w^*_f+\sum_e(d_e-1)\log(1-p^*_e).
+ 49 | \]
+ 50 | \end{enumerate}
+ 51 | \end{lema}
+ 52 | 
+ 53 | \begin{proof}
+ 54 | (P1) Derivando la composici\'on y usando $\psi_d'=p_d$: $\partial\Psi/\partial z_a=\sum_{e\in a}p_e-1$ y
+ 55 | $\partial\Psi/\partial w_f=\sum_{e\in f}p_e+e^{w_f}-1$. Derivando otra vez con $p_d'=\tau_d\circ p_d$,
+ 56 | $\nabla^2\Psi=\sum_e\tau_{d_e}(p_e)(a_e\oplus b_e)(a_e\oplus b_e)^\T+\operatorname{diag}(0_H,e^{w})=S(y)$,
+ 57 | y el n\'ucleo es el del Lema~\ref{l:T-tablero}(a). Como $a_e^\T v=0$, $\theta_e(y+tu)=\theta_e(y)$, y
+ 58 | $\sum_az_a$ no cambia porque $|R|=|C|$. Por \'ultimo
+ 59 | $u^\T\F=\sum_{a\in R}\F_a-\sum_{a\in C}\F_a=\sum_ep_e-k-(\sum_ep_e-k)=0$.
+ 60 | 
+ 61 | (P2) En el dominio de $\mathcal H$, $\partial\mathcal H/\partial p_e=-g_{d_e}(p_e)-2+\sum_{f\ni e}\log h_f$
+ 62 | (pues $-1-(d_e-1)+|\Dg(e)|=-2$). $p$ es estacionario con las masas de fila y columna fijadas si y s\'olo si
+ 63 | hay multiplicadores $\mu_a$ con $\partial\mathcal H/\partial p_e=\mu_{r(e)}+\mu_{c(e)}$, es decir,
+ 64 | $g_{d_e}(p_e)=z_{r(e)}+z_{c(e)}+\sum_{f\ni e}w_f$ con $z_a=-1-\mu_a$ y $w_f=\log h_f$. Eso es $p=p(y)$;
+ 65 | las masas uno son $\F_a=0$ y $h_f=1-\sum_{e\in f}p_e$ es $\F_f=0$. Si $y,y'$ son ceros, la funci\'on convexa
+ 66 | $t\mapsto\Psi(y+t(y'-y))$ tiene derivada nula en $0$ y en $1$, luego es constante y
+ 67 | $(y'-y)^\T S(\cdot)(y'-y)=0$ en el segmento: $y'-y\in\R u$ por (P1).
+ 68 | 
+ 69 | (P3) Un punto cr\'itico de una funci\'on convexa en un abierto convexo es un m\'inimo. Con
+ 70 | $\log p_e=\theta_e-(d_e-1)\log(1-p_e)$,
+ 71 | \[
+ 72 |  \mathcal H(p^*)=-\sum_ep^*_e\theta_e+\sum_e(d_e-1)\log(1-p^*_e)-\sum_fh_fw^*_f ,\qquad
+ 73 |  \sum_ep^*_e\theta_e=\sum_az^*_a+\sum_fw^*_f(1-h_f),
+ 74 | \]
+ 75 | por las masas uno y $\sum_{e\in f}p^*_e=1-h_f$. Eso da la segunda igualdad. Para la primera,
+ 76 | $\sum_ed_ep^*_e=2k+\sum_f(1-h_f)$ y $\sum_fe^{w^*_f}=\sum_fh_f$, luego
+ 77 | $\Psi(y^*)=2k+|\Dg|+\sum_e(d_e-1)\log(1-p^*_e)-\sum_az^*_a-\sum_fw^*_f$.
+ 78 | \end{proof}
+ 79 | 

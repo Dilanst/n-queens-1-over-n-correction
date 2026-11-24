@@ -1,37 +1,37 @@
 \subsection{Los dos funcionales del perfil}\label{sec:profile-data}
-Escribamos \(z=(r,q)\in[0,1]^2\). La densidad límite \(\nu(z)\) tiene marginales uniformes en fila y
+Escribamos \(z=(r,q)\in[0,1]^2\). La densidad límite \(\nu_1(z)\) tiene marginales uniformes en fila y
 columna. Las coordenadas diagonales son \(d=r-q\) y \(a=r+q\); en sus fibras se integra en \(dr\).
-Si \(m_f(y)\) es la integral de \(\nu\) sobre la línea de coordenada \(y\) en la familia \(f=D,A\),
+Si \(m_f(y)\) es la integral de \(\nu_1\) sobre la línea de coordenada \(y\) en la familia \(f=D,A\),
 su vacancia final es \(u_f(y)=1-m_f(y)\). Para la fracción residual \(x\) ponemos
 \[
  U_f(y;x)=u_f(y)+x(1-u_f(y)),\qquad U_R=U_C=x,\qquad
- W(z)=\frac{\nu(z)}{U_D(d;x)U_A(a;x)} .
+ W(z)=\frac{\nu_1(z)}{U_D(d;x)U_A(a;x)} .
 \]
 \paragraph{Corrección de torres.}
 Escalamos \(v_x(z)=U_D(d;x)U_A(a;x)\) a marginales de masa uno,
 \(p_x(r,q)=s_x(r)v_x(r,q)s_x(q)\); la simetría da el mismo factor a ambos lados.
-Multiplicar \(v_x\) por el factor separable \(\nu/(u_Du_A)\) da el mismo núcleo escalado.
-En \(x=1\) el núcleo escalado vale uno. Sea \(B(r,q)=p_x(r,q)-1\) como núcleo en \(L^2[0,1]\).
+Multiplicar \(v_x\) por el factor separable \(\nu_1/(u_Du_A)\) da el mismo núcleo escalado.
+En \(x=1\) el núcleo escalado vale uno. Sea \(\centrado(r,q)=p_x(r,q)-1\) como núcleo en \(L^2[0,1]\).
 Los productos de operadores se definen por integración. Ponemos
 \[
- T=(I-B^2)^{-1}-I,\qquad H=TB,\qquad
- j(r)=(T-B^2)(r,r),\qquad j_0=\int_0^1j(r)\,dr .
+ T=(I-\centrado^2)^{-1}-I,\qquad Y_{\rm T}=T\centrado,\qquad
+ j(r)=(T-\centrado^2)(r,r),\qquad j_0=\int_0^1j(r)\,dr .
 \]
 Aquí \(\langle f\rangle=\int_{[0,1]^2} f(r,q)\,dr\,dq\).
 Las potencias dentro de estos promedios son potencias puntuales de núcleos.
 \begin{align*}
  F(x)={}&\tfrac12 j_0^2+\operatorname{tr}(T^2)-\tfrac32j_0-\tfrac32\int_0^1 j(r)^2\,dr\\
- &+\langle j(r)(B+H-T)(r,q)j(q)\rangle\\
- &-\tfrac23\langle T^3\rangle+2\langle B H^2\rangle+\tfrac23\langle H^3\rangle .
+ &+\langle j(r)(\centrado+Y_{\rm T}-T)(r,q)j(q)\rangle\\
+ &-\tfrac23\langle T^3\rangle+2\langle \centrado Y_{\rm T}^2\rangle+\tfrac23\langle Y_{\rm T}^3\rangle .
 \end{align*}
-En particular \(B=0\) para \(x=1\), lo que da \(F(1)=0\).
+En particular \(\centrado=0\) para \(x=1\), lo que da \(F(1)=0\).
 \paragraph{Prefactor de líneas.}
-Para \(x>0\) usemos una malla de puntos medios de lado par \(m\); sean \(J(z)\) las cuatro líneas
+Para \(x>0\) usemos una malla de puntos medios de lado par \(m\); sean \(\familias(z)\) las cuatro líneas
 que pasan por la casilla \(z\). Hay \(m,m,2m-1,2m-1\) líneas de tipos \(R,C,D,A\). Ponemos
 \(\rho_l=1/m\) en filas y columnas, y \(\rho_l=U_l/(xm)\) en diagonales de ambas familias.
 En el cruce \(z\) de dos líneas distintas ponemos
 \[
- K_{lh}=W(z)\prod_{a\in J(z)\setminus\{l,h\}}U_a,\qquad
+ K_{lh}=W(z)\prod_{a\in \familias(z)\setminus\{l,h\}}U_a,\qquad
  v_R=1,\quad v_C=-1,\quad v_D=v_A=0,\qquad \Pi=vv^{\mathsf T}/2.
 \]
 Las demás entradas de \(K\) valen cero. Una diagonal y una antidiagonal se cruzan en la malla
@@ -40,14 +40,14 @@ Con \(\rho\) también para la matriz diagonal, definimos
 \begin{align*}
  L_0&=K(I+\rho K+\rho\Pi)^{-1}\rho K-3\Pi,\qquad
  \eta_l=\begin{cases}1,&l\in R,C,\\ x/U_l,&l\in D,A,\end{cases}\\
- s_l&=m^{-1}\sum_{z\in l}\nu(z)W(z),\qquad
+ s_l&=m^{-1}\sum_{z\in l}\nu_1(z)W(z),\qquad
  \theta_l=3\eta_l s_l-\sum_h K_{lh}^2\rho_h .
 \end{align*}
-Sea \([f]_m=m^{-2}\sum_z\nu(z)f(z)\). El prefactor de líneas del continuo es el límite de
+Sea \([f]_m=m^{-2}\sum_z\nu_1(z)f(z)\). El prefactor de líneas del continuo es el límite de
 \begin{align*}
  \mathcal V_m(x)={}&4[W^2]_m
- -\tfrac32\Big[W\sum_{l,h\in J(z)}(L_0)_{lh}\Big]_m\\
- &-\tfrac32\Big[W\sum_{l\in J(z)}\theta_l\Big]_m
+ -\tfrac32\Big[W\sum_{l,h\in \familias(z)}(L_0)_{lh}\Big]_m\\
+ &-\tfrac32\Big[W\sum_{l\in \familias(z)}\theta_l\Big]_m
  +\frac{9}{4m}\sum_l\eta_l s_l^2 .
 \end{align*}
 La suma sobre \(l,h\) es ordenada e incluye su diagonal. El valor en cero se obtiene por

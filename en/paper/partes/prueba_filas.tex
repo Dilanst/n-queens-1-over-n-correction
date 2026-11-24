@@ -1,44 +1,85 @@
-\subsection{How to read the row expansion}
-The weight of a square depends on how it enters the mean in the preceding table. For terms that
-average over a center \(c\), we use the measure \(\nu(c)\,dc\) and write \(\langle\cdot\rangle_c\). A
-second independent square \(i\) carries the same measure. If \(i\) lies on a line \(l\) through the
-center, only one coordinate is free, either row or column, and the measure on that fiber is
-\(d\omega_l(i)=\eta_l\nu(i)\,dy\). In this paragraph \(C\) denotes a kernel distinct from the column
-family. Define
-\begin{align*}
- A_{lh}&=(L_0-K)_{lh},\qquad B_{lh}=K_{lh}(W_{lh}-K_{lh}),\\
- C_{lh}&=-B_{lh}(W_{lh}-2K_{lh}),\qquad
- w(i)=\sum_{\{l,h\}\subset J(i),\,l\ne h}(L_0)_{lh}.
-\end{align*}
-Here \(W_{lh}\) equals \(W\) at the crossing, or zero if there is no crossing. We write
-\(A(i,c)=\sum_{l\in J(i),\,h\in J(c)}A_{lh}\) and similarly for \(B,C\). If the first argument is a
-single line, we sum only over \(h\). After summing, we set \(M_2=A^2+B,\ M_3=A^3+3AB+C\). The cubic
-term distinguishes three averages according to whether we choose an independent square, a diagonal
-line or a square on a fiber through the center. With their respective signs we obtain
-\begin{align*}
- f2E&=\left\langle -M_3(i,c)/6+\tfrac32 W(i)M_2(i,c)\right\rangle_{i,c},\\
- f2z&=-\tfrac16\left\langle
- \int_{l\in D\cup A}\frac{u_l}{U_l}M_3(l,c)\,d\rho_l\right\rangle_c ,\\
- f2F&=\left\langle\sum_{l\in J(c)}\int_{i\in l}W(i)^2\,d\omega_l(i)\right\rangle_c .
-\end{align*}
-The measure \(d\rho\) is the continuum measure represented by the line weights in
-Section~\ref{sec:profile-data}. Four other terms use the same averages.
-\begin{align*}
- G_{\rm cof}&=-\tfrac12-3\langle W^2\rangle_c,\qquad
- f4_{\rm expl}=-9\langle W^2\rangle_c,\\
- f4_{L0}&=\langle Ww\rangle_c,\qquad f5c=-3\langle Ww\rangle_c .
-\end{align*}
-For \(C3_{\rm cuad}\) we consider a center and three translated squares that complete the geometric
-square. We take both oriented bases (row--column and diagonal--antidiagonal) and both signs in each
-direction. The weight is the product of the four \(W\) factors, \(x^{n_{RC}-3}\) and the \(U_l\)
-factors of the distinct diagonal lines. Here \(n_{RC}\) counts the distinct rows and columns. We
-integrate with respect to Lebesgue measure \(dr\,dc\,dh\), with \(h>0\) and the square inside the
-board. The four \(W\) factors already supply the physical weight, with no additional density at the
-center. In the grid implementation a side of length zero carries half weight. In \(f3F\) the quadratic
-fiber term includes the variance and the covariance due to shared lines, and \(f3c\) collects the two
-center contractions. In \(f5F\) we integrate over the fiber the product of \(-w(i)\) and the sum of
-its line responses. In \(f7\) we square \emph{after} summing the responses on the fiber and outside
-the center. Finally, \(Q1,Q2\) take the linear and quadratic trace terms with respect to the same
-center, with the corrections \(\Delta_1,\Delta_2\) to the product over distinct lines given above.
-These measures and multiplicities determine the interior integrand \(d(x)\). At arrival we must
-average over the diagonal pairs that remain available in the rook mask.
+\subsection{The sixteen profile contractions}\label{sec:contracciones} Write \(\langle
+g\rangle_i=\int_{[0,1]^2}\nu_1(i)g(i)\,di\) for the area mean and \(\langle\cdot\rangle_c\) for the same
+mean at the center. On the fiber \(\lambda\) through \(c\), we have
+\(d\omega_\lambda(i)=\eta_\lambda\nu_1(i)\,dy\), where \(y\) is the free row or column coordinate, and
+the row coordinate on diagonals. For a function \(g\), set \(\int_F g=\sum_{\lambda\in
+\familias(c)}\int_{i\in\lambda}g(i,\lambda)\,d\omega_\lambda(i)\). The measure \(d\rho\) of a free line
+is \(dy\) on each axial family and \(U_f\,dy/(2x)\) on each sheet of a diagonal family. The factor
+\(1/2\) already averages over the sheet of the free line. The remaining free integer indices contribute
+their own parity classes according to their parametrization. On an axial fiber, the displacement takes
+the two parities with equal weight. On a diagonal, the displacement preserves the color. A diagonal and
+an antidiagonal intersect only on compatible sheets.
+
+\paragraph{Availability at an intersection.} In each configuration, fix the lines through its marked
+squares and the lines integrated against \(d\rho\). Denote this set by \(\mathcal A\). Assign to each
+other line \(\ell\) in a finite configuration an independent Bernoulli variable \(X_\ell\) with mean
+\(U_\ell\). On \(\mathcal A\) set \(X_\ell=1\). Let \(\familias(z)\) be the four lines through \(z\), and
+put \(Y_z=\prod_{\ell\in \familias(z)}X_\ell\) and \(\pesodirecto(z)=W(z)Y_z\). A missing intersection
+gives \(\pesodirecto=0\). Thus the weight of a set \(Z\) of direct squares follows from \[
+ \psi(Z)=\mathbb E\prod_{z\in Z}Y_z
+ =\prod_{\ell\in(\bigcup_{z\in Z}\familias(z))\setminus\mathcal A}U_\ell .
+\] We use the same indicator throughout each monomial. For the kernel \(L_0\) and the correction
+\(\theta\) of Section~\ref{sec:profile-data}, the two-line response is \[
+ E(a,b)=
+ \begin{cases}
+ (L_0)_{aa}+\theta_a,&a=b,\\
+ (L_0)_{ab}-\pesodirecto(a\cap b),&a\ne b .
+ \end{cases}
+\] A marked square contributes \(\pesodirecto(i)=W(i)\). Write \(z_f=\sum_{j\in \familias(c)}E(f,j)\),
+\(T_i=\sum_{a\in \familias(i)}z_a\), \(t_j=z_j\) for \(j\in \familias(c)\), and
+\(w(i)=\sum_{\{a,b\}\subset \familias(i)}(L_0)_{ab}\). In particular, \(t_j\) and \(w(i)\) at a marked
+square are deterministic. For \(i\) sharing only \(\lambda\) with \(c\), set \(\sigma_i=\sum_{a\in
+\familias(i)\setminus\{\lambda\}}z_a\).
+
+\paragraph{Cubic term, energy, and row correction.} The cubic action contributes \begin{align*}
+ f2E&=\left\langle-\tfrac16\mathbb E T_i^3+\tfrac32 W(i)\mathbb E T_i^2\right\rangle_{i,c},\\
+ f2z&=-\tfrac16\left\langle\int_{D\cup A}(u_f/U_f)\,\mathbb E z_f^3\,d\rho(f)\right\rangle_c,\\
+ f2F&=\left\langle\int_F W(i)^2\right\rangle_c .
+\end{align*} In \(f2E\) we mark \(i,c\), independently under the area measure. In \(f2z\) we mark
+\(c,f\). To verify the moments in these two cases, sum over the pairs of lines defining \(T_i\) or
+\(z_f\). Let \(A_1,A_2,A_3\) denote the respective sums of \(L_0-K\), \(K(W_{ab}-K)\), and
+\(-K(W_{ab}-K)(W_{ab}-2K)\), with \(W_{ab}=W(a\cap b)\) or zero. In general position distinct
+intersections have distinct transverse lines. By the centered moments of each Bernoulli variable, the
+second moment is \(A_1^2+A_2\) and the third is \(A_1^3+3A_1A_2+A_3\). The factor \(u_f/U_f\) is the
+stationary-point vacancy on the retained line.
+
+With \(I_2=\langle W(c)^2\rangle_c\) and \(\Xi=\langle W(c)w(c)\rangle_c\), we obtain \[
+ G_{\rm cof}=-\tfrac12-3I_2,\qquad f4=-9I_2+\Xi,\qquad f5c=-3\Xi .
+\] Indeed, \(mf_c\) tends to \(w(c)-6W(c)\) and \(1-t_{cc}=-3+O_b(m^{-1})\). The remaining center and
+fiber contractions are \begin{align*}
+ f3F&=-\tfrac12\left\langle\int_F\mathbb E\sigma_i^2\right\rangle_c,\\
+ f3c&=\tfrac12\left\langle\sum_{j\in \familias(c)}t_j^2
+ -\sum_{j,h\in \familias(c)}[W(c)(1-\delta_{jh})+\Pi_{jh}]
+                         [E(h,j)+\Pi_{hj}]\right\rangle_c,\\
+ f5F&=-\left\langle\int_F w(i)\mathbb E T_i\right\rangle_c,\\
+ f7&=\tfrac12\left\langle\left[-w(c)+\int_F w(i)
+                  +\left\langle w(i)\mathbb E T_i\right\rangle_i\right]^2\right\rangle_c .
+\end{align*} Here \(\Pi_{jh}=v_jv_h/2\) is the profile kernel. The first term in \(f3c\) comes from
+\(t^{\mathsf T}D_0t\) and the second from \(E_R\). In \(f3F\), \(i,c\) are marked on the same fiber. Let
+\(Z\) be the set of existing intersections \(a\cap j\), with \(a\in \familias(i)\setminus\{\lambda\}\)
+and \(j\in \familias(c)\setminus\{\lambda\}\) from distinct families. In general position these squares
+are distinct. Writing \(\psi_z=\psi(\{z\})\), the negative signs of the direct parts cancel in the
+covariance, giving \begin{align*}
+ \mathbb E\sigma_i^2={}&(\mathbb E\sigma_i)^2+\sum_{z\in Z}W(z)^2\psi_z(1-\psi_z)\\
+ &+\sum_{\substack{z,z'\in Z\\z\ne z'}}W(z)W(z')
+       [\psi(\{z,z'\})-\psi_z\psi_{z'}].
+\end{align*} For example, in coordinates relative to \(c=(0,0)\), if \(i=(0,s)\), the intersections
+\((s,s)\) and \((s,0)\) share row \(s\). When both lie on the board, their joint weight is
+\(\psi_z\psi_{z'}/U_R\). In \(f7\) the two copies of the sum have separate free indices. Once \(c\) is
+fixed, their accidental coincidences have measure zero. We therefore square the integrals of the centered
+response before averaging over \(c\).
+
+\paragraph{Triangles of lines in the cubic trace.} Three lines in the product \(S_*^3\) either meet at a
+deleted square or intersect at three distinct squares which, together with \(c\), form a geometric
+square. In the first case the six orderings cancel the divisor \(6\), giving another copy of \(f2F\). For
+the second case, take the basis \(((1,0),(0,1))\) or \(((1,1),(1,-1))\) and multiply each vector by an
+independent sign to obtain \(v,w\). Set \(Z=\{c,c+hv,c+hw,c+h(v+w)\}\), \(h>0\), and let \(n_{RC}\) be
+the number of axial lines of \(Z\). The three free coordinates are those of \(c\) and the primitive step
+\(h\). This gives \[
+ C_{3,\rm cuad}=\sum_{v,w}\int_{\{(c,h):\,Z\subset[0,1]^2\}}
+  x^{n_{RC}-3}\prod_{z\in Z}W(z)
+  \prod_{\ell\in(\bigcup_{z\in Z}\familias(z))\cap(D\cup A)}U_\ell\,dc\,dh .
+\] The four \(W\) factors include the weight of the center. In the quadrature rule, side length zero
+receives half the limiting value of the integrand. In the integral it has measure zero.
+
+\input{partes/prueba_respuesta} \input{partes/reordenacion_f6} \input{partes/prueba_trazas_interior}

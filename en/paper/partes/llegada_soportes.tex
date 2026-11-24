@@ -1,0 +1,95 @@
+\begin{proposicion}[Bound by support and number of cycles]\label{prop:soportes-llegada}
+Let \(U,v,c_s,d_i\) be as in Lemmas~\ref{lem:rango-llegada} and~\ref{lem:tipos-llegada}. Let \(\widehat
+e_U\) be the logarithm of the sum of the weights of Proposition~\ref{prop:menores-llegada} on each face,
+minus the change \(\Lambda\) in the predictor upon activating the pairs of that face, with the same
+baseline normalization. Suppose that every site has a diagonal neighbor in \(U\). For \(v\le8\log n\),
+\[
+ |\Delta_U\widehat e_U|\le C^v(Cv)^{c_s+1}j^{-p}\prod_{i\in U}d_i,\qquad
+ p=\begin{cases}v+c_s+1&\text{forest},\\v+c_s&\text{one cycle},\\
+ v+c_s-1&\text{two or more independent cycles}.\end{cases}
+\]
+For \(v\le4\) the same orders hold for the physical error \(e\).
+\end{proposicion}
+\begin{proof}
+Introduce a size variable \(s\) and independent activities \(\zeta_i\) after extracting the affine field
+common to the faces. At the physical value, \(s=1/j\) and \(|\zeta_i|\le C/j\). A fiber of size \(D_f\)
+satisfies \(\sum_{i\in f}d_i^{-1}\le1\). With \(\|z\|_*=\max_i d_i|z_i|\), the change in fiber load is
+\(\le4\|z\|_*\) per neighborhood, and the measures for the exterior balancing vary by \(O(v|s|)\). Its
+centered inverse and the propagators remain bounded as in Proposition~\ref{prop:menores-llegada}. On
+\(|s|<\kappa/v,\ |\zeta_i|<\kappa'/d_i\), the derivative of the local odds equation in the \(*\) norm is
+at most \(C\kappa'\). The normalized Hessian of the prefactor is \(I+E\), with \(\|E\|_\infty\le
+C\kappa'\). The trace series bounds its logarithm by \(v\sum_{k\ge1}\|E\|_\infty^k/k\). In the
+approximate count, each site enters by the empty-plus-occupied identity. The occupied-to-empty ratio
+carries the factor \(\zeta_i\). When its neighbors are forbidden, the variations sum to \(O(\sum_{l\sim
+i}|\zeta_l|)=O(\kappa')\). In an atom the deletions enter the measure variable \(\theta=sT_U\), of fixed
+radius in total variation. The derivatives of order \(h\) of the exterior field, with its pole \(1/s\),
+give mixed differences \(\le h! C^h|s|^{h-1}\) upon integration in the \(h\) deleted directions. Summing
+them over subsets of \(h-1\) additional sites costs a geometric series with polynomial factor \(h\) if
+\(Cv|s|<1\). If the occupied-to-empty ratio is at most \(K|\zeta_i|<1/2\) in smaller volumes, the
+successive complex marginals have absolute value at most one. Their product controls every indicator of
+prescribed sites. The change in the exterior field upon occupying \(i\) costs at most
+\(\prod_D(1+|e^{a_D}-1|)\le e^{\sum_D|a_D|}\), where \(a_D\) are the mixed differences. Removing the
+neighbors costs \(\exp(2K\sum_{l\sim i}|\zeta_l|)\). First fixing \(K\) for the exterior field and then
+choosing \(\kappa'\) small closes the induction. Thus the partition function ratios are
+\(1+O(|\zeta_i|)\), and the logarithm is \(O(v)\) per face. The saddle and cofactor factors agree on two
+faces when \(\zeta_i=0\). Hence the alternating sum is holomorphic, bounded by \(C^v\), and divisible by
+\(\prod_i\zeta_i\).
+
+It remains to count degrees in \(s\). Upon deleting the marked fibers, an additional component mass
+enters as \(s y_f\), where \(y_f\) sums the occupations of that fiber. The action has an outer power
+\(s^{-1}\), and the initial power in the prefactor is \(s^0\). Thus an ordinary interaction of cost
+\(\ell\) has at most \(\ell+1\) mean factors in the action and \(\ell\) in the prefactor. The term using
+both marked measures in the second moment of the kernel has common amplitude \(s^2 z^2/2\). For the
+masses \(y_i,y_h\), write \(F(y)=(1-y)^2-1,\ L(y)=-y\). Their polynomials are \(F_iF_h\) in the action
+and \(F_iF_h-L_iF_h-F_iL_h\) in the prefactor. Their multiplier at cost \(\ell\) has degree
+\(\le\ell-2\). Terms of positive excess already carry \(s\), so they can meet at most \(\ell-1\) groups
+at that cost.
+
+The logarithm turns the factorization of contributions on separate groups into a sum. For a connected
+monomial of total cost \(w\) whose interaction \(a\) costs \(\ell_a\) and meets \(h_a\) groups, Euler's
+formula gives the number of groups met as
+\[
+ 1+w-\sum_a(\ell_a+1-h_a)-L_I ,
+\]
+where \(L_I\) counts the cycles of its bipartite incidence graph. Each deficit is nonnegative. If a group
+is missing, the projection vanishes. The initial cost is at least \(c_s-1\).
+
+In a forest, the branches of capacity-one factors can be marginalized exactly. Center the sites at the
+mean of the tilted saddle. With \(p_0\) centered legs, \(u\) mean factors, \(h\) cumulant blocks, and
+\(n_R,n_A\) ordinary action and prefactor vertices, there are \(L=p_0-n_R-n_A-h+1\) cycles. Since
+\(p_0+u\le w+n_R\), at most \(u+h\le w+1-n_A-L\) groups are met. The centered blocks and action vertices
+have degree at least two. With a single prefactor vertex, a tree is impossible because there is only one
+possible leaf. If \(n_A=0,L=1\), every degree is two. The series of these cycles is
+\(-\tfrac12\log\det(I-VR'')\), with \(V\) the covariance by group. The prefactor adds the same
+half-logarithm with the opposite sign. Decorations of the link field of cost \(t\) add at most \(t\)
+groups, since they differentiate the action of degree \(\le t+1\). With an exceptional interaction of
+deficit one, meeting \(w\) groups requires a tree. When a branch is pruned, the means of its leaves
+multiply the derivative in the link field, both in the count and at the saddle. The cross blocks of its
+Hessian have zero trace. At the root the two fibers belong to different groups. For \(m_i=\mathbb Ey_i\),
+\(v_i=m_i(1-m_i)\), the stationary contribution after taking the trace is
+\(2F_iF_h+(m_i+v_i)F_h+(m_h+v_h)F_i=0\), since \(F(m_i)=-m_i-v_i\). On the binary atoms the sum of the
+two polynomials vanishes. The identity persists under differentiation in the fields. Thus the forest
+meets at most \(w-1\) groups.
+
+In the unicyclic case, prune the outer branches at the critical cost \(c_s-1\). On the cycle the binary
+means \(x_i\) give the transition from \(i\) to its successor \(h\), namely
+\(\left(\begin{smallmatrix}1-t&t\\1&0\end{smallmatrix}\right)\), \(t=x_h/(1-x_i)\). The trace of the
+product is \(1+\theta\), with \(\theta=(-1)^{|\mathcal C|}\prod_{i\in\mathcal C}x_i/(1-x_i)\). For the
+cofactor, let \(E\) be the matrix copying sites to incidences and \(C_f\) the categorical covariance on
+the fiber divided rowwise by its diagonal of variances. With \(C=\bigoplus_f C_f\), the determinant lemma
+transforms the local cofactor \(\det C\,\det[I-E^{\mathsf T}E+E^{\mathsf T}C^{-1}E]\) into
+\(\det[I-(C-I)(EE^{\mathsf T}-I)]\). A circuit changes site and fiber at each step, so only the two
+orientations of the cycle survive, each of weight \(\theta\). The determinant equals \((1-\theta)^2\).
+The term remaining in the error is \(\log(1-\theta^2)\). The quantity \(x_i\) is divisible by
+\(\zeta_i\), and \(\zeta_i\partial_{\zeta_i}\) preserves that double multiplicity.
+
+These coefficient identities persist when excesses are truncated at \(q=4v+12\). The moment recurrence
+gives order \(\lceil k/2\rceil\) for \(\mu_k\), and even after the prefactor \(s^{-1}\) the change starts
+at order \(\ge q-1>c_s+1\). The holomorphic identity extends the vanishing to the stated radii. If
+\(R=\kappa/(2v)\) and \(r_i=\kappa'/(2d_i)\), Cauchy's estimate in \(s\) and Schwarz's lemma in each
+field bound the tail starting at \(w\) by \(C^v\prod_i(|\zeta_i|/r_i)(|s|/R)^w/(1-|s|/R)\). The initial
+costs are \(c_s+1,c_s,c_s-1\), respectively, except for the unicyclic coefficient of cost \(c_s-1\),
+which gains \(\prod_{i\in\mathcal C}|\zeta_i|/r_i
+\le Cv^2/j\). At the physical point this gives the stated exponents. For \(v\le4\) the real comparison
+per face costs \(2^v\eta_v=O(j^{-p})\), also at integer size.
+\end{proof}

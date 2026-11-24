@@ -1,0 +1,83 @@
+\section{Comprobación del cofactor para todas las caras}
+Fijamos una máscara y un conjunto de $v$ sitios. Se quitan los $v$ del exterior
+también en las caras que desactivan alguna de sus exclusiones. Supongamos el exterior
+RC conectado, su punto estacionario regular y $0<x_i<1/d_i$ para las marcas presentes.
+Todos los objetos en este cálculo se refieren a la rama difusa. Cada fibra RC marcada
+tiene margen exterior $t_b=1-\sum_{i\in b}x_i>0$; la vacancia de una diagonal activa
+es $q_f=1-\sum_{i\in f}x_i>0$. Para una fibra RC escribimos también $q_b=t_b$.
+$U_R,U_D$ son las matrices de incidencias RC y diagonales de los sitios marcados.
+El grado $d_i$ incluye ambas incidencias RC y sus diagonales locales activas.
+Se pueden omitir diagonales vacías; un factor diagonal unitario tiene capacidad uno.
+\paragraph{Identidad física.}
+Sea $S_{\rm ext}$ el operador de líneas de torres sólo con las casillas exteriores.
+Tomamos en las coordenadas RC el complemento ortogonal de $(\mathbf1,-\mathbf1)$.
+Cada columna de $U_R$ es ortogonal a ese vector. En estas coordenadas, escribiendo
+$U=(U_R^t,U_D^t)^t$, el operador físico y los factores de sitio son
+\[
+\begin{gathered} S=S_0+UTU^t,\quad S_0=\operatorname{diag}(S_{\rm ext}|_{\rm RC^\perp},
+                    \operatorname{diag}(q_f:f\ \mathrm{diagonal})),\\
+ T_{ii}=\frac{x_i(1-x_i)}{1-d_i x_i},\quad b_i=\frac{1-d_i x_i}{(1-x_i)^{d_i}}.\end{gathered}
+\]
+Aquí $\mathrm{RC}^\perp$ denota exclusivamente el complemento del modo nulo RC.
+Como $S_0$ es invertible, el lema del determinante da, con $\prod_D$ sólo en diagonales,
+\[
+ \frac{\operatorname{pdet}S}{\operatorname{pdet}S_{\rm ext}\prod_D q_f}
+   =\det T\det\!\left(T^{-1}+U_R^t S_{\rm ext}^+U_R+
+                                    U_D^t\operatorname{diag}(1/q_f)U_D\right).
+\]
+Por la respuesta de los multiplicadores de margen del exterior, la Hessiana de
+$R=H_{\rm ext}+\sum_b t_b\log t_b$ es
+$R''=U_R^t\operatorname{diag}(1/t_b)U_R-U_R^t S_{\rm ext}^+U_R$.
+En efecto, al variar las masas se resuelve la ecuación de márgenes en el mismo
+complemento; el máximo exterior aporta la forma negativa de la inversa, y el
+segundo término de $R$ aporta la forma positiva indicada. Cada factor categórico
+local aporta $\operatorname{diag}(1/x_i)+{\bf1}{\bf1}^t/q_f$ a su Hessiana negativa.
+Restando los $d_i-1$ términos de Bernoulli resulta
+\[
+ -H_B''=T^{-1}+U_R^t\operatorname{diag}(1/t_b)U_R
+                         +U_D^t\operatorname{diag}(1/q_f)U_D.
+\]
+El último determinante físico es pues $\det(-H_B''-R'')$. Como
+$b_i T_{ii}=x_i(1-x_i)^{1-d_i}$, al introducir $V_0=\operatorname{diag}(x_i(1-x_i))$
+el factor local completo toma la forma
+\[
+ D_{\rm loc}=\det[(-H_B''-R'')V_0]\,
+                    \prod_f\frac{q_f}{\prod_{i\in f}(1-x_i)} .
+\]
+La cantidad $\prod_f$ incluye RC. Su cociente con el producto que viene de $S$
+es precisamente $\prod_b t_b$, cancelado en el logaritmo por
+$+\frac12\sum_b\log t_b$ en $A_*$. El covolumen es el mismo porque el modo RC de
+norma $\sqrt{2j}$ sigue siendo el único modo nulo. Las multiplicidades de una
+fibra con varios sitios ya figuran en $U_R$ y en el mismo $t_b$.
+\paragraph{Campos comunes y supresión física.}
+El término afín extraído de $R$ sólo depende del exterior común. Al apagar una marca
+poniendo $\zeta_i=0$, la rama pequeña da $x_i=0$. La columna $i$ de
+$(-H_B''-R'')V_0$ tiende a $e_i$ y la submatriz complementaria es la de la cara.
+Los cocientes escalares se restringen de igual modo si difieren las incidencias de
+ese sitio. La partición exacta también ignora los monomios que contienen ese sitio.
+Esto identifica la proyección en las dos evaluaciones, incluso en el normalizador.
+Al contrario, para evaluar \emph{un átomo ocupado} se suprime una fila y una columna.
+Se usa el cofactor exterior ya regularizado. Con $m=j-h$ supervivientes por lado,
+en la notación de \emph{Media matriz}, parte 05, los grados escritos como $t_b d_b$
+tienen $d_b\to1$ en índices apagados. En el camino $x=\lambda {\bf1}_X$,
+la conductancia exterior es $\tau_2(p_{rc})$ con $p_{rc}=t_rt_c w_{rc}/j$,
+donde $w$ permanece acotado hasta $\lambda=1$ por el balanceo en medidas $t\mu$.
+La raíz para $w$ es regular y su jacobiano de margen conserva la brecha para
+$h/j$ pequeño (parte 02, con las copias de índice de masa cero). Dividir por
+$\sqrt{t_rd_rt_cd_c}$ deja $O(\sqrt{t_rt_c}/j)$ incluso si ambos índices se apagan.
+Así las filas y columnas apagadas desaparecen también del núcleo normalizado.
+La misma conductancia total vale $j\bar d_j=m\bar d_m$. El término
+$\frac12\log(\bar d/2)$ cambia por $\frac12\log(m/j)$ respecto a la fórmula intrínseca
+del menor si se excluye el covolumen en ambas fórmulas. Al incluirlo se obtiene
+$\frac12\log(4\pi j)+\frac12\log(m/j)=\frac12\log(4\pi m)$.
+En este límite se siguen las medidas y grados normalizados, sin tomar el
+pseudodeterminante de una matriz con filas cero y el antiguo número de modos.
+Se presupone $m>0$ y exterior superviviente conectado, asegurado por la brecha
+en la parte 02. Sólo el prefactor exterior se evalúa en el átomo duro.
+\paragraph{Alcance.}
+El álgebra no tiene constante dependiente de $v$. Los radios y mayorantes analíticos
+sí requieren cotas. \emph{Grados intermedios}, partes 04 y 05, construye radios
+$c/v^8$ para esta comparación y obtiene un coste $(Cv)^{A_1v}$ por soporte.
+El enlace correspondiente a pesos agrupados exige comparar ese coste con el
+presupuesto de su norma y la ley de llegada. El hecho de que el cofactor coincida
+en cada cara no da por sí solo sumabilidad al juntar todos los soportes.

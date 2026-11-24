@@ -1,0 +1,64 @@
+\paragraph{Terms arising from the change of support.} Decompose \(S_0\) into blocks
+\(B_0,C_0,C_0^{\mathsf T},D_0\) with respect to \(I,\mathcal J\). Set \(U_0=\sum_{i\in F}p_i
+a_{i,I}a_{i,I}^{\mathsf T}\), \(\mathcal M=B_0-U_0\), \(d_0=C_0\mathbf1\), \(\beta=Ra_c\), \(z=\beta_I\),
+\(t=\beta_{\mathcal J}-\mathbf1\), and \(r=d_0+\mathcal M z=-C_0t-U_0z\). The minimum of the child's
+quadratic energy is \(Q_*=d_0^{\mathsf T}\mathcal M^+d_0\). Substituting \(d_0=r-\mathcal Mz\) and using
+\(S_0\beta=a_c\) gives \[
+ Q_*=a_c^{\mathsf T}Ra_c-4+12p_c+E_Q,\qquad
+ E_Q=z^{\mathsf T}U_0z-t^{\mathsf T}D_0t+r^{\mathsf T}\mathcal M^+r .
+\] Indeed, \(D_0=(1-p_c)I+p_c\mathbf1\mathbf1^{\mathsf T}\) and \(\mathbf1^{\mathsf
+T}D_0\mathbf1=4+12p_c\). We have \(r=O_b(m^{-2})\) entrywise, and \(r^{\mathsf T}\mathcal
+M^+r=O_b(m^{-3})\) by the gap and the fact that there are \(O_b(m)\) lines.
+
+Let \(\gamma_f=h_f^{(c)}-h_f\) be the change in vacancy on a retained diagonal. Taylor expansion of the
+entropy in Appendix~\ref{app:predictor} at the child weights gives \begin{align*}
+ \Delta H-\log p_c&=\tfrac32\sum_{F\setminus\{c\}}p_i^2-\tfrac12 Q_*+A_3+O_b(m^{-3}),\\
+ A_3&=\sum_{F\setminus\{c\}}p_i^3+\tfrac16\sum_{E'}p_i(y_i/p_i)^3
+ +\tfrac32\sum_{E'}\frac{y_i^2}{1-p_i}+\tfrac16\sum_{f\in I_D}\gamma_f^3/h_f^2 .
+\end{align*} Here \(I_D\) ranges over both retained diagonal families. The quartic terms are
+\(O_b(m^{-3})\) because \(\sum p_i=m\), \(p_i=O_b(m^{-1})\), and
+\(|y_i/p_i|+|\gamma_f/h_f|=O_b(m^{-1})\). By orthogonality at the minimum, the error is quadratic in the
+relative corrections of order \(O_b(m^{-2})\) to the linear response.
+
+For the cofactor, write \(\Pi_m=vv^{\mathsf T}/(2m)\), where \(v\) takes the values \(1,-1,0,0\) on the
+four families. Set \(H_*=(R+\Pi_m)_{II}\), \(C_{\mathcal J}=D_0+(\Pi_m)_{\mathcal J\mathcal J}\),
+\(V_{\mathcal J}=C_0+(\Pi_m)_{I\mathcal J}\), and \(\Pi'=v_Iv_I^{\mathsf T}/[2(m-1)]\). On \(I\), \(S_*\)
+has entry \(-p_i\) at each ordered pair of distinct lines through \(i\in F\setminus\{c\}\). Likewise,
+\(Y\) has entry \(y_i\) at the pairs for \(i\in E'\). Their other entries are zero. The Schur complement
+gives \begin{align*}
+ D_*&=S_*+Y+\Pi'-(\Pi_m)_{II}+V_{\mathcal J} C_{\mathcal J}^{-1}V_{\mathcal J}^{\mathsf T},\\
+ Q_c&=\tfrac{m^2}4\{\operatorname{tr}[(H_*D_*)^2]-\operatorname{tr}(S_*^2)\},\\
+ E_R&=\operatorname{tr}[(C_{\mathcal J}-I)(H_{\mathcal J}-I)],\qquad H_{\mathcal J}=(R+\Pi_m)_{\mathcal
+ J\mathcal J}.
+\end{align*} For the gauge normalization let \(S'_0\) be the child's matrix and put
+\(\Delta_0=S'_0-(S_0)_{II}\). The corresponding contribution is given by \[
+ E_g=\log[m/(m-1)]-\log\det C_{\mathcal J}
+   +\operatorname{tr}[(\Pi_m)_{II}\Delta_0]
+   +\operatorname{tr}[H_*(\Pi'-(\Pi_m)_{II})].
+\] Since \(v_{\mathcal J}\perp\mathbf1\), we have \(\det C_{\mathcal J}=(1+3p_c)(1-p_c)^2(1-p_c+1/m)\).
+The logarithms give \(m^{-2}-p_c/m+6p_c^2+O_b(m^{-3})\). The two traces are \(-(1-p_c)/m\) and
+\((m-1)/m^2+v_{\mathcal J}^{\mathsf T}R_{\mathcal J\mathcal J}v_{\mathcal J}/[2m(m-1)]\), respectively,
+by \(S_0v=Rv=0\). Since \(R_{\mathcal J\mathcal J}=I+O_b(m^{-1})\), this leaves
+\(E_g=m^{-2}+6p_c^2+O_b(m^{-3})\). The cubic term in the log determinant leaves
+\(C^{(3)}=-\operatorname{tr}(S_*^3)/6\). Indeed, each row of \(S_*\) has absolute row sum
+\(O_b(m^{-1})\), the entries of \(D_*-S_*\) are \(O_b(m^{-2})\), and those of \(H_*-I\) are
+\(O_b(m^{-1})\). A factor of \(H_*D_*-S_*\) in the cubic trace therefore costs \(O_b(m^{-3})\) overall.
+The row norm gives the same bound for powers of order four and higher. The pure trace
+\(\operatorname{tr}(S_*^2)/4\) contributes \(3\sum_{F\setminus\{c\}}p_i^2/2\), since each removed square
+has six ordered pairs.
+
+In the linear part of the Schur complement, let \(f_i^I\) be the restriction of \(f_i\) to retained
+pairs. The four diagonal entries of \(S_0R=I-\Pi_m\) on \(\mathcal J\) give \[
+ \sum_{i\in F}p_i(f_i-f_i^I)
+ =-\operatorname{tr}[(R-I)_{\mathcal J\mathcal J}]-1/m-p_cf_c .
+\] Combining the linear trace, \(-Q_*/2\), the two copies of \(3\sum_{F\setminus\{c\}}p_i^2/2\), and
+\(-3\Delta\sum p_i^2\), we find that the terms involving \(w_i\) sum to
+\(\sum_F p_iw_i-w_c-\sum_{E'}y_iw_i\), leaving \(p_cf_c-3p_c^2\). Subtracting \(\delta_c^0\)
+turns the two sums into those on the last line of
+the formula \begin{align*}
+ L(B+c)-L(B)-\log p_c-\delta_c^0
+   &=\Delta_c V+P_c+O_b(m^{-3}),\\
+ P_c&=-E_g/2+Q_c/m^2+C^{(3)}+A_3-3\sum_{E'}y_i^2\\
+ &\quad-3p_c^2+p_cf_c-(E_Q+E_R)/2\\
+ &\quad+\sum_F p_i(1-t_{ic})w_i-\sum_{E'}p_iq_iw_i .
+\end{align*}

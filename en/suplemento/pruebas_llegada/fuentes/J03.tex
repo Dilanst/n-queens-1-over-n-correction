@@ -1,0 +1,43 @@
+\section{Aproximación de menores a un orden proporcional al número de marcas}
+Ponemos $q=4v+12$ y trabajamos con $v\le L\log n$ para $L$ fijo. El tamaño $m$ de cada
+menor exterior está entre $j-v$ y $j$. Sean $S_q(y,u)=d(y)(1+\sum_{l=1}^q V_l(y,u))$
+y $\mathcal L_q=\log H_q$ las funciones de Wick y mezcla de \emph{media franjas}, parte 02.
+En un disco fijo en $y$ alrededor de uno y una bola fija de datos normalizados,
+$|V_l|\le(Cl|u|)^l$ para $l\le q$, $|u|\le c/q$. Allí $\mathcal L_q$ admite una rama
+uniformemente acotada: $\mu_1=0$, $|\mu_i(u)|\le(C\sqrt{q|u|})^i$ hasta $2q+1$ y Cauchy
+en el disco de $y$ dan $|H_q-d(1)|<|d(1)|/2$ al reducir $c$. El determinante en $d(1)$
+está separado de cero y tiene rama acotada en la bola de datos de la entrega precedente.
+La precisión física que ahora necesitamos se obtiene con el mismo
+$q$ para cada átomo. Ponemos $q'=\lfloor\kappa m\rfloor\ge q$ con $\kappa$ pequeña.
+En $u=1/m$, $H_{q'}$ aproxima al permanente normalizado con error $O(e^{-cm})$.
+En $I=\{|X-1|\le a\}$, $X=m/T$, $T\sim\Gamma(m+1,1)$, la diferencia entre los integrandos
+$S_q$ y $S_{q'}$ cuesta $(C(q+1)/m)^{q+1}$, pues los mayorantes sucesivos tienen razón
+$\le Ce(l+1)/m<1/2$. Para $l=q,q'$ se recupera $H_l$ integrando el Taylor de $S_l$ en
+$y=1$ hasta grado $2l+1$. En $I$ el resto usa el momento par $2l+2$ y un radio $r_0>a$.
+En $I^c$, para los monomios de ese polinomio se aplica
+\[
+ |X-1|^i\le a^{i-2l-2}|X-1|^{2l+2},\qquad i\le2l+1 .
+\]
+Así en ambos casos se paga a lo sumo $(C(l+1)/m)^{l+1}$, por la cota de los momentos
+de la mezcla y $\sum_{i\ge0}(a/r_0)^i<\infty$. En $l=q'$ es exponencial. El logaritmo
+conserva el error porque la mezcla normalizada está uniformemente separada de cero.
+La cota ponderada exterior del integrando físico ya está en la comparación de $H_{q'}$.
+\paragraph{Función de tamaño del error puro de torres.}
+Usamos R9, 06--07, con el núcleo exacto normalizado $z$, $u=1/m$ en lo físico. Para
+obtener $g_T$ en la fórmula de $\Gamma_z$ de R9 se conserva $\log H_q$, se elimina
+$-u\phi$ y se sustituye $u/6$ por el desarrollo de Stirling que empieza en $u/12$.
+Se retienen las potencias impares menores que $q$. Euler--Maclaurin para $\log(m!)$ da
+resto real $\le(Cq/m)^q$ (cota por el primer término omitido, o por la integral del resto).
+Los coeficientes de orden $i$ cuestan $\le(Ci)^i$, por la cota de los números de Bernoulli.
+El polinomio es por tanto acotado en $|u|\le c/q$. Denotemos la función obtenida por $G_q$.
+Los cocientes en $u=0$ de R9 son removibles por los márgenes; sus cotas son uniformes
+en las medidas normalizadas de una bola fija. En particular $G_q(0,z)=0$ para todo
+$z$ balanceado en esa bola: $\log d(1)$ cancela el medio logaritmo del determinante
+de $I-(z-1)^T(z-1)$, y $\bar\ell=1$. Diferenciar los márgenes de
+$v_0(1-uv_0)=z\exp(\alpha+\beta)$, $v_0(0)=z$, da
+$\langle\alpha'+\beta'\rangle=-\int z^2$. Los dos logaritmos de grado en R9
+aportan en conjunto $+\int z^2$. El término local usa
+$c(y)=\tfrac12\log(1-2y)-2\log(1-y)=y+O(y^3)$ y $\int v_0=1$.
+Las identidades son bilineales y valen también con medidas complejas normalizadas.
+Por tanto $G_q$ es $u$ multiplicado por una función holomorfa, y en el menor real
+$|g_T-G_q(1/m,z)|\le (Cq/m)^q+Ce^{-cm}$. El disco complejo pertenece al aproximante.

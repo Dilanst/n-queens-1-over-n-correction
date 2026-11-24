@@ -1,0 +1,43 @@
+\section{El gas en el álgebra de activaciones}
+Sea $\mathcal A_\rho$ el álgebra finita de monomios $z^Uz^W=z^{U\cup W}$ con norma
+$\sum_U\rho^{|U|}|[U]f|$, submultiplicativa para $\rho\ge1$. Los vectores y tensores
+con valores en ella llevan la norma proyectiva; la simetrización es contractiva.
+Los tensores centrados se estimarán en esa norma antes de cualquier contracción.
+Sea $a_U=\sum_{Y\subseteq U}(-1)^{|U|-|Y|}{\bf1}_{Y\ \mathrm{independiente}}$, incluyendo
+$Y=U$. La independencia se refiere al grafo de conflictos diagonales.
+Entonces $|a_U|\le2^{|U|}$ y $a_U$ factoriza en las componentes del grafo inducido en $U$.
+Una componente singleton tiene peso cero. La evitación física es
+$Z=\sum_U a_U z^U p_U$, restringiendo a soportes compatibles en filas y columnas.
+Definimos el gas basal con pesos $w_U=a_U z^U\prod_{e\in U}b_e$.
+Sus polímeros son las componentes conexas de al menos dos sitios, compatibles en RC.
+Dos polímeros son incompatibles por coincidencia de sitio, ataque diagonal o fibra RC compartida.
+Escribimos $\eta_j=\rho^2(\epsilon_A+1/j)$ y $S=j\eta_j$. Tenemos $S\ge1$.
+\paragraph{Estimaciones con un peso exponencial por tamaño.}
+La masa $b$ de vecinos diagonales de un sitio es $\le C\epsilon_A$ por las dos líneas;
+la de cualquier fila o columna es $\le C$. Para tamaño $v\ge2$ con sitio raíz $i$,
+la suma de actividades absolutas en la norma, con un peso adicional $e^{Bv}$ fijo, está acotada por
+\[
+ b_i(C_B\rho)^v\frac{v^{v-2}}{(v-1)!}(C\epsilon_A)^{v-1}.
+\]
+Se etiquetan los demás sitios,
+se elige un árbol y se suman desde las hojas sus anclajes; relajar distinciones sólo aumenta
+la suma. El cociente de Cayley y el factorial es a lo sumo exponencial en $v$.
+Para $\eta_j\le\eta$ pequeña, la suma sobre $v\ge2$ es $\le C_B b_i\rho^2\epsilon_A$.
+Sumar en $i$ cuesta $O_B(S)$ en todo el tablero y $O_B(\eta_j)$ en una fibra.
+Para incompatibilidades en una componente fija de talla $v$ se toman sus $2v$ fibras y
+los conjuntos de vecinos de sus sitios, de masa $O(v\epsilon_A)$. Cuesta $O_B(v\eta_j)$.
+Así aplica el criterio de Kotecký--Preiss con penalización $v$, reduciendo $\eta$.
+El logaritmo del gas tiene suma absoluta de clústeres $\le C_B S$ incluso con peso $e^{Bv}$
+por talla total. También $\sum_U\|w_U\|_\rho C_0^{|U|}e^{B|U|}\le\exp(C_BS)$:
+basta sumar colecciones sin restricciones con las actividades mayoradas.
+Las dos cotas admiten todo $B$ fijo necesario si se fija $B$ antes que $\eta$.
+\paragraph{Campos.}
+Para un operador lineal $h$ de las coordenadas de supresión a $\mathcal A_\rho$, ponemos
+$Z_h=\sum_U w_U e^{h[T_U]}$ y $E_h f=Z_h^{-1}\sum_U w_U e^{h[T_U]} f(T_U)$.
+En un tubo $\|h\|\le h_0$ fijo el peso cuesta a lo sumo $e^{3h_0|U|}$.
+La serie de clústeres da $G(h)=\log Z_h$, $\|G(h)\|_\rho\le CS$ y
+$\|Z_h^{\pm1}\|_\rho\le e^{CS}$. Al marcar antes de sumar, cada clúster de talla $v$
+recibe como derivada un vector de norma $\le3v$ contando todas las ocurrencias.
+Con una segunda marca se paga $(3v)^2$; lo absorbe el margen exponencial.
+Así $\mathfrak m(h)=E_hT$ tiene norma proyectiva $\le CS$ y su derivada tiene norma
+$\le CS$ en un tubo menor, independiente del número de coordenadas o activaciones.

@@ -1,0 +1,52 @@
+\section{Comparación de pesos en todos los menores de una cara}
+\begin{proposicion}\label{prop:m}
+Supónganse los márgenes de \(D\) de la sección 1. Fíjese \(U\) con
+\(5\le v=|U|\le8\log n\). En todas las caras se toma el mismo exterior \(A_0=A\setminus U\).
+Para cada \(I\subseteq U\) compatible con filas, columnas y ataques activos, el peso binario
+\(W_I=\per(A_{0,-I})\) cuenta las configuraciones cuya intersección con \(U\) es exactamente
+\(I\). Aquí \(-I\) suprime las filas y columnas ocupadas. Hay aproximantes positivos que
+conservan los factores de escalado y el normalizador individual del menor, con
+\[
+ \left|\log(\widehat W_I/W_I)\right|\le \eta_v=(Cq/j)^q+Ce^{-c j},
+ \qquad q=4v+12 .
+\]
+Los átomos prohibidos se omiten en ambas sumas. Si \(\widehat F_{U,q}\) usa esos pesos,
+la suma de \(|\Delta_U(\widehat F_{U,q}-F)|\) en todo el intervalo es \(O(j^{-8})\).
+\end{proposicion}
+\begin{proof}
+Al quitar los \(v\) sitios, la pérdida por margen es \(O(v/j)\). Al suprimir \(h=|I|\)
+índices por lado, la variación de las medidas normalizadas es a lo sumo \(2h/j\) por lado.
+El balanceo de \pruebaen{U02} invierte \(I-D^tD\) en columnas centradas y extiende la
+solución a los índices de masa cero. En cada menor real de tamaño \(m=j-h\), la difusión
+es uniforme y el cambio de la brecha cuesta \(O(\sqrt{h/j}+\sqrt v/j+(h+v)/j)\).
+Así el escalado propio \(D'\) existe, es positivo en el soporte y
+\(B=D'-J_m\) satisface \(\|B\|_2\le r'<1\). Hall aplicado al escalado da la
+positividad de cada menor compatible, incluido el exterior vacío de marcas ocupadas.
+
+Para \(R_B(z)=\sum_S z^{|S|}\prod_{e\in S}B_e\) sobre los matchings, desarrollar
+\(\per(J_m+B)\) da \(m^m\per D'/m!=\mathbb E R_B(m/T)\), con \(T\sim\Gamma(m+1,1)\).
+La integral de Wick de \pruebaen{V01} y la inversión sobre índices coincidentes en
+\pruebaen{U03} dan \(S_k(y,u)=d(y)(1+\sum_{\ell=1}^k V_\ell(y,u))\), con
+\(d(y)=\det(I-y^2 B^tB)^{-1/2}\) y \(|V_\ell|\le(C\ell|u|)^\ell\). En el disco auxiliar
+\(|w|\le r_1>1\) se comparan primero los coeficientes hasta \(Q_*\) en \(R_B(yw)/d(yw)\).
+El resto es \(O(e^{C\sqrt m}r_1^{-Q_*})=O(e^{-cj})\) para \(y\) cerca de 1.
+Fuera de esa ventana, la cola gamma desplazada por \(\sum_i\sigma_i|Z_i|^2\), con los
+valores singulares \(\sigma_i\) de \(B\), tiene coste ponderado \(O(e^{-cm+C\sqrt m})\)
+por \pruebaen{V01}. En particular se domina el integrando completo en la cola.
+
+Los momentos de \(m/T-1\) satisfacen la recurrencia de \pruebaen{U04}. Integrando el
+Taylor de \(S_q(y,1/m)\) hasta \(2q+1\) se obtiene \(H_q(1/m)\). El momento par
+\(2q+2\) acota el resto por \((C(q+1)/m)^{q+1}\). La suma de los excesos entre
+\(q+1\) y \(Q_*\) tiene esta misma cota por razón geométrica. El orden \(Q_*\) se ha fijado
+en el padre, mientras que \(1/m\) siempre corresponde al menor. Como \(H_q=d(1)+O(1/m)\)
+y \(d(1)\) está separado de cero, la comparación vale en logaritmos. Escalado y factorial
+se reponen en \(W_I\). En la normalización del predictor, el cambio de covolumen del
+cofactor es \(\tfrac12\log(m/j)\) por \pruebaen{U07}. Equivale a usar el tamaño \(m\)
+en el menor. La resta de dos errores logarítmicos y \(m\ge j/2\) se absorben en \(C\).
+
+En cada cara la positividad permite sumar las dos comparaciones multiplicativas. El
+logaritmo cuesta \(\eta_v\) y la alternancia cuesta \(2^v\eta_v\). El denominador basal
+es el mismo. Por \pruebaen{A03}, hay a lo sumo \(j^{2v}\) soportes del grado \(v\).
+La parte de potencia queda acotada por \(2^v j^{-8-2v/3}\), y la parte exponencial
+total por \(\exp(O(\log^2 n)-cj)\). La suma es \(O(j^{-8})\).
+\end{proof}

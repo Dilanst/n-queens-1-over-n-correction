@@ -1,0 +1,93 @@
+\subsection{Exact weights and approximants on the short mask}
+On \(H_j\) the mass of the queens point \(p\) on each diagonal is at most \(C\alpha\), since its integer
+length is less than \(\lceil\alpha j\rceil\). Turning off both diagonal factors changes the field in the
+odds at each site by \(O(C\alpha+j^{-1})\). For the axial potentials we invert the margin Jacobian in the
+centered gauge. Its Schur complement is \(I-p^{\mathsf T}p\) on centered columns. The gap bounds the
+inverse there in the induced two-norm, and \(jp_i\le C\) bounds the sections of its normalized kernel in
+Euclidean norm. The identity \((I-T)^{-1}=I+T+T(I-T)^{-1}T\) transfers the bound to the supremum norm for
+\(T=p^{\mathsf T}p\). With \(A_{\rm ax}\) the axial incidence matrix and \(S_{\rm ax}=A_{\rm
+ax}\operatorname{diag}(p)A_{\rm ax}^t\), the projector \(I-A_{\rm ax}^t S_{\rm ax}^+A_{\rm
+ax}\operatorname{diag}(p)\) therefore has bounded supremum norm. For \(p^{\rm T}=p(1+z)\) we restrict
+\(z\) to \(A_{\rm ax}\operatorname{diag}(p)z=0\). The derivative of \(\log p^{\rm T}+\log(1-p^{\rm T})\)
+projected onto this space is \(I+O(\|z\|_\infty+j^{-1})\). Subtracting that gradient from \(z\) gives a
+contraction on a ball of radius \(K(C\alpha+j^{-1})\) for a class constant \(K\). The resulting point is
+the rooks maximum by rowwise concavity. If one entry satisfies \(t_1>1/2\), then for
+\(\xi(t)=t(1-t)/(1-2t)\) we have \(\sum_{l>1}\xi(t_l)\le\xi(1-t_1)=-\xi(t_1)\) since \(\xi(t)/t\) is
+increasing for \(t<1/2\). Cauchy--Schwarz with \(\sum_l z_l=0\) gives \(\sum_l z_l^2/\xi(t_l)\ge0\),
+which is the Hessian of the negative action on the row. Strict local concavity identifies the branch. The
+point \(p^{\rm T}\) satisfies \(p^{\rm T}_i/p_i=1+O(C\alpha+j^{-1})\). Keeping the margin \(p/2\le p^{\rm
+T}\le3p/2\) gives \(j\max_i p^{\rm T}_i\le2C\), a gap \(\ge\min(1,\gamma)/2\) by Rayleigh, and
+\(\epsilon_A:=\max_f\sum_{i\in f}p^{\rm T}_i\le2C\alpha\) in both diagonal families. The odds \(p^{\rm
+T}_{rc}(1-p^{\rm T}_{rc})\) factorize into row and column factors on the support. Balancing with the
+field \(\log(1-p^{\rm T}_{rc})=O(j^{-1})\) gives the exact doubly stochastic scaling \(D\) of the mask
+\(A\), with \(D_i/p^{\rm T}_i=1+O(j^{-1})\). The absolute row and column sums of the perturbation are
+\(O(j^{-1})\), and its operator norm has the same order.
+
+\begin{proposicion}[Minors of the activation faces]\label{prop:menores-llegada}
+Let \(U\subset A\) with \(v=|U|\le8\log n\). Remove the \(v\) sites to fix the exterior \(A_0=A\setminus
+U\). For a face \(Y\subseteq U\), activate only its diagonal pairs. A subset \(I\subseteq U\) compatible
+with the face and the axial constraints has weight \(W_I=\operatorname{per}(A_{0,-I})\), where \(-I\)
+deletes the rows and columns of \(I\). On \(H_j\), if \(q=4v+12\), the order-\(q\) approximants
+constructed below preserve the forbidden zeros and satisfy
+\[
+ |\log(\widehat W_I/W_I)|\le\eta_v=(Cq/j)^q+Ce^{-cj}.
+\]
+For \(5\le v\le8\log n\) and \(j\ge\sqrt n\), the summed error in the projections of the face logarithms
+is \(O(j^{-8})\).
+\end{proposicion}
+\begin{proof}
+Each placement determines a unique intersection \(I\) with \(U\). Deleting \(v\) entries perturbs the
+margins by \(O(v/j)\), and deleting \(h=|I|\) rows and columns changes their normalized measures by
+\(O(h/j)\) in total variation. The balancing inverse above gives each exterior its own scaling \(D'\),
+including when the equation for an index of mass zero is extended. After identifying the spaces via the
+square roots of the measures, the gap loss is \(O(\sqrt{h/j}+\sqrt v/j+(v+h)/j)\). The deleted sections
+cost \(O(\sqrt{h/j})\) in Hilbert--Schmidt norm and the \(v\) entries cost \(O(\sqrt v/j)\). Thus
+\(m=j-h\), \(mD'_{il}\le C'\), and \(B'=D'-\mathbf1\mathbf1^{\mathsf T}/m\) has operator norm \(\le
+r'<1\). Hall's theorem applied to the support of \(D'\) gives \(W_I>0\).
+
+Let \(R(z)=\sum_S z^{|S|}\prod_{e\in S}B'_e\), summed over partial matchings. For
+\(T\sim\operatorname{Gamma}(m+1,1)\), the moments of \(y=m/T\) are \(m^k(m-k)!/m!\) up to \(k=m\).
+Expanding the permanent gives \(m^m\operatorname{per}D'/m!=\mathbb E R(y)\). In a singular value
+decomposition of \(B'\), take circular Gaussians \(Z_l\) of variance one and \(W=\sum_l\sigma_l|Z_l|^2\).
+Wick's formula represents \(R(z)\) as the mean of \(\prod_i(1+\sqrt z\,u_i)\prod_k(1+\sqrt z\,v_k)\),
+where \(u=U'\sqrt\Sigma Z,\ v=V'\sqrt\Sigma\overline Z\). Both fields sum to zero and their squared norms
+are \(W\). The arithmetic--geometric mean inequality gives \(|R(z)|\le\mathbb E(1+|z|W/m)^m\). On
+\(|z|r'<1\) with a positive margin, \(\log\mathbb E e^{|z|W}\le C\sum_l\sigma_l\le C\sqrt m\).
+
+To define the truncation we extract the quadratic factor from the Wick expansion. This gives
+\(d(y)=\det(I-y^2 B'^{\mathsf T}B')^{-1/2}\) and the pairings of the terms of \((1+t)e^{-t+t^2/2}\) of
+degrees \(\ge3\), with covariance \(O(I+O)^{-1}\) and \(O=\left(\begin{smallmatrix}0&yB'\\yB'^{\mathsf
+T}&0\end{smallmatrix}\right)\). With \(E\) edges and \(s\) active vertices the excess \(\ell=E-s\)
+satisfies \(E\le3\ell\). The sum over assignments of distinct indices is expressed by inversion on
+partitions of the \(s\) vertices. Blocks of repeated indices carry the Möbius factor \((-1)^{d-1}(d-1)!\)
+for size \(d\). Each propagator is \(O(1/m)\) by diffusion and the resolvent with two exterior
+sections. The number of pairings divided by \(s!\) is bounded by \(C^E E^{E-s}\). The coefficients at
+each vertex and the lists of degrees cost \(C^E\). The absolute sum in the inversion, with one factor
+\(m^{-1}\) per coincidence, costs \(\prod_{i<s}(1+i/m)\le e^{Cs}\) if \(s=O(m)\). Thus the contribution
+\(V_\ell(y,1/m)\) to the remaining factor satisfies \(|V_\ell|\le(C\ell/m)^\ell\). We define
+\(S_q=d(1+\sum_{\ell=1}^q V_\ell)\) as a function of \(y\) on a fixed disk about one.
+
+Fix an auxiliary order \(Q_*=\lfloor\varepsilon j\rfloor\). In the variable \(w\) of \(R(yw)\), each edge
+starts at degree one, so \(S_{Q_*}(yw)\) agrees through degree \(Q_*\). On \(|w|\le r_1>1\) with
+\(r_1|y|r'<1\), both functions admit the majorant \(Ce^{C\sqrt m}\). At \(w=1\), Cauchy's estimate leaves
+a remainder \(Ce^{C\sqrt m}r_1^{-Q_*}=O(e^{-cj})\). For \(y\) outside a fixed window about one, the Wick
+bound cancels \(T^m\) in the gamma density. The substitution \(t'=t+W\) leaves the weight \(e^W\). If
+\(W\le\kappa m\), the gamma tail remains at a distance proportional to \(m\) from its mean. On \(W>\kappa
+m\) we use \(e^{-\xi\kappa m}\mathbb E e^{(1+\xi)W}\), choosing \((1+\xi)r'<1\). Both tails cost
+\(O(e^{-cm+C\sqrt m})\).
+
+For \(u=1/m\) the centered moments \(\mu_k=\mathbb E(y-1)^k\) satisfy
+\[
+ (1-ku)\mu_{k+1}=ku(2\mu_k+\mu_{k-1}),\qquad \mu_0=1,\quad\mu_1=0
+\]
+by integration by parts. In particular, \(\mu_{2h}\le(Ch/m)^h\) up to \(2h\le c m\) by induction. The sum
+\(H_q=\sum_{k=0}^{2q+1}\mu_k\,\partial_y^k S_q(1,u)/k!\) integrates the Taylor expansion through degree
+\(2q+1\). The next even moment and the fixed radius bound the remainder by \((C(q+1)/m)^{q+1}\), even
+when the polynomial is extended outside the window. The sum of excesses from \(q+1\) to \(Q_*\) has the
+same bound, since the ratio of majorants is \(\le Ce Q_*/m<1/2\). As \(H_q=d(1)+O(1/m)\), the logarithm
+can be taken uniformly. For \(\widehat W_I\) we restore \(m!/m^m\) and all the exact scaling factors of
+this minor. In particular, its normalizer uses \(m\). The positive comparison persists upon summing the
+atoms of a face. Applying \(\Delta_U\) costs \(2^v\eta_v\). Since there are at most \(j^{2v}\) supports
+and \(Cq\le j^{1/3}\) by the threshold \(n_0(b)\), the power term is \(\le2^v j^{-8-2v/3}\) per degree.
+The total exponential term is \(\exp(O(\log^2 n)-cj)\). Both sum to \(O(j^{-8})\).
+\end{proof}

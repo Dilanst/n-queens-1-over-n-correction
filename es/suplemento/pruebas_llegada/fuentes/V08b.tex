@@ -1,0 +1,72 @@
+\subsection*{Prueba del Teorema~\ref{teo}}
+Sean $\rho,c_H,L$ las constantes del Lema~\ref{lem:cotas} y $C_1,C_2$ las del
+Lema~\ref{lem:id}(c). Todas sólo dependen de $(A,r)$. Definimos, en este orden,
+\[
+ C_S=e^L(1+C_1+C_2),\quad C_E=e^LC_2+2e^L(C_1+C_2)\rho^{-2}+96\,C_S\rho^{-5},\quad
+ C_x=C_1+2e^L\rho^{-2}+C_E,
+\]
+y $K_*=\max\{K_U,8,\lceil2C_x\rceil\}$, con $K_U$ de~\eqref{eq:u01}.
+
+\paragraph{Paso 1: reducción a $H_2$.} Sea $K\ge K_*$. Por~\eqref{eq:u01} basta probar
+\begin{equation}\label{eq:obj}
+ \log H_2(1/K)=\log d(1)+V(1)+\frac{d''(1)}{2(K-1)d(1)}+E_3,\qquad
+ |E_3|\le\frac{C_E+C_x^2}{K^2}.
+\end{equation}
+
+\paragraph{Paso 2: desarrollo de $H_2(1/K)$.} Sea $u=1/K\le1/8$. Por el Lema~\ref{lem:id}(a)--(b),
+en $\Omega$ se tiene $S_2(y):=S_2(y,1/K)=d(y)\bigl(1+V(y)+W_2(y)\bigr)$. Por los
+Lemas~\ref{lem:cotas}(b) y~\ref{lem:id}(c), en $\Omega$ valen $|S_2|\le C_S$ y
+$|S_2-d|\le e^L(C_1+C_2)/K$. Las desigualdades de Cauchy en $|y-1|=\rho$ dan
+\[
+ \frac{|\partial_y^iS_2(1)|}{i!}\le C_S\rho^{-i},\qquad
+ \frac{|\partial_y^2(S_2-d)(1)|}{2}\le\frac{e^L(C_1+C_2)\rho^{-2}}K .
+\]
+Como $\mu_0=1$ y $\mu_1=0$, el Lema~\ref{lem:mom} ($\mu_2=1/(K-1)$) da
+\[
+ H_2(1/K)=S_2(1)+\mu_2\frac{\partial_y^2S_2(1)}2+\sum_{i=3}^5\mu_i\frac{\partial_y^iS_2(1)}{i!}
+ =d(1)\bigl(1+V(1)\bigr)+\frac{d''(1)}{2(K-1)}+E_2,
+\]
+\[
+ E_2=d(1)W_2(1)+\frac1{K-1}\cdot\frac{\partial_y^2(S_2-d)(1)}2
+ +\sum_{i=3}^5\mu_i\frac{\partial_y^iS_2(1)}{i!}.
+\]
+Con $1/(K-1)\le2/K$, $0\le\mu_i\le32/K^2$ ($i=3,4,5$) y $\rho\le1/2$ resulta
+$|E_2|\le\bigl(e^LC_2+2e^L(C_1+C_2)\rho^{-2}+3\cdot32\,C_S\rho^{-5}\bigr)K^{-2}=C_EK^{-2}$.
+
+\paragraph{Paso 3: logaritmo.} Los datos son reales: $H$, $d$, $V$ y $W_2$ son reales en $y=1$. Sea
+\[
+ x=V(1)+\frac{d''(1)}{2(K-1)d(1)}+\frac{E_2}{d(1)},\qquad\text{de modo que}\qquad H_2(1/K)=d(1)(1+x).
+\]
+Como $d(1)\ge1$, $|V(1)|=|W_1(1)|\le C_1/K$ y $|d''(1)|\le2e^L\rho^{-2}$ (Lema~\ref{lem:cotas}(b)),
+se tiene $|x|\le C_x/K\le1/2$ para $K\ge K_*$. Entonces $H_2(1/K)>0$ y
+$|\log(1+x)-x|\le x^2\le C_x^2K^{-2}$. Por tanto~\eqref{eq:obj} vale con
+$E_3=E_2/d(1)+\bigl(\log(1+x)-x\bigr)$, y $|E_3|\le(C_E+C_x^2)K^{-2}$.
+Junto con~\eqref{eq:u01}, para $K\ge K_*$ la diferencia del Teorema es a lo sumo
+$\bigl((2C_U)^2+C_U\sup_{t>0}t^2e^{-c_Ut}+C_E+C_x^2\bigr)K^{-2}$, y
+$\sup_{t>0}t^2e^{-c_Ut}=4/(ec_U)^2$.
+
+\paragraph{Paso 0: $2\le K<K_*$.} Por van der Waerden y $\per D\le1$,
+$0\le\log(K^K\per D/K!)\le\log(K^K/K!)\le K$. Además $0\le\log d(1)\le L$, $|V(1)|\le C_1/K\le C_1$
+(el Lema~\ref{lem:id}(c) vale para todo $K\ge2$) y $|d''(1)/(2(K-1)d(1))|\le e^L\rho^{-2}$. La
+diferencia del Teorema es a lo sumo $K_*+L+C_1+e^L\rho^{-2}\le(K_*+L+C_1+e^L\rho^{-2})K_*^2K^{-2}$.
+
+\paragraph{Conclusión.} El Teorema vale con
+\[
+ C_*=\max\Bigl\{(2C_U)^2+\frac{4C_U}{(ec_U)^2}+C_E+C_x^2,\ (K_*+L+C_1+e^L\rho^{-2})K_*^2\Bigr\},
+\]
+que sólo depende de $(A,r)$. Para $B=0$ se tiene $d\equiv1$, $H\equiv0$, $V=0$, $d''=0$ y
+$K^K\per J_K/K!=1$: la igualdad es exacta (Wp:30). \qed
+
+\paragraph{Observaciones.}
+(i) Los dos pasos que propuso WG:139--141 quedan así: el paso~1 es~\eqref{eq:u01}; el paso~2 es
+el desarrollo de $H_2$ con $\mu_2=1/(K-1)$, $\mu_i=O(K^{-2})$ para $i\ge3$, $|V_2|=O(K^{-2})$ y Cauchy
+en $y$. Lo que faltaba, $V_1(1,1/K)=V(1)+O(K^{-2})$, vale sin resto (Lema~\ref{lem:id}(b)).
+(ii) No se usa la holomorfía de $\log H_2$ en $u$ (W2t:122--128): basta el punto $u=1/K$.
+(iii) Las cotas del Lema~\ref{lem:id}(c) son elementales, por el Lema~\ref{lem:cotas}(a); también
+se obtienen de U03:47 (01m:49) y de U04:35. Se escriben aquí para que las constantes sean explícitas.
+(iv) \path{fuentes/velocidad_via2_ronda1_20261116T023056Z/latex/torres_fila.tex}:4--9 afirma ya
+«$V_1=V$» con la misma agrupación; aquí se deduce de la definición de U03, y el resto de esa
+entrada, que usa Divoux--Wang, no interviene.
+(v) Evidencia exacta: c1 (coeficientes y momentos), c2 (fórmula literal de U03 frente a $V$ y
+Möbius a exceso dos), c3 ($R_B/d=1+\sum_lW_l$ hasta $w^6$) y c4 (tres familias por bloques,
+una con ceros: $K^2\varepsilon_K$ acotado, mientras que sin $V$ el error relativo es de orden $1/K$).

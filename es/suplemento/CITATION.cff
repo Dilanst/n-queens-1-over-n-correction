@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Para citar el suplemento, utilice los datos siguientes."
 type: software
-title: "El término de orden 1/n del problema de las n reinas: suplemento de datos y cálculos"
+title: "La corrección de orden 1/n al predictor canónico de las n reinas: suplemento de datos y cálculos"
 authors:
   - family-names: "Mejia"
     given-names: "Dilan Steven"
@@ -9,7 +9,7 @@ version: "1.0.0"
 license: MIT
 references:
   - type: article
-    title: "El término de orden 1/n del problema de las n reinas"
+    title: "La corrección de orden 1/n al predictor canónico de las n reinas"
     authors:
       - family-names: "Mejia"
         given-names: "Dilan Steven"

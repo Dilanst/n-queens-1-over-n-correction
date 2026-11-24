@@ -1,0 +1,64 @@
+\subsection{Pair data and the action recurrence}\label{sec:par-accion}
+
+Denote the four board squares at the vertices of the geometric square by \(z_{ij}=(r+ih,c+jh)\),
+\(i,j\in\{0,1\}\). Number the root rows as \((r_0,r_1)=(r,r+h)\). In orientation \(D\), number the root
+columns as \((c_0,c_1)=(c,c+h)\), and in orientation \(A\) as \((c_0,c_1)=(c+h,c)\). Thus the punctures
+are always \((r_0,c_0),(r_1,c_1)\). In root order, the incidence block is
+\(\left(\begin{smallmatrix}0&X\\Y&0\end{smallmatrix}\right)\). In board coordinates this gives the
+following table. \begin{center} \begin{tabular}{@{}ccc@{}} \toprule State \((X,Y)\) & Open intersections
+for \(D\) & Open intersections for \(A\)\\ \midrule \((0,0)\)& none & none\\ \((1,0)\)& \(z_{01}\) &
+\(z_{00}\)\\ \((0,1)\)& \(z_{10}\) & \(z_{11}\)\\ \((1,1)\)& \(z_{01},z_{10}\) & \(z_{00},z_{11}\)\\
+\bottomrule \end{tabular} \end{center} Each row of the table carries the weight \(w_{o,b}q_{o,(X,Y)}\)
+from Appendix~\ref{app:boundary}. To construct the integral at cut-off \(b>0\), take an ordinary row type
+\((u,\xi)\), where \(u\in[0,1]\) and \(\xi=(\xi_0,\xi_1)\) indicates the edges to the two root columns.
+Write \(e_1(v)=v,\ e_0(v)=1-v\). The ordinary row and column measures are \[
+ d\alpha_R(u,\xi)=du\prod_{k=0}^1 e_{\xi_k}(v_b(u,c_k)),\qquad
+ d\alpha_C(v,\zeta)=dv\prod_{k=0}^1 e_{\zeta_k}(v_b(r_k,v)).
+\] On each side, add two copies of each root, with zero base mass. The signed measure \(\rho_\sigma\)
+on side \(\sigma=R,C\) assigns masses \(-1,+1\) to its negative and positive copies, respectively. The
+capacity \(\lambda\) equals \(1-t\) on the positive copies and one on the other types. Set
+\(m_\sigma=\lambda\rho_\sigma\), \(M_\sigma=\alpha_\sigma+s\rho_\sigma\), and \(N_\sigma=\alpha_\sigma+s
+m_\sigma\).
+
+Let \(V_{il}\) be the conditional incidence between a row type \(i\) and a column type \(l\). For
+ordinary types at positions \(u,v\) it is \(v_b(u,v)\). For an ordinary row and a copy of root column
+\(k\) it is \(\xi_k\). For a copy of root row \(k\) and an ordinary column it is \(\zeta_k\). Between
+copies, use the matrix for the given state. In every block, evaluate \(W=W_b^0=p_b/v_b\) at the positions
+of the two types. With \(q_{il}=\lambda_i\lambda_l,\ \kappa_{1,il}=q_{il}W_{il}\), replace the incidence
+by \(V\) in the margin equations of this appendix. For the determinant, Section~\ref{sec:par-prefactor}
+computes the correction for a return along the same edge.
+
+\paragraph{Potentials and densities by order.} Set \(\mathcal Z_d=(Z_d,H_d)=[s^d](z,y)\) and
+\(h_d(i,l)=Z_d(i)+H_d(l)\). Start with \(\mathcal Z_0=0,\ w_0=W\). For \(d=1,2,3\), the known term
+\(v_d\) in \(w_d=[s^d]w=Wh_d+v_d\) follows from \(w(1-sqw)=W\exp(z+y)\). Suppressing the edge indices
+gives \begin{align*}
+ v_1/W&=\kappa_1,\\
+ v_2/W&=h_1^2/2+2\kappa_1 h_1+2\kappa_1^2,\\
+ v_3/W&=h_1h_2+h_1^3/6+\kappa_1(2h_2+2h_1^2)+6\kappa_1^2h_1+5\kappa_1^3 .
+\end{align*} At order \(d\), the two margins and the gauge determine \(\mathcal Z_d\) through the system
+\begin{align*}
+ Z_d(i)+\int VW H_d(l)\,d\alpha_C(l)
+   &=-\int Vv_d\,d\alpha_C-\int Vw_{d-1}\,dm_C ,\\
+ H_d(l)+\int VW Z_d(i)\,d\alpha_R(i)
+   &=-\int Vv_d\,d\alpha_R-\int Vw_{d-1}\,dm_R ,\\
+ \int Z_d\,d\alpha_R&=\int H_d\,d\alpha_C .
+\end{align*} Solve the ordinary block first. The gap of \(p_b\) gives the inverse on the gauge slice, and
+the equations with unit diagonal determine the unknowns on the copies. The right-hand sides are
+compatible because the sums of the two margins with respect to \(N_R,N_C\) agree and these measures have
+equal mass.
+
+\paragraph{Extracting the action.} Write \(\langle\alpha,\mathcal Z_d\rangle=\int Z_d\,d\alpha_R+\int
+H_d\,d\alpha_C\) and analogously for \(m\). Set \(D_j=[s^j](N_R\otimes N_C)\). In particular,
+\(D_0=\alpha_R\otimes\alpha_C,\ D_1=m_R\otimes\alpha_C+\alpha_R\otimes m_C\) and \(D_2=m_R\otimes m_C\).
+On each edge compute \[
+ f_1=\tfrac12 qW^2,\qquad f_2=qWw_1+\tfrac13q^2W^3,\qquad
+ f_3=q(Ww_2+w_1^2/2)+q^2W^2w_1+q^3W^4/4 .
+\] Extracting the terms of degrees one and two in the dual action gives \begin{align*}
+ R_1(t)&=-\langle\alpha,\mathcal Z_2\rangle-\langle m,\mathcal Z_1\rangle
+          -\int Vf_2\,dD_0-\int Vf_1\,dD_1,\\
+ R_2(t)&=-\langle\alpha,\mathcal Z_3\rangle-\langle m,\mathcal Z_2\rangle
+          -\int Vf_3\,dD_0-\int Vf_2\,dD_1-\int Vf_1\,dD_2 .
+\end{align*} Indeed, \(f_1,f_2,f_3\) are the first three coefficients of
+\(\sum_{a\ge2}s^{a-2}q^{a-1}w^a/a\), which is integrated with a negative sign against \(V\,d(N_R\otimes
+N_C)\). The potentials contribute \(-s^{-1}(\int z\,dN_R+\int y\,dN_C)\) modulo the terms affine in \(t\)
+that vanish in the Taylor remainder.

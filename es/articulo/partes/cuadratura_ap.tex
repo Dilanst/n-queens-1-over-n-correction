@@ -1,26 +1,29 @@
 \subsection{Por qué la cota de integración es condicional}
-En la Sección~\ref{sec:numeval} se usaron una serie cerca de cero y dos reglas de Gauss en el
-resto del intervalo. En los tres tramos hay que distinguir el error del método de integración
-del error con que se calculó la función en las muestras. Las cotas de Cauchy controlan los
-coeficientes que el muestreo finito mezcla u omite.
+Aquí acotamos el error de integración de $\numerr_6/x^2$ para la descomposición
+ $\numerr=\numerr_6+\numerr_F$ de la
+Sección~\ref{sec:numeval}. En los tres tramos se distingue el error del método de integración del
+error con que se calculó la función en las muestras. Las cotas de Cauchy controlan los coeficientes
+que el muestreo finito mezcla u omite.
 
-En el primer intervalo $[0,r]$, con $r=0{,}03$, escribimos $k_6(x)=\sum k_jx^j$ y $\mathcal V(x)=\sum
-v_jx^j$. Los dos coeficientes nulos de $k_6$ dan la integral exacta $\sum_{j\ge2}k_jr^{j-1}/(j-1)$. El
-cálculo extrae por separado los coeficientes de Fourier de $d$ y de $\mathcal V$. Si la tilde indica
+En el primer intervalo $[0,r]$, con $r=0{,}03$, escribimos $\numerr_6(x)=\sum \numerr_jx^j$ y $\mathcal
+ V(x)=\sum
+v_jx^j$. Los dos coeficientes nulos de $\numerr_6$ dan la integral exacta
+ $\sum_{j\ge2}\numerr_jr^{j-1}/(j-1)$. El
+cálculo de esta parte usa los coeficientes de Fourier de $d$ y de $\mathcal V$. Si la tilde indica
 coeficientes reconstruidos con $N=32$ valores en $|x|=r$, para $2\le j<N$ se tiene
 \[
- \widetilde d_j+(1-j)\widetilde v_j-k_j
-   =\sum_{\ell\ge1}\bigl(k_{j+\ell N}+\ell N v_{j+\ell N}\bigr)r^{\ell N}
+ \widetilde d_j+(1-j)\widetilde v_j-\numerr_j
+   =\sum_{\ell\ge1}\bigl(\numerr_{j+\ell N}+\ell N v_{j+\ell N}\bigr)r^{\ell N}
 \]
 para muestras exactas. En efecto, el muestreo de una función analítica agrega los índices congruentes
-con $j$ módulo $N$, y $k_m=d_m+(1-m)v_m$ para $m\ge1$. Cada diferencia se integra con peso
+con $j$ módulo $N$, y $\numerr_m=d_m+(1-m)v_m$ para $m\ge1$. Cada diferencia se integra con peso
 $r^{j-1}/(j-1)$ y la cola de la integral exacta comienza en $j=N$. La fórmula de Cauchy en el círculo
 exterior acota los dos tipos de coeficientes. El círculo intermedio de radio $0{,}055$ usa 33 muestras
 independientes (64 con las conjugadas) para mejorar las cotas. El radio mayor usado en esta estimación
 es $0{,}095$.
 
 En los otros dos intervalos interesa saber qué coeficientes pueden contribuir al error de Gauss.
-En un panel real $[a,b]$ sean $h=(b-a)/2$, $y=(a+b)/2$ y $f=k_6/x^2$. Escribimos
+En un panel real $[a,b]$ sean $h=(b-a)/2$, $y=(a+b)/2$ y $f=\numerr_6/x^2$. Escribimos
 \[
  g(w)=f\!\left(y+\tfrac h2(w+w^{-1})\right)
       =\sum_{j\in\mathbb Z}\beta_jw^j .
@@ -50,12 +53,45 @@ multiplicar por los pesos gaussianos de la expresión anterior, Cauchy--Schwarz 
 panel de 20 nodos se emplean 232 muestras en la elipse con $\rho=1{,}64$. Para el de seis nodos, 24
 muestras independientes representan una transformada de longitud 46.
 
+La Tabla~\ref{tab:contornos} recoge los datos usados para la cota. Para el círculo,
+\(\delta_{\numerr},\delta_V\) son las mayores tolerancias de \(\numerr_6,\mathcal V\) entre las muestras.
+Para las elipses se indica la raíz de la media de los \(\delta_i^2\) de \(h_6=\numerr_6/x^2\)
+en la transformada completa, incluidas las muestras conjugadas. Los mayorantes del círculo
+son de supremo en el radio exterior; los de las elipses acotan la media de \(|h_6|\) en el
+contorno exterior. Las tolerancias individuales se dan en el suplemento.
+\begin{table}[htbp]
+\centering\small
+\caption{Muestreo de los contornos auxiliares y cotas usadas para \(h_6\).
+Las tolerancias y los mayorantes se muestran redondeados hacia arriba; el balance usa
+los valores del archivo de datos.}\label{tab:contornos}
+\begin{tabular}{@{}L{.20\linewidth}L{.23\linewidth}L{.24\linewidth}L{.25\linewidth}@{}}
+\toprule
+Tramo integrado & Contornos interior y exterior & Tolerancia interior & Mayorante exterior\\
+\midrule
+Serie, \(0\) a \(0{,}03\) &
+\(R_s=0{,}055\), \(R=0{,}095\); 64 puntos &
+\(\delta_{\numerr}\le1{,}485\cdot10^{-6}\), \(\delta_V\le4{,}262\cdot10^{-4}\) &
+\(M_{\numerr}\le8{,}002\cdot10^{19}\), \(M_V\le2{,}684\cdot10^{6}\)\\
+GL6, \(0{,}03\) a \(0{,}06\) &
+\(\rho\simeq4{,}414\), \(\rho_2\simeq16{,}2354\); 46 puntos &
+\(\delta_{\rm rms}\le6{,}279\cdot10^{-3}\) &
+\(\overline M\le1{,}517\cdot10^{20}\)\\
+GL20, \(0{,}06\) a \(1\) &
+\(\rho=1{,}64\), \(\rho_2=2{,}2\); 232 puntos &
+\(\delta_{\rm rms}\le3{,}274\cdot10^{-3}\) &
+\(\overline M\le1{,}063\cdot10^{20}\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 Con las tolerancias declaradas de las muestras, las cotas del círculo y de los paneles de seis y veinte
-puntos son aproximadamente $7{,}7\,10^{-10}$, $8{,}8\,10^{-11}$ y $1{,}7\,10^{-11}$, respectivamente.
-El círculo y el panel corto dan juntos $8{,}56111216\,10^{-10}$. Al sumar el valor archivado del
-panel largo, $1{,}69294096\,10^{-11}$, se obtienen unos $8{,}73040626\,10^{-10}$. La cifra comunicada
-de $8{,}7\,10^{-10}$ se redondeó al más próximo. Hacia arriba vale $8{,}74\,10^{-10}$ [D si C].
-Esta cota sólo cubre la serie y las reglas de integración bajo las tolerancias declaradas.
-Para encerrar $\cerr$ hay que propagar además los errores en los 43 nodos del cálculo y en los términos
-de frontera. Cuando una tolerancia $\delta_i$ procede de un refinamiento de malla, su valor es una
-estimación numérica [N].
+puntos son aproximadamente $7{,}7\cdot10^{-10}$, $8{,}8\cdot10^{-11}$ y $1{,}7\cdot10^{-11}$,
+respectivamente.
+El círculo y el panel corto dan juntos $8{,}56111216\cdot10^{-10}$. Al sumar el valor archivado del
+panel largo, $1{,}69294096\cdot10^{-11}$, se obtienen unos $8{,}73040626\cdot10^{-10}$. La cifra comunicada
+de $8{,}7\cdot10^{-10}$ se redondeó al más próximo. Hacia arriba vale $8{,}74\cdot10^{-10}$ [D si C].
+Para aplicar esta cota a un cálculo de $\cerr$ por separación, habría que usar la integral exacta de
+$\numerr_F/x^2$ y propagar los errores de $F(0),F'(0),F(1)$ junto con los de los 43 nodos y los términos de
+frontera. La réplica integra el $\numerr/x^2$ completo y su cotejo de $\numerr_F/x^2$ es numérico [N].
+ Cuando una
+tolerancia $\delta_i$ procede de un refinamiento de malla, su valor también es una estimación [N].

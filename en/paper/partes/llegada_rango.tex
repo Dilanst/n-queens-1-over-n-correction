@@ -1,0 +1,64 @@
+\begin{lema}[Rank of the line equalities]\label{lem:rango-llegada}
+A realizable type of \(v\) distinct sites specifies their four partitions into row, column, diagonal, and
+antidiagonal fibers. Let \(c_s\) be its number of components and \(D\) the dimension of the space of
+positions. If component \(g\) contains \(v_g\) sites and has cyclomatic number \(\beta_g\), its rank is
+\(v_g-1+L_g\), with \(L_g\ge\min(\beta_g,2)\). In particular, \(D=v+c_s-\sum_gL_g\le p-1\) for the three
+exponents in Proposition~\ref{prop:soportes-llegada}.
+\end{lema}
+\begin{proof}
+Replace each fiber by a tree on its sites. Its edges impose equalities \(n_f\cdot(z_i-z_l)=0\), where
+\(n_f\) is one of the four normals. This preserves the equalities, the components, and \(E-V+c_s\). A
+spanning tree of a component gives \(v_g-1\) independent equations by leaf elimination. A dependence on a
+subgraph would assign nonzero coefficients to its edges so that at each vertex the signed sum of the
+weighted normals vanishes. Its support has no leaves. At a vertex of degree two both edges lie on the
+same line. Suppress each path of degree-two vertices. A component consisting solely of such vertices, or
+a loop after suppression, would form a cycle in the tree of a line. Two parallel edges would give two
+straight paths between the same two distinct sites, which determine a unique line. They too would close a
+cycle in that tree. The reduced graph is simple and has minimum degree three. In each component,
+\(V\ge4\) and \(E-V+1\ge V/2+1\ge3\). Suppressing the paths preserves the number of cycles. Thus a
+spanning tree with one or two chords contains the support of no dependence. Adding \(\min(\beta_g,2)\)
+chords gives the stated rank. Subtracting this rank from \(2v\) and summing over the components gives the
+last inequality.
+\end{proof}
+
+\begin{lema}[Weights and number of types]\label{lem:tipos-llegada}
+Set \(L_s=v+c_s-D\) and \(d_i=\max_{f\ni i}|f\cap U|\). For fixed \(v,c_s,L_s\) the sum over realizable
+labeled types satisfies
+\[
+ \frac1{v!}\sum_{\rm tipos}\prod_i d_i\le \frac{C^v(4v^2)^{L_s}}{c_s!}.
+\]
+Suppose that the only diagonal conflicts in the support are two pairs on distinct lines. With four sites,
+the bounds \((D,p)\) for zero through four axial coincidences are \((6,7),(5,6),(4,5),(3,4),(3,4)\) when
+the class is realizable. With three sites the pairs share one site, and the bounds are \((4,5),(3,4)\)
+according as their endpoints have zero or one axial coincidence.
+\end{lema}
+\begin{proof}
+For each site choose the first fiber on which it attains its maximum \(d_i\) in a fixed ordering of the
+families. Join the \(a_f>0\) sites assigned to each fiber \(f\) to a node of its color. Add equality
+edges between sites until each component is connected, without forming cycles. The stars admit an
+equivalent tree of equalities between sites. This forest has rank \(v-c_s\). Completing the basis
+requires \(L_s\) edges, each with at most \(4v^2\) choices. The basis recovers the four partitions, since
+an equality in its span holds in the realization and therefore belongs to the type. Root each component
+at one site and join the roots under a common node. There are at most \(2v+1\) nodes, a fixed number of
+colors, and \(v\) site labels. The plane tree encoding has at most \(C^v v!\) possibilities by the
+Catalan bound. Each type admits at least \(c_s!\prod_f(a_f-1)!\) distinct orderings of the children. The
+members of each star are identified by their labels. With \(D_f=|f\cap U|\),
+\[
+ \prod_f\frac{D_f^{a_f}}{(a_f-1)!}\le 2^v\exp\!\left(\sum_fD_f\right)
+ \le 2^ve^{4v}.
+\]
+This gives the weighted sum. When counting unordered supports, each support gives \(v!\) labelings, even
+when several have the same type.
+
+The classification of the two conflicts includes all axial coincidences. By hypothesis, the two pairs
+account for all diagonal edges. With no axial coincidences, the four sites form two trees. The first
+coincidence joins them, the second creates a cycle, and from the third onward the general bound gives
+\(p=4\). The rank lemma reduces the dimension to \(6,5,4\) in the first three cases. With three
+coincidences the two rows and one column of the second pair are fixed given those of the first, or
+conversely. At most three parameters remain, even if there is a fourth coincidence. In the three-site
+wedge the initial graph is a tree and an axial coincidence between its endpoints creates a cycle. If
+there is a third
+diagonal conflict, the cycles are counted again in the full graph. The rank lemma and
+Proposition~\ref{prop:soportes-llegada} then give \(D\le p-1\) with the exponent of that graph. Pairs in
+the same square are eliminated by subtracting its error.
+\end{proof}

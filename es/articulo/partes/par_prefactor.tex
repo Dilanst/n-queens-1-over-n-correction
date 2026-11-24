@@ -1,0 +1,102 @@
+\subsection{Recurrencia del prefactor y traza de una arista}\label{sec:par-prefactor}
+
+Con los \(w_d\) de la sección~\ref{sec:par-accion}, sean \(p=sqw\) y
+\(\ell=w(1-p)/(1-2p)\). El grado de una fila es
+\(d_R(i)=\int V_{il}\ell_{il}\,dN_C(l)\) y el de una columna se define transponiendo
+la fórmula. Ambos valen uno en \(s=0\). La masa total
+\(g=\int d_R\,dN_R=\int d_C\,dN_C\) también empieza en uno. Para calcular
+\(d_\sigma=1+\sum_{a\ge1}s^a d_{\sigma,a}\), desarrollamos
+\(\ell-w=sqw^2/(1-2sqw)\). Con \(\kappa_1=qW\), sus tres primeros coeficientes son
+\begin{align*}
+ E_1&=W\kappa_1,\qquad E_2=2\kappa_1 w_1+2W\kappa_1^2,\\
+ E_3&=q(2Ww_2+w_1^2)+6\kappa_1^2w_1+4W\kappa_1^3 .
+\end{align*}
+Así \(\ell_0=W,\ \ell_1=w_1+E_1,\ \ell_2=w_2+E_2\). Con \(E_0=0\), los márgenes
+\(\int Vw\,dN_{\rm opuesto}=1\) dan para \(a=1,2,3\)
+\[
+ d_{R,a}=\int VE_a\,d\alpha_C+\int VE_{a-1}\,dm_C,\qquad
+ d_{C,a}=\int VE_a\,d\alpha_R+\int VE_{a-1}\,dm_R .
+\]
+Ponemos \(g_a=\int d_{R,a}\,d\alpha_R+\int d_{R,a-1}\,dm_R\) para \(a=1,2\),
+con \(d_{R,0}=1\). Para cada lado, los coeficientes \(D_{\sigma,a}^{\log}=[s^a]\log d_\sigma\)
+son \(d_1,\ d_2-d_1^2/2,\ d_3-d_1d_2+d_1^3/3\) en órdenes uno, dos y tres,
+respectivamente, con \(d_a=d_{\sigma,a}\).
+
+\paragraph{Términos locales y determinante.}
+Escribamos \(\mu_a=[s^a](M_R\otimes M_C)\), con \(\mu_a=0\) para \(a\notin\{0,1,2\}\).
+Para \(\kappa_1=qW,\ \kappa_2=qw_1,\ \kappa_3=qw_2\), los coeficientes de
+\(-\log(1-2p)+2\log(1-p)\) en órdenes dos, tres y cuatro son
+\[
+ C_2=\kappa_1^2,\qquad C_3=2\kappa_1\kappa_2+2\kappa_1^3,\qquad
+ C_4=\kappa_2^2+2\kappa_1\kappa_3+6\kappa_1^2\kappa_2+\tfrac72\kappa_1^4 .
+\]
+Para \(a=1,2\), las aristas, la masa total y las diagonales de la Hessiana aportan
+\begin{align*}
+ H_a^{\rm loc}={}&\tfrac12\sum_{j=2}^{a+2}\int V C_j\,d\mu_{a+2-j}
+ +\tfrac12[s^a]\log(1+sg_1+s^2g_2)\\
+ &-\tfrac12\sum_{\sigma=R,C}
+ \left(\int D_{\sigma,a+1}^{\log}\,d\alpha_\sigma+
+       \int D_{\sigma,a}^{\log}\,d\rho_\sigma\right).
+\end{align*}
+Las distintas medidas proceden de la masa de la Hessiana \(g\), integrada contra \(N_R\),
+y de la suma de sus logaritmos de grado, integrada contra la medida de número \(M_\sigma\).
+
+Para los bloques centrados, los operadores \(K_a,T_a\), \(a=0,1,2\), se obtienen
+extrayendo el coeficiente de cada núcleo junto con su medida de integración.
+\begin{align*}
+ K_a(i,dl)&=[s^a]\left\{\left(\frac{V_{il}\ell_{il}}{d_R(i)}-\frac{d_C(l)}g\right)
+                       (d\alpha_C(l)+s\,dm_C(l))\right\},\\
+ T_a(l,di)&=[s^a]\left\{\left(\frac{V_{il}\ell_{il}}{d_C(l)}-\frac{d_R(i)}g\right)
+                       (d\alpha_R(i)+s\,dm_R(i))\right\}.
+\end{align*}
+Para evaluar los inversos escalares
+se usa \((1+sa+s^2b)^{-1}=1-sa+s^2(a^2-b)+O(s^3)\). Sean
+\[
+ I_0=(I-K_0T_0)^{-1},\qquad X_1=K_1T_0+K_0T_1,\qquad
+ X_2=K_2T_0+K_1T_1+K_0T_2 .
+\]
+El desarrollo de \(-\tfrac12\log\det(I-KT)\) para los dos bloques de medias da
+\[
+ H_1^{\rm tr}=\tfrac12\operatorname{tr}(I_0X_1),\qquad
+ H_2^{\rm tr}=\tfrac12\operatorname{tr}(I_0X_2)+\tfrac14\operatorname{tr}((I_0X_1)^2).
+\]
+
+\paragraph{La ida y la vuelta por una casilla ordinaria.}
+En una traza de longitud dos figura el mismo indicador \(I\) en ambas direcciones.
+Para una arista entre tipos ordinarios, \(\mathbb E[I^2]=V\) y
+\(\mathbb E[I]^2=V^2\), condicionalmente a los tipos. Al multiplicar los dos núcleos
+centrados, los términos constantes y lineales tienen las medias correctas. En el
+término cuadrático falta \(V(1-V)\ell^2/(d_Rd_C)\). Sea \(d\mu_*=\tfrac12
+V(1-V)\,d\alpha_R\,d\alpha_C\), incluido el peso \(1/2\) de la traza. Para
+\(r=d_{R,1}, c=d_{C,1}, r_2=d_{R,2}, c_2=d_{C,2}\), las dos contribuciones son
+\begin{align*}
+ H_1^{\rm rep}&=\int \big[2W\ell_1-(r+c)W^2\big]\,d\mu_*,\\
+ H_2^{\rm rep}&=\int \big[\ell_1^2+2W\ell_2-2(r+c)W\ell_1
+              +(r^2+c^2+rc-r_2-c_2)W^2\big]\,d\mu_* .
+\end{align*}
+Los tipos raíz tienen incidencia fijada. Todas sus repeticiones usan ese mismo bit.
+Concluimos que, para cada orientación y estado, el prefactor pedido es
+\[
+ A_a(t)=H_a^{\rm loc}+H_a^{\rm tr}+H_a^{\rm rep},\qquad a=1,2 .
+\]
+
+\paragraph{Ejemplo de un sumando de \(A_2(1)\).}
+Tomemos como dato de prueba el núcleo constante \(v=1/2\), cuyo escalado es \(p_b=1\).
+Fijemos el estado \(X=Y=0\) y la capacidad \(1-t=0\). En ambos lados los patrones
+ordinarios \(00,10,01,11\) tienen masa \(1/4\), y \(W=2\). Consideremos la ida y vuelta
+entre una fila de patrón \(00\) y una columna también de patrón \(00\).
+Para comprobar las entradas de la recurrencia, por simetría \(Z_a=H_a\). En el orden de
+los cuatro patrones seguido de las dos copias negativas y las dos positivas, los sistemas dan
+\[
+ Z_1=(-2,0,0,2,-3,-3,-1,-1),\qquad
+ Z_2=(2,-6,-6,-10,11/2,11/2,15/2,15/2).
+\]
+En la arista elegida resultan \(w_1=-4,\ w_2=8,\ \ell_1=0,\ \ell_2=8\).
+En ambos extremos \(d_1=2,\ d_2=8\). De aquí
+\[
+ [s^2]\frac{\ell^2}{d_Rd_C}
+ =[s^2]\frac{(2+8s^2)^2}{(1+2s+8s^2)^2}=16 .
+\]
+El sumando de \(H_2^{\rm rep}\) para estos dos patrones es, pues,
+\(\tfrac12(1/4)^2(1/2)(1-1/2)\,16=1/8\).
+La integración en las dos posiciones tiene masa uno porque el dato de prueba es constante.

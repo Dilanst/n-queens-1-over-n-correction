@@ -1,0 +1,52 @@
+\section{Los menores de torres al orden fijo que exige el patrón}
+Para un corte entero $p\ge2$ fijado, se requiere en los menores físicos, de tamaño $m$,
+\[
+ R_T=\log\per-L_T-u_T=\sum_{l=2}^{p-1}m^{-l}F_l(z)+O_p(m^{-p}) .
+\]
+Recogemos la justificación de este uso a orden arbitrario \emph{fijo}.
+En la banda difusa de R1 la suma absoluta de los coeficientes bajos para cada grupo de
+Wick con $E$ aristas y $b$ índices tiene cota $(CE/m)^{E-b}$ para $E\le D\sqrt m$,
+uniformemente en el intervalo de mezcla $I$ en torno a uno. La cota incluye el número
+de contracciones del grupo (R1, \emph{permanente}, extracción por número de aristas).
+Poniendo $e=E-b$, los grados mínimos tres dan $E\le3e$. Se retienen $e<p$.
+Los grupos con $p\le e<2p$ son finitos y cuestan $O_p(m^{-p})$.
+En los demás se suma a lo sumo
+$\sum_{e\ge2p}(3e+1)(CD/\sqrt m)^e=O_p(m^{-p})$.
+La cola de grados del polinomio completo es exponencial en $-\sqrt m$ por R1.
+La de los excesos retenidos también: cada uno consta de finitísimas contracciones
+en el propagador analítico del mismo disco, que cuesta $O(1/m)$ por entrada.
+Esto controla la sustracción de términos, incluso desconectados, antes del logaritmo.
+
+En $I$, cada $d(y)V_e(y)$ y sus derivadas de un orden fijo son $O_p(m^{-e})$ en un
+entorno menor. Para $X=m/T$ con $T$ gamma de forma $m+1$ y tasa uno, se integra su
+Taylor hasta grado $2(p-e)-1$. El momento absoluto de orden $2r$ de $X-1$ es
+$O_r(m^{-r})$. Se obtiene, por ejemplo, de la recurrencia de R2,
+$(m-l)\mu_{l+1}=l(2\mu_l+\mu_{l-1})$, $\mu_0=1,\mu_1=0$.
+Los momentos $\E X^d=\prod_{i=0}^{d-1}(1-i/m)^{-1}$ dan series en potencias enteras.
+Fuera de $I$ se aplica la cota exterior al polinomio completo. Sólo los polinomios
+de Taylor se reintegran allí usando Cauchy--Schwarz, momentos dobles y la cola gamma.
+Nunca se integra un determinante a través de un polo. El resto físico es $O_p(m^{-p})$.
+
+La fórmula de R9, partes 7--8, se prolonga ahora conservando todos esos coeficientes
+finitos, incluido Stirling al mismo orden. El término basal del permanente antes del logaritmo
+es $d(1)\ge1$ en los vértices físicos. En la parametrización normalizada, cada $V_e$ es
+suma de integrales de núcleos acotados; la inversión sobre particiones que impone
+índices distintos aporta $u^{E-|\pi|}$, $u=1/m$, $E-|\pi|\ge e$.
+En cada átomo $X_0$ elegible se borra una lista $I_g$ en cada componente. En ambos ejes se
+sustraen masas $h_g$ en sus índices y se divide por $1-\sum h_g|I_g|$;
+se usa $u=s/(1-\sum h_g|I_g|)$. Los vértices $h_g=0,s$ recuperan esos menores
+(incluidos los cruces basales ausentes). El reequilibrio en medidas deformadas usa el
+mismo núcleo basal. En un polidisco de radio fijo para $v,p$ los resolventes y los
+núcleos quedan acotados como en la prueba de tres componentes, parte 4. La serie de
+Fredholm se domina en grado $l$ por $l^{l/2}C^l/l!$ con medidas de variación acotada.
+La brecha, el control de la traza y la reducción del radio separan los denominadores de
+cero. Así los coeficientes $F_l$ son holomorfos acotados en estas masas; la desaparición
+de los órdenes cero y uno en las máscaras físicas es la de R9 por replicación.
+
+El corrector $u_T$ es $u$ veces una función acotada holomorfa en esas mismas medidas.
+Tras quitar el valor vacío, a orden $w$ la dependencia de $d_T=\Delta(u_T+R_T)$
+involucra a lo sumo $w-1$ componentes por término: cada masa distinta cuesta $s$ y
+ya hay al menos un factor $s$ delante. Se toman tantos Taylor como exige el orden fijo.
+El resto real se usa en los vértices sin diferenciarlo. La suma finita sobre los átomos
+lo mantiene acotado en las actividades complejas locales: el normalizador está cerca de
+uno al reducir el radio para $v$ fijo. No se continúa el tamaño entero del tablero.

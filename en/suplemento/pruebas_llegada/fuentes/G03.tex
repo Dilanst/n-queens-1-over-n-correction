@@ -1,0 +1,63 @@
+\section{Átomos del conteo y diferencias en las supresiones}
+Para el logaritmo exacto aproximado se suman los conjuntos independientes $X$ de sitios
+sobre el exterior común. El grafo de incompatibilidad une sitios en las fibras RC y
+diagonales activadas incompatibles. Si la activación sólo prohíbe ciertas parejas
+dentro de una fibra, el mismo argumento usa ese subgrafo. Las actividades son las de
+la silla local. El peso sobre $X$, aparte de $\zeta^X$, es la exponencial de
+$G_s(X)=R_c(X)+A_c(X)+\widetilde d_T(X)$, normalizada en $X=\varnothing$.
+$A_c$ es el prefactor exterior centrado y $\widetilde d_T$ la diferencia de errores
+de torres con aproximación común de orden $q=4v+12$.
+\paragraph{Dependencia del conjunto suprimido.}
+En un átomo RC compatible cada fila y columna escogidas se suprimen una sola vez.
+Ponemos $T_X=\sum_{i\in X}(1,\delta_{r_i},\delta_{c_i})$ y $\theta=sT_X$.
+Las dos medidas supervivientes son $\mu^0-\theta_R,\mu^0-\theta_C$, de igual masa
+$1-\theta_0$. Hasta constante y un campo afín de coeficientes acotados, $G_s(X)$ es
+\[
+       s^{-1}\mathscr A(s,\theta)+\mathscr B_q(s,\theta).
+\]
+Ambas funciones son holomorfas acotadas en una bola de TV fija en el subespacio de
+masas compatibles, con $|s|\le\kappa/v$. Los campos afines inicialmente no acotados
+ya se extrajeron en $\zeta$. El centrado restante de $R_c$ tiene gradiente acotado
+por el apartado anterior. Detallamos por qué la bola de medidas tiene radio fijo.
+\begin{itemize}
+\item En la expresión integral de $\mathcal R$, escrita en $w,M_1$ tras cancelar
+$t\log t$, sólo aparecen los supervivientes, con $t=1$. Se resuelve el equilibrio con
+esas medidas en la bola por la misma brecha. En $x=\lambda\mathbf1_X$,
+$0\le\lambda\le1$, los $t$ valen $1$ o $1-\lambda$ y la perturbación de medidas es
+$O(v|s|)$ hasta el extremo. La expresión ya cancelada admite el valor en el átomo.
+\item En el prefactor, con $\sigma$ independiente de la medida,
+$l-w=\sigma t_rt_c w^2/(1-2\sigma t_rt_c w)$. El margen da grado $1+O(\sigma)$
+uniformemente y grado uno en los índices apagados. El logaritmo del grado dividido
+por $\sigma$ es acotado en un disco fijo. También lo es
+$\log b_2(\sigma t_rt_c w)/\sigma^2$ por $\log b_2(y)=-y^2+O(y^3)$.
+El cofactor centrado usa transposición bilineal. La serie de Fredholm está dominada
+por $\sum_l C^l l^{l/2}/l!$, y la brecha basal separa de cero el determinante.
+Se conservan los términos de masa del cofactor al pasar de $j$ a $m=j-|X|$,
+como en \emph{Media matriz}, parte 05. Dependen analíticamente de $1-\theta_0$.
+Todo esto vale en el polidisco local antes de ir al átomo con medidas $t\mu$.
+\item Para el error puro de torres se normalizan las medidas por $1-\theta_0$ y
+se balancea el mismo núcleo. La parte 03 de \emph{Grados intermedios} da la función
+$G_q^{\rm tor}(s_m,z_X)$ acotada en una bola uniforme de datos y $|s_m|\le c/q$.
+Aquí $s_m=s/(1-\theta_0)$, y basta reducir $\kappa$. En el menor real la cota es
+$\Delta_q=(Cq/j)^q+Ce^{-cj}$, ajustando las constantes. Se toma la diferencia al
+padre. El factor inicial $s_m$ y las anulaciones por grupos de esa entrada se conservan.
+\end{itemize}
+En conjuntos incompatibles extendemos las funciones por la misma fórmula en medidas
+con signo. Esta extensión sirve sólo para diferencias de funciones. Los términos
+físicos siguen restringidos a los conjuntos compatibles.
+\paragraph{Diferencias mixtas.}
+Sea $\Delta_iG(Y)=G(Y\cup\{i\})-G(Y)$ para $i\notin Y$ y sea $\Delta_D$ el
+producto de diferencias en índices distintos. Cada dirección $T_i$ tiene norma
+a lo sumo tres en la suma de las tres normas. Con margen fijo a la frontera de la
+bola quedan dentro todas las interpolaciones de supresiones, pues $3v|s|\le3\kappa$.
+Cauchy para las derivadas multilineales de orden $l+1$ da $(l+1)!C^{l+1}$:
+se pueden tomar radios iguales a una constante dividida por $l+1$ y usar Stirling.
+Integrando esas derivadas en las direcciones $sT_i$, se obtiene
+\[
+ |\Delta_iG_s(Y)|\le B_0,\qquad
+ |\Delta_i\Delta_DG_s(Y)|\le(l+1)! C^{l+1}|s|^l,\quad |D|=l\ge1 .
+\]
+El polo de $\mathscr A/s$ se cancela al normalizar en el vacío. En particular,
+para cualquier conjunto restante $W$ disjunto de $Y,i$,
+$\sum_{\varnothing\ne D\subseteq W}|\Delta_D\Delta_i G_s(Y)|
+\le C\sum_{l\ge1}(l+1)(Cv|s|)^l\le B_1$, uniformemente en $v$.

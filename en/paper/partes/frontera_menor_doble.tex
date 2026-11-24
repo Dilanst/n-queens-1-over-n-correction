@@ -1,0 +1,50 @@
+\paragraph{The increment of a double minor.} Fix an admissible cut-off \(b>0\) and \(j=\lfloor
+bn\rfloor\). On a regular binary mask \(M\) of size \(j\), write \(A_R,A_C\) for the uniform measures on
+the live rows and columns. Let \(\mathfrak F(M)\) be the rook functional in Section~\ref{sec:torres}.
+When differentiating it in its measures we retain the input mask and recompute its scaling so that both
+margins remain equal to one. Write
+\[
+ h_R^M(i)=D_R\mathfrak F(M)[\delta_i-A_R],\qquad
+ h_C^M(l)=D_C\mathfrak F(M)[\delta_l-A_C].
+\]
+Each influence has mean zero with respect to its own measure, by linearity. For the pair
+\(\parmar=\{e,f\}\) write \(H_M(\parmar)=\sum_{z=e,f}(h_R^M(r_z)+h_C^M(c_z))\). In the minor
+\(M_{\parmar}\) the measures assign mass \(1/(j-2)\) to each remaining line. In particular,
+\[
+ A'_R-A_R=\frac{2A_R-\delta_{r_e}-\delta_{r_f}}{j-2},\qquad
+ A'_C-A_C=\frac{2A_C-\delta_{c_e}-\delta_{c_f}}{j-2}.
+\]
+This is an exact measure identity. Put \(\Delta_{\parmar}\mathfrak F=\mathfrak F(M_{\parmar})-\mathfrak
+F(M)\). The uniform bound on the second derivative in these directions (Cauchy's estimate in the masses
+of the distinguished lines) gives, for every pair in the class,
+\[
+ \Delta_{\parmar}\mathfrak F=-\frac{H_M(\parmar)}{j-2}+O(j^{-2}),\qquad
+ j\Delta_{\parmar}\mathfrak F=-H_M(\parmar)+O(j^{-1}).
+\]
+Let \(D\) be the discrete doubly stochastic scaling of \(M\), and let \(w_{\parmar}=(jD_e)(jD_f)\), which
+is bounded in the class. The ratio of the exact pair probability to its rook approximation and the
+approximation itself satisfy
+\[
+ \frac{\pi_{\parmar}^{\rm ex}}{\pi_{\parmar}^T}=\exp\{g_T(M_{\parmar})-g_T(M)\},\qquad
+ \pi_{\parmar}^T=j^{-2}w_{\parmar}(1+O(j^{-1})).
+\]
+Indeed, the first equality divides the ratios of the permanents and of their predictors. The second uses
+the leading term of the two-site marginal and \(p_z/D_z=1+O(j^{-1})\). Upon subtracting
+\(\coefT(M_{\parmar})/(j-2)-\coefT(M)/j\), with \(\coefT=\mathfrak F-1/12\), the two successive
+increments of the remainder of \((T^+)\) are \(O(j^{-3})\). Thus,
+\[
+ j^2\{g_T(M_{\parmar})-g_T(M)\}
+ =j\Delta_{\parmar}\mathfrak F+2\mathfrak F(M)-1/6+O(j^{-1}).
+\]
+Expanding the exponential in the exact ratio then gives
+\begin{equation}\label{eq:pt-par-fisico}
+ -j^4(\pi_{\parmar}^{\rm ex}-\pi_{\parmar}^T)
+ =w_{\parmar}\{1/6-2\mathfrak F(M)-j\Delta_{\parmar}\mathfrak F\}+O(j^{-1}).
+\end{equation}
+The remainder is uniform over pairs. There are at most \(j^2(j-1)\) of them, and the first mean in
+\(\mathcal M_n(b)\) multiplies this sum by \(n/j^4\). The total cost of this remainder and of replacing
+\(-j\Delta_{\parmar}\mathfrak F\) by \(H_M(\parmar)\) is therefore
+\[
+ O\!\left(\frac{n}{j^4}\,j^2(j-1)\,\frac1j\right)
+ =O(n/j^2)=o_b(1).
+\]

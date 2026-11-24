@@ -1,0 +1,51 @@
+\begin{lema}[Cota previa del error en el tablero inicial]\label{lem:previa}
+Hay \(C<\infty\) y \(n_0\) tales que, para \(n\ge n_0\),
+\[
+ |R_Q(n)|=\big|\log Q(n)-\log Q_{\rm pred}(n)\big|\le C/n .
+\]
+\end{lema}
+\begin{proof}
+Fíjese \emph{un solo} corte admisible \(b>0\). Escribamos \(L_n=L(B_n)\).
+Para una historia \(h\) detenida y un orden fijo de las filas, sean
+\(A(h)=\sum_{t<\tau}\log\rho(B_t,i_t)\) y \(X(h)=Q(B_\tau)e^{-L(B_\tau)}\).
+La probabilidad de ese prefijo bajo \(\nu\) es
+\(\exp(L(B_\tau)-L_n-A(h))\). Multiplicar por \(e^{A(h)}X(h)\) da \(Q(B_\tau)e^{-L_n}\),
+también cuando el prefijo no admite completación. Los prefijos detenidos particionan
+las soluciones dados los órdenes de fila. Sumando y promediando el orden obtenemos
+\begin{equation}\label{eq:masa-previa}
+ e^{R_Q(n)}=\mathbb E_\nu[e^A X].
+\end{equation}
+
+En \(H_j\) se tiene \(\log X=g_T+\Gamma+g^\flat\) por el
+Lema~\ref{lem:positividad-llegada}. Las cotas de torres y de las sumas de cuadrados dan
+\(|g_T|+|\Gamma|\le C/j\), y~\eqref{eq:llegada-puntual-acotada} acota la parte positiva
+de \(\log X\) por una constante de clase. Con \(|e^z-1|\le e^{\max(z,0)}|z|\)
+y~\eqref{eq:llegada-nu} concluimos \(\mathbb E_\nu[|X-1|;H_j]=O_{b,\delta}(1/n)\).
+
+Explicitemos las excepciones bajo esta misma ley. En \(S_M\) la consistencia de fila
+hasta la primera salida da \(|A|\le C_\delta/M+C/j\), sumando los defectos \(O(k^{-2})\)
+de los padres regulares, incluido el último paso~\cite[teos.~7.1 y 8.1]{pc}.
+Una banda diádica de escala \(k\ge j/2\) tiene probabilidad de salida
+\(\le Ce^{-c_*k}\) y peso \(1+X\le C e^{2\beta k}\) al salir de ella
+\cite[§§5--6]{tc}. La suma de \(Ce^{-(c_*-2\beta)k}\) en las bandas cuesta
+\(O_b(e^{-c_b n})\) para \(c_*>2\beta\). Al llegar regularmente con una línea larga
+se aplica el Lema~\ref{lem:prescripcion-larga}. Queda
+\(\mathbb E_\nu[1+X;S_M\setminus H_j]=O_b(e^{-c_b n})\) reduciendo \(c_b>0\).
+Hasta la parada macroscópica, la comparación de trayectorias y la cota exterior de
+primer orden de~\cite[cor.~4.12 y §6]{tc} dan
+\[
+ \nu(S_M^c)\le C e^{-c_\delta n},\qquad
+ \mathbb E_\nu[e^A X;S_M^c]\le
+ C\exp(-c_\delta n+D_\delta n^{2/3}+O_\delta(1/n)).
+\]
+Aquí el exponente \(D_\delta n^{2/3}\) acota el logaritmo positivo del peso en la salida
+macroscópica; los normalizadores aportan \(O_\delta(1/n)\).
+
+En particular \(\nu(H_j)=1+O_b(e^{-c_bn})\), de modo que
+\(\mathbb E_\nu[X;S_M]=1+O_{b,\delta}(1/n)\). Esta media es positiva. Multiplicarla
+por \(e^{\pm(C_\delta/M+C/j)}\) encierra \(\mathbb E_\nu[e^AX;S_M]\).
+Sumando el coste de \(S_M^c\) en~\eqref{eq:masa-previa} obtenemos
+\(e^{R_Q(n)}=1+O_{b,\delta}(1/n)\). Para \(|u|\le1/2\), \(|\log(1+u)|\le2|u|\);
+con el corte ya fijo resulta la tesis. Ésta da la tasa \(O(1/n)\) de la
+Conjetura~10.1 de~\cite{pc}. El argumento hasta aquí sólo ha integrado respecto de \(\nu\).
+\end{proof}

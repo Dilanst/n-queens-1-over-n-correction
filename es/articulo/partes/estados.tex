@@ -5,7 +5,9 @@ Usamos \status{O} para una comprobación exacta por ordenador o un intervalo rig
 condición indicada. Las claves de «Origen» remiten a las tablas del suplemento sobre la prueba,
 las torres y el cálculo numérico.
 
-La demostración del límite usa las identidades racionales del par y del cuadrado. La
+La demostración del límite está asistida por ordenador en dos pasos. El cálculo racional
+del Apéndice~\ref{app:pair} verifica los coeficientes de grado cuatro del par y del cuadrado.
+Las cotas analíticas de sus restos son uniformes en la clase estacionaria. La
 extrapolación de Richardson interviene al evaluar la fórmula para $\cerr$. El cotejo simbólico de
 42 piezas constituye una comprobación independiente de la cancelación en el extremo.
 {\small
@@ -16,7 +18,7 @@ Estado & Afirmación & Comprobación & Origen\\ \midrule
 \status{D} & Existencia del límite y fórmula exacta para $\cerr$~\eqref{eq:main}
  & Comparación de dos cortes del mismo tablero inicial & A B \\
 \status{D} & Derivadas nulas en el extremo físico
- & Convergencia, orden cero y analiticidad & A H \\
+ & Límite de las integrales truncadas y desarrollo de Taylor & A H \\
 \status{D} & Identidad con signo y salidas a corte fijo
  & Historias detenidas, diferencia firmada y momentos & C D W \\
 \status{D} & Resto de llegada en media, uniforme en el corte
@@ -24,29 +26,35 @@ Estado & Afirmación & Comprobación & Origen\\ \midrule
 \status{D} & Densidad interior
  & Dieciséis términos y límite de Riemann a corte fijo & E Z \\
 \status{D} & Torres en la frontera y cuadrado
- & Condicionamiento a cuatro filas y multiplicidad & D G \\
+ & Supervivencia y multiplicidad. Coeficiente del cuadrado por cálculo exacto [O] & D G \\
 \status{D} & Respuesta del par $J=-B_2+L_2$
  & Ocho submedidas y reinserción de rango dos & F X \\
 \status{D} & Desarrollo de torres y estabilidad
  & Resto uniforme, menores y borrado con pesos & I K Y \\
 \status{D} & Incremento restringido de la marginal
  & Punto estacionario, determinante y pesos físicos & B C L \\
+\status{O} & Identidades racionales de la prueba asistida
+ & Orden cuatro en siete variables para el par, dieciocho para el cuadrado & L D \\
 \status{O} & Controles algebraicos
  & 27 coeficientes de marginal y control del extremo transcrito & M H \\
 \status{N} & Estimación decimal y banda conservadora
  & Extrapolación de mallas y presupuesto empírico & P \\
-\status{D si C} & Cota de cuadratura y serie, $8{,}74\cdot10^{-10}$
- & Cotas analíticas bajo las tolerancias nodales & P Q \\
+\status{N} & Integral numérica de $\numerr_F/x^2$
+ & Cotejo con $F(0)+F'(0)-F(1)$ & P \\
+\status{D si C} & Serie y cuadratura de $\numerr_6/x^2$
+ & Error $\le8{,}74\cdot10^{-10}$ bajo las tolerancias de muestreo & P Q \\
 \status{O} & Perfil físico y términos nodales explícitos
  & Intervalos exteriores y cobertura por fila & R \\
 \status{O} & Integrales de frontera $S$ y $P_T$
  & Cubatura certificada y recurrencia intervalar & R T \\
 \status{O} & $Q_2$ completo en un nodo real
  & Encierros del núcleo y trazas con signo & T \\
-\status{O} & Encierro grueso de $\cerr$
- & Los mayorantes globales incluyen cero & R \\
-\status{O/N} & $Q(n)$ exacto, $nR_Q(n)$ numérico
- & Conteos hasta 27, oscilación y deriva ajustadas & N \\
+\status{O} & Mayorantes globales
+ & La anchura de la integral impide certificar el signo & R \\
+\status{O} & Conteos $Q(n)$ hasta 27
+ & Valores enteros de las enumeraciones citadas & N \\
+\status{N} & Residuos $nR_Q(n)$ en tamaños finitos
+ & Evaluación del predictor, oscilación y deriva ajustadas & N \\
 Abierto & Encierro fino de $\cerr$
  & Errores nodales, integración del par y resto de malla & P R T \\
 Alcance & Llegada puntual y vetos arbitrarios

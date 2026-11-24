@@ -14,31 +14,47 @@ dos emparejamientos de la máscara contiene ese par.
 \paragraph{Clase y dos operaciones.}
 \[
   w_e\in\{0\}\cup[w_0,w_1],\quad P=\operatorname{diag}(u)M\operatorname{diag}(v),
-  \quad P_e\le M_0/k,\quad \|P-J_k\|_{\rm op}\le1-\gamma .
+  \quad P_e\le M_0/k,\quad \|P-\mathbb U_k\|_{\rm op}\le1-\gamma .
 \]
 Aquí $0<w_0\le w_1$, $M_0\ge1$, $0<\gamma\le1$, $M$ tiene soporte total, $P$ es su escalado
-bistocástico y $J_k$ tiene entradas $1/k$. Ésta es la clase $\mathcal K$. En esta sección $k$ es
-el tamaño entero de la máscara, distinto de la función $k(x)$ de la integral. Ocupar $e$ retira
+bistocástico y $\mathbb U_k$ tiene entradas $1/k$. Ésta es la clase $\mathcal K$. En esta sección $k$ es
+el tamaño entero de la máscara, distinto de la función $\numerr(x)$ de la integral. Ocupar $e$ retira
 su fila y su columna y deja el menor $M_e$. Prohibir $e$ deja las dos fibras y pone $w_e=0$ en
 $M\setminus e$. Las dos operaciones perturban de manera distinta las sumas que se han de reescalar.
-El punto estacionario $p$ de torres satisface $p_e(1-p_e)=w_e\exp(z_i+y_j)$
-en la rama pequeña y tiene sumas de línea uno. Con $p$ se calcula el predictor logarítmico $L_T$
-y con $P$, la corrección a $L_T$ dada por la fórmula siguiente.
-Las cotas siguientes valen para $k$ mayor que un umbral de clase, también en los menores utilizados.
-El corte físico se fija antes de enviar $n$ a infinito.
+El hijo de reinas $M_e^{\rm fis}$ además prohíbe las casillas de las dos diagonales de $e$.
+El Lema~\ref{lem:hijo-fisico} controla el escalado durante esa operación.
+
+La clase estacionaria (H) pide un punto de torres con márgenes uno en la rama $0<p_e<1/2$,
+$p_e(1-p_e)=w_e\exp(z_i+y_j)$, $p_e\le C_p/k$ y $\lambda_{\min}(S_T+\Pi)\ge\gamma_A$.
+Aquí $S_T$ es la Hessiana de incidencia y $\Pi$ proyecta sobre el modo fila menos columna,
+como en el apéndice~\ref{app:rook}. En $\mathcal K$, a partir de $k_{\mathcal K}(M_0,\gamma)$,
+ese punto existe y es único, con $C_p=3M_0/2$, $\gamma_A=0{,}88\gamma$ y $p_e/P_e=1+O(k^{-1})$
+en el soporte. Calculamos $L_T$ con $p$ y su primera corrección con $P$.
 
 \paragraph{La aproximación que se transporta [D].}
 \[
    g_T(M)=\log\operatorname{per}M-L_T(M)
-       =\frac{\Phi(kP)}k+R(M),\qquad |R(M)|\le Ck^{-2}.
+       =\frac{\coefT(kP)}k+R(M),\qquad |R(M)|\le Ck^{-2}.
 \]
-Esta estimación de valor es (T). Al escribir $\Phi=\mathfrak F-1/12$ y evaluar $\mathfrak F$ en
-el perfil de torres de la trayectoria, se obtiene el $F(x)$ de~\eqref{eq:main}. Aplicar la cota
-para $R$ por separado en los dos tableros sólo daría $O(k^{-2})$ para su diferencia. La estimación
-$(T^+)$ gana un orden bajo $M\mapsto M_e$, con incremento $O(k^{-3})$, y dos bajo
-$M\mapsto M\setminus e$, con incremento $O(k^{-4})$. Las constantes y el umbral de estas tres
-cotas dependen sólo de $M_0,\gamma$. El apéndice~\ref{app:rook} obtiene las ganancias siguiendo
-por separado el resto del permanente escalado y el de la normalización del predictor.
+Esta estimación de valor es (T). Al escribir $\coefT=\mathfrak F-1/12$ y evaluar $\mathfrak F$ en
+el perfil de torres de la trayectoria, se obtiene el $F(x)$ de~\eqref{eq:main}.
+La estimación estática $(L^*)$ se aplica a la matriz bistocástica $P$ con los dos márgenes
+$M_0,\gamma$ del escalado. Da $\mathcal E(P)=\mathfrak f_{\rm e}(kP)/k+O(k^{-2})$.
+Sumar el desarrollo de $g_T-\mathcal E(P)$ da (T) para $k$ mayor que ambos umbrales.
+En la clase común de la estimación estática de incrementos y la determinista vale $(T^+)$,
+\[
+ |R(M_e)-R(M)|\le Ck^{-3},\qquad |R(M\setminus e)-R(M)|\le Ck^{-4}.
+\]
+El apéndice~\ref{app:rook} obtiene las dos cotas en $\mathcal K$, con constantes que dependen de
+$M_0,\gamma$. La continuación al reducir un peso es uniforme hasta cero. Al aplicar otro
+desarrollo en el menor se toma el umbral de sus propios márgenes de difusión y brecha.
+
+Para usar (S), sea $r_c(N)=L_T(N_c)-L_T(N)-\log(\pi_c^{\rm der}(N)/w_c)$ el resto
+de inserción en $c$, con $\pi_c^{\rm der}=\partial_{\log w_c}L_T$. Si $N$ satisface (H),
+$e,f$ tienen filas y columnas distintas y $c$ conserva ambas fibras en $N_{ef}$, entonces
+$|r_c(N_{ef})-r_c(N)|\le C_S/k^3$. La cota de un menor lejano se aplica dos veces, con los
+umbrales de $(C_p,\gamma_A)$ en $k$ y de $(5C_p/4,3\gamma_A/4)$ en $k-1$.
+Esta comparación de menores interviene en la marginal del apéndice~\ref{app:pair}.
 
 \paragraph{De dos torres a un par de reinas.}
 En una máscara binaria, la probabilidad exacta de ocupar $E=\{e,f\}$, con filas y columnas

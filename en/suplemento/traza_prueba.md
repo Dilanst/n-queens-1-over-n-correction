@@ -1,10 +1,15 @@
 # Signed argument / Argumento con signo
 
-The file names and labels below are identical in both languages. / Los nombres de archivo y los rótulos son iguales en los dos idiomas. The final theorem is read with the two-cut closure. / El teorema final incorpora el cierre por dos cortes.
+Para verificar las pruebas con los archivos que acompañan a la v13, empezar por el
+[cuaderno del lema B.1](pruebas_llegada/LEEME.md) y la [prueba del límite de los menores dobles](prueba_pt/LEEME.md).
+
+Para el lema B.1, el rango se toma de **velocidad_via2_ronda21_20261117T121607Z/fuentes/latex/P06.tex** (lema de rango). Las cotas por tipo y la media están en **velocidad_consolidado_v3_20261117T203337Z/v3/consolidado/latex/05_lineas_y_grados.tex**, líneas 52–110, y **06_corte.tex**, líneas 24–69. La [tabla de las ampliaciones españolas](TRAZA_AMPLIACIONES_ES.md) reúne las demás localizaciones de los apéndices A–G y J.2.
+
+La tabla de partida corresponde a la edición bilingüe anterior. Los desarrollos de la edición española se localizan en la [tabla de ampliaciones](TRAZA_AMPLIACIONES_ES.md). El teorema final incorpora el [cierre por dos cortes](../../es/articulo/partes/prueba_cierre.tex).
 
 | Result in either article / Resultado en ambos artículos | Exact source and scope / Fuente y alcance |
 |---|---|
-| `intro.tex`, prior magnitude bound used in Appendix A / cota previa usada en el Apéndice A | `velocidad_consolidado_v3_20261117T203337Z/v3/consolidado/latex/06_corte.tex`, lines 11–18 and 82–99; `p10_revision_global_20261123T121934Z/ACTA_GLOBAL.md`, §§2, 4. This gives boundedness of the scaled signed error. The existence and value of its limit require the later two-cut argument. |
+| `intro.tex`, prior magnitude bound used in Appendix A / cota previa usada en el Apéndice A | [Deducción bilingüe a corte fijo / Fixed-cut-off derivation](cota_previa.md). Origen / Source: `velocidad_consolidado_v3_20261117T203337Z/v3/consolidado/latex/06_corte.tex`, lines 11–18, 24–29 and 48–99; `p10_revision_global_20261123T121934Z/ACTA_GLOBAL.md`, §§2, 4. The two-cut argument identifies the limit. |
 | `predictor_finito.tex`, app:predictor | Finite predictor and normalization as cited in the canonical predictor article, bibliography entry `pc`. The displayed definition previously in the introduction is reproduced here, followed by the two profile functionals. |
 | `perfil.tex`, sec:profile-data. Vacancy and rook functional | `traspaso_b16_estado_20261122T0352Z/B16_EXPLICACION.md`, §§3–4; `programas_J_y_16_filas_20261123T1138Z/filas_jet.py`, lines 98–122, 179–186. A separable factor leaves double scaling unchanged. The finite-board rook Green function in `punto10_literatura_y_G_v2_20261122T083204Z/DEFINICION_G.md`, §§1–2, is distinct from the scalar (G(x)) of the theorem. |
 | `perfil.tex`, line prefactor | `malla_local_v3_20261122T0915Z/v/rect/motor/motor.py`, lines 235–252, 357–374, 398–419; `traspaso_b16_estado_20261122T0352Z/B16_API_motor.md`, §§Malla, Nivel. Line weights, parity, gauge and all four contractions. |
@@ -25,7 +30,7 @@ The file names and labels below are identical in both languages. / Los nombres d
 | `prueba_traslado.tex`, pattern law and stationary scaling [D] | `p10_llegada_fisica_20261123T104835Z/tex/07_motivos.tex`, lines 2–49, `08_punto_torres.tex`, lines 2–41, 54–92, `14_precisiones.tex`, lines 2–23, and `15_fila_marcada.tex`, full argument. |
 | `prueba_traslado.tex`, quadratic coefficient [D] | `p10_cotejo_de_las_dos_medias_20261123T114324Z/02_cuadratico.tex`, coefficient and derivatives, especially lines 73–115, and `02b_transferencia.tex`, lines 68–111. |
 | `prueba_traslado.tex`, (F2), length-two correction and square multiplicity [D] | `p10_F2_camino_del_par_20261123T115914Z/03b_trazas.tex`, lines 2–30, `05_transferencia.tex`, lines 17–110, and `06_F2_y_limite.tex`, lines 20–53. The sign in L2 includes the minus on the squared linear coefficient. |
-| `prueba_cierre.tex`, analyticity and zero-order identity [D] | `demostraciones_7_8_revisadas_20261122T0646Z/orden0_ensamblaje/parte_07.tex`, lines 3–81; `paso_limite/parte_04.tex` in that folder, lines 91–96 and 108–111. Only regularity and the zero-order identity are used. |
+| `prueba_cierre.tex`, analyticity and zero-order identity [D] | `demostraciones_7_8_revisadas_20261122T0646Z/orden0_ensamblaje/parte_07.tex`, lines 3–81; `paso_limite/parte_04.tex` in that folder, lines 91–96 and 108–111. En la edición española v12 sólo se usa la regularidad en este paso. El límite finito fuerza, sucesivamente, los coeficientes constante y lineal nulos. |
 | `prueba_cierre.tex`, existence and endpoint corollary [D] | `p10_cierre_por_dos_cortes_20261123T123435Z/07_cierre.tex`, from the three fixed-cut estimates through the final corollary; independent review in the same folder. The linear endpoint identity follows from convergence. The 42-piece symbolic transcription remains a separate computer check [O]. |
 
 The global audit is `p10_revision_global_20261123T121934Z/ACTA_GLOBAL.md`, §§1–5. Its one reservation concerns the old route at the endpoint. The succeeding two-cut proof listed above discharges it without presupposing the limit of the initial error. / La revisión global conservaba una reserva sobre la vía original en el extremo. La comparación posterior de dos cortes la resuelve sin presuponer la existencia del coeficiente.

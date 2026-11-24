@@ -1,0 +1,33 @@
+\paragraph{Justificación del criterio de polímeros usado en la parte 3.}
+Sean $a(P)\ge0$ las normas de las actividades con el margen exponencial ya incluido.
+La incompatibilidad incluye dos ocurrencias del mismo polímero. Por el argumento
+anclado de F04 se cumple $\sum_{D\sim P}a(D)e^{|D|}\le |P|$ con holgura,
+y $\sum_P a(P)e^{|P|}\le CS$, reservando también esta unidad en la exponencial.
+Para comprobar la cota del logaritmo, introducir una actividad escalar auxiliar
+y desarrollar primero formalmente. La función exponencial de los grafos conexos
+enumera todos los grafos en las ocurrencias etiquetadas. Para una colección de $q$
+ocurrencias, la suma sobre todos los grafos, con peso $-1$ por arista incompatible,
+es el indicador de compatibilidad total por expansión del producto.
+Por tanto el logaritmo retiene los grafos conexos y el factor $1/q!$.
+
+En un grafo de incompatibilidad con sus aristas totalmente ordenadas, a cada subgrafo
+conexo asígnese su árbol de Kruskal. Los subgrafos que dan un árbol $T$ se obtienen
+añadiendo cualquier subconjunto de las aristas posteriores a todas las del camino
+que une sus extremos en $T$: al procesarlas sus extremos ya están unidos.
+Recíprocamente, cualquier arista extra anterior a la máxima del camino cambiaría
+el árbol mínimo. La suma de signos sobre este intervalo es cero o tiene módulo uno.
+La suma absoluta después de esta cancelación se domina por la suma sobre árboles.
+Para árboles de altura a lo sumo $h$ con raíz $P$ y sin el peso de la raíz
+el mayorante etiquetado exponencial se itera desde $F_0(P)=1$ mediante
+\[
+ F_{h+1}(P)=\exp\Big(\sum_{D\sim P}a(D)F_h(D)\Big).
+\]
+El factorial de los hijos proviene del orden irrelevante de las ramas; con raíz fijada
+la serie lleva $1/(q-1)!$, frente a $1/q!$ en la serie sin raíz. Para $q=1$ el árbol es vacío de aristas.
+Por inducción $F_h(P)\le e^{|P|}$. La suma sin raíz queda dominada por
+$\sum_P a(P)e^{|P|}$ por designación de una raíz. El margen da convergencia
+absoluta en un disco escalar mayor que la unidad: la desigualdad se conserva para
+$(1+\delta')a(P)$ con $\delta'>0$ fijo al reducir $\eta_F$. Esto vale con actividades en
+el álgebra booleana. La exponencial de la serie conexa coincide allí con la
+partición por identidad de coeficientes. El margen restante en talla permite
+marcar una o dos ocurrencias y efectuar el centrado de la parte 3.

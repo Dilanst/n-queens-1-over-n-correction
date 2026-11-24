@@ -1,0 +1,90 @@
+\begin{lema}[Regularidad del perfil en el extremo]\label{lem:regularidad-extremo}
+Para algún \(x_0>0\), \(G\) es analítica en un entorno de \([0,x_0]\).
+En ese entorno \(\numerr\) es meromorfa con único polo posible en cero, de orden a lo sumo cuatro.
+\end{lema}
+\begin{proof}
+El perfil continuo de masa uno tiene \(\nu_1\ge c>0\), marginales axiales uno y
+\(u_f\ge c>0\) en ambas familias oblicuas~\cite{pv}. Reducimos \(c\) para que \(c<1\).
+En un disco complejo \(|x|<r\) se tiene \(|U_f|\ge c/2\), luego \(W\) y \(1/U_f\)
+son holomorfas como funciones acotadas de la posición. Todos los dominios de cruces, fibras,
+paridades e incidencias de la sección~\ref{sec:contracciones} son independientes de \(x\).
+
+\paragraph{La inversa y sus entradas.}
+Usemos una medida fija \(d\sigma=dy\) en cada eje y \(dy/2\) en cada hoja oblicua. Sean
+\(D_x(a)=1\) en los ejes y \(D_x(a)=x\) en las oblicuas, y \(u_x(a)=1\) o \(U_a(x)\),
+respectivamente. Así \(d\rho=(u_x/D_x)d\sigma\). Para dos líneas distintas que se cortan,
+\(K(a,b)=\nu_1(a\cap b)\eta_a\eta_b\), con \(\eta_a=D_x(a)/u_x(a)\).
+Por tanto \(K=D_x K_0 D_x\), donde el núcleo \(K_0\) es holomorfo y uniformemente
+acotado, incluso en los bordes al usar la convención de cruce fijada. Las entradas restantes
+valen cero. En \(L^2(d\sigma)\), los productos de núcleos usan \(d\sigma\) y los factores
+\(D_x,u_x\) actúan por multiplicación. El operador que se invierte es
+\[
+ \mathcal T_x=I+u_x K_0D_x+\Pi .
+\]
+En \(x=0\) es triangular por bloques (ejes primero), con identidad en el bloque oblicuo.
+El bloque axial es la identidad más el operador de bloques cruzados \(\nu_1,\nu_1^{\mathsf T}\)
+más \(\Pi\). En las constantes axiales común y alternada sus autovalores son \(2,1\).
+En las funciones de media cero por eje la norma del operador cruzado es \(\le1-c\):
+el núcleo \((\nu_1-c)/(1-c)\) es bistocástico, luego es una contracción en \(L^2\)
+por Jensen e integración. Esto da la inversa acotada del bloque axial por serie geométrica.
+El otro bloque fuera de la diagonal es acotado por tener núcleo acotado y medida finita.
+La inversa triangular existe. Reducimos \(r\) para que
+\(\|\mathcal T_0^{-1}(\mathcal T_x-\mathcal T_0)\|<1/2\). La serie de Neumann da
+una inversa holomorfa uniformemente acotada en ese disco.
+
+La parte de \(L_0+3\Pi\) con extremos \(a,b\) vale
+\[
+ D_x(a)D_x(b)\int K_0(a,t)D_x(t)
+     [\mathcal T_x^{-1}(u_x K_0(\cdot,b))](t)\,d\sigma(t).
+\]
+Las dos secciones exteriores tienen normas \(L^2\) uniformes para \emph{cada} extremo,
+por la fórmula de cruce. La integral bilineal es holomorfa y acotada también cuando \(a=b\).
+Así se obtiene la versión del núcleo que puede evaluarse en una casilla marcada o sobre la
+diagonal. En \(\theta_a\), el factor \(K(a,t)^2\) deja \(D_x(t)^2\), que absorbe el único
+\(1/D_x(t)\) de la medida. En \(s_a\) y en la última suma de \(\mathcal V\) las fibras y la
+medida de conteo normalizada de las líneas son fijas. Las fórmulas integrales del
+apéndice~\ref{app:predictor} dan por tanto \(\mathcal V\) holomorfa.
+
+\paragraph{El funcional de torres.}
+En \(x=0\), el escalado de \(v_0=u_Du_A\) es \(\nu_1\) por su factorización.
+En \(C[0,1]\) la ecuación para el logaritmo \(z\) del factor simétrico es
+\(e^{z(r)}\int v_x(r,q)e^{z(q)}\,dq=1\). Su derivada en la solución inicial es
+\(I+\mathcal P\), donde \(\mathcal P\) tiene núcleo \(\nu_1\). Vale dos sobre las constantes.
+En media cero, \(\|\mathcal P\|_\infty\le1-c\) por la misma descomposición bistocástica.
+El teorema de la función implícita en este espacio complejo da un escalado holomorfo
+en un disco menor. Su rama real coincide con el escalado positivo por unicidad.
+Para el núcleo centrado \(\centrado=p_x-1\) del apéndice~\ref{app:predictor},
+\(\|\centrado(0)\|_{2\to2}\le1-c\). Reduciendo el disco, \((I-\centrado^2)^{-1}\) es holomorfa acotada.
+El núcleo de \(T=\centrado(I-\centrado^2)^{-1}\centrado\) se evalúa entre dos secciones acotadas de
+ \(\centrado\),
+incluso en la diagonal, como en el párrafo anterior. Los productos de núcleos y
+\(\operatorname{tr}(T^2)=\iint T(r,q)T(q,r)\,dr\,dq\) preservan la holomorfía.
+Así \(F\), y con ella \(G\), son holomorfas cerca de cero.
+
+\paragraph{Orden máximo en las contracciones.}
+En un producto directo, la esperanza de los indicadores es el producto de los \(U_\ell\)
+de las líneas distintas sin marcar. Es holomorfo incluso para dos cruces que comparten una
+transversal. Se usa este producto antes de cualquier división por la disponibilidad común.
+Las medias de área usan \(\nu_1\,di\), y la fibra de una casilla marcada usa
+\(\eta_\lambda\nu_1\,dy\), ambas acotadas. Cada integral libre \(d\rho\) cuesta a lo sumo
+un factor \(x^{-1}\). La tabla cuenta esos factores en las expresiones físicas del
+apéndice~\ref{app:interior}, con los cuadrados y sus dos correcciones donde corresponden.
+\begin{center}\small
+\begin{tabular}{@{}lp{.54\linewidth}@{}}\toprule
+Contracción & Fuentes posibles de polos\\ \midrule
+\(G_{\rm cof}, f2E, f2F,f3F,f3c,f4,f5c,f5F,f7\) & Sólo áreas, centros y fibras marcadas.\\
+\(f2z\) & Una línea libre y el multiplicador acotado \(u_f/U_f\).\\
+\(f6\) & \(\Lambda,\omega\) usan cruces y fibras. La respuesta \(q\) integra una línea libre.\\
+\(C_{3,\rm cuad}\) & La potencia explícita \(x^{n_{RC}-3}\) cuesta a lo sumo tres factores.\\
+\(Q_1+\Delta_1\) & Una copia de \(\mathcal E_2\) integra a lo sumo una línea libre.\\
+\(Q_2+\Delta_2\) & Dos líneas exteriores y a lo sumo una interior en cada copia de
+ \(\mathcal E_2\).\\ \bottomrule
+\end{tabular}
+\end{center}
+En las dos últimas filas se usan \(L_1,L_2^{\rm int}\), antes de descomponer los
+productos en covarianzas. La suma discreta con \(\mathcal S(w,u)\) recorre las
+transversales de los cruces \(u\cap j\), un número acotado. Cada producto en la tabla,
+multiplicado por \(x^4\), queda así holomorfo bajo medidas fijas, con mayorante constante
+integrable en un disco menor. Integrar la serie por Cauchy en un círculo interior
+da la holomorfía de \(x^4d(x)\). Puesto que \(\numerr=d+G-xG'\), resulta el enunciado.
+\end{proof}

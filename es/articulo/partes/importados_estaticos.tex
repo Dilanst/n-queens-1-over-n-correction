@@ -1,0 +1,35 @@
+\paragraph{Coste estático~\cite[lemas 6.5--6.6, prop.~6.7 y cor.~6.8]{tc}.}
+Sea \(\widehat W_e=p_e(1-p_e)\), y sea \(\mu_{\widehat W}\) la ley de permutaciones
+del soporte con pesos \(\prod_{e\in\sigma}\widehat W_e\). El Lema 6.5, para un punto
+estacionario interior con masas axiales uno y holguras positivas, da la identidad
+\[
+ Q(B)e^{-H_B(p)}=\frac{\operatorname{per}\widehat W}{\prod_e(1-p_e)}
+                  \mathbb E_{\mu_{\widehat W}}\mathcal A,\qquad
+ \mathcal A(\sigma)=
+ \frac{\prod_f h_f}{\prod_e(1-p_e)^2}\,\mathbf1_{\{\sigma\ {\rm legal}\}}
+ \prod_{e\in\sigma}\frac{(1-p_e)^2}{h_{D(e)}h_{A(e)}} .
+\]
+\(\Gamma_4,\Gamma_2\) designan los normalizadores canónicos de reinas y de torres con
+los pesos \(p\) del mismo tablero. Si \(Q(B)>0\), \(p_e\le C/m\) y
+\(\|p-\mathbf1\mathbf1^{\mathsf T}/m\|_{\rm op}\le\rho_*<1\), se obtiene
+\(\log Q(B)-L(B)=\log\mathbb E_{\mu_{\widehat W}}\mathcal A
+-\log(\Gamma_4/\Gamma_2)+o(1)\), uniformemente para \(C,\rho_*\) fijos.
+La matriz axial tiene espectro \(1\pm\sigma_i(p)\), por lo que
+\eqref{eq:clase-importada} implica esta última hipótesis.
+
+Con los márgenes de~\eqref{eq:clase-importada}, el Lema 6.6 da
+\((S(t)^+)_{uv}=\mathbf1_{\{u=v\}}+O_{C,\eta,\gamma}(m^{-1})\), uniforme en los
+índices axiales y en \(0\le t\le1\). Aquí \(S(t)=(1-t)S_{R,2}+tS_{R,4}\), donde
+\(S_{R,d}\) es la matriz de incidencia axial ponderada por \(p(1-p)/(1-dp)\).
+Con \(\max_f\ell_f\le\epsilon_{\rm out}<1\), la Proposición 6.7 usa esa inversa y da
+\(\log(\Gamma_4/\Gamma_2)=O_{C,\eta,\gamma}(\epsilon_{\rm out}+m^{-1})\).
+El Corolario 6.8 concluye en una primera salida mesoscópica
+\((\log Q-L)^+\le C_0+\beta m\), tomando cero si \(Q=0\), uniformemente en la clase exterior.
+Su \emph{prueba} sirve en toda llegada de esa clase. En efecto,
+\(\sum_f\log h_f-2\sum_e\log(1-p_e)\le O_C(1)\), pues
+\(\sum_f\ell_f=2m=2\sum_e p_e\) y \(\sum_ep_e^2\le C\). Cada una de las \(m\)
+casillas elegidas aporta a lo sumo \(2\epsilon_{\rm out}/(1-\epsilon_{\rm out})\)
+al logaritmo del último producto. Los lemas 6.5--6.6 y la Proposición 6.7 absorben
+el resto en \(C_0\), independientemente de \(n/m\). El apéndice~\ref{app:signed} aplica el
+corolario en las bandas y el apéndice~\ref{app:arrival} aplica el argumento estático
+en la llegada regular con una línea larga.

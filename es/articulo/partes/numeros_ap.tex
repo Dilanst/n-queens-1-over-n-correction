@@ -1,5 +1,5 @@
 \section{Conteos finitos y cotas de cuadratura}\label{app:numquad}
-\subsection{La comparación con tableros finitos}
+\subsection{La comparación con tableros finitos}\label{sec:ajuste-finito}
 Los conteos exactos, recogidos en~\cite{oeis} hasta $n=27$~\cite{q27}, permiten observar la
 cantidad cuyo límite da el teorema. Para
 $10\le n\le27$, la tabla presenta el entero $Q(n)$ y el residuo escalado que resulta al usar el
@@ -32,11 +32,16 @@ $n$ & $Q(n)$ exacto & $n(\log Q(n)-\log Q_{\rm pred}(n))$ [N]\\ \hline
 \end{center}
 Para ver cuánto de la variación a tamaño finito explica una oscilación de periodo cuatro, el
 ajuste archivado usó los tamaños $16\le n\le27$. Fijó $\cerr=0{,}4055004460$, estimado entonces
-desde el continuo, y ajustó los otros tres parámetros del modelo
+desde el continuo. Conservamos ese dato para reproducir el ajuste y la Figura~\ref{fig:counts}
+con \path{suplemento/datos/ajuste_finito.json}. Difiere en menos de $7\cdot10^{-8}$
+del centro actualizado $0{,}40550038$ y cae dentro de la banda conservadora.
+Los otros tres parámetros se ajustaron al modelo
 \[
  nR_Q(n)=\cerr+\frac{a}{n}+A e^{-\kappa(n-16)}\cos(\pi n/2)+\text{residuo}.
 \]
-Dio $a=-2{,}956$, $\kappa=0{,}166$ y $A=0{,}297$ [N]. Al introducir la oscilación, la raíz del
+El coseno vale cero para $n$ impar, $+1$ para $n\equiv0\;(\mathrm{mod}\,4)$ y $-1$ para
+$n\equiv2\;(\mathrm{mod}\,4)$. El contraste periódico se hace entre las dos clases pares.
+El ajuste dio $a=-2{,}956$, $\kappa=0{,}166$ y $A=0{,}297$ [N]. Al introducir la oscilación, la raíz del
 error cuadrático medio bajó de $0{,}128$ a $0{,}041$. La corrección $a/n$ con $a$ cercano a
 $-2{,}9$ y la oscilación son apreciables para estos tamaños. Los conteos son compatibles con
 el valor calculado para $\cerr$, pero la tabla por sí sola no permite determinarlo. El argumento

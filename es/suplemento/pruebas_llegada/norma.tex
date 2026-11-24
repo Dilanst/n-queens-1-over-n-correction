@@ -1,0 +1,64 @@
+\section{Norma del error y cola de grados altos}
+\begin{proposicion}\label{prop:n}
+Sea \(P\) el punto estacionario de torres de la sección 1. Hay un umbral \(\eta>0\) de
+clase tal que para \(\rho\ge2\) fijo, \(\rho^2(\epsilon_A+1/j)\le\eta\) y \(j\)
+suficientemente grande, cada \(Z(Y)>0\) y
+\[
+ \|e\|_\rho:=\sum_{U\subseteq A}\rho^{|U|}|\Delta_Ue|\le C_\rho j^2.
+\]
+Para \(N=\lceil4\log n/\log\rho\rceil\) se tiene
+\(\sum_{|U|>N}|\Delta_Ue|\le C_\rho n^{-2}\). Para \(n\) grande esta cota se
+conserva al sustraer los errores de los cuadrados de B.1.
+\end{proposicion}
+\begin{proof}
+En el álgebra finita \(z^U z^V=z^{U\cup V}\), la norma ponderada es submultiplicativa.
+Sea \(a_U=\Delta_U{\bf1}_{\{\text{sin ataques diagonales}\}}\) y sea \(p_U\) la
+probabilidad de prescribir \(U\) en la ley de torres, cero en caso de
+incompatibilidad axial. La inversión booleana da \(Z=\sum_U a_U p_U z^U\)
+antes de tomar logaritmos. En \pruebaen{V02}, para prescripciones cortas,
+\(p_U=(\prod_{i\in U}b_i)e^{L_s(T_U)}(1+O(e^{-cj}))\),
+con \(T_U\) la suma de las supresiones unitarias, \(\|T_U\|\le3|U|\).
+La cota de Hessiana de \(L_s\) es \(C/j\) y los pesos \(b_i\) son comparables a \(D_i\).
+Para todas las tallas se cumple \(p_U\le C_0^{|U|}\prod b_i\).
+
+El polinomio de pesos \(w_U=a_Uz^U\prod b_i\) factoriza en componentes diagonales
+y anula los sitios aislados. Un árbol etiquetado enraizado en \(i\) acota el total
+de las componentes de tamaño \(v\) por
+\(b_i(C_B\rho)^v v^{v-2}(C\epsilon_A)^{v-1}/(v-1)!\),
+incluida una reserva \(e^{Bv}\) (\pruebaen{F04}).
+Con \(S=j\rho^2(\epsilon_A+1/j)\) la masa total es \(O(S)\) y la de incompatibles
+con una componente de tamaño \(v\) es \(O(vS/j)\). \pruebaen{V03b} demuestra por árboles
+la convergencia absoluta del logaritmo del gas en el álgebra, incluso con la reserva.
+
+En el gas inclinado por \(\exp(\xi[T_U])\), la media \(m_\xi\) de \(T_U\) y su derivada
+tienen norma \(O(S)\) por las dos marcas de \pruebaen{V03}. La ecuación
+\(\xi=DL_s(m_\xi)\) es contractiva con constante \(CS/j<1/2\).
+Sea \(D_\xi=Z_\xi\exp(L_s(m_\xi)-\xi[m_\xi])\). Al centrar en \(m_\xi\) se
+anula el término lineal. La generatriz de momentos centrados da la cota
+\([C(\sqrt{\ell S}+\ell)]^\ell\) en grado \(\ell\). El Taylor del factor residual
+tiene coeficientes de norma \((C/\sqrt{j\ell})^\ell\) hasta \(\ell=\lfloor\kappa j\rfloor\).
+Su contracción desde grado dos cuesta \(C(1+S)/j\). La reserva exponencial controla
+las prescripciones largas y el resto de Taylor, según las estimaciones de \pruebaen{V03}.
+Así \(\|D_\xi^{-1} Z-1\|_\rho\le C(1+S)/j+Ce^{-c'j}<1/2\). En las evaluaciones
+booleanas \(D_\xi>0\) por construcción real y \(Z(Y)>0\). La serie logarítmica da
+\(\|F\|_\rho\le C(1+S)\). En particular \(Q(A)>0\) sobre \(H_j\).
+
+Para \(\Lambda\), \pruebaen{N02} construye simultáneamente la silla de todas las caras
+mediante el balanceo de \(P\) en el álgebra. En el calibre que elimina el modo nulo de
+filas y columnas, la brecha da un inverso uniformemente acotado en norma de suma
+por filas. La carga pequeña garantiza la contracción y \(q_e/P_e=1+O(\eta)\) en la
+norma. La tangente en la rama pequeña identifica el máximo real en cada cara.
+En \pruebaen{N03} la perturbación del complemento de Schur diagonal tiene norma
+máxima de suma por filas \(<1/2\) y suma absoluta de entradas \(O(\rho^2j)\).
+La serie de trazas cuesta \(O(\rho^2j)\), independientemente del número de diagonales.
+La acción se acota usando \(\sum_e P_e|\log P_e|\le j\log j\), por entropía de filas.
+Con los factores locales resulta \(\|\Lambda\|_\rho\le C(j\log(ej)+\rho^2j)\).
+
+Se suman las dos normas y se extrae \(\rho^{-N}\le n^{-4}\), con \(j\le n\),
+como en \pruebaen{Z04}. El grado de la sustracción por cuadrados es a lo sumo cuatro.
+Una vez \(N\ge4\), todos los coeficientes de la cola coinciden con los de \(e\).
+\end{proof}
+La norma y sus dos demostraciones son deterministas. También lo es la positividad
+que permite \(H_j\subset F_b\). En \(F_b\setminus H_j\) B.1 recurre al coste de
+la línea larga y a la densidad detenida. Las estimaciones sobre la máscara corta
+se aplican únicamente en \(H_j\).

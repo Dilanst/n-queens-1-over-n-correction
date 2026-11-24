@@ -1,0 +1,100 @@
+  3 | \begin{lema}[Refinamiento del desplazamiento]\label{l:D2}
+  4 | En las condiciones del Lema~\ref{l:D}, sean $\eta:=y^*-y^0$, $s:=-J_0^{-1}\F(y^0)=y^1-y^0$ y
+  5 | $\cM_2\ge\|J_0^{-1}\|$ (norma eucl\'idea). Entonces:
+  6 | \begin{enumerate}
+  7 | \item[(D4)] $\|(S(y)+\widehat\Pi)^{-1}\|\le2e\,\cM_2$ para todo $y$ con $\|y-y^0\|_\infty\le2\cM\varphi$, y
+  8 | $\|\eta\|_2\le2e\,\cM_2\,\|\F(y^0)\|_2$;
+  9 | \item[(D5)] $\|\eta-s\|_1\le\cM\,\cL\,\|\eta\|_2^2$.
+ 10 | \end{enumerate}
+ 11 | \end{lema}
+ 12 | 
+ 13 | \begin{proof}
+ 14 | (D4) Por el paso 0 del Lema~\ref{l:D}, en la bola $\mathbb B$ se tiene $p_c(y)\ge\tilde p_c/e$ y
+ 15 | $d_cp_c(y)\le\frac12$; como $\tau_d(p)\ge p$ y $\tau_d(\tilde p_c)\le2\tilde p_c$, los pesos cumplen
+ 16 | $\tau_c(y)\ge\tilde\tau_c/(2e)$, y $e^{w_f}\ge e^{w^0_f}/(2e)$. Luego $S(y)+\widehat\Pi\succeq
+ 17 | (S(y^0)+\widehat\Pi)/(2e)$. Sea $\bar S:=\int_0^1S(y^0+t\eta)\,dt$, que cumple la misma cota. Como
+ 18 | $\nabla\F=S$ y $\F(y^*)=0$, $\bar S\eta=-\F(y^0)$; como $\eta\perp u$, $(\bar S+\widehat\Pi)\eta=-\F(y^0)$.
+ 19 | 
+ 20 | (D5) $J_0\eta=S(y^0)\eta=-\F(y^0)-\mathsf R$ con $\mathsf R:=\F(y^*)-\F(y^0)-S(y^0)\eta$, luego
+ 21 | $\eta-s=-J_0^{-1}\mathsf R$ y $\|\eta-s\|_1\le\|J_0^{-1}\|_\infty\|\mathsf R\|_1$, porque $J_0^{-1}$ es
+ 22 | sim\'etrica. Con $\delta\theta_c:=(a_c\oplus b_c)^\T\eta$,
+ 23 | \[
+ 24 |  \mathsf R_\ell=\sum_{c\in\ell}\varrho_c+\omega_\ell,\qquad
+ 25 |  \varrho_c:=p_c(y^*)-\tilde p_c-\tilde\tau_c\,\delta\theta_c,
+ 26 | \]
+ 27 | \[
+ 28 |  \omega_f:=e^{w^*_f}-e^{w^0_f}(1+\eta_f)\quad(f\in\Dg),\qquad \omega_a:=0\quad(a\in H).
+ 29 | \]
+ 30 | Por el paso 1 del Lema~\ref{l:D}, $|\varrho_c|\le4e\,\tilde p_c\,\delta\theta_c^2$ y
+ 31 | $|\omega_f|\le\frac12e^{1/8}e^{w^0_f}\eta_f^2$; adem\'as $\delta\theta_c^2\le4\sum_{\ell\ni c}\eta_\ell^2$.
+ 32 | Cada casilla est\'a en $d_c\le4$ l\'ineas, de modo que
+ 33 | \[
+ 34 |  \|\mathsf R\|_1\le64e\sum_\ell\eta_\ell^2\sum_{c\in\ell}\tilde p_c+\tfrac12e^{1/8}h^0\|\eta\|_2^2
+ 35 |  \le(64e\,P^0+e^{1/8}h^0)\,\|\eta\|_2^2\le\cL\,\|\eta\|_2^2 .
+ 36 | \]
+ 37 | \end{proof}
+ 38 | 
+ 39 | \paragraph{El par en el punto de prueba.}
+ 40 | En el marco del Teorema~\ref{t:par}, $y^0=(z^0,w^0)$ con $w^0=\log(1-p-q)$ es el punto de prueba del
+ 41 | Lema~\ref{l:PT}, y $\tilde p=p(y^0)$. Escribimos $\iota_c:=a_c\oplus b_c$ (as\'i $\iota_e=a_e\oplus1$ e
+ 42 | $\iota_c=a_c\oplus0$ si $c\notin f$), $\tilde\tau_c=\tau_{d_c}(\tilde p_c)$, $\tilde h=1-p-q$, y
+ 43 | \[
+ 44 |  \delta_e:=p-\tilde p_e,\quad \Delta\tau_e:=\tilde\tau_e-\tau^0_e,\quad
+ 45 |  \tilde A:=A^0+\Delta\tau_e\,a_ea_e^\T+\Delta\tau_{e'}a_{e'}a_{e'}^\T,\quad \tilde G:=\tilde A^{-1},\quad
+ 46 |  \tilde v:=\tilde\tau_ea_e+\tilde\tau_{e'}a_{e'},
+ 47 | \]
+ 48 | y lo mismo con $e'$; $\tilde{\mathsf G}(c,c'):=a_c^\T\tilde Ga_{c'}$ y
+ 49 | $\tilde{\cS}:=\tilde h+\tilde\tau_e+\tilde\tau_{e'}-\tilde v^\T\tilde G\tilde v$. Entonces
+ 50 | $J_0=S(y^0)+\widehat\Pi=\left(\begin{smallmatrix}\tilde A&\tilde v\\ \tilde v^\T&\tilde h+\tilde\tau_e+
+ 51 | \tilde\tau_{e'}\end{smallmatrix}\right)$ y, por el Lema~\ref{l:T-tablero}(c) con una sola l\'inea,
+ 52 | \begin{equation}\label{e:bloque}
+ 53 |  J_0^{-1}(x\oplus t)=(\tilde Gx-\sigma\,\tilde G\tilde v)\oplus\sigma,\qquad
+ 54 |  \sigma=\frac{t-\tilde v^\T\tilde Gx}{\tilde{\cS}},\qquad \det J_0=\det\tilde A\cdot\tilde{\cS}.
+ 55 | \end{equation}
+ 56 | 
+ 57 | \begin{lema}[El par en el punto de prueba]\label{l:par0}
+ 58 | Para $k\ge k_0$:
+ 59 | \begin{enumerate}
+ 60 | \item[(P1)] $\F(y^0)=-\delta_e\iota_e-\delta_{e'}\iota_{e'}$, con $\delta_e=pq+3p^2q+O(k^{-4})$ y
+ 61 | $\delta_{e'}=pq+3pq^2+O(k^{-4})$.
+ 62 | \item[(P2)] $\tilde\tau_e=p+2p^2-pq+6p^3-7p^2q+O(k^{-4})$ y $\Delta\tau_e=p^2-pq+4p^3-7p^2q+O(k^{-4})$, y lo
+ 63 | mismo con $p$ y $q$ cambiados.
+ 64 | \item[(P3)] $\lambda_{\min}(\tilde A)\ge\gamma/2$, $\|\tilde G\|_\infty\le2M_1$,
+ 65 | $|a_c^\T(\tilde G-G^0)x|\le c\,\|x\|_\infty/k^2$ para toda casilla $c$ y todo $x\in\R^H$, y
+ 66 | $\tilde{\mathsf G}(c,c')=\mathsf G(c,c')+O(k^{-2})$.
+ 67 | \item[(P4)] Con $\gamma_e:=\mathsf G(e,e)-2$,
+ 68 | $\ \tilde{\cS}=1-2pq-2p^3-2q^3-3p^2q-3pq^2-\gamma_ep^2-\gamma_{e'}q^2-2pq\,\mathsf G(e,e')+O(k^{-4})$.
+ 69 | \item[(P5)] $\|J_0^{-1}\|_\infty\le\cM_0$ y $\|J_0^{-1}\|\le\cM_0$ con $\cM_0$ constante; se cumplen las
+ 70 | hip\'otesis del Lema~\ref{l:D}, y $\|\eta\|_\infty$, $\|\eta\|_2=O(k^{-2})$, $\|\eta-s\|_1=O(k^{-4})$.
+ 71 | \end{enumerate}
+ 72 | \end{lema}
+ 73 | 
+ 74 | \begin{proof}
+ 75 | (P1) La expresi\'on de $\F(y^0)$ es (T3). Por (T1), $\tilde p_e=p_3(g_3(p)-\beta_e)$ con
+ 76 | $\beta_e=\log\frac{1-p}{1-p-q}=q+pq+\frac12q^2+O(k^{-3})$. Las derivadas de $p_3$ en $\theta$ son $\tau_3$,
+ 77 | $\tau_3\kappa_3$ y una tercera acotada por $c\,p$ si $3p\le\frac12$; luego
+ 78 | $\delta_e=\tau_3(p)\beta_e-\frac12\tau_3(p)\kappa_3(p)\beta_e^2+O(k^{-4})$, y se sustituye
+ 79 | $\tau_3(p)=p+2p^2+O(p^3)$, $\kappa_3(p)=1+O(p)$.
+ 80 | 
+ 81 | (P2) $\tau_3(x)=x+2x^2+6x^3+O(x^4)$, $\tau_2(x)=x+x^2+2x^3+O(x^4)$ y $\tilde p_e=p-pq-3p^2q+O(k^{-4})$.
+ 82 | 
+ 83 | (P3) $\|\tilde A-A^0\|\le2(|\Delta\tau_e|+|\Delta\tau_{e'}|)=O(k^{-2})$ da la primera cota. De
+ 84 | $\tilde G=G^0-G^0(\tilde A-A^0)\tilde G$,
+ 85 | \[
+ 86 |  \tilde Gx=G^0x-\Delta\tau_e(a_e^\T\tilde Gx)\,G^0a_e-\Delta\tau_{e'}(a_{e'}^\T\tilde Gx)\,G^0a_{e'} ,
+ 87 | \]
+ 88 | de donde $\|\tilde G\|_\infty\le M_1+O(k^{-2})\|\tilde G\|_\infty$ y, multiplicando por $a_c^\T$ y usando
+ 89 | $|\mathsf G(c,e)|\le4M_1$, la tercera cota. La cuarta es la tercera con $x=a_{c'}$.
+ 90 | 
+ 91 | (P4) $\tilde v^\T\tilde G\tilde v=\tilde\tau_e^2\tilde{\mathsf G}(e,e)+2\tilde\tau_e\tilde\tau_{e'}
+ 92 | \tilde{\mathsf G}(e,e')+\tilde\tau_{e'}^2\tilde{\mathsf G}(e',e')$; se usan (P2), (P3), (E4) y
+ 93 | $\tilde\tau_e^2=p^2+4p^3-2p^2q+O(k^{-4})$.
+ 94 | 
+ 95 | (P5) Por (P3) y el Lema~\ref{l:sup}(f1) aplicado a $\tilde A$, $\cM_H\le2(1+2(4C+1)/\gamma)$. La masa $\tau$
+ 96 | de $f$ es $\tilde\tau_e+\tilde\tau_{e'}\le4C/k$, luego $\vartheta_\infty\le\frac12$ para $k\ge k_0$ y (f3)
+ 97 | acota $\|J_0^{-1}\|_\infty$; la norma eucl\'idea la acota el Lema~\ref{l:T-cotas}(d). En el
+ 98 | Lema~\ref{l:D}: $\tilde p_c\le p^0_c\le1/22$, $P^0\le1$, $h^0\le1$ y, por (T2),
+ 99 | $\varphi=\delta_e+\delta_{e'}\le6pq\le6C^2/k^2$. Adem\'as $\|\F(y^0)\|_2\le2(\delta_e+\delta_{e'})$, y
+100 | se aplica
+101 | el Lema~\ref{l:D2}.
+102 | \end{proof}

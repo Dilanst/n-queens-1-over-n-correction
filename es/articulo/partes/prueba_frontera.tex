@@ -3,28 +3,31 @@ En \(\Gamma\) se ha aislado cada cuadrado, pero sus dos pares diagonales pueden 
 a la vez. Para guardar el signo y contar una sola vez su interacción, empezamos por la
 corrección de un par y después reunimos los dos pares en el cuadrado. Aquí \(p_e\) designa
 la ocupación estacionaria de \emph{torres} en la máscara binaria.
-Para un par diagonal disponible \(P=\{e,f\}\), sea \(\pi^{\rm ex}_P\) su probabilidad conjunta en
-una colocación uniforme de torres. Sea \(\pi^T_P=\exp[L_T(M_P)-L_T(M)]\), donde \(M_P\) elimina sus
+Para un par diagonal disponible \(\parmar=\{e,f\}\), sea \(\pi^{\rm ex}_{\parmar}\) su probabilidad
+ conjunta en
+una colocación uniforme de torres. Sea \(\pi^T_{\parmar}=\exp[L_T(M_{\parmar})-L_T(M)]\), donde
+ \(M_{\parmar}\) elimina sus
 cuatro extremos de fila y columna. Con \(\mathsf G(e,f)\) la respuesta cruzada del punto estacionario
 de torres y \(\chi_e\) su corrección relativa de una casilla, definimos
 \[
- \pi_{1,P}=p_ep_f(1-\mathsf G(e,f)+\chi_e+\chi_f),\qquad
- X_P=p_ep_f(p_e+p_f)\mathsf G(e,f).
+ \pi_{1,\parmar}=p_ep_f(1-\mathsf G(e,f)+\chi_e+\chi_f),\qquad
+ X_{\parmar}=p_ep_f(p_e+p_f)\mathsf G(e,f).
 \]
 Para un par solo la corrección del cuadrado es
-\(\log(1-\pi^{\rm ex}_P)-\log(1-\pi_{1,P})-X_P+O(j^{-5})\).
+\(\log(1-\pi^{\rm ex}_{\parmar})-\log(1-\pi_{1,\parmar})-X_{\parmar}+O(j^{-5})\).
 Las probabilidades son \(O(j^{-2})\) y su diferencia es \(O(j^{-4})\); al integrar la derivada
 logarítmica el error de linealización es \(O(j^{-6})\). El cuadrado completo da las correcciones
 de sus dos pares y un término adicional \(-3\prod_{s\in\square}p_s+O(j^{-5})\).
 Hay a lo sumo \(j^2(j-1)\) pares, pues cada casilla tiene a lo sumo \(2(j-1)\) vecinas y cada
-par tiene dos extremos. Así, la siguiente expresión \(B_n(b)\) difiere de \(n\mathbb E_\mu[\Gamma;F_b]\)
+par tiene dos extremos. Así, la siguiente expresión \(\mathcal M_n(b)\) difiere de \(n\mathbb
+ E_\mu[\Gamma;F_b]\)
 en \(O(n/j^2)=o_b(1)\):
 \begin{align*}
- B_n(b)={}&-n\mathbb E_\mu[\textstyle\sum_P(\pi^{\rm ex}_P-\pi^T_P);F_b]\\
-           &-n\mathbb E_\mu[\textstyle\sum_P(\pi^T_P-\pi_{1,P}+X_P);F_b]
+ \mathcal M_n(b)={}&-n\mathbb E_\mu[\textstyle\sum_{\parmar}(\pi^{\rm ex}_{\parmar}-\pi^T_{\parmar});F_b]\\
+           &-n\mathbb E_\mu[\textstyle\sum_{\parmar}(\pi^T_{\parmar}-\pi_{1,\parmar}+X_{\parmar});F_b]
             -3n\mathbb E_\mu[\textstyle\sum_\square\prod_{s\in\square}p_s;F_b].
 \end{align*}
-La inserción de \(\pi^T_P\) en esta descomposición tiene dos funciones. La primera media mide
+La inserción de \(\pi^T_{\parmar}\) en esta descomposición tiene dos funciones. La primera media mide
 el error del predictor de torres en el par. La segunda conserva el error de inserción
 para un par marcado. Para promediarlo hay que saber cuáles de los otros dos vértices siguen
 disponibles. Sean \(u_f\) las vacancias finales de las dos familias diagonales y
@@ -59,18 +62,17 @@ Por tanto,
 \(w_{o,b}=B_oW_b^0(e)W_b^0(f)=p_b(e)p_b(f)/U_o(b)\).
 Se conservan incluso los estados de masa nula sin dividir por \(q_{o,s}\).
 
-Para la primera media, al integrar \(p_b\) sobre cada línea obtenemos su masa \(m_f\). Sean
+Para la primera media, sea \(m_{f,b}\) la masa de \(p_b\) en cada línea de la familia \(f\),
+con la misma medida de fibra \(dr\) usada para la masa final \(m_f\) en la
+sección~\ref{sec:profile-data}. Sean
 \[
- W_b=\sum_{f=D,A}\int\frac{m_f^2}{2U_f},\qquad
- \gamma_b=\frac{m_D}{U_D}+\frac{m_A}{U_A},\qquad
+ W_b=\sum_{f=D,A}\int\frac{m_{f,b}^2}{2U_f},\qquad
+ \gamma_b=\frac{m_{D,b}}{U_D}+\frac{m_{A,b}}{U_A},\qquad
  \theta_b(r)=\int p_b(r,c)\gamma_b(r,c)\,dc .
 \]
-Eliminar los cuatro extremos en la expansión de torres da el término de tamaño \(W_b/6\), el
-de normalización \(-2F(b)W_b\) y la variación de las medidas de fila y columna \(-dF_2(b)\).
-Aquí \(dF_2(b)\) es la derivada del funcional de torres a núcleo fijo al multiplicar ambas
-medidas uniformes por \(1+\varepsilon(2W_b-\theta_b)\), con la simetría de columna.
-La dirección tiene masa cero por \(\int\theta_b=2W_b\). Resulta
-\(P_T=\lim_{b\downarrow0}[(1/6-2F(b))W_b-dF_2(b)]\).
+\input{partes/frontera_menor_doble}
+\input{partes/frontera_media_pt}
+\paragraph{La tercera media.}
 Para la tercera media, el cuadrado usa seis etiquetas diagonales distintas. Dos aparecen dos
 veces entre los ocho factores de vacancia de \(\prod_s W_b^0(s)\). Al multiplicar por las seis
 vacancias distintas y tomar \(p_0=\nu_1\) queda exactamente

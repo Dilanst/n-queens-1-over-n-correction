@@ -1,0 +1,61 @@
+\section{Fórmula para $F_2$ e identificación del tamaño físico}
+Para $b_0=v-1$ formemos los núcleos $G_v,T_v,U,H$ según el apartado 3 por convolución
+normalizada (en este párrafo los subíndices de lado son $L,R$). Sean $j$ el núcleo diagonal
+de $T-G$, $j_0=\tr(T_R-G_R)$ y $\sigma_3$ ahora la integral del cubo por entradas.
+Definimos exactamente
+\begin{align*}
+ \phi(v)={}&j_0^2/2+\tr T_R^2-3j_0/2-3\langle j,j\rangle/4+\langle j,Hj\rangle/2\\
+ &-(\sigma_3(T_L)+\sigma_3(T_R))/3+2\int b_0U^2+2\sigma_3(U)/3.
+\end{align*}
+Cada lado tiene masa uno y la unión disjunta masa dos. En el tamaño físico $k\Xi(P)=\phi(v)$:
+cada entrada de matriz ordinaria de un núcleo vale $s$ veces el núcleo y cada suma
+ordinaria sobre un lado aporta un factor $1/s$. Esto incluye todas las diagonales y las trazas.
+Sea $Z$ el núcleo $z-1$, y $O$ el bloque simétrico de diagonal nula con bloque cruzado $Z$.
+Para $y$ cerca de uno escribimos
+\[
+ d(y)=\det(I-y^2 Z^\top Z)^{-1/2},\qquad H_y=yO(I+yO)^{-1}.
+\]
+El propagador $H_y$ es un núcleo acotado: se escribe $yO-y^2 O(I+yO)^{-1}O$;
+no contiene un núcleo identidad. La brecha da un disco de $y$ de radio fijo.
+Para prolongar $V_j$, $j=1,2$, de ronda 2, parte 10, sumamos sobre $m$ vértices
+distintos, grados $d_i\ge3$, $2E=\sum d_i$, $E-m=j$. Ordenando los vértices,
+el peso es $\prod_i[w^{d_i}](1+w)e^{-w+w^2/2}$, dividido por $m!$, multiplicado
+por la suma sobre todos los emparejamientos de las semiaristas etiquetadas.
+Se incluyen los desconectados. En cada contracción se impone que los vértices sean
+distintos por inversión sobre particiones $\pi$ de los vértices:
+\[
+ \sum_\pi\left[\prod_{C\in\pi}(-1)^{|C|-1}(|C|-1)!\right]
+ s^{E-|\pi|}\int\prod_{uv\ {\rm aristas}} H_y(x_{\pi(u)},x_{\pi(v)})\,d\boldsymbol x.
+\]
+Se integra una vez por bloque, sobre la unión disjunta. Los vértices de lados distintos
+nunca se identifican al fijar sus lados. En el tamaño físico ésta es exactamente la
+suma de índices distintos; tras replicar, la distinción es entre copias individuales.
+Hay $m\le2j$, $E\le3j$ y $E-|\pi|\ge j$. La fórmula define $V_j(y,s)$ con coeficientes
+acotados e invariantes al replicar.
+Definamos los momentos centrales de la mezcla y su aproximación
+\begin{align*}
+ \mu_l(s)&=\sum_{q=0}^l(-1)^{l-q}\binom lq\prod_{a=0}^{q-1}(1-as)^{-1},\\
+ H_*(s)&=\sum_{l=0}^5\frac{\mu_l(s)}{l!}
+ \left.\partial_y^l[d(y)(1+V_1(y,s)+V_2(y,s))]\right|_{y=1}.
+\end{align*}
+Para $s=1/k$ son los de la ronda 2 ($k$ suficientemente grande). Sea
+$c(x)=\tfrac12\log(1-2x)-2\log(1-x)$. El coeficiente buscado es
+$F_2(z)=[s^2]\Gamma_z(s)$, con
+\begin{align*}
+ \Gamma_z(s)={}&s/6+\log H_*(s)
+ +(\langle\alpha\rangle+\langle\beta\rangle)/s
+ +(\langle c(sv)\rangle-s)/s^2\\
+ &+(\langle\log a\rangle+\langle\log b\rangle)/(2s)
+ +\tfrac12\log\det(I-W^\top W)-\tfrac12\log\bar\ell-s\phi(v).
+\end{align*}
+Para verificar signos: el término $-b$ de ronda 8, parte 02 (potenciales del
+escalado exacto $D$ a partir de $P(1-P)$), vale
+$(\langle\alpha\rangle+\langle\beta\rangle)/s$. En ese apartado se reemplaza la
+aproximación de $\log(k^k\per D/k!)$ por $\log H_*$, con error uniforme $O(s^3)$
+según ronda 2, parte 10. Stirling, el factor $\sqrt{4\pi k}$ y $\log2/2$ dejan
+$-k+1/(12k)+O(k^{-3})$. En $R=g_T+1/(12k)-\Xi$ esto da $s/6$ y $-s/s^2$.
+Así $R=\Gamma_z(1/k)+O(k^{-3})$ uniformemente.
+Los cocientes en cero son removibles: $c(x)=x+O(x^3)$ y los márgenes de $v$ valen uno.
+Los determinantes en cero están separados de cero por la brecha y
+$\tr(Z^\top Z)=O(1)$; $H_*(0)=d(1)$. Tomamos las ramas reales positivas en el centro.
+La acotación holomorfa en un disco fijo se detalla en el apartado siguiente.

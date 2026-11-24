@@ -1,0 +1,38 @@
+\begin{lema}[Prescribed indices and long arrival]\label{lem:prescripcion-larga}
+Let \(S_M\) be regular entry of the history at \(M=\lceil\delta n\rceil\) and \(H^0_j\) regular survival
+up to and including \(j\) after that entry. If \(s\) rows and \(t\) columns are prescribed, with \(s,t\le
+j/2\), the probability that they remain alive and \(H_j^0\) occurs, given the history at \(M\) on
+\(S_M\), is at most
+\[
+ (j/M)^{s+t}\exp(C_{\rm pres}(st+t)/j).
+\]
+Under the condition on \(x_0\) in Lemma~\ref{lem:llegada-integrada}, \(\mathbb E_\nu[1+X;H^0_j\setminus
+H_j]=O(e^{-2j})\), with \(X=Qe^{-L}\).
+\end{lema}
+\begin{proof}
+If a mark is missing at \(M\), the probability is zero. At each regular parent of size \(k>j\), the
+uniform row hits one of the \(s\) marks with probability \(s/k\). Given the row, the transition
+probability is \(p_{il}(1+O(1/k))\) by the proof of Theorem~8.1 of~\cite{pc}, with class constants
+independent of \(n/k\). The column sums of \(p\) equal one. Thus the probability of hitting one of the
+\(t\) columns is \(\ge t/k-Ct/k^2\), and that of hitting both sets is \(\le Cst/k^2\) by diffusion.
+Avoiding both sets of marks and remaining regular has probability at most
+\((1-s/k)(1-t/k)\exp(C(st+t)/k^2)\), since the product is at least \(1/4\). Iterating gives
+\(\prod_{k=j+1}^M(1-s/k)=(j)_s/(M)_s\le(j/M)^s\). The columns give the other factor, and
+\(\sum_{k>j}k^{-2}\le1/j\).
+
+On a diagonal there are at most \(M\) candidates at entry. If \(L\) sites remain, then for
+\(r=\lfloor\alpha j/4\rfloor\) and \(R=\lceil\alpha j\rceil\) the indicator of \(L\ge R\) is bounded
+above by \((L)_r/(R)_r\). Each ordered list requires \(r\) distinct rows and \(r\) distinct columns.
+Since \((R)_r\ge(\alpha j/2)^r\), summing over fewer than \(4n\) diagonals gives
+\[
+ \nu(H^0_j\setminus H_j)\le
+ 4n\left(\frac{2j}{\alpha M}\right)^r
+      \exp(C_{\rm pres}(r^2+r)/j).
+\]
+Dividing its logarithm by \(j\) gives a limit superior of at most \((\alpha/4)\log x_0+C_{\rm
+pres}\alpha^2/16<-(\beta+3)\), since \(j=\lfloor bn\rfloor\) and \(b\) is fixed. From \(n_0(b)\) onward
+the mass is \(\le e^{-(\beta+2)j}\). On regular arrivals, the static bounds of \cite[6.5--6.8]{tc} give
+\(X\le e^{C_0+\beta j}\). For a board admitting no completion, \(X=0\). Multiplication by \(1+X\) gives
+the stated cost. The margin \(3\) in the exponent covers rounding and the union bound factor before
+absorbing \(\beta j\).
+\end{proof}

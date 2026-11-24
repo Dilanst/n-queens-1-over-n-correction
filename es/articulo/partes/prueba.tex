@@ -17,10 +17,24 @@ inicial \(n g_T(M_n)\) tiende a \(F(1)-1/12\). La máscara llena es separable y 
 aquí procede el primer sumando de~\eqref{eq:main}.
 
 \paragraph{La suma hasta la parada.}
-Fijamos los márgenes de regularidad y el parámetro macroscópico \(\delta\), y después un
-\(b>0\) suficientemente pequeño. Paramos en la primera salida de la clase regular o al alcanzar
-\(j=\lfloor bn\rfloor\), como en la comparación sobre historias detenidas de~\cite{tc}. Sea \(F_b\)
-la llegada regular y completable a ese nivel.
+Paramos cuando quedan \(j=\lfloor bn\rfloor\) filas vacías, o antes si se produce la primera
+salida. La prueba distingue dos niveles. El primero, \(M=\lceil\delta n\rceil\), separa los
+regímenes de regularidad de~\cite[Definición~2.2 y \S5.4]{tc}. Hasta \(M\) se exige que la
+discrepancia de la historia respecto del perfil permanezca por debajo de su radio. En \(M\) se
+comprueban además las tolerancias de entrada y la longitud diagonal máxima. De \(M\) a \(j\)
+se exigen los márgenes interiores de difusión de los pesos, vacancia, brecha espectral y masa
+diagonal. El primer tablero que incumple una de estas condiciones cuenta como salida, incluso
+si se alcanza precisamente en \(j\).
+
+Fijados \(0<\delta<1\) y esos márgenes, elegimos un umbral de longitud \(\alpha>0\) y después un
+corte admisible \(b>0\). Las restricciones sobre \(b\) se precisan en el
+Apéndice~\ref{app:arrival}; permiten todo \(b\) suficientemente pequeño con \(b<\delta/2\).
+Sólo entonces tomamos \(n\) grande. Escribimos \(F_b\) para el suceso de llegar a \(j\) sin
+salida y con al menos una completación. La \emph{llegada histórica corta}, \(H_j\), exige la
+entrada regular en \(M\), permanencia hasta \(j\) y menos de \(\lceil\alpha j\rceil\) casillas
+disponibles en cada diagonal y antidiagonal al llegar. Por el Lema~\ref{lem:positividad-llegada}, en
+ \(H_j\) la máscara admite una
+completación de reinas, de modo que \(H_j\subseteq F_b\).
 En cada fila, la ley adaptativa elige una casilla con probabilidad proporcional al peso de su
 tablero hijo. Si la suma de esos pesos coincidiera con el peso del padre, la recursión se
 cumpliría exactamente en esa fila. El logaritmo de su cociente mide el defecto de ese paso.
@@ -30,7 +44,7 @@ La solución uniforme y la ley adaptativa utilizan la misma regla de parada. Est
 las probabilidades de una misma historia y conservar el signo de la diferencia de las salidas.
 El Apéndice~\ref{app:signed} da la identidad exacta y el Apéndice~\ref{app:arrival} controla
 el resto en media. A \(b\) fijo, el defecto acumulado en el interior aporta
-\(\int_b^1 k(x)x^{-2}\,dx\). El Apéndice~\ref{app:interior} identifica sus dieciséis términos.
+\(\int_b^1 \numerr(x)x^{-2}\,dx\). El Apéndice~\ref{app:interior} identifica sus dieciséis términos.
 
 \paragraph{Lo que sobrevive en el tablero de llegada.}
 Consideremos dos casillas disponibles \(e,f\) en una misma diagonal. Están en filas y columnas
@@ -47,29 +61,30 @@ vértices y revelar \((4,7)\) veta sólo \(X\). Si se revelan ambas, siguen disp
 La respuesta del par marcado se evalúa con \(X,Y\) fijados. En el estado \(11\) se puede
 marcar cualquiera de los dos pares diagonales, y cada uno aporta su propia respuesta. Ambos
 pertenecen al mismo cuadrado, por lo que su interacción entra una sola vez en la suma sobre
-cuadrados completos. Denotamos por \(B_n(b)\) la suma de las tres medias de frontera.
+cuadrados completos. Denotamos por \(\mathcal M_n(b)\) la suma de las tres medias de frontera.
 Al tomar \(n\to\infty\) y después \(b\downarrow0\), las dos medias sobre pares dan \(P_T\)
 y \(J\), y la media de interacción da \(-S\). Los Apéndices~\ref{app:boundary}
 y~\ref{app:weights} separan las contribuciones. El Apéndice~\ref{app:transfer}
 efectúa el promedio de la respuesta del par bajo la ley de llegada.
 
 \paragraph{Por qué se comparan dos cortes.}
-Para \(H=P_T+J-S\), escribamos
+Para \(\sumafrontera=P_T+J-S\), escribamos
 \[
- \Phi(b)=F(1)-\tfrac1{12}+\int_b^1 k(x)x^{-2}\,dx+H.
+ \valorcorte(b)=F(1)-\tfrac1{12}+\int_b^1 \numerr(x)x^{-2}\,dx+\sumafrontera.
 \]
-El error cumple \(\limsup_n |nR_Q(n)-\Phi(b)|\le C_\delta b+\eta(b)\), donde
-\(\eta(b)=\limsup_n|B_n(b)-H|\to0\) al bajar \(b\). La constante \(C_\delta\) sirve para
-todos los cortes admisibles suficientemente pequeños. Cada elección de \(b\) aproxima, por tanto,
+El error cumple \(\limsup_n |nR_Q(n)-\valorcorte(b)|\le C_\delta b+\eta(b)\), donde
+\(\eta(b)=\limsup_n|\mathcal M_n(b)-\sumafrontera|\to0\) al bajar \(b\). La constante \(C_\delta\)
+sirve para todos los cortes admisibles suficientemente pequeños. Cada elección de \(b\) aproxima
 la misma sucesión \(nR_Q(n)\). Al comparar \(b\) y \(b'\), la diferencia entre las aproximaciones
 tiende a cero con los dos cortes. Así se obtiene un límite común antes de integrar hasta el
-extremo. Por analiticidad y \(k(0)=0\), un término lineal de \(k\) produciría allí la divergencia
-\(k'(0)\log(1/b)\). La convergencia obliga a que desaparezca. El Apéndice~\ref{app:closing}
-detalla la comparación y deduce el corolario para \(d'(0)\).
+extremo. Descartados los polos como en el Lema~\ref{lem:regularidad-extremo}, el término
+constante de \(\numerr\) produciría en la integral truncada una divergencia en
+\(1/b\) y el término lineal, una en \(\log(1/b)\). La existencia de un límite finito elimina
+ambas, en ese orden (Apéndice~\ref{app:closing}).
 
 La Figura~\ref{fig:cortes} ilustra los dos niveles en una historia concreta. En la prueba,
 cada corte admisible da una aproximación mediante promedios sobre historias. Como ambas
 aproximaciones se refieren al mismo \(nR_Q(n)\), la desigualdad triangular da
-\(\lvert\Phi(b)-\Phi(b')\rvert\le C_\delta(b+b')+\eta(b)+\eta(b')\).
+\(\lvert\valorcorte(b)-\valorcorte(b')\rvert\le C_\delta(b+b')+\eta(b)+\eta(b')\).
 
 \input{figuras/cortes}

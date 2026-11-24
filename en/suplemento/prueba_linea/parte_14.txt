@@ -1,0 +1,146 @@
+  4 | \section{Segundo orden de $\lambda$ para un par aislado}\label{s:par2}
+  5 | 
+  6 | \paragraph{Notaci\'on.}
+  7 | Marco, hip\'otesis (K) y objetos de la Secci\'on~\ref{s:par}: la estructura $B$ con la l\'inea
+  8 | $f=\{e,e'\}$, $p=p^0_e$, $q=p^0_{e'}$, el punto de prueba $y^0$, $\tilde p=p(y^0)$, $J_0$, $\eta=y^*-y^0$,
+  9 | $s=-J_0^{-1}\F(y^0)$, $\zeta=\eta-s$, $\tilde G$, $\tilde v$, $\tilde{\cS}$, $\tilde h=1-p-q$,
+ 10 | $\widehat{\mathsf G}=\widehat{\mathsf G}_{y^0}$, $g_c=g_c(y^0)$, $g_w=g_w(y^0)$ y
+ 11 | $\boldsymbol\Gamma=\nabla\Lambda(y^0)$. Escribimos $O_j$ por una cantidad de m\'odulo $\le c\,k^{-j}$ con
+ 12 | $c$ constante, para $k\ge k_0$ con $k_0$ constante. Sean $H_f\subset H$ el conjunto de las cuatro l\'ineas
+ 13 | de $e$ y $e'$ (sus filas y sus columnas), $n_c\in\{0,1,2\}$ el n\'umero de l\'ineas de $H_f$ que pasan por
+ 14 | la casilla $c$, y
+ 15 | \[
+ 16 |  \pi_1:=p\,q\,\bigl(1-\mathsf G(e,e')+\hat c_e+\hat c_{e'}\bigr),\qquad X:=p\,q\,(p+q)\,\mathsf G(e,e'),
+ 17 |  \qquad \widehat{\mathfrak c}_c:=\iota_c^\T J_0^{-1}\boldsymbol\Gamma .
+ 18 | \]
+ 19 | $\pi_1$ es la marginal de dos casillas a un lazo del punto de torres de $M$, y $-\pi_1$ es el primer
+ 20 | orden de $\lambda$ del Teorema~\ref{t:par}.
+ 21 | 
+ 22 | \begin{teorema}[Segundo orden de $\lambda$]\label{t:par2}
+ 23 | En las condiciones del Teorema~\ref{t:par} existen constantes $k_0'$ y $C_\lambda'$ tales que, si
+ 24 | $k\ge k_0'$,
+ 25 | \[
+ 26 |  \Bigl|\lambda(B)+\pi_1+\tfrac12\,p^2q^2-p\,q\,(p+q)\,\mathsf G(e,e')\Bigr|\le\frac{C_\lambda'}{k^5}.
+ 27 | \]
+ 28 | Es decir, $\lambda(B)=\log(1-\pi_1)+X+O_5$: el t\'ermino de orden $k^{-4}$ de $\lambda$ es
+ 29 | $-\frac12p^2q^2+pq\,(p+q)\,\mathsf G(e,e')$.
+ 30 | \end{teorema}
+ 31 | 
+ 32 | La prueba ocupa esta parte y las dos siguientes. La parte algebraica (un desarrollo de Taylor de grado
+ 33 | cuatro en siete variables) est\'a hecha con aritm\'etica racional exacta \textup{[O]}; lo dem\'as es
+ 34 | \textup{[D]} propuesto.
+ 35 | 
+ 36 | \begin{lema}[Entradas del desplazamiento]\label{l:A}
+ 37 | Para $k\ge k_0$, con $\delta\theta_c:=\iota_c^\T\eta$:
+ 38 | \begin{enumerate}
+ 39 | \item[(A1)] $s_a=pq\,\mathbf 1[a\in H_f]+O_3$ para $a\in H$ y $s_f=2pq+O_3$, y lo mismo para $\eta$;
+ 40 | \item[(A2)] $\|s\|_1=O_2$ y $\|\eta\|_1=O_2$;
+ 41 | \item[(A3)] $\delta\theta_c=n_c\,pq+O_3$ si $c\notin f$, $\ \delta\theta_c=O_2$ para toda casilla,
+ 42 | $\ \sum_cp^0_c\,\delta\theta_c^2=O_4$ y $\ \sum_cp^0_c\,|\delta\theta_c|=O_2$.
+ 43 | \end{enumerate}
+ 44 | \end{lema}
+ 45 | 
+ 46 | \begin{proof}
+ 47 | (A1) Por (P1), $s=J_0^{-1}(\delta_e\iota_e+\delta_{e'}\iota_{e'})$. Por \eqref{e:bloque} con
+ 48 | $x=\delta_ea_e+\delta_{e'}a_{e'}$ y $t=\delta_e+\delta_{e'}$, $s_f=\sigma=(t-\tilde v^\T\tilde Gx)/
+ 49 | \tilde{\cS}$ y la parte de $s$ en $\R^H$ es $\tilde Gx-\sigma\,\tilde G\tilde v$. Como
+ 50 | $\|\tilde G\|_\infty\le2M_1$ por (P3), $\|x\|_\infty=O_2$ y $\|\tilde v\|_\infty=O_1$, las entradas de
+ 51 | $\tilde Gx$ y de $\tilde G\tilde v$ son $O_2$ y $O_1$, y $\tilde v^\T\tilde Gx=O_3$; con (P1) y (P4),
+ 52 | $s_f=2pq+O_3$. La identidad de la prueba de (P3) da
+ 53 | $|(\tilde Gx-G^0x)_a|\le c\,(|\Delta\tau_e|+|\Delta\tau_{e'}|)\,\|x\|_\infty=O_4$, y por (E3) y (E1)
+ 54 | $(G^0a_e)_a=G^0_{a\,r(e)}+G^0_{a\,c(e)}=\mathbf 1[a\in\{r(e),c(e)\}]+O_1$. Luego
+ 55 | $(\tilde Gx)_a=pq\,\mathbf 1[a\in H_f]+O_3$, y $\sigma\,(\tilde G\tilde v)_a=O_3$.
+ 56 | 
+ 57 | (A2) $J_0^{-1}$ es sim\'etrica, luego $\|s\|_1\le\|J_0^{-1}\|_\infty\|\F(y^0)\|_1\le
+ 58 | 3\cM_0(\delta_e+\delta_{e'})$. Por (P5), $\|\zeta\|_1=O_4$; as\'i $\|\eta\|_1=O_2$ y, como
+ 59 | $\|\zeta\|_\infty\le\|\zeta\|_1$, (A1) vale para $\eta$.
+ 60 | 
+ 61 | (A3) Si $c\notin f$, $\delta\theta_c=\eta_{r(c)}+\eta_{c(c)}$ y se usa (A1); en general
+ 62 | $|\delta\theta_c|\le4\|\eta\|_\infty$. Adem\'as $\delta\theta_c^2\le4\sum_{\ell\ni c}\eta_\ell^2$, de
+ 63 | donde $\sum_cp^0_c\delta\theta_c^2\le4\sum_\ell\eta_\ell^2\sum_{c\in\ell}p^0_c\le4\|\eta\|_2^2=O_4$ por
+ 64 | (P5), y $\sum_cp^0_c|\delta\theta_c|\le\sum_\ell|\eta_\ell|\sum_{c\in\ell}p^0_c\le\|\eta\|_1$.
+ 65 | \end{proof}
+ 66 | 
+ 67 | \begin{lema}[Segundo orden del funcional de un lazo]\label{l:S}
+ 68 | Para $k\ge k_0$,
+ 69 | $\ \Lambda(y^*)-\Lambda(y^0)=\delta_e\,\widehat{\mathfrak c}_e+\delta_{e'}\,\widehat{\mathfrak c}_{e'}
+ 70 | +2\,p^2q^2+O_5$.
+ 71 | \end{lema}
+ 72 | 
+ 73 | \begin{proof}
+ 74 | Sean $p^*=p(y^*)$, $\tau^*_c=\tau_{d_c}(p^*_c)$, $\kappa_c=\kappa_{d_c}(\tilde p_c)$,
+ 75 | $\tau''_c$ la derivada segunda en $\theta$ de $\tau_{d_c}(p_{d_c}(\theta))$ en $\theta_c(y^0)$, y
+ 76 | \[
+ 77 |  \varepsilon_c:=\tau^*_c-\tilde\tau_c,\qquad \varepsilon_w:=e^{w^*_f}-e^{w^0_f}=\tilde h\,(e^{\eta_f}-1),
+ 78 |  \qquad E:=J(y^*)-J_0=\sum_c\varepsilon_c\,\iota_c\iota_c^\T+\varepsilon_w\mathbf 1_f\mathbf 1_f^\T .
+ 79 | \]
+ 80 | $\varrho_c$ y $\omega_f$ son los restos de la prueba del Lema~\ref{l:D2}(D5), con $\zeta=-J_0^{-1}\mathsf
+ 81 | R$ y $\mathsf R_\ell=\sum_{c\in\ell}\varrho_c+\omega_\ell$.
+ 82 | 
+ 83 | \emph{Paso 1: desarrollos por casilla.} El segmento $[y^0,y^*]$ est\'a en la bola $\mathbb B$ del
+ 84 | Lema~\ref{l:D}, donde $d_cp_c\le\frac12$ y $p_c\le e\,p^0_c$. All\'i las derivadas en $\theta$ de
+ 85 | $p_d(\theta)$ son $\tau_d$, $\tau_d\kappa_d$ y una tercera acotada por $c\,p$; las de
+ 86 | $\tau_d(p_d(\theta))$ son $\tau_d\kappa_d$, una segunda igual a $\tau_d(1+O(p))$ y una tercera acotada por
+ 87 | $c\,p$; y la derivada segunda de $\ell_d(p_d(\theta))$ est\'a acotada por $c\,p^2$ (cada una es $\tau_d$
+ 88 | por una funci\'on acotada en $dp\le\frac12$, y $\ell_d'(p)\le c\,p$). Por el desarrollo de Taylor,
+ 89 | \begin{align*}
+ 90 |  \varrho_c&=\tfrac12\tilde\tau_c\kappa_c\,\delta\theta_c^2+O(p^0_c|\delta\theta_c|^3),&
+ 91 |  \varepsilon_c&=\tilde\tau_c\kappa_c\,\delta\theta_c+\tfrac12\tau''_c\,\delta\theta_c^2
+ 92 |  +O(p^0_c|\delta\theta_c|^3),\\
+ 93 |  \omega_f&=\tfrac12\tilde h\,\eta_f^2+O_6,&
+ 94 |  \varepsilon_w&=\tilde h\,(\eta_f+\tfrac12\eta_f^2)+O_6,
+ 95 | \end{align*}
+ 96 | y $\ell_{d_c}(p^*_c)-\ell_{d_c}(\tilde p_c)=\ell_{d_c}'(\tilde p_c)\,\tilde\tau_c\,\delta\theta_c
+ 97 | +O((p^0_c)^2\delta\theta_c^2)$.
+ 98 | Por (A3), $\sum_cp^0_c|\delta\theta_c|^3=O_6$ y $\sum_c(p^0_c)^2\delta\theta_c^2=O_5$. En particular
+ 99 | $|\varepsilon_c|\le c\,p^0_c|\delta\theta_c|$.
+100 | 
+101 | \emph{Paso 2: el determinante.} Sea $Z:=J_0^{-1/2}EJ_0^{-1/2}$, con autovalores $z_i$. Como en la prueba
+102 | de (L2), con $|\varepsilon_c|\le c\,p^0_c|\delta\theta_c|$ en lugar de las entradas de $DJ[\xi]$,
+103 | $\|E\|_F^2\le c\sum_cp^0_c\delta\theta_c^2+2\varepsilon_w^2=O_4$. Luego
+104 | $\|Z\|\le\|Z\|_F\le\cM_0\|E\|_F\le\frac12$ para $k\ge k_0$, y de
+105 | $|\log(1+z)-z+\frac12z^2|\le\frac23|z|^3$ para $|z|\le\frac12$ sale
+106 | \[
+107 |  \log\det J(y^*)-\log\det J_0=\sum_i\log(1+z_i)
+108 |  =\tr(J_0^{-1}E)-\tfrac12\tr\bigl((J_0^{-1}E)^2\bigr)+O_6,
+109 | \]
+110 | porque $\sum_i|z_i|^3\le\|Z\|\,\|Z\|_F^2=O_6$. Por \eqref{e:bloque}, $[J_0^{-1}]_{ff}=1/\tilde{\cS}$, y
+111 | $\tr(J_0^{-1}E)=\sum_c\varepsilon_c\,\widehat{\mathsf G}(c,c)+\varepsilon_w/\tilde{\cS}$.
+112 | 
+113 | \emph{Paso 3: primer orden y cancelaci\'on.} Por (L1),
+114 | $\boldsymbol\Gamma^\T\eta=\sum_cg_c\,\delta\theta_c+g_w\eta_f$ con
+115 | $g_c=\tilde\tau_c[\ell_{d_c}'(\tilde p_c)-\frac12\kappa_c\widehat{\mathsf G}(c,c)]$ y
+116 | $g_w=-\frac12\tilde h/\tilde{\cS}$. Con los pasos 1 y 2, y $\widehat{\mathsf G}(c,c)\le3\cM_0$,
+117 | \[
+118 |  \Lambda(y^*)-\Lambda(y^0)=\boldsymbol\Gamma^\T\eta
+119 |  -\tfrac14\sum_c\tau''_c\,\widehat{\mathsf G}(c,c)\,\delta\theta_c^2
+120 |  -\frac{\tilde h}{4\tilde{\cS}}\,\eta_f^2+\tfrac14\tr\bigl((J_0^{-1}E)^2\bigr)+O_5 .
+121 | \]
+122 | Por otra parte $\boldsymbol\Gamma^\T\eta=\boldsymbol\Gamma^\T s+\boldsymbol\Gamma^\T\zeta$, con
+123 | $\boldsymbol\Gamma^\T s=\delta_e\widehat{\mathfrak c}_e+\delta_{e'}\widehat{\mathfrak c}_{e'}$ por (P1) y
+124 | $\boldsymbol\Gamma^\T\zeta=-(J_0^{-1}\boldsymbol\Gamma)^\T\mathsf R=-\sum_c\varrho_c\,
+125 | \widehat{\mathfrak c}_c-\omega_f\,\sigma_\Gamma$, donde $\sigma_\Gamma:=(J_0^{-1}\boldsymbol\Gamma)_f$. Por
+126 | (L2) y (P5), $|\widehat{\mathfrak c}_c|\le3\cM_0C_\Lambda$. As\'i
+127 | \begin{align*}
+128 |  \Lambda(y^*)-\Lambda(y^0)={}&\delta_e\widehat{\mathfrak c}_e+\delta_{e'}\widehat{\mathfrak c}_{e'}
+129 |  -\sum_c\tilde\tau_c\Bigl[\tfrac12\kappa_c\,\widehat{\mathfrak c}_c
+130 |  +\tfrac14\frac{\tau''_c}{\tilde\tau_c}\,\widehat{\mathsf G}(c,c)\Bigr]\delta\theta_c^2\\
+131 |  &-\tilde h\Bigl[\tfrac12\sigma_\Gamma+\frac1{4\tilde{\cS}}\Bigr]\eta_f^2
+132 |  +\tfrac14\tr\bigl((J_0^{-1}E)^2\bigr)+O_5 .
+133 | \end{align*}
+134 | Si $c\notin f$: $\kappa_c=1+O_1$, $\tau''_c/\tilde\tau_c=1+O_1$, y
+135 | $\widehat{\mathsf G}(c,c)=\mathsf G(c,c)+O_2=2+O_1$ por el paso (a) de la prueba del Lema~\ref{l:II} y
+136 | (E4). Adem\'as $\widehat{\mathfrak c}_c=a_c^\T\tilde G\boldsymbol\Gamma_H-\sigma_\Gamma\,a_c^\T\tilde G
+137 | \tilde v$; por ese mismo paso (a), (P3) con $x=\Gamma^0$ y con $x=\varepsilon$, $g_e-g^0_e=O_1$ y (E5),
+138 | $a_c^\T\tilde G\boldsymbol\Gamma_H=\mathfrak c_c+O_1=-1+O_1$, y $a_c^\T\tilde G\tilde v=O_1$: as\'i
+139 | $\widehat{\mathfrak c}_c=-1+O_1$, uniformemente en $c\notin f$. El primer corchete es entonces
+140 | $\frac12(-1)+\frac14\cdot2+O_1=O_1$ y, por (A3), la suma sobre $c\notin f$ es $O_5$; las dos casillas de
+141 | $f$ aportan $O_5$, porque $\tilde\tau_c=O_1$ y $\delta\theta_c^2=O_4$. Por \'ultimo $\sigma_\Gamma$ es
+142 | la $\sigma$ del paso (e) de la prueba del Lema~\ref{l:II}, $\sigma_\Gamma=-\frac12+O_2$, y
+143 | $1/\tilde{\cS}=1+O_2$ por (P4): el segundo corchete es $O_2$ y su t\'ermino es $O_6$. Queda
+144 | \begin{equation}\label{e:S-traza}
+145 |  \Lambda(y^*)-\Lambda(y^0)=\delta_e\widehat{\mathfrak c}_e+\delta_{e'}\widehat{\mathfrak c}_{e'}
+146 |  +\tfrac14\tr\bigl((J_0^{-1}E)^2\bigr)+O_5 ,
+147 | \end{equation}
+148 | y el lema se reduce a $\tr((J_0^{-1}E)^2)=8\,p^2q^2+O_5$, que es el paso 4 (parte siguiente).
+149 | \end{proof}

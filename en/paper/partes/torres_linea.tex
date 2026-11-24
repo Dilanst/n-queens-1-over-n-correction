@@ -1,0 +1,69 @@
+\begin{proposicion}[A line with two cells, computer-assisted proof]\label{prop:una-linea}
+Let $B$ be the board obtained by imposing only the line $E=\{e,f\}$ on a binary mask $M$ in the
+stationary class (H). Its endpoints lie in distinct rows and columns. With $p=p_e$, $q=p_f$ and
+$\lambda=L(B)-L_T(M)$, we have
+\begin{equation}\label{eq:una-linea}
+ \lambda=\log(1-\pi_1)+pq(p+q)\mathsf G(e,f)+O(k^{-5}).
+\end{equation}
+The constants and the threshold depend only on $C_p,\gamma_A$ in (H).
+\end{proposicion}
+We write $O_j=O(k^{-j})$ with this uniformity. The line changes the action, the prefactor at a
+trial point, and the value of the prefactor when we move from the trial point to the new
+stationary point.
+
+For a cell of multiplicity $d$ (two axial fibers and the diagonals containing it), let $u$ denote
+the small branch of $u(1-u)^{d-1}=e^\theta$. Set
+\[
+ \tau_d(u)=\frac{u(1-u)}{1-du},\quad
+ \ell_d(u)=\tfrac12[d\log(1-u)-\log(1-du)],\quad \kappa_d(u)=\tau_d'(u).
+\]
+Thus $du/d\theta=\tau_d(u)$, and the logarithmic prefactor is
+$\Lambda=\sum_c\ell_{d_c}(u_c)-\tfrac12\log\det \hessloc$, where $\hessloc$ is the Hessian in the
+fixed gauge (the same normalization term cancels in $\lambda$). For rooks, $A^0=S_T+\Pi$,
+$G^0=(A^0)^{-1}$, $d=2$ and $u_c=p_c$. For each site $c$ let
+\[
+ b_c^0=\tau_2(p_c)\{\ell'_2(p_c)-\tfrac12\kappa_2(p_c)\mathsf G(c,c)\},\quad
+ \Gamma^0=\sum_c b_c^0a_c,\qquad C_c=a_c^\top G^0\Gamma^0 .
+\]
+Differentiating the prefactor at the rook point gives $\hat c_c=(\tau_2(p_c)/p_c)
+[\ell'_2(p_c)-\kappa_2(p_c)\mathsf G(c,c)/2-C_c]$. Indeed, varying $\log w_c$ in the margin
+equations gives $dz=-\tau_2(p_c)G^0a_c\,d\log w_c$ in the fixed gauge. The seven expansion
+variables, in order, are
+\[
+ p,\quad q,\quad a=\mathsf G(e,e)-2,\quad b=\mathsf G(f,f)-2,\quad
+ g=\mathsf G(e,f),\quad x=C_e+1,\quad y=C_f+1 .
+\]
+\begin{lema}[The inverse and local rook data]\label{lem:linea-inversa}
+Under (H), $\|G^0\|_\infty$ is bounded independently of the mask, and the seven variables above
+are $O_1$.
+\end{lema}
+\begin{proof}
+By the margin conditions, the mass of each fiber is $m_\alpha=\sum_{c\in\alpha}\tau_2(p_c)=1+O_1$.
+Writing $A^0=\operatorname{diag}(m)+V$, each entry of $V$ is $O_1$ and each row has Euclidean norm
+$O(k^{-1/2})$. From $A^0z=v$ and (H) we obtain $\|z\|_2\le\sqrt{2k}\|v\|_\infty/\gamma_A$. Each
+component of $Vz$ is at most $\|V_{\alpha,*}\|_2\|z\|_2=O(\|v\|_\infty)$. Dividing
+$v_\alpha-(Vz)_\alpha$ by $m_\alpha$ gives $\|G^0\|_\infty=O(1)$. By symmetry each column of $G^0$
+has bounded absolute sum. Thus $(VG^0)_{\alpha\beta}=O_1$, and the identity
+$G^0=\operatorname{diag}(m)^{-1}(I-VG^0)$ gives
+$G^0_{\alpha\beta}=\delta_{\alpha\beta}/m_\alpha+O_1$. In particular, $\mathsf G(c,c')$ counts the
+common fibers with error $O_1$. Hence $b_c^0=-\tau_2(p_c)(1+O_1)$, $\Gamma^0=-m+O_1$
+componentwise, and $G^0m=\symbf{1}/2$ because $A^0\symbf{1}=2m$. It follows that $C_c=-1+O_1$.
+\end{proof}
+
+\paragraph{Rank-two update.}
+At $y^0=(z^0,\log h)$, with $z^0$ the rook potential and $h=1-p-q$, only the masses at $E$ change.
+For $i=e,f$ the new mass $u_i$ is the root near zero of $u_i(1-u_i)^2=p_i(1-p_i)h$. Let
+$\delta_i=p_i-u_i$, $t_i=\tau_3(u_i)$, $t=(t_e,t_f)^\top$, $U=[a_e\ a_f]$,
+$D=\operatorname{diag}(t_i-\tau_2(p_i))$, $G=U^\top G^0U$ and $W=(I+DG)^{-1}$. After adjoining the
+line coordinate, the Hessian in the fixed gauge takes the form
+\[
+ \hessloc_0=\begin{pmatrix} A^0+UDU^\top & Ut\\ t^\top U^\top & h+t_e+t_f\end{pmatrix}.
+\]
+From $(A^0+UDU^\top)G^0UW=U$ and the Schur complement we obtain
+\begin{align*}
+ \resloc&=GW,\qquad \schurloc=h+t_e+t_f-t^\top \resloc{}t,\qquad \sigma=(\symbf{1}-\resloc{}t)/\schurloc,\\
+ K&=\resloc+\schurloc\sigma\sigma^\top,\qquad \det \hessloc_0=\det A^0\,\det(I+DG)\,\schurloc .
+\end{align*}
+Here $K_{ij}=\iota_i^\top \hessloc_0^{-1}\iota_j$ for $i,j\in E$, where
+$\iota_c=(a_c,\symbf{1}_{\{c\in E\}})$. In particular, $D=O_2$, $t=O_1$, $\schurloc=1+O_2$, and
+$\|\hessloc_0^{-1}\|_\infty,\|\hessloc_0^{-1}\|_2=O(1)$ by block inversion.

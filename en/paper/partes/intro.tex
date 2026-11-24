@@ -1,49 +1,48 @@
 \section{Introduction}
-The $n$-queens problem asks how many ways there are to place $n$ queens on an $n\times n$ board so
-that no two attack each other. We denote this number by $Q(n)$ and count solutions related by a
-symmetry separately. We number rows and columns starting at one, with rows running from top to
-bottom and columns from left to right, and $(i,j)$ is the square in row $i$ and column $j$. Reading
-the columns of the queens in row order identifies each solution with a permutation $\sigma$, whose
-queens occupy the squares $(i,\sigma(i))$. The diagonal constraints require the differences
-$i-\sigma(i)$ to be distinct, and likewise the sums $i+\sigma(i)$; they thus determine which of the
-$n!$ permutations qualify. For example, $(2,4,1,3)$ and $(3,1,4,2)$ are the two solutions on the
-$4\times4$ board.
+The $n$-queens problem asks how many ways there are to place $n$ queens on an $n\times n$ board so that
+no two attack each other. We denote this number by $Q(n)$ and count solutions related by a symmetry
+separately. We number rows and columns starting at one, with rows running from top to bottom and columns
+from left to right; $(i,j)$ is the square in row $i$ and column $j$. Reading the columns of the queens in
+row order identifies each solution with a permutation $\sigma$ whose queens occupy the squares
+$(i,\sigma(i))$. The diagonal constraints require the differences $i-\sigma(i)$ to be distinct and
+likewise the sums $i+\sigma(i)$; these constraints determine which of the $n!$ permutations qualify. For
+example, $(2,4,1,3)$ and $(3,1,4,2)$ are the two solutions on the $4\times4$ board.
 
-To study how $Q(n)$ grows, it is convenient to take logarithms. Earlier combinatorial results
-include the upper bound of Luria~\cite{luria}, the lower bound of Luria and Simkin~\cite{ls}, and
-the work of Bowtell and Keevash~\cite{bk}. Bell and Stevens~\cite{bs} give an overview.
-Simkin's variational formula~\cite{simkin} determines $\log Q(n)$ up to an $o(n)$ error.
-In the normalization of the variational profile~\cite{pv}, the leading term is $\log(n!)+n\Phi$.
-Nobel, Agrawal, and Boyd~\cite{nab} obtained numerical bounds for the first-order constant.
-The profile describes the distribution of mass on the board and along each diagonal. These data
-enter the canonical predictor $Q_{\rm pred}(n)$ of~\cite{pc}. An entropy is calculated from the
-square weights and a correction is added for the dependence between the lines.
-Appendix~\ref{app:predictor} gives the finite formula that we use throughout the paper.
+To study the growth of $Q(n)$, it is convenient to take logarithms. Earlier combinatorial results include
+the upper bound of Luria~\cite{luria}, the lower bound of Luria and Simkin~\cite{ls}, and the work of
+Bowtell and Keevash~\cite{bk}. Bell and Stevens~\cite{bs} give an overview. Simkin's variational
+formula~\cite{simkin} determines $\log Q(n)$ up to an error of $o(n)$. In the normalization of the
+variational profile~\cite{pv}, the leading term is $\log(n!)+n\Phi$. Nobel, Agrawal, and Boyd~\cite{nab}
+obtained numerical bounds for the first-order constant. The profile describes the distribution of mass on
+the board and along each diagonal. These data enter the canonical predictor $Q_{\rm pred}(n)$
+of~\cite{pc}. An entropy is computed from the square weights, and a correction is added for the
+dependence between lines. Appendix~\ref{app:predictor} gives the finite formula used throughout the
+paper.
 
-The next advance was to identify the constant term. After subtracting $\log(n!)+n\Phi$, the
-logarithm of the predictor tends to $C_{\rm pred}$~\cite{pc}. The exact count has that same
-constant~\cite{tc}. Thus, on forming the signed difference
+The next step was to identify the constant term. After $\log(n!)+n\Phi$ is subtracted, the logarithm of
+the predictor tends to $C_{\rm pred}$~\cite{pc}. The exact count has the same constant~\cite{tc}. Thus,
+in the signed difference
 \[
  R_Q(n)=\log Q(n)-\log Q_{\rm pred}(n),
 \]
-both the leading term and the constant cancel. A preliminary step in the present work, using
-magnitude estimates, gives $|R_Q(n)|\le C/n$ for sufficiently large $n$. The proof traceability
-table in the supplement identifies the source of this bound. Appendix~\ref{app:signed} uses it in
-developing the stopped-history identity. Thus $nR_Q(n)$ is bounded, although it could still
-oscillate with the size of the board. Does it converge? Theorem~\ref{teo:principal} identifies
-this limit, which we denote by \(\cerr\). While \(C_{\rm pred}\) is the constant term shared by the
-two logarithms, \(\cerr/n\) is the first relative correction in passing from the finite predictor
-to the exact count.
+both the leading term and the constant cancel. A preliminary step in this work uses bounds on the
+magnitude to give $|R_Q(n)|\le C/n$ for sufficiently large $n$. Lemma~\ref{lem:previa} proves this bound
+at a single fixed cut-off under the adaptive law. Appendix~\ref{app:signed} uses it to expand the
+stopped-history identity. Thus $nR_Q(n)$ is bounded, although it could still oscillate with the size of
+the board. Does it converge? Theorem~\ref{teo:principal} identifies the limit, which we denote by
+\(\cerr\). Whereas \(C_{\rm pred}\) is the constant term shared by the two logarithms, \(\cerr/n\) is the
+first relative correction in passing from the finite predictor to the exact count. A direct expansion of
+\(\log Q(n)\) about \(\log(n!)+n\Phi+C_{\rm pred}\) would require adding to \(\cerr\) the coefficient of
+\(1/n\) in \(\log Q_{\rm pred}(n)\) itself, if that coefficient exists.
 
-The difficulty can be seen by revealing a solution row by row. While many rows remain, each
-insertion introduces a small defect, and it is their signed sum that matters. When few rows remain,
-two squares that are still available may share a diagonal. The completability results of~\cite{ef}
-describe the role of the final rows; Glock, Munhá Correia, and Sudakov~\cite{gms} studied when a
-partial placement can be completed. To calculate the coefficient we also need the weight of these
+The difficulty becomes apparent when a solution is revealed row by row. While many rows remain, each
+insertion introduces a small defect, and it is the signed sum of these defects that matters. When few
+rows remain, two squares that are still available may share a diagonal. The completability results
+of~\cite{ef} describe the role of the last rows; Glock, Munhá Correia, and Sudakov~\cite{gms} studied
+when a partial placement can be completed. To compute the coefficient, we also need the weight of those
 conflicts in the error. Following the early cut-off of~\cite{ef}, we stop the process when a fixed
-fraction of rows remains empty. This allows us to study the defect accumulated before the cut-off
-and to measure the error on the residual board. Comparing two cut-offs will bring the two
-contributions together. Figure~\ref{fig:mascara-ilustrada} follows the first four-queens solution:
-revealing a single queen already shows the difference between a rook completion and a queen
-completion.
+fraction of rows remains empty. This allows us to study the defect accumulated before the cut-off and
+measure the error on the residual board. Comparing two cut-offs will bring these contributions together.
+Figure~\ref{fig:mascara-ilustrada} follows the first four-queens solution: revealing a single queen
+already shows the difference between a rook completion and a queen completion.
 \input{figuras/mascara}

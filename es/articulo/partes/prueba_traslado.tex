@@ -8,15 +8,34 @@ una coincidencia accidental satisface una ecuación afín no constante adicional
 \(O(n^{-1})\) al dividir por \(n^{d_*}\). En la trayectoria regular auxiliar, a \(x\ge b\), los
 riesgos de las líneas axiales y diagonales vivas son \(1/m\) y \(\ell_f/m\), respectivamente.
 Los segundos distan de sus valores deterministas a lo sumo \(\eta/n\) a precisión fija.
-Dos líneas distintas se ocupan simultáneamente con probabilidad \(O_b(n^{-2})\). Bonferroni da
-el producto de sus supervivencias de un paso con error \(O_{b,v}(\eta/n+n^{-2})\).
-Multiplicamos cada indicador actual por su supervivencia determinista futura hasta el corte.
-Una pieza altera \(O_v(n^{d_*-1})\) sumandos. Azuma para la media centrada, con saltos
-\(O_{b,v}(1/n)\), y el control de regularidad dan una cola exponencial a precisión fija.
-La unión sobre líneas marcadas es polinómica. Los cocientes de densidades hasta la parada
-preservan la cola, incluida la cota \(\exp(O_b(n^{2/3}))\) para \(X\) al cambiar a \(\mu\).
-Así, en la media normalizada cada etiqueta axial viva aporta \(b\) y cada etiqueta diagonal
-distinta aporta \(U_f(b)\).
+\phantomsection\label{paso:bonferroni-azuma}
+Sea \(q_l\) el riesgo condicional de la etiqueta viva \(l\). Dos líneas distintas
+son disjuntas o comparten a lo sumo una casilla; elegirla requiere su fila uniforme y
+una casilla de peso \(O_b(1/m)\), de modo que el riesgo simultáneo es \(O_b(n^{-2})\).
+Para \(v\) marcas, las dos primeras desigualdades de Bonferroni sitúan el riesgo
+de la unión entre \(\sum_l q_l-\sum_{l<h}q_{lh}\) y \(\sum_l q_l\).
+Además \(\prod_l(1-q_l)=1-\sum_l q_l+O_{b,v}(n^{-2})\).
+Sustituir los \(q_l\) por sus riesgos deterministas cuesta \(O_v(\eta/n)\);
+obtenemos el error \(O_{b,v}(\eta/n+n^{-2})\) por paso para la supervivencia conjunta.
+
+Al fijar una fila o columna extraemos los indicadores cuyas etiquetas quedan constantes.
+Para los vecinos comunes de dos columnas fijadas se extraen ambas y se trabaja mientras
+estén vivas. Multiplicamos en cada instante cada producto de indicadores por las
+supervivencias deterministas de sus etiquetas en los pasos que faltan hasta el corte;
+sea \(Y_t\) su media normalizada sobre los \(d_*\) índices. La estimación de un paso
+da \(|\mathbb E[Y_{t+1}-Y_t\mid\mathcal F_t]|\le C_{b,v}(\eta/n+n^{-2})\) antes de
+la salida auxiliar. Una pieza cambia \(O_v(n^{d_*-1})\) sumandos porque sus líneas
+imponen ecuaciones afines no constantes. Los pesos futuros cambian en \(O_{b,v}(1/n)\).
+Por tanto los incrementos de la martingala detenida, obtenida restando la deriva,
+están acotados por \(K_{b,v}/n\). A tolerancia \(\varepsilon>0\) fijamos
+\(C_{b,v}\eta<\varepsilon/4\). La deriva acumulada es \(<\varepsilon/2\) para \(n\)
+grande; Azuma en a lo sumo \(n\) pasos da para la otra mitad
+\(2\exp(-\varepsilon^2 n/(8K_{b,v}^2))\). Se añade la probabilidad exponencial de
+salida regular auxiliar~\cite[§4]{tc}. El número de anclajes para un patrón fijo
+es polinómico. La unión sobre ellos y el cociente \(\exp(O_b(n^{2/3}))\) para \(X\)
+al cambiar a \(\mu\) conservan una cola exponencial a precisión fija.
+En la media restante, cada etiqueta axial aporta \(b\) y cada etiqueta diagonal distinta aporta
+\(U_f(b)\). Los indicadores extraídos conservan su valor.
 
 En particular, las sumas por línea viva de \(YW_b^0/j\) tienen márgenes \(1+o_{\Pr}(1)\)
 uniformemente y dos columnas vivas tienen \(\ge c_bj\) vecinos comunes. En potenciales
@@ -31,11 +50,12 @@ fila adicional \(y\) hacia las columnas marcadas tienen ley producto con paráme
 \(v_b(y,c_0),v_b(y,c_1)\). Las distintas columnas dan etiquetas diagonales distintas en cada
 familia, salvo los \(O(1)\) valores de \(y\) que coinciden con una etiqueta distinguida.
 Se puede multiplicar la media por cualquiera de los cuatro indicadores acotados de estado.
-Para el término cuadrático de \(\eta\), sean \(B=p_b-1\),
-\(G_R=BB^*, T_R=G_R(I-G_R)^{-1}, U=T_RB\), con los operadores transpuestos en columnas.
+Para el término cuadrático de \(\eta\), sean \(\centrado=p_b-1\),
+\(G_R=\centrado\centrado^*, T_R=G_R(I-G_R)^{-1}, U=T_R\centrado\), con los operadores transpuestos en
+ columnas.
 Sean \(d_R=\operatorname{diag}(T_R-G_R)\) y su análogo \(d_C\), con
 \(\bar d=\int d_R=\int d_C\). Definimos
-\(\psi_R=2[(B+U)d_C-T_Rd_R]-d_R\) y su versión de columnas. En los cuatro extremos
+\(\psi_R=2[(\centrado+U)d_C-T_Rd_R]-d_R\) y su versión de columnas. En los cuatro extremos
 marcados (dos filas \(r_0,r_1\) y dos columnas \(c_0,c_1\)), las identidades de derivadas dan
 \begin{align*}
  R''_1(0)/2={}&XW^0_{01}+YW^0_{10}+\sum_{\square} U-T_R(r_0,r_1)-T_C(c_0,c_1)
@@ -43,40 +63,82 @@ marcados (dos filas \(r_0,r_1\) y dos columnas \(c_0,c_1\)), las identidades de 
  A'_1(0)={}&-1+2\bar d+\tfrac12\sum_* \psi .
 \end{align*}
 El asterisco recorre los cuatro extremos y el cuadrado sus cuatro casillas; se ordenan las columnas
-para que los casillas distinguidas sean \(00,11\). Para la primera identidad se derivan los
+para que las casillas distinguidas sean \(00,11\). Para la primera identidad se derivan los
 márgenes en el parámetro de ocupación. En los tipos ordinarios la respuesta media resuelve
 \((I+N)y=N\alpha\), donde \(N\) tiene bloques cruzados \(p_b,p_b^*\) y \(\alpha\) inserta
-los dos extremos de cada lado. Los bloques centrados de \(N(I+N)^{-1}N\) son \(T_R,-U,-U^*,T_C\).
+los dos extremos de cada lado. Como \(p_b\) es biestocástico, \((I+N)(1,-1)=0\).
+Las dos marcas por lado dan una fuente ortogonal a \((1,-1)\). Fijamos el calibre
+\(y\perp(1,-1)\) e invertimos \(I+N\) en ese complemento. En el modo constante \((1,1)\)
+la inversa actúa por \(1/2\). Sobre las funciones de media cero en cada lado, los bloques
+de \(N(I+N)^{-1}N\) son \(T_R,-U,-U^*,T_C\).
 En cada vértice marcado una incidencia repetida da su varianza de Bernoulli. Para el prefactor
 se derivan el factor local, las diagonales de márgenes, la masa total y el determinante centrado.
 Su suma es \(1+\langle d-1,y\rangle-\sum_*d/2\); sustituir la solución centrada y su modo
-constante da la segunda identidad. La parte lineal límite \(jD\) es la suma \(L_s\)
-en cada submedida. Al elevar al cuadrado resulta \(L_s^2/2\).
+constante da la segunda identidad. En el perfil, la suma de ambas expresiones es \(L_s\).
 
-El argumento de patrones sirve a cualquier longitud fija, pero el segundo coeficiente contiene
-la inversa de márgenes y, por tanto, recorridos de longitud arbitraria. Truncamos su expansión
-en recorridos alternantes centrados. Cada recorrido de longitud \(q\ge2\) entre extremos fijos
-está acotado por
-\(C_b^2r_b^{q-2}\), por las dos normas de sección y la brecha \(r_b<1\). A orden dos en el
-logaritmo del determinante hay a lo sumo dos inserciones en cada traza; su cola está acotada
-por \(C_b\sum_{q>N}(1+q)^2r_b^{\max(2q-C,0)}\). A truncación fija, las recurrencias de márgenes
-adjuntan árboles enraizados a una casilla o a una traza alternante. Las coincidencias de
-etiquetas libres distintas cuestan \(O_{b,N}(1/n)\). Se conserva cada indicador repetido antes de
-tomar la media. Una traza de longitud dos en una arista libre de media condicional \(V\) usa
-\(Y^2=Y\) a la ida y vuelta. El exceso respecto al producto de medias aporta
-\(V(1-V)\ell^2/(2d_i d_l)\), con \(\ell\) el peso normalizado de la arista en la Hessiana y
-\(d_i,d_l\) sus grados de fila y columna. Las aristas raíz ya tienen fijados sus indicadores.
-Así la varianza ordinaria se cuenta una vez. Primero \(n\to\infty\) a truncaciones fijas;
-después se retiran las truncaciones. Sólo entonces \(b\downarrow0\): la positividad de \(v_b\)
-da una minoración uniforme de \(p_b^*p_b\) cerca de cero y convergencia dominada en cada integral.
-Con \(\mathcal I_0(C)=\sum_o\int_\Omega w_{o,0}\sum_s q_{o,s,0}C_{o,s}\), se obtiene
+En la máscara regular, la expansión de la inversa de márgenes en \(\mathsf G,\chi_e,\chi_f\)
+da \(jD=Z_{\rm phys}+O_b(j^{-1})\) uniformemente. Aquí \(Z_{\rm phys}\) es la misma suma
+evaluada con el núcleo físico \(j(p_{il})\), medida uniforme \(1/j\) y valores \(jp_{01},jp_{10}\)
+en los dos cruces. Para promediar su cuadrado truncamos los recorridos alternantes a longitud
+\(N\). Las dos copias de cada suma usan índices internos separados y comparten los mismos
+indicadores de las casillas marcadas, cuyas potencias cumplen \(I^2=I\). Los recorridos de
+\(T_R(r_0,r_1)\) tienen extremos distintos, los de \(U\) tienen longitud al menos tres y los
+recorridos cerrados de \(d\) tienen longitud al menos cuatro. Así, fuera de los cruces marcados,
+compartir una raíz no fuerza a repetir una arista entre las dos copias. Una coincidencia accidental
+entre índices libres impone otra ecuación afín y cuesta \(O_{b,N}(1/n)\).
+Por tanto, fijados la orientación \(o\) y el estado \(s\), las sumas sobre índices libres
+convergen al producto de las dos integrales de recorridos con esos mismos cruces. La masa
+del estado entra una sola vez. Las normas de las dos secciones y la brecha
+\(r_b<1\) acotan cada recorrido de longitud \(q\ge2\) entre extremos fijos por \(C_b^2r_b^{q-2}\).
+Esta cota geométrica permite tomar primero \(n\to\infty\) y después \(N\to\infty\). Así, a
+corte \(b>0\) fijo, con \(q_{o,s}\) y \(L_s\) evaluados en ese corte,
+\[
+ \lim_{n\to\infty}-\frac n2\,\mathbb E_\mu
+ \left[\sum_{\parmar\in(o,s)}p_ep_fD^2;F_b\right]
+ =-\frac12\int_\Omega w_{o,b}\,q_{o,s}\,L_s^2\,dr\,dc\,dh .
+\]
+El factor \(1/2\) procede del término de Taylor \(D^2/2\) del apéndice~\ref{app:weights}.
+
+Para \(B_{2,s}\) truncamos también los recorridos de las tres inversas de márgenes que dan
+\(\mathcal Z_1,\mathcal Z_2,\mathcal Z_3\). La cota geométrica controla el error sucesivo en sus fuentes,
+ que son sumas de
+productos acotados. En la traza de orden dos se insertan una variación de orden dos o dos de
+orden uno. En un ciclo de longitud \(2q\) hay \(O(q^2)\) elecciones de posición. Los tramos
+restantes de longitud total \(2q-O(1)\) son recorridos del núcleo basal. Así la cola está acotada
+por \(C_b\sum_{q>N}(1+q)^2r_b^{\max(2q-C,0)}\).
+
+A truncación fija, las recurrencias de márgenes adjuntan árboles con índices nuevos a una
+casilla o a una traza alternante. En cada término local el indicador de la misma arista satisface
+\(I^k=I\) para \(k\ge1\). Una arista entre dos índices libres en un recorrido de longitud al
+menos cuatro sólo puede repetirse si dos posiciones distintas del recorrido tienen índices
+iguales. Esa coincidencia cuesta \(O_{b,N}(1/n)\). En cambio, en la ida y vuelta de longitud dos
+los extremos libres son idénticos por construcción. La sección~\ref{sec:par-prefactor} calcula
+la corrección de esa traza. Las aristas incidentes en raíces conservan sus bits de patrón o de estado.
+Al tomar primero \(n\to\infty\) y retirar después las truncaciones resulta, para cada una de las
+ocho elecciones de orientación y estado a corte fijo,
+\[
+ \lim_{n\to\infty}n\mathbb E_\mu
+ \left[\sum_{\parmar\in(o,s)}p_ep_f B_{\rm phys}(e,f);F_b\right]
+ =\int_\Omega w_{o,b}\,q_{o,s,b}\,B_{2,s}\,dr\,dc\,dh .
+\]
+Aquí \(B_{2,s}\) se evalúa en ese cuadrado, orientación y corte. Al bajar \(b\) a cero,
+la minoración uniforme de \(p_b^*p_b\) controla las colas del perfil y la convergencia
+dominada da el límite de cada integral truncada. Escribimos
+\(\mathcal I_0(C)=\sum_o\int_\Omega w_{o,0}\sum_s q_{o,s,0}C_{o,s}\,dr\,dc\,dh\). Se obtiene
 \[
  \lim_{b\downarrow0}\limsup_n\left|
  n\mathbb E_\mu[\textstyle\sum_{\{e,f\}}p_ep_f B_{\rm phys}(e,f);F_b]
  -\mathcal I_0(B_{2,s})\right|=0. \tag{F2}
 \]
-Así la frontera firmada por pares es \(J=-B_2+L_2\), con \(B_2=\mathcal I_0(B_{2,s})\)
-y \(L_2=-\mathcal I_0(L_s^2/2)\). En el estado \(11\) cada orientación aporta su coeficiente
-de una línea y la interacción de las dos orientaciones aparece una sola vez en \(-S\).
-Sumar \(J\) a las otras dos medias da la constante \(P_T+J-S\) que entra en la comparación
-de cortes, una vez tomado el límite en \(n\) para cada corte fijo.
+En la segunda media de \(\mathcal M_n(b)\) del apéndice~\ref{app:boundary}, \(\eta\) entra con signo
+negativo y contiene \(B_{\rm phys}+D^2/2\). Por tanto
+\[
+ B_2=\mathcal I_0(B_{2,s}),\qquad L_2=-\tfrac12\mathcal I_0(L_s^2),\qquad
+ J=-B_2+L_2=-\mathcal I_0(B_{2,s}+L_s^2/2).
+\]
+En el estado \(11\) el cuadrado tiene dos pares disponibles. La suma en \(J\) aporta un término
+para el par de orientación \(D\) y otro para el de orientación \(A\). La tercera media de
+\(\mathcal M_n(b)\) cuenta el mismo cuadrado una sola vez, por su vértice de coordenadas mínimas y su lado
+ \(h>0\),
+con el término de interacción \(-3\prod_{z\in\square}p_z\). Su integral es \(-S\).
+Al sumar las tres medias queda \(P_T+J-S\).

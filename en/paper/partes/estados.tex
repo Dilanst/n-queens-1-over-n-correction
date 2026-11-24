@@ -1,56 +1,49 @@
 \subsection{Status of each claim}\label{sec:claim-ledger}
-The label \status{D} identifies proved results.
-We use \status{O} for an exact computer check or a rigorous interval,
-\status{N} for a numerical estimate, and \status{D if C} for a bound proved under the stated
-condition. The keys under ``Source'' refer to the tables in the supplement on the proof,
-rooks, and the numerical calculation.
+The label \status{D} identifies proved results. We use \status{O} for an exact computer check or a
+rigorous interval, \status{N} for a numerical estimate, and \status{D if C} for a bound proved under the
+stated condition. The entries in the “Source” column refer to the tables in the supplement on the proof,
+the rook problem, and the numerical computation.
 
-The proof of the limit uses the rational identities for the pair and the square. Richardson
-extrapolation is used in evaluating the formula for $\cerr$. The symbolic comparison of 42 pieces
-provides an independent check of the cancellation at the endpoint.
+The proof of the limit is computer-assisted at two steps. The rational computation in
+Appendix~\ref{app:pair} verifies the degree-four coefficients of the pair and the square. The analytic
+bounds on their remainders are uniform in the stationary class. Richardson extrapolation is used in
+evaluating the formula for $\cerr$. The symbolic comparison of 42 pieces provides an independent check of
+the cancellation at the endpoint.
 {\small
 \begin{longtable}{@{}L{.12\linewidth}L{.30\linewidth}L{.40\linewidth}L{.10\linewidth}@{}}
 \toprule
-Status & Claim & Check & Source\\ \midrule
+Status & Claim & Verification & Source\\ \midrule
 \endhead
-\status{D} & Existence of the limit and exact formula for $\cerr$~\eqref{eq:main}
- & Comparison of two cut-offs of the same initial board & A B \\
-\status{D} & Vanishing derivatives at the physical endpoint
- & Convergence, order zero, and analyticity & A H \\
-\status{D} & Signed identity and exits at a fixed cut-off
- & Stopped histories, signed difference, and moments & C D W \\
-\status{D} & Arrival remainder in mean, uniform in the cut-off
- & Physical law, sum by size, and error of order $b$ & D \\
-\status{D} & Interior density
- & Sixteen terms and Riemann limit at a fixed cut-off & E Z \\
-\status{D} & Rooks at the boundary and square
- & Conditioning on four rows and multiplicity & D G \\
-\status{D} & Pair response $J=-B_2+L_2$
- & Eight submeasures and rank-two reinsertion & F X \\
-\status{D} & Rook expansion and stability
- & Uniform remainder, minors, and weighted deletion & I K Y \\
-\status{D} & Restricted marginal increment
- & Stationary point, determinant, and physical weights & B C L \\
-\status{O} & Algebraic checks
- & 27 marginal coefficients and check of the transcribed endpoint & M H \\
-\status{N} & Decimal estimate and conservative band
- & Grid extrapolation and empirical budget & P \\
-\status{D if C} & Quadrature and series bound, $8.74\cdot10^{-10}$
- & Analytic bounds under the nodal tolerances & P Q \\
-\status{O} & Physical profile and explicit nodal terms
- & Outer intervals and coverage by row & R \\
-\status{O} & Boundary integrals $S$ and $P_T$
- & Certified cubature and interval recurrence & R T \\
-\status{O} & Full $Q_2$ at one real node
- & Kernel enclosures and signed traces & T \\
-\status{O} & Coarse enclosure of $\cerr$
- & The global majorants include zero & R \\
-\status{O/N} & Exact $Q(n)$, numerical $nR_Q(n)$
- & Counts up to 27, fitted oscillation and drift & N \\
-Open & Tight enclosure of $\cerr$
- & Nodal errors, integration of the pair, and grid remainder & P R T \\
-Scope & Pointwise arrival and arbitrary vetoes
- & The restricted versions suffice & A B \\
+\status{D} & Existence of the limit and exact formula for $\cerr$~\eqref{eq:main} & Comparison of two
+cut-offs of the same initial board & A B \\
+\status{D} & Vanishing derivatives at the physical endpoint & Limit of the truncated integrals and Taylor
+expansion & A H \\
+\status{D} & Signed identity and exits at fixed cut-off & Stopped histories, signed difference, and
+moments & C D W \\
+\status{D} & Mean arrival remainder, uniform in the cut-off & Physical law, sum by size, and error of
+order $b$ & D \\
+\status{D} & Interior density & Sixteen terms and Riemann limit at fixed cut-off & E Z \\
+\status{D} & Rooks at the boundary and the square & Survival and multiplicity. Square coefficient by
+exact computation [O] & D G \\
+\status{D} & Pair response $J=-B_2+L_2$ & Eight submeasures and rank-two reinsertion & F X \\
+\status{D} & Rook expansion and stability & Uniform remainder, minors, and weighted deletion & I K Y \\
+\status{D} & Restricted marginal increment & Stationary point, determinant, and physical weights & B C L \\
+\status{O} & Rational identities in the computer-assisted proof & Order four in seven variables for the
+pair, eighteen for the square & L D \\
+\status{O} & Algebraic checks & 27 marginal coefficients and transcribed endpoint check & M H \\
+\status{N} & Decimal estimate and conservative band & Grid extrapolation and empirical budget & P \\
+\status{N} & Numerical integral of $\numerr_F/x^2$ & Comparison with $F(0)+F'(0)-F(1)$ & P \\
+\status{D if C} & Series and quadrature for $\numerr_6/x^2$ & Error $\le8.74\cdot10^{-10}$ under the
+sampling tolerances & P Q \\
+\status{O} & Physical profile and explicit nodal terms & Interval enclosures and coverage by row & R \\
+\status{O} & Boundary integrals $S$ and $P_T$ & Certified cubature and interval recurrence & R T \\
+\status{O} & Full $Q_2$ at one real node & Kernel enclosures and signed traces & T \\
+\status{O} & Global majorants & Width of the integral enclosure precludes certifying the sign & R \\
+\status{O} & Counts $Q(n)$ through 27 & Integer values from the cited enumerations & N \\
+\status{N} & Residuals $nR_Q(n)$ at finite sizes & Evaluation of the predictor, fitted oscillation and
+drift & N \\
+Open & Narrow enclosure for $\cerr$ & Nodal errors, integration of the pair, and grid remainder & P R T \\
+Scope & Pointwise arrival and arbitrary exclusions & The restricted versions suffice & A B \\
 \bottomrule
 \end{longtable}
 }

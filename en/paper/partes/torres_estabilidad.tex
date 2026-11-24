@@ -1,60 +1,88 @@
 \subsection{The profile coefficient and its stability}
-To add the two corrections in G1, it is convenient to express them in terms of the same profile
-$\nu=kP$. When composing kernels we use the uniform row and column measures, so that each sum
-over a fiber is divided by the board size. Write $B=\nu-1$, $A_R=BB^\top$, $A_C=B^\top B$,
-$T_X=A_X(I-A_X)^{-1}$, $U=T_RB=BT_C$, and $V=B+U$. For $X=R,C$, let
-$j_X(t)=(T_X-A_X)(t,t)$, $t_X(t)=T_X(t,t)$, and $j_0=\int j_R=\int j_C$.
-The cubes in double integrals are powers of the kernel values. In this notation, the functional
-that enters (T) is
+To add the two corrections in G1, we express them in terms of the same profile $\nu_T=kP$. When
+composing kernels we use the uniform row and column measures, so that each sum is divided by the
+board size. Write $\centrado=\nu_T-1$, $A_R=\centrado\centrado^\top$, $A_C=\centrado^\top
+\centrado$, $T_X=A_X(I-A_X)^{-1}$, $U=T_R\centrado=\centrado{}T_C$ and $V=\centrado+U$. For
+$X=R,C$, let $j_X(t)=(T_X-A_X)(t,t)$, $t_X(t)=T_X(t,t)$ and $j_0=\int j_R=\int j_C$. The cubes in
+double integrals are powers of the kernel values. In this notation the functional in (T) is
 \begin{align*}
  \mathfrak F={}&\tfrac12j_0^2+\operatorname{tr}(T_R^2)-\tfrac32 j_0
     -\tfrac34\sum_X\int j_X^2+\langle j_R,V j_C\rangle\\
  &-\tfrac12\sum_X\langle j_X,T_Xj_X\rangle-\tfrac13\sum_X\iint T_X^3
-    +2\iint BU^2+\tfrac23\iint U^3,\qquad
- \Phi=\mathfrak F-\tfrac1{12}.
+    +2\iint \centrado{}U^2+\tfrac23\iint U^3,\qquad
+ \coefT=\mathfrak F-\tfrac1{12}.
 \end{align*}
-Let $\bar e$ be the projection of $\nu$ in $L^2(\nu)$ onto the orthogonal complement of the
-additive row and column functions. Set $m_R=\int\nu^2\,dy$, $m_C=\int\nu^2\,dx$. The
+Let $\bar e$ be the projection of $\nu_T$ in $L^2(\nu_T)$ onto the orthogonal complement of the
+additive row and column functions. Set $m_R=\int\nu_T^2\,dy$, $m_C=\int\nu_T^2\,dx$. The
 deterministic part of the coefficient is
 \begin{align*}
- \delta_1={}&\tfrac1{12}+\tfrac56\iint\nu^3+\tfrac12\iint\nu\bar e^2
- -\iint V\nu\bar e-\tfrac12\iint\nu^2\\
- &+\tfrac12\iint\nu^2(t_R+t_C)-\iint\nu^2V-\tfrac14\sum_X\int m_X^2 .
+ \delta_1={}&\tfrac1{12}+\tfrac56\iint\nu_T^3+\tfrac12\iint\nu_T\bar e^2
+ -\iint V\nu_T\bar e-\tfrac12\iint\nu_T^2\\
+ &+\tfrac12\iint\nu_T^2(t_R+t_C)-\iint\nu_T^2V-\tfrac14\sum_X\int m_X^2 .
 \end{align*}
 To obtain $\delta_1$ from the normalization, we relate the stationary point $p$ to the scaling
-$P$. There are potentials $\alpha,\beta$ such that
-$P_{ij}=\exp(\alpha_i+\beta_j)p_{ij}(1-p_{ij})$. Multiplying the logarithm by $P_{ij}$ and
-summing eliminates the gauge. Substituting in the exact expression for $\Delta$ and expanding
-the entropy and the pseudodeterminant gives $\Delta=\delta_1/k+O(k^{-2})$.
-The expansion uses diffusion to bound the power sums and the gap to bound the inverses.
-To verify the coefficient, use $V B^\top=T_R$, $B^\top V=T_C$, $T_X A_X=T_X-A_X$, and the fact
-that $B$ has zero marginals. If $g=\iint B^2$ and $\gamma_X(t)=A_X(t,t)$, the projection
-above takes the form
+$P$. There exist potentials $\alpha,\beta$ such that
+$P_{ij}=\exp(\alpha_i+\beta_j)p_{ij}(1-p_{ij})$. Multiplying the logarithm by $P_{ij}$ and summing
+eliminates the gauge. Substituting into the exact expression for $\Delta$ and expanding the
+entropy and the pseudodeterminant gives $\Delta=\delta_1/k+O(k^{-2})$. The expansion uses
+diffusion to bound the power sums and the gap to bound the inverses. To verify the coefficient,
+use $V \centrado^\top=T_R$, $\centrado^\top V=T_C$, $T_X A_X=T_X-A_X$ and the fact that
+$\centrado$ has zero marginals. If $g=\iint \centrado^2$ and $\gamma_X(t)=A_X(t,t)$, the preceding
+projection takes the form
 \[
- \bar e=B+g-\rho_R-\rho_C,\quad
+ \bar e=\centrado+g-\rho_R-\rho_C,\quad
  \rho_R=(I+T_R)\gamma_R-V\gamma_C,\quad
  \rho_C=(I+T_C)\gamma_C-V^\top\gamma_R .
 \]
-Substituting this expression and $t_X=\gamma_X+j_X$ into $\delta_1$ and the static formula
-gives $\mathfrak f_{\rm e}+\delta_1=\Phi$ on each grid. Hence $R=R_{\rm est}+R_{\rm det}$, with
-$R_{\rm est}=\mathcal E(P)-\mathfrak f_{\rm e}/k$ and $R_{\rm det}=\Delta-\delta_1/k$.
-Both are $O(k^{-2})$, proving (T). The ratio of two permanents involves the difference between
-their errors. The decomposition lets us estimate this difference separately for $R_{\rm est}$ and
+Substituting this expression and $t_X=\gamma_X+j_X$ into $\delta_1$ and the static formula gives
+$\mathfrak f_{\rm e}+\delta_1=\coefT$ on every grid. Hence $R=R_{\rm est}+R_{\rm det}$, with
+$R_{\rm est}=\mathcal E(P)-\mathfrak f_{\rm e}/k$ and $R_{\rm det}=\Delta-\delta_1/k$. Both are
+$O(k^{-2})$, which proves (T). The difference between the errors appears in the ratio of two
+permanents. The decomposition lets us estimate this difference separately for $R_{\rm est}$ and
 $R_{\rm det}$.
 
 \paragraph{Static stability $(L^{*+})$ [D].}
-For $(L^*)$ it sufficed to bound all diagrams of excess at least two. Once the board changes, we
-must determine which of their contributions survive in the minor. Retain the diagrams of excess
-two and three, with the correction for coincident indices $-\frac56\sum C_{aa}^3$. The same
-bounds leave a tail of order $O(k^{-4})$. The gamma average and the logarithm give
-$R_{\rm est}=f_2/k^2+f_3/k^3+O(k^{-4})$, with $f_2,f_3$ uniformly bounded. On passing to a
-minor, the mass defect per fiber is $O(k^{-1})$. The potentials that correct it have supremum
-norm $O(k^{-1})$. Removing a single square concentrates the defect on two fibers. The gauge-fixed
-inverse has bounded supremum norm and off-diagonal entries of order $O(k^{-1})$. The potentials
-are $O(k^{-1})$ on the two fibers and $O(k^{-2})$ elsewhere. The perturbation argument preserves
-the class with bounds $2M_0,\gamma/2$. Expanding the difference of a product of propagators marks
-the edge that changed. The remaining sums are bounded over a spanning tree using the absolute row
-norm and the entrywise bound. Restricting the index to the affected fiber gains a factor of
-$k^{-1}$ for a localized deletion. The coefficients $f_2,f_3$ change by $O(k^{-1})$ on passing
-to the minor and by $O(k^{-2})$ under deletion. Accounting also for the change in the denominators
-gives orders $k^{-3}$ and $k^{-4}$ for the respective increments of $R_{\rm est}$.
+Retain the classes of excess two and three as well, and include $-\frac56\sum_a C_{aa}^3$ in the
+second-order term. Subtracting the three full classes subtracts their three tails beyond $N$ and
+adds the tail of the interpolant. Each class $j\le3$ has at most $3j$ edges, so its tail is
+bounded by $C_j k^{-j}(N+1)^{3j-1}\theta^{N+1-3j}$. At the preceding cut-off these four tails are
+$o(k^{-4})$, and the truncated classes of excess at least four sum to $O(k^{-4})$. The gamma
+average and the logarithm give $R_{\rm est}=f_2/k^2+f_3/k^3+O(k^{-4})$, with $f_2,f_3$ uniformly
+bounded.
+
+When we form the minor $M_e$, the mass deficit per fiber and the potentials that correct it are
+$O(k^{-1})$. When we forbid only $e=(r,c)$, the deficit is concentrated on two fibers. The
+gauge-fixed inverse has bounded supremum norm and off-diagonal entries of order $O(k^{-1})$. The
+potentials are $O(k^{-1})$ on these two fibers and $O(k^{-2})$ on the others. Both scalings
+satisfy the diffusion and gap bounds $2M_0,\gamma/2$ for sufficiently large $k$.
+
+In the difference of two products of propagators, telescoping marks one edge per summand. In each
+component of the remaining diagram we sum the indices over a spanning tree using the absolute line
+sums. Fixing the root saves a factor $k^{-1}$. If another vertex is fixed, the edge joining it to
+its parent is bounded by its entry of order $O(k^{-1})$ and gives a second factor. In distinct
+components we fix one root in each. For the deletion of $e$, let $C',B'_0$ be the matrices of the
+rescaled board after the cell is forbidden. The marked edge carries $C'-C=(I-C)s(B'_0-B_0)(I-C')$.
+Direct deletion has weight $-P_{rc}=O(k^{-1})$ at positions $(r,\bar c)$ and $(\bar c,r)$, where
+$\bar c=k+c$. Taking the identity in both outer factors fixes both endpoints. Their line indices
+are distinct, so the term vanishes on a loop. Each term with only one fixed endpoint carries an
+additional diffuse factor $O(k^{-1})$ from a propagator or from rescaling the fiber. Its weight is
+$O(k^{-2})$, and it gains the remaining factor in the tree sum. The diffuse part has entries of
+order $O(k^{-3})$ and absolute line sums of order $O(k^{-2})$. Thus a diagram of excess $j$
+changes by $O(k^{-j-2})$. In the minor, labels touching a removed line fix a vertex. On the
+remaining lines the Schur complement gives a difference of propagators with entries of order
+$O(k^{-2})$ and line sums of order $O(k^{-1})$. This gives $O(k^{-j-1})$ for the minor.
+
+The Schur complement for the minor and the derivative of $\log\det$ for the deletion give changes
+in $\log h$ of order $O(k^{-1})$ and $O(k^{-2})$, respectively. These bounds and those for the
+diagrams are uniform on the disk $|s-1|\le\gamma/8$. On its boundary Cauchy's formula bounds the
+derivative of order $r$ at $1$ by $r!(8/\gamma)^r$ times the supremum of the increment. Each of
+the fixed orders that follow retains the power of $k$. The $f_i$ are fixed polynomials in these
+derivatives of $\log h$ and of the diagram sums normalized by $k^j$. Hence $f_2,f_3$ change by
+$O(k^{-1})$ when the minor is formed and by $O(k^{-2})$ when the cell is forbidden. Only the minor
+changes the denominators from $k$ to $k-1$. For every $M\in\mathcal K$ of size $k\ge k_0$ and
+every cell $e$ we obtain
+\[
+ |R_{\rm est}(M_e)-R_{\rm est}(M)|\le C k^{-3},\qquad
+ |R_{\rm est}(M\setminus e)-R_{\rm est}(M)|\le C k^{-4},
+\]
+with $k_0,C$ depending only on $M_0,\gamma$.

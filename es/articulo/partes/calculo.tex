@@ -21,14 +21,14 @@ cortos de casillas unidas por líneas, triángulos y caminos de hasta cuatro vé
 familias, y los patrones se agrupan antes de integrar. Así cada grupo es la traza de un producto de
 matrices pequeñas en una misma malla.
 
-La precisión necesaria viene del extremo $x=0$, donde $k/x^2$ amplifica los errores. Con una regla de
+La precisión necesaria viene del extremo $x=0$, donde $\numerr/x^2$ amplifica los errores. Con una regla de
 Gauss--Legendre de dieciséis puntos en $[0,1]$, el error de una fila en el primer nodo entra en la
 integral multiplicado por $w_1/x_1^2\approx483$. Por eso cerca del origen se usa una serie. En el
 cálculo numérico se busca una precisión del orden de $10^{-10}$ en los nodos y se evalúan también
 las derivadas en el origen. La reordenación de las sumas es exacta en cada malla. Por separado,
 con un perfil de malla de marginales exactas se midieron los residuos de las dos cancelaciones en
 punto flotante. Para $5\le m\le48$, en ambas paridades, los valores observados cumplieron
-$|k_m(0)|\le7{,}5\cdot10^{-13}$ y $|d_m'(0)|\le1{,}3\cdot10^{-11}$ \status{N}.
+$|\numerr_m(0)|\le7{,}5\cdot10^{-13}$ y $|d_m'(0)|\le1{,}3\cdot10^{-11}$ \status{N}.
 
 \subsection{Una malla cerrada bajo las intersecciones de líneas}
 Numeramos las filas y columnas desde cero y situamos la casilla $(i,j)$ en
@@ -36,7 +36,7 @@ $((i+1/2)/m,(j+1/2)/m)$. Hay $6m-2$ líneas. Las diagonales con índices enteros
 que pasan por la casilla tienen la misma paridad. Recíprocamente, dos índices diagonales de igual
 paridad dan una casilla si su intersección cae dentro del tablero. En el continuo las dos
 paridades dan cuatro hojas oblicuas, además de las hojas axiales $R,C$. Sea $\nu_1$ la densidad
-del perfil de una solución completa, denotada por $\nu$ en el Apéndice~\ref{app:predictor}.
+del perfil de una solución completa.
 Para $x>0$ tomamos $U_f=u_f+x(1-u_f)$ sobre una línea oblicua y
 $W=\nu_1/(U_DU_A)$. Cuando las líneas $a,b$ se cortan, $K_{ab}$ es el valor de $\nu_1$ en la
 intersección multiplicado por $x/U_f$ por cada línea oblicua $f$ de la pareja. Las demás entradas se
@@ -50,17 +50,24 @@ es
 El integrando en $x=0$ se define por continuación. En la malla se conservan ambas hojas cuando un
 observable toma valores en una sola paridad.
 
-Para un peso de casilla $h$, sea $N_h(a,b)=h(a\cap b)$ si las líneas distintas $a,b$ se cortan en
-una casilla de la malla. Las demás entradas valen cero. Un producto de esas matrices suma recorridos
-por incidencias de líneas. La traza identifica el último índice con el primero y las matrices
-diagonales insertan las medidas de línea. Por
-ejemplo, $\operatorname{tr}(N_1D_1N_2D_2N_3D_3)$ suma el producto de los tres pesos sobre los
-triángulos. La Figura~\ref{fig:rectangulos} muestra dos rectángulos de la parte que alterna
-filas y columnas en $\operatorname{tr}(N_{h_1}N_{h_2}N_{h_3}N_{h_4})$. Los dieciséis aportes a
-$d$ se evalúan mediante productos matriciales, formas bilineales y sumas locales. En la fila
-$f_6$ aparecen recorridos con hasta cuatro vértices. La traza reordena una suma finita de manera exacta.
-Compararla con un recuento directo en la misma malla comprueba la implementación. Para estimar la
-integral del continuo hay que variar $m$.
+Para un peso de casilla $h$, definimos $N_h^\circ(a,b)=h(a\cap b)$ si las líneas distintas
+$a,b$ se cortan en una casilla y cero en las demás entradas. Con la incidencia casilla--línea
+$\mathcal I_{ea}=\mathbf 1_{\{e\in a\}}$, la matriz completa es
+\[
+ N_h^{\rm inc}=\mathcal I^{\mathsf T}\operatorname{diag}(h)\mathcal I
+              =N_h^\circ+\operatorname{diag}(P^{\mathsf T}h).
+\]
+Su entrada $(a,a)$ suma $h$ sobre la línea $a$. Los productos matriciales suman recorridos por
+incidencias de líneas. La traza identifica el último índice con el primero y las matrices diagonales
+$D_i$ insertan las medidas de línea. Por ejemplo, $\operatorname{tr}(N_{h_1}^\circ D_1
+N_{h_2}^\circ D_2 N_{h_3}^\circ D_3)$ suma los productos de los tres pesos sobre los triángulos.
+La Figura~\ref{fig:rectangulos} muestra dos rectángulos de la parte de
+$\operatorname{tr}(N_{h_1}^\circ N_{h_2}^\circ N_{h_3}^\circ N_{h_4}^\circ)$ que alterna filas y columnas.
+Cada vértice de esos rectángulos cruza dos líneas distintas. La traza general de $f_6$ del
+Lema~\ref{lem:f6} usa $N_h^{\rm inc}$ e incluye recorridos de hasta cuatro vértices.
+Los dieciséis aportes a $d$ se evalúan mediante productos matriciales, formas bilineales y sumas
+locales. La traza reordena una suma finita de manera exacta. Compararla con un recuento directo en
+la misma malla comprueba la implementación. Para estimar la integral del continuo hay que variar $m$.
 \input{figuras/rectangulos}
 
 \subsection{De la suma de malla al valor en cada nodo}
@@ -77,43 +84,53 @@ en cada clase.
 
 Para la suma de frontera el análisis numérico da
 \[
- J=-8{,}2386091222\ \pm5{,}0\,10^{-9},\qquad
- P_0=-7{,}7933777386\ \pm5{,}0\,10^{-9}\qquad\text{[N]}.
+ J=-8{,}2386091222\ \pm5{,}0\cdot10^{-9},\qquad
+ P_0=-7{,}7933777386\ \pm5{,}0\cdot10^{-9}\qquad\text{[N]}.
 \]
 Para $J$ se suma una orientación del par y se incluye la otra por simetría. Al añadir
 $P_T=0{,}4452313836$ se obtiene $P_0$. La interacción del cuadrado entra por separado con signo
 negativo, con $S=15{,}6334582804$. La Sección~\ref{sec:numcert} da los encierros rigurosos
 de $P_T$ y $S$.
 
-\subsection{El extremo singular y el presupuesto de error}
+\subsection{El extremo singular y el presupuesto de error}\label{sec:presupuesto}
 Para integrar con el peso $x^{-2}$ conviene extraer primero la parte que tiene una primitiva
 explícita. Separamos el funcional de torres mediante
 \[
- k_F=F-F(0)-xF',\qquad
- k_6=k-k_F=d+\mathcal V-x\mathcal V'+F(0)-1/12.
+ \numerr_F=F-F(0)-xF',\qquad
+ \numerr_6=\numerr-\numerr_F=d+\mathcal V-x\mathcal V'+F(0)-1/12.
 \]
-Al derivar $(F(x)-F(0))/x$ se obtiene que la integral de $k_F/x^2$ vale $F(0)+F'(0)-F(1)$.
-En $k_6$ las cancelaciones de los términos constante y lineal dejan una serie que se puede integrar
-hasta cero. Se reconstruye a partir de 32 puntos equiespaciados en $|x|=0{,}03$ (17 independientes
-por conjugación). Después se usan seis nodos de Gauss--Legendre en $[0{,}03;0{,}06]$ y veinte en
-$[0{,}06;1]$. En el presupuesto que sigue, los errores de los datos nodales se estiman al variar la
-malla espacial. La cota de serie y cuadratura se deduce de las tolerancias supuestas para las muestras
-de contorno del Apéndice~\ref{app:numquad}.
+La identidad $\numerr_F/x^2=-[(F(x)-F(0))/x]'$ da la integral exacta $F(0)+F'(0)-F(1)$ en $[0,1]$.
+Para $\numerr_6/x^2$, los términos constante y lineal de $\numerr_6$ se anulan. El
+Apéndice~\ref{app:numquad} acota el error al integrar esta parte con una serie obtenida en
+$|x|=0{,}03$ y dos reglas de Gauss--Legendre, bajo las tolerancias de muestreo allí indicadas.
+
+Para obtener el valor numérico de $\cerr$, la réplica forma la serie del $\numerr$ completo a partir de
+$d$ y $\mathcal V+F$ en los 32 puntos del círculo (17 independientes por conjugación).
+Evalúa $\numerr/x^2$ en seis nodos de $[0{,}03;0{,}06]$ y veinte de $[0{,}06;1]$. Como cotejo calcula
+también la contribución de $\numerr_F/x^2$ con la misma serie y ambas reglas. La fórmula de los extremos,
+evaluada con los datos de la réplica, menos esa integral numérica da $-3{,}77\cdot10^{-13}$ [N].
+La tabla da el presupuesto empírico [N] de la evaluación. Para los nodos y $P_0$ se usa la
+sensibilidad al refinamiento de la malla. Las dos últimas filas indican el alcance de sus cotas.
 
 \begin{center}\small
 \begin{tabular}{lr}
-Origen & Aporte al presupuesto de error numérico\\ \hline
-Datos nodales del panel de veinte puntos & $2{,}8\,10^{-8}$\\
-Datos del círculo de radio $0{,}03$ & $1{,}4\,10^{-8}$\\
-Valor de frontera $P_0$ & $5{,}0\,10^{-9}$\\
-Datos nodales del panel de seis puntos & $2{,}3\,10^{-9}$\\
-Serie y cuadratura, cota superior condicional & $8{,}74\,10^{-10}$\\
-Valor de $S$ en el cálculo numérico & $2{,}0\,10^{-12}$
+Origen & Presupuesto empírico [N]\\ \hline
+Datos nodales del panel de veinte puntos & $2{,}8\cdot10^{-8}$\\
+Datos del círculo de radio $0{,}03$ & $1{,}4\cdot10^{-8}$\\
+Valor de frontera $P_0$ & $5{,}0\cdot10^{-9}$\\
+Datos nodales del panel de seis puntos & $2{,}3\cdot10^{-9}$\\
+Serie y cuadratura de $\numerr_6/x^2$ [D si C] & $8{,}74\cdot10^{-10}$\\
+Error absoluto del valor de $S$ usado [O] & $7{,}044\cdot10^{-10}$
 \end{tabular}
 \end{center}
+Para $S=15{,}6334582804$ se ha tomado la mayor distancia a los extremos certificados de la
+Sección~\ref{sec:numcert}. El semiancho certificado de $P_T$ es aproximadamente
+$9{,}1\cdot10^{-4}$ [O]. La fila de $P_0=P_T+J$ mide la variación observada en malla [N].
+
 El cálculo da $0{,}4055003786$. Las mayores contribuciones al error proceden de los valores en el
 panel de veinte puntos y en el círculo. La combinación cuadrática de los indicadores es
-$3{,}2\,10^{-8}$ y la lineal $5{,}0\,10^{-8}$. Al cambiar el ajuste de $Q_2$, el resultado varió
-entre $-3{,}7\,10^{-9}$ y $+7{,}6\,10^{-9}$ respecto de la referencia. Con estos controles empíricos
-se comunica $0{,}40550038\pm3\,10^{-8}$ [N], con la estimación conservadora
-$0{,}4055004\pm2\,10^{-7}$ [N].
+$3{,}2\cdot10^{-8}$ y la suma lineal es $5{,}1\cdot10^{-8}$ con la cota de $S$.
+Al cambiar el ajuste de $Q_2$, el resultado varió
+entre $-3{,}7\cdot10^{-9}$ y $+7{,}6\cdot10^{-9}$ respecto de la referencia. Con estos controles empíricos
+se comunica $0{,}40550038\pm3\cdot10^{-8}$ [N], con la estimación conservadora
+$0{,}4055004\pm2\cdot10^{-7}$ [N].
