@@ -2,7 +2,7 @@
 This section collects the data accompanying the paper, explains how to repeat the computations, and
 specifies the type of evidence supporting each claim.
 
-\subsection{Comparison with exact counts}
+\subsection{Comparison with exact counts}\label{sec:conteos-exactos}
 For the sizes studied, $Q(n)$ is known exactly~\cite{oeis,q27}. Figure~\ref{fig:counts} shows $nR_Q(n)$
 for $16\le n\le27$, computed by taking the logarithm of the integer count and subtracting the numerical
 logarithm of the predictor before multiplying by $n$. An oscillation of period four is observed at these
@@ -13,7 +13,8 @@ predictor values are in \texttt{suplemento/datos/c\_n.json}.
 
 \subsection{Reproducing the numerical value}\label{sec:reproduccion}
 The supplement contains the aggregated grid results, analysis programs, nodal values, intervals, and
-SHA256 file digests. To repeat the analysis with Python~3 and NumPy, run the following command from
+SHA256 file digests. To repeat the analysis with Python~3 and NumPy~\cite{numpy}, run the following
+command from
 \texttt{suplemento}, choosing an output name that does not yet exist:
 \begin{quote}
 \verb|python -B replica/reproducir_valor.py replay|
@@ -29,3 +30,9 @@ profile, for $S$, for $P_T$, and for $Q_2$ at the tenth node of the twenty-point
 together with the signed bivariate kernel at that node and a quick test of the inputs. Each certificate
 records its working precision, inputs, and resulting interval; Section~\ref{sec:numcert} explains what is
 certified and to what extent.
+
+\subsection{Data and code availability}\label{sec:disponibilidad}
+The supplement (programs, grid data, interval certificates, and the tables that trace each statement to
+its source) is available at \url{https://github.com/Dilanst/n-queens-order-1-n-term}, in the directories
+\texttt{es/suplemento} and \texttt{en/suplemento}. Its files are identified by the SHA256 digests listed
+in \texttt{SHA256SUMS}.

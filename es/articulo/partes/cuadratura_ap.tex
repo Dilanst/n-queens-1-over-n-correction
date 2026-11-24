@@ -15,8 +15,9 @@ coeficientes reconstruidos con $N=32$ valores en $|x|=r$, para $2\le j<N$ se tie
  \widetilde d_j+(1-j)\widetilde v_j-\numerr_j
    =\sum_{\ell\ge1}\bigl(\numerr_{j+\ell N}+\ell N v_{j+\ell N}\bigr)r^{\ell N}
 \]
-para muestras exactas. En efecto, el muestreo de una función analítica agrega los índices congruentes
-con $j$ módulo $N$, y $\numerr_m=d_m+(1-m)v_m$ para $m\ge1$. Cada diferencia se integra con peso
+para muestras exactas. En efecto, el muestreo de una función analítica agrega los índices
+congruentes con $j$ módulo $N$ (solapamiento espectral; véase~\cite{tw}), y $\numerr_m=d_m+(1-m)v_m$ para
+$m\ge1$. Cada diferencia se integra con peso
 $r^{j-1}/(j-1)$ y la cola de la integral exacta comienza en $j=N$. La fórmula de Cauchy en el círculo
 exterior acota los dos tipos de coeficientes. El círculo intermedio de radio $0{,}055$ usa 33 muestras
 independientes (64 con las conjugadas) para mejorar las cotas. El radio mayor usado en esta estimación
@@ -89,9 +90,10 @@ puntos son aproximadamente $7{,}7\cdot10^{-10}$, $8{,}8\cdot10^{-11}$ y $1{,}7\c
 respectivamente.
 El círculo y el panel corto dan juntos $8{,}56111216\cdot10^{-10}$. Al sumar el valor archivado del
 panel largo, $1{,}69294096\cdot10^{-11}$, se obtienen unos $8{,}73040626\cdot10^{-10}$. La cifra comunicada
-de $8{,}7\cdot10^{-10}$ se redondeó al más próximo. Hacia arriba vale $8{,}74\cdot10^{-10}$ [D si C].
+de $8{,}7\cdot10^{-10}$ se redondeó al más próximo. Hacia arriba vale $8{,}74\cdot10^{-10}$ \status{D si C}.
 Para aplicar esta cota a un cálculo de $\cerr$ por separación, habría que usar la integral exacta de
 $\numerr_F/x^2$ y propagar los errores de $F(0),F'(0),F(1)$ junto con los de los 43 nodos y los términos de
-frontera. La réplica integra el $\numerr/x^2$ completo y su cotejo de $\numerr_F/x^2$ es numérico [N].
+frontera. La réplica integra el $\numerr/x^2$ completo y su cotejo de $\numerr_F/x^2$ es numérico
+\status{N}.
  Cuando una
-tolerancia $\delta_i$ procede de un refinamiento de malla, su valor también es una estimación [N].
+tolerancia $\delta_i$ procede de un refinamiento de malla, su valor también es una estimación \status{N}.

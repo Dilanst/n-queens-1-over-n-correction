@@ -1,0 +1,124 @@
+
+\emph{Step 5. Exact decomposition of $r_{e_0}$.} By Step~3 for $M$ and for $M'$,
+$g_M(\theta)-g_{M'}(\theta|_I)=\sum_{e\in F}\phi(t_e)-\theta_r-\theta_c-2$, with
+$\theta_r+\theta_c=\log(p_0(1-p_0)/w_{e_0})$, $\sum_F\phi(t_e)=\sum_F\log(1-p_e)+2(2-p_0)$ and
+$\sum_{F^*}p_e=2-2p_0$. Therefore
+\begin{equation}\label{eq:accion-hijo}
+ H_T(M')-H_T(M)-\log\frac{p_0}{w_{e_0}}=\sum_{e\in F^*}\bigl[-\log(1-p_e)-p_e\bigr]-\mathcal D,\qquad
+ \mathcal D=g_{M'}(\theta|_I)-g_{M'}(\theta')\ge0 .
+\end{equation}
+For the prefactor, let $T_{JJ}=\bigl(\begin{smallmatrix}m_r&\tau_0\\ \tau_0&m_c\end{smallmatrix}\bigr)$,
+let $T_{IJ}$ be the block of $S_T$, $D_F=\operatorname{diag}(\tau_e)_{a=\lambda(e)}$,
+$Q_J=T_{IJ}T_{JJ}^{-1}T_{JI}$, and
+\[
+ \mathsf S=S'(\tau|)+D_F-Q_J,\qquad W=\mathsf S-S'(\tau') .
+\]
+Thus $\mathsf S$ is the Schur complement of $S_T$ on $I$. For a positive semidefinite matrix with kernel
+spanned by $v$, the principal minor that omits the line $a$ equals the pseudodeterminant times
+$v_a^2/|v|^2$. Applying this to $S_T$ and to $\mathsf S$, with $|v|^2=2k$ and $|v_I|^2=2k-2$, gives
+$\mathsf Sv_I=Wv_I=0$ and $\operatorname{pdet}S_T=\tfrac k{k-1}\det T_{JJ}\operatorname{pdet}\mathsf S$.
+Solving $S_T(y,z)=(0,x)$ for $x\perp v_I$ gives $\mathsf S^+=\Pi_I^\perp G^0_{II}\Pi_I^\perp$, so
+$\|\mathsf S^+\|_2\le\gamma_A^{-1}$ and $\operatorname{tr}(\mathsf S^+W)=\operatorname{tr}(G^0_{II}W)$.
+The term $\tfrac12\log(4\pi k)$ of $L_T$ contributes $\tfrac12\log\tfrac{k-1}k$, which cancels the size
+factor. With $\ell=L_T-H_T$,
+\[
+ \ell(M')-\ell(M)=\tfrac12\log\det T_{JJ}+\tfrac12\sum_{e\in F}c_2(p_e)
+   -\tfrac12\sum_{e\in M'}[c_2(p'_e)-c_2(p_e)]-\tfrac12\log\det(I-\mathsf S^+W).
+\]
+Adding~\eqref{eq:accion-hijo} we obtain the exact identity
+\begin{equation}\label{eq:re-exacto}
+ r_{e_0}=-\mathcal D+L_1+L_2+L_3-\log(1+\hat c_{e_0}),
+\end{equation}
+where $L_1=\sum_{F^*}[-\log(1-p_e)-p_e]+\tfrac12\log\det T_{JJ}+\tfrac12\sum_Fc_2(p_e)$,
+$L_2=-\tfrac12\sum_{M'}[c_2(p'_e)-c_2(p_e)]$ and $L_3=-\tfrac12\log\det(I-\mathsf S^+W)$.
+
+Let $\beta=G^0a_{e_0}$, so that $S_T\beta=a_{e_0}$, $v^\top\beta=0$ and $\mathsf G_0:=\mathsf
+G(e_0,e_0)=\beta_r+\beta_c$. The rows $a\in I$ of $S_T\beta=a_{e_0}$ show that
+$\rho:=S'(\tau|)\beta_I-b$ is orthogonal to $v_I$, vanishes outside the lines $\lambda(e)$, $e\in F^*$,
+and
+\begin{equation}\label{eq:rho-hijo}
+ \rho_{\lambda(e)}=-\varsigma_e-\tau_e(\mathsf G(e,e_0)-1)\quad(e\in F^*),\qquad
+ \zeta:=(S'(\tau|)+\Pi')^{-1}\rho+(\xi-\xi_N).
+\end{equation}
+Since $S'(\tau|)(\xi_N+\beta_I)=\rho$, the vector $\zeta-(\xi+\beta_I)$ is a multiple of $v_I$, and
+$a_e^\top\zeta=s_e+\mathsf G(e,e_0)$ for every cell $e$ of $M'$. By~\eqref{eq:green-torres}
+and~\eqref{eq:newton-hijo}: $|\beta_a|\le2g_G/k$ for $a\in I$, $|\beta_j-1|\le2g_G/k$ for $j\in J$,
+$\sum_a|\beta_a|\le2K_G$; $|\mathsf G(e,e_0)-1|\le4g_G/k$ on $F^*$ and $|\mathsf G(e,e_0)|\le4g_G/k$ on
+$M'$; and
+\begin{equation}\label{eq:cotas-hijo}
+ \|\rho\|_\infty\le\tfrac43a^2+\frac{4\bar\tau g_G}k,\qquad
+ \|\rho\|_1\le\tfrac83a+\frac{28g_G}{3k},\qquad
+ \|\zeta\|_\infty\le\tfrac32K_G\|\rho\|_\infty+61K_G^3a^2 .
+\end{equation}
+
+\emph{Step 6. Cancellation at first order.} Put
+\begin{gather*}
+ S_1=\sum_{M'}p_e\tau_e\mathsf G(e,e_0),\qquad
+ S_2=\sum_{M'}\tau_e\mathsf G(e,e_0)(\mathsf G(e,e)-2),\\
+ S_3=\sum_{F^*}\tau_e(\mathsf G(e,e)-2),\qquad S_4=\sum_{F^*}\tau_ep_e .
+\end{gather*}
+The following identities \emph{define} the remainders $E_\bullet$:
+\begin{align*}
+ \mathcal D&=\tfrac12(m_r\beta_r+m_c\beta_c)-1+\tfrac12\tau_0\mathsf G_0+E_{\mathcal D}, &
+ L_1&=\tfrac12(\mu_r+\mu_c)+E_{L1},\\
+ L_2&=-S_1+E_{L2}, &
+ L_3&=\tfrac12\operatorname{tr}(G^0_{II}W)+E_{L3},\\
+ -\log(1+\hat c_{e_0})&=-\hat c_{e_0}+E_{\delta1}, &
+ \hat c_{e_0}&=\tfrac12X_{e_0}+E_{\delta2},
+\end{align*}
+together with $\operatorname{tr}(G^0_{II}W)=\mathrm{(i)}+\mathrm{(ii)}-\mathrm{(iii)}$, where
+$\mathrm{(i)}=-\sum_{M'}(\tau'_e-\tau_e)\mathsf G(e,e)=-2(1-p_0)+S_2+4S_1+E_{\rm(i)}$,
+$\mathrm{(ii)}=\sum_{F^*}\tau_eG^0_{\lambda(e)\lambda(e)}$ and
+$\mathrm{(iii)}=\operatorname{tr}(G^0_{II}Q_J)=\tfrac2k-2+m_rG^0_{rr}+m_cG^0_{cc}+2\tau_0G^0_{rc}$, and
+with $X_{e_0}=S_3+2S_4+S_2+2S_1-(\mathsf G_0-2)-2p_0+E_X$. The first identity is the Taylor expansion of
+$g_{M'}$ at $\theta|_I$, namely $\mathcal D=-b^\top\xi-\tfrac12\xi^\top S'(\tau|)\xi-R_3$ with
+$R_3=\sum_{M'}[\phi(t_ee^{s_e})-\phi(t_e)-p_es_e-\tfrac12\tau_es_e^2]$. Substituting
+$\xi\equiv\zeta-\beta_I$ and $S'(\tau|)\beta_I=b+\rho$, and using the rows $r,c$ of
+$S_T\beta=a_{e_0}$ in the form $\sum_{F^*}\tau_e\beta_{\lambda(e)}=2-m_r\beta_r-m_c\beta_c-\tau_0\mathsf
+G_0$, gives
+\[
+ E_{\mathcal D}=\tfrac12\sum_{F^*}\varsigma_e\beta_{\lambda(e)}-\tfrac12\beta_I^\top\rho+\zeta^\top\rho
+   -\tfrac12\zeta^\top S'(\tau|)\zeta-R_3 .
+\]
+The expansion of $\mathrm{(i)}$ uses the exact conservation of mass $\sum_{M'}\Delta p_e=1-p_0$,
+$\tau=p+\varsigma$ and $s_e=-\mathsf G(e,e_0)+a_e^\top\zeta$; that of $X_{e_0}$
+uses~\eqref{eq:chat-torres} and $\varepsilon_e=(\mathsf G(e,e)-2)+2p_e+\tilde\varepsilon_e$. The value of
+$\mathrm{(iii)}$ follows from the blocks $(J,I)$ and $(J,J)$ of $S_TG^0=G^0S_T=I-\Pi$.
+
+In the sum of the main terms of~\eqref{eq:re-exacto}, $S_1$ has coefficient $-1+2-1=0$ and $S_2$ has
+$\tfrac12-\tfrac12=0$: everything that does not touch row $r$ or column $c$ cancels. For $e\in F^*$ with
+shared line $j$ and $\lambda=\lambda(e)$ we have $\mathsf G(e,e)=G^0_{jj}+G^0_{\lambda\lambda}
++2G^0_{j\lambda}$, and the $(r,r)$ entry of $S_TG^0=I-\Pi$ gives
+$\sum_{e\in r\setminus e_0}\tau_eG^0_{c(e)r}=1-\tfrac1{2k}-m_rG^0_{rr}-\tau_0G^0_{cr}$, and likewise for
+$c$. With these relations the terms of order $1/k$ cancel exactly, and
+\begin{align}
+ r_{e_0}&=E_{\rm main}-E_{\mathcal D}+E_{L1}+E_{L2}+\tfrac12E_{\rm(i)}+E_{L3}
+         +E_{\delta1}-E_{\delta2}-\tfrac12E_X,\label{eq:re-restos}\\
+ E_{\rm main}&=\sum_{e\in r\setminus e_0}\frac{p_e^3}{1-2p_e}+\sum_{e\in c\setminus e_0}\frac{p_e^3}{1-2p_e}
+   -\tfrac12(G^0_{rr}-1)\mu_r-\tfrac12(G^0_{cc}-1)\mu_c-\tfrac12G^0_{rc}(\mu_r+\mu_c).\notag
+\end{align}
+
+\emph{Step 7. Bounds.} Each remainder in~\eqref{eq:re-restos} is at most $k^{-2}$ times a polynomial in
+$(C_p,K_G,g_G,\gamma_A^{-1})$. For $E_{\rm main}$ this follows from $\sum_{e\in r}p_e^3/(1-2p_e)\le
+\tfrac43a^2$, $|G^0-I|\le g_G/k$ and $\mu_a\le\tfrac43a$. For $E_{\mathcal D}$ we use
+$\sum_{F^*}\varsigma_e\le\tfrac83a$, the bounds on $\beta$ and~\eqref{eq:cotas-hijo}, $\zeta^\top
+S'(\tau|)\zeta=\sum_{M'}\tau_e(a_e^\top\zeta)^2$ with $\sum_e\tau_e\le\tfrac76k$, and
+$|\tfrac{d^3}{ds^3}\phi(te^s)|=|\tfrac{d\tau}{ds}|\le1.8\tau$, which gives $|R_3|\le0.35k(6K_Ga)^3$. For
+$E_{L1}$: $|c_2(u)+u^2|\le3.6u^3$, $0\le-\log(1-u)-u-\tfrac12u^2\le0.39u^3$,
+$|\log m_a-\mu_a|\le\tfrac12\mu_a^2$ and $\tau_0^2\le(\tfrac76a)^2$. For $E_{L2}$: $|\dot c_2(u)/2+u|\le
+4.2u^2$, $|\Delta p_e-\tau_es_e|\le0.9\tau_es_e^2$ and $|\ddot c_2|\le5.3$. For $E_{\rm(i)}$:
+$\Delta\varsigma=\dot\varsigma\Delta p+\tfrac12\ddot\varsigma\Delta p^2$ and $|\dot\varsigma(p)\mathsf
+G(e,e)-4p|
+\le22.5p^2+8pg_G/k$. For $E_{L3}$: with $Y=(\mathsf S^+)^{1/2}W(\mathsf S^+)^{1/2}$ we have
+$\|Y\|\le\|W\|_\infty/\gamma_A\le\tfrac12$, $\|Y\|_F\le\|W\|_F/\gamma_A$ and
+$|\log\det(I-Y)+\operatorname{tr}Y|\le\|Y\|_F^2$. By conservation of mass on each line $a\in I$, the
+entries of $W$ are $W_{aa}=\varsigma_{e_a}-\sum_{e\in a\cap M'}\Delta\varsigma_e-(Q_J)_{aa}$, with $e_a$
+the cell of $F^*$ on $a$, and $W_{ab}=-(\tau'_e-\tau_e)-(Q_J)_{ab}$ for the cell $e$ on the lines $a,b$;
+hence $\max|W_{ab}|=O(k^{-2})$, $\|W\|_\infty=O(k^{-1})$ and $\|W\|_F^2=O(k^{-2})$. Finally
+$|E_{\delta1}|\le\hat c_{e_0}^2$, $|E_{\delta2}|\le\tfrac23a|X_{e_0}|$ because $\tau_0/p_0-1\le\tfrac43a$,
+and $E_X$ collects $\tau_0\varepsilon_0\mathsf G_0$, the differences $\mathsf G(e,e_0)-1$ on $F^*$ and
+the terms $\tilde\varepsilon$, all controlled by Step~3. Adding the bounds at $k=k_1$ and using that
+each is $k^{-2}$ or $k^{-3}$ times a constant gives $|r_{e_0}|\le C_r/k^2$ for all $k\ge k_1$. The
+statement for $\mathcal K$ follows from the properties of the stationary class recalled in
+Section~\ref{sec:torres}.
+\end{proof}

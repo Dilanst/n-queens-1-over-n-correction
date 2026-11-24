@@ -1,6 +1,8 @@
 \section{What accumulates before the cut-off and what remains at the boundary}\label{sec:signedmap}
 Choose a solution uniformly and reveal its queens in a uniformly random row order independent of the
-solution. When \(m\) rows remain, the residual board \(B_m\) records the available squares. Its binary
+solution. Revealing the rows in random order is the device of the entropy method~\cite{rad,ll}, which
+gives the upper bounds on \(Q(n)\) in~\cite{luria,simkin}; here the same histories are followed under
+two laws. When \(m\) rows remain, the residual board \(B_m\) records the available squares. Its binary
 mask \(M_m\) supports a simpler problem: place one rook in each row and column. Its count,
 \(\operatorname{per}M_m\), already incorporates the restrictions imposed by the revealed pieces. To
 obtain \(Q(B_m)\) we must also require that the new pieces do not attack each other along the diagonals.
@@ -48,7 +50,9 @@ two positions of the square determine four states. For \(e=(r,q)\) and \(f=(r+h,
 Figure~\ref{fig:frontera} shows the four cases.
 \input{figuras/frontera}
 
-All four cases occur in the solution \((1,3,5,7,2,4,6)\) on the board of order seven. Before any queen is
+All four cases occur in the solution \((1,3,5,7,2,4,6)\) on the board of order seven, for the pair
+\(e=(1,2)\), \(f=(3,4)\) of Figure~\ref{fig:frontera}, whose other two vertices are \((1,4)\) and
+\((3,2)\). Before any queen is
 revealed, \(X=Y=1\). Revealing \((7,6)\) rules out only \(Y\) among the four vertices, and revealing
 \((4,7)\) rules out only \(X\). If both are revealed, \(e,f\) remain available.
 

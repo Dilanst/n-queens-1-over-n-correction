@@ -1,6 +1,6 @@
 \section{The permanent and the rook predictor}\label{app:torres}
 \label{app:rook}
-\paragraph{The G1 reduction [D].}
+\paragraph{The G1 reduction \status{D}.}
 When comparing $\operatorname{per}M$ with $\operatorname{per}M_e$, both the size and the doubly
 stochastic scaling change. We split the error $g_T$ into two quantities that can be computed at
 the same scaling. The incidence vector $a_e$ has a one in the row and another in the column of
@@ -14,6 +14,10 @@ normalization at both endpoints of an increment is
          -\tfrac12\log\operatorname{pdet} S_T+\tfrac12\log(4\pi k).
 \end{aligned}
 \]
+The functional $H_T$ is the negative of the Bethe free energy of the permanent, whose minimum over
+doubly stochastic matrices defines the Bethe permanent~\cite{vontobel,cy}. The Bethe permanent bounds
+the permanent from below~\cite{gurvits} (through Schrijver's inequality~\cite{schrijver}) and is within
+a factor $2^{k/2}$ of it~\cite{ar}; see~\cite{np} for recent structural corrections.
 Scaling the rows by $u_i$ and the columns by $v_j$ increases $H_T$ and the logarithm of the
 permanent by the same sums of logarithms. The other terms depend on $p$, which is invariant under
 this scaling. Thus $g_T(M)=g_T(P)$. For a doubly stochastic matrix $D$ of size $K$, define
@@ -27,7 +31,7 @@ remain. For $\mathcal E(P)$ we need the first correction to the leading determin
 permanent approximation. For $\Delta$ it suffices to expand the explicit terms of the
 normalization.
 
-\paragraph{The static estimate $(L^*)$ [D].}
+\paragraph{The static estimate $(L^*)$ \status{D}.}
 The leading determinant for the diffuse class with a gap is derived in~\cite{dw}. McCullagh's
 expansion~\cite{mcc} identifies formal corrections, and Li's estimate~\cite{li} treats
 perturbations with sublinear line norm. Here we need the error after extracting the coefficient of
@@ -91,3 +95,6 @@ $\Delta$ to this expression.
 \input{partes/torres_estabilidad}
 \input{partes/torres_incrementos}
 \input{partes/torres_pares}
+\input{partes/torres_insercion}
+\input{partes/torres_dos_casillas}
+\input{partes/torres_menor_lejano}

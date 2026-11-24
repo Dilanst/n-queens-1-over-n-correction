@@ -1,0 +1,90 @@
+
+\begin{proposicion}[Un menor lejano; estabilidad \textup{(S)}]\label{prop:menor-lejano}
+Para constantes $(C_p,\gamma_A)$ hay un umbral $k_S=k_S(C_p,\gamma_A)\ge k_2$ y una constante
+$C_{S1}=C_{S1}(C_p,\gamma_A)$ con las propiedades siguientes.
+\begin{enumerate}
+\item[\textup{(a)}] Sea $N$ una máscara que cumple \textup{(H)} con $(C_p,\gamma_A)$, de tamaño
+$k\ge k_S$, sea $d$ una casilla de $N$ y $c$ una casilla de $N_d$. Entonces
+$|r_c(N_d)-r_c(N)|\le C_{S1}/k^3$.
+\item[\textup{(b)}] Sea $M$ una máscara que cumple \textup{(H)} con $(C_p,\gamma_A)$, de tamaño $k$, con
+$k\ge k_S(C_p,\gamma_A)$ y $k-1\ge k_S(\tfrac54C_p,\tfrac34\gamma_A)$. Sean $e,f$ casillas en filas y
+columnas distintas y $c$ una casilla que no está en ninguna de sus filas ni de sus columnas. Entonces
+\[
+ |r_c(M_{ef})-r_c(M)|\le\frac{C_S}{k^3}, \tag{S}
+\]
+con $C_S$ que sólo depende de $(C_p,\gamma_A)$.
+\end{enumerate}
+En la clase $\mathcal K$ ambas valen con $(C_p,\gamma_A)=(\tfrac32M_0,0{,}88\gamma)$.
+\end{proposicion}
+\begin{proof}
+La parte (b) se sigue de (a). En efecto, $M_{ef}=(M_e)_f$; por el Paso~4 de la demostración del
+Teorema~\ref{teo:insercion-torres}, $M_e$ cumple \textup{(H)} con $(\tfrac54C_p,\tfrac34\gamma_A)$ en
+tamaño $k-1$; y $c$ es una casilla de $M_e$ y de $M_{ef}$. Se aplica (a) a $(M,e)$ y a $(M_e,f)$ y se
+suma.
+
+Para (a) usamos la notación de aquella demostración con $N$ en lugar de $M$ y $e_0=c$, escribimos
+$h=1/k$, y $\delta$ denota la variación de una cantidad al pasar de $N$ a $N_d$, leída en el soporte
+común. Las constantes sólo dependen de $(C_p,\gamma_A)$, y $k_S$ se elige de modo que valgan las
+desigualdades elementales que se usan abajo.
+
+\emph{Paso 1. Un representante de segundo orden de $r_{e_0}$.} Sean $u_x=a_x^\top\xi_N$,
+$\alpha_x=\mathsf G(x,x)-2$, $\eta_x=\mathsf G(x,e_0)$, $b_x=\tfrac12\tau_x\dot\tau_xu_x^2$ con
+$\dot\tau_x=\dot\tau(p_x)$, y
+\[
+ Z=(S'(\tau|)+\Pi')^{-1}\Bigl(\rho-\sum_{x\in M'}b_xa_x\Bigr),\qquad z_x=a_x^\top Z .
+\]
+Todo ello se calcula con los datos del padre. La ecuación de masas del hijo es exactamente
+\begin{equation}\label{eq:masas-hijo}
+ \zeta=(S'(\tau|)+\Pi')^{-1}(\rho-B),\qquad
+ B_i=\sum_{x\in i\cap M'}\bigl[u(t_xe^{s_x})-p_x-\tau_xs_x\bigr].
+\end{equation}
+Como $\|\xi\|_\infty=O(h)$ y $\|\xi-\xi_N\|_\infty=O(h^2)$ por~\eqref{eq:newton-hijo}, la tercera
+derivada de $s\mapsto u(te^s)$ es $O(p)$ en el segmento, las masas de línea están acotadas y la inversa
+está acotada en la norma del supremo, un desarrollo de Taylor da $\zeta=Z+O_\infty(h^3)$.
+
+En~\eqref{eq:re-restos} reemplazamos los restos como sigue; $E_{\mathcal D3}=\zeta^\top\rho$ y
+$E_{\mathcal D4}=-\tfrac12\zeta^\top S'(\tau|)\zeta$ ya son $O(h^3)$.
+\begin{enumerate}
+\item En $E_{\rm main}$ se reemplaza $p_x^3/(1-2p_x)$ por $p_x^3$.
+\item Se reemplaza $E_{\mathcal D1}=\tfrac12\sum_{F^*}\varsigma_x\beta_{\lambda(x)}$ por
+$\tfrac12\sum_{F^*}p_x^2\beta_{\lambda(x)}$.
+\item En $E_{\mathcal D2}=-\tfrac12\beta_I^\top\rho$ se reemplaza $\rho_{\lambda(x)}$ por
+$-p_x^2-p_x(\eta_x-1)$ para $x\in F^*$.
+\item Se reemplaza $E_{\mathcal D5}=-R_3$ por $-\tfrac16\sum_{M'}\tau_x\dot\tau_xu_x^3$.
+\item Se reemplaza $E_{L1}$ por $-\tfrac23\sum_{F^*}p_x^3-p_0^2-\tfrac14(\mu_r^2+\mu_c^2)$.
+\item Se reemplaza $E_{L2}$ por $\sum_{M'}\bigl\{\tfrac12D(\ell_2'\tau)_xu_x^2
++(\ell_2'(p_x)-p_x)\tau_xu_x+p_x\tau_xz_x\bigr\}$, donde $\ell_2'(u)=u/[(1-2u)(1-u)]$ y
+$D=t\,d/dt$, de modo que $Du=\tau$.
+\item Se reemplaza $E_{\rm(i)}$ por $-\sum_{M'}\bigl\{\tau\alpha z+4p\tau z+b\alpha
++2(\dot\varsigma-2p)\tau u+2\dot\varsigma b+\ddot\varsigma(\tau u)^2+\dot\varsigma\tau u\alpha\bigr\}_x$.
+\item Se reemplaza $E_{L3}$ por $\tfrac14\operatorname{tr}(\mathsf S^+W_0\mathsf S^+W_0)$, donde $W_0$
+se obtiene de las entradas de $W$ del Paso~7 poniendo $\Delta\varsigma_x=\dot\varsigma_x\tau_xu_x$ en
+la diagonal y $\tau'_x-\tau_x=\dot\tau_x\tau_xu_x$ fuera de ella.
+\item Se reemplaza $E_{\delta1}$ por $\tfrac12\hat c_{e_0}^2$.
+\item Se reemplaza $E_{\delta2}=p_0\hat c_{e_0}/(1-p_0)$ por $p_0\hat c_{e_0}$.
+\item En
+$E_X=\sum_{M'}\tau_x\tilde\varepsilon_x\eta_x+\sum_{F^*}\tau_x\tilde\varepsilon_x
++\sum_{F^*}\tau_x\varepsilon_x(\eta_x-1)+\tau_0\varepsilon_0\mathsf G_0-\tilde\varepsilon_0$ se
+reemplazan $\tilde\varepsilon_x$ por $6p_x^2+2p_x\alpha_x$ y $\varepsilon_x$ por $\alpha_x+2p_x$.
+\end{enumerate}
+Sea $r^{[2]}_{e_0}$ la suma de estas expresiones con los coeficientes de~\eqref{eq:re-restos}. Cada
+reemplazo cuesta $O(h^3)$, de modo que $r_{e_0}=r^{[2]}_{e_0}+O(h^3)$ uniformemente, en $N$ y en $N_d$.
+Para verlo, nótese que en $F^*$ se tiene $\sum p\le2$ y $\sum p^j=O(h^{j-1})$, y en $M'$ se tiene
+$\sum p\le k$, $\sum p^2=O(1)$, $\sum p^3=O(h)$. Los errores de los puntos 1 a 3 son
+$O(\sum_{F^*}p^4)$ y $O(h\sum_{F^*}(p^3+hp^2))$, y el del punto~4 es $O(h^4\sum_{M'}p)$. Para el
+punto~5, $-\log(1-u)-u+\tfrac12c_2(u)=-\tfrac23u^3+O(u^4)$; los términos $\tfrac12c_2(p_0)$ y
+$\tfrac12\log(1-\tau_0^2/(m_rm_c))$ aportan $-\tfrac12p_0^2+O(h^3)$ cada uno, y los logaritmos de las dos
+masas dan $-\tfrac14(\mu_r^2+\mu_c^2)+O(h^3)$. Para el punto~6, $D(\ell_2'\tau)$ y $D^2(\ell_2'\tau)$ son
+$O(p^2)$ y $(\ell_2'-p)\tau=O(p^3)$. Para el punto~7, con $s=a_x^\top\xi$,
+\[
+ \Delta p-\tau s-b=O(ph^3),\qquad \Delta\varsigma-\dot\varsigma\tau u=O(p^2h^2),\qquad
+ \Delta\varsigma-\dot\varsigma\Delta p-\tfrac12\ddot\varsigma(\tau u)^2=O(p^2h^3),
+\]
+y se suma usando $\dot\varsigma=O(p)$, $\dot\varsigma-2p=O(p^2)$, $\alpha=O(h)$ y $|s-u|=O(h^2)$. Para
+el punto~8 el error en la diagonal es $O(h^2\sum_{x\in i}p_x^2)=O(h^3)$ por línea y $O(ph^2)$ por
+entrada fuera de la diagonal, luego $\|W-W_0\|_{\rm HS}=O(h^2)$; como $\|W\|_{\rm HS}=O(h)$, la traza
+cuadrática cambia en $O(h^3)$, y la cola del logaritmo es $O(h^3)$ por la cota espectral. Los puntos 9
+y 10 se siguen de $-\log(1+x)+x=\tfrac12x^2+O(x^3)$ y de $\hat c_{e_0}=O(h)$. Para el punto~11,
+$\dot c_2+\dot\tau(2+\alpha)-2=\alpha+2p+6p^2+2p\alpha+O(p^3+p^2|\alpha|)$, y las sumas se controlan con
+$\sum_{M'}\tau|\eta|\le C$, $|\eta-1|\le Ch$ en $F^*$ y $\tau_0|\mathsf G_0|=O(h)$.
+\input{partes/torres_menor_variacion}

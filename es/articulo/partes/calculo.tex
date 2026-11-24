@@ -55,7 +55,7 @@ $a,b$ se cortan en una casilla y cero en las demás entradas. Con la incidencia 
 $\mathcal I_{ea}=\mathbf 1_{\{e\in a\}}$, la matriz completa es
 \[
  N_h^{\rm inc}=\mathcal I^{\mathsf T}\operatorname{diag}(h)\mathcal I
-              =N_h^\circ+\operatorname{diag}(P^{\mathsf T}h).
+              =N_h^\circ+\operatorname{diag}(\mathcal I^{\mathsf T}h).
 \]
 Su entrada $(a,a)$ suma $h$ sobre la línea $a$. Los productos matriciales suman recorridos por
 incidencias de líneas. La traza identifica el último índice con el primero y las matrices diagonales
@@ -79,13 +79,13 @@ Richardson~\cite{richardson}. Si hay suficientes mallas nuevas para $Q_2$, se aj
 separado las clases $0$ y $12$ módulo
 $24$, con potencias $2,4,6$. Se toma la media de las dos ordenadas en el origen. Su
 diferencia, un cambio de la malla mínima y el mayor residuo del ajuste miden la sensibilidad. Las
-barras resultantes tienen estado [N]. Certificar esta extrapolación exigiría acotar el resto espacial
+barras resultantes tienen estado \status{N}. Certificar esta extrapolación exigiría acotar el resto espacial
 en cada clase.
 
 Para la suma de frontera el análisis numérico da
 \[
  J=-8{,}2386091222\ \pm5{,}0\cdot10^{-9},\qquad
- P_0=-7{,}7933777386\ \pm5{,}0\cdot10^{-9}\qquad\text{[N]}.
+ P_0=-7{,}7933777386\ \pm5{,}0\cdot10^{-9}\qquad\text{\status{N}}.
 \]
 Para $J$ se suma una orientación del par y se incluye la otra por simetría. Al añadir
 $P_T=0{,}4452313836$ se obtiene $P_0$. La interacción del cuadrado entra por separado con signo
@@ -108,29 +108,42 @@ Para obtener el valor numérico de $\cerr$, la réplica forma la serie del $\num
 $d$ y $\mathcal V+F$ en los 32 puntos del círculo (17 independientes por conjugación).
 Evalúa $\numerr/x^2$ en seis nodos de $[0{,}03;0{,}06]$ y veinte de $[0{,}06;1]$. Como cotejo calcula
 también la contribución de $\numerr_F/x^2$ con la misma serie y ambas reglas. La fórmula de los extremos,
-evaluada con los datos de la réplica, menos esa integral numérica da $-3{,}77\cdot10^{-13}$ [N].
-La tabla da el presupuesto empírico [N] de la evaluación. Para los nodos y $P_0$ se usa la
+evaluada con los datos de la réplica, menos esa integral numérica da $-3{,}77\cdot10^{-13}$ \status{N}.
+La tabla da el presupuesto empírico \status{N} de la evaluación. Para los nodos y $P_0$ se usa la
 sensibilidad al refinamiento de la malla. Las dos últimas filas indican el alcance de sus cotas.
 
 \begin{center}\small
 \begin{tabular}{lr}
-Origen & Presupuesto empírico [N]\\ \hline
+Origen & Presupuesto empírico \status{N}\\ \hline
 Datos nodales del panel de veinte puntos & $2{,}8\cdot10^{-8}$\\
 Datos del círculo de radio $0{,}03$ & $1{,}4\cdot10^{-8}$\\
 Valor de frontera $P_0$ & $5{,}0\cdot10^{-9}$\\
 Datos nodales del panel de seis puntos & $2{,}3\cdot10^{-9}$\\
-Serie y cuadratura de $\numerr_6/x^2$ [D si C] & $8{,}74\cdot10^{-10}$\\
-Error absoluto del valor de $S$ usado [O] & $7{,}044\cdot10^{-10}$
+Serie y cuadratura de $\numerr_6/x^2$ \status{D si C} & $8{,}74\cdot10^{-10}$\\
+Error absoluto del valor de $S$ usado \status{O} & $7{,}044\cdot10^{-10}$
 \end{tabular}
 \end{center}
 Para $S=15{,}6334582804$ se ha tomado la mayor distancia a los extremos certificados de la
 Sección~\ref{sec:numcert}. El semiancho certificado de $P_T$ es aproximadamente
-$9{,}1\cdot10^{-4}$ [O]. La fila de $P_0=P_T+J$ mide la variación observada en malla [N].
+$9{,}1\cdot10^{-4}$ \status{O}. La fila de $P_0=P_T+J$ mide la variación observada en malla \status{N}.
 
 El cálculo da $0{,}4055003786$. Las mayores contribuciones al error proceden de los valores en el
 panel de veinte puntos y en el círculo. La combinación cuadrática de los indicadores es
 $3{,}2\cdot10^{-8}$ y la suma lineal es $5{,}1\cdot10^{-8}$ con la cota de $S$.
 Al cambiar el ajuste de $Q_2$, el resultado varió
 entre $-3{,}7\cdot10^{-9}$ y $+7{,}6\cdot10^{-9}$ respecto de la referencia. Con estos controles empíricos
-se comunica $0{,}40550038\pm3\cdot10^{-8}$ [N], con la estimación conservadora
-$0{,}4055004\pm2\cdot10^{-7}$ [N].
+se comunica $0{,}40550038\pm3\cdot10^{-8}$ \status{N}, con la estimación conservadora
+$0{,}4055004\pm2\cdot10^{-7}$ \status{N}.
+
+Redondeados a ocho decimales, los términos de~\eqref{eq:main} en esta evaluación son los siguientes
+\status{N}. La integral se da como el total menos los demás términos, y la suma lleva una cancelación
+de casi dos órdenes de magnitud.
+\begin{center}\small\begin{tabular}{lr}
+Término & Valor\\ \hline
+$F(1)-\tfrac1{12}$ & $-0{,}08333333$\\
+$\int_0^1\numerr(x)x^{-2}\,dx$ & $23{,}91566973$\\
+$P_T$ & $0{,}44523138$\\
+$J=-B_2+L_2$ & $-8{,}23860912$\\
+$-S$ & $-15{,}63345828$\\ \hline
+$\cerr$ & $0{,}40550038$
+\end{tabular}\end{center}

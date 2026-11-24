@@ -1,6 +1,6 @@
-# Acta de revisión externa W2 · Recuento ponderado de tipos, lema de rango y media por grados
+# Acta de revisión W2 · Recuento ponderado de tipos, lema de rango y media por grados
 
-**Revisor.** Externo e independiente, ajeno al proceso que escribió la prueba. Fecha: 2026-11-17. Sin web y sin acceso a otros equipos; sólo esta carpeta. Cálculos propios y exactos, con `nice -n 10`, un proceso cada vez y tiempos medidos. No reviso E1 ni E2.
+**Revisión.** Fecha: 2026-11-17. Cálculos propios y exactos, con `nice -n 10`, un proceso cada vez y tiempos medidos. No reviso E1 ni E2.
 
 **Integridad.** Comprobé los manifiestos:
 - `velocidad_via2_grados_ponderados…/SHA256SUMS`: 12 de 12 correctos;

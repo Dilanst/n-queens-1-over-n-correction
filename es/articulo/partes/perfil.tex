@@ -19,11 +19,12 @@ Los productos de operadores se definen por integración. Ponemos
 \]
 Aquí \(\langle f\rangle=\int_{[0,1]^2} f(r,q)\,dr\,dq\).
 Las potencias dentro de estos promedios son potencias puntuales de núcleos.
-\begin{align*}
- F(x)={}&\tfrac12 j_0^2+\operatorname{tr}(T^2)-\tfrac32j_0-\tfrac32\int_0^1 j(r)^2\,dr\\
- &+\langle j(r)(\centrado+Y_{\rm T}-T)(r,q)j(q)\rangle\\
- &-\tfrac23\langle T^3\rangle+2\langle \centrado Y_{\rm T}^2\rangle+\tfrac23\langle Y_{\rm T}^3\rangle .
-\end{align*}
+\begin{align}
+ F(x)={}&\tfrac12 j_0^2+\operatorname{tr}(T^2)-\tfrac32j_0-\tfrac32\int_0^1 j(r)^2\,dr\notag\\
+ &+\langle j(r)(\centrado+Y_{\rm T}-T)(r,q)j(q)\rangle\notag\\
+ &-\tfrac23\langle T^3\rangle+2\langle \centrado Y_{\rm T}^2\rangle+\tfrac23\langle Y_{\rm T}^3\rangle
+ .\label{eq:F-def}
+\end{align}
 En particular \(\centrado=0\) para \(x=1\), lo que da \(F(1)=0\).
 \paragraph{Prefactor de líneas.}
 Para \(x>0\) usemos una malla de puntos medios de lado par \(m\); sean \(\familias(z)\) las cuatro líneas
@@ -44,12 +45,12 @@ Con \(\rho\) también para la matriz diagonal, definimos
  \theta_l=3\eta_l s_l-\sum_h K_{lh}^2\rho_h .
 \end{align*}
 Sea \([f]_m=m^{-2}\sum_z\nu_1(z)f(z)\). El prefactor de líneas del continuo es el límite de
-\begin{align*}
+\begin{align}
  \mathcal V_m(x)={}&4[W^2]_m
- -\tfrac32\Big[W\sum_{l,h\in \familias(z)}(L_0)_{lh}\Big]_m\\
+ -\tfrac32\Big[W\sum_{l,h\in \familias(z)}(L_0)_{lh}\Big]_m\notag\\
  &-\tfrac32\Big[W\sum_{l\in \familias(z)}\theta_l\Big]_m
- +\frac{9}{4m}\sum_l\eta_l s_l^2 .
-\end{align*}
+ +\frac{9}{4m}\sum_l\eta_l s_l^2 .\label{eq:V-def}
+\end{align}
 La suma sobre \(l,h\) es ordenada e incluye su diagonal. El valor en cero se obtiene por
 continuación desde \(x>0\). El Apéndice~\ref{app:interior} identifica los términos de
 inserción de \(d(x)\) con este mismo perfil y la misma convención de paridad.

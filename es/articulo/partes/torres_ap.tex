@@ -1,6 +1,6 @@
 \section{El permanente y el predictor de torres}\label{app:torres}
 \label{app:rook}
-\paragraph{La reducción G1 [D].}
+\paragraph{La reducción G1 \status{D}.}
 En la comparación de $\operatorname{per}M$ con $\operatorname{per}M_e$ cambian tanto el tamaño
 como el escalado bistocástico. Separamos el error $g_T$ en dos cantidades que podemos calcular
 en un mismo escalado. El vector de incidencia $a_e$ tiene un uno en la fila y otro en la columna
@@ -15,6 +15,11 @@ Con sumas sobre las casillas permitidas, la normalización en ambos extremos de 
          -\tfrac12\log\operatorname{pdet} S_T+\tfrac12\log(4\pi k).
 \end{aligned}
 \]
+El funcional $H_T$ es el opuesto de la energía libre de Bethe del permanente, cuyo mínimo sobre las
+matrices doblemente estocásticas define el permanente de Bethe~\cite{vontobel,cy}. El permanente de
+Bethe acota inferiormente al permanente~\cite{gurvits} (por la desigualdad de
+Schrijver~\cite{schrijver}) y dista de él a lo sumo un factor $2^{k/2}$~\cite{ar}; véanse
+en~\cite{np} correcciones estructurales recientes.
 Escalar las filas por $u_i$ y las columnas por $v_j$ incrementa $H_T$ y el logaritmo del
 permanente en las mismas sumas de logaritmos. Los demás términos dependen de $p$, invariante
 bajo este escalado. Así $g_T(M)=g_T(P)$. Para una matriz bistocástica $D$ de tamaño $K$, defina
@@ -27,7 +32,7 @@ El logaritmo del permanente se cancela exactamente en $\Delta=g_T(M)-\mathcal E(
 cálculos. Para $\mathcal E(P)$ hay que hallar la primera corrección al determinante principal
 del permanente. Para $\Delta$ basta desarrollar los términos explícitos de la normalización.
 
-\paragraph{La estimación estática $(L^*)$ [D].}
+\paragraph{La estimación estática $(L^*)$ \status{D}.}
 El determinante principal en la clase difusa con brecha se obtiene en~\cite{dw}. El desarrollo
 de McCullagh~\cite{mcc} identifica correcciones formales y la estimación de Li~\cite{li} trata
 perturbaciones de norma de línea sublineal. Aquí necesitamos que, al extraer el coeficiente de
@@ -94,3 +99,6 @@ el coeficiente del error $g_T$ falta sumar a esta expresión la contribución de
 \input{partes/torres_estabilidad}
 \input{partes/torres_incrementos}
 \input{partes/torres_pares}
+\input{partes/torres_insercion}
+\input{partes/torres_dos_casillas}
+\input{partes/torres_menor_lejano}

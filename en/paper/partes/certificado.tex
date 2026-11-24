@@ -6,22 +6,22 @@ trial for the explicit rows. For the new candidate we used a piecewise polynomia
 with rational coefficients and 16 panels per unit. We enclosed its residual in the equations over
 the entire domain. Coercivity in logarithmic variables and identification with the physical
 solution turn this residual into uniform radii of $2.086\cdot10^{-15}$ for the axial factor and
-$4.248\cdot10^{-16}$ for the vacancy [O]. Each row must use the radii of the candidate it
+$4.248\cdot10^{-16}$ for the vacancy \status{O}. Each row must use the radii of the candidate it
 evaluates.
 
-\paragraph{From the profile to nodal values [O].}
+\paragraph{From the profile to nodal values \status{O}.}
 The 43 distinct nodes in the calculation comprise 26 real Gauss nodes and 17 representatives of
 the 32-point circle. We enclosed $G_{\rm cof}, f_{4,\rm expl}, f_{2F}$ and the moment $T_1$ at all
-43 nodes. The square contribution $C_{3,\rm cuad}$ also has enclosures at these points. On the
+43 nodes. The square contribution $C_{3,\rm sq}$ also has enclosures at these points. On the
 real axis we also enclosed nested moments and the explicit part of $\mathcal V$. For the two
 coincidences $\Delta_1,\Delta_2$ we obtained norm bounds. Meeting the tolerances used by the
 quadrature also requires controlling these two contributions and the rows containing the resolvent
 with sufficient precision.
 
-\paragraph{Boundary values [O].}\label{par:intervalos-frontera}
+\paragraph{Boundary values \status{O}.}\label{par:intervalos-frontera}
 For $S$, symmetry and subdivision along the folds of the profile reduce the integral to 27
 tetrahedra. Polynomial envelopes, verified Gauss nodes, an analytic remainder and outward
-rounding~\cite{mkc} give
+rounding~\cite{mkc,tucker} give
 \[
  15.6334582797746\le S\le 15.6334582811044 .
 \]
@@ -43,7 +43,7 @@ $10^{-4}$ were allocated to that node, the half-width for $Q_2$ would have to be
 $3.4\cdot10^{-4}$. The integration retained both diagonal parities and the signs of the 17 trace
 contributions after cancellation. We started from a certified model of $L_0$ with 256 panels per
 unit. For integration we grouped them into 16 panels per unit and used 512 centers. The full
-continuum integral was enclosed in $[-49913.764054;50371.535812]$ [O], with a half-width of about
+continuum integral was enclosed in $[-49913.764054;50371.535812]$ \status{O}, with a half-width of about
 $5.0\cdot10^4$. The calculation used 51.27 CPU seconds.
 
 Would ungrouping the panels suffice? In the trace $S_{13}$, the two axial orientations enter with
@@ -51,7 +51,8 @@ the same sign. Each contains two terms from the row--column block of $L_0$, with
 The smallest width among the $65536$ entries in this block was $w=108349/131072$. Both axial
 densities have mass one. After multiplication by the prefactor $1/4$, a separate interval
 evaluation of this trace leaves a half-width of at least $w/2>0.41$, even if all the original
-panels are ungrouped. The minimum in the table is certified [O]. The lower bound [D] applies to
+panels are ungrouped. The minimum in the table is certified \status{O}. The lower bound \status{D}
+applies to
 that table when $S_{13}$ is evaluated separately. The identities for the physical kernel may
 constrain its entries more tightly.
 

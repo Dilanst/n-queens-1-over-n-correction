@@ -1,7 +1,9 @@
 \begin{abstract}\phantomsection\label{sec:resumen}
 \noindent Let \(Q(n)\) be the number of ways to place \(n\) mutually nonattacking queens on an \(n\times
-n\) board. The canonical predictor \(Q_{\rm pred}(n)\) reproduces the leading term and the constant term
-of \(\log Q(n)\). We now determine the first correction to the finite predictor: the signed error
+n\) board. The canonical predictor \(Q_{\rm pred}(n)\), a finite
+formula built from the maximizer of an entropy on the board, reproduces the leading term and the constant
+term of \(\log Q(n)\); both facts come from earlier preprints by the author. We now determine the first
+correction to the finite predictor: the signed error
 \(R_Q(n)=\log\bigl(Q(n)/Q_{\rm pred}(n)\bigr)\) satisfies \(nR_Q(n)\to\cerr\). We give an explicit
 formula for this limit and obtain \(Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(1/n)\).
 
@@ -11,12 +13,18 @@ insertion, and three contributions from the board that remains at the stopping t
 contribution, that of a pair of board squares on the same diagonal, and that of the interaction between
 the two
 diagonals of a square. Comparing two stopping levels gives the limit and proves that the integral
-converges absolutely.
+converges absolutely. The proof relies on results from those preprints and is computer-assisted at two
+steps.
 
-\smallskip\noindent Evaluating the formula gives \(\cerr=0.40550038\pm3\cdot10^{-8}\) [N], with the
-conservative band \(0.4055004\pm2\cdot10^{-7}\) [N]. The sign and decimal digits of \(\cerr\) remain to
-be certified.
+\smallskip\noindent Evaluating the formula numerically gives \(\cerr\approx0.40550038\), with an empirical
+error estimate of \(3\cdot10^{-8}\) and a conservative band \(0.4055004\pm2\cdot10^{-7}\). These are
+numerical estimates, not certified enclosures: the sign and decimal digits of \(\cerr\) remain to be
+certified.
+
+\medskip\noindent
+\textbf{Keywords:} $n$-queens problem; asymptotic enumeration; permanents; rook problem;
+interval arithmetic.
+
+\noindent
+\textbf{MSC 2020:} 05A16; 60C05; 15A15.
 \end{abstract}
-
-\noindent\textbf{Keywords:} $n$-queens problem; asymptotic enumeration; permanents; rook problem;
-interval arithmetic.\quad \textbf{MSC 2020:} 05A16, 60C05, 15A15.

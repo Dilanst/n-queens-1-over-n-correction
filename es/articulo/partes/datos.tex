@@ -2,7 +2,7 @@
 Esta sección reúne los datos que acompañan al artículo, explica cómo repetir los cálculos y
 precisa qué tipo de evidencia respalda cada afirmación.
 
-\subsection{Contraste con los conteos exactos}
+\subsection{Contraste con los conteos exactos}\label{sec:conteos-exactos}
 En los tamaños estudiados, $Q(n)$ se conoce exactamente~\cite{oeis,q27}. La
 Figura~\ref{fig:counts} muestra $nR_Q(n)$ para $16\le n\le27$, calculado tomando el logaritmo
 del conteo entero y restando, antes de multiplicar por $n$, el logaritmo numérico del predictor.
@@ -15,7 +15,8 @@ son compatibles con la estimación de $\cerr$. Los conteos y los valores del pre
 \subsection{Reproducción del valor numérico}\label{sec:reproduccion}
 El suplemento contiene los resultados agregados de las mallas, los programas de análisis,
 los valores en los nodos, los intervalos y las huellas SHA256 de los archivos.
-Para repetir el análisis con Python~3 y NumPy, ejecute desde \texttt{suplemento} la siguiente orden,
+Para repetir el análisis con Python~3 y NumPy~\cite{numpy}, ejecute desde \texttt{suplemento} la siguiente
+orden,
 eligiendo un nombre de salida que todavía no exista:
 \begin{quote}
 \verb|python -B replica/reproducir_valor.py replay|
@@ -31,3 +32,9 @@ $S$, de $P_T$ y de $Q_2$ en el décimo nodo de la regla de Gauss--Legendre de ve
 con el núcleo bivariante con signo de ese nodo y una prueba rápida de las entradas. Cada
 certificado registra la precisión empleada, sus entradas y el intervalo obtenido; la
 Sección~\ref{sec:numcert} explica qué se certifica y hasta dónde.
+
+\subsection{Disponibilidad de los datos y del código}\label{sec:disponibilidad}
+El suplemento (programas, datos de las mallas, certificados por intervalos y las tablas que remiten cada
+enunciado a su fuente) está disponible en \url{https://github.com/Dilanst/n-queens-order-1-n-term}, en
+las carpetas \texttt{es/suplemento} y \texttt{en/suplemento}. Sus archivos se identifican por las
+huellas SHA256 que figuran en \texttt{SHA256SUMS}.

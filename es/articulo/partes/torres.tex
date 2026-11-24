@@ -31,7 +31,7 @@ como en el apéndice~\ref{app:rook}. En $\mathcal K$, a partir de $k_{\mathcal K
 ese punto existe y es único, con $C_p=3M_0/2$, $\gamma_A=0{,}88\gamma$ y $p_e/P_e=1+O(k^{-1})$
 en el soporte. Calculamos $L_T$ con $p$ y su primera corrección con $P$.
 
-\paragraph{La aproximación que se transporta [D].}
+\paragraph{La aproximación que se transporta \status{D}.}
 \[
    g_T(M)=\log\operatorname{per}M-L_T(M)
        =\frac{\coefT(kP)}k+R(M),\qquad |R(M)|\le Ck^{-2}.
@@ -52,7 +52,9 @@ desarrollo en el menor se toma el umbral de sus propios márgenes de difusión y
 Para usar (S), sea $r_c(N)=L_T(N_c)-L_T(N)-\log(\pi_c^{\rm der}(N)/w_c)$ el resto
 de inserción en $c$, con $\pi_c^{\rm der}=\partial_{\log w_c}L_T$. Si $N$ satisface (H),
 $e,f$ tienen filas y columnas distintas y $c$ conserva ambas fibras en $N_{ef}$, entonces
-$|r_c(N_{ef})-r_c(N)|\le C_S/k^3$. La cota de un menor lejano se aplica dos veces, con los
+$|r_c(N_{ef})-r_c(N)|\le C_S/k^3$. Es la Proposición~\ref{prop:menor-lejano}(b). En ella la cota de un
+menor lejano,
+Proposición~\ref{prop:menor-lejano}(a), se aplica dos veces, con los
 umbrales de $(C_p,\gamma_A)$ en $k$ y de $(5C_p/4,3\gamma_A/4)$ en $k-1$.
 Esta comparación de menores interviene en la marginal del apéndice~\ref{app:pair}.
 
@@ -68,3 +70,32 @@ torres que conserva el par. En la geometría física una jugada también puede v
 adicionales. Al tomar la media de llegada, el cambio del error de torres aporta $P_T$. El efecto
 de una sola línea contribuye a $J$, y las dos diagonales de un cuadrado completo producen, además,
 el término $-S$ del apéndice~\ref{app:boundary}.
+
+\paragraph{Enunciados etiquetados.} La Tabla~\ref{tab:etiquetas} enumera las estimaciones de torres con
+etiqueta, dónde se enuncia o se demuestra cada una y dónde se cita (las letras designan apéndices).
+\begin{center}\small
+\begin{tabular}{@{}L{.09\linewidth}L{.45\linewidth}L{.17\linewidth}L{.19\linewidth}@{}}
+\toprule Etiqueta & Enunciado & Se enuncia o se prueba & Se cita en\\ \midrule
+(H) & Clase estacionaria: $p_e\le C_p/k$, $\lambda_{\min}(S_T+\Pi)\ge\gamma_A$ & esta sección &
+ \ref{app:pair}\\
+G1 & $g_T(M)=\mathcal E(P)+\Delta$ & \ref{app:rook} & \ref{app:rook}\\
+$(L^*)$ & $\mathcal E(D)=\mathfrak f_{\rm e}(KD)/K+O(K^{-2})$ & \ref{app:rook} & \ref{app:rook}\\
+(T) & $g_T(M)=\coefT(kP)/k+R(M)$, $|R(M)|\le Ck^{-2}$ & esta sección, \ref{app:rook} &
+ \ref{app:signed}, \ref{app:pair}\\
+$(L^{*+})$ & Incrementos de $R_{\rm est}$: $O(k^{-3})$ en un menor, $O(k^{-4})$ en un borrado &
+ \ref{app:rook} & \ref{app:rook}\\
+$(A^+)$ & Incremento de $R_{\rm det}$ en un menor: $O(k^{-3})$ & \ref{app:rook} &
+ \ref{app:rook}, \ref{app:weights}\\
+$(D^+)$ & Incremento de $R_{\rm det}$ en un borrado: $O(k^{-4})$ & \ref{app:rook} & \ref{app:rook}\\
+$(T^+)$ & Incrementos de $R$: $O(k^{-3})$ en un menor, $O(k^{-4})$ en un borrado &
+ esta sección, \ref{app:rook} & \ref{app:boundary}, \ref{app:pair}\\
+(S) & $|r_c(N_{ef})-r_c(N)|\le C_S/k^3$ & esta sección, \ref{app:insercion} & \ref{app:pair}\\
+(R0) & $\pi^{\rm ex}-\pi_1=O(k^{-4})$ & \ref{app:pair} & \ref{app:boundary}, \ref{app:pair}\\
+(R1) & Una tercera casilla cambia $\pi^{\rm ex}-\pi_1$ a lo sumo en $C\varpi(E)/k^5$ &
+ esta sección, \ref{app:pair} & \ref{app:pair}\\
+(R2) & $|D_r|\le C\varpi(E)/k^5$ & \ref{app:pair} & \ref{app:pair}\\
+\bottomrule
+\end{tabular}
+\refstepcounter{table}\label{tab:etiquetas}\par\smallskip
+\textbf{Tabla \thetable.} Enunciados etiquetados del problema de torres.
+\end{center}

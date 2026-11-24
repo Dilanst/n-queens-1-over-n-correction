@@ -1,0 +1,62 @@
+\paragraph{Tableros residuales y su predictor~\cite[\S2 y \S6.1]{tc}.} El \emph{tablero ordinario} es el
+tablero usual de \(n\times n\), vacío al comienzo. Un \emph{tablero residual} \(B\) es lo que deja de él
+una colocación parcial de reinas sin ataques: conserva las coordenadas originales y consta de las \(m\)
+filas vacías y las \(m\) columnas vacías. Una diagonal de cualquiera de las dos familias está
+\emph{libre} si no contiene ninguna reina. El \emph{soporte} \(E(B)\) es el conjunto de las casillas que
+están en una fila vacía y en una columna vacía y cuyas dos diagonales están libres; son las casillas
+disponibles. Escribimos \(Q(B)\) para el número de soluciones que prolongan la colocación y \(B+e\) para
+el hijo que resulta de poner una reina en \(e\in E(B)\). El tablero inicial \(B_n\) es el residual de la
+colocación vacía, de modo que \(Q(B_n)=Q(n)\). Para pesos \(p=(p_e)_{e\in E(B)}\) y una diagonal libre
+\(f\), sean \(\ell_f=\sum_{e\in f}p_e\) y \(h_f=1-\ell_f\). La entropía de Bethe de \(B\) es
+\begin{equation}\label{eq:bethe-residual}
+ H_B(p)=-\sum_e p_e\log p_e+3\sum_e(1-p_e)\log(1-p_e)-\sum_f h_f\log h_f
+\end{equation}
+en el dominio \(0<p_e<1/4\), \(h_f>0\), con masas de fila y de columna iguales a uno. Allí \(-H_B\) es
+estrictamente convexa, de modo que \(H_B\) tiene a lo sumo un punto estacionario, el \emph{punto de
+Bethe} de \(B\). Sea \(\mathcal A\) la matriz de incidencia de las casillas de \(E(B)\) con las líneas
+de \(B\), a saber, sus filas vacías, sus columnas vacías y las diagonales libres que cortan a \(E(B)\),
+y sea \(\tau_4(u)=u(1-u)/(1-4u)\). El operador de líneas es
+\[
+ S_B=\operatorname{diag}(0_R,0_C,h)+\mathcal A^{\mathsf T}\operatorname{diag}(\tau_4(p_e))\mathcal A .
+\]
+Cuando el grafo bipartito de filas y columnas del soporte es conexo, su núcleo está generado por
+\((\mathbf1_R,-\mathbf1_C,0)\). El predictor de \(B\) es entonces
+\begin{equation}\label{eq:predictor-residual}
+ L(B)=H_B(p)-\tfrac12\sum_e\bigl[\log(1-4p_e)-4\log(1-p_e)\bigr]-\tfrac12\log\operatorname{pdet}S_B
+      +\tfrac12\log(4\pi m),
+\end{equation}
+evaluado en el punto de Bethe, donde \(\operatorname{pdet}\) es el producto de los autovalores positivos.
+Suprimir en \(S_B\) la fila y la columna de una misma línea axial da un cofactor igual a
+\(\operatorname{pdet}S_B/(2m)\); usado con \(\tfrac12\log(2\pi)\), como en~\cite[\S\S6.1 y 7.1]{pc}, da
+el mismo \(L(B)\). En el tablero inicial y para \(n\) grande, \(L(B_n)=\log Q_{\rm pred}(n)\), el
+predictor del Apéndice~\ref{app:predictor}.
+
+\paragraph{Historias y las dos leyes~\cite[\S2]{tc}.} Se sortea uniformemente un orden \(\sigma\) de las
+filas. Bajo la ley uniforme \(\mu\) se elige una solución uniforme, de manera independiente de
+\(\sigma\), y se revelan sus reinas en ese orden. Bajo la ley adaptativa \(\nu\), dada la siguiente fila
+\(i\), de casillas \(R_i\), se elige la casilla \(e\in R_i\cap E(B)\) con probabilidad
+\[
+ \nu_B(e\mid i)=\frac{\exp L(B+e)}{\sum_{e'\in R_i\cap E(B)}\exp L(B+e')},\qquad
+ \rho(B,i)=\sum_{e'\in R_i\cap E(B)}\exp\{L(B+e')-L(B)\}.
+\]
+Una \emph{historia} es la sucesión de tableros que resulta, junto con el orden de las filas. Un tablero
+con \(m\) filas vacías tiene tamaño \(m\).
+
+\paragraph{La regla de parada~\cite[def.~2.2]{tc}.} Se fijan \(0<\delta<1\), \(M=\lceil\delta n\rceil\) y
+un entero \(K\) con \(K_0\le K\le M\). El umbral \(K_0\), las constantes y las tolerancias son los
+de~\cite[\S5.4]{tc}. Sea \(B\) un tablero de una historia, de tamaño \(m\).
+\begin{enumerate}
+\item[(a)] \emph{Tramo macroscópico}, \(m\ge M\). El tablero es \emph{regular} si la discrepancia de la
+historia al llegar a él, definida en~\cite[\S4.2]{tc} con la partición de paso \(a_{\rm mac}\)
+de~\cite[prop.~4.11]{tc}, es menor que el radio \(\varrho_{\rm mac}\) de esa proposición.
+\item[(b)] \emph{Corte}, \(m=M\). Además, los observables de~\cite[\S5.3]{tc} están dentro de sus
+tolerancias de entrada y \(D_{\max}(M)<\alpha_{\rm hist}M\).
+\item[(c)] \emph{Tramo mesoscópico}, \(K\le m<M\). El tablero es regular si su punto de Bethe existe y
+pertenece a la clase interior: cumple las cotas de difusión, vacancia y
+brecha~\eqref{eq:clase-importada} con las constantes fijadas en~\cite[\S5.4]{tc}, y la masa de cada
+diagonal es a lo sumo \(\epsilon\).
+\end{enumerate}
+La \emph{primera salida} de una historia es su primer tablero no regular; su padre es regular. La
+historia se detiene en la primera salida o, si no la hay, al llegar al tamaño \(K\). El suceso de
+permanencia consiste en que no haya salida: todos los tableros hasta el de tamaño \(K\), incluido éste,
+son regulares. En este artículo el suelo es \(K=j=\lfloor bn\rfloor\) (Sección~\ref{sec:signedmap}).

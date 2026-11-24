@@ -1,7 +1,9 @@
 \begin{abstract}\phantomsection\label{sec:resumen}
 \noindent Sea \(Q(n)\) el número de formas de colocar \(n\) reinas sin ataques mutuos en un tablero
-de \(n\times n\). El predictor canónico \(Q_{\rm pred}(n)\) reproduce el término principal y la
-constante de \(\log Q(n)\). Determinamos ahora la primera corrección al predictor finito:
+de \(n\times n\). El predictor canónico \(Q_{\rm pred}(n)\), una fórmula finita construida a partir del
+maximizador de una entropía en el tablero, reproduce el término principal y la
+constante de \(\log Q(n)\); ambos hechos proceden de preprints anteriores del autor. Determinamos ahora la
+primera corrección al predictor finito:
 el error con signo \(R_Q(n)=\log\bigl(Q(n)/Q_{\rm pred}(n)\bigr)\) satisface
 \(nR_Q(n)\to\cerr\). Damos una fórmula explícita para este límite y obtenemos
 \(Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(1/n)\).
@@ -12,13 +14,19 @@ aleatorio. El límite reúne una corrección inicial, la integral del defecto me
 inserción y tres contribuciones del tablero que queda al detener el proceso: la de las torres, la de
 un par de casillas en una misma diagonal y la de la interacción de las dos diagonales de un
 cuadrado. Comparar dos niveles de parada da el límite y prueba que la integral converge
-absolutamente.
+absolutamente. La demostración se apoya en resultados de esos preprints y está asistida por ordenador en
+dos pasos.
 
 \smallskip\noindent
-La evaluación de la fórmula da \(\cerr=0{,}40550038\pm3\cdot10^{-8}\) [N],
-con banda conservadora \(0{,}4055004\pm2\cdot10^{-7}\) [N].
-El signo y los decimales de \(\cerr\) siguen pendientes de certificación.
-\end{abstract}
+La evaluación numérica de la fórmula da \(\cerr\approx0{,}40550038\), con una estimación empírica del
+error de \(3\cdot10^{-8}\) y una banda conservadora \(0{,}4055004\pm2\cdot10^{-7}\). Son estimaciones
+numéricas y no intervalos certificados: el signo y los decimales de \(\cerr\) siguen pendientes de
+certificación.
 
-\noindent\textbf{Palabras clave:} problema de las $n$ reinas; enumeración asintótica; permanentes;
-problema de torres; aritmética de intervalos.\quad \textbf{MSC 2020:} 05A16, 60C05, 15A15.
+\medskip\noindent
+\textbf{Palabras clave:} problema de las $n$ reinas; enumeración asintótica; permanentes;
+problema de torres; aritmética de intervalos.
+
+\noindent
+\textbf{MSC 2020:} 05A16; 60C05; 15A15.
+\end{abstract}

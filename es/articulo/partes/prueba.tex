@@ -1,6 +1,8 @@
 \section{Qué se acumula antes del corte y qué queda en la frontera}\label{sec:signedmap}
 Elijamos una solución uniforme y revelemos sus reinas en un orden uniforme de las filas,
-independiente de la solución. Cuando quedan \(m\) filas, el tablero residual \(B_m\) registra las
+independiente de la solución. Revelar las filas en orden aleatorio es el recurso del método de la
+entropía~\cite{rad,ll}, que da las cotas superiores de \(Q(n)\) en~\cite{luria,simkin}; aquí se siguen
+las mismas historias bajo dos leyes. Cuando quedan \(m\) filas, el tablero residual \(B_m\) registra las
 casillas disponibles. En su máscara binaria \(M_m\) cabe un problema más sencillo: colocar una
 torre por fila y columna. Su conteo, \(\operatorname{per}M_m\), ya incorpora las restricciones
 que imponen las piezas reveladas. Para obtener \(Q(B_m)\) falta exigir que las nuevas piezas
@@ -54,7 +56,9 @@ sean \(X\) e \(Y\) los indicadores de disponibilidad de \((r,q+h)\) y \((r+h,q)\
 respectivamente. La Figura~\ref{fig:frontera} muestra los cuatro casos.
 \input{figuras/frontera}
 
-Los cuatro casos se realizan en la solución \((1,3,5,7,2,4,6)\) del tablero de orden siete.
+Los cuatro casos se realizan en la solución \((1,3,5,7,2,4,6)\) del tablero de orden siete, para el
+par \(e=(1,2)\), \(f=(3,4)\) de la Figura~\ref{fig:frontera}, cuyos otros dos vértices son \((1,4)\) y
+\((3,2)\).
 Antes de revelar una reina, \(X=Y=1\). Revelar \((7,6)\) veta sólo \(Y\) entre los cuatro
 vértices y revelar \((4,7)\) veta sólo \(X\). Si se revelan ambas, siguen disponibles \(e,f\).
 

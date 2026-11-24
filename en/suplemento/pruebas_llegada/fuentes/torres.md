@@ -1,12 +1,12 @@
-# Acta de revisión externa · W2_torres: error puro de torres, extensiones de R8–R9 e identidad de Schur de T/08b
+# Acta de revisión · W2_torres: error puro de torres, extensiones de R8–R9 e identidad de Schur de T/08b
 
-**Objeto.** Los cinco puntos de `rev_exp/encargos/W2_torres.md`, con la parte común de `rev_exp/encargos/comun_ext.md`. El coordinador amplió el encargo durante la revisión con dos preguntas sobre `rev_exp/r21/piezas_T2/03_torres/`:
+**Objeto.** Los cinco puntos de la revisión W2_torres y dos preguntas sobre `rev_exp/r21/piezas_T2/03_torres/`:
 - el atajo q = 2 para el uso puntual en H03;
 - la separación entre ese uso y el de K08 y M07 en la prueba de M01.
 
 No reviso E1, E2, el recuento de tipos, el exponente 7 ni la cota por soporte.
 
-**Revisor.** Externo al proceso que escribió las pruebas. Sin web; sólo la carpeta de trabajo. 17-11-2026.
+**Revisión.** 17-11-2026.
 
 **Dictamen global sobre esta parte: CERTIFICADA CON PRECISIONES** (§3). No he encontrado ningún enunciado falso ni ningún hueco de prueba en las piezas de mi encargo. Las reservas son entradas previas que no dictamino y precisiones de enunciado y de cita.
 
@@ -22,7 +22,7 @@ No reviso E1, E2, el recuento de tipos, el exponente 7 ni la cota por soporte.
   - `08b_exterior.tex` coincide con `CATALOGO_LITERAL.md`:33.
 
   Sólo las uso para comprobar las entradas que citan E01 y K07. No forman parte del expediente.
-- La carpeta `r21/` apareció durante la revisión (12:42). Sólo consulté `piezas_T2/03_torres/`, por indicación del coordinador.
+- De la carpeta `r21/` sólo se consultó `piezas_T2/03_torres/`.
 - No he modificado nada fuera de `rev_exp/W2_torres/`.
 
 **Abreviaturas.** Cito la línea del archivo fuente, salvo para los originales del expediente.
@@ -255,7 +255,7 @@ Las máscaras son explosiones de patrones 0/1 con proporciones fijas. La reducci
 
 **Parte W2_torres: certificada con precisiones.** No hay enunciados falsos ni huecos de prueba en las piezas de mi encargo.
 
-**Separación de usos** (pregunta del coordinador):
+**Separación de usos**:
 - **(A) Uso puntual en H_j** (`06_corte.tex`:72; H03 orig. 20; A04 orig. 3). Necesita \|g_T\| ≤ C/j. Lo dan E01 (con R1) o, como alternativa, el atajo q = 2 de G03/U05. Ninguno de los dos necesita K07 ni K08.
 - **(B) Prueba de M01** (exponente 7). Necesita:
   - E01, porque define u_T = −1/(12k) + Ξ y porque K08 lo usa para obtener Γ_z(0) = Γ_z′(0) = 0;

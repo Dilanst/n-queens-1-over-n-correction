@@ -1,0 +1,119 @@
+\subsection{Rook insertion, the two-cell marginal, and a distant minor}\label{app:insercion}
+This subsection states and proves the three rook estimates quoted above: the insertion theorem behind
+$\hat c_e$ and $r_e$, its corollary for two cells, and the stability (S) of the insertion remainder under
+a distant minor. Here $M$ is a weighted mask of size $k$ whose cells are the $e$ with $w_e>0$, $H=R\sqcup
+C$ is its set of lines, $a_e\in\mathbb R^H$ is the incidence vector of $e$, $v=(\mathbf1_R,-\mathbf1_C)$ and
+$\Pi=vv^\top/(2k)$. The stationary point is written $t_e:=p_e(1-p_e)=w_e\exp(a_e^\top\theta)$ with
+$\theta\in\mathbb R^H$, unit line masses and $0<p_e<\tfrac12$. Besides $\tau_e=p_e(1-p_e)/(1-2p_e)$ we use
+\[
+ \varsigma_e=\tau_e-p_e=\frac{p_e^2}{1-2p_e},\qquad m_a=\sum_{e\in a}\tau_e=1+\mu_a,\qquad
+ \mu_a=\sum_{e\in a}\varsigma_e,
+\]
+and the function $c_2(u)=\log(1-2u)-2\log(1-u)$. The letters $\varsigma,\mu,m$ have this meaning only in
+this subsection. Hypothesis (H) with constants
+$(C_p,\gamma_A)$, $0<\gamma_A\le1$, is $p_e\le C_p/k$ for every cell and
+$\lambda_{\min}(S_T+\Pi)\ge\gamma_A$. Set
+\begin{gather*}
+ K_G=1+\frac{1+\frac76\sqrt{2C_p}}{\gamma_A},\qquad g_G=\tfrac76C_pK_G+\tfrac12K_G+\tfrac43C_p,\qquad
+ C_\delta=\tfrac7{12}(4g_G+5C_p)\bigl(\tfrac73K_G+1\bigr),\\
+ k_1=\max\Bigl\{41K_G^2C_p,\ 40g_G,\ \tfrac76(4g_G+5C_p)\bigl(\tfrac73K_G+1\bigr),\
+            \frac{34K_GC_p}{\gamma_A}\Bigr\}.
+\end{gather*}
+
+\begin{teorema}[Rook insertion]\label{teo:insercion-torres}
+Let $M$ satisfy \textup{(H)} with constants $(C_p,\gamma_A)$ and let $k\ge k_1$. For every cell $e$, with
+$\pi^{\rm der}_e=\partial_{\log w_e}L_T=p_e(1+\hat c_e)$ and
+$r_e=L_T(M_e)-L_T(M)-\log(\pi^{\rm der}_e/w_e)$,
+\[
+ |\hat c_e|\le\frac{C_\delta}{k},\qquad |r_e|\le\frac{C_r}{k^2},
+\]
+where $C_r$ depends only on $(C_p,\gamma_A)$. Equivalently, $w_ee^{L_T(M_e)-L_T(M)}=p_e(1+\hat
+c_e)e^{r_e}$. In the class $\mathcal K(w_0,w_1,M_0,\gamma)$ of Section~\ref{sec:torres}, hypothesis
+\textup{(H)} holds with $(C_p,\gamma_A)=(\tfrac32M_0,0.88\gamma)$ for $k\ge k_{\mathcal K}=
+\max(31K_{\mathcal K}^2M_0,45K_{\mathcal K}M_0)$, $K_{\mathcal K}=1+(1+2.01\sqrt{M_0})/\gamma$. Hence both
+bounds hold in $\mathcal K$ for $k\ge\max\{k_{\mathcal K},k_1(\tfrac32M_0,0.88\gamma)\}$, with constants
+depending only on $(M_0,\gamma)$.
+\end{teorema}
+\begin{proof}
+\emph{Step 1. Elementary bounds.} For $0<u\le\tfrac18$ we have $u\le\tau(u)\le\tfrac76u$ and
+$u^2\le\varsigma(u)\le\tfrac43u^2$, where $\tau(u)=u(1-u)/(1-2u)$ and $\varsigma=\tau-u$. Since
+$k\ge k_1$ gives $p_e\le C_p/k\le\tfrac18$, the line masses satisfy $1\le m_a\le\tfrac76$ and
+$0\le\mu_a\le\tfrac43C_p/k$. We write $a=\max_ep_e\le C_p/k$ and $\bar\tau=\max_e\tau_e$.
+
+\emph{Step 2. The Green matrix.} Let $G^0=(S_T+\Pi)^{-1}$. Then
+\begin{equation}\label{eq:green-torres}
+ \|G^0\|_\infty\le K_G,\qquad |G^0_{ab}-\delta_{ab}|\le\frac{g_G}{k},\qquad
+ \sum_{e'}\tau_{e'}|\mathsf G(e,e')|\le\tfrac73K_G .
+\end{equation}
+Indeed, write $S_T+\Pi=\Delta+W'$ with $\Delta=\operatorname{diag}(m_a)$. If $(S_T+\Pi)x=b$, then
+$\|x\|_2\le\sqrt{2k}\,\|b\|_\infty/\gamma_A$. Row $a$ of $W'$ consists of the entries $\tau_e$, $e\in a$,
+and of the row of $\Pi$, so $\|W'_{a\cdot}\|_2\le(\bar\tau m_a)^{1/2}+(2k)^{-1/2}$, and
+$m_a|x_a|\le|b_a|+\|W'_{a\cdot}\|_2\|x\|_2$. With $k\bar\tau\le\tfrac76C_p$ this is the first bound. From
+$\Delta G^0=I-W'G^0$ we get $|G^0_{ab}-\delta_{ab}/m_a|\le\max_c|W'_{ac}|\sum_c|G^0_{cb}|/m_a
+\le(\bar\tau+\tfrac1{2k})K_G$, and $|1/m_a-1|\le\mu_a$. Finally
+$\sum_{e'}\tau_{e'}|\mathsf G(e,e')|\le\sum_am_a|(G^0a_e)_a|\le\tfrac76\cdot2K_G$.
+
+\emph{Step 3. Dual function, Ward identities, and $\hat c_e$.} Let $u(t)=(1-\sqrt{1-4t})/2$ be the small
+root of $u(1-u)=t$ and $\phi(t)=\log(1-u(t))+2u(t)$, so that $t\phi'(t)=u(t)$. For a mask $N$ of size
+$n$ put
+\[
+ g_N(\theta)=\sum_e\phi\bigl(w_ee^{a_e^\top\theta}\bigr)-\sum_a\theta_a-2n .
+\]
+On $\{t_e(\theta)<\tfrac14\}$ it is convex, with $\nabla g_N=(\sum_{e\in a}p_e-1)_a$,
+$\nabla^2g_N=S_T$ evaluated at $\tau(\theta)$, and $g_N(\theta+sv)=g_N(\theta)$. At a stationary point,
+$-p_e\log(p_e/w_e)=p_e\log(1-p_e)-p_ea_e^\top\theta$, so $H_T(p)=\sum_e\log(1-p_e)-\sum_a\theta_a
+=g_N(\theta)=\min g_N$. Strict convexity on $v^\perp$ gives uniqueness of the stationary point.
+
+Since $S_Tv=0$, we have $G^0v=v$ and $S_TG^0=G^0S_T=I-\Pi$. As $\Pi a_e=0$, for every line $a$ and cell $e$
+\begin{equation}\label{eq:ward-torres}
+ \sum_{e'\in a}\tau_{e'}\mathsf G(e',e)=\mathbf1_{\{e\in a\}},\qquad
+ \sum_{e'}\tau_{e'}\mathsf G(e,e')=1 .
+\end{equation}
+Differentiating $p_{e'}(1-p_{e'})=w_{e'}e^{a_{e'}^\top\theta}$ and the line masses with respect to
+$\log w_e$ gives $d\theta=-\tau_eG^0a_e\,d\log w_e$ in the gauge orthogonal to $v$, and
+\[
+ \frac{\partial p_{e'}}{\partial\log w_e}=\tau_e\delta_{ee'}-\tau_e\tau_{e'}\mathsf G(e,e'),
+\]
+whose sum over each line vanishes by~\eqref{eq:ward-torres}. By the previous paragraph $\partial
+H_T/\partial\log w_e=p_e$. Moreover $\partial\log\det(S_T+\Pi)=\sum_{e'}\dot\tau(p_{e'})\mathsf
+G(e',e')\,\partial p_{e'}$ and $\partial\sum_{e'}c_2(p_{e'})=\sum_{e'}\dot c_2(p_{e'})\,\partial p_{e'}$; a
+dot denotes the derivative
+with respect to $u$, so that $\dot\tau=\kappa_2$ and $\dot c_2=-2\ell_2'$ in the notation of
+Proposition~\ref{prop:una-linea}.
+With $\varepsilon_{e'}=\dot c_2(p_{e'})+\dot\tau(p_{e'})\mathsf G(e',e')-2$, where the constant $2$ may be
+subtracted because the derivatives of $p$ sum to zero, we obtain
+\begin{equation}\label{eq:chat-torres}
+ \pi_e^{\rm der}=p_e+\tfrac12\tau_eX_e,\qquad \hat c_e=\frac{\tau_e}{2p_e}X_e,\qquad
+ X_e=\sum_{e'}\tau_{e'}\varepsilon_{e'}\mathsf G(e,e')-\varepsilon_e .
+\end{equation}
+This is the expression for $\hat c_c$ given before Lemma~\ref{lem:linea-inversa}. Multiplying the weights
+of a line by a constant does not change $p$ and adds its logarithm to $L_T$; hence
+$\sum_{e\in a}p_e\hat c_e=0$ on every line. By~\eqref{eq:green-torres}, $|\mathsf G(e,e)-2|\le4g_G/k
+\le\tfrac1{10}$. Expanding $\dot c_2$ and $\dot\tau$ gives $\varepsilon_e=(\mathsf G(e,e)-2)+2p_e+\tilde
+\varepsilon_e$ with $|\tilde\varepsilon_e|\le12p_e^2+3p_e|\mathsf G(e,e)-2|$, so
+$|\varepsilon_e|\le(4g_G+5C_p)/k$. Then~\eqref{eq:green-torres} gives
+$|X_e|\le(4g_G+5C_p)(\tfrac73K_G+1)/k$, and $\tau_e/(2p_e)\le\tfrac7{12}$ gives $|\hat c_e|\le
+C_\delta/k$.
+
+\emph{Step 4. The child.} Fix $e_0=(r,c)$ and write $p_0,\tau_0,\varsigma_0$ for its values. Let
+$J=\{r,c\}$, $I=H\setminus J$, let $F$ be the set of cells in row $r$ or column $c$,
+$F^*=F\setminus\{e_0\}$, and for $e\in F^*$ let $\lambda(e)\in I$ be its line not shared with $e_0$. The
+child $M'=M_{e_0}$ has the cells outside $F$, the lines $I$, and $\Pi'=v_Iv_I^\top/(2k-2)$; primes denote
+its stationary data, and $\Delta p_e=p'_e-p_e$. Restricting $\theta$ to $I$ leaves in $M'$ the mass
+defect $b=\nabla g_{M'}(\theta|_I)$, with $b_{\lambda(e)}=-p_e$ for $e\in F^*$ and $b_a=0$ on the
+other lines; $b\perp v_I$. Let $S'(\tau|)$ be the operator of the child with the weights of the parent
+and $\xi_N=-(S'(\tau|)+\Pi')^{-1}b$ the Newton step. For $x\perp v_I$, extended by zero to $\tilde x\perp
+v$, we have $x^\top S'(\tau|)x=\tilde x^\top S_T\tilde x-\sum_{e\in F^*}\tau_ex_{\lambda(e)}^2
+\ge(\gamma_A-\bar\tau)|x|^2$, and the masses of $S'(\tau|)$ are at least $1-\bar\tau$. Step~2 applied to
+$S'(\tau|)$ gives $\|(S'(\tau|)+\Pi')^{-1}\|_\infty\le1.1K_G$. On the ball of radius $\tfrac1{16}$ the
+Hessian $\nabla^2g_{M'}$ is Lipschitz in the supremum norm with constant at most $9$, because
+$dp/d\sigma=\tau$ and $d\tau/d\sigma\le1.8\tau$ along $t\mapsto te^\sigma$. Since $41K_G^2a\le1$, the
+Newton--Kantorovich theorem on $v_I^\perp$ with the supremum norm gives a unique stationary point
+$\theta'=\theta|_I+\xi$ of the child, $\xi\perp v_I$, with
+\begin{equation}\label{eq:newton-hijo}
+ \|\xi\|_\infty\le3K_Ga,\qquad \|\xi-\xi_N\|_\infty\le61K_G^3a^2 .
+\end{equation}
+The displacements $s_e=a_e^\top\xi$ satisfy $|s_e|\le6K_Ga\le\tfrac3{41}$, so $p'_e\le1.09p_e$ and
+$\tau'_e\ge0.9\tau_e$. Hence the child satisfies \textup{(H)} at size $k-1$ with constants
+$(\tfrac54C_p,\tfrac34\gamma_A)$.
+\input{partes/torres_insercion_prueba}

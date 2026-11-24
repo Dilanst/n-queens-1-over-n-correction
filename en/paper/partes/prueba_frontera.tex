@@ -4,15 +4,18 @@ once, we start with the correction for one pair and then combine both pairs in t
 denotes the stationary \emph{rook} occupancy on the binary mask. For an available diagonal pair
 \(\parmar=\{e,f\}\), let \(\pi^{\rm ex}_{\parmar}\) be its joint probability in a uniform rook placement.
 Set \(\pi^T_{\parmar}=\exp[L_T(M_{\parmar})-L_T(M)]\), where \(M_{\parmar}\) deletes its four row and
-column endpoints. With \(\mathsf G(e,f)\) the cross response of the stationary rook point and \(\chi_e\)
-its single-square relative correction, define \[
- \pi_{1,\parmar}=p_ep_f(1-\mathsf G(e,f)+\chi_e+\chi_f),\qquad
+column endpoints. With \(\mathsf G(e,f)\) the cross response of the stationary rook point and \(\hat
+c_e\) its single-square
+relative correction (both as in Appendix~\ref{app:rook}), define \[
+ \pi_{1,\parmar}=p_ep_f(1-\mathsf G(e,f)+\hat c_e+\hat c_f),\qquad
  X_{\parmar}=p_ep_f(p_e+p_f)\mathsf G(e,f).
 \] For a single pair the square correction is \(\log(1-\pi^{\rm
-ex}_{\parmar})-\log(1-\pi_{1,\parmar})-X_{\parmar}+O(j^{-5})\). The probabilities are \(O(j^{-2})\) and
-their difference is \(O(j^{-4})\). Integrating the logarithmic derivative gives a linearization error of
+ex}_{\parmar})-\log(1-\pi_{1,\parmar})-X_{\parmar}+O(j^{-5})\) (Corollary~\ref{cor:linea-evitacion}). The
+probabilities are \(O(j^{-2})\) and their difference is \(O(j^{-4})\) by (R0). Integrating the
+logarithmic derivative gives a linearization error of
 \(O(j^{-6})\). The full square contributes the corrections for its two pairs and an additional term
-\(-3\prod_{s\in\square}p_s+O(j^{-5})\). There are at most \(j^2(j-1)\) pairs, since each square has at
+\(-3\prod_{s\in\square}p_s+O(j^{-5})\), by~\eqref{eq:exceso-cuadrado}. There are at most \(j^2(j-1)\)
+pairs, since each square has at
 most \(2(j-1)\) neighbors and each pair has two endpoints. Thus the following quantity \(\mathcal
 M_n(b)\) differs from \(n\mathbb
  E_\mu[\Gamma;F_b]\) by \(O(n/j^2)=o_b(1)\). \begin{align*}
@@ -56,10 +59,11 @@ fiber measure \(dr\) used for the final mass \(m_f\) in Section~\ref{sec:profile
 \] \input{partes/frontera_menor_doble} \input{partes/frontera_media_pt} \paragraph{The third mean.} For
 the third mean, the square uses six distinct diagonal labels. Two of them each occur twice among the
 eight vacancy factors in \(\prod_s W_b^0(s)\). Multiplying by the six distinct vacancies and setting
-\(p_0=\nu_1\) leaves exactly \[
+\(p_0=\nu_1\) leaves exactly \begin{equation}\label{eq:S-def}
  -S=-3\int_\Omega
        \frac{\prod_{s\in\square}\nu_1(s)}
             {u_D(r-c)\,u_A(r+c+h)}\,dr\,dc\,dh .
-\] This identifies the first and third means. The second retains two pieces of mask data at the marked
+\end{equation} This identifies the first and third means. The second retains two pieces of mask data at
+the marked
 square, the indicators of its two intersections. Appendix~\ref{app:weights} computes the pair error with
 these two indicators fixed.

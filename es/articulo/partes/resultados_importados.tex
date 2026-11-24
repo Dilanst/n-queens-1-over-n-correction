@@ -1,7 +1,16 @@
 \subsection{Resultados importados}\label{sec:importados}
-En esta lista \(m\) es el tamaño residual y \(n\) el orden inicial. En un residual
-ordinario alcanzable, \(p\) denota el punto estacionario interior de Bethe en su soporte,
-con masas uno en cada fila y columna. Escribimos \(\ell_f=\sum_{e\in f}p_e\),
+En esta lista \(m\) es el tamaño residual y \(n\) el orden inicial. Las cuatro
+fuentes~\cite{pv,ef,pc,tc} son preprints del autor; cada registro de Zenodo contiene el original en
+español y una versión en inglés. En dos lugares usamos un argumento de la demostración de un resultado
+importado y no sólo su enunciado: la probabilidad condicional de un hijo bajo \(\nu\), incluido el paso
+de salida (de la demostración de~\cite[teo.~8.1]{pc}), y la cota estática en toda llegada de la clase
+exterior (de la demostración de~\cite[cor.~6.8]{tc}). Ambos se indican donde aparecen.
+
+\input{partes/importados_definiciones}
+
+\paragraph{La clase común.} En un tablero residual alcanzable desde el tablero ordinario, \(p\) denota
+su punto de Bethe: el punto estacionario interior en su soporte, con masas uno en cada fila y columna.
+Escribimos \(\ell_f=\sum_{e\in f}p_e\),
 \(h_f=1-\ell_f\) en ambas familias oblicuas. Las cotas comunes son
 \begin{equation}\label{eq:clase-importada}
  \max_e p_e\le C/m,\qquad \min_f h_f\ge\eta>0,\qquad

@@ -23,13 +23,14 @@ C_{b,v}(\eta/n+n^{-2})\) before the auxiliary exit. Placing a piece changes \(O_
 because its lines impose nonconstant affine equations. The future weights change by \(O_{b,v}(1/n)\).
 Accordingly, the increments of the stopped martingale obtained by subtracting the drift are bounded by
 \(K_{b,v}/n\). For tolerance \(\varepsilon>0\), choose \(C_{b,v}\eta<\varepsilon/4\). The accumulated
-drift is \(<\varepsilon/2\) for large \(n\). Azuma's inequality over at most \(n\) steps gives
+drift is \(<\varepsilon/2\) for large \(n\). Azuma's inequality~\cite{azuma} over at most \(n\) steps
+gives
 \(2\exp(-\varepsilon^2 n/(8K_{b,v}^2))\) for the other half of the tolerance. Add the exponentially small
 probability of exit from the auxiliary regular trajectory~\cite[§4]{tc}. The number of anchors for a
 fixed pattern is polynomial. The union bound over the anchors and the ratio \(\exp(O_b(n^{2/3}))\) for
 \(X\) when changing to \(\mu\) preserve an exponential tail at fixed precision. In the remaining mean,
 each axial label contributes \(b\) and each distinct diagonal label contributes \(U_f(b)\). The factored
-indicators retain their values.
+indicators retain their values. We call this limit the \emph{pattern law}.
 
 In particular, the sums of \(YW_b^0/j\) along live lines have margins \(1+o_{\Pr}(1)\) uniformly, and two
 live columns have \(\ge c_bj\) common neighbors. In logarithmic column potentials, the map that
@@ -64,7 +65,7 @@ the centered determinant. Their sum is \(1+\langle d-1,y\rangle-\sum_*d/2\). Sub
 solution and its constant mode gives the second identity. In the profile, the sum of the two expressions
 is \(L_s\).
 
-On the regular mask, expanding the margin inverse in \(\mathsf G,\chi_e,\chi_f\) gives \(jD=Z_{\rm
+On the regular mask, expanding the margin inverse in \(\mathsf G,\hat c_e,\hat c_f\) gives \(jD=Z_{\rm
 phys}+O_b(j^{-1})\) uniformly. Here \(Z_{\rm phys}\) is the same sum evaluated with the physical kernel
 \(j(p_{il})\), uniform measure \(1/j\), and values \(jp_{01},jp_{10}\) at the two intersections. To
 average its square, truncate the alternating walks at length \(N\). The two copies of each sum use
@@ -109,10 +110,11 @@ q_{o,s,0}C_{o,s}\,dr\,dc\,dh\). We obtain \[
  n\mathbb E_\mu[\textstyle\sum_{\{e,f\}}p_ep_f B_{\rm phys}(e,f);F_b]
  -\mathcal I_0(B_{2,s})\right|=0. \tag{F2}
 \] In the second mean of \(\mathcal M_n(b)\) in Appendix~\ref{app:boundary}, \(\eta\) enters with a
-negative sign and contains \(B_{\rm phys}+D^2/2\). Hence \[
+negative sign and contains \(B_{\rm phys}+D^2/2\). Hence \begin{equation}\label{eq:J-def}
  B_2=\mathcal I_0(B_{2,s}),\qquad L_2=-\tfrac12\mathcal I_0(L_s^2),\qquad
  J=-B_2+L_2=-\mathcal I_0(B_{2,s}+L_s^2/2).
-\] In state \(11\), the square has two available pairs. The sum in \(J\) contributes one term for the
+\end{equation} In state \(11\), the square has two available pairs. The sum in \(J\) contributes one term
+for the
 pair of orientation \(D\) and one for the pair of orientation \(A\). The third mean of \(\mathcal
 M_n(b)\) counts the same square once, by its vertex of minimum coordinates and its side length \(h>0\),
 with interaction term \(-3\prod_{z\in\square}p_z\). Its integral is \(-S\). Adding the three means gives

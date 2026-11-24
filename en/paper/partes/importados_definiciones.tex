@@ -1,0 +1,62 @@
+\paragraph{Residual boards and their predictor~\cite[\S2 and \S6.1]{tc}.} The \emph{ordinary board} is the
+usual \(n\times n\) board, empty at the start. A \emph{residual board} \(B\) is what a partial placement of
+nonattacking queens leaves of it: it keeps the original coordinates and consists of the \(m\) empty rows
+and the \(m\) empty columns. A diagonal of either family is \emph{free} if it contains no queen. The
+\emph{support} \(E(B)\) is the set of squares that lie in an empty row and an empty column and whose two
+diagonals are free; these are the available squares. We write \(Q(B)\) for the number of solutions that
+extend the placement and \(B+e\) for the child obtained by placing a queen at \(e\in E(B)\). The initial
+board \(B_n\) is the residual board of the empty placement, so \(Q(B_n)=Q(n)\). For weights
+\(p=(p_e)_{e\in E(B)}\) and a free diagonal \(f\), let \(\ell_f=\sum_{e\in f}p_e\) and \(h_f=1-\ell_f\).
+The Bethe entropy of \(B\) is
+\begin{equation}\label{eq:bethe-residual}
+ H_B(p)=-\sum_e p_e\log p_e+3\sum_e(1-p_e)\log(1-p_e)-\sum_f h_f\log h_f
+\end{equation}
+on the domain \(0<p_e<1/4\), \(h_f>0\), with unit row and column masses. There \(-H_B\) is strictly
+convex, so \(H_B\) has at most one stationary point, the \emph{Bethe point} of \(B\). Let \(\mathcal A\) be
+the incidence matrix of the squares of \(E(B)\) with the lines of \(B\), namely its empty rows, its empty
+columns, and the free diagonals that meet \(E(B)\), and let \(\tau_4(u)=u(1-u)/(1-4u)\). The line
+operator is
+\[
+ S_B=\operatorname{diag}(0_R,0_C,h)+\mathcal A^{\mathsf T}\operatorname{diag}(\tau_4(p_e))\mathcal A .
+\]
+When the bipartite graph of rows and columns of the support is connected, its kernel is spanned by
+\((\mathbf1_R,-\mathbf1_C,0)\). The predictor of \(B\) is then
+\begin{equation}\label{eq:predictor-residual}
+ L(B)=H_B(p)-\tfrac12\sum_e\bigl[\log(1-4p_e)-4\log(1-p_e)\bigr]-\tfrac12\log\operatorname{pdet}S_B
+      +\tfrac12\log(4\pi m),
+\end{equation}
+evaluated at the Bethe point, where \(\operatorname{pdet}\) is the product of the positive eigenvalues.
+Deleting from \(S_B\) the row and column of one axial line gives a cofactor equal to
+\(\operatorname{pdet}S_B/(2m)\); used with \(\tfrac12\log(2\pi)\), as in~\cite[\S\S6.1 and 7.1]{pc}, it
+gives the same \(L(B)\). On the initial board and for large \(n\), \(L(B_n)=\log Q_{\rm pred}(n)\), the
+predictor of Appendix~\ref{app:predictor}.
+
+\paragraph{Histories and the two laws~\cite[\S2]{tc}.} Draw a uniformly random order \(\sigma\) of the
+rows. Under the uniform law \(\mu\), a uniform solution is chosen independently of \(\sigma\) and its
+queens are revealed in that order. Under the adaptive law \(\nu\), given the next row \(i\), with squares
+\(R_i\), the square \(e\in R_i\cap E(B)\) is chosen with probability
+\[
+ \nu_B(e\mid i)=\frac{\exp L(B+e)}{\sum_{e'\in R_i\cap E(B)}\exp L(B+e')},\qquad
+ \rho(B,i)=\sum_{e'\in R_i\cap E(B)}\exp\{L(B+e')-L(B)\}.
+\]
+A \emph{history} is the resulting sequence of boards, together with the row order. A board with \(m\)
+empty rows has size \(m\).
+
+\paragraph{The stopping rule~\cite[Def.~2.2]{tc}.} Fix \(0<\delta<1\), \(M=\lceil\delta n\rceil\), and an
+integer \(K\) with \(K_0\le K\le M\). The threshold \(K_0\), the constants, and the tolerances are those
+of~\cite[\S5.4]{tc}. Let \(B\) be a board of a history, of size \(m\).
+\begin{enumerate}
+\item[(a)] \emph{Macroscopic range}, \(m\ge M\). The board is \emph{regular} if the discrepancy of the
+history on reaching it, defined in~\cite[\S4.2]{tc} with the partition of step \(a_{\rm mac}\)
+of~\cite[Prop.~4.11]{tc}, is smaller than the radius \(\varrho_{\rm mac}\) of that proposition.
+\item[(b)] \emph{Cut}, \(m=M\). In addition, the observables of~\cite[\S5.3]{tc} lie within their entry
+tolerances and \(D_{\max}(M)<\alpha_{\rm hist}M\).
+\item[(c)] \emph{Mesoscopic range}, \(K\le m<M\). The board is regular if its Bethe point exists and
+belongs to the inner class: it satisfies the diffusion, vacancy, and gap
+bounds~\eqref{eq:clase-importada} with the constants fixed in~\cite[\S5.4]{tc}, and the mass of each
+diagonal is at most \(\epsilon\).
+\end{enumerate}
+The \emph{first exit} of a history is its first board that is not regular; its parent is regular. The
+history stops at the first exit or, if there is none, on reaching size \(K\). The persistence event is
+that there is no exit: all boards down to size \(K\), inclusive, are regular. In this paper the floor is
+\(K=j=\lfloor bn\rfloor\) (Section~\ref{sec:signedmap}).

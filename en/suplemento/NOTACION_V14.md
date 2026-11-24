@@ -29,3 +29,5 @@ En la expansión de una línea, las mismas letras designaban matrices o escalare
 | $\Phi$ en el cálculo local de siete variables | $\phi_{\mathrm{loc}}$ | Expresión local cuya expansión se compara con $-\pi_1$. |
 
 En la prueba de reinserción del par, la Hessiana $H=R''(0)$ se escribe $\mathcal H_{\rm par}$ en la v14. [Acción y prefactor del par](../../es/articulo/partes/prueba_pesos.tex)
+
+Cambios de notación de la v15.1. La corrección relativa de una casilla, que los Apéndices D–F escribían $\chi_e$, se escribe $\hat c_e$, como en el Apéndice H. En H.4, $\varsigma_e=\tau_e-p_e$ es el $\varpi_e$ de las fuentes de torres (en el artículo $\varpi(E)=k^2p_ep_f$ designa el peso del par), $K_G$ y $g_G$ son las constantes $\mathcal M$ y $g$ de esas fuentes, $\mathsf S$ es el complemento de Schur que allí se llama $P$, y un punto sobre una función denota su derivada. En la edición inglesa los subíndices fis, tipos, opuesto, par y cuad se escriben phys, types, opp, pair y sq.

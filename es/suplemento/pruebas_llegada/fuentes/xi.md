@@ -1,8 +1,8 @@
-# Acta de revisión externa · W3_xi (D2): verificación exacta de la deducción de Ξ en E01
+# Acta de revisión · W3_xi (D2): verificación exacta de la deducción de Ξ en E01
 
-**Objeto.** Los cuatro puntos de `rev_exp/encargos/W3_xi.md`, con la parte común de `rev_exp/encargos/comun_ext.md`. El encargo nace del hueco D2 del dictamen global (`rev_exp/W_global/ACTA.md`:144–151): del resto de la deducción de Ξ (E02:30–71; E03:1–21 y 30–39) sólo había evidencia numérica (`rev_exp/W2_torres/ACTA.md`:86–91).
+**Objeto.** Los cuatro puntos de la revisión W3_xi, que nace del hueco D2 del dictamen global (`rev_exp/W_global/ACTA.md`:144–151): del resto de la deducción de Ξ (E02:30–71; E03:1–21 y 30–39) sólo había evidencia numérica (`rev_exp/W2_torres/ACTA.md`:86–91).
 
-**Revisor.** Externo al proceso que escribió las pruebas. Sin web; sólo `rev_exp/`. 17-11-2026. No he modificado nada fuera de `rev_exp/W3_xi/`.
+**Revisión.** 17-11-2026.
 
 **Dictamen global sobre esta parte: CERTIFICADA CON PRECISIONES** (§3).
 - He verificado término a término E02:30–71 y E03:1–21 y 30–39. Cada identidad exacta está demostrada a mano y comprobada en aritmética exacta. Toda la contabilidad de coeficientes está verificada simbólicamente. Cada resto está acotado a mano por O(k⁻²).

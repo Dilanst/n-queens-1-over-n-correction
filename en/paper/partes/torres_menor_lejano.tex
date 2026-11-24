@@ -1,0 +1,87 @@
+
+\begin{proposicion}[A distant minor; stability \textup{(S)}]\label{prop:menor-lejano}
+For constants $(C_p,\gamma_A)$ there are a threshold $k_S=k_S(C_p,\gamma_A)\ge k_2$ and a constant
+$C_{S1}=C_{S1}(C_p,\gamma_A)$ with the following properties.
+\begin{enumerate}
+\item[\textup{(a)}] Let $N$ satisfy \textup{(H)} with $(C_p,\gamma_A)$ and have size $k\ge k_S$, let $d$
+be a cell of $N$ and $c$ a cell of $N_d$. Then $|r_c(N_d)-r_c(N)|\le C_{S1}/k^3$.
+\item[\textup{(b)}] Let $M$ satisfy \textup{(H)} with $(C_p,\gamma_A)$ and have size $k$, with
+$k\ge k_S(C_p,\gamma_A)$ and $k-1\ge k_S(\tfrac54C_p,\tfrac34\gamma_A)$. Let $e,f$ lie in distinct rows
+and columns and let $c$ lie in none of their rows or columns. Then
+\[
+ |r_c(M_{ef})-r_c(M)|\le\frac{C_S}{k^3}, \tag{S}
+\]
+with $C_S$ depending only on $(C_p,\gamma_A)$.
+\end{enumerate}
+In the class $\mathcal K$ both hold with $(C_p,\gamma_A)=(\tfrac32M_0,0.88\gamma)$.
+\end{proposicion}
+\begin{proof}
+Part (b) follows from (a). Indeed $M_{ef}=(M_e)_f$; by Step~4 of the proof of
+Theorem~\ref{teo:insercion-torres}, $M_e$ satisfies \textup{(H)} with $(\tfrac54C_p,\tfrac34\gamma_A)$ at
+size $k-1$; and $c$ is a cell of $M_e$ and of $M_{ef}$. Apply (a) to $(M,e)$ and to $(M_e,f)$ and add.
+
+For (a) we use the notation of that proof with $N$ in place of $M$ and $e_0=c$, write $h=1/k$, and let
+$\delta$ denote the variation of a quantity from $N$ to $N_d$, read on the common support. Constants
+depend only on $(C_p,\gamma_A)$, and $k_S$ is chosen so that the elementary inequalities used below hold.
+
+\emph{Step 1. A second-order representative of $r_{e_0}$.} Let $u_x=a_x^\top\xi_N$, $\alpha_x=\mathsf
+G(x,x)-2$, $\eta_x=\mathsf G(x,e_0)$, $b_x=\tfrac12\tau_x\dot\tau_xu_x^2$ with $\dot\tau_x=\dot\tau(p_x)$,
+and
+\[
+ Z=(S'(\tau|)+\Pi')^{-1}\Bigl(\rho-\sum_{x\in M'}b_xa_x\Bigr),\qquad z_x=a_x^\top Z .
+\]
+These are computed from the data of the parent. The mass equation of the child is exactly
+\begin{equation}\label{eq:masas-hijo}
+ \zeta=(S'(\tau|)+\Pi')^{-1}(\rho-B),\qquad
+ B_i=\sum_{x\in i\cap M'}\bigl[u(t_xe^{s_x})-p_x-\tau_xs_x\bigr].
+\end{equation}
+Since $\|\xi\|_\infty=O(h)$ and $\|\xi-\xi_N\|_\infty=O(h^2)$ by~\eqref{eq:newton-hijo}, the third
+derivative of $s\mapsto u(te^s)$ is $O(p)$ on the segment, the line masses are bounded and the inverse is
+bounded in the supremum norm, a Taylor expansion gives $\zeta=Z+O_\infty(h^3)$.
+
+In~\eqref{eq:re-restos} we replace the remainders as follows; $E_{\mathcal D3}=\zeta^\top\rho$ and
+$E_{\mathcal D4}=-\tfrac12\zeta^\top S'(\tau|)\zeta$ are already $O(h^3)$.
+\begin{enumerate}
+\item In $E_{\rm main}$, replace $p_x^3/(1-2p_x)$ by $p_x^3$.
+\item Replace $E_{\mathcal D1}=\tfrac12\sum_{F^*}\varsigma_x\beta_{\lambda(x)}$ by
+$\tfrac12\sum_{F^*}p_x^2\beta_{\lambda(x)}$.
+\item In $E_{\mathcal D2}=-\tfrac12\beta_I^\top\rho$, replace $\rho_{\lambda(x)}$ by
+$-p_x^2-p_x(\eta_x-1)$ for $x\in F^*$.
+\item Replace $E_{\mathcal D5}=-R_3$ by $-\tfrac16\sum_{M'}\tau_x\dot\tau_xu_x^3$.
+\item Replace $E_{L1}$ by $-\tfrac23\sum_{F^*}p_x^3-p_0^2-\tfrac14(\mu_r^2+\mu_c^2)$.
+\item Replace $E_{L2}$ by $\sum_{M'}\bigl\{\tfrac12D(\ell_2'\tau)_xu_x^2
++(\ell_2'(p_x)-p_x)\tau_xu_x+p_x\tau_xz_x\bigr\}$, where $\ell_2'(u)=u/[(1-2u)(1-u)]$ and
+$D=t\,d/dt$, so that $Du=\tau$.
+\item Replace $E_{\rm(i)}$ by $-\sum_{M'}\bigl\{\tau\alpha z+4p\tau z+b\alpha
++2(\dot\varsigma-2p)\tau u+2\dot\varsigma b+\ddot\varsigma(\tau u)^2+\dot\varsigma\tau u\alpha\bigr\}_x$.
+\item Replace $E_{L3}$ by $\tfrac14\operatorname{tr}(\mathsf S^+W_0\mathsf S^+W_0)$, where $W_0$ is
+obtained from the entries of $W$ in Step~7 by setting $\Delta\varsigma_x=\dot\varsigma_x\tau_xu_x$ on the
+diagonal and $\tau'_x-\tau_x=\dot\tau_x\tau_xu_x$ off the diagonal.
+\item Replace $E_{\delta1}$ by $\tfrac12\hat c_{e_0}^2$.
+\item Replace $E_{\delta2}=p_0\hat c_{e_0}/(1-p_0)$ by $p_0\hat c_{e_0}$.
+\item In
+$E_X=\sum_{M'}\tau_x\tilde\varepsilon_x\eta_x+\sum_{F^*}\tau_x\tilde\varepsilon_x
++\sum_{F^*}\tau_x\varepsilon_x(\eta_x-1)+\tau_0\varepsilon_0\mathsf G_0-\tilde\varepsilon_0$, replace
+$\tilde\varepsilon_x$ by $6p_x^2+2p_x\alpha_x$ and $\varepsilon_x$ by $\alpha_x+2p_x$.
+\end{enumerate}
+Let $r^{[2]}_{e_0}$ be the sum of these expressions with the coefficients of~\eqref{eq:re-restos}. Each
+replacement costs $O(h^3)$, so $r_{e_0}=r^{[2]}_{e_0}+O(h^3)$ uniformly, in $N$ and in $N_d$. To see this,
+note that on $F^*$ we have $\sum p\le2$ and $\sum p^j=O(h^{j-1})$, and on $M'$ we have $\sum p\le k$,
+$\sum p^2=O(1)$, $\sum p^3=O(h)$. The errors in items 1--3 are $O(\sum_{F^*}p^4)$ and
+$O(h\sum_{F^*}(p^3+hp^2))$, and that of item~4 is $O(h^4\sum_{M'}p)$. For item~5,
+$-\log(1-u)-u+\tfrac12c_2(u)=-\tfrac23u^3+O(u^4)$; the terms $\tfrac12c_2(p_0)$ and
+$\tfrac12\log(1-\tau_0^2/(m_rm_c))$ contribute $-\tfrac12p_0^2+O(h^3)$ each, and the logarithms of the two
+masses give $-\tfrac14(\mu_r^2+\mu_c^2)+O(h^3)$. For item~6, $D(\ell_2'\tau)$ and $D^2(\ell_2'\tau)$ are
+$O(p^2)$ and $(\ell_2'-p)\tau=O(p^3)$. For item~7, with $s=a_x^\top\xi$,
+\[
+ \Delta p-\tau s-b=O(ph^3),\qquad \Delta\varsigma-\dot\varsigma\tau u=O(p^2h^2),\qquad
+ \Delta\varsigma-\dot\varsigma\Delta p-\tfrac12\ddot\varsigma(\tau u)^2=O(p^2h^3),
+\]
+and one sums using $\dot\varsigma=O(p)$, $\dot\varsigma-2p=O(p^2)$, $\alpha=O(h)$ and $|s-u|=O(h^2)$. For
+item~8 the error on the diagonal is $O(h^2\sum_{x\in i}p_x^2)=O(h^3)$ per line and $O(ph^2)$ per entry off
+the diagonal, so $\|W-W_0\|_{\rm HS}=O(h^2)$; since $\|W\|_{\rm HS}=O(h)$, the quadratic trace changes by
+$O(h^3)$, and the tail of the logarithm is $O(h^3)$ by the spectral bound. Items 9 and 10 follow from
+$-\log(1+x)+x=\tfrac12x^2+O(x^3)$ and $\hat c_{e_0}=O(h)$. For item~11,
+$\dot c_2+\dot\tau(2+\alpha)-2=\alpha+2p+6p^2+2p\alpha+O(p^3+p^2|\alpha|)$, and the sums are controlled
+by $\sum_{M'}\tau|\eta|\le C$, $|\eta-1|\le Ch$ on $F^*$ and $\tau_0|\mathsf G_0|=O(h)$.
+\input{partes/torres_menor_variacion}

@@ -14,7 +14,8 @@ values on $|x|=r$, then for $2\le j<N$ we have
    =\sum_{\ell\ge1}\bigl(\numerr_{j+\ell N}+\ell N v_{j+\ell N}\bigr)r^{\ell N}
 \]
 for exact samples. Indeed, sampling an analytic function combines indices congruent to $j$ modulo
-$N$, and $\numerr_m=d_m+(1-m)v_m$ for $m\ge1$. Each difference is integrated with weight
+$N$ (aliasing; see~\cite{tw}), and $\numerr_m=d_m+(1-m)v_m$ for $m\ge1$. Each difference is integrated
+with weight
 $r^{j-1}/(j-1)$, and the tail of the exact integral starts at $j=N$. Cauchy's formula on the outer
 circle bounds both types of coefficients. The intermediate circle of radius $0.055$ uses 33
 independent samples (64 including conjugates) to improve the bounds. The largest radius used in
@@ -86,8 +87,8 @@ are approximately $7.7\cdot10^{-10}$, $8.8\cdot10^{-11}$ and $1.7\cdot10^{-11}$,
 circle and the short panel together give $8.56111216\cdot10^{-10}$. Adding the archived value for
 the long panel, $1.69294096\cdot10^{-11}$, gives approximately $8.73040626\cdot10^{-10}$. The
 reported value $8.7\cdot10^{-10}$ was rounded to nearest. Rounding upward gives
-$8.74\cdot10^{-10}$ [D if C]. Applying this bound to a calculation of $\cerr$ by separation would
+$8.74\cdot10^{-10}$ \status{D if C}. Applying this bound to a calculation of $\cerr$ by separation would
 require using the exact integral of $\numerr_F/x^2$ and propagating the errors in
 $F(0),F'(0),F(1)$ along with those at the 43 nodes and in the boundary terms. The replication
-integrates the full $\numerr/x^2$, and its check of $\numerr_F/x^2$ is numerical [N]. When a
-tolerance $\delta_i$ comes from grid refinement, its value is also an estimate [N].
+integrates the full $\numerr/x^2$, and its check of $\numerr_F/x^2$ is numerical \status{N}. When a
+tolerance $\delta_i$ comes from grid refinement, its value is also an estimate \status{N}.

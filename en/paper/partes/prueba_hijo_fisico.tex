@@ -4,7 +4,7 @@ has unit row and column margins, satisfies \(p^{Q}_{ic}\le C/m\), and has incide
 \(\gamma>0\). Fix a legal cell \(e\), form the rook minor \(M_e\), and forbid any subset of the other
 cells on the two diagonals of \(e\). For sufficiently large \(m\), all these masks of size \(m-1\) have
 scalings in a common diffusion and gap class, with constants depending only on \(C,\gamma\). In
-particular this holds for the full child \(M_e^{\rm fis}\) at first exit.
+particular this holds for the full child \(M_e^{\rm phys}\) at first exit.
 \end{lema}
 \begin{proof}
 We delete one column in each retained row and up to one cell per diagonal. The loss in each row is at
@@ -14,9 +14,11 @@ parent, the Rayleigh bound on the centered indicator gives capacity at least \(\
 since \(|\mathcal W|\le m\). The capacity remaining in \(R\) is at least \((\gamma/2-3C/m)|\mathcal W|\).
 Orient the edges from rows to columns. The row deficits and the negatives of the column deficits sum to
 zero, and each has absolute value at most \(3C/m\). With \(\lambda=(3C/m)/(\gamma/2-3C/m)<1\), each cut
-supports the net demand with symmetric capacities \(\lambda R\). The flow criterion gives a signed
-correction and a doubly stochastic matrix \((1-\lambda)R\le p'\le(1+\lambda)R\). Its conductance is at
-least \((1-\lambda)(\gamma/2-3C/m)\). Cheeger's inequality gives a uniformly positive gap for the
+supports the net demand with symmetric capacities \(\lambda R\). The feasible-flow criterion~\cite{gale}
+gives a signed correction and a doubly stochastic matrix \((1-\lambda)R\le p'\le(1+\lambda)R\). Its
+conductance is at
+least \((1-\lambda)(\gamma/2-3C/m)\). Cheeger's inequality~\cite{lsok} gives a uniformly positive gap for
+the
 normalized Laplacian.
 
 It remains to transfer these bounds from a feasible table to the scaling of the binary support. At size
@@ -52,5 +54,5 @@ the change in \(\coefT/k\) per forbidden cell. Removing a row and a column chang
 most \(2m\) forbidden cells. The lemma provides the same margins at every step. Summing the changes and
 using the remainder \(O(m^{-2})\) of (T) at both endpoints gives, for every child of the regular parent,
 \begin{equation}\label{eq:incremento-hijo-fisico}
- |g_T(M_e^{\rm fis})-g_T(M)|\le C/m^2,\qquad |g_T(M_e^{\rm fis})|\le C/(m-1).
+ |g_T(M_e^{\rm phys})-g_T(M)|\le C/m^2,\qquad |g_T(M_e^{\rm phys})|\le C/(m-1).
 \end{equation}

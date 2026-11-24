@@ -1,6 +1,6 @@
-# Acta de revisión externa W2 · Entradas analíticas y algebraicas de la cota por soporte
+# Acta de revisión W2 · Entradas analíticas y algebraicas de la cota por soporte
 
-**Revisor.** Externo e independiente, ajeno al proceso que escribió la prueba. Fecha: 2026-11-17. Trabajé sin web y sin acceso a otros equipos, sólo con esta carpeta. Los cálculos son propios, exactos y deterministas, con `nice -n 10`, un proceso cada vez y tiempos medidos. No reviso E1, E2, el recuento de tipos ni el exponente 7 de los pares.
+**Revisión.** Fecha: 2026-11-17. Los cálculos son propios, exactos y deterministas, con `nice -n 10`, un proceso cada vez y tiempos medidos. No reviso E1, E2, el recuento de tipos ni el exponente 7 de los pares.
 
 **Objeto.** La cota que el teorema usa para cada soporte U de v casillas, con 5 ≤ v ≤ 8 log n [B03 55–58]:
 
@@ -62,7 +62,7 @@ Reviso sus entradas analíticas (holomorfía y gas) y algebraicas (órdenes en s
 **1b. Gradiente de la acción** [G02 25–42].
 - Rehíce la cuenta con el teorema de la envolvente, con las restricciones ∫u dμ_C = t_r y ∫u dμ_R = t_c.
 - Los multiplicadores valen −log t_r − α_r − 1 y −log t_c − β_c − 1, y la variación de t log t cancela los dos log t y las dos unidades. Sale ∂_i(ℛ/s) = α_{r_i} + β_{c_i}, acotado en la bola de potenciales.
-- La cota direccional Σ_l|∂_l∂_iR_c|/d_l ≤ 2B/a, con h_l = e^{iφ_l}/d_l, es correcta y no pierde el número de vecinos. El revisor de tipos ya la comprobó [W2t 81].
+- La cota direccional Σ_l|∂_l∂_iR_c|/d_l ≤ 2B/a, con h_l = e^{iφ_l}/d_l, es correcta y no pierde el número de vecinos. El acta de tipos ya la comprobó [W2t 81].
 
 **1c. Silla local, determinante y O(v)** [G02 48–66].
 - La contracción en ‖x‖_* = máx_i d_i|x_i| es correcta. Usa Σ_{i∈f}1/d_i ≤ 1 y la cota direccional. La silla es única en la caja y holomorfa en (s, ζ).

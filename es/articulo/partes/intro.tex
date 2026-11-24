@@ -11,10 +11,16 @@ dos soluciones del tablero de $4\times4$.
 
 Para estudiar cómo crece $Q(n)$, conviene tomar logaritmos. Entre los antecedentes combinatorios
 figuran la cota superior de Luria~\cite{luria}, la inferior de Luria y Simkin~\cite{ls} y el
-trabajo de Bowtell y Keevash~\cite{bk}. Bell y Stevens~\cite{bs} dan una visión de conjunto.
+trabajo de Bowtell y Keevash~\cite{bk}; juntos resuelven una conjetura de Rivin, Vardi y
+Zimmermann~\cite{rvz} sobre el crecimiento de $Q(n)$. Bell y Stevens~\cite{bs} dan una visión de conjunto.
 La fórmula variacional de Simkin~\cite{simkin} determina $\log Q(n)$ hasta un error $o(n)$.
 En la normalización del perfil variacional~\cite{pv}, el término principal es $\log(n!)+n\Phi$.
+Simkin escribe $Q(n)=((1+o(1))ne^{-\alpha})^n$ con $1{,}94<\alpha<1{,}9449$; como
+$\log(n!)=n\log n-n+O(\log n)$, las dos normalizaciones se relacionan por $\Phi=1-\alpha$.
 Nobel, Agrawal y Boyd~\cite{nab} obtuvieron cotas numéricas para la constante de primer orden.
+Más allá del intervalo enumerado, se han obtenido estimaciones numéricas del crecimiento de $Q(n)$ por
+conteo de Monte Carlo~\cite{zm} y, recientemente, por integración termodinámica de un modelo de gas
+reticular~\cite{llw}.
 El perfil describe la distribución de masa en el tablero y sobre cada diagonal. Estos datos
 entran en el predictor canónico $Q_{\rm pred}(n)$ de~\cite{pc}. A partir de los pesos de las casillas
 se calcula una entropía y se añade una corrección por la dependencia entre las líneas. El
@@ -28,7 +34,9 @@ constante~\cite{tc}. Por tanto, al formar la diferencia con signo
 \]
 se cancelan tanto el término principal como la constante. Un paso previo del presente trabajo,
 mediante estimaciones de magnitud, da $|R_Q(n)|\le C/n$ para $n$ suficientemente grande.
-El Lema~\ref{lem:previa} prueba esa cota a un solo corte fijo, bajo la ley adaptativa.
+El Lema~\ref{lem:previa} prueba esa cota a un solo corte fijo, bajo la ley adaptativa, que revela las
+filas en orden aleatorio y elige cada reina con probabilidad proporcional al predictor del tablero
+resultante (Sección~\ref{sec:signedmap}).
 El Apéndice~\ref{app:signed} la usa al desarrollar la identidad de historias detenidas.
 Así, $nR_Q(n)$ está acotado, aunque todavía podría oscilar con el tamaño del tablero. ¿Converge?
 El Teorema~\ref{teo:principal} identifica ese límite, que denotamos por \(\cerr\). Mientras que
@@ -36,6 +44,16 @@ El Teorema~\ref{teo:principal} identifica ese límite, que denotamos por \(\cerr
 corrección relativa al pasar del predictor finito al conteo exacto. Si se quisiera desarrollar
 directamente \(\log Q(n)\) respecto de \(\log(n!)+n\Phi+C_{\rm pred}\), habría que sumar a
 \(\cerr\) el coeficiente de \(1/n\) del propio \(\log Q_{\rm pred}(n)\), si ese coeficiente existe.
+
+\paragraph{En qué se apoya la demostración.} La demostración del Teorema~\ref{teo:principal} no es
+autocontenida. Usa la existencia y la regularidad del perfil variacional~\cite{pv}, el corte temprano
+de~\cite{ef}, los teoremas de inserción y de consistencia del predictor~\cite{pc}, y la regla de parada,
+la permanencia y las cotas estáticas en que se basa el término constante~\cite{tc}. Estos cuatro
+trabajos son preprints del autor; cada registro de Zenodo contiene el original en español y una versión
+en inglés. La Sección~\ref{sec:importados} enumera los enunciados que se usan, con sus hipótesis, e
+indica los dos lugares en que se toma un argumento de una demostración y no sólo de un enunciado. Dos
+pasos están asistidos por ordenador, en aritmética racional exacta (Apéndice~\ref{app:pair}). El valor
+numérico de \(\cerr\) es una estimación y no forma parte del teorema.
 
 La dificultad se ve al revelar una solución fila por fila. Mientras quedan muchas filas, cada
 inserción introduce un defecto pequeño y es su suma con signo la que importa. Al quedar pocas

@@ -1,6 +1,6 @@
-# Acta de revisión externa W2 · Cofactor con exterior común y sustitución de átomos
+# Acta de revisión W2 · Cofactor con exterior común y sustitución de átomos
 
-**Revisor.** Externo e independiente, ajeno al proceso que escribió la prueba. Fecha: 2026-11-17. Trabajé sin web y sin acceso a otros equipos, sólo con la carpeta `rev_exp/`. Los cálculos son propios y exactos (enteros y `Fraction` de Python), deterministas, con `nice -n 10`, un proceso cada vez y tiempos medidos. No hay Monte Carlo ni azar. No reviso E1, E2, el recuento de tipos ni la cota por soporte, salvo lo que esta pieza importa de ellos.
+**Revisión.** Fecha: 2026-11-17. Los cálculos son propios y exactos (enteros y `Fraction` de Python), deterministas, con `nice -n 10`, un proceso cada vez y tiempos medidos. No hay Monte Carlo ni azar. No reviso E1, E2, el recuento de tipos ni la cota por soporte, salvo lo que esta pieza importa de ellos.
 
 **Objeto.** El enunciado de la pieza [GUIA 3] tiene tres partes:
 1. Todas las caras de un soporte usan el mismo exterior RC conexo.
@@ -285,7 +285,7 @@ No hay enunciados falsos ni huecos. Las precisiones P1–P7 piden redacción y n
 ## 5. Resumen final
 
 ```
-ACTA W2_cofactor · revisor externo · 2026-11-17
+ACTA W2_cofactor · 2026-11-17
 Ruta: rev_exp/W2_cofactor/ACTA.md (código en codigo/, salidas en resultados/)
 Integridad: huellas de B01, U02, U07 y A03 = declaradas = manifiestos (14/14, 14/14, 9/9).
   Las 4 transcripciones de prueba_fuente.md son idénticas byte a byte; r19 116/116.

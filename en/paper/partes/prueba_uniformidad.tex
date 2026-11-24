@@ -79,7 +79,7 @@ the inverse density on histories is \(e^{-s-g^\flat}\). By \eqref{eq:arrival-est
  \int_{H_j}|d\mu-d\nu|
  \le\mathbb E_\mu[|1-e^{-s}|+e^{-s}|1-e^{-g^\flat}|;H_j]=O_b(n^{-1}) .
 \] The exit estimates in Appendix~\ref{app:signed} then give \(n\mathbb E_\mu A=n\mathbb
-E_\nu[A;H_j]+o_b(1)\). For rooks, set \(u_e=g_T(M_e^{\rm fis})-g_T(M)\). The mask \(M_e^{\rm fis}\) is
+E_\nu[A;H_j]+o_b(1)\). For rooks, set \(u_e=g_T(M_e^{\rm phys})-g_T(M)\). The mask \(M_e^{\rm phys}\) is
 obtained from the single minor \(M_e\) by applying the two diagonal exclusions of the child. The change
 is \(O_b(m^{-2})\), including the step that causes exit. Thus \(\log\rho^\sharp-\log\rho=\log\mathbb
 E_{\nu,i}e^{u_e}
@@ -88,7 +88,8 @@ E_{\nu,i}e^{u_e}
 relative entropies of the two child laws given the row, set to zero after stopping. The rows have the
 same uniform law. The decomposition of relative entropy into its conditional increments gives
 \(\sum_m\mathbb E_\mu
-d_m=D(\mu^\tau\Vert\nu^\tau)\). Pinsker's inequality bounds the difference between the two means of
+d_m=D(\mu^\tau\Vert\nu^\tau)\). Pinsker's inequality~\cite{ct} bounds the difference between the two
+means of
 \(u_e\) by \(2C_bm^{-2}\sqrt{d_m/2}\). By Jensen's inequality and Cauchy--Schwarz, the sum of these
 differences at scale \(n\) costs
 \(O_b(n(\sum_{m>j}m^{-4})^{1/2}D(\mu^\tau\Vert\nu^\tau)^{1/2})=O_b(n^{-1/2})\). The realized rook

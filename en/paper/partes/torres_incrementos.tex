@@ -1,8 +1,9 @@
-\subsection{A marked cell and the determinant increment [D]}
+\subsection{A marked cell and the determinant increment \texorpdfstring{\status{D}}{[D]}}
 The increment of $R_{\rm det}$ remains. We can measure the effect of $e=(r,c)$ on $L_T$ by varying
 its weight or by comparing the board with the minor obtained after occupying the cell. For an
 allowed cell $e$, let $\pi^{\rm der}_e=\partial_{\log w_e}L_T=p_e(1+\hat c_e)$,
-$\varepsilon_e=p_e/P_e-1$ and $r_e=L_T(M_e)-L_T(M)-\log(\pi^{\rm der}_e/w_e)$. Theorem A for rooks
+$\varepsilon_e=p_e/P_e-1$ and $r_e=L_T(M_e)-L_T(M)-\log(\pi^{\rm der}_e/w_e)$.
+Theorem~\ref{teo:insercion-torres}
 gives $|\hat c_e|\le C/k$ and $|r_e|\le C/k^2$. Thus $r_e$ measures the discrepancy between the
 two operations through second order. Using the scaling of the minor
 $P'=\operatorname{diag}(x')P^{(e)}\operatorname{diag}(y')$, where $P^{(e)}$ is the submatrix of
@@ -17,8 +18,12 @@ $P$, gives the exact identity
 \end{align*}
 Indeed, $\Delta=-L_T(P)+\log(k!/k^k)-\frac12\log\det(I-b_P^\top b_P)$. The covariance of $L_T$
 under scaling gives the two sums of potentials. The sign of the size term comes from the ratio of
-the two factorials. To prove $(A^+)$ we must gain a power of $k$ in the signed sum $r_e+\mathsf
-E_e$. The exact expression for $L_T$ retains the quadratic displacement of the stationary point,
+the two factorials. The estimate to be proved is
+\[
+ |r_e+\mathsf E_e|=|R_{\rm det}(M_e)-R_{\rm det}(M)|\le Ck^{-3}. \tag{$A^+$}
+\]
+To prove $(A^+)$ we must gain a power of $k$ in the signed sum $r_e+\mathsf E_e$. The exact expression
+for $L_T$ retains the quadratic displacement of the stationary point,
 usually denoted by $\zeta$. Bounding the eleven second-order remainders in absolute value would
 lose their cancellation.
 
@@ -65,7 +70,10 @@ $(A^+)$ with the indicated sign. On the face $s=0$ or $t=0$, the integrated expr
 independent of $v$. Hence the expansion of $\partial_vD_2$ contains no terms with zero power of
 $s$ or $t$. Dividing its series by $st$ gives a function $H$ bounded on inner disks by the
 geometric series of Cauchy bounds. At $s=t=u$ the derivative of $R_{\rm det}$ with respect to $v$
-is $O(u^4)$ all the way to $v=0$. Integrating over $[0,1]$ gives the deletion estimate in $(D^+)$.
+is $O(u^4)$ all the way to $v=0$. Integrating over $[0,1]$ gives the deletion estimate
+\[
+ |R_{\rm det}(M\setminus e)-R_{\rm det}(M)|\le Ck^{-4}. \tag{$D^+$}
+\]
 Adding the increments from $(L^{*+})$ gives $(T^+)$ for the total remainder $R$. This lets us
 compare the approximation for the same pair before and after passing to a further minor that
 retains it.

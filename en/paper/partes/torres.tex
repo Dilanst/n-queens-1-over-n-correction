@@ -20,7 +20,7 @@ stochastic scaling, and $\mathbb U_k$ has entries $1/k$. This defines the class 
 this section $k$ is the integer size of the mask, distinct from the function $\numerr(x)$ in the
 integral. Occupying $e$ removes its row and column and leaves the minor $M_e$. Forbidding $e$
 retains both fibers and sets $w_e=0$ in $M\setminus e$. The two operations perturb the sums to be
-rescaled in different ways. The queen child $M_e^{\rm fis}$ also forbids the cells on both
+rescaled in different ways. The queen child $M_e^{\rm phys}$ also forbids the cells on both
 diagonals through $e$. Lemma~\ref{lem:hijo-fisico} controls the scaling during this operation.
 
 The stationary class (H) requires a rook point with unit margins on the branch $0<p_e<1/2$,
@@ -30,7 +30,7 @@ Appendix~\ref{app:rook}. In $\mathcal K$, from the threshold $k_{\mathcal K}(M_0
 this point exists and is unique, with $C_p=3M_0/2$, $\gamma_A=0.88\gamma$ and
 $p_e/P_e=1+O(k^{-1})$ on the support. We compute $L_T$ with $p$ and its first correction with $P$.
 
-\paragraph{The approximation to be transported [D].}
+\paragraph{The approximation to be transported \status{D}.}
 \[
    g_T(M)=\log\operatorname{per}M-L_T(M)
        =\frac{\coefT(kP)}k+R(M),\qquad |R(M)|\le Ck^{-2}.
@@ -51,8 +51,9 @@ further expansion on the minor, we use the threshold for its own diffusion and g
 To use (S), let $r_c(N)=L_T(N_c)-L_T(N)-\log(\pi_c^{\rm der}(N)/w_c)$ be the insertion remainder
 at $c$, with $\pi_c^{\rm der}=\partial_{\log w_c}L_T$. If $N$ satisfies (H), $e,f$ occupy distinct
 rows and columns, and $c$ retains both fibers in $N_{ef}$, then $|r_c(N_{ef})-r_c(N)|\le C_S/k^3$.
-We apply the bound for a distant minor twice, with the thresholds for $(C_p,\gamma_A)$ at $k$ and
-for $(5C_p/4,3\gamma_A/4)$ at $k-1$. This comparison of minors enters the marginal in
+This is Proposition~\ref{prop:menor-lejano}(b). It applies the bound for a distant minor,
+Proposition~\ref{prop:menor-lejano}(a), twice, with the thresholds for $(C_p,\gamma_A)$ at $k$ and for
+$(5C_p/4,3\gamma_A/4)$ at $k-1$. This comparison of minors enters the marginal in
 Appendix~\ref{app:pair}.
 
 \paragraph{From two rooks to a pair of queens.}
@@ -66,3 +67,32 @@ retains the pair. In the physical geometry a move may also forbid additional cel
 average, the change in the rook error contributes $P_T$. The effect of one line contributes to
 $J$, and the two diagonals of a complete square also produce the term $-S$ in
 Appendix~\ref{app:boundary}.
+
+\paragraph{Labeled statements.} Table~\ref{tab:etiquetas} lists the labeled rook estimates, where each is
+stated or proved, and where it is referenced (letters denote appendices).
+\begin{center}\small
+\begin{tabular}{@{}L{.07\linewidth}L{.47\linewidth}L{.17\linewidth}L{.19\linewidth}@{}}
+\toprule Label & Statement & Stated or proved & Referenced in\\ \midrule
+(H) & Stationary class: $p_e\le C_p/k$, $\lambda_{\min}(S_T+\Pi)\ge\gamma_A$ & this section &
+ \ref{app:pair}\\
+G1 & $g_T(M)=\mathcal E(P)+\Delta$ & \ref{app:rook} & \ref{app:rook}\\
+$(L^*)$ & $\mathcal E(D)=\mathfrak f_{\rm e}(KD)/K+O(K^{-2})$ & \ref{app:rook} & \ref{app:rook}\\
+(T) & $g_T(M)=\coefT(kP)/k+R(M)$, $|R(M)|\le Ck^{-2}$ & this section, \ref{app:rook} &
+ \ref{app:signed}, \ref{app:pair}\\
+$(L^{*+})$ & Increments of $R_{\rm est}$: $O(k^{-3})$ for a minor, $O(k^{-4})$ for a deletion &
+ \ref{app:rook} & \ref{app:rook}\\
+$(A^+)$ & Increment of $R_{\rm det}$ for a minor: $O(k^{-3})$ & \ref{app:rook} &
+ \ref{app:rook}, \ref{app:weights}\\
+$(D^+)$ & Increment of $R_{\rm det}$ for a deletion: $O(k^{-4})$ & \ref{app:rook} & \ref{app:rook}\\
+$(T^+)$ & Increments of $R$: $O(k^{-3})$ for a minor, $O(k^{-4})$ for a deletion &
+ this section, \ref{app:rook} & \ref{app:boundary}, \ref{app:pair}\\
+(S) & $|r_c(N_{ef})-r_c(N)|\le C_S/k^3$ & this section, \ref{app:insercion} & \ref{app:pair}\\
+(R0) & $\pi^{\rm ex}-\pi_1=O(k^{-4})$ & \ref{app:pair} & \ref{app:boundary}, \ref{app:pair}\\
+(R1) & A third cell changes $\pi^{\rm ex}-\pi_1$ by at most $C\varpi(E)/k^5$ &
+ this section, \ref{app:pair} & \ref{app:pair}\\
+(R2) & $|D_r|\le C\varpi(E)/k^5$ & \ref{app:pair} & \ref{app:pair}\\
+\bottomrule
+\end{tabular}
+\refstepcounter{table}\label{tab:etiquetas}\par\smallskip
+\textbf{Table \thetable.} Labeled statements of the rook problem.
+\end{center}

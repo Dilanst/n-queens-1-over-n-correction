@@ -7,8 +7,15 @@ Let $x$ be the fraction of rows still empty. At $x=1$ the initial board is empty
 zero only the last rows remain. The function $d(x)$ sums sixteen contributions to the mean second-order
 defect of an insertion in the predictor~\cite{pc}. Appendix~\ref{app:interior} identifies these
 contributions. The line prefactor $\mathcal V(x)$ and the rook correction $F(x)$ are defined in
-Appendix~\ref{app:predictor}. The following two statements are proved \status{D}; the labels are
-explained in Section~\ref{sec:claim-ledger}.
+Appendix~\ref{app:predictor}. The following two statements are proved \status{D}, given the results
+imported in Section~\ref{sec:importados} and with two computer-assisted steps \status{O}; the labels
+are explained in Section~\ref{sec:claim-ledger}. Here and below, the \emph{physical profile} is the
+density $\nu_1$ of a complete solution with its diagonal vacancies $u_f$
+(Section~\ref{sec:profile-data}); more generally, \emph{physical} marks an object as it occurs on the
+board, as opposed to the approximants, continuations, and auxiliary grids used in the proof. The
+\emph{ordinary board} is the usual $n\times n$ board, empty at the start, as opposed to the residual
+boards of a history (Section~\ref{sec:importados}) and to the rook masks (Section~\ref{sec:torres});
+this is the usage of~\cite{pc,tc}.
 
 \begin{teorema}[Main theorem]\label{teo:principal}
 For the ordinary board the limit
@@ -20,13 +27,17 @@ For the ordinary board the limit
 \end{align}
 exists, and the integral in~\eqref{eq:main} converges absolutely.
 \end{teorema}
-On the full mask the scaled rook kernel is constant, so \(F(1)=0\) (Section~\ref{sec:profile-data}). Here
+On the full mask the scaled rook kernel is constant, so \(F(1)=0\) (Section~\ref{sec:profile-data}). The
+terms are defined as follows: $d$ in~\eqref{eq:d-suma}; $F$ and $\mathcal V$ in~\eqref{eq:F-def}
+and~\eqref{eq:V-def}; $P_T=\lim_{b\downarrow0}P_T(b)$ with $P_T(b)$ as
+in~\eqref{eq:pt-frontera-fija}; $B_2$ and $L_2$ in~\eqref{eq:J-def}, through the state functionals
+of~\eqref{eq:estado-def}; and $S$ in~\eqref{eq:S-def}. Here
 $P_T$ is the rook contribution at arrival. To obtain $B_2$ and $L_2$ from the weight path of a collinear
 pair, we sum over both orientations. Within each orientation we weight the four availability states of
 the other two vertices. $S$ accounts for the interaction of the two pairs in a complete square.
 
 \begin{corolario}\label{cor:derivada}
-For the physical profile, $\numerr'(0)=d'(0)=0$. Moreover,
+For the physical profile, $\numerr(0)=0$ and $\numerr'(0)=d'(0)=0$. Moreover,
 \[
  \log Q(n)=\log Q_{\rm pred}(n)+\cerr/n+o(n^{-1}),\qquad
  Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(n^{-1}).
@@ -35,10 +46,20 @@ For the physical profile, $\numerr'(0)=d'(0)=0$. Moreover,
 Multiplying the predictor by \(\exp(\cerr/n)\) leaves a relative error of \(o(1/n)\). The corollary gives
 no threshold beyond which the correction improves the result at every size. The proof takes the truncated
 integral at a fixed cut-off $b>0$. Comparing two cut-offs gives its limit, and this convergence yields
-$\numerr(0)=0$ and $\numerr'(0)=0$ (Appendix~\ref{app:closing}). Lemma~\ref{lem:previa} establishes the
-rate in Conjecture~10.1 of~\cite{pc}. The corollary identifies the signed coefficient at that rate. The
+$\numerr(0)=0$ and $\numerr'(0)=0$ (Appendix~\ref{app:closing}). Conjecture~10.1 of~\cite{pc} states that
+there exist $C$ and $n_0$ such that $|\log Q(n)-\log Q_{\rm pred}(n)|\le C/n$ for all $n\ge n_0$;
+Lemma~\ref{lem:previa} proves it. The corollary identifies the signed coefficient at that rate. The
 proof provides an expression for the coefficient; certifying the sign suggested by its evaluation still
 requires a sufficiently narrow interval.
+
+\paragraph{Reading of the integral away from the endpoint.} Lemma~\ref{lem:regularidad-extremo} gives the
+analyticity of $G$ only near $[0,x_0]$. On $[x_0,1]$ the proof uses the summand $(G-xG')/x^2$ only
+through its antiderivative $-G(x)/x$: the interior identity of Appendix~\ref{app:interior} is
+$\int_b^1d(x)x^{-2}\,dx+G(b)/b-G(1)$. Accordingly, the part of the integral in~\eqref{eq:main} over
+$[x_0,1]$ is understood as $\int_{x_0}^1d(x)x^{-2}\,dx+G(x_0)/x_0-G(1)$. This requires only that $d$ be
+continuous there (Appendix~\ref{app:interior}) and agrees with the classical integral whenever $G$ is
+continuously differentiable on $[x_0,1]$. The same reading applies to the split in
+Section~\ref{sec:presupuesto}.
 
 Section~\ref{sec:signedmap} explains the signs in the formula. The table in
 Section~\ref{sec:claim-ledger} identifies the sources for each step and the scope of its checks.

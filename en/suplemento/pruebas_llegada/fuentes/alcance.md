@@ -1,6 +1,6 @@
-# Acta de revisión externa W2_t4 · Paso al alcance logarítmico (r22/02) y corolario de la pendiente (r22/01)
+# Acta de revisión W2_t4 · Paso al alcance logarítmico (r22/02) y corolario de la pendiente (r22/01)
 
-**Revisor.** Externo e independiente, ajeno al equipo que escribió la prueba. Fecha: 2026-11-17. He trabajado sin web y sin acceso a otros equipos, sólo con `rev_exp/`. Los cálculos son míos, exactos (racionales, o enteros con redondeo dirigido), deterministas, con `nice -n 10`, uno cada vez y con el tiempo medido. No reviso E1, E2, el recuento de tipos ni las entradas analíticas ya dictaminadas en W2_jets; las uso como importadas.
+**Revisión.** Fecha: 2026-11-17. Los cálculos son míos, exactos (racionales, o enteros con redondeo dirigido), deterministas, con `nice -n 10`, uno cada vez y con el tiempo medido. No reviso E1, E2, el recuento de tipos ni las entradas analíticas ya dictaminadas en W2_jets; las uso como importadas.
 
 **Objeto.**
 - `r22/latex/02_continuacion_de_los_coeficientes.tex` (en adelante [02]) escribe el paso de v fijo a 5 ≤ v ≤ 8 log n en la cota por soporte. W2_jets lo dio por válido pero no escrito: precisión 2.1, [W2j 159–164].

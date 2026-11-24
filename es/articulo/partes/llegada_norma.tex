@@ -36,7 +36,8 @@ el centrado y \(\log j-(\log\Gamma)'(j+1)=O(1/j)\). Así
  p_U=\Big(\prod_{i\in U}b_i\Big)e^{L_*(T_U)}(1+O(e^{-cj})).
 \]
 Para \(h>a_*j\), \(\operatorname{per}D_{-U}\le1\) por las masas de fila y
-\(\operatorname{per}D\ge j!/j^j\ge e^{-j}\), por la desigualdad de van der Waerden.
+\(\operatorname{per}D\ge j!/j^j\ge e^{-j}\), por la desigualdad de van der
+Waerden~\cite{egorychev,falikman}.
 En ambos intervalos se tiene \(p_U\le C_0^h\prod b_i\).
 
 El peso \(w_U=a_Uz^U\prod b_i\) factoriza en las componentes del grafo diagonal
@@ -57,14 +58,17 @@ Como \(\sum b_i=O(j)\), la masa total es \(O(S_*)\),
 
 Para una forma lineal \(\xi\) pequeña inclinamos por \(e^{\xi[T_U]}\).
 El logaritmo del gas de componentes compatibles es la suma sobre familias conexas
-de su grafo de incompatibilidad, por la fórmula exponencial. Con un orden fijo de
+de su grafo de incompatibilidad, por la fórmula exponencial (el desarrollo en cúmulos~\cite{kp,fp}). Con un
+orden fijo de
 aristas, los subgrafos conexos que dan un mismo árbol generador mínimo forman un intervalo
 booleano: podemos añadir cualquier arista posterior a todas las del camino entre sus
 extremos en el árbol. Su suma alternada vale cero o uno en módulo, de modo que los
-árboles dominan el coeficiente. Sumando recursivamente los hijos de una raíz de
+árboles dominan el coeficiente (identidad de grafos de árbol de Penrose; véase~\cite{fp}). Sumando
+recursivamente los hijos de una raíz de
 tamaño \(v\), su factor exponencial es a lo sumo
 \(\exp(\sum_{\gamma'\not\sim\gamma}|w_{\gamma'}|e^{|\gamma'|})\le e^v\).
-El criterio se cierra para \(S_*/j\) pequeño y con la reserva anterior. Se obtiene
+El criterio de convergencia de~\cite{kp} se cierra para \(S_*/j\) pequeño y con la reserva
+anterior. Se obtiene
 \(\|\log Z_\xi\|=O(S_*)\). Una y dos marcas cuestan los factores de talla \(3v,(3v)^2\),
 absorbidos en la reserva. La media inclinada \(m_\xi\) de \(T_U\) y su derivada tienen
 norma \(O(S_*)\). La ecuación \(\xi=DL_*(m_\xi)\) es contractiva con constante

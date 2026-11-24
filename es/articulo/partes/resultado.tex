@@ -8,8 +8,15 @@ $x$ a cero quedan las últimas filas. La función $d(x)$ suma dieciséis contrib
 medio de segundo orden de una inserción del predictor~\cite{pc}. El
 Apéndice~\ref{app:interior} identifica esas contribuciones. El prefactor de líneas
 $\mathcal V(x)$ y la corrección de torres $F(x)$ se definen en el Apéndice~\ref{app:predictor}.
-Los dos enunciados siguientes están demostrados \status{D}; las etiquetas se explican en la
-Sección~\ref{sec:claim-ledger}.
+Los dos enunciados siguientes están demostrados \status{D}, dados los resultados importados en la
+Sección~\ref{sec:importados} y con dos pasos asistidos por ordenador \status{O}; las etiquetas se
+explican en la Sección~\ref{sec:claim-ledger}. Aquí y en lo que sigue, el \emph{perfil físico} es la
+densidad $\nu_1$ de una solución completa con sus vacancias diagonales $u_f$
+(Sección~\ref{sec:profile-data}); en general, \emph{físico} califica a un objeto tal como aparece en el
+tablero, por oposición a los aproximantes, las continuaciones y las mallas auxiliares que se usan en la
+demostración. El \emph{tablero ordinario} es el tablero usual de $n\times n$, vacío al comienzo, por
+oposición a los tableros residuales de una historia (Sección~\ref{sec:importados}) y a las máscaras de
+torres (Sección~\ref{sec:torres}); es el uso de~\cite{pc,tc}.
 
 \begin{teorema}[Teorema principal]\label{teo:principal}
 Para el tablero ordinario existe el límite
@@ -22,14 +29,18 @@ Para el tablero ordinario existe el límite
 y la integral de~\eqref{eq:main} converge absolutamente.
 \end{teorema}
 En la máscara llena el núcleo de torres escalado es constante, de modo que \(F(1)=0\)
-(sección~\ref{sec:profile-data}). Aquí $P_T$ es la contribución de torres en la llegada. Para obtener
+(sección~\ref{sec:profile-data}). Los términos se definen así: $d$ en~\eqref{eq:d-suma}; $F$ y
+$\mathcal V$ en~\eqref{eq:F-def} y~\eqref{eq:V-def}; $P_T=\lim_{b\downarrow0}P_T(b)$ con $P_T(b)$ como
+en~\eqref{eq:pt-frontera-fija}; $B_2$ y $L_2$ en~\eqref{eq:J-def}, mediante los funcionales de estado
+de~\eqref{eq:estado-def}; y $S$ en~\eqref{eq:S-def}. Aquí $P_T$ es la contribución de torres en la
+llegada. Para obtener
  $B_2$ y $L_2$ a partir del
 camino de pesos de un par colineal, se suman las dos orientaciones. En cada orientación se
 ponderan los cuatro estados de disponibilidad de los otros dos vértices.
 $S$ recoge la interacción de los dos pares de un cuadrado completo.
 
 \begin{corolario}\label{cor:derivada}
-Para el perfil físico, $\numerr'(0)=d'(0)=0$. Además,
+Para el perfil físico, $\numerr(0)=0$ y $\numerr'(0)=d'(0)=0$. Además,
 \[
  \log Q(n)=\log Q_{\rm pred}(n)+\cerr/n+o(n^{-1}),\qquad
  Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(n^{-1}).
@@ -39,10 +50,20 @@ Multiplicar el predictor por \(\exp(\cerr/n)\) deja un error relativo \(o(1/n)\)
 El corolario no da un umbral a partir del cual la corrección mejore el resultado en cada tamaño.
 La demostración toma la integral truncada en un corte $b>0$ fijo. La comparación de dos cortes
 da su límite y de esa convergencia se deducen $\numerr(0)=0$ y $\numerr'(0)=0$ (Apéndice~\ref{app:closing}).
-El Lema~\ref{lem:previa} establece la tasa de la Conjetura~10.1 de~\cite{pc}.
+La Conjetura~10.1 de~\cite{pc} afirma que existen $C$ y $n_0$ tales que
+$|\log Q(n)-\log Q_{\rm pred}(n)|\le C/n$ para todo $n\ge n_0$; el Lema~\ref{lem:previa} la demuestra.
 El corolario identifica el coeficiente con signo dentro de esa tasa.
 La demostración proporciona una expresión para el coeficiente; certificar el signo que sugiere su
 evaluación todavía requiere un intervalo suficientemente estrecho.
+
+\paragraph{Lectura de la integral lejos del extremo.} El Lema~\ref{lem:regularidad-extremo} da la
+analiticidad de $G$ sólo cerca de $[0,x_0]$. En $[x_0,1]$ la demostración usa el sumando $(G-xG')/x^2$
+sólo a través de su primitiva $-G(x)/x$: la identidad interior del Apéndice~\ref{app:interior} es
+$\int_b^1d(x)x^{-2}\,dx+G(b)/b-G(1)$. En consecuencia, la parte de la integral de~\eqref{eq:main} sobre
+$[x_0,1]$ se entiende como $\int_{x_0}^1d(x)x^{-2}\,dx+G(x_0)/x_0-G(1)$. Esto sólo requiere que $d$ sea
+continua allí (Apéndice~\ref{app:interior}) y coincide con la integral clásica siempre que $G$ sea
+continuamente derivable en $[x_0,1]$. La misma lectura se aplica a la descomposición de la
+Sección~\ref{sec:presupuesto}.
 
 La Sección~\ref{sec:signedmap} explica de dónde salen los signos de la fórmula. La tabla de la
 Sección~\ref{sec:claim-ledger} identifica las fuentes de cada paso y el alcance de sus comprobaciones.

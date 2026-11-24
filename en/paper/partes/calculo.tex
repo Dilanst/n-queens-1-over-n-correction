@@ -51,7 +51,7 @@ set the other entries to zero. With the square--line incidence matrix $\mathcal 
 a\}}$, the full matrix is
 \[
  N_h^{\rm inc}=\mathcal I^{\mathsf T}\operatorname{diag}(h)\mathcal I
-              =N_h^\circ+\operatorname{diag}(P^{\mathsf T}h).
+              =N_h^\circ+\operatorname{diag}(\mathcal I^{\mathsf T}h).
 \]
 Its $(a,a)$ entry sums $h$ along line $a$. Matrix products sum walks through line incidences. The trace
 identifies the last index with the first, and the diagonal matrices $D_i$ insert the line measures. For
@@ -73,13 +73,13 @@ nodes. We therefore take grids in the same congruence class for each fit in even
 Richardson extrapolation~\cite{richardson}. If there are enough new grids for $Q_2$, the classes $0$ and
 $12$ modulo $24$ are fitted separately, using powers $2,4,6$. We take the mean of the two intercepts.
 Their difference, a change in the smallest grid, and the largest fit residual measure the sensitivity.
-The resulting error bars have status [N]. Certifying this extrapolation would require bounding the
+The resulting error bars have status \status{N}. Certifying this extrapolation would require bounding the
 spatial remainder in each class.
 
 For the boundary sum, the numerical analysis gives
 \[
  J=-8.2386091222\ \pm5.0\cdot10^{-9},\qquad
- P_0=-7.7933777386\ \pm5.0\cdot10^{-9}\qquad\text{[N]}.
+ P_0=-7.7933777386\ \pm5.0\cdot10^{-9}\qquad\text{\status{N}}.
 \]
 For $J$ we sum over one orientation of the pair and include the other by symmetry. Adding
 $P_T=0.4452313836$ gives $P_0$. The square interaction enters separately with a negative sign, with
@@ -102,27 +102,44 @@ from $d$ and $\mathcal V+F$ at the 32 points on the circle (17 independent up to
 evaluates $\numerr/x^2$ at six nodes in $[0.03;0.06]$ and twenty in $[0.06;1]$. As a check, it also
 computes the contribution of $\numerr_F/x^2$ with the same series and both rules. The endpoint formula,
 evaluated with the data used in the replication, minus this numerical integral gives $-3.77\cdot10^{-13}$
-[N]. The table gives the empirical error budget [N] for the evaluation. For the nodes and $P_0$ we use
+\status{N}. The table gives the empirical error budget \status{N} for the evaluation. For the nodes and
+$P_0$ we use
 the sensitivity to grid refinement. The last two rows specify the scope of their bounds.
 
 \begin{center}\small
 \begin{tabular}{lr}
-Source & Empirical budget [N]\\ \hline
+Source & Empirical budget \status{N}\\ \hline
 Nodal data on the twenty-point panel & $2.8\cdot10^{-8}$\\
 Data on the circle of radius $0.03$ & $1.4\cdot10^{-8}$\\
 Boundary value $P_0$ & $5.0\cdot10^{-9}$\\
 Nodal data on the six-point panel & $2.3\cdot10^{-9}$\\
-Series and quadrature for $\numerr_6/x^2$ [D if C] & $8.74\cdot10^{-10}$\\
-Absolute error in the value of $S$ used [O] & $7.044\cdot10^{-10}$
+Series and quadrature for $\numerr_6/x^2$ \status{D if C} & $8.74\cdot10^{-10}$\\
+Absolute error in the value of $S$ used \status{O} & $7.044\cdot10^{-10}$
 \end{tabular}
 \end{center}
 For $S=15.6334582804$ we take the larger of the distances to the certified endpoints in
-Section~\ref{sec:numcert}. The certified half-width for $P_T$ is approximately $9.1\cdot10^{-4}$ [O]. The
-row for $P_0=P_T+J$ measures the variation observed on the grids [N].
+Section~\ref{sec:numcert}. The certified half-width for $P_T$ is approximately $9.1\cdot10^{-4}$
+\status{O}. The
+row for $P_0=P_T+J$ measures the variation observed on the grids \status{N}.
 
 The computation gives $0.4055003786$. The largest contributions to the error come from the values on the
 twenty-point panel and on the circle. The root sum of squares of the indicators is $3.2\cdot10^{-8}$, and
 their linear sum is $5.1\cdot10^{-8}$ with the bound for $S$. When the fit for $Q_2$ was changed, the
 result varied between $-3.7\cdot10^{-9}$ and $+7.6\cdot10^{-9}$ relative to the reference. With these
-empirical checks we report $0.40550038\pm3\cdot10^{-8}$ [N], with the conservative estimate
-$0.4055004\pm2\cdot10^{-7}$ [N].
+empirical checks we report $0.40550038\pm3\cdot10^{-8}$ \status{N}, with the conservative estimate
+$0.4055004\pm2\cdot10^{-7}$ \status{N}.
+
+Rounded to eight decimals, the terms of~\eqref{eq:main} in this evaluation are as follows \status{N}.
+The integral is listed as the total minus the other terms, and the sum involves a cancellation of nearly
+two orders of magnitude.
+\begin{center}\small
+\begin{tabular}{lr}
+Term & Value\\ \hline
+$F(1)-\tfrac1{12}$ & $-0.08333333$\\
+$\int_0^1\numerr(x)x^{-2}\,dx$ & $23.91566973$\\
+$P_T$ & $0.44523138$\\
+$J=-B_2+L_2$ & $-8.23860912$\\
+$-S$ & $-15.63345828$\\ \hline
+$\cerr$ & $0.40550038$
+\end{tabular}
+\end{center}

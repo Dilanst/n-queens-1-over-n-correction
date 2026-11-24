@@ -33,7 +33,8 @@ at zero is \(O(1/j)\) by centering and \(\log j-(\log\Gamma)'(j+1)=O(1/j)\). Thu
  p_U=\Big(\prod_{i\in U}b_i\Big)e^{L_*(T_U)}(1+O(e^{-cj})).
 \]
 For \(h>a_*j\), \(\operatorname{per}D_{-U}\le1\) by the row masses, and \(\operatorname{per}D\ge
-j!/j^j\ge e^{-j}\) by the van der Waerden inequality. On both intervals we have \(p_U\le C_0^h\prod
+j!/j^j\ge e^{-j}\) by the van der Waerden inequality~\cite{egorychev,falikman}. On both intervals we have
+\(p_U\le C_0^h\prod
 b_i\).
 
 The weight \(w_U=a_Uz^U\prod b_i\) factorizes over the components of the diagonal graph induced on \(U\),
@@ -52,12 +53,16 @@ columns, and diagonal neighbors.
 
 For a small linear functional \(\xi\) we tilt by \(e^{\xi[T_U]}\). By the exponential formula, the
 logarithm of the gas of compatible components is the sum over families whose incompatibility graph is
-connected. For a fixed edge order, the connected subgraphs with the same minimum spanning tree form a
+connected (the cluster
+expansion~\cite{kp,fp}). For a fixed edge order, the connected subgraphs with the same minimum spanning
+tree form a
 Boolean interval. We may add any edge that comes after every edge on the tree path between its endpoints.
-Their alternating sum has absolute value zero or one, so the trees bound the coefficient. Summing the
+Their alternating sum has absolute value zero or one, so the trees bound the coefficient (Penrose's
+tree-graph identity; see~\cite{fp}). Summing the
 children of a root of size \(v\) recursively gives an exponential factor at most
-\(\exp(\sum_{\gamma'\not\sim\gamma}|w_{\gamma'}|e^{|\gamma'|})\le e^v\). The criterion holds for small
-\(S_*/j\) with the reserve above. This gives \(\|\log Z_\xi\|=O(S_*)\). One and two marks cost the size
+\(\exp(\sum_{\gamma'\not\sim\gamma}|w_{\gamma'}|e^{|\gamma'|})\le e^v\). The convergence criterion
+of~\cite{kp} holds for small \(S_*/j\) with the reserve above. This gives \(\|\log Z_\xi\|=O(S_*)\). One
+and two marks cost the size
 factors \(3v,(3v)^2\), absorbed by the reserve. The tilted mean \(m_\xi\) of \(T_U\) and its derivative
 have norm \(O(S_*)\). By the Hessian estimate above, the equation \(\xi=DL_*(m_\xi)\) is contractive with
 constant \(CS_*/j<1/2\). Iteration can start from zero, so the solution is real at every Boolean

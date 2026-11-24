@@ -1,0 +1,73 @@
+
+\emph{Step 2. Variation of the displacement.} Theorem~\ref{teo:insercion-torres} and
+Corollary~\ref{cor:dos-casillas}, applied to the minor of $d$, give on the common support
+\begin{equation}\label{eq:variaciones-base}
+ \delta p=O(ph),\qquad \delta G^0_{ij}=O(h^2),\qquad \delta\hat c=O(h^2),\qquad
+ \delta\tau=O(ph),\qquad \delta\mu_i=O(h^2),
+\end{equation}
+the last by summation over a line that loses at most one site. From $\zeta=O(h^2)$ and
+$s_x=-\mathsf G(x,e_0)+a_x^\top\zeta$ we first get $\delta s=O(h^2)$. In~\eqref{eq:masas-hijo} the summand
+of $B_i$ is $p_xs_x^2$ times a function with bounded derivatives in $(p_x,s_x)$ near the origin. On the
+common indices it changes by $O(p_xh^3)$, and the lost site contributes $O(h^3)$; thus $\delta
+B_i=O(h^3)$. On the star $F^*$, the exact formula~\eqref{eq:rho-hijo} gives $\delta\rho_i=O(h^3)$. Of the
+two linear systems~\eqref{eq:masas-hijo}, for $N$ and for $N_d$, restrict the larger one to the common
+indices. The absolute row sums of the difference of the two matrices, including the coupling with the two
+removed indices, are $O(h)$: this follows from $\delta\tau=O(ph)$, from the lost site, and from the change
+of the gauge projection. Multiplying by the solution, which is $O(h^2)$, and by the inverse, which is
+uniformly bounded in the supremum norm, we obtain
+\[
+ \delta\zeta=O(h^3),\qquad\text{and in the same way}\qquad \delta z=O(h^3),\qquad \delta u=O(h^2).
+\]
+
+\emph{Step 3. Variation of the remainder.} By Step~1 it suffices to compare the eleven expressions in $N$
+and in $N_d$. The interior terms of items 4, 6 and 7 have majorants $Cph^3$, $Cp^2h^2$ and $Cp^3h$ per
+site; each sums to $O(h^2)$, and to $O(h^3)$ over the two lost lines. On the common indices the
+telescoping of each product gains a factor $h$ in the majorant, by~\eqref{eq:variaciones-base},
+$\delta\alpha=O(h^2)$, $\delta z=O(h^3)$ and $\delta u=O(h^2)$; the scalar factors of order $p^m$, $m\ge1$,
+are analytic with derivative $O(p^{m-1})$. On the star at most two terms of size $O(h^3)$ are lost. The
+products with $\mu$ use $\mu=O(h)$ and $\delta\mu=O(h^2)$; those of the chosen site use $\hat c=O(h)$ and
+$\delta\hat c=O(h^2)$. In item~11, $\delta(6p^2+2p\alpha)=O(h^3)$; the interior sum uses
+$\sum\tau|\mathsf G(x,e_0)|=O(1)$, and on the removed sites the mass is at most two and $\mathsf
+G(x,e_0)=O(h)$.
+
+For the trace we may keep $W$ exact, at a cost $O(h^3)$ on each board. Since $W$ annihilates the gauge,
+the quadratic trace is $\operatorname{tr}(G^0_{II}WG^0_{II}W)$. The entries of $W$ in Step~7 give
+$\max|W|=O(h^2)$, $\|W\|_\infty=O(h)$, and, on the common indices, $\max|\delta W|=O(h^3)$ and $\|\delta
+W\|_\infty=O(h^2)$; here one uses $\delta s=O(h^2)$, $\delta p=O(ph)$ and the formula for $Q_J$. Write
+$G^0_{II}=I+H_1$, with $\max|H_1|=O(h)$ and $\max|\delta H_1|=O(h^2)$. In $\operatorname{tr}(W^2)$,
+changing $W$ costs $O(k\,h^2h^2)$ and losing a line costs $O(h\,h^2)$. The absolute sum in
+$\operatorname{tr}(H_1W^2)$ is at most $k\max|H_1|\,\|W\|_\infty^2$, and that in
+$\operatorname{tr}(H_1WH_1W)$ is at most $k^2\max|H_1|^2\|W\|_\infty^2$; changing one factor or
+fixing a lost index improves each majorant by a factor $h$. Altogether $\delta r_{e_0}=O(h^3)$, which is
+(a).
+\end{proof}
+
+\begin{corolario}[Increment of the two-cell remainder]\label{cor:incremento-marginal}
+Under the hypotheses of Proposition~\ref{prop:menor-lejano}\textup{(b)}, let $R_\pi=\pi^T-\pi_1$ for the
+pair $\{e,f\}$. If $c$ lies in none of the rows or columns of $e,f$, then
+\[
+ |R_\pi(M_c)-R_\pi(M)|\le C\,\frac{p_ep_f}{k^3}.
+\]
+\end{corolario}
+\begin{proof}
+By~\eqref{eq:psi-dos-casillas}, $R_\pi=p_ep_f\Psi$ with
+$\Psi=(1+x_1)(1-g+t_1)(1+x_2+t_2)e^{\varrho_1+\varrho_2}-(1-g+x_1+x_2)$, where $x_1=\hat c_e$,
+$x_2=\hat c_f$, $g=\mathsf G(e,f)$, $t_1=p'_f/p_f-1+g$, $t_2=\hat c'_f-\hat c_f$, $\varrho_1=r_e(M)$ and
+$\varrho_2=r_f(M_e)$. Here $x_i,g=O(h)$ and $t_i,\varrho_i=O(h^2)$. The part of $\Psi$ linear in
+$(x_1,x_2,g)$ vanishes, so its derivatives in $x_i,g$ are $O(h)$, while those in $t_i,\varrho_i$ are
+$1+O(h)$. Let $\delta$ be the variation from $M$ to $M_c$. Then $\delta x_i,\delta g=O(h^2)$
+by~\eqref{eq:variaciones-base}, and $\delta\varrho_1,\delta\varrho_2=O(h^3)$ by
+Proposition~\ref{prop:menor-lejano}\textup{(a)}, applied to $M$ and to $M_e$. For $t_1,t_2$ we need
+second differences. The child's Green matrix satisfies $G'-G^0_{II}=(I+H_1)W(I+H_2)+C_q$, where the
+entries of $H_i$ are $O(h)$ with variations $O(h^2)$, and $C_q$ is built from $q=G^0_{IJ}v_J=O(h)$,
+$\delta q=O(h^2)$, $v_I^\top q=O(h)$ and the divisor $2k-2$, so that $\delta C_q=O(h^3)$. With the bounds
+for $W$ and $\delta W$ of Step~3 this gives $\delta(G'-G^0_{II})_{ij}=O(h^3)$. For
+$X_x=(G^0a_x)^\top\eta^X-\varepsilon_x$ with $\eta^X_i=\sum_{y\in i}\tau_y\varepsilon_y$, we have
+$\delta\Delta p=O(ph^2)$ from $\Delta p=\tau s+O(ps^2)$ and~\eqref{eq:masas-hijo}, hence
+$\delta\Delta\varepsilon=O(h^3)$ and $\delta\Delta\eta^X_i=O(h^3)$; in the contraction with $G^0a_x$, whose
+$\ell^1$ norm is $O(1)$ and whose entries on the four removed lines are $O(h)$, this gives
+$\delta\Delta X=O(h^3)$ and $\delta t_2=O(h^3)$. Finally
+$t_1=-(\varsigma_f/p_f)\mathsf G(e,f)+(\tau_f/p_f)a_f^\top\zeta+[u(t_fe^{s_f})-p_f-\tau_fs_f]/p_f$ has
+variation $O(h^3)$ by Step~2. Therefore $\delta\Psi=O(h^3)$. Since $\Psi=O(h^2)$ and
+$\delta(p_ep_f)=O(p_ep_fh)$, the claim follows.
+\end{proof}

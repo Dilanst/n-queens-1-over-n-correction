@@ -1,25 +1,48 @@
 # Referencias de la edición española
 
-Se reproducen las 21 entradas de [la bibliografía del artículo](../../es/articulo/bibliografia.tex), en el mismo orden.
+Se reproducen las 44 entradas de la bibliografía del artículo ([primera parte](../../es/articulo/bibliografia_a.tex), [segunda parte](../../es/articulo/bibliografia_b.tex)), en el mismo orden.
 
+- **ar**. N. Anari y A. Rezaei. *A tight analysis of Bethe approximation for permanent*. SIAM J. Comput. **53** (2024), 1538–1553. [doi:10.1137/19M1306142](https://doi.org/10.1137/19M1306142); arXiv:1811.02933.
+- **azuma**. K. Azuma. *Weighted sums of certain dependent random variables*. Tohoku Math. J. (2) **19** (1967), 357–367. [doi:10.2748/tmj/1178243286](https://doi.org/10.2748/tmj/1178243286).
 - **bs**. J. Bell y B. Stevens. *A survey of known results and research areas for *n*-queens*. Discrete Math. **309** (2009), 1–31. [doi:10.1016/j.disc.2007.12.043](https://doi.org/10.1016/j.disc.2007.12.043).
 - **bk**. C. Bowtell y P. Keevash. *The *n*-queens problem*. [arXiv:2109.08083v1](https://arxiv.org/abs/2109.08083v1) (2021). [doi:10.48550/arXiv.2109.08083](https://doi.org/10.48550/arXiv.2109.08083).
+- **cy**. M. Chertkov y A. B. Yedidia. *Approximating the permanent with fractional belief propagation*. J. Mach. Learn. Res. **14** (2013), 2029–2066.
+- **ct**. T. M. Cover y J. A. Thomas. *Elements of Information Theory*, 2.ª ed. Wiley-Interscience, Hoboken (2006). [doi:10.1002/047174882X](https://doi.org/10.1002/047174882X).
 - **dw**. A. Divoux y S. Wang. *The maximum number of Hamiltonian cycles in tournaments*. [arXiv:2610.23755v1](https://arxiv.org/abs/2610.23755v1) (2026). [doi:10.48550/arXiv.2610.23755](https://doi.org/10.48550/arXiv.2610.23755).
+- **egorychev**. G. P. Egorychev. *The solution of van der Waerden's problem for permanents*. Adv. Math. **42** (1981), 299–305. [doi:10.1016/0001-8708(81)90044-X](https://doi.org/10.1016/0001-8708(81)90044-X).
+- **falikman**. D. I. Falikman. *Proof of the van der Waerden conjecture regarding the permanent of a doubly stochastic matrix*. Math. Notes **29** (1981), 475–479. [doi:10.1007/BF01163285](https://doi.org/10.1007/BF01163285).
+- **fp**. R. Fernández y A. Procacci. *Cluster expansion for abstract polymer models. New bounds from an old approach*. Comm. Math. Phys. **274** (2007), 123–140. [doi:10.1007/s00220-007-0279-2](https://doi.org/10.1007/s00220-007-0279-2); [arXiv:math-ph/0605041](https://doi.org/10.48550/arXiv.math-ph/0605041).
+- **gale**. D. Gale. *A theorem on flows in networks*. Pacific J. Math. **7** (1957), 1073–1082. [doi:10.2140/pjm.1957.7.1073](https://doi.org/10.2140/pjm.1957.7.1073).
 - **gms**. S. Glock, D. Munhá Correia y B. Sudakov. *The *n*-queens completion problem*. Res. Math. Sci. **9** (2022), artículo 41. [doi:10.1007/s40687-022-00335-1](https://doi.org/10.1007/s40687-022-00335-1); arXiv:2111.11402.
+- **gm**. C. D. Godsil y B. D. McKay. *Asymptotic enumeration of Latin rectangles*. J. Combin. Theory Ser. B **48** (1990), 19–44. [doi:10.1016/0095-8956(90)90128-M](https://doi.org/10.1016/0095-8956(90)90128-M).
+- **gurvits**. L. Gurvits. *Unleashing the power of Schrijver's permanental inequality with the help of the Bethe approximation*. [arXiv:1106.2844](https://arxiv.org/abs/1106.2844) (2011). [doi:10.48550/arXiv.1106.2844](https://doi.org/10.48550/arXiv.1106.2844).
+- **numpy**. C. R. Harris, K. J. Millman, S. J. van der Walt, et al. *Array programming with NumPy*. Nature **585** (2020), 357–362. [doi:10.1038/s41586-020-2649-2](https://doi.org/10.1038/s41586-020-2649-2).
 - **hj**. R. A. Horn y C. R. Johnson. *Matrix Analysis*, 2.ª ed. Cambridge University Press (2013). [doi:10.1017/CBO9781139020411](https://doi.org/10.1017/CBO9781139020411).
+- **kp**. R. Kotecký y D. Preiss. *Cluster expansion for abstract polymer models*. Comm. Math. Phys. **103** (1986), 491–498. [doi:10.1007/BF01211762](https://doi.org/10.1007/BF01211762).
+- **lsok**. G. F. Lawler y A. D. Sokal. *Bounds on the *L^2* spectrum for Markov chains and Markov processes: a generalization of Cheeger's inequality*. Trans. Amer. Math. Soc. **309** (1988), 557–580. [doi:10.1090/S0002-9947-1988-0930082-9](https://doi.org/10.1090/S0002-9947-1988-0930082-9).
 - **li**. E. Li. *The Godsil–McKay asymptotic for Latin rectangles in the sublinear range of Erdős Problem 725*. [arXiv:2608.01671v1](https://arxiv.org/abs/2608.01671v1) (2026). [doi:10.48550/arXiv.2608.01671](https://doi.org/10.48550/arXiv.2608.01671).
+- **ll**. N. Linial y Z. Luria. *An upper bound on the number of Steiner triple systems*. Random Structures Algorithms **43** (2013), 399–406. [doi:10.1002/rsa.20487](https://doi.org/10.1002/rsa.20487).
+- **llw**. Z.-Y. Liu, H.-J. Liao y L. Wang. *Statistical mechanics of the *N*-queens problem*. [arXiv:2605.10326](https://arxiv.org/abs/2605.10326) (2026). [doi:10.48550/arXiv.2605.10326](https://doi.org/10.48550/arXiv.2605.10326).
 - **luria**. Z. Luria. *New bounds on the number of *n*-queens configurations*. [arXiv:1705.05225](https://arxiv.org/abs/1705.05225) (2017). [doi:10.48550/arXiv.1705.05225](https://doi.org/10.48550/arXiv.1705.05225).
 - **ls**. Z. Luria y M. Simkin. *A lower bound for the *n*-queens problem*. En *Proceedings of the 2022 Annual ACM-SIAM Symposium on Discrete Algorithms (SODA)*, SIAM (2022), 2185–2197. [doi:10.1137/1.9781611977073.86](https://doi.org/10.1137/1.9781611977073.86).
 - **mcc**. P. McCullagh. *An asymptotic approximation for the permanent of a doubly stochastic matrix*. J. Stat. Comput. Simul. **84** (2014), 404–414. [doi:10.1080/00949655.2012.712122](https://doi.org/10.1080/00949655.2012.712122).
-- **pv**. D. S. Mejia. *El perfil variacional de las colocaciones parciales de reinas: existencia, ecuaciones de Euler y regularidad hasta el tablero lleno*. Zenodo (2026). [doi:10.5281/zenodo.24220042](https://doi.org/10.5281/zenodo.24220042).
-- **ef**. D. S. Mejia. *Completabilidad de las últimas capas en el problema de las *n* reinas*. Zenodo (2026). [doi:10.5281/zenodo.24221374](https://doi.org/10.5281/zenodo.24221374).
-- **pc**. D. S. Mejia. *El predictor canónico del problema de las *n* reinas: término constante y consistencia*. Zenodo (2026). [doi:10.5281/zenodo.24241043](https://doi.org/10.5281/zenodo.24241043).
-- **tc**. D. S. Mejia. *El término constante del problema de las *n* reinas*. Zenodo (2026). [doi:10.5281/zenodo.24248206](https://doi.org/10.5281/zenodo.24248206).
+- **pv**. D. S. Mejia. *The variational profile of partial queen placements: existence, Euler equations, and regularity up to the full board*. Zenodo (2026). [doi:10.5281/zenodo.24220042](https://doi.org/10.5281/zenodo.24220042).
+- **ef**. D. S. Mejia. *Completability of the final layers in the *n*-queens problem*. Zenodo (2026). [doi:10.5281/zenodo.24221374](https://doi.org/10.5281/zenodo.24221374).
+- **pc**. D. S. Mejia. *The canonical predictor for the *n*-queens problem: constant term and consistency*. Zenodo (2026). [doi:10.5281/zenodo.24241043](https://doi.org/10.5281/zenodo.24241043).
+- **tc**. D. S. Mejia. *The constant term of the *n*-queens problem*. Zenodo (2026). [doi:10.5281/zenodo.24248206](https://doi.org/10.5281/zenodo.24248206).
 - **mkc**. R. E. Moore, R. B. Kearfott y M. J. Cloud. *Introduction to Interval Analysis*. SIAM, Filadelfia (2009). [doi:10.1137/1.9780898717716](https://doi.org/10.1137/1.9780898717716).
+- **np**. I. Narang y W. Perkins. *Structural corrections to the Bethe approximation of the permanent*. [arXiv:2608.31061](https://arxiv.org/abs/2608.31061) (2026). [doi:10.48550/arXiv.2608.31061](https://doi.org/10.48550/arXiv.2608.31061).
 - **nab**. P. Nobel, A. Agrawal y S. Boyd. *Computing tighter bounds on the *n*-queens constant via Newton's method*. Optim. Lett. **17** (2023), 1229–1240. [doi:10.1007/s11590-022-01933-2](https://doi.org/10.1007/s11590-022-01933-2).
 - **oeis**. OEIS Foundation Inc. *The On-Line Encyclopedia of Integer Sequences*, sucesión A000170. <https://oeis.org/A000170>.
 - **q27**. T. B. Preußer y M. R. Engelhardt. *Putting queens in carry chains, No. 27*. J. Signal Process. Syst. **88** (2017), 185–201. [doi:10.1007/s11265-016-1176-8](https://doi.org/10.1007/s11265-016-1176-8).
+- **rad**. J. Radhakrishnan. *An entropy proof of Bregman's theorem*. J. Combin. Theory Ser. A **77** (1997), 161–164. [doi:10.1006/jcta.1996.2727](https://doi.org/10.1006/jcta.1996.2727).
 - **richardson**. L. F. Richardson. *The approximate arithmetical solution by finite differences of physical problems involving differential equations, with an application to the stresses in a masonry dam*. Philos. Trans. Roy. Soc. London Ser. A **210** (1911), 307–357. [doi:10.1098/rsta.1911.0009](https://doi.org/10.1098/rsta.1911.0009).
+- **rvz**. I. Rivin, I. Vardi y P. Zimmermann. *The *n*-queens problem*. Amer. Math. Monthly **101** (1994), 629–639. [doi:10.2307/2974691](https://doi.org/10.2307/2974691).
+- **schrijver**. A. Schrijver. *Counting 1-factors in regular bipartite graphs*. J. Combin. Theory Ser. B **72** (1998), 122–135. [doi:10.1006/jctb.1997.1798](https://doi.org/10.1006/jctb.1997.1798).
 - **simkin**. M. Simkin. *The number of *n*-queens configurations*. Adv. Math. **427** (2023), 109127. [doi:10.1016/j.aim.2023.109127](https://doi.org/10.1016/j.aim.2023.109127).
 - **sk**. R. Sinkhorn y P. Knopp. *Concerning nonnegative matrices and doubly stochastic matrices*. Pacific J. Math. **21** (1967), 343–348. [doi:10.2140/pjm.1967.21.343](https://doi.org/10.2140/pjm.1967.21.343).
 - **trefethen**. L. N. Trefethen. *Is Gauss quadrature better than Clenshaw–Curtis?* SIAM Rev. **50** (2008), 67–87. [doi:10.1137/060659831](https://doi.org/10.1137/060659831).
+- **tw**. L. N. Trefethen y J. A. C. Weideman. *The exponentially convergent trapezoidal rule*. SIAM Rev. **56** (2014), 385–458. [doi:10.1137/130932132](https://doi.org/10.1137/130932132).
+- **tucker**. W. Tucker. *Validated Numerics: A Short Introduction to Rigorous Computations*. Princeton University Press, Princeton (2011). ISBN 978-0-691-14781-9.
+- **vontobel**. P. O. Vontobel. *The Bethe permanent of a nonnegative matrix*. IEEE Trans. Inform. Theory **59** (2013), 1866–1901. [doi:10.1109/TIT.2012.2227109](https://doi.org/10.1109/TIT.2012.2227109).
+- **zm**. C. Zhang y J. Ma. *Counting solutions for the *N*-queens and Latin-square problems by Monte Carlo simulations*. Phys. Rev. E **79** (2009), 016703. [doi:10.1103/PhysRevE.79.016703](https://doi.org/10.1103/PhysRevE.79.016703); arXiv:0808.4003.

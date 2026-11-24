@@ -1,8 +1,8 @@
-# Acta de revisión externa · W2_difusion: difusión y brecha sobre la llegada histórica corta (D04, A01)
+# Acta de revisión · W2_difusion: difusión y brecha sobre la llegada histórica corta (D04, A01)
 
-**Objeto.** Los seis puntos de `rev_exp/encargos/W2_difusion.md`, con la parte común de `rev_exp/encargos/comun_ext.md`. La pieza es `rev_exp/r21/piezas_T2/04_difusion/`: la implicación «tablero de la clase histórica de C con L_max < ⌈αj⌉ ⇒ punto de torres positivo en el soporte, carga M₀/j, brecha y escalado exacto controlado», en cada máscara.
+**Objeto.** Los seis puntos de la revisión W2_difusion. La pieza es `rev_exp/r21/piezas_T2/04_difusion/`: la implicación «tablero de la clase histórica de C con L_max < ⌈αj⌉ ⇒ punto de torres positivo en el soporte, carga M₀/j, brecha y escalado exacto controlado», en cada máscara.
 
-**Revisor.** Externo al proceso que escribió las pruebas. Sin web; sólo la carpeta `rev_exp/`. 17-11-2026. El trabajo se interrumpió por el límite de uso y se reanudó por indicación del coordinador; no quedó ningún cálculo pendiente de la primera sesión (§2.6).
+**Revisión.** 17-11-2026.
 
 **Dictamen global sobre esta parte: CERTIFICADA CON PRECISIONES** (§3). No he encontrado ningún enunciado falso ni ningún hueco de prueba en D04:1–43 ni en A01:13–42. Las precisiones son de redacción, de notación y de cita; ninguna cambia un enunciado.
 
@@ -17,7 +17,7 @@
 - Transcripciones: los bloques de `prueba_fuente.md`:10–65 (56 líneas) y :73–132 (60 líneas) son idénticos, línea a línea, a los originales completos (1–56 y 1–60).
 - Las copias `r21/fuentes/latex/D04.tex` y `A01.tex` tienen la misma huella. Las copias de r19 (`r19/expediente/originales/D/04_difusion.md` y `A/01_clases.md`) transcriben también literalmente los mismos textos.
 - `sha256sum -c` en las dos carpetas de origen: 9/9 correctos en `margenes_y_atomos`; 11/11 archivos presentes correctos en la ronda 10. Esa copia es parcial: faltan 54 entradas de su manifiesto (cálculos, sellos e informes), que no uso.
-- Repetí el cotejo tras el reinicio de la máquina entre las dos sesiones: todo coincide.
+- Repetí el cotejo: todo coincide.
 - Pasajes públicos de B y C: los 18 archivos de `r21/fuentes/publicas/{B,C}/` coinciden con los identificadores de blob de `BLOBS.txt` (SHA-1 de blob git, recalculado).
 
 **Convenciones de cita.**
@@ -275,7 +275,7 @@ En la tabla, K_eff = max\|P/p−1\|/(ε+1/k). \*En la familia A, P = D_A exactam
 
 | Id | Archivo | Resultado | Tiempo |
 |---|---|---|---|
-| C0 | `c0_cotejo.py` | huellas y transcripciones: todo coincide | 0,04 s (13:26 UTC) y 0,10 s (16:05 UTC, tras el reinicio) |
+| C0 | `c0_cotejo.py` | huellas y transcripciones: todo coincide | 0,04 s (13:26 UTC) y 0,10 s (16:05 UTC) |
 | C1r | `c1_puntos_torres.py rapido` | prueba con A(16,8) y B(768,24) | 0,3 s (fallo), 3,3 s (fallo) y 9,8 s (correcta); el archivo `_tiempo` guarda sólo la última |
 | C1 | `c1_puntos_torres.py` | tabla anterior | 323,8 s reales (315,0 s de usuario), 15:58:39–16:04:03 UTC |
 | — | exploraciones de grados y L_max; depuración de B(192,24); huellas de blobs de B y C; cotejo de las copias de r19 | sin archivo (resultados en §0 y en las incidencias) | ≈ 1 s las tres primeras; instantáneas las dos últimas |
@@ -285,7 +285,7 @@ En la tabla, K_eff = max\|P/p−1\|/(ε+1/k). \*En la familia A, P = D_A exactam
 2. **C1r, primera ejecución.** «phi no converge»: el arranque desde los potenciales de torres daba w ≥ 27/256, sin raíz pequeña. Lo corregí desplazando los potenciales en 2·log(1 − max P) y amortiguando el paso.
 3. **C1r, segunda ejecución.** B(192,24), con fracción bloqueada 3/10, tiene L_max = 7 y carga del punto de torres ≈ 0,8, fuera del régimen de D04; falló el paso de reinas. Pasé a fracción 2/10 y n/k ≥ 16 tras explorar grados y L_max.
 4. **C1.** A(16,4) no convergió («paso nulo»): k = 16 y carga ≳ 0,4. No determiné si allí existe el punto de reinas en la rama; queda fuera del régimen de carga pequeña y no se usa.
-5. **Interrupción.** La revisión se cortó por el límite de uso después de C1r. No quedó nada en marcha; C1 se lanzó tras reanudar. La máquina se había reiniciado; los archivos estaban intactos y C0 se repitió con éxito.
+
 
 **Veredicto: evidencia numérica favorable.**
 

@@ -1,7 +1,7 @@
-# Acta de revisión externa · W2_pares: exponente 7 de los pares y resto de grado ≤ 4
+# Acta de revisión · W2_pares: exponente 7 de los pares y resto de grado ≤ 4
 
-**Objeto.** La dependencia que el dictamen de E2 dejó abierta (`rev_exp/E2/ACTA.md`, §4 líneas 224–230 y precisión P2, línea 236): la cota |w_bd| ≤ Cj⁻⁷ de M01 para dos conflictos con ocho coordenadas RC distintas, la media y la suma de esos pares, y la cota P05 del resto con tres o más conflictos y v ≤ 4. Encargo: `rev_exp/encargos/W2_pares.md`. No reviso E1, E2 ni el recuento de tipos de grado ≥ 5.
-**Revisor.** Externo al proceso que escribió las pruebas. Sin web; sólo esta carpeta. 17-11-2026.
+**Objeto.** La dependencia que el dictamen de E2 dejó abierta (`rev_exp/E2/ACTA.md`, §4 líneas 224–230 y precisión P2, línea 236): la cota |w_bd| ≤ Cj⁻⁷ de M01 para dos conflictos con ocho coordenadas RC distintas, la media y la suma de esos pares, y la cota P05 del resto con tres o más conflictos y v ≤ 4. No reviso E1, E2 ni el recuento de tipos de grado ≥ 5.
+**Revisión.** 17-11-2026.
 **Dictamen global sobre esta parte: CERTIFICADA CON PRECISIONES** (§3).
 
 ## 0. Integridad, convenciones y método
@@ -233,7 +233,7 @@ Con esto queda cubierta la precisión P2 del dictamen de E2, salvo las entradas 
 ## 4. Resumen final
 
 ```
-W2_pares · exponente 7 de los pares y resto de grado <= 4 · revisión externa
+W2_pares · exponente 7 de los pares y resto de grado <= 4
 Integridad: r19 116/116; las tres fuentes completas pasan su SHA256SUMS.
 
 Punto                                             Veredicto

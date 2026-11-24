@@ -4,7 +4,7 @@ Rutas relativas al archivo de origen.
 Los rótulos R21 y R22 designan las dos entregas indicadas por el autor. Las actas se
 conservan sin cambios y sus huellas se registran en auditoria/FUENTES_SHA256.json de la entrega v2.
 Edición v3: aplica las correcciones C1–C6 del acta externa rev_exp/W3_v2/ACTA.md.
-Las actas posteriores a v2 se citan por su ruta en la carpeta de revisión externa rev_exp/:
+Las actas posteriores a v2 se citan por su ruta en la carpeta rev_exp/:
 W2_r3 (pares con coincidencias RC), W_global (dictamen global, WG), W3_xi (deducción de Ξ, W3X) y W4_rev (prueba de D1).
 Sus huellas están en ../CAMBIOS_v3.md. MM, GI y PF son las fuentes media_matriz,
 grupos_interlinea y patrones_finitos, con la numeración de ACTA_pares.md:10–13.

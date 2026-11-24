@@ -1,10 +1,10 @@
-\subsection{Una casilla marcada y el incremento del determinante [D]}
+\subsection{Una casilla marcada y el incremento del determinante \texorpdfstring{\status{D}}{[D]}}
 Queda el incremento de $R_{\rm det}$. Se puede medir el efecto de $e=(r,c)$ sobre $L_T$
 variando su peso o comparando el tablero con el menor tras ocuparla. Para $e$ permitida, sean
 $\pi^{\rm der}_e=\partial_{\log w_e}L_T=p_e(1+\hat c_e)$,
 $\varepsilon_e=p_e/P_e-1$ y
 $r_e=L_T(M_e)-L_T(M)-\log(\pi^{\rm der}_e/w_e)$.
-El Teorema A de torres da $|\hat c_e|\le C/k$ y $|r_e|\le C/k^2$. Así $r_e$ mide hasta
+El Teorema~\ref{teo:insercion-torres} da $|\hat c_e|\le C/k$ y $|r_e|\le C/k^2$. Así $r_e$ mide hasta
 segundo orden la discrepancia entre ambas operaciones. Usando el escalado
 del menor $P'=\operatorname{diag}(x')P^{(e)}\operatorname{diag}(y')$, donde $P^{(e)}$ es la
 submatriz de $P$, se obtiene la identidad exacta
@@ -18,7 +18,11 @@ submatriz de $P$, se obtiene la identidad exacta
 \end{align*}
 En efecto, $\Delta=-L_T(P)+\log(k!/k^k)-\frac12\log\det(I-b_P^\top b_P)$.
 La covariancia de $L_T$ bajo escalado da las dos sumas de potenciales. El signo del término de
-tamaño sale del cociente de los dos factoriales. Para demostrar $(A^+)$ debemos ganar una potencia
+tamaño sale del cociente de los dos factoriales. La estimación que hay que demostrar es
+\[
+ |r_e+\mathsf E_e|=|R_{\rm det}(M_e)-R_{\rm det}(M)|\le Ck^{-3}. \tag{$A^+$}
+\]
+Para demostrar $(A^+)$ debemos ganar una potencia
 de $k$ en la suma firmada $r_e+\mathsf E_e$. La expresión exacta de $L_T$ conserva el
 desplazamiento cuadrático del punto estacionario, habitualmente denotado por $\zeta$. Acotar los
 once restos de segundo orden en valor absoluto perdería su cancelación.
@@ -69,6 +73,9 @@ expresiones integradas son independientes de $v$. Por ello el desarrollo de $\pa
 carece de los términos con potencia cero de $s$ o $t$. Dividir su serie por $st$ da una
 función $H$ acotada en discos interiores por la serie geométrica de las cotas de Cauchy.
 En $s=t=u$ la derivada de $R_{\rm det}$ respecto a $v$ es $O(u^4)$ hasta $v=0$.
-Integrar sobre $[0,1]$ da el borrado de $(D^+)$. Al sumar los incrementos de $(L^{*+})$ se
+Integrar sobre $[0,1]$ da la estimación de borrado
+\[
+ |R_{\rm det}(M\setminus e)-R_{\rm det}(M)|\le Ck^{-4}. \tag{$D^+$}
+\] Al sumar los incrementos de $(L^{*+})$ se
 obtiene $(T^+)$ para el resto total $R$. Así puede compararse la aproximación de un mismo par
 antes y después de pasar a un menor adicional que lo conserve.

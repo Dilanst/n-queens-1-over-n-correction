@@ -8,16 +8,19 @@ Para un par diagonal disponible \(\parmar=\{e,f\}\), sea \(\pi^{\rm ex}_{\parmar
 una colocación uniforme de torres. Sea \(\pi^T_{\parmar}=\exp[L_T(M_{\parmar})-L_T(M)]\), donde
  \(M_{\parmar}\) elimina sus
 cuatro extremos de fila y columna. Con \(\mathsf G(e,f)\) la respuesta cruzada del punto estacionario
-de torres y \(\chi_e\) su corrección relativa de una casilla, definimos
+de torres y \(\hat c_e\) su corrección relativa de una casilla (ambas como en el
+Apéndice~\ref{app:rook}), definimos
 \[
- \pi_{1,\parmar}=p_ep_f(1-\mathsf G(e,f)+\chi_e+\chi_f),\qquad
+ \pi_{1,\parmar}=p_ep_f(1-\mathsf G(e,f)+\hat c_e+\hat c_f),\qquad
  X_{\parmar}=p_ep_f(p_e+p_f)\mathsf G(e,f).
 \]
 Para un par solo la corrección del cuadrado es
-\(\log(1-\pi^{\rm ex}_{\parmar})-\log(1-\pi_{1,\parmar})-X_{\parmar}+O(j^{-5})\).
-Las probabilidades son \(O(j^{-2})\) y su diferencia es \(O(j^{-4})\); al integrar la derivada
+\(\log(1-\pi^{\rm ex}_{\parmar})-\log(1-\pi_{1,\parmar})-X_{\parmar}+O(j^{-5})\)
+(Corolario~\ref{cor:linea-evitacion}).
+Las probabilidades son \(O(j^{-2})\) y su diferencia es \(O(j^{-4})\) por (R0); al integrar la derivada
 logarítmica el error de linealización es \(O(j^{-6})\). El cuadrado completo da las correcciones
-de sus dos pares y un término adicional \(-3\prod_{s\in\square}p_s+O(j^{-5})\).
+de sus dos pares y un término adicional \(-3\prod_{s\in\square}p_s+O(j^{-5})\),
+por~\eqref{eq:exceso-cuadrado}.
 Hay a lo sumo \(j^2(j-1)\) pares, pues cada casilla tiene a lo sumo \(2(j-1)\) vecinas y cada
 par tiene dos extremos. Así, la siguiente expresión \(\mathcal M_n(b)\) difiere de \(n\mathbb
  E_\mu[\Gamma;F_b]\)
@@ -76,11 +79,11 @@ sección~\ref{sec:profile-data}. Sean
 Para la tercera media, el cuadrado usa seis etiquetas diagonales distintas. Dos aparecen dos
 veces entre los ocho factores de vacancia de \(\prod_s W_b^0(s)\). Al multiplicar por las seis
 vacancias distintas y tomar \(p_0=\nu_1\) queda exactamente
-\[
+\begin{equation}\label{eq:S-def}
  -S=-3\int_\Omega
        \frac{\prod_{s\in\square}\nu_1(s)}
             {u_D(r-c)\,u_A(r+c+h)}\,dr\,dc\,dh .
-\]
+\end{equation}
 Así quedan identificadas la primera y la tercera medias. La segunda conserva dos datos de la
 máscara en el cuadrado marcado, los indicadores de los cruces. El apéndice~\ref{app:weights}
 calcula el error del par con esos dos indicadores fijos.

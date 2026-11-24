@@ -4,16 +4,18 @@ orden. Insertar \(e\) cambia el peso de \(f\) porque elimina su propia fila y co
 Ordenamos \(e,f\) por fila creciente y conservamos los dos indicadores cruzados \(X,Y\).
 Aquí \(M_e\) es el menor simple de torres, sin la fila ni la columna de \(e\). Las primas
 se evalúan en ese menor. Sean \(t=p'_f/p_f-1\), \(G_{ef}=\mathsf G(e,f)\) y
-\(D=\chi_e+\chi_f-G_{ef}\). El producto exacto de los cocientes de inserción da
+\(D=\hat c_e+\hat c_f-G_{ef}\). El producto exacto de los cocientes de inserción da
 \[
  e^{u}=\frac{\pi^T_{ef}}{p_ep_f}
-      =(1+\chi_e)(1+\chi'_f)(1+t)\exp(r_e+r'_f).
+      =(1+\hat c_e)(1+\hat c'_f)(1+t)\exp(r_e+r'_f).
 \]
-La estimación de incrementos de torres es \(r_i=-\mathsf E_i+O(j^{-3})\), también en el menor
-simple. Con \(t=-G_{ef}+O(j^{-2})\) y \(\chi'_f-\chi_f=O(j^{-2})\), el resto físico dividido
+La estimación de incrementos de torres \((A^+)\) del Apéndice~\ref{app:rook} es
+\(r_i=-\mathsf E_i+O(j^{-3})\), también en el menor
+simple. Con \(t=-G_{ef}+O(j^{-2})\) y \(\hat c'_f-\hat c_f=O(j^{-2})\)
+(Corolario~\ref{cor:dos-casillas}), el resto físico dividido
 por \(p_ep_f\) es \(\eta+O(j^{-3})\), donde
 \begin{align*}
- \eta={}&(t+G_{ef})+(\chi'_f-\chi_f)+\chi_e\chi_f+t(\chi_e+\chi_f)\\
+ \eta={}&(t+G_{ef})+(\hat c'_f-\hat c_f)+\hat c_e\hat c_f+t(\hat c_e+\hat c_f)\\
         &-\mathsf E_e-\mathsf E'_f+(p_e+p_f)G_{ef}\\
      ={}&B_{\rm phys}+D^2/2+O(j^{-3}),\\
  B_{\rm phys}={}&u-D+(p_e+p_f)G_{ef}.
@@ -40,7 +42,7 @@ El lema del determinante en el complemento del calibre y la estacionariedad dan
 Sean \(\partial=\partial_e+\partial_f\), \(\mathcal H_{\rm par}=R''(0)\) y \(\Delta C=C(\mathbf1)-C(0)\).
 La derivada de la ecuación estacionaria en los dos pesos da la respuesta
 \((D_p^{-1}-R''(p))^{-1}\). Se desarrollan el determinante y las respuestas de
-\(\chi_e,\chi_f,G_{ef}\). Los términos lineales en \(p_i (\mathcal H_{\rm par})_{il}\) se cancelan por
+\(\hat c_e,\hat c_f,G_{ef}\). Los términos lineales en \(p_i (\mathcal H_{\rm par})_{il}\) se cancelan por
 \(\mathbf1^\top \mathcal H_{\rm par}p=\sum_i p_i(\mathcal H_{\rm par})_{ii}+(p_e+p_f)(\mathcal H_{\rm
  par})_{ef}\). Queda
 \[
@@ -83,10 +85,10 @@ es a lo sumo \(K_b(rj)^{-3}/(1-(rj)^{-1})\). Cauchy también en el parámetro
 \(t\), en un disco interior a \(|t|<2\) que contenga \([0,1]\), da la misma tasa para
 sus tres primeras derivadas. Todos estos restos son \(O_b(j^{-3})\).
 Con primas para las derivadas en \(t\), se obtiene
-\begin{align*}
- L_s&=A'_1(0)+\tfrac12R''_1(0),\\
- B_{2,s}&=\tfrac12\int_0^1(1-t)^2R'''_2(t)\,dt+\int_0^1(1-t)A''_2(t)\,dt .
-\end{align*}
+\begin{align}
+ L_s&=A'_1(0)+\tfrac12R''_1(0),\notag\\
+ B_{2,s}&=\tfrac12\int_0^1(1-t)^2R'''_2(t)\,dt+\int_0^1(1-t)A''_2(t)\,dt .\label{eq:estado-def}
+\end{align}
 En \(L_s,B_{2,s}\) el subíndice designa el estado de los cruces. Los polinomios
 \(R_1,R_2,A_1,A_2\) tienen grados a lo sumo \(4,6,6,8\), de modo que nueve nodos distintos
 determinan sus derivadas algebraicamente. La evaluación en punto flotante requiere su propio

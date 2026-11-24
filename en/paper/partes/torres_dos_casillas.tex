@@ -1,0 +1,68 @@
+
+\begin{corolario}[Two cells]\label{cor:dos-casillas}
+Let $M$ satisfy \textup{(H)} with constants $(C_p,\gamma_A)$, let $k_1'=k_1(\tfrac54C_p,\tfrac34\gamma_A)$
+and $k\ge k_2:=\max\{2k_1,k_1'+1\}$. Let $e,f$ be cells in distinct rows and columns,
+$\pi^T=w_ew_fe^{L_T(M_{ef})-L_T(M)}$ and $\pi_1=p_ep_f\{1-\mathsf G(e,f)+\hat c_e+\hat c_f\}$. Then
+\[
+ |\pi^T-\pi_1|\le C_2'\,\frac{p_ep_f}{k^2}\le\frac{C_2}{k^4},
+\]
+with $C_2',C_2$ depending only on $(C_p,\gamma_A)$. More precisely, with primes for the data of $M_e$,
+\begin{equation}\label{eq:producto-inserciones}
+ \pi^T=p_e(1+\hat c_e)e^{r_e(M)}\,p'_f(1+\hat c'_f)e^{r_f(M_e)},\qquad
+ \Bigl|\frac{p'_f}{p_f}-1+\mathsf G(e,f)\Bigr|\le\frac C{k^2},\qquad
+ |\hat c'_f-\hat c_f|\le\frac C{k^2},
+\end{equation}
+and $|G'_{ab}-G^0_{ab}|\le C/k^2$ for the lines $a,b$ of $M_e$, where $G'$ is the Green matrix of $M_e$.
+In the class $\mathcal K$ these bounds hold with $(C_p,\gamma_A)=(\tfrac32M_0,0.88\gamma)$ and $k$ above
+$k_{\mathcal K}$ and $k_2$.
+\end{corolario}
+\begin{proof}
+We use the notation of the proof of Theorem~\ref{teo:insercion-torres} with $e_0=e$; constants $C$ depend
+only on $(C_p,\gamma_A)$.
+
+\emph{The Green matrix of the child.} On $v_I^\perp$ we have $S'(\tau')^+=(\mathsf S-W)^+=G'-\Pi'$ and
+the resolvent identity $(\mathsf S-W)^+-\mathsf S^+=\mathsf S^+W(\mathsf S-W)^+$.
+By~\eqref{eq:green-torres} for the child, which satisfies \textup{(H)} with
+$(\tfrac54C_p,\tfrac34\gamma_A)$, the entries of $S'(\tau')^+$ differ from $\delta_{db}$ by $O(k^{-1})$,
+and $\|\mathsf S^+\|_\infty\le4K_G$. By Step~7 of that proof, $\max|W_{ab}|=O(k^{-2})$ and
+$\|W\|_\infty=O(k^{-1})$. Moreover $G^0_{II}v_I=v_I-q$ with $q=G^0_{IJ}v_J$, $|q_b|\le2g_G/k$ and
+$\sum_b|q_b|\le2K_G$, so
+\[
+ \mathsf S^++\Pi'-G^0_{II}=\frac{v_Iq^\top+qv_I^\top}{|v_I|^2}-\frac{(v_I^\top q)\,v_Iv_I^\top}{|v_I|^4}
+\]
+has entries $O(k^{-2})$. Together these give $|G'_{ab}-G^0_{ab}|\le C/k^2$ for $a,b\in I$.
+
+\emph{The marginal of the child.} Since $a_f^\top\zeta=s_f+\mathsf G(e,f)$,
+\[
+ p'_f-p_f\bigl(1-\mathsf G(e,f)\bigr)=-\varsigma_f\mathsf G(e,f)+\tau_fa_f^\top\zeta
+   +(\Delta p_f-\tau_fs_f).
+\]
+The three terms are $O(p_fk^{-2})$ by $\varsigma_f\le\tfrac43p_f^2$, $|\mathsf G(e,f)|\le4g_G/k$,
+\eqref{eq:cotas-hijo} and $|\Delta p_f-\tau_fs_f|\le0.9\tau_fs_f^2$. This is the second bound
+in~\eqref{eq:producto-inserciones}.
+
+\emph{The correction of the child.} By~\eqref{eq:chat-torres}, $\hat c_f=\tau_fX_f/(2p_f)$. The difference
+$X'_f-X_f$ has three parts. The cells of $F$ are absent from the sum for $M_e$; two of them share a line
+with $f$, and on the others $|\mathsf G(f,e'')|\le4g_G/k$, so with $|\varepsilon|\le(4g_G+5C_p)/k$ and the
+line masses $\le\tfrac76$ this part is $O(k^{-2})$. The variation of $\varepsilon_{e''}$ on the common
+cells is $O(k^{-2})$, because $\ddot c_2$ and $\ddot\tau$ are bounded on the segment, $\Delta p=O(pk^{-1})$
+and
+$|\mathsf G'(e'',e'')-\mathsf G(e'',e'')|\le4C/k^2$. The variation of the products
+$\tau_{e''}\varepsilon_{e''}\mathsf G(f,e'')$ is controlled by $|\tau'-\tau|\le1.8\tau\cdot6K_Ga$ and by
+$\sum_{e''}\tau_{e''}|\mathsf G(f,e'')|\le\tfrac73K_G$. Finally $|\Delta(\tau_f/p_f)|\le1.1|\Delta p_f|$.
+Hence $|\hat c'_f-\hat c_f|\le C/k^2$.
+
+\emph{Conclusion.} Since $(M_e)_f=M_{ef}$, the ratio $\pi^T$ is the product of the two insertion ratios
+$w_ee^{L_T(M_e)-L_T(M)}$ and $w_fe^{L_T(M_{ef})-L_T(M_e)}$. Theorem~\ref{teo:insercion-torres} applies to
+$M$ and, by Step~4 of its proof, to $M_e$ with constants $(\tfrac54C_p,\tfrac34\gamma_A)$ at size
+$k-1\ge k_1'$. This gives the product in~\eqref{eq:producto-inserciones}. Writing
+$p'_f(1+\hat c'_f)=p_f(1-\mathsf G(e,f)+\theta_1)(1+\hat c_f+\theta_2)$ with
+$|\theta_1|,|\theta_2|\le C/k^2$, we obtain $\pi^T-\pi_1=p_ep_f\Psi$ with
+\begin{equation}\label{eq:psi-dos-casillas}
+ \Psi=(1+\hat c_e)\bigl(1-\mathsf G(e,f)+\theta_1\bigr)(1+\hat c_f+\theta_2)e^{r_e(M)+r_f(M_e)}
+      -\bigl(1-\mathsf G(e,f)+\hat c_e+\hat c_f\bigr).
+\end{equation}
+The terms of $\Psi$ that are linear in $(\hat c_e,\hat c_f,\mathsf G(e,f))$ cancel. The products
+$\mathsf G\hat c$ and $\hat c\hat c$ are $O(k^{-2})$, and so are $\theta_1,\theta_2,r_e(M),r_f(M_e)$.
+Thus $|\Psi|\le C_2'/k^2$, and $p_ep_f\le C_p^2/k^2$ gives the second inequality.
+\end{proof}

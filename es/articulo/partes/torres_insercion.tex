@@ -1,0 +1,119 @@
+\subsection{Inserción de torres, marginal de dos casillas y menor lejano}\label{app:insercion}
+Esta subsección enuncia y demuestra las tres estimaciones de torres citadas arriba: el teorema de
+inserción del que proceden $\hat c_e$ y $r_e$, su corolario para dos casillas y la estabilidad (S) del
+resto de inserción bajo un menor lejano. Aquí $M$ es una máscara con pesos de tamaño $k$ cuyas casillas
+son las $e$ con $w_e>0$, $H=R\sqcup C$ es su conjunto de líneas, $a_e\in\mathbb R^H$ es el vector de
+incidencia de $e$, $v=(\mathbf1_R,-\mathbf1_C)$ y $\Pi=vv^\top/(2k)$. El punto estacionario se escribe
+$t_e:=p_e(1-p_e)=w_e\exp(a_e^\top\theta)$ con $\theta\in\mathbb R^H$, masas de línea uno y
+$0<p_e<\tfrac12$. Además de $\tau_e=p_e(1-p_e)/(1-2p_e)$ usamos
+\[
+ \varsigma_e=\tau_e-p_e=\frac{p_e^2}{1-2p_e},\qquad m_a=\sum_{e\in a}\tau_e=1+\mu_a,\qquad
+ \mu_a=\sum_{e\in a}\varsigma_e,
+\]
+y la función $c_2(u)=\log(1-2u)-2\log(1-u)$. Las letras $\varsigma,\mu,m$ sólo tienen este significado en
+esta subsección. La hipótesis (H) con constantes $(C_p,\gamma_A)$, $0<\gamma_A\le1$, es $p_e\le C_p/k$
+en toda casilla y $\lambda_{\min}(S_T+\Pi)\ge\gamma_A$. Sean
+\begin{gather*}
+ K_G=1+\frac{1+\frac76\sqrt{2C_p}}{\gamma_A},\qquad g_G=\tfrac76C_pK_G+\tfrac12K_G+\tfrac43C_p,\qquad
+ C_\delta=\tfrac7{12}(4g_G+5C_p)\bigl(\tfrac73K_G+1\bigr),\\
+ k_1=\max\Bigl\{41K_G^2C_p,\ 40g_G,\ \tfrac76(4g_G+5C_p)\bigl(\tfrac73K_G+1\bigr),\
+            \frac{34K_GC_p}{\gamma_A}\Bigr\}.
+\end{gather*}
+
+\begin{teorema}[Inserción de torres]\label{teo:insercion-torres}
+Sea $M$ una máscara que cumple \textup{(H)} con constantes $(C_p,\gamma_A)$ y sea $k\ge k_1$. Para toda
+casilla $e$, con $\pi^{\rm der}_e=\partial_{\log w_e}L_T=p_e(1+\hat c_e)$ y
+$r_e=L_T(M_e)-L_T(M)-\log(\pi^{\rm der}_e/w_e)$,
+\[
+ |\hat c_e|\le\frac{C_\delta}{k},\qquad |r_e|\le\frac{C_r}{k^2},
+\]
+donde $C_r$ sólo depende de $(C_p,\gamma_A)$. De modo equivalente, $w_ee^{L_T(M_e)-L_T(M)}=p_e(1+\hat
+c_e)e^{r_e}$. En la clase $\mathcal K(w_0,w_1,M_0,\gamma)$ de la Sección~\ref{sec:torres}, la hipótesis
+\textup{(H)} se cumple con $(C_p,\gamma_A)=(\tfrac32M_0,0{,}88\gamma)$ para $k\ge k_{\mathcal K}=
+\max(31K_{\mathcal K}^2M_0,45K_{\mathcal K}M_0)$, $K_{\mathcal K}=1+(1+2{,}01\sqrt{M_0})/\gamma$. Por
+tanto, las dos cotas valen en $\mathcal K$ para $k\ge\max\{k_{\mathcal K},k_1(\tfrac32M_0,0{,}88\gamma)\}$,
+con constantes que sólo dependen de $(M_0,\gamma)$.
+\end{teorema}
+\begin{proof}
+\emph{Paso 1. Cotas elementales.} Para $0<u\le\tfrac18$ se tiene $u\le\tau(u)\le\tfrac76u$ y
+$u^2\le\varsigma(u)\le\tfrac43u^2$, donde $\tau(u)=u(1-u)/(1-2u)$ y $\varsigma=\tau-u$. Como
+$k\ge k_1$ da $p_e\le C_p/k\le\tfrac18$, las masas de línea cumplen $1\le m_a\le\tfrac76$ y
+$0\le\mu_a\le\tfrac43C_p/k$. Escribimos $a=\max_ep_e\le C_p/k$ y $\bar\tau=\max_e\tau_e$.
+
+\emph{Paso 2. La matriz de Green.} Sea $G^0=(S_T+\Pi)^{-1}$. Entonces
+\begin{equation}\label{eq:green-torres}
+ \|G^0\|_\infty\le K_G,\qquad |G^0_{ab}-\delta_{ab}|\le\frac{g_G}{k},\qquad
+ \sum_{e'}\tau_{e'}|\mathsf G(e,e')|\le\tfrac73K_G .
+\end{equation}
+En efecto, escribamos $S_T+\Pi=\Delta+W'$ con $\Delta=\operatorname{diag}(m_a)$. Si $(S_T+\Pi)x=b$,
+entonces $\|x\|_2\le\sqrt{2k}\,\|b\|_\infty/\gamma_A$. La fila $a$ de $W'$ consta de las entradas
+$\tau_e$, $e\in a$, y de la fila de $\Pi$, luego $\|W'_{a\cdot}\|_2\le(\bar\tau m_a)^{1/2}+(2k)^{-1/2}$,
+y $m_a|x_a|\le|b_a|+\|W'_{a\cdot}\|_2\|x\|_2$. Con $k\bar\tau\le\tfrac76C_p$ resulta la primera cota. De
+$\Delta G^0=I-W'G^0$ se obtiene $|G^0_{ab}-\delta_{ab}/m_a|\le\max_c|W'_{ac}|\sum_c|G^0_{cb}|/m_a
+\le(\bar\tau+\tfrac1{2k})K_G$, y $|1/m_a-1|\le\mu_a$. Por último,
+$\sum_{e'}\tau_{e'}|\mathsf G(e,e')|\le\sum_am_a|(G^0a_e)_a|\le\tfrac76\cdot2K_G$.
+
+\emph{Paso 3. Función dual, identidades de Ward y $\hat c_e$.} Sea $u(t)=(1-\sqrt{1-4t})/2$ la raíz
+pequeña de $u(1-u)=t$ y $\phi(t)=\log(1-u(t))+2u(t)$, de modo que $t\phi'(t)=u(t)$. Para una máscara
+$N$ de tamaño $n$ pongamos
+\[
+ g_N(\theta)=\sum_e\phi\bigl(w_ee^{a_e^\top\theta}\bigr)-\sum_a\theta_a-2n .
+\]
+En $\{t_e(\theta)<\tfrac14\}$ es convexa, con $\nabla g_N=(\sum_{e\in a}p_e-1)_a$,
+$\nabla^2g_N=S_T$ evaluado en $\tau(\theta)$, y $g_N(\theta+sv)=g_N(\theta)$. En un punto estacionario,
+$-p_e\log(p_e/w_e)=p_e\log(1-p_e)-p_ea_e^\top\theta$, luego $H_T(p)=\sum_e\log(1-p_e)-\sum_a\theta_a
+=g_N(\theta)=\min g_N$. La convexidad estricta en $v^\perp$ da la unicidad del punto estacionario.
+
+Como $S_Tv=0$, se tiene $G^0v=v$ y $S_TG^0=G^0S_T=I-\Pi$. Puesto que $\Pi a_e=0$, para toda línea $a$ y
+toda casilla $e$
+\begin{equation}\label{eq:ward-torres}
+ \sum_{e'\in a}\tau_{e'}\mathsf G(e',e)=\mathbf1_{\{e\in a\}},\qquad
+ \sum_{e'}\tau_{e'}\mathsf G(e,e')=1 .
+\end{equation}
+Derivar $p_{e'}(1-p_{e'})=w_{e'}e^{a_{e'}^\top\theta}$ y las masas de línea respecto de $\log w_e$ da
+$d\theta=-\tau_eG^0a_e\,d\log w_e$ en el calibre ortogonal a $v$, y
+\[
+ \frac{\partial p_{e'}}{\partial\log w_e}=\tau_e\delta_{ee'}-\tau_e\tau_{e'}\mathsf G(e,e'),
+\]
+cuya suma sobre cada línea se anula por~\eqref{eq:ward-torres}. Por el párrafo anterior, $\partial
+H_T/\partial\log w_e=p_e$. Además $\partial\log\det(S_T+\Pi)=\sum_{e'}\dot\tau(p_{e'})\mathsf
+G(e',e')\,\partial p_{e'}$ y $\partial\sum_{e'}c_2(p_{e'})=\sum_{e'}\dot c_2(p_{e'})\,\partial p_{e'}$; un
+punto denota la derivada respecto de $u$, de modo que $\dot\tau=\kappa_2$ y $\dot c_2=-2\ell_2'$ en la
+notación de la Proposición~\ref{prop:una-linea}.
+Con $\varepsilon_{e'}=\dot c_2(p_{e'})+\dot\tau(p_{e'})\mathsf G(e',e')-2$, donde la constante $2$ se
+puede restar porque las derivadas de $p$ suman cero, obtenemos
+\begin{equation}\label{eq:chat-torres}
+ \pi_e^{\rm der}=p_e+\tfrac12\tau_eX_e,\qquad \hat c_e=\frac{\tau_e}{2p_e}X_e,\qquad
+ X_e=\sum_{e'}\tau_{e'}\varepsilon_{e'}\mathsf G(e,e')-\varepsilon_e .
+\end{equation}
+Es la expresión de $\hat c_c$ dada antes del Lema~\ref{lem:linea-inversa}. Multiplicar por una constante
+los pesos de una línea no cambia $p$ y suma su logaritmo a $L_T$; por tanto
+$\sum_{e\in a}p_e\hat c_e=0$ en toda línea. Por~\eqref{eq:green-torres}, $|\mathsf G(e,e)-2|\le4g_G/k
+\le\tfrac1{10}$. Desarrollar $\dot c_2$ y $\dot\tau$ da $\varepsilon_e=(\mathsf G(e,e)-2)+2p_e+\tilde
+\varepsilon_e$ con $|\tilde\varepsilon_e|\le12p_e^2+3p_e|\mathsf G(e,e)-2|$, luego
+$|\varepsilon_e|\le(4g_G+5C_p)/k$. Entonces~\eqref{eq:green-torres} da
+$|X_e|\le(4g_G+5C_p)(\tfrac73K_G+1)/k$, y $\tau_e/(2p_e)\le\tfrac7{12}$ da $|\hat c_e|\le
+C_\delta/k$.
+
+\emph{Paso 4. El hijo.} Fijemos $e_0=(r,c)$ y escribamos $p_0,\tau_0,\varsigma_0$ para sus valores. Sean
+$J=\{r,c\}$, $I=H\setminus J$, $F$ el conjunto de las casillas de la fila $r$ o de la columna $c$,
+$F^*=F\setminus\{e_0\}$, y para $e\in F^*$ sea $\lambda(e)\in I$ su línea no compartida con $e_0$. El
+hijo $M'=M_{e_0}$ tiene las casillas ajenas a $F$, las líneas $I$ y $\Pi'=v_Iv_I^\top/(2k-2)$; las primas
+denotan sus datos estacionarios, y $\Delta p_e=p'_e-p_e$. Restringir $\theta$ a $I$ deja en $M'$ el
+defecto de masa $b=\nabla g_{M'}(\theta|_I)$, con $b_{\lambda(e)}=-p_e$ para $e\in F^*$ y $b_a=0$ en las
+demás líneas; $b\perp v_I$. Sea $S'(\tau|)$ el operador del hijo con los pesos del padre y
+$\xi_N=-(S'(\tau|)+\Pi')^{-1}b$ el paso de Newton. Para $x\perp v_I$, extendido por cero a $\tilde
+x\perp v$, se tiene $x^\top S'(\tau|)x=\tilde x^\top S_T\tilde x-\sum_{e\in F^*}\tau_ex_{\lambda(e)}^2
+\ge(\gamma_A-\bar\tau)|x|^2$, y las masas de $S'(\tau|)$ son al menos $1-\bar\tau$. El Paso~2 aplicado a
+$S'(\tau|)$ da $\|(S'(\tau|)+\Pi')^{-1}\|_\infty\le1{,}1K_G$. En la bola de radio $\tfrac1{16}$ la
+hessiana $\nabla^2g_{M'}$ es de Lipschitz en la norma del supremo con constante a lo sumo $9$, porque
+$dp/d\sigma=\tau$ y $d\tau/d\sigma\le1{,}8\tau$ a lo largo de $t\mapsto te^\sigma$. Como $41K_G^2a\le1$,
+el teorema de Newton--Kantorovich en $v_I^\perp$ con la norma del supremo da un único punto estacionario
+$\theta'=\theta|_I+\xi$ del hijo, $\xi\perp v_I$, con
+\begin{equation}\label{eq:newton-hijo}
+ \|\xi\|_\infty\le3K_Ga,\qquad \|\xi-\xi_N\|_\infty\le61K_G^3a^2 .
+\end{equation}
+Los desplazamientos $s_e=a_e^\top\xi$ cumplen $|s_e|\le6K_Ga\le\tfrac3{41}$, luego $p'_e\le1{,}09p_e$ y
+$\tau'_e\ge0{,}9\tau_e$. Por tanto el hijo cumple \textup{(H)} en tamaño $k-1$ con constantes
+$(\tfrac54C_p,\tfrac34\gamma_A)$.
+\input{partes/torres_insercion_prueba}

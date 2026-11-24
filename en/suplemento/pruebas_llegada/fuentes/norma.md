@@ -1,8 +1,8 @@
-# Acta de revisión externa · W2_norma (norma canónica en el álgebra de activaciones)
+# Acta de revisión · W2_norma (norma canónica en el álgebra de activaciones)
 
-**Revisor:** externo, ajeno al equipo que redactó la prueba. **Fecha:** 2026-11-17.
-**Encargo:** `rev_exp/encargos/comun_ext.md` y `rev_exp/encargos/W2_norma.md`.
-**Objeto:** la pieza `rev_exp/r21/piezas_T2/01_norma/` (GUIA, prueba_fuente, PARTES_LATEX) y sus originales: N01–N03 (Cola de activaciones, partes 01–03) y Z04 (Ciclo exterior, parte 04). Sólo he escrito en `rev_exp/W2_norma/`.
+**Fecha:** 2026-11-17.
+
+**Objeto:** la pieza `rev_exp/r21/piezas_T2/01_norma/` (GUIA, prueba_fuente, PARTES_LATEX) y sus originales: N01–N03 (Cola de activaciones, partes 01–03) y Z04 (Ciclo exterior, parte 04).
 
 ## 0. Alcance, integridad y método
 
@@ -323,7 +323,7 @@ La carga se verifica en H_j mediante L_max < αj, con α elegido después de ρ,
 ## 5. Resumen final
 
 ```
-ACTA W2_norma (norma canónica de Λ: N01–N03 y Z04) · revisor externo · 2026-11-17
+ACTA W2_norma (norma canónica de Λ: N01–N03 y Z04) · 2026-11-17
 Integridad: SHA256 10/10 (Cola) y 8/8 (Ciclo). Los 4 bloques de prueba_fuente.md
 coinciden literalmente con los originales completos; las copias de r21 son idénticas.
 

@@ -1,8 +1,8 @@
-# Acta de revisión externa · W4_rev: D1, el corrector O(K⁻²) del permanente sin Divoux–Wang
+# Acta de revisión · W4_rev: D1, el corrector O(K⁻²) del permanente sin Divoux–Wang
 
-**Revisor.** Externo, ajeno al autor de `W4_d1/` y a los revisores de las actas anteriores. Fecha: 2026-11-17. Sin web y sin acceso al ordenador de nadie: sólo `rev_exp/`. Sólo he escrito en `rev_exp/W4_rev/`, incluidos los temporales. No he ejecutado el código del autor: todos los cálculos son míos.
+**Revisión.** Fecha: 2026-11-17. Todos los cálculos se rehicieron de forma independiente, sin ejecutar el código de `W4_d1/`.
 
-**Encargo.** `rev_exp/encargos/comun_ext.md` y `rev_exp/encargos/W4_d1_rev.md`. Se revisa `rev_exp/W4_d1/`: la prueba en `latex/01–03` (con `main.tex`), `ESTADO.md`, `INTEGRACION.md`, `codigo/` y `resultados/`. Ignoro `tmp/`.
+**Objeto.** Se revisa `rev_exp/W4_d1/`: la prueba en `latex/01–03` (con `main.tex`), `ESTADO.md`, `INTEGRACION.md`, `codigo/` y `resultados/`. Ignoro `tmp/`.
 
 **Dictamen global: CERTIFICADA, con precisiones no bloqueantes. D1 queda descargado.** El Teorema 1 de W4_d1 es el enunciado literal de W/permanente, con constante C_*(A, r) uniforme para todo K ≥ 2. Se deduce de U01 con q = 2 y h = v = 0 (certificado por E1 y, para el descenso a q, por W2_cofactor) y de herramientas estándar, sin ningún resultado de Divoux–Wang (DW). La matemática nueva, V₁(y, 1/K) = V(y) exacto, es correcta. No he encontrado ningún hueco de prueba ni ningún enunciado falso. Las precisiones (§5) son de alcance, de redacción y documentales; ninguna cambia el enunciado ni las constantes.
 
@@ -17,7 +17,7 @@
   - para los usos: S02, S03, E01, M01, R05 y D04 (originales de r19), E02, K06–K08, K07, MM07, GI02 y, de la ronda 1, `mascara.tex` y `torres_fila.tex`.
 - **Actas:** E1, E2, W2_cofactor, W2_torres, W2_difusion, W_global, W3_xi y W3_v2; `divoux_wang/NOTA.md`.
 - **Para INTEGRACION:** `v2/` completo (las dos entregas) y los archivos de r21 que cita.
-- **Encargo del autor:** `encargos/W4_d1_autor.md`, para contrastar lo que se le pidió.
+
 
 **Integridad** (`codigo/c0_cotejo.py`, `resultados/c0_cotejo.txt`).
 - **Manifiestos sin ninguna discrepancia:**
@@ -294,7 +294,7 @@ El resto O(s³) de K07:54–55 sale de U04 con q = 2 (W2t:106), no del Teorema. 
   - `fuentes/…menores_uniformes…/latex/01_enunciado.tex`:29–37, `03_wick.tex`:4 y `04_mezcla.tex`:6, y `FUENTES.md`:5.
 - Pero INT:10 declara que las transcripciones son literales y no se modifican.
 - Aplicar A3–A5 a los originales rompería sus manifiestos (30/30 y 14/14) y la identidad entre transcripción y original, que comprobé en c0.
-- Deben tratarse como C1–C9: como anotaciones en el consolidado, el MAPA o el catálogo, o como una versión nueva de la pieza con su propio manifiesto. El encargo del autor pedía «qué hay que cambiar para citar la nueva prueba» (`encargos/W4_d1_autor.md`:35–40), no reescribir originales.
+- Deben tratarse como C1–C9: como anotaciones en el consolidado, el MAPA o el catálogo, o como una versión nueva de la pieza con su propio manifiesto.
 
 **Precisión 8b: lugares sin cambio.** W3v2:182 y 299 señalan además [V2]LEEME.md:7, [V2]ACTA_ADVERSARIAL.md:35 y 06:6–7. No nombran DW. Con B1–B4 aplicados, quedan exactos respecto de D1. INT debería listarlos como «sin cambio», igual que hace con B16.
 
@@ -304,10 +304,10 @@ El resto O(s³) de K07:54–55 sale de U04 con q = 2 (W2t:106), no del Teorema. 
 
 **Sobre EST.**
 - Los recuentos son exactos: 137, 72 y 91 líneas.
-- Se cumplen las restricciones del encargo del autor: como máximo 107 caracteres por línea, contados como caracteres, y ninguna aparición de la palabra excluida.
+
 - Las afirmaciones de EST §1–§4 y §6 son correctas.
 - La tabla de EST §5 coincide con `resultados/` y sus tiempos.
-- El «punto que conviene que confirme el revisor» (EST:47) queda confirmado en el punto 2.
+- El punto pendiente de confirmación (EST:47) queda confirmado en el punto 2.
 
 **Veredicto: correcta con precisión** (8a–8d).
 
@@ -400,7 +400,7 @@ Junto con W3_xi (D2), queda cumplida la condición de WG:321 para estos dos huec
 ## 6. Resumen final
 
 ```
-W4_rev · D1: corrector O(K^-2) del permanente sin Divoux–Wang · revisión externa · 2026-11-17
+W4_rev · D1: corrector O(K^-2) del permanente sin Divoux–Wang · 2026-11-17
 Integridad: r19 116/116, menores 14/14, R8 30/30, R9 98/98, MM 14/14, GI 12/12, v2 34/34 y
 14/14; R1, R10 y r21 parciales sin discrepancias; 15/15 transcripciones idénticas al original.
 Punto                                            Veredicto

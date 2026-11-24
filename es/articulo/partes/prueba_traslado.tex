@@ -29,13 +29,13 @@ imponen ecuaciones afines no constantes. Los pesos futuros cambian en \(O_{b,v}(
 Por tanto los incrementos de la martingala detenida, obtenida restando la deriva,
 están acotados por \(K_{b,v}/n\). A tolerancia \(\varepsilon>0\) fijamos
 \(C_{b,v}\eta<\varepsilon/4\). La deriva acumulada es \(<\varepsilon/2\) para \(n\)
-grande; Azuma en a lo sumo \(n\) pasos da para la otra mitad
+grande; la desigualdad de Azuma~\cite{azuma} en a lo sumo \(n\) pasos da para la otra mitad
 \(2\exp(-\varepsilon^2 n/(8K_{b,v}^2))\). Se añade la probabilidad exponencial de
 salida regular auxiliar~\cite[§4]{tc}. El número de anclajes para un patrón fijo
 es polinómico. La unión sobre ellos y el cociente \(\exp(O_b(n^{2/3}))\) para \(X\)
 al cambiar a \(\mu\) conservan una cola exponencial a precisión fija.
 En la media restante, cada etiqueta axial aporta \(b\) y cada etiqueta diagonal distinta aporta
-\(U_f(b)\). Los indicadores extraídos conservan su valor.
+\(U_f(b)\). Los indicadores extraídos conservan su valor. Llamamos a este límite la \emph{ley de patrones}.
 
 En particular, las sumas por línea viva de \(YW_b^0/j\) tienen márgenes \(1+o_{\Pr}(1)\)
 uniformemente y dos columnas vivas tienen \(\ge c_bj\) vecinos comunes. En potenciales
@@ -76,7 +76,7 @@ se derivan el factor local, las diagonales de márgenes, la masa total y el dete
 Su suma es \(1+\langle d-1,y\rangle-\sum_*d/2\); sustituir la solución centrada y su modo
 constante da la segunda identidad. En el perfil, la suma de ambas expresiones es \(L_s\).
 
-En la máscara regular, la expansión de la inversa de márgenes en \(\mathsf G,\chi_e,\chi_f\)
+En la máscara regular, la expansión de la inversa de márgenes en \(\mathsf G,\hat c_e,\hat c_f\)
 da \(jD=Z_{\rm phys}+O_b(j^{-1})\) uniformemente. Aquí \(Z_{\rm phys}\) es la misma suma
 evaluada con el núcleo físico \(j(p_{il})\), medida uniforme \(1/j\) y valores \(jp_{01},jp_{10}\)
 en los dos cruces. Para promediar su cuadrado truncamos los recorridos alternantes a longitud
@@ -132,10 +132,10 @@ dominada da el límite de cada integral truncada. Escribimos
 \]
 En la segunda media de \(\mathcal M_n(b)\) del apéndice~\ref{app:boundary}, \(\eta\) entra con signo
 negativo y contiene \(B_{\rm phys}+D^2/2\). Por tanto
-\[
+\begin{equation}\label{eq:J-def}
  B_2=\mathcal I_0(B_{2,s}),\qquad L_2=-\tfrac12\mathcal I_0(L_s^2),\qquad
  J=-B_2+L_2=-\mathcal I_0(B_{2,s}+L_s^2/2).
-\]
+\end{equation}
 En el estado \(11\) el cuadrado tiene dos pares disponibles. La suma en \(J\) aporta un término
 para el par de orientación \(D\) y otro para el de orientación \(A\). La tercera media de
 \(\mathcal M_n(b)\) cuenta el mismo cuadrado una sola vez, por su vértice de coordenadas mínimas y su lado

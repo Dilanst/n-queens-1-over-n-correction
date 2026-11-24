@@ -13,6 +13,7 @@ En la edición española v14 hay tres recorridos documentados dentro de esta ent
 - [Lema B.1: aproximación de los menores, tres exponentes por soporte y cola](pruebas_llegada/LEEME.md).
 - [Apéndice D: del menor doble a la derivada integrada](prueba_pt/LEEME.md).
 - [H.3: expansión uniforme de una línea y comprobación racional](prueba_linea/LEEME.md).
+- [H.4: inserción de torres, dos casillas y menor lejano (v15.1)](traza_torres.md).
 
 | Paso / Step | Ubicación en el artículo / Location in the paper | Operación que se verifica / Claim to check | Fuente documental / Source extract |
 |---|---|---|---|

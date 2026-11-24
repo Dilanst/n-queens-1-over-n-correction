@@ -10,10 +10,17 @@ example, $(2,4,1,3)$ and $(3,1,4,2)$ are the two solutions on the $4\times4$ boa
 
 To study the growth of $Q(n)$, it is convenient to take logarithms. Earlier combinatorial results include
 the upper bound of Luria~\cite{luria}, the lower bound of Luria and Simkin~\cite{ls}, and the work of
-Bowtell and Keevash~\cite{bk}. Bell and Stevens~\cite{bs} give an overview. Simkin's variational
+Bowtell and Keevash~\cite{bk}; together they settle a conjecture of Rivin, Vardi, and
+Zimmermann~\cite{rvz} on the growth of $Q(n)$. Bell and Stevens~\cite{bs} give an overview. Simkin's
+variational
 formula~\cite{simkin} determines $\log Q(n)$ up to an error of $o(n)$. In the normalization of the
-variational profile~\cite{pv}, the leading term is $\log(n!)+n\Phi$. Nobel, Agrawal, and Boyd~\cite{nab}
-obtained numerical bounds for the first-order constant. The profile describes the distribution of mass on
+variational profile~\cite{pv}, the leading term is $\log(n!)+n\Phi$. Simkin writes
+$Q(n)=((1+o(1))ne^{-\alpha})^n$ with $1.94<\alpha<1.9449$; since $\log(n!)=n\log n-n+O(\log n)$, the two
+normalizations are related by $\Phi=1-\alpha$. Nobel, Agrawal, and Boyd~\cite{nab}
+obtained numerical bounds for the first-order constant. Numerical estimates of the growth of $Q(n)$
+beyond the enumerated range have been obtained by Monte Carlo counting~\cite{zm} and, recently, by
+thermodynamic integration of a lattice-gas model~\cite{llw}. The profile describes the distribution of
+mass on
 the board and along each diagonal. These data enter the canonical predictor $Q_{\rm pred}(n)$
 of~\cite{pc}. An entropy is computed from the square weights, and a correction is added for the
 dependence between lines. Appendix~\ref{app:predictor} gives the finite formula used throughout the
@@ -27,13 +34,25 @@ in the signed difference
 \]
 both the leading term and the constant cancel. A preliminary step in this work uses bounds on the
 magnitude to give $|R_Q(n)|\le C/n$ for sufficiently large $n$. Lemma~\ref{lem:previa} proves this bound
-at a single fixed cut-off under the adaptive law. Appendix~\ref{app:signed} uses it to expand the
+at a single fixed cut-off under the adaptive law, which reveals the rows in random order and chooses each
+queen with probability proportional to the predictor of the resulting board
+(Section~\ref{sec:signedmap}). Appendix~\ref{app:signed} uses it to expand the
 stopped-history identity. Thus $nR_Q(n)$ is bounded, although it could still oscillate with the size of
 the board. Does it converge? Theorem~\ref{teo:principal} identifies the limit, which we denote by
 \(\cerr\). Whereas \(C_{\rm pred}\) is the constant term shared by the two logarithms, \(\cerr/n\) is the
 first relative correction in passing from the finite predictor to the exact count. A direct expansion of
 \(\log Q(n)\) about \(\log(n!)+n\Phi+C_{\rm pred}\) would require adding to \(\cerr\) the coefficient of
 \(1/n\) in \(\log Q_{\rm pred}(n)\) itself, if that coefficient exists.
+
+\paragraph{What the proof relies on.} The proof of Theorem~\ref{teo:principal} is not self-contained. It
+uses the existence and regularity of the variational profile~\cite{pv}, the early cut-off
+of~\cite{ef}, the insertion and consistency theorems for the predictor~\cite{pc}, and the stopping rule,
+persistence, and static bounds behind the constant term~\cite{tc}. These four works are preprints by the
+author; each Zenodo record contains the Spanish original and an English version.
+Section~\ref{sec:importados} lists the statements used, with their
+hypotheses, and indicates the two places where an argument is taken from a proof and not only from a
+statement. Two steps are computer-assisted, in exact rational arithmetic (Appendix~\ref{app:pair}). The
+numerical value of \(\cerr\) is an estimate and is not part of the theorem.
 
 The difficulty becomes apparent when a solution is revealed row by row. While many rows remain, each
 insertion introduces a small defect, and it is the signed sum of these defects that matters. When few
