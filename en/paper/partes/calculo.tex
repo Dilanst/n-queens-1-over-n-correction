@@ -29,7 +29,8 @@ m\le48$, for both parities, the observed values satisfied $|\numerr_m(0)|\le7.5\
 $|d_m'(0)|\le1.3\cdot10^{-11}$ \status{N}.
 
 \subsection{A grid closed under line intersections}
-We number rows and columns from zero and place square $(i,j)$ at $((i+1/2)/m,(j+1/2)/m)$. There are
+On this grid we number rows and columns from zero and place square $(i,j)$ at
+$((i+1/2)/m,(j+1/2)/m)$. There are
 $6m-2$ lines. The diagonals with integer indices $i-j$ and $i+j$ passing through the square have the same
 parity. Conversely, two diagonal indices of the same parity give a square if their intersection lies
 inside the board. In the continuum the two parities give four oblique sheets in addition to the axial
@@ -66,7 +67,7 @@ exactly. Comparing it with a direct count on the same grid checks the implementa
 continuum integral requires varying $m$.
 \input{figuras/rectangulos}
 
-\subsection{From the grid sum to the value at each node}
+\subsection{From the grid sum to the value at each node}\label{sec:extrapolacion}
 At accidental coincidences we retain the continuum limiting value. In the sum over squares a side of
 length zero receives half weight. Changing $m$ also changes the positions of the folds relative to the
 nodes. We therefore take grids in the same congruence class for each fit in even powers of $1/m$, as in
@@ -99,7 +100,7 @@ under the sampling tolerances specified there.
 
 To obtain the numerical value of $\cerr$, the replication program forms the series for the full $\numerr$
 from $d$ and $\mathcal V+F$ at the 32 points on the circle (17 independent up to conjugation). It
-evaluates $\numerr/x^2$ at six nodes in $[0.03;0.06]$ and twenty in $[0.06;1]$. As a check, it also
+evaluates $\numerr/x^2$ at six nodes in $[0.03,0.06]$ and twenty in $[0.06,1]$. As a check, it also
 computes the contribution of $\numerr_F/x^2$ with the same series and both rules. The endpoint formula,
 evaluated with the data used in the replication, minus this numerical integral gives $-3.77\cdot10^{-13}$
 \status{N}. The table gives the empirical error budget \status{N} for the evaluation. For the nodes and

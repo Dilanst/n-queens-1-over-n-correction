@@ -1,25 +1,24 @@
 \begin{abstract}\phantomsection\label{sec:resumen}
 \noindent Let \(Q(n)\) be the number of ways to place \(n\) mutually nonattacking queens on an \(n\times
-n\) board. The canonical predictor \(Q_{\rm pred}(n)\), a finite
-formula built from the maximizer of an entropy on the board, reproduces the leading term and the constant
-term of \(\log Q(n)\); both facts come from earlier preprints by the author. We now determine the first
-correction to the finite predictor: the signed error
-\(R_Q(n)=\log\bigl(Q(n)/Q_{\rm pred}(n)\bigr)\) satisfies \(nR_Q(n)\to\cerr\). We give an explicit
-formula for this limit and obtain \(Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(1/n)\).
+n\) board. In earlier works we introduced the canonical predictor \(Q_{\rm pred}(n)\), a finite
+formula built from the maximizer of an entropy on the board, and showed that it reproduces the
+leading term and the constant term of \(\log Q(n)\). Here we determine the first correction.
+We prove that the signed error \(R_Q(n)=\log\bigl(Q(n)/Q_{\rm pred}(n)\bigr)\) satisfies
+\(nR_Q(n)\to\cerr\). We give an explicit formula for \(\cerr\) and deduce that
+\(Q(n)/Q_{\rm pred}(n)=1+\cerr/n+o(1/n)\).
 
-\smallskip\noindent To obtain the formula, we choose a solution uniformly at random and reveal its rows
-in random order. The limit combines an initial correction, the integral of the mean defect left by each
-insertion, and three contributions from the board that remains at the stopping time: the rook
-contribution, that of a pair of board squares on the same diagonal, and that of the interaction between
-the two
-diagonals of a square. Comparing two stopping levels gives the limit and proves that the integral
-converges absolutely. The proof relies on results from those preprints and is computer-assisted at two
-steps.
+\smallskip\noindent To derive the formula, we choose a solution uniformly at random, reveal its rows in
+random order, and stop when a fixed fraction of the rows is still empty. The limit \(\cerr\) is the sum
+of an initial correction, the integral of the mean defect created by each insertion, and three
+contributions from the board left at the stopping time: a rook term, a term for pairs of available
+squares on a common diagonal, and a term for the interaction between the two diagonals of a square.
+Comparing two stopping levels yields the limit and shows that the integral converges absolutely. The
+proof uses results from our earlier works, and two of its steps are computer-assisted.
 
-\smallskip\noindent Evaluating the formula numerically gives \(\cerr\approx0.40550038\), with an empirical
-error estimate of \(3\cdot10^{-8}\) and a conservative band \(0.4055004\pm2\cdot10^{-7}\). These are
-numerical estimates, not certified enclosures: the sign and decimal digits of \(\cerr\) remain to be
-certified.
+\smallskip\noindent A numerical evaluation of the formula gives \(\cerr\approx0.40550038\), with an
+empirical error estimate of \(3\cdot10^{-8}\) and a conservative band \(0.4055004\pm2\cdot10^{-7}\).
+These are numerical estimates, not certified enclosures; certifying the sign and the digits of \(\cerr\)
+remains open.
 
 \medskip\noindent
 \textbf{Keywords:} $n$-queens problem; asymptotic enumeration; permanents; rook problem;

@@ -1,4 +1,4 @@
-# Supplement to "The order-1/n correction to the canonical n-queens predictor"
+# Supplement to "The 1/n correction to the canonical n-queens predictor"
 
 Data, programs, certificates and documentary sources accompanying the paper by Dilan Steven Mejia.
 Keep `paper/` and `suplemento/` as sibling folders.

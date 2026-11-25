@@ -1,6 +1,6 @@
 # Correspondencia de notación con los expedientes históricos
 
-Las fuentes y programas conservan los símbolos de sus respectivas ediciones. Para seguir una misma deducción en la v14, la columna central da el símbolo impreso en el artículo. La tabla de notación y las definiciones de las macros se pueden consultar juntas. [Tabla del artículo](../../es/articulo/partes/guia_notacion.tex) · [Macros de la v14](../../es/articulo/simbolos_v14.tex)
+Las fuentes y programas conservan los símbolos de sus respectivas ediciones. Para seguir una misma deducción en la v14, la columna central da el símbolo impreso en el artículo. La tabla de notación y las definiciones de las macros se pueden consultar juntas. [Tabla del artículo](../paper/partes/guia_notacion.tex) · [Macros de la v14](../paper/simbolos_v14.tex)
 
 | Símbolo en la fuente histórica | Símbolo en la v14 | Qué representa |
 |---|---|---|
@@ -19,7 +19,7 @@ Las fuentes y programas conservan los símbolos de sus respectivas ediciones. Pa
 | $H=P_T+J-S$ | $\mathcal B_{\partial}=P_T+J-S$ | Suma firmada de las contribuciones finales. $S$ es la magnitud del término del cuadrado. |
 | $H_j$, $F_b$ | $H_j$, $F_b$ | Llegada histórica corta y llegada regular completable, respectivamente. |
 
-En la expansión de una línea, las mismas letras designaban matrices o escalares auxiliares dentro de un solo cálculo. [Actualización de rango dos](../../es/articulo/partes/torres_linea.tex) · [Reducción a siete variables](../../es/articulo/partes/torres_linea_taylor.tex)
+En la expansión de una línea, las mismas letras designaban matrices o escalares auxiliares dentro de un solo cálculo. [Actualización de rango dos](../paper/partes/torres_linea.tex) · [Reducción a siete variables](../paper/partes/torres_linea_taylor.tex)
 
 | Símbolo en la fuente histórica | Símbolo en la v14 | Qué representa |
 |---|---|---|
@@ -28,6 +28,8 @@ En la expansión de una línea, las mismas letras designaban matrices o escalare
 | $S=h+t_e+t_f-t^\top Ht$ | $s_{\mathrm{Sch}}$ | Complemento de Schur escalar de la nueva línea. |
 | $\Phi$ en el cálculo local de siete variables | $\phi_{\mathrm{loc}}$ | Expresión local cuya expansión se compara con $-\pi_1$. |
 
-En la prueba de reinserción del par, la Hessiana $H=R''(0)$ se escribe $\mathcal H_{\rm par}$ en la v14. [Acción y prefactor del par](../../es/articulo/partes/prueba_pesos.tex)
+En la prueba de reinserción del par, la Hessiana $H=R''(0)$ se escribe $\mathcal H_{\rm par}$ en la v14. [Acción y prefactor del par](../paper/partes/prueba_pesos.tex)
 
 Cambios de notación de la v15.1. La corrección relativa de una casilla, que los Apéndices D–F escribían $\chi_e$, se escribe $\hat c_e$, como en el Apéndice H. En H.4, $\varsigma_e=\tau_e-p_e$ es el $\varpi_e$ de las fuentes de torres (en el artículo $\varpi(E)=k^2p_ep_f$ designa el peso del par), $K_G$ y $g_G$ son las constantes $\mathcal M$ y $g$ de esas fuentes, $\mathsf S$ es el complemento de Schur que allí se llama $P$, y un punto sobre una función denota su derivada. En la edición inglesa los subíndices fis, tipos, opuesto, par y cuad se escriben phys, types, opp, pair y sq.
+
+Cambios de notación de la v15.8. Los resultados tomados de [28] usan la notación de su versión 2: el margen y las constantes de la clase exterior se escriben $\epsilon_{\mathrm{ext}}$, $C_{\mathrm{ext}}$, $\eta_{\mathrm{ext}}$ y $\gamma_{\mathrm{ext}}$, y el umbral geométrico, $\alpha_{\mathrm{geo}}$. El cuaderno de `pruebas_llegada/` y sus fuentes conservan la notación de la versión 1: allí $\alpha_{\mathrm{hist}}$ es $\alpha_{\mathrm{geo}}$, $\varepsilon_{\mathrm{hist}}$ es la cota $\epsilon$ de la masa de cada diagonal en la clase interior, y $\varepsilon_{\mathrm{out}}$, $C_{\mathrm{out}}$, $\eta_{\mathrm{out}}$ y $\gamma_{\mathrm{out}}$ son $\epsilon_{\mathrm{ext}}$, $C_{\mathrm{ext}}$, $\eta_{\mathrm{ext}}$ y $\gamma_{\mathrm{ext}}$, con $\epsilon_{\mathrm{ext}}=2\epsilon$.

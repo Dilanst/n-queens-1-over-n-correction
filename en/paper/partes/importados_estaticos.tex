@@ -1,7 +1,7 @@
 \paragraph{Static cost~\cite[Lemmas 6.5--6.6, Prop.~6.7 and Cor.~6.8]{tc}.} Let \(\widehat W_e=p_e(1-p_e)\),
 and let \(\mu_{\widehat W}\) be the law on permutations supported on the mask, with weights
 \(\prod_{e\in\sigma}\widehat W_e\). For an interior stationary point with unit axial masses and positive
-slacks, Lemma~6.5 gives the identity
+slacks, \cite[Lemma~6.5]{tc} gives the identity
 \[
  Q(B)e^{-H_B(p)}=\frac{\operatorname{per}\widehat W}{\prod_e(1-p_e)}
                   \mathbb E_{\mu_{\widehat W}}\mathcal A,\qquad
@@ -15,15 +15,16 @@ op}\le\rho_*<1\), one obtains \(\log Q(B)-L(B)=\log\mathbb E_{\mu_{\widehat W}}\
 -\log(\Gamma_4/\Gamma_2)+o(1)\), uniformly for fixed \(C,\rho_*\). The axial matrix has spectrum
 \(1\pm\sigma_i(p)\), so \eqref{eq:clase-importada} implies the last hypothesis.
 
-With the margins of~\eqref{eq:clase-importada}, Lemma~6.6 gives
+With the margins of~\eqref{eq:clase-importada}, \cite[Lemma~6.6]{tc} gives
 \((S(t)^+)_{uv}=\mathbf1_{\{u=v\}}+O_{C,\eta,\gamma}(m^{-1})\), uniformly in the axial indices and in
 \(0\le t\le1\). Here \(S(t)=(1-t)S_{R,2}+tS_{R,4}\), where \(S_{R,d}\) is the axial incidence matrix
-weighted by \(p(1-p)/(1-dp)\). With \(\max_f\ell_f\le\epsilon_{\rm out}<1\), Proposition~6.7 uses this
-inverse to give \(\log(\Gamma_4/\Gamma_2)=O_{C,\eta,\gamma}(\epsilon_{\rm out}+m^{-1})\). At a first
-mesoscopic exit, Corollary~6.8 yields \((\log Q-L)^+\le C_0+\beta m\), taking zero if \(Q=0\), uniformly
-in the outer class. Its \emph{proof} applies at every arrival in that class. Indeed, \(\sum_f\log
-h_f-2\sum_e\log(1-p_e)\le O_C(1)\), since \(\sum_f\ell_f=2m=2\sum_e p_e\) and \(\sum_ep_e^2\le C\). Each
-of the \(m\) chosen squares contributes at most \(2\epsilon_{\rm out}/(1-\epsilon_{\rm out})\) to the
-logarithm of the last product. Lemmas~6.5--6.6 and Proposition~6.7 absorb the remainder into \(C_0\),
-independently of \(n/m\). Appendix~\ref{app:signed} applies the corollary in the bands, and
-Appendix~\ref{app:arrival} applies the static argument at regular arrival with a long line.
+weighted by \(p(1-p)/(1-dp)\). With \(\max_f\ell_f\le\epsilon_{\rm ext}<1\), \cite[Prop.~6.7]{tc} uses this
+inverse to give \(\log(\Gamma_4/\Gamma_2)=O_{C,\eta,\gamma}(\epsilon_{\rm ext}+m^{-1})\). At a first
+mesoscopic exit, \cite[Cor.~6.8]{tc} yields \((\log Q-L)^+\le C_0+\beta m\), where the left-hand side is
+read as zero when \(Q=0\), uniformly in the outer class. Its \emph{proof} applies at every arrival in that
+class. Indeed, \(\sum_f\log h_f-2\sum_e\log(1-p_e)\le O_C(1)\), since \(\sum_f\ell_f=2m=2\sum_e p_e\) and
+\(\sum_ep_e^2\le C\). Each of the \(m\) chosen squares contributes at most \(2\epsilon_{\rm
+ext}/(1-\epsilon_{\rm ext})\) to the logarithm of the last product. \cite[Lemmas~6.5--6.6 and Prop.~6.7]{tc}
+absorb the remainder into \(C_0\), independently of \(n/m\). Appendix~\ref{app:signed} applies the corollary
+in the bands, and Appendix~\ref{app:arrival} applies the static argument at regular arrival with a long
+line.

@@ -1,7 +1,8 @@
 \subsection{Results used from earlier papers}\label{sec:importados}
-In this list \(m\) is the residual size and \(n\) the initial board size. The four
-sources~\cite{pv,ef,pc,tc} are preprints by the author; each Zenodo record contains the Spanish original
-and an English version. In two places we use an argument from the proof of an imported
+In this list \(m\) is the residual size and \(n\) the initial board size. The four sources are our
+earlier works on the variational profile~\cite{pv}, on completability~\cite{ef}, on the canonical
+predictor~\cite{pc}, and on the constant term~\cite{tc}; each Zenodo record contains the Spanish
+original and an English version. In two places we use an argument from the proof of an imported
 result and not only its statement: the conditional probability of a child under \(\nu\), including the
 exit step (from the proof of~\cite[Thm.~8.1]{pc}), and the static bound at every arrival in the outer
 class (from the proof of~\cite[Cor.~6.8]{tc}). Both are indicated where they occur.
@@ -24,9 +25,9 @@ preserves a uniform gap. The predictor uses the axial cofactor, the local factor
 term \(\tfrac12\log(2\pi)\).
 
 \paragraph{Child insertion and row sum~\cite[Thm.~7.1 and Cor.~7.2]{pc}.} If \(m\ge\delta_0n\)
-and~\eqref{eq:clase-importada} holds, there exist \(C_*,m_0\) depending only on
-\(\delta_0,C,\eta,\gamma\). For \(m\ge m_0\), every legal child has a unique stationary point on the
-branch \(p<1/4\) and
+and~\eqref{eq:clase-importada} holds, there exist \(C_*\) and \(m_0\), depending only
+on \(\delta_0,C,\eta,\gamma\), such that for \(m\ge m_0\) every legal child has a unique stationary point on
+the branch \(p<1/4\) and
 \[
  L(B+e)-L(B)=\log[p_e(1+\delta_e)]+r_e,\qquad
  |\delta_e|\le C_*/m,\quad |r_e|\le C_*/m^2,\quad \sum_{e\in i}p_e\delta_e=0 .
@@ -59,33 +60,33 @@ Appendix~\ref{app:interior} to identify \(mV\).
 \paragraph{Stopping and macroscopic persistence~\cite[Def.~2.2, \S4 and Cor.~4.12]{tc}.} Fix
 \(M=\lceil\delta n\rceil\) and a floor \(K_0\le K\le M\). Up to \(M\) the discrepancy in intervals,
 fibers, and rectangles must remain below the macroscopic radius. At \(M\) one also imposes the entry
-tolerances of §5.3 and the maximum length \(D_{\max}(M)<\alpha_{\rm hist}M\) for empty crossings. After
+tolerances of §5.3 and the maximum length \(D_{\max}(M)<\alpha_{\rm geo}M\) for empty crossings. After
 that one requires the inner class of~\eqref{eq:clase-importada} with \(\ell_f\le\epsilon\), up to and
 including \(K\). The first violation stops the history. For a fixed fraction \(\delta>0\), a sufficiently
 small radius, a sufficiently fine partition, and large \(n\), the probability under \(\nu\) of reaching
 the radius by \(M\) is \(\le C_{\delta,r}e^{-c_{\delta,r}n}\). On the complementary event the Bethe
-maximizer is unique and satisfies~\eqref{eq:clase-importada} uniformly over lines. Section~4.3, (4.3),
+maximizer is unique and satisfies~\eqref{eq:clase-importada} uniformly over lines. \cite[\S4.3, (4.3)]{tc}
 gives \(mp_e/W(e)=1+O_\delta(\zeta+1/m)\) at available sites and the same absolute error bound for the
 diagonal masses relative to \(1-u_f/U_f\), where \(\zeta\) sums the interval and fiber discrepancies, the
-partition step, and the discretization error. For a fixed number of lines, Lemma~4.10 gives the one-step
-hazard \(m^{-1}(\#\text{axes}+\sum_f(1-u_f/U_f))+O_\delta((\zeta+1/m)/m)\) under the law that chooses
-within the row according to \(p\). The child ratio above preserves that accuracy under \(\nu\). We use
-the corollary in Appendix~\ref{app:signed} and tracking at a fixed auxiliary cut-off in
+partition step, and the discretization error. For a fixed number of lines, \cite[Lemma~4.10]{tc} gives the
+one-step hazard \(m^{-1}(\#\text{axes}+\sum_f(1-u_f/U_f))+O_\delta((\zeta+1/m)/m)\) under the law that
+chooses within the row according to \(p\). The child ratio above preserves that accuracy under \(\nu\). We
+use the corollary in Appendix~\ref{app:signed} and tracking at a fixed auxiliary cut-off in
 Appendices~\ref{app:interior} and~\ref{app:transfer}.
 
 \paragraph{Entry, prescriptions, and bands~\cite[\S5, Lemmas 5.2, 5.7 and Prop.~5.6, 5.8]{tc}.} Fix the
-inner and outer margins with \(2\epsilon=\epsilon_{\rm out}\le\epsilon_0(C_{\rm out},\eta_{\rm
-out},\gamma_{\rm out})\), and the tolerances as in §5.4. The entry value \(\delta\) must be sufficiently
-small for those tolerances. Lemma~5.7 provides entry of the observables and a geometric exception \(\le
-C_\lambda e^{-\lambda M}\) for \(D_{\max}(M)\). Proposition~5.6 reconstructs the inner class at \(M\) and
-on boards satisfying the tolerances. Every child of a regular parent, including the exit child, inherits
-the outer class. The weaker margins hold there, and the diagonal mass satisfies \(\le2\epsilon\) in the
-mesoscopic regime. Thus the parents belong to the classes of the two insertion theorems, with \(m>M\) and
-\(m\le M\), respectively. Under the law \(\nu\), the probability that \(s\) prescribed rows and \(t\)
+inner and outer margins with \(2\epsilon=\epsilon_{\rm ext}\le\epsilon_0(C_{\rm ext},\eta_{\rm
+ext},\gamma_{\rm ext})\), and the tolerances as in §5.4. The entry value \(\delta\) must be sufficiently
+small for those tolerances. \cite[Lemma~5.7]{tc} provides entry of the observables and a geometric exception
+\(\le C_\lambda e^{-\lambda M}\) for \(D_{\max}(M)\). \cite[Prop.~5.6]{tc} reconstructs the inner class at
+\(M\) and on boards satisfying the tolerances. Every child of a regular parent, including the exit child,
+inherits the outer class. The weaker margins hold there, and the diagonal mass satisfies \(\le2\epsilon\) in
+the mesoscopic regime. Thus the parents belong to the classes of the two insertion theorems, with \(m>M\)
+and \(m\le M\), respectively. Under the law \(\nu\), the probability that \(s\) prescribed rows and \(t\)
 prescribed columns survive until \(m\), with regular parents up to the arrival step, is
 \(\le(m/n)^{s+t}\exp(C(st+s+t)/m)\), uniformly in \(s,t\). For every \(K_0\le K\le M\) and \(u=2^qK\le
 M\), with \(q\ge0\) an integer, regular entry followed by first exit in \([u,2u)\) costs \(\le C
-e^{-c_*u}\), with \(c_*>2\beta\), \(\beta=2\epsilon_{\rm out}/(1-\epsilon_{\rm out})\). The band
+e^{-c_*u}\), with \(c_*>2\beta\), \(\beta=2\epsilon_{\rm ext}/(1-\epsilon_{\rm ext})\). The band
 constants are common to all floors. These are the inputs about histories for Appendices~\ref{app:signed}
 and~\ref{app:arrival}.
 

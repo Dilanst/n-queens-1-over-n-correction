@@ -19,11 +19,10 @@ $Q(n)=((1+o(1))ne^{-\alpha})^n$ with $1.94<\alpha<1.9449$; since $\log(n!)=n\log
 normalizations are related by $\Phi=1-\alpha$. Nobel, Agrawal, and Boyd~\cite{nab}
 obtained numerical bounds for the first-order constant. Numerical estimates of the growth of $Q(n)$
 beyond the enumerated range have been obtained by Monte Carlo counting~\cite{zm} and, recently, by
-thermodynamic integration of a lattice-gas model~\cite{llw}. The profile describes the distribution of
-mass on
-the board and along each diagonal. These data enter the canonical predictor $Q_{\rm pred}(n)$
-of~\cite{pc}. An entropy is computed from the square weights, and a correction is added for the
-dependence between lines. Appendix~\ref{app:predictor} gives the finite formula used throughout the
+thermodynamic integration of a lattice-gas model~\cite{llw}. The profile describes how mass is
+distributed over the board and along each diagonal. These data enter the canonical predictor
+$Q_{\rm pred}(n)$ of~\cite{pc}, which evaluates an entropy of the square weights and adds a correction
+for the dependence between lines. Appendix~\ref{app:predictor} gives the finite formula used throughout the
 paper.
 
 The next step was to identify the constant term. After $\log(n!)+n\Phi$ is subtracted, the logarithm of
@@ -45,11 +44,10 @@ first relative correction in passing from the finite predictor to the exact coun
 \(1/n\) in \(\log Q_{\rm pred}(n)\) itself, if that coefficient exists.
 
 \paragraph{What the proof relies on.} The proof of Theorem~\ref{teo:principal} is not self-contained. It
-uses the existence and regularity of the variational profile~\cite{pv}, the early cut-off
-of~\cite{ef}, the insertion and consistency theorems for the predictor~\cite{pc}, and the stopping rule,
-persistence, and static bounds behind the constant term~\cite{tc}. These four works are preprints by the
-author; each Zenodo record contains the Spanish original and an English version.
-Section~\ref{sec:importados} lists the statements used, with their
+uses results from four of our earlier works: the existence and regularity of the variational
+profile~\cite{pv}, the early cut-off of~\cite{ef}, the insertion and consistency theorems for the
+predictor~\cite{pc}, and the stopping rule, persistence, and static bounds behind the constant
+term~\cite{tc}. Section~\ref{sec:importados} lists the statements used, with their
 hypotheses, and indicates the two places where an argument is taken from a proof and not only from a
 statement. Two steps are computer-assisted, in exact rational arithmetic (Appendix~\ref{app:pair}). The
 numerical value of \(\cerr\) is an estimate and is not part of the theorem.
@@ -61,7 +59,7 @@ of~\cite{ef} describe the role of the last rows; Glock, Munhá Correia, and Suda
 when a partial placement can be completed. To compute the coefficient, we also need the weight of those
 conflicts in the error. Following the early cut-off of~\cite{ef}, we stop the process when a fixed
 fraction of rows remains empty. This allows us to study the defect accumulated before the cut-off and
-measure the error on the residual board. Comparing two cut-offs will bring these contributions together.
-Figure~\ref{fig:mascara-ilustrada} follows the first four-queens solution: revealing a single queen
+measure the error on the residual board. Comparing two cut-offs then combines both contributions into the
+limit. Figure~\ref{fig:mascara-ilustrada} follows the first four-queens solution: revealing a single queen
 already shows the difference between a rook completion and a queen completion.
 \input{figuras/mascara}

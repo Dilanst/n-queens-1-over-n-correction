@@ -5,7 +5,7 @@ Para verificar las pruebas con los archivos que acompañan a la v13, empezar por
 
 Para el lema B.1, el rango se toma de **velocidad_via2_ronda21_20261117T121607Z/fuentes/latex/P06.tex** (lema de rango). Las cotas por tipo y la media están en **velocidad_consolidado_v3_20261117T203337Z/v3/consolidado/latex/05_lineas_y_grados.tex**, líneas 52–110, y **06_corte.tex**, líneas 24–69. La [tabla de las ampliaciones españolas](TRAZA_AMPLIACIONES_ES.md) reúne las demás localizaciones de los apéndices A–G y J.2.
 
-La tabla de partida corresponde a la edición bilingüe anterior. Los desarrollos de la edición española se localizan en la [tabla de ampliaciones](TRAZA_AMPLIACIONES_ES.md). El teorema final incorpora el [cierre por dos cortes](../../es/articulo/partes/prueba_cierre.tex).
+La tabla de partida corresponde a la edición bilingüe anterior. Los desarrollos de la edición española se localizan en la [tabla de ampliaciones](TRAZA_AMPLIACIONES_ES.md). El teorema final incorpora el [cierre por dos cortes](../paper/partes/prueba_cierre.tex).
 
 | Result in either article / Resultado en ambos artículos | Exact source and scope / Fuente y alcance |
 |---|---|

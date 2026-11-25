@@ -3,11 +3,13 @@ Choose a solution uniformly and reveal its queens in a uniformly random row orde
 solution. Revealing the rows in random order is the device of the entropy method~\cite{rad,ll}, which
 gives the upper bounds on \(Q(n)\) in~\cite{luria,simkin}; here the same histories are followed under
 two laws. When \(m\) rows remain, the residual board \(B_m\) records the available squares. Its binary
-mask \(M_m\) supports a simpler problem: place one rook in each row and column. Its count,
-\(\operatorname{per}M_m\), already incorporates the restrictions imposed by the revealed pieces. To
-obtain \(Q(B_m)\) we must also require that the new pieces do not attack each other along the diagonals.
+mask \(M_m\) supports a simpler problem: place one rook in each row and column. The number of
+rook placements, \(\operatorname{per}M_m\), already incorporates the restrictions imposed by the revealed
+pieces. To obtain \(Q(B_m)\) we must also require that the new pieces do not attack each other along the
+diagonals.
 
-This suggests a first choice. Let \(L\) and \(L_T\) be the logarithms of the queen and rook predictors on
+This suggests correcting the queen predictor by the exact rook count. Let \(L\) and \(L_T\) be the
+logarithms of the queen and rook predictors on
 the residual board. For the rook part we can use the exact count:
 \[
  g_T(M)=\log\operatorname{per}M-L_T(M),\qquad L^\sharp(B)=L(B)+g_T(M).
@@ -59,8 +61,8 @@ revealed, \(X=Y=1\). Revealing \((7,6)\) rules out only \(Y\) among the four ver
 The response of the marked pair is evaluated with \(X,Y\) fixed. In state \(11\) either diagonal pair may
 be marked, and each contributes its own response. Both belong to the same square, so their interaction
 enters the sum over complete squares once. We denote the sum of the three boundary means by \(\mathcal
-M_n(b)\). Taking \(n\to\infty\) and then \(b\downarrow0\), the two means over pairs give \(P_T\) and
-\(J\), and the mean interaction gives \(-S\). Appendices~\ref{app:boundary} and~\ref{app:weights}
+M_n(b)\). Letting \(n\to\infty\) and then \(b\downarrow0\), we obtain \(P_T\) and \(J\) from the two means
+over pairs and \(-S\) from the mean interaction. Appendices~\ref{app:boundary} and~\ref{app:weights}
 separate the contributions. Appendix~\ref{app:transfer} averages the pair response under the arrival law.
 
 \paragraph{Why compare two cut-offs?} For \(\sumafrontera=P_T+J-S\), write
@@ -70,9 +72,9 @@ separate the contributions. Appendix~\ref{app:transfer} averages the pair respon
 The error satisfies \(\limsup_n |nR_Q(n)-\valorcorte(b)|\le C_\delta b+\eta(b)\), where
 \(\eta(b)=\limsup_n|\mathcal M_n(b)-\sumafrontera|\to0\) as \(b\) decreases. The constant \(C_\delta\)
 works for all sufficiently small admissible cut-offs. Each choice of \(b\) approximates the same sequence
-\(nR_Q(n)\). Comparing \(b\) and \(b'\), the difference between the approximations tends to zero with the
-two cut-offs. This gives a common limit before integration up to the endpoint. Once poles are ruled out as
-in Lemma~\ref{lem:regularidad-extremo}, the constant term of \(\numerr\) would produce a divergence of
+\(nR_Q(n)\). As \(b\) and \(b'\) tend to zero, the difference between the two approximations tends to
+zero. This yields a common limit before the integral is extended to the endpoint. Once poles are ruled out
+as in Lemma~\ref{lem:regularidad-extremo}, the constant term of \(\numerr\) would produce a divergence of
 order \(1/b\) in the truncated integral and the linear term one of order \(\log(1/b)\). The existence of
 a finite limit rules out both, in that order (Appendix~\ref{app:closing}).
 
