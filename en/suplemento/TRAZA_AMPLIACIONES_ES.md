@@ -1,6 +1,6 @@
 # Fuentes de las ampliaciones de la edición española v12
 
-Las partes indicadas son las de es/articulo/partes. Las rutas de las fuentes se dan relativas al archivo de investigación del autor. Como guía de lectura, la segunda columna identifica el argumento reproducido en el PDF. Las cuatro publicaciones españolas están en la carpeta de antecedentes publicados de la entrega. El [índice de las publicaciones](articulos_citados/LEEME.md) identifica las versiones y enlaza cada PDF.
+Las partes indicadas son las de `paper/partes`, cuyos archivos tienen los mismos nombres que en la edición española. Las rutas de las fuentes se dan relativas al archivo de investigación del autor. Como guía de lectura, la segunda columna identifica el argumento reproducido en el PDF. Las cuatro publicaciones españolas están en la carpeta de antecedentes publicados de la entrega. El [índice de las publicaciones](articulos_citados/LEEME.md) identifica las versiones y enlaza cada PDF.
 
 | Parte del artículo | Paso que se coteja | Documento de origen y localización |
 |---|---|---|
